@@ -1,0 +1,12 @@
+com.fasterxml.jackson.databind.jsontype.TestDefaultForObject::testEnumMap
+com.fasterxml.jackson.databind.ser.TestKeySerializers::testCustomEnumInnerMapKey
+com.fasterxml.jackson.databind.ser.TestCollectionSerialization::testEnumMap
+com.fasterxml.jackson.databind.ser.TestEnumSerialization::testEnumMapSerDefault
+com.fasterxml.jackson.databind.ser.TestEnumSerialization::testToStringEnumWithEnumMap
+com.fasterxml.jackson.databind.convert.TestMapConversions::testMapToBean
+com.fasterxml.jackson.databind.ser.TestEnumSerialization::testMapWithEnumKeys
+com.fasterxml.jackson.databind.deser.TestMapDeserialization::testEnumPolymorphicSerializationTest
+com.fasterxml.jackson.databind.jsonschema.TestReadJsonSchema::testDeserializeSimple
+com.fasterxml.jackson.databind.ser.TestEnumSerialization::testEnumMapSerEnableToString
+com.fasterxml.jackson.databind.ser.TestEnumSerialization::testEnumMapSerDisableToString
+com.fasterxml.jackson.databind.ser.TestCollectionSerialization::testEmptyBeanEnumMap

@@ -1,0 +1,8 @@
+com.google.javascript.jscomp.SourceMapTest::testBasicMapping
+com.google.javascript.jscomp.SourceMapTest::testMultiFunctionMapping
+com.google.javascript.jscomp.CommandLineRunnerTest::testSourceMapExpansion1
+com.google.javascript.jscomp.CommandLineRunnerTest::testSourceMapExpansion2
+com.google.javascript.jscomp.CommandLineRunnerTest::testSourceMapExpansion3
+com.google.javascript.jscomp.SourceMapTest::testBasicDeterminism
+com.google.javascript.jscomp.SourceMapTest::testLiteralMappings
+com.google.javascript.jscomp.SourceMapTest::testMultilineMapping

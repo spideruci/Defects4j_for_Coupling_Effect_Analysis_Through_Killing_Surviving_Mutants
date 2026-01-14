@@ -1,0 +1,2 @@
+org.jfree.chart.junit.PieChart3DTests::testNullValueInDataset
+org.jfree.chart.plot.junit.PiePlotTests::testDrawWithNullLegendLabels

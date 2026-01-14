@@ -1,0 +1,4 @@
+org.jsoup.nodes.ElementTest::testKeepsPreTextInCode
+org.jsoup.nodes.ElementTest::testKeepsPreText
+org.jsoup.helper.DataUtilTest::supportsBOMinFiles
+org.jsoup.nodes.ElementTest::testKeepsPreTextAtDepth

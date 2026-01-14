@@ -1,0 +1,9 @@
+com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest::testIssue698
+com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest::testSimpleVar
+com.google.javascript.jscomp.IntegrationTest::testIssue724
+com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest::testInlineIfNameIsLeftSideOfAssign
+com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest::testSimpleAssign
+com.google.javascript.jscomp.IntegrationTest::testFlowSensitiveInlineVariables2
+com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest::testInlineExpressions13
+com.google.javascript.jscomp.FlowSensitiveInlineVariablesTest::testInlineIntoExpressions
+com.google.javascript.jscomp.IntegrationTest::testIssue550

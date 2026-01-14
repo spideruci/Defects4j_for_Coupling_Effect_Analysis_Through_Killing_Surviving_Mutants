@@ -1,0 +1,9 @@
+com.fasterxml.jackson.databind.filter.JsonIncludeTest::testDefaultForIntegers
+com.fasterxml.jackson.databind.filter.JsonIncludeTest::testNonDefaultByClass
+com.fasterxml.jackson.databind.filter.JsonIncludeTest::testMixedMethod
+com.fasterxml.jackson.databind.filter.JsonIncludeTest::testNonEmptyDefaultArray
+com.fasterxml.jackson.databind.mixins.TestMixinSerForClass::testClassMixInsTopLevel
+com.fasterxml.jackson.databind.filter.JsonIncludeTest::testNonDefaultByClassNoCtor
+com.fasterxml.jackson.databind.views.TestViewSerialization::test868
+com.fasterxml.jackson.databind.filter.JsonIncludeTest::testDefaultForEmptyList
+com.fasterxml.jackson.databind.mixins.TestMixinSerForClass::testClassMixInsMidLevel

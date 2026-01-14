@@ -1,0 +1,8 @@
+org.jsoup.nodes.DocumentTest::testNormalisesStructure
+org.jsoup.nodes.DocumentTest::testOutputEncoding
+org.jsoup.nodes.DocumentTest::testXhtmlReferences
+org.jsoup.nodes.DocumentTest::testHtmlAndXmlSyntax
+org.jsoup.parser.HtmlParserTest::handlesTagsInTextarea
+org.jsoup.nodes.EntitiesTest::escape
+org.jsoup.parser.HtmlParserTest::testNoImagesInNoScriptInHead
+org.jsoup.nodes.ElementTest::testSetHtmlTitle

@@ -1,0 +1,3 @@
+org.apache.commons.math.estimation.LevenbergMarquardtEstimatorTest::testTrivial
+org.apache.commons.math.estimation.LevenbergMarquardtEstimatorTest::testCircleFitting
+org.apache.commons.math.estimation.LevenbergMarquardtEstimatorTest::testNonInversible

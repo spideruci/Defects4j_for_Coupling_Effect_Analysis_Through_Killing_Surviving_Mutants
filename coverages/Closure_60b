@@ -1,0 +1,10 @@
+com.google.javascript.jscomp.PeepholeRemoveDeadCodeTest::testFoldUselessFor
+com.google.javascript.jscomp.PeepholeRemoveDeadCodeTest::testFoldUselessWhile
+com.google.javascript.jscomp.PeepholeIntegrationTest::testFoldUselessWhileIntegration
+com.google.javascript.jscomp.PeepholeRemoveDeadCodeTest::testFoldUselessDo
+com.google.javascript.jscomp.NodeUtilTest::testGetExpressionBooleanValue
+com.google.javascript.jscomp.PeepholeIntegrationTest::testBug1509085
+com.google.javascript.jscomp.PeepholeIntegrationTest::testFoldUselessDoIntegration
+com.google.javascript.jscomp.PeepholeIntegrationTest::testHookIfIntegration
+com.google.javascript.jscomp.PeepholeIntegrationTest::testFoldUselessForIntegration
+com.google.javascript.jscomp.PeepholeRemoveDeadCodeTest::testIf

@@ -1,0 +1,12 @@
+com.google.javascript.jscomp.DisambiguatePropertiesTest::testEnumOfObjects3
+com.google.javascript.jscomp.DisambiguatePropertiesTest::testObjectLiteralNotRenamed
+com.google.javascript.jscomp.DisambiguatePropertiesTest::testEnumOfObjects2
+com.google.javascript.jscomp.DisambiguatePropertiesTest::testTwoTypes2
+com.google.javascript.jscomp.DisambiguatePropertiesTest::testOneType3
+com.google.javascript.jscomp.DisambiguatePropertiesTest::testTwoTypes3
+com.google.javascript.jscomp.DisambiguatePropertiesTest::testOneType2
+com.google.javascript.jscomp.DisambiguatePropertiesTest::testEnumOfObjects
+com.google.javascript.jscomp.DisambiguatePropertiesTest::testObjectLiteral
+com.google.javascript.jscomp.DisambiguatePropertiesTest::testEnum
+com.google.javascript.jscomp.DisambiguatePropertiesTest::testObjectLiteralReflected
+com.google.javascript.jscomp.DisambiguatePropertiesTest::testObjectLiteralLends

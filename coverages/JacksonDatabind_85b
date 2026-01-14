@@ -1,0 +1,8 @@
+com.fasterxml.jackson.databind.deser.TestPolymorphicDeserialization676::testDeSerCorrect
+com.fasterxml.jackson.databind.ser.DateSerializationTest::testSqlDate
+com.fasterxml.jackson.databind.ser.DateSerializationTest::testDateDefaultShape
+com.fasterxml.jackson.databind.jsontype.TestTypedDeserialization::testIssue506WithDate
+com.fasterxml.jackson.databind.jsontype.ext.ExternalTypeIdTest::testWithScalar118
+com.fasterxml.jackson.databind.deser.TestPolymorphicDeserialization676::testDeSerFail
+com.fasterxml.jackson.databind.ser.DateSerializationTest::testDateWithJsonFormat
+com.fasterxml.jackson.databind.format.DateFormatTest::testTypeDefaults

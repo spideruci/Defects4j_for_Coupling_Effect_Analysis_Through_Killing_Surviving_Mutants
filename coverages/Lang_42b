@@ -1,0 +1,5 @@
+org.apache.commons.lang.EntitiesTest::testEscapeNamedEntity
+org.apache.commons.lang.StringEscapeUtilsTest::testEscapeXml
+org.apache.commons.lang.StringEscapeUtilsTest::testEscapeHtmlVersions
+org.apache.commons.lang.StringEscapeUtilsTest::testEscapeHtml
+org.apache.commons.lang.EntitiesTest::testHtml40Nbsp

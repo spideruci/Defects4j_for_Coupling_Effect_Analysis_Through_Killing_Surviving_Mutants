@@ -1,0 +1,9 @@
+com.fasterxml.jackson.databind.mixins.TestMixinSerForMethods::testLeafMixin
+com.fasterxml.jackson.databind.ser.TestEnumSerialization::testEnumsWithJsonValueUsingMixin
+com.fasterxml.jackson.databind.mixins.TestMixinSerForMethods::testObjectMixin
+com.fasterxml.jackson.databind.mixins.TestMixinSerWithViews::testIssue560
+com.fasterxml.jackson.databind.mixins.TestMixinSerWithViews::testDataBindingUsage
+com.fasterxml.jackson.databind.mixins.TestMixinInheritance::testMixinMethodInheritance
+com.fasterxml.jackson.databind.mixins.TestMixinSerForMethods::testIntermediateMixin
+com.fasterxml.jackson.databind.mixins.TestMixinSerForMethods::testIntermediateMixin2
+com.fasterxml.jackson.databind.mixins.TestMixinDeserForMethods::testWithAnySetter

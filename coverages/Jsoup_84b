@@ -1,0 +1,5 @@
+org.jsoup.helper.W3CDomTest::simpleConversion
+org.jsoup.helper.W3CDomTest::handlesInvalidAttributeNames
+org.jsoup.helper.W3CDomTest::namespacePreservation
+org.jsoup.helper.W3CDomTest::convertsGoogleLocation
+org.jsoup.helper.W3CDomTest::convertsGoogle

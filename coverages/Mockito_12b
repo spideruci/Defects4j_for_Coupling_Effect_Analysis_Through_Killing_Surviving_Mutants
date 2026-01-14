@@ -1,0 +1,3 @@
+org.mockito.internal.util.reflection.GenericMasterTest::shouldFindGenericClass
+org.mockitousage.bugs.CaptorAnnotationAutoboxingTest::shouldAutoboxAllPrimitives
+org.mockitousage.bugs.CaptorAnnotationAutoboxingTest::shouldAutoboxSafely

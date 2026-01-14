@@ -1,0 +1,5 @@
+org.apache.commons.cli.HelpFormatterTest::testHeaderStartingWithLineSeparator
+org.apache.commons.cli.HelpFormatterTest::testPrintWrapped
+org.apache.commons.cli.bug.BugCLI18Test::testCLI18
+org.apache.commons.cli.ApplicationTest::testMan
+org.apache.commons.cli.HelpFormatterTest::testPrintOptions

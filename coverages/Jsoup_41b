@@ -1,0 +1,9 @@
+org.jsoup.select.CssTest::nthLastOfType_advanced
+org.jsoup.select.CssTest::nthChild_simple
+org.jsoup.select.CssTest::nthLastOfType_simple
+org.jsoup.select.CssTest::nthChild_advanced
+org.jsoup.select.CssTest::lastChild
+org.jsoup.select.CssTest::firstChild
+org.jsoup.select.CssTest::lastOfType
+org.jsoup.select.CssTest::nthLastChild_advanced
+org.jsoup.select.CssTest::nthLastChild_simple

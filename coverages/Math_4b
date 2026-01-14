@@ -1,0 +1,12 @@
+org.apache.commons.math3.geometry.euclidean.twod.SubLineTest::testIntersectionInsideOutside
+org.apache.commons.math3.geometry.euclidean.threed.SubLineTest::testIntersectionOutsideOutside
+org.apache.commons.math3.geometry.euclidean.twod.SubLineTest::testIntersectionOutsideOutside
+org.apache.commons.math3.geometry.euclidean.threed.SubLineTest::testIntersectionBoundaryBoundary
+org.apache.commons.math3.geometry.euclidean.threed.SubLineTest::testIntersectionInsideOutside
+org.apache.commons.math3.geometry.euclidean.threed.SubLineTest::testIntersectionInsideInside
+org.apache.commons.math3.geometry.euclidean.twod.SubLineTest::testIntersectionInsideBoundary
+org.apache.commons.math3.geometry.euclidean.twod.SubLineTest::testIntersectionBoundaryBoundary
+org.apache.commons.math3.geometry.euclidean.threed.SubLineTest::testIntersectionInsideBoundary
+org.apache.commons.math3.geometry.euclidean.threed.SubLineTest::testIntersectionBoundaryOutside
+org.apache.commons.math3.geometry.euclidean.twod.SubLineTest::testIntersectionInsideInside
+org.apache.commons.math3.geometry.euclidean.twod.SubLineTest::testIntersectionBoundaryOutside

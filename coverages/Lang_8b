@@ -1,0 +1,5 @@
+org.apache.commons.lang3.time.FastDateFormatTest::test_changeDefault_Locale_DateTimeInstance
+org.apache.commons.lang3.time.FastDateFormatTest::testTimeDefaults
+org.apache.commons.lang3.time.FastDateFormat_PrinterTest::testFormat
+org.apache.commons.lang3.time.FastDateFormatTest::testCheckDifferingStyles
+org.apache.commons.lang3.time.FastDatePrinterTest::testFormat

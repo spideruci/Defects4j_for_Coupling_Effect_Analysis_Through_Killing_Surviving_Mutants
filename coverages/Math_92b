@@ -1,0 +1,17 @@
+org.apache.commons.math.distribution.PascalDistributionTest::testDensities
+org.apache.commons.math.distribution.BinomialDistributionTest::testDegenerate1
+org.apache.commons.math.distribution.BinomialDistributionTest::testDensities
+org.apache.commons.math.distribution.BinomialDistributionTest::testDegenerate0
+org.apache.commons.math.distribution.HypergeometricDistributionTest::testDegenerateNoSuccesses
+org.apache.commons.math.distribution.HypergeometricDistributionTest::testMoreLargeValues
+org.apache.commons.math.distribution.PascalDistributionTest::testDegenerate0
+org.apache.commons.math.distribution.PascalDistributionTest::testDegenerate1
+org.apache.commons.math.distribution.HypergeometricDistributionTest::testDegenerateNoFailures
+org.apache.commons.math.util.MathUtilsTest::testBinomialCoefficient
+org.apache.commons.math.distribution.HypergeometricDistributionTest::testInverseCumulativeProbabilities
+org.apache.commons.math.util.MathUtilsTest::testBinomialCoefficientFail
+org.apache.commons.math.distribution.HypergeometricDistributionTest::testFloatingPointArguments
+org.apache.commons.math.distribution.HypergeometricDistributionTest::testCumulativeProbabilities
+org.apache.commons.math.util.MathUtilsTest::test0Choose0
+org.apache.commons.math.distribution.HypergeometricDistributionTest::testDensities
+org.apache.commons.math.distribution.HypergeometricDistributionTest::testLargeValues

@@ -1,0 +1,2 @@
+org.jsoup.integration.ParseTest::testHtml5Charset
+org.jsoup.parser.XmlTreeBuilderTest::testSupplyParserToDataStream

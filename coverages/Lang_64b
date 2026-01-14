@@ -1,0 +1,4 @@
+org.apache.commons.lang.enums.ValuedEnumTest::testCompareTo
+org.apache.commons.lang.enums.ValuedEnumTest::testCompareTo_null
+org.apache.commons.lang.enums.ValuedEnumTest::testCompareTo_otherType
+org.apache.commons.lang.enums.ValuedEnumTest::testCompareTo_nonEnumType

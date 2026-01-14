@@ -1,0 +1,4 @@
+org.apache.commons.compress.archivers.sevenz.SevenZFileTest::test7zUnarchive
+org.apache.commons.compress.archivers.sevenz.SevenZFileTest::testEncryptedArchiveRequiresPassword
+org.apache.commons.compress.archivers.sevenz.SevenZFileTest::test7zDeflateUnarchive
+org.apache.commons.compress.archivers.sevenz.SevenZFileTest::test7zDecryptUnarchive

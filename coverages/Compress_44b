@@ -1,0 +1,7 @@
+org.apache.commons.compress.utils.ChecksumCalculatingInputStreamTest::testReadTakingNoArguments
+org.apache.commons.compress.utils.ChecksumCalculatingInputStreamTest::testSkipReturningPositive
+org.apache.commons.compress.utils.ChecksumCalculatingInputStreamTest::testReadTakingByteArray
+org.apache.commons.compress.utils.ChecksumCalculatingInputStreamTest
+org.apache.commons.compress.compressors.lz4.FramedLZ4CompressorInputStreamTest::rejectsBlocksWithoutChecksum
+org.apache.commons.compress.utils.ChecksumCalculatingInputStreamTest::testSkipReturningZero
+org.apache.commons.compress.compressors.lz4.FramedLZ4CompressorInputStreamTest

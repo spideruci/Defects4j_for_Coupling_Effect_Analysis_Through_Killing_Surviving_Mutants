@@ -1,0 +1,14 @@
+org.jsoup.safety.CleanerTest::testRemoveEnforcedAttributes
+org.jsoup.safety.CleanerTest::handlesAttributesWithNoValue
+org.jsoup.safety.CleanerTest::testRemoveProtocols
+org.jsoup.safety.CleanerTest::testCleanAnchorProtocol
+org.jsoup.safety.CleanerTest::resolvesRelativeLinks
+org.jsoup.safety.CleanerTest::whitelistedProtocolShouldBeRetained
+org.jsoup.safety.CleanerTest::testCleanJavascriptHref
+org.jsoup.nodes.AttributesTest::testIteratorUpdateable
+org.jsoup.safety.CleanerTest::basicWithImagesTest
+org.jsoup.safety.CleanerTest::testHandlesEmptyAttributes
+org.jsoup.safety.CleanerTest::dropsUnresolvableRelativeLinks
+org.jsoup.safety.CleanerTest::basicBehaviourTest
+org.jsoup.safety.CleanerTest::testIsValidBodyHtml
+org.jsoup.safety.CleanerTest::handlesCustomProtocols

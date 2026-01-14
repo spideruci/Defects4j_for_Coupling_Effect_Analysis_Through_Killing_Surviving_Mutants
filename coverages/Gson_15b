@@ -1,0 +1,5 @@
+com.google.gson.stream.JsonWriterTest::testPrettyPrintObject
+com.google.gson.stream.JsonWriterTest::testDoubles
+com.google.gson.stream.JsonWriterTest::testNonFiniteDoubles
+com.google.gson.stream.JsonWriterTest::testPrettyPrintArray
+com.google.gson.stream.JsonWriterTest::testTopLevelValueTypes

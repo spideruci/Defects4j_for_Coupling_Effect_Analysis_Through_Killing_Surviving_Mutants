@@ -1,0 +1,9 @@
+com.fasterxml.jackson.databind.convert.TestStringConversions::testBytestoCharArray
+com.fasterxml.jackson.databind.deser.TestSimpleTypes::testURL
+com.fasterxml.jackson.databind.node.TestConversions::testEmbeddedByteArray
+com.fasterxml.jackson.databind.util.TestTokenBuffer::testSimpleArray
+com.fasterxml.jackson.databind.convert.TestStringConversions::testBytesToBase64AndBack
+com.fasterxml.jackson.databind.node.TestConversions::testBeanToTree
+com.fasterxml.jackson.databind.deser.TestSimpleTypes::testUUIDAux
+com.fasterxml.jackson.databind.node.TestConversions::testIssue709
+com.fasterxml.jackson.databind.node.TestConversions::testConversionOfTrees

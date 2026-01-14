@@ -1,0 +1,10 @@
+com.google.javascript.jscomp.TypeCheckTest::testTypeInferenceWithNoEntry2
+com.google.javascript.rhino.jstype.JSTypeTest::testReflexivityOfLeastSupertype
+com.google.javascript.rhino.jstype.JSTypeTest::testRecordSubtypeChain
+com.google.javascript.rhino.jstype.JSTypeTest::testRecordTypeLeastSuperType4
+com.google.javascript.rhino.jstype.JSTypeTest::testRecordTypeLeastSuperType1
+com.google.javascript.rhino.jstype.JSTypeTest::testRecordAndObjectChain2
+com.google.javascript.rhino.jstype.JSTypeTest::testSymmetryOfLeastSupertype
+com.google.javascript.rhino.jstype.RecordTypeTest::testRecursiveRecord
+com.google.javascript.jscomp.TypeCheckTest::testTypeInferenceWithNoEntry1
+com.google.javascript.rhino.jstype.JSTypeTest::testRecordAndObjectChain3

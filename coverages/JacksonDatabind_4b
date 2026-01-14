@@ -1,0 +1,5 @@
+com.fasterxml.jackson.databind.deser.TestFieldDeserialization::testSimpleAnnotation
+com.fasterxml.jackson.databind.jsontype.TestDefaultForArrays::testArrayTypingSimple
+com.fasterxml.jackson.databind.deser.TestArrayDeserialization::testStringArray
+com.fasterxml.jackson.databind.deser.TestValueAnnotations::testOverrideArrayClass
+com.fasterxml.jackson.databind.convert.TestConvertingDeserializer::testPropertyAnnotationArrayLC

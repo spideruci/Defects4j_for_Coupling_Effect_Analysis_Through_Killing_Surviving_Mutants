@@ -1,0 +1,15 @@
+com.google.javascript.jscomp.CommandLineRunnerTest::testSourcePruningOn1
+com.google.javascript.jscomp.CommandLineRunnerTest::testDebugFlag1
+com.google.javascript.jscomp.CommandLineRunnerTest::testDebugFlag2
+com.google.javascript.jscomp.CommandLineRunnerTest::testSourceSortingCircularDeps2
+com.google.javascript.jscomp.CommandLineRunnerTest::testSourceSortingCircularDeps1
+com.google.javascript.jscomp.CommandLineRunnerTest::testPrintAstFlag
+com.google.javascript.jscomp.CommandLineRunnerTest::testSourceSortingOn
+com.google.javascript.jscomp.CommandLineRunnerTest::testDebugFlag4
+com.google.javascript.jscomp.CommandLineRunnerTest::testProcessClosurePrimitives
+com.google.javascript.jscomp.CommandLineRunnerTest::testForwardDeclareDroppedTypes
+com.google.javascript.jscomp.CommandLineRunnerTest::testVersionFlag
+com.google.javascript.jscomp.CommandLineRunnerTest::testHelpFlag
+com.google.javascript.jscomp.CommandLineRunnerTest::testDebugFlag3
+com.google.javascript.jscomp.CommandLineRunnerTest::testBooleanFlag2
+com.google.javascript.jscomp.CommandLineRunnerTest::testBooleanFlag1

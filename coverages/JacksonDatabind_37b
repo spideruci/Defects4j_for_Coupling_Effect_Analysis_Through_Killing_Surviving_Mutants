@@ -1,0 +1,12 @@
+com.fasterxml.jackson.databind.jsontype.TestExternalId::testWithAsValue
+com.fasterxml.jackson.databind.jsontype.TestPolymorphicWithDefaultImpl::testDeserializationWithArrayOfSize2
+com.fasterxml.jackson.databind.jsontype.TestExternalId::testWithScalar118
+com.fasterxml.jackson.databind.jsontype.TestPolymorphicWithDefaultImpl::testDefaultAsVoid
+com.fasterxml.jackson.databind.jsontype.TestSubtypes::testDefaultImpl
+com.fasterxml.jackson.databind.jsontype.TestPolymorphicWithDefaultImpl::testDeserializationWithObject
+com.fasterxml.jackson.databind.jsontype.TestExternalId::testWithNaturalScalar118
+com.fasterxml.jackson.databind.jsontype.TestSubtypes::testDefaultImplViaModule
+com.fasterxml.jackson.databind.jsontype.TestPolymorphicWithDefaultImpl::testDefaultImplWithObjectWrapper
+com.fasterxml.jackson.databind.jsontype.TestPolymorphicWithDefaultImpl::testDefaultAsNoClass
+com.fasterxml.jackson.databind.jsontype.TestPolymorphicWithDefaultImpl::testDeserializationWithArray
+com.fasterxml.jackson.databind.jsontype.TestPolymorphicWithDefaultImpl::testDeserializationWithString

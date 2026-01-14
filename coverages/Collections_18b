@@ -1,0 +1,3 @@
+org.apache.commons.collections.set.ListOrderedSetTest::testRetainAll
+org.apache.commons.collections.set.ListOrderedSetTest::testCollectionRetainAll
+org.apache.commons.collections.set.ListOrderedSet2Test::testCollectionRetainAll

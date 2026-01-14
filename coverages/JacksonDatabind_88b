@@ -1,0 +1,2 @@
+com.fasterxml.jackson.databind.jsontype.TestDefaultForObject::testEnumSet
+com.fasterxml.jackson.databind.jsontype.TestDefaultForObject::testEnumMap

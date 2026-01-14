@@ -1,0 +1,6 @@
+org.apache.commons.jxpath.ri.model.dynabeans.DynaBeanModelTest::testBooleanPredicate
+org.apache.commons.jxpath.ri.model.dynabeans.DynaBeanModelTest::testCoreFunctions
+org.apache.commons.jxpath.ri.model.beans.BeanModelTest::testCoreFunctions
+org.apache.commons.jxpath.ri.model.beans.BeanModelTest::testBooleanPredicate
+org.apache.commons.jxpath.ri.compiler.CoreOperationTest::testInfoSetTypes
+org.apache.commons.jxpath.ri.compiler.CoreFunctionTest::testExtendedKeyFunction

@@ -71,6 +71,8 @@ of the checked-out project version.
              ends up on the classpath -->
         <path id="build.classpath">
             <pathelement location="${d4j.home}/framework/projects/Math/lib/commons-discovery-0.5.jar" />
+
+
         </path>
 
         <path id="compile.classpath">
@@ -102,5 +104,9 @@ of the checked-out project version.
     <!-- Classpath to run developer-written tests -->
     <path id="d4j.test.classpath">
         <path refid="test.classpath"/>
+                <!-- added for to include external jars -->
+        <fileset dir="${d4j.home}/state_utils/external_jars">
+            <include name="**/*.jar"/>
+        </fileset>
     </path>
 </project>

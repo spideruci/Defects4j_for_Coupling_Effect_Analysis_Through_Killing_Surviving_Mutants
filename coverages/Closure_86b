@@ -1,0 +1,11 @@
+com.google.javascript.jscomp.PureFunctionIdentifierTest::testConstructorThatModifiesThis2
+com.google.javascript.jscomp.PureFunctionIdentifierTest::testConstructorThatModifiesThis1
+com.google.javascript.jscomp.PureFunctionIdentifierTest::testCallFunctionThatModifiesThis
+com.google.javascript.jscomp.PureFunctionIdentifierTest::testAnnotationInExterns_new9
+com.google.javascript.jscomp.PureFunctionIdentifierTest::testConstructorThatModifiesThis4
+com.google.javascript.jscomp.PureFunctionIdentifierTest::testConstructorThatModifiesGlobal2
+com.google.javascript.jscomp.PureFunctionIdentifierTest::testLocalizedSideEffects10
+com.google.javascript.jscomp.PureFunctionIdentifierTest::testThrow2
+com.google.javascript.jscomp.PureFunctionIdentifierTest::testConstructorThatModifiesThis3
+com.google.javascript.jscomp.PureFunctionIdentifierTest::testConstructorThatModifiesGlobal1
+com.google.javascript.jscomp.PureFunctionIdentifierTest::testAnnotationInExterns_new7

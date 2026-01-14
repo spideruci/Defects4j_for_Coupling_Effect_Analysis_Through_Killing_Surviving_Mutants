@@ -1,0 +1,6 @@
+org.apache.commons.collections4.map.MultiValueMapTest::testSerializeDeserializeThenCompare
+org.apache.commons.collections4.map.MultiValueMapTest::testFullMapCompatibility
+org.apache.commons.collections4.map.MultiValueMapTest::testEmptyMapCompatibility
+org.apache.commons.collections4.collection.IndexedCollectionTest::testSerializeDeserializeThenCompare
+org.apache.commons.collections4.collection.IndexedCollectionTest::testSimpleSerialization
+org.apache.commons.collections4.map.MultiValueMapTest::testSimpleSerialization

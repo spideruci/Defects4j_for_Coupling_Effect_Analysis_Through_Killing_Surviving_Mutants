@@ -1,0 +1,10 @@
+org.jsoup.select.SelectorTest::mixCombinatorGroup
+org.jsoup.select.ElementsTest::hasText
+org.jsoup.nodes.ElementTest::testGetSiblings
+org.jsoup.select.SelectorTest::testCombinedWithContains
+org.jsoup.select.SelectorTest::adjacentSiblings
+org.jsoup.parser.HtmlParserTest::handlesUnclosedDefinitionLists
+org.jsoup.select.SelectorTest::notAdjacent
+org.jsoup.select.SelectorTest::generalSiblings
+org.jsoup.select.SelectorTest::mixCombinator
+org.jsoup.select.SelectorTest::adjacentSiblingsWithId

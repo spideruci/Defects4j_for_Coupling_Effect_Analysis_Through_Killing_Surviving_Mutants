@@ -61,6 +61,15 @@ The archive file name of an external test suite (optional). The default test sui
 developer-written test suite of the checked-out project version.
 See L<Test suites|/"Test suites">.
 
+=item -e
+
+Run individual test case one by one
+
+=item -c
+
+Run individual test case one by one and collect mutant coverage for each test case.
+
+
 =back
 
 =head1 Test suites
@@ -92,12 +101,25 @@ use Utils;
 use Project;
 use Getopt::Std;
 use Pod::Usage;
+use File::Find;
+use File::Copy;
+use File::Path qw(make_path);
+use File::Spec;
+use Cwd qw(abs_path getcwd);
+use JSON;
+
+
+
+
+
 
 my %cmd_opts;
-getopts('t:w:rs:', \%cmd_opts) or pod2usage( { -verbose => 1, -input => __FILE__} );
+getopts('t:w:rs:e:c', \%cmd_opts) or pod2usage( { -verbose => 1, -input => __FILE__} );
 
 my $WORK_DIR = Utils::get_abs_path($cmd_opts{w} // ".");
 my $REL_TESTS = defined $cmd_opts{r} ? 1 : 0;
+my $RUN_EACH_REL = defined $cmd_opts{e} ? 1 : 0;
+my $RUN_EACH_REL_COV = defined $cmd_opts{c} ? 1 : 0;
 my $SINGLE_TEST = $cmd_opts{t};
 my $TEST_SUITE = $cmd_opts{s};
 if ((defined $SINGLE_TEST || defined $TEST_SUITE) && $REL_TESTS==1) {
@@ -105,10 +127,64 @@ if ((defined $SINGLE_TEST || defined $TEST_SUITE) && $REL_TESTS==1) {
 }
 
 my $config = Utils::read_config_file("$WORK_DIR/$CONFIG");
+
 unless(defined $config) {
     print(STDERR "$WORK_DIR is not a valid working directory!\n");
     exit 1;
 }
+
+my $pid = $config->{$CONFIG_PID};
+my $vid = $config->{$CONFIG_VID};
+my $bid = Utils::check_vid($vid)->{bid};
+
+
+my $config_file;
+
+# Check which directory structure exists
+
+if (-d "$WORK_DIR/source") {
+    $config_file = "$WORK_DIR/tests/major/mutation/Config.java";
+}
+elsif (-d "$WORK_DIR/src/test/java") {
+    $config_file = "$WORK_DIR/src/test/java/major/mutation/Config.java";
+}
+elsif (-d "$WORK_DIR/src/test") {
+    $config_file = "$WORK_DIR/src/test/major/mutation/Config.java";
+} elsif ($pid eq "Gson") {
+    # Gson's working directories might be different lol
+    $config_file = "$WORK_DIR/gson/src/test/java/major/mutation/Config.java";
+} elsif ($pid eq "Closure") {
+    $config_file = "$WORK_DIR/test/major/mutation/Config.java";
+} else {
+    #die "❌ Error: No valid test source directory found under $WORK_DIR\n";
+}
+
+print "Config file path: $config_file\n";
+
+
+# Ensure the destination directory exists (create if necessary)
+my ($dest_dir) = $config_file =~ m|^(.+)/[^/]+$|;
+unless (-d $dest_dir) {
+    system("mkdir", "-p", $dest_dir) == 0
+        or die "❌ Failed to create directory $dest_dir\n";
+}
+
+
+
+sub transform_test_name {
+    my ($line) = @_;
+    # Match parameterized test: e.g., testAllMonomials[0](org.foo.BarTest)
+    if ($line =~ /^\w+\[\d+\]\(([^)]+)\)$/) {
+        return $1;  # Return only the class name
+    }
+    if ($line =~ /^(\w+)\(([^)]+)\)$/) {
+        return "$2::$1";
+    } else {
+        die "Unexpected format: $line";
+    }
+}
+
+
 
 # Instantiate project and set working directory
 my $project = Project::create_project($config->{$CONFIG_PID});
@@ -117,6 +193,17 @@ $project->{prog_root} = $WORK_DIR;
 # Clean temporary files that hold test results
 my $fail_tests = "$WORK_DIR/$FILE_FAILING_TESTS";
 Utils::clean_test_results($WORK_DIR);
+
+
+# find defects4j binary
+chomp(my $defects4j_bin = `which defects4j`);
+# get the root (three levels up)
+my $defects4j_root = dirname(dirname(dirname($defects4j_bin)));
+my $mml_file = "$defects4j_root/mutation_testing_utils/default.mml";
+
+
+
+
 
 # Run the test suite, according to the provided flags
 if (defined $TEST_SUITE){
@@ -128,7 +215,518 @@ if (defined $TEST_SUITE){
 } elsif ($REL_TESTS) {
     # Compile and run only relevant developer-written tests
     $project->compile_tests() or die "Cannot compile test suite!";
+
     $project->run_relevant_tests($fail_tests) or die "Cannot run tests!";
+} elsif ($RUN_EACH_REL) {
+    # run each relevant tests individually, use defects4j test -e
+    my $all_test_file = "all_tests";
+
+    # Compile and run all relevant tests
+    print("\nrunning all relevant test methods\n");
+    $project->compile_tests() or die "Cannot compile test suite!";
+    $project->run_relevant_tests($fail_tests) or die "Cannot run tests!";
+    my $relevant_test_methods = Utils::read_tests_from_file($all_test_file);
+
+    my %seen;
+    my @unique_transformed_tests;
+    foreach my $test (@$relevant_test_methods) {
+        my $transformed_test_name = transform_test_name($test);
+        unless ($seen{$transformed_test_name}++) {
+            push @unique_transformed_tests, $transformed_test_name;
+        }
+    }
+
+    my $relevant_test_count = scalar(@unique_transformed_tests);
+    print "Number of tests: $relevant_test_count\n";
+
+    foreach my $test (@unique_transformed_tests) {
+        print("Test: $test\n");
+        $project->run_tests($fail_tests, $test);
+    }
+
+
+    # early termination
+    exit 0;
+} elsif ($RUN_EACH_REL_COV) {
+
+
+    my $start = time();
+
+    # run each relevant tests individually, use defects4j test -e
+    my $all_test_file = "all_tests";
+
+    # Compile and run all relevant tests
+    print("\nrunning all relevant test methods\n");
+    $project->compile_tests() or die "Cannot compile test suite!";
+    $project->run_relevant_tests($fail_tests) or die "Cannot run tests!";
+    my $relevant_test_methods = Utils::read_tests_from_file($all_test_file);
+    my $passing_covering_test_methods = Utils::read_tests_from_file("passing_covering_tests");
+
+
+    if ($pid eq "JacksonCore" || $pid eq "JacksonDatabind" || $pid eq "JacksonXml") {
+        system("cp", "$defects4j_root/mutation_testing_utils_shaded/Config.java", $config_file) == 0 or die "Failed to copy Config.java to $config_file";
+    } else {
+        system("cp", "$defects4j_root/mutation_testing_utils/Config.java", $config_file) == 0 or die "Failed to copy Config.java to $config_file";
+    }
+
+
+
+    # configure the mml_file
+    system("cp", $mml_file, ".");
+    system("rm", "-rf", "bin");
+    system("rm", "mutant_coverage.json");
+
+    my $mml_file = "default.mml";
+    my @ops = qw(AOR LOR SOR ORU ROR COR LVR STD);
+    my @classes;
+
+
+    # Step 1: collect class names
+
+    # Below is a way to collect all class names from target directories. but here we focus only on classes where real bugs impacted!!!!
+
+
+    my $find_dir;
+
+    if (-d "target/classes") {
+        $find_dir = "target/classes";
+    }
+    elsif (-d "build") {
+        $find_dir = "build";
+    }
+    else {
+        die "Error: Neither target/classes nor build directory exists.\n";
+    }
+
+    open(my $fh, "-|", "find", $find_dir, "-type", "f", "-name", "*.class")
+        or die "Cannot run find on $find_dir: $!";
+
+    while (my $file = <$fh>) {
+        chomp $file;
+        print "Found: $file\n";
+    }
+
+    close $fh;
+
+
+    # Run defects4j and capture output
+    my @raw_output = qx(defects4j export -p classes.modified 2>&1);
+
+    # Filter and clean
+    my @classes;
+    for my $line (@raw_output) {
+        chomp $line;
+        next if $line =~ /^Running ant/;   # skip the "Running ant ..." line
+        next if $line =~ /^\s*$/;          # skip empty lines
+        next unless $line =~ /^[a-zA-Z_]\w*(\.[a-zA-Z_]\w*){3,}/;  # 
+        push @classes, $line;
+    }
+
+    # Print results
+    print "✅ Collected ", scalar(@classes), " modified classes:\n";
+    print "$_\n" for @classes;
+
+
+    # Step 2: open the MML file for appending
+    open(my $out, ">>", $mml_file) or die "Cannot open $mml_file: $!";
+
+    print $out "\n\n// === Auto-generated scopes for all operators ===\n";
+    foreach my $cls (@classes) {
+        foreach my $op (@ops) {
+            print $out "$op<\"$cls\">;\n";
+        }
+    }
+    close($out);
+
+
+    # Step 3: execute the MML command
+    system("mmlc", "default.mml");
+
+    # Source directory (try in priority order)
+    my $src_dir;
+
+    if (-d "source") {
+        $src_dir = "source";
+    }
+    elsif (-d "src/main/java") {
+        $src_dir = "src/main/java";
+    }
+    elsif (-d "src/java") {
+        $src_dir = "src/java";
+    } elsif (-d "gson") {
+        $src_dir = "gson/src/main/java";
+    } elsif (-d "src") {
+        $src_dir = "src";
+    }
+    else {
+        print STDERR "❌tError: None of the source directories exist ('source', 'src/main/java', or 'src/java').\n";
+        exit 1;
+    }
+
+
+
+    mkdir "bin" unless -d "bin";
+
+    # Collect all .java files recursively
+    my @files = `find $src_dir -type f -name '*.java' ! -name '*\$Gson*' ! -path '*/internal/.java'`;
+
+
+
+
+    #my @files = `find $src_dir -type f -name "*.java"`;
+    chomp @files;
+    my $src_files = join(" ", @files);  # join them with spaces
+
+    system("Major", "--version");
+
+
+    # Determine base class directory
+    my $base_classes;
+
+    if (-d "target/classes") {
+        $base_classes = "target/classes";
+    }
+    elsif (-d "build") {
+        print("hhhhhhhhhhh");
+        $base_classes = "build";
+    }
+    else {
+        die "Error: Neither target/classes nor build directory exists!\n";
+    }
+
+
+    # Folder containing jar files
+    my $lib_dir;
+
+    if (-d "target/lib") {
+        $lib_dir = "target/lib";
+    }
+    elsif (-d "lib") {
+        $lib_dir = "lib";
+    }
+    else {
+        # optional: warn but not die
+        warn "⚠️  Neither target/lib nor lib directory exists. Continuing without jar folder.\n";
+        $lib_dir = undef;
+    }
+
+
+    # Collect all .jar files under dir(recursively)
+    my @jars;
+    if (defined $lib_dir && -d $lib_dir) {
+        find(
+            sub {
+                return unless -f $_;       # skip non-files
+                return unless /\.jar$/;    # only jar files
+                push @jars, $File::Find::name;
+            },
+            $lib_dir
+        );
+    }
+    else {
+        warn "⚠️  Skipping jar search — no valid lib directory.\n";
+    }
+
+    # sometimes these .jar files are from maven dependencies
+    # get the output from this: mvn help:evaluate -Dexpression=settings.localRepository -q -DforceStdout
+
+    my $maven_build="maven-build.xml";
+    if (-e $maven_build) {
+
+        chomp(my $maven_repo = `mvn help:evaluate -Dexpression=settings.localRepository -q -DforceStdout`);
+
+        open my $fh, "<", $maven_build or die "Cannot open $maven_build: $!";
+
+        my $in_path = "";  # track whether we’re inside a <path> block
+        while (<$fh>) {
+
+            chomp;
+
+            # Detect when we enter/exit the relevant <path> sections
+            if (/<path\s+id="(build(?:\.test)?\.classpath)"/) {
+                $in_path = $1;
+                next;
+            }
+            if (/<\/path>/) {
+                $in_path = "";
+                next;
+            }
+
+            # Extract pathelement lines while inside relevant path
+            if ($in_path =~ /^build/ && /<pathelement\s+location="([^"]+)"/) {
+                my $loc = $1;
+
+                # Filter only those containing ${maven.repo.local}
+                next unless $loc =~ /\$\{maven\.repo\.local\}/;
+
+                # Replace ${maven.repo.local} with actual repo path
+                $loc =~ s/\$\{maven\.repo\.local\}/$maven_repo/;
+                push @jars, $loc;
+            }
+        }
+
+        close $fh;
+
+    }
+
+
+    if ($pid eq "JacksonXml" ) {
+
+        push @jars, "$defects4j_root/state_utils/JacksonXML/jackson-core-2.8.0.rc1.jar";
+        push @jars, "$defects4j_root/state_utils/JacksonXML/jackson-module-jaxb-annotations-2.8.0.rc1.jar";
+        push @jars, "$defects4j_root/state_utils/JacksonXML/jackson-databind-2.8.0.rc1.jar";
+        push @jars, "$defects4j_root/state_utils/JacksonXML/jackson-annotations-2.8.0.rc1.jar";
+    }
+
+    if ($pid eq "Time") {
+        push @jars, "$defects4j_root/mutation_testing_utils/joda-convert-1.1.jar";
+    }
+
+    if ($pid eq "JacksonDatabind" && $vid eq "11b") {
+        print("11b\n\n");
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_11/jackson-core-2.5.1.jar";
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_11/jackson-annotations-2.5.0.jar";
+    } elsif ($pid eq "JacksonDatabind" && $vid eq "12b") {
+
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_12/jackson-core-2.4.5.jar";
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_12/jackson-annotations-2.4.0.jar";
+    } elsif ($pid eq "JacksonDatabind" && $vid eq "2b") {
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind/jackson-core-2.4.0-rc3.jar";
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind/jackson-annotations-2.4.0-rc3.jar";
+    } elsif ($pid eq "JacksonDatabind" && $vid eq "18b") {
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_18/jackson-core-2.6.0-rc1.jar";
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_18/jackson-annotations-2.6.0-rc1.jar";
+    } elsif ($pid eq "JacksonDatabind" && ($vid eq "22b" || $vid eq "23b")) {
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_22/jackson-core-2.6.0-rc3.jar";
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_22/jackson-annotations-2.6.0-rc3.jar";
+    } elsif ($pid eq "JacksonDatabind" && $vid eq "24b") {
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_24/jackson-core-2.6.0.jar";
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_24/jackson-annotations-2.6.0.jar";
+    } elsif ($pid eq "JacksonDatabind" && $vid eq "26b") {
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_26/jackson-core-2.6.1.jar";
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_26/jackson-annotations-2.6.0.jar";
+    } elsif ($pid eq "JacksonDatabind" && $vid eq "30b") {
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_30/jackson-core-2.6.2.jar";
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_30/jackson-annotations-2.6.0.jar";
+    } elsif ($pid eq "JacksonDatabind" && $vid eq "31b") {
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_31/jackson-core-2.6.3.jar";
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_31/jackson-annotations-2.6.0.jar";
+    } elsif ($pid eq "JacksonDatabind" && $vid eq "33b") {
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_33/jackson-core-2.6.3.jar";
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_33/jackson-annotations-2.6.0.jar";
+    } elsif ($pid eq "JacksonDatabind" && $vid eq "37b") {
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_37/jackson-core-2.7.0.jar";
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_37/jackson-annotations-2.7.0.jar";
+    } elsif ($pid eq "JacksonDatabind" && $vid eq "44b") {
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_44/jackson-core-2.7.2.jar";
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_44/jackson-annotations-2.7.0.jar";
+    } elsif ($pid eq "JacksonDatabind" && $vid eq "48b") {
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_48/jackson-core-2.7.4.jar";
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_48/jackson-annotations-2.7.0.jar";
+    } elsif ($pid eq "JacksonDatabind" && $vid eq "53b") {
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_53/jackson-core-2.7.5.jar";
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_53/jackson-annotations-2.7.0.jar";
+    } elsif ($pid eq "JacksonDatabind" && $vid eq "54b") {
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_54/jackson-core-2.8.0.jar";
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_54/jackson-annotations-2.8.0.jar";
+    } elsif ($pid eq "JacksonDatabind" && $vid eq "58b") {
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_58/jackson-core-2.7.7.jar";
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_58/jackson-annotations-2.7.0.jar";
+    } elsif ($pid eq "JacksonDatabind" && $vid eq "59b") {
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_59/jackson-core-2.8.3.jar";
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_59/jackson-annotations-2.8.0.jar";
+    } elsif ($pid eq "JacksonDatabind" && $vid eq "63b") {
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_63/jackson-core-2.8.3.jar";
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_63/jackson-annotations-2.8.0.jar";
+    } elsif ($pid eq "JacksonDatabind" && $vid eq "69b") {
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_69/jackson-core-2.7.8.jar";
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_69/jackson-annotations-2.7.0.jar";
+    } elsif ($pid eq "JacksonDatabind" && $vid eq "73b") {
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_73/jackson-core-2.8.6.jar";
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_73/jackson-annotations-2.8.0.jar";
+    } elsif ($pid eq "JacksonDatabind" && $vid eq "75b") {
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_75/jackson-core-2.8.8.jar";
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_75/jackson-annotations-2.8.0.jar";
+    } elsif ($pid eq "JacksonDatabind" && $vid eq "78b") {
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_78/jackson-core-2.8.8.jar";
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_78/jackson-annotations-2.8.0.jar";
+    } elsif ($pid eq "JacksonDatabind" && $vid eq "81b") {
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_81/jackson-core-2.9.0.pr3.jar";
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_81/jackson-annotations-2.9.0.pr3.jar";
+    } elsif ($pid eq "JacksonDatabind" && $vid eq "87b") {
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_87/jackson-core-2.8.9.jar";
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_87/jackson-annotations-2.8.0.jar";
+    } elsif ($pid eq "JacksonDatabind" && $vid eq "91b") {
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_91/jackson-core-2.8.10.jar";
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_91/jackson-annotations-2.8.0.jar";
+    } elsif ($pid eq "JacksonDatabind" && $vid eq "92b") {
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_92/jackson-core-2.7.9.jar";
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_92/jackson-annotations-2.7.0.jar";
+    } elsif ($pid eq "JacksonDatabind" && $vid eq "93b") {
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_93/jackson-core-2.8.10.jar";
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_93/jackson-annotations-2.8.0.jar";
+    } elsif ($pid eq "JacksonDatabind" && $vid eq "94b") {
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_94/jackson-core-2.7.9.jar";
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_94/jackson-annotations-2.7.0.jar";
+    } elsif ($pid eq "JacksonDatabind" && $vid eq "103b") {
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_103/jackson-core-2.9.7.jar";
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_103/jackson-annotations-2.9.0.jar";
+    } elsif ($pid eq "JacksonDatabind" && $vid eq "109b") {
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_109/jackson-core-2.10.0.jar";
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_109/jackson-annotations-2.10.0.jar";
+    } elsif ($pid eq "JacksonDatabind" && $vid eq "111b") {
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_111/jackson-core-2.9.9.jar";
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_111/jackson-annotations-2.9.0.jar";
+    } elsif ($pid eq "JacksonDatabind" && $vid eq "112b") {
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_112/jackson-core-2.9.9.jar";
+        push @jars, "$defects4j_root/state_utils/JacksonDatabind_112/jackson-annotations-2.9.0.jar";
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+    # Join jars into a classpath string
+    my $jar_path = join(":", @jars);
+    print("hahaha");
+    print($jar_path);
+    # Final classpath: target/classes + all jars
+    my $classpath = "$base_classes:$jar_path";
+
+
+    my $cmd = "major --mml default.mml.bin -d bin -classpath \"$classpath\" $src_files";
+
+    print "✅ Running command:\n$cmd\n\n";
+    print($src_files);
+    print("jjjjjjjjj");
+
+
+    #print "$classpath";
+    #print "\n 666";
+    #print "$src_files";
+    #print "jjjjjjjjjj";
+
+    system($cmd) == 0
+        or die "❌ Failed to run Major (exit code $?): $!";
+
+
+
+    # --- Get current working directory ---
+    my $cwd = getcwd();
+    print "📂 Current working directory: $cwd\n";
+
+    # --- Define relative paths ---
+    my $src_root = "bin";
+    # Destination root directory
+    my $dst_root;
+
+    if (-d "source") {
+        $dst_root = "build";
+    } elsif (-d "build/classes") {
+        $dst_root = "build/classes";
+    } else {
+        $dst_root = "target/classes";
+    }
+
+    # --- Convert to absolute paths ---
+    $src_root = abs_path("$cwd/$src_root");
+    $dst_root = abs_path("$cwd/$dst_root");
+
+    find(
+        sub {
+            return unless /\.class$/;
+            my $src_file = $File::Find::name;
+            chomp($src_file);
+
+            # Compute relative and destination paths
+            my $rel_path = File::Spec->abs2rel($src_file, $src_root);
+            my $dst_file = File::Spec->catfile($dst_root, $rel_path);
+
+            # Ensure directory exists
+            my $dst_dir = $dst_file;
+            $dst_dir =~ s|/[^/]+$||;
+            make_path($dst_dir) unless -d $dst_dir;
+
+            # Use absolute path to avoid cwd issues
+            my $abs_src = abs_path($src_file);
+            unless ($abs_src && -f $abs_src) {
+                die "❌ Source file missing: $src_file\n";
+            }
+
+            system("cp", $abs_src, $dst_file) == 0
+                or die "❌ Failed to copy $src_file → $dst_file: $!";
+            print "✅ Copied: $rel_path\n";
+        },
+        $src_root
+    );
+
+    print "\n🎉 Done copying .class files!\n";
+
+
+    my %seen;
+    my @unique_transformed_tests;
+    foreach my $test (@$passing_covering_test_methods) {
+        unless ($seen{$test}++) {
+            push @unique_transformed_tests, $test;
+        }
+    }
+
+    my $json_file = "mutant_coverage.json";
+    foreach my $test (@unique_transformed_tests) {
+
+        # --- Step 1: Read existing data (if file exists) ---
+
+        # --- Read JSON file manually ---
+        my $json_text = "";
+        if (-e $json_file) {
+            open my $fh, "<", $json_file or die "Cannot open $json_file: $!";
+            local $/;                # read entire file
+            $json_text = <$fh>;
+            close $fh;
+        }
+
+        my @data = ();
+        @data = @{ decode_json($json_text) } if $json_text;
+
+
+
+        # --- Step 2: Add a new pair ---
+        push @data, { name => $test, mutant_ids => [] };
+
+        # --- Step 3: Save back to JSON file ---
+        # --- Write JSON file manually ---
+        my $json_out = to_json(\@data, { pretty => 1 });
+        open my $fh_out, ">", $json_file or die "Cannot write $json_file: $!";
+        print $fh_out $json_out;
+        close $fh_out;
+
+
+        
+
+
+        print("➡️ Running test: $test\n");
+        $project->run_tests($fail_tests, $test);
+        print "✅ Scanning mutant coverage for $test";
+    }
+
+
+    my $end = time();
+    Utils::record_execution_time("scan_mutant_coverage", $start, $end);
+
+    exit 0;
 } else {
     # Compile and run developer-written tests
     $project->compile_tests() or die "Cannot compile test suite!";

@@ -43,6 +43,9 @@ of the checked-out project version.
     <path id="test.classpath">
         <path refid="compile.classpath"/>
         <pathelement location="${d4j.workdir}/src/test"/>
+        <fileset dir="${d4j.home}/state_utils/external_jars">
+                <include name="**/*.jar"/>
+        </fileset>
     </path>
     <property name="build.classes" value="${classes.dir}" />
     <property name="test.home" value="${d4j.workdir}/src/test" />

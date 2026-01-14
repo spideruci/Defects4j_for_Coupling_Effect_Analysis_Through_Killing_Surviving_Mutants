@@ -1,0 +1,5 @@
+org.apache.commons.compress.archivers.tar.TarArchiveOutputStreamTest::testOldEntryStarMode
+org.apache.commons.compress.archivers.tar.TarArchiveOutputStreamTest
+org.apache.commons.compress.archivers.tar.TarUtilsTest::testRoundTripOctalOrBinary12
+org.apache.commons.compress.archivers.tar.TarArchiveOutputStreamTest::testBigNumberStarMode
+org.apache.commons.compress.archivers.tar.TarUtilsTest

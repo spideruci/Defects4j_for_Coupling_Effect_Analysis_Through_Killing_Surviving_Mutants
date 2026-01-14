@@ -1,0 +1,3 @@
+org.jfree.chart.renderer.category.junit.MinMaxCategoryRendererTests::testCloning
+org.jfree.chart.renderer.category.junit.MinMaxCategoryRendererTests::testHashcode
+org.jfree.chart.renderer.category.junit.MinMaxCategoryRendererTests::testSerialization

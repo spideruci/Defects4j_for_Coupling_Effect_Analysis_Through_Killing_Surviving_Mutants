@@ -1,0 +1,11 @@
+org.joda.time.TestPeriod_Basics::testNormalizedStandard_yearMonth2
+org.joda.time.TestPeriod_Basics::testNormalizedStandard_yearMonth1
+org.joda.time.TestPeriod_Basics::testNormalizedStandard_yearMonthDay
+org.joda.time.TestPeriod_Basics::testNormalizedStandard_periodType_yearMonthDay
+org.joda.time.TestPeriod_Basics::testNormalizedStandard_periodType_months3
+org.joda.time.TestPeriod_Basics::testNormalizedStandard_yearMonthWeekDay
+org.joda.time.TestPeriod_Basics::testNormalizedStandard_periodType_yearMonthWeekDay
+org.joda.time.TestPeriod_Basics::testNormalizedStandard_periodType_years
+org.joda.time.TestPeriod_Basics::testNormalizedStandard_periodType_yearMonth3
+org.joda.time.TestPeriod_Basics::testNormalizedStandard_periodType_yearMonth2
+org.joda.time.TestPeriod_Basics::testNormalizedStandard_periodType_yearMonth1

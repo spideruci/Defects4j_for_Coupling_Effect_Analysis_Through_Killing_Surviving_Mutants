@@ -1,0 +1,8 @@
+org.joda.time.format.TestDateTimeFormatter::testParseInto_simple_precedence
+org.joda.time.format.TestDateTimeFormatter::testParseInto_offsetParsed
+org.joda.time.format.TestDateTimeFormatter::testParseInto_simple
+org.joda.time.tz.TestCompiler::testCompile
+org.joda.time.format.TestDateTimeFormatter::testParseInto_chrono
+org.joda.time.format.TestDateTimeFormatter::testParseInto_zone
+org.joda.time.format.TestDateTimeFormatter::testParseInto_zone2
+org.joda.time.format.TestDateTimeFormatter::testParseInto_zone3

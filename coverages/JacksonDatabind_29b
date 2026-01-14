@@ -1,0 +1,9 @@
+com.fasterxml.jackson.databind.jsontype.TestExternalId::testIssue798
+com.fasterxml.jackson.databind.jsontype.TestExternalId::testIssue831
+com.fasterxml.jackson.databind.jsontype.TestExternalId::testWithAsValue
+com.fasterxml.jackson.databind.jsontype.TestExternalId::testWithScalar118
+com.fasterxml.jackson.databind.jsontype.TestVisibleTypeId::testVisibleTypeId408
+com.fasterxml.jackson.databind.jsontype.TestCustomTypeIdResolver::testCustomWithExternal
+com.fasterxml.jackson.databind.jsontype.TestExternalId::testMultipleTypeIdsDeserialization
+com.fasterxml.jackson.databind.jsontype.TestExternalId::testSimpleDeserialization
+com.fasterxml.jackson.databind.jsontype.TestExternalId::testInverseExternalId928

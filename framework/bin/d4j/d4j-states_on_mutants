@@ -1,0 +1,596 @@
+#-------------------------------------------------------------------------------
+# Copyright (c) 2014-2024 René Just, Darioush Jalali, and Defects4J contributors.
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+# THE SOFTWARE.
+#-------------------------------------------------------------------------------
+
+=pod
+
+=head1 NAME
+
+d4j-states -- run tests on a checked-out project version.
+
+=head1 SYNOPSIS
+
+  d4j-states [-w work_dir] [-r | [-t single_test] [-s test_suite]]
+
+=head1 DESCRIPTION
+
+This script executes a test or test suite on a checked-out project version and
+reports failing test cases with state instrumentation. It also writes all failing test cases to the file
+F<failing_tests_states>.
+
+=head1 OPTIONS
+
+=over 4
+
+=item -w F<work_dir>
+
+The working directory of the checked-out project version (optional). Default is
+the current directory.
+
+=item -r
+
+Only execute relevant developer-written tests (optional). By default all developer-written
+tests of the checked-out project version are executed.
+
+=item -t C<single_test>
+
+Only run this single test method (optional). By default all tests are executed.
+Format: <test_class>::<test_method>.
+
+=item -s F<test_suite>
+
+The archive file name of an external test suite (optional). The default test suite is the
+developer-written test suite of the checked-out project version.
+See L<Test suites|/"Test suites">.
+
+=back
+
+=head1 Test suites
+
+An external test suite has to be provided as an archive that contains the test sources.
+Format of the archive file name:
+
+F<C<project_id>-C<version_id>-C<test_suite_src>.C<test_id>.tar.bz2>
+
+Examples:
+
+=over 4
+
+=item * F<Lang-11f-randoop.1.tar.bz2>
+
+=item * F<Lang-12b-evosuite-weakmutation.1.tar.bz2>
+
+=item * F<Lang-12f-evosuite-branch.1.tar.bz2>
+
+=back
+
+=cut
+
+use strict;
+use warnings;
+use strict;
+use File::Basename;
+
+use Constants;
+use Utils;
+use Project;
+use Getopt::Std;
+use Pod::Usage;
+use File::Copy;
+use File::Path qw(make_path);
+use File::Find;
+use File::Spec;
+use File::Find;
+use Cwd qw(abs_path getcwd);
+use File::Temp qw(tempfile);
+use File::Copy qw(move copy);
+use File::Basename qw(dirname);
+use Carp qw(croak);
+use JSON;
+
+my $start0 = time();
+my %cmd_opts;
+getopts('m:', \%cmd_opts) or pod2usage({ -verbose => 1, -input => __FILE__ });
+
+my $m_id = $cmd_opts{m};
+my $input_file = "surviving.json";
+
+if (defined $m_id) {
+
+} else {
+    die  "No mutant ID provided.\n";
+}
+
+
+
+# ------------ Configure additional dependencies--------------------
+
+
+# find defects4j binary
+chomp(my $defects4j_bin = `which defects4j`);
+# get the root (three levels up)
+my $defects4j_root = dirname(dirname(dirname($defects4j_bin)));
+
+# Record start time
+my $start_time = time();
+
+
+my $WORK_DIR = Utils::get_abs_path($cmd_opts{w} // ".");
+
+my $config = Utils::read_config_file("$WORK_DIR/$CONFIG");
+my $pid = $config->{$CONFIG_PID};
+my $vid = $config->{$CONFIG_VID};
+my $bid = Utils::check_vid($vid)->{bid};
+
+
+
+my $config_file;
+# Check which test source directory exists
+
+if ($pid eq "Chart") {
+    $config_file = "$WORK_DIR/tests/major/mutation/Config.java";
+} elsif ($pid eq "Closure") {
+    $config_file = "$WORK_DIR/test/major/mutation/Config.java";
+} elsif (-d "$WORK_DIR/src/test/java") {
+
+    $config_file = "$WORK_DIR/src/test/java/major/mutation/Config.java";
+} elsif (-d "$WORK_DIR/gson/src/test/java") {
+    $config_file = "$WORK_DIR/gson/src/test/java/major/mutation/Config.java";
+} else {
+    $config_file = "$WORK_DIR/src/test/major/mutation/Config.java";
+}
+
+
+
+
+
+$config_file = abs_path($config_file);
+
+
+
+
+my $trigger_file = "$defects4j_root/framework/projects/$pid/trigger_tests/$bid";
+
+
+-e "bin" or die "❌ File not found: bin\n";
+-e "surviving.json" or die "❌ File not found: surviving.json\n";
+
+unless(defined $config) {
+    print(STDERR "$WORK_DIR is not a valid working directory!\n");
+    exit 1;
+}
+
+# Instantiate project and set working directory
+my $project = Project::create_project($config->{$CONFIG_PID});
+$project->{prog_root} = $WORK_DIR;
+
+
+
+if ($m_id == -1) {
+    print "\n📘 Running workflow for ALL mutants in $input_file\n";
+    my @all_mutants;
+    my $total;
+    my $total_test_runs = 0; 
+    {
+        open my $fh, '<', $input_file or die "Cannot open $input_file: $!";
+        local $/;
+        my $json_text = <$fh>;
+        close $fh;
+        my $json = JSON->new->allow_nonref;
+        my $data = $json->decode($json_text);
+        @all_mutants = sort { $a <=> $b } keys %$data;
+        $total = scalar @all_mutants;
+
+        # --- Count total test runs across all mutants ---
+        foreach my $mid (@all_mutants) {
+            my $tests = $data->{$mid};
+            $total_test_runs += scalar @$tests if ref($tests) eq 'ARRAY';
+        }
+
+    }
+
+
+    print "Found $total surviving mutants with $total_test_runs runs.\n\n";
+
+
+
+    ################### 3. PUT Mutated classes under target directories
+
+    system("rm", "-rf", "target");
+    system("rm", "-rf", "build");
+    system("rm", "-rf", "build-tests");
+    $project->compile_tests() or die "Cannot compile test suite!";
+  
+
+    my $cwd = getcwd();
+    print "📂 Current working directory: $cwd\n";
+
+    my $dst_root;
+
+    if (-d "source") {
+        $dst_root = "$cwd/build";
+    } elsif (-d "build/classes") {
+        $dst_root = "$cwd/build/classes";
+    } else {
+        $dst_root = "$cwd/target/classes";
+    }
+    my $src_root = abs_path("$cwd/bin");
+
+    find(
+        sub {
+            return unless /\.class$/;
+            my $src_file = $File::Find::name;
+            chomp($src_file);
+
+            my $rel_path = File::Spec->abs2rel($src_file, $src_root);
+            my $dst_file = File::Spec->catfile($dst_root, $rel_path);
+
+            my $dst_dir = $dst_file;
+            $dst_dir =~ s|/[^/]+$||;
+            make_path($dst_dir) unless -d $dst_dir;
+
+            my $abs_src = abs_path($src_file);
+            unless ($abs_src && -f $abs_src) {
+                die "❌ Source file missing: $src_file\n";
+            }
+
+            system("cp", $abs_src, $dst_file) == 0
+                or die "❌ Failed to copy $src_file → $dst_file: $!";
+        },
+        $src_root
+    );
+    print "\n🎉 Done replacing .class files!\n";
+
+    ################### 4. Mutation Test Run
+
+
+
+    print "\n[LOG]  Start Collecting States on Mutants\n";
+    print("\n[INFO Instrumentation] - State Instrumentation\n");
+
+    system("java", "-jar", "$defects4j_root/state_utils/o.jar", ".", "all") == 0
+        or die "Instrumentation failed: $!";
+
+
+    my $finished = 0;
+    foreach my $mid (@all_mutants) {
+        print "\n==============================\n";
+        print "▶️  Running workflow for mutant $mid\n";
+        print "==============================\n";
+        run_mutation_workflow($mid);
+        $finished = $finished + 1;
+        print("progress: $finished/$total mutants.");
+    }
+
+    print "\n🎯 All surviving mutants processed successfully!\n";
+} else {
+
+
+
+    ################### 3. PUT Mutated classes under target directories
+
+    system("rm", "-rf", "target");
+    system("rm", "-rf", "build");
+    system("rm", "-rf", "build-tests");
+    $project->compile_tests() or die "Cannot compile test suite!";
+  
+
+    my $cwd = getcwd();
+    print "📂 Current working directory: $cwd\n";
+
+    my $src_root = abs_path("$cwd/bin");
+    my $dst_root;
+
+    if (-d "source") {
+        $dst_root = "$cwd/build";
+    } else {
+        $dst_root = "$cwd/target/classes";
+    }
+
+    find(
+        sub {
+            return unless /\.class$/;
+            my $src_file = $File::Find::name;
+            chomp($src_file);
+
+            my $rel_path = File::Spec->abs2rel($src_file, $src_root);
+            my $dst_file = File::Spec->catfile($dst_root, $rel_path);
+
+            my $dst_dir = $dst_file;
+            $dst_dir =~ s|/[^/]+$||;
+            make_path($dst_dir) unless -d $dst_dir;
+
+            my $abs_src = abs_path($src_file);
+            unless ($abs_src && -f $abs_src) {
+                die "❌ Source file missing: $src_file\n";
+            }
+
+            system("cp", $abs_src, $dst_file) == 0
+                or die "❌ Failed to copy $src_file → $dst_file: $!";
+        },
+        $src_root
+    );
+    print "\n🎉 Done replacing .class files!\n";
+
+    ################### 4. Mutation Test Run
+
+
+
+    print "\n[LOG]  Start Collecting States on Mutants\n";
+    print("\n[INFO Instrumentation] - State Instrumentation\n");
+
+    system("java", "-jar", "$defects4j_root/state_utils/o.jar", ".", "all") == 0
+        or die "Instrumentation failed: $!";
+
+
+    my $finished = 0;
+
+
+    run_mutation_workflow($m_id);
+}
+
+
+
+
+sub run_mutation_workflow {
+    my $temp_state_file = "stateData/temp/statefile.json";
+    my $fail_tests = "failing_on_surviving.txt";
+    system("rm", "-rf", "initialize");
+    system("rm", "-rf", "stateData");
+
+
+    my ($m_id) = @_;
+    die "❌ Missing mutant ID argument.\n" unless defined $m_id;
+
+    ################### 1. SET mutant id in Config.java
+
+    eval {
+        print $m_id;
+        overwrite_line($config_file, 31, "    public static int __M_NO = $m_id;", { backup => 1 });
+    };
+    if ($@) {
+        die "Failed to overwrite line in $config_file: $@";
+    }
+
+    my $target_dir_class;
+
+    if (-d File::Spec->catdir("target", "test-classes")) {
+        $target_dir_class = File::Spec->catdir("target", "test-classes");
+    }
+    elsif (-d File::Spec->catdir("target", "tests")) {
+        $target_dir_class = File::Spec->catdir("target", "tests");
+    }
+    elsif (-d "build-tests") {
+        $target_dir_class = "build-tests";
+    } elsif (-d "build/tests") {
+        $target_dir_class = "build/tests";
+    }
+    else {
+        die "Error: Neither target/test-classes, target/tests, nor build-tests exists!\n";
+    }
+
+
+
+    # --- Check that directory exists ---
+    unless (-d $target_dir_class) {
+        die "❌ Directory '$target_dir_class' does not exist. Terminating.\n";
+    }
+
+
+
+    # --- Build javac command ---
+
+
+
+    #my $classpath = ".:$defects4j_root/state_utils/external_jars/*";
+
+    my $classpath;
+    if ($pid eq "JacksonCore" || $pid eq "JacksonDatabind" || $pid eq "JacksonXml") {
+        $classpath = ".:$defects4j_root/state_utils/shaded_external_jars/*";
+    } else {
+        $classpath = ".:$defects4j_root/state_utils/external_jars/*";
+    }
+
+    my $javac_cmd = "javac -cp '$classpath' -d '$target_dir_class' $config_file";
+
+    print "▶️ Running: $javac_cmd\n";
+
+
+    eval {
+        print $m_id;
+        overwrite_line($config_file, 31, "    public static int __M_NO = $m_id;", { backup => 1 });
+    };
+
+    system("rm", "-f", "target/test-classes/major/mutation/Config.class");
+    system("rm", "-f", "target/tests/major/mutation/Config.class");
+    system("rm", "-f", "build-tests/major/mutation/Config.class");
+
+    my $ret = system($javac_cmd);
+
+
+
+    ################### 2. Read tests to be run
+    my $input_file = abs_path("surviving.json");
+    open my $fhj, '<', $input_file or die "Cannot open $input_file: $!";
+    local $/;
+    my $json_text = <$fhj>;
+    close $fhj;
+
+    my $json = JSON->new->allow_nonref;
+    my $data = $json->decode($json_text);
+
+    my @tests;
+    if (exists $data->{$m_id}) {
+        @tests = @{ $data->{$m_id} };
+        my $count = scalar @tests;
+        print("Run $count tests for Surviving mutant: $m_id \n");
+    } else {
+        die "⚠️  Mutant ID $m_id not found or has no associated tests.\n";
+    }
+
+
+    foreach my $test (@tests) {
+        system("mkdir", "-p", "mutant_states/$m_id/$test/") == 0
+            or die "Failed to create folder mutant_states/$m_id/$test/: $!";
+        print("jjjj 1");
+        print($test);
+
+
+        if ($pid eq "JacksonDatabind" && $m_id == 51 && $test eq "com.fasterxml.jackson.databind.deser.TestCustomFactory::testCustomBeanDeserializer") {
+            # the execution got stuck here; this is a dirty workaround : )
+            # even thought the mutant was demonstrated surviving, our instrumentation may occasionally modify program behavior and make the tests fail or crash.
+            print("\nskip\n");
+            next;
+        }
+
+
+
+        $project->run_tests($fail_tests, $test);
+        print("jjjj 2");
+
+        if (-e $temp_state_file) {
+            system("mv", $temp_state_file, "mutant_states/$m_id/$test/state.json") == 0
+                or warn "⚠️ Failed to move state file for test $test\n";
+        }
+    }
+
+    print "\n✅ Completed mutation workflow for mutant $m_id!\n";
+}
+
+
+
+
+
+
+################## 5. Original Test Run
+
+
+#eval {
+ # overwrite_line($config_file, 31, "    public static int __M_NO = -1;", { backup => 1 });
+#};
+#if ($@) {
+#  die "Failed to overwrite line: $@";
+#}
+
+
+
+#print "\n[LOG]  Start Collecting States on Original Program\n";
+
+
+#foreach my $test (@tests) {
+#    $project->run_tests($fail_tests, $test);
+#    system("mkdir", "-p", "original_states/$test/") == 0 or die "Failed to create folder original_states/$test/: $!";
+#    if (-e $temp_state_file) {
+#        system("mv", $temp_state_file, "original_states/$test/state.json");
+#    }
+#}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# overwrite_line($path, $line_num, $new_text, \%opts)
+#  - $path      : path to file
+#  - $line_num  : 1-based line number to overwrite
+#  - $new_text  : new content for that line (a trailing "\n" will be added if missing)
+#  - %opts      : optional hash:
+#       backup => 1     # create path.bak before replacing
+sub overwrite_line {
+    my ($path, $line_num, $new_text, $opts_ref) = @_;
+    $opts_ref ||= {};
+    print $path;
+
+    croak "Missing path" unless defined $path;
+    croak "line_num must be a positive integer" unless defined $line_num && $line_num =~ /^\d+$/ && $line_num > 0;
+    $new_text .= "\n" unless defined $new_text && $new_text =~ /\n\z/;  # ensure newline
+
+    # stat original to preserve mode/owner if possible
+    my @st = stat($path);
+    my $have_stat = defined $st[0];
+    my ($mode, $uid, $gid) = ($st[2], $st[4], $st[5]) if $have_stat;
+
+    open my $in, '<', $path or croak "Can't open '$path' for reading: $!";
+
+    my $dir = dirname($path);
+    my ($tmp_fh, $tmp_name) = tempfile(DIR => $dir);
+    binmode $tmp_fh;
+
+    my $i = 0;
+    my $replaced = 0;
+    while (my $line = <$in>) {
+        $i++;
+        if ($i == $line_num) {
+            print $tmp_fh $new_text or croak "Write failed to tmp file: $!";
+            $replaced = 1;
+        } else {
+            print $tmp_fh $line or croak "Write failed to tmp file: $!";
+        }
+    }
+
+    # target line beyond EOF: append blank lines then the new line
+    if (!$replaced) {
+        for my $j (($i + 1) .. ($line_num - 1)) {
+            print $tmp_fh "\n" or croak "Write failed to tmp file: $!";
+        }
+        print $tmp_fh $new_text or croak "Write failed to tmp file: $!";
+    }
+
+    close $in;
+    close $tmp_fh;
+
+    # optional backup
+    if ($opts_ref->{backup}) {
+        copy($path, "$path.bak") or croak "Failed to create backup '$path.bak': $!";
+    }
+
+    # replace file atomically
+    move($tmp_name, $path) or croak "Failed to move tmp file to '$path': $!";
+
+    # restore mode/ownership where possible
+    if ($have_stat) {
+        chmod($mode & 07777, $path);
+        # chown may require privileges; ignore errors
+        chown($uid, $gid, $path);
+    }
+
+    return 1;
+}
+
+
+
+my $end0 = time();
+Utils::record_execution_time("states_on_mutants", $start0, $end0);
+
+
+
+1;

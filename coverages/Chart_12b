@@ -1,0 +1,3 @@
+org.jfree.chart.plot.junit.MultiplePiePlotTests::testEquals
+org.jfree.chart.plot.junit.MultiplePiePlotTests::testCloning
+org.jfree.chart.plot.junit.MultiplePiePlotTests::testSerialization

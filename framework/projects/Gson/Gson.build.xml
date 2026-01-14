@@ -74,6 +74,9 @@ of the checked-out project version.
         <fileset dir="${d4j.dir.projects}/Gson/lib/">
              <include name="**/*.jar" />
         </fileset>
+        <fileset dir="${d4j.home}/state_utils/external_jars">
+            <include name="**/*.jar"/>
+        </fileset>
     </path>
 
     <!-- List of all developer-written tests that reliably pass on the fixed version -->

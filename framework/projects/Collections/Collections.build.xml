@@ -40,9 +40,15 @@ of the checked-out project version.
     <path id="test.classpath">
         <pathelement location="${build.home}/classes"/>
         <pathelement location="${build.home}/tests"/>
+        <fileset dir="${d4j.home}/state_utils/external_jars">
+            <include name="**/*.jar"/>
+        </fileset>
     </path>
     <path id="compile.classpath">
         <pathelement location="${build.home}/classes" />
+        <fileset dir="${d4j.home}/state_utils/external_jars">
+            <include name="**/*.jar"/>
+        </fileset>
     </path>
     <property name="test.classes.dir" value="${build.home}/tests"/>
     <property name="classes.dir" value="${build.home}/classes"/>
@@ -56,11 +62,18 @@ of the checked-out project version.
 
     <!-- Classpath to run developer-written tests -->
     <path id="d4j.test.classpath">
+        <fileset dir="${d4j.home}/state_utils/external_jars">
+            <include name="**/*.jar"/>
+        </fileset>
+
         <path refid="test.classpath"/>
         <pathelement location="${classes.dir}"/>
 	<pathelement location="${test.classes.dir}"/>
 	<pathelement path="${junit.jar}" />
         <pathelement location="${easymock.jar}"/>
+        <fileset dir="${d4j.home}/state_utils/external_jars">
+            <include name="**/*.jar"/>
+        </fileset>
     </path>
 
     <!-- List of all developer-written tests that reliably pass on the fixed version -->

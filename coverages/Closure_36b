@@ -1,0 +1,9 @@
+com.google.javascript.jscomp.InlineVariablesTest::testOverlappingInlineFunctions
+com.google.javascript.jscomp.InlineVariablesTest::testInlineNamedFunction
+com.google.javascript.jscomp.IntegrationTest::testNegativeZero
+com.google.javascript.jscomp.IntegrationTest::testBug1962380
+com.google.javascript.jscomp.InlineVariablesTest::testInlineFunctionDeclaration
+com.google.javascript.jscomp.IntegrationTest::testInlineVariables
+com.google.javascript.jscomp.CommandLineRunnerTest::testDebugFlag4
+com.google.javascript.jscomp.InlineVariablesTest::testCrossFunctionsAsLeftLeaves
+com.google.javascript.jscomp.CommandLineRunnerTest::testDebugFlag3

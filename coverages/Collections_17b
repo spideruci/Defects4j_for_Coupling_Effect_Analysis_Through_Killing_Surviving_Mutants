@@ -1,0 +1,8 @@
+org.apache.commons.collections.TestPredicateUtils::testTransformedPredicate
+org.apache.commons.collections.TestCollectionUtils::find
+org.apache.commons.collections.TestClosureUtils::testSwitchClosure
+org.apache.commons.collections.functors.TestEqualPredicate::testPredicateTypeCanBeSuperClassOfObject
+org.apache.commons.collections.TestListUtils::testIndexOf
+org.apache.commons.collections.TestClosureUtils::testSwitchMapClosure
+org.apache.commons.collections.TestTransformerUtils::testSwitchTransformer
+org.apache.commons.collections.TestTransformerUtils::testSwitchMapTransformer

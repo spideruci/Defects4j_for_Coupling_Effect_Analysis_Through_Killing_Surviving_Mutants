@@ -1,0 +1,16 @@
+org.apache.commons.cli.DefaultParserTest::testUnlimitedArgs
+org.apache.commons.cli.DefaultParserTest::testMultipleWithLong
+org.apache.commons.cli.DefaultParserTest::testNegativeOption
+org.apache.commons.cli.CommandLineTest::testGetParsedOptionValue
+org.apache.commons.cli.DefaultParserTest::testNegativeArgument
+org.apache.commons.cli.DefaultParserTest::testPropertiesOption1
+org.apache.commons.cli.DefaultParserTest::testSingleDash
+org.apache.commons.cli.DefaultParserTest::testStopAtExpectedArg
+org.apache.commons.cli.DefaultParserTest::testMultiple
+org.apache.commons.cli.DefaultParserTest::testOptionAndRequiredOption
+org.apache.commons.cli.bug.BugCLI265Test::shouldParseShortOptionWithValue
+org.apache.commons.cli.DefaultParserTest::testArgumentStartingWithHyphen
+org.apache.commons.cli.DefaultParserTest::testPropertyOverrideValues
+org.apache.commons.cli.DefaultParserTest::testSimpleShort
+org.apache.commons.cli.DefaultParserTest::testWithRequiredOption
+org.apache.commons.cli.DefaultParserTest::testSimpleLong

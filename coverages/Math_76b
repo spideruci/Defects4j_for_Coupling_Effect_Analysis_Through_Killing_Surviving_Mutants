@@ -1,0 +1,10 @@
+org.apache.commons.math.linear.SingularValueDecompositionImplTest::testAEqualUSVt
+org.apache.commons.math.linear.SingularValueSolverTest::testLeastSquareSolve
+org.apache.commons.math.linear.SingularValueSolverTest::testSolve
+org.apache.commons.math.linear.SingularValueDecompositionImplTest::testVOrthogonal
+org.apache.commons.math.linear.SingularValueDecompositionImplTest::testMatricesValues2
+org.apache.commons.math.linear.SingularValueDecompositionImplTest::testDimensions
+org.apache.commons.math.linear.SingularValueDecompositionImplTest::testUOrthogonal
+org.apache.commons.math.linear.SingularValueSolverTest::testTruncated
+org.apache.commons.math.linear.SingularValueDecompositionImplTest::testMatricesValues1
+org.apache.commons.math.linear.SingularValueSolverTest::testSolveDimensionErrors

@@ -1,0 +1,6 @@
+org.jfree.data.category.junit.DefaultIntervalCategoryDatasetTests::testGetRowKeys
+org.jfree.data.category.junit.DefaultIntervalCategoryDatasetTests::testGetCategoryCount
+org.jfree.data.category.junit.DefaultIntervalCategoryDatasetTests::testGetSeriesCount
+org.jfree.data.category.junit.DefaultIntervalCategoryDatasetTests::testSetSeriesKeys
+org.jfree.data.category.junit.DefaultIntervalCategoryDatasetTests::testGetColumnKeys
+org.jfree.data.category.junit.DefaultIntervalCategoryDatasetTests::testEquals

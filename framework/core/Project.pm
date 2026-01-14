@@ -569,16 +569,48 @@ Format of C<single_test>: <classname>::<methodname>.
 
 sub run_tests {
     @_ >= 2 or die $ARG_ERROR;
-    my ($self, $out_file, $single_test) = @_;
+    # my ($self, $out_file, $single_test) = @_;
+    my ($self, $out_file, $single_test, $log_file) = @_;
 
     my $single_test_opt = "";
+    # if (defined $single_test) {
+    #     $single_test =~ /([^:]+)::([^:]+)/ or die "Wrong format for single test!";
+    #     $single_test_opt = "-Dtest.entry.class=$1 -Dtest.entry.method=$2";
+    # }
+
     if (defined $single_test) {
-        $single_test =~ /([^:]+)::([^:]+)/ or die "Wrong format for single test!";
-        $single_test_opt = "-Dtest.entry.class=$1 -Dtest.entry.method=$2";
+        if ($single_test =~ /([^:]+)::([^:]+)/) {
+            $single_test_opt = "-Dtest.entry.class=$1 -Dtest.entry.method=$2";
+        } elsif ($single_test =~ /^(\S+)$/) {
+            $single_test_opt = "-Dtest.entry.class=$1";
+        } else {
+            die "Wrong format for single test!";
+        }
     }
 
-    return $self->_ant_call_comp("run.dev.tests", "-DOUTFILE=$out_file $single_test_opt");
+    return $self->_ant_call_comp("run.dev.tests", "-DOUTFILE=$out_file $single_test_opt", $log_file);
 }
+
+# sub run_tests {
+#     @_ >= 2 or die $ARG_ERROR;
+#     my ($self, $out_file, $single_test, $should_output) = @_;
+
+#     my $single_test_opt = "";
+#     if (defined $single_test) {
+#         $single_test =~ /([^:]+)::([^:]+)/ or die "Wrong format for single test!";
+#         $single_test_opt = "-Dtest.entry.class=$1 -Dtest.entry.method=$2";
+#     }
+
+#     my $outfile_opt = "";
+#     if ($should_output) {
+#         $outfile_opt = "-DOUTFILE=$out_file";
+#     }
+#     print("$outfile_opt");
+#     print("haha");
+
+#     return $self->_ant_call_comp("run.dev.tests", "$outfile_opt $single_test_opt");
+# }
+
 
 =pod
 
@@ -590,10 +622,19 @@ program version. Failing tests are written to C<result_file>.
 =cut
 
 sub run_relevant_tests {
-    @_ == 2 or die $ARG_ERROR;
-    my ($self, $out_file) = @_;
+    # @_ == 2 or die $ARG_ERROR;
+    if (@_ == 2) {
+        my ($self, $out_file) = @_;
+        print(STDERR $METADATA_RELEVANT_TESTS);
+        # print(Constants::relevant_tests)
+        return $self->_ant_call_comp("run.dev.tests", "-DOUTFILE=$out_file -Dd4j.relevant.tests.only=true");
+    } elsif(@_ == 4) {
+        my ($self, $out_file, $token, $tmpdir) = @_;
+        return $self->_ant_call_comp("run.dev.tests", "-DOUTFILE=$out_file -Dd4j.relevant.tests.only=true", undef, undef, $token, $tmpdir);
+    } else {
+        die "Invalid number of arguments to run_relevant_tests()";
+    }
 
-    return $self->_ant_call_comp("run.dev.tests", "-DOUTFILE=$out_file -Dd4j.relevant.tests.only=true");
 }
 
 =pod
@@ -1141,12 +1182,14 @@ sub _get_classes {
 #
 sub _ant_call {
     @_ >= 2 or die $ARG_ERROR;
-    my ($self, $target, $option_str, $log_file, $ant_cmd) =  @_;
+    my ($self, $target, $option_str, $log_file, $ant_cmd, $token, $tmpdir) =  @_;
     $option_str = "" unless defined $option_str;
     $ant_cmd = "ant" unless defined $ant_cmd;
+    my $tmp_prop = defined $tmpdir ? " -Djava.io.tmpdir=$tmpdir" : "";
+
 
     my $verbose = ($DEBUG==1) ? " -v" : "";
-
+# --- Generate or reuse a token ---
     # Set up environment before running ant
     my $cmd = " cd $self->{prog_root}" .
               " && $ant_cmd" .
@@ -1155,14 +1198,35 @@ sub _ant_call {
                 " -Dd4j.home=$BASE_DIR" .
                 " -Dd4j.dir.projects=$PROJECTS_DIR" .
                 " -Dbasedir=$self->{prog_root} ${option_str} $target 2>&1";
+    
+# BUG TMPDIR currently does not work 
+    if (defined $token) {
+       $cmd = " cd $self->{prog_root}" .
+              " && $ant_cmd" .
+                $verbose .
+                " -Dexp.token=$token" .                 # <-- added here
+                "$tmp_prop" .
+                " -f $D4J_BUILD_FILE" .
+                " -Dd4j.home=$BASE_DIR" .
+                " -Dd4j.dir.projects=$PROJECTS_DIR" .
+                " -Dbasedir=$self->{prog_root} ${option_str} $target 2>&1";
+    }
+
     my $log;
     my $ret = Utils::exec_cmd($cmd, "Running ant ($target)", \$log);
 
+    # if (defined $log_file) {
+    #     open(OUT, ">>$log_file") or die "Cannot open log file: $!";
+    #     print(OUT "$log");
+    #     close(OUT);
+    # }
+    # Only log to file (quiet terminal)
     if (defined $log_file) {
-        open(OUT, ">>$log_file") or die "Cannot open log file: $!";
-        print(OUT "$log");
-        close(OUT);
+        $cmd .= " > \"$log_file\" 2>&1";
+    } else {
+        $cmd .= " 2>&1";
     }
+
     return $ret;
 }
 
@@ -1172,11 +1236,13 @@ sub _ant_call {
 #
 sub _ant_call_comp {
     @_ >= 2 or die $ARG_ERROR;
-    my ($self, $target, $option_str, $log_file, $ant_cmd) =  @_;
+    my ($self, $target, $option_str, $log_file, $ant_cmd, $token, $tmpdir) =  @_;
     $option_str = ($option_str // "");
     $ant_cmd = "$MAJOR_ROOT/bin/ant" unless defined $ant_cmd;
-    return $self->_ant_call($target, $option_str, $log_file, $ant_cmd);
+    return $self->_ant_call($target, $option_str, $log_file, $ant_cmd, $token, $tmpdir);
 }
+
+
 sub _call_major {
     @_ >= 2 or die $ARG_ERROR;
     my ($self, $target, $option_str, $log_file, $ant_cmd) =  @_;
@@ -1313,5 +1379,30 @@ sub _determine_layout {
     }
     return $self->{_layout_cache}->{$rev_id};
 }
+
+sub run_tests_for_states {
+    @_ >= 2 or die $ARG_ERROR;
+    # my ($self, $out_file, $single_test) = @_;
+    my ($self, $out_file, $single_test, $log_file) = @_;
+
+    my $single_test_opt = "";
+    # if (defined $single_test) {
+    #     $single_test =~ /([^:]+)::([^:]+)/ or die "Wrong format for single test!";
+    #     $single_test_opt = "-Dtest.entry.class=$1 -Dtest.entry.method=$2";
+    # }
+
+    if (defined $single_test) {
+        if ($single_test =~ /([^:]+)::([^:]+)/) {
+            $single_test_opt = "-Dtest.entry.class=$1 -Dtest.entry.method=$2";
+        } elsif ($single_test =~ /^(\S+)$/) {
+            $single_test_opt = "-Dtest.entry.class=$1";
+        } else {
+            die "Wrong format for single test!";
+        }
+    }
+
+    return $self->_ant_call_comp("run.dev.tests", "-DOUTFILE=$out_file $single_test_opt", $log_file);
+}
+
 
 1;

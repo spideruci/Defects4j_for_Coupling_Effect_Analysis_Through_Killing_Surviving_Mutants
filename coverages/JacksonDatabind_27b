@@ -1,0 +1,2 @@
+com.fasterxml.jackson.databind.jsontype.TestExternalId::testIssue798
+com.fasterxml.jackson.databind.jsontype.TestExternalId::testExternalTypeWithCreator

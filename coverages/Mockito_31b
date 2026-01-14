@@ -1,0 +1,3 @@
+org.mockito.internal.stubbing.defaultanswers.ReturnsSmartNullsTest::shouldReturnAnObjectThatAllowsObjectMethods
+org.mockitousage.stubbing.SmartNullsStubbingTest::shouldNotThrowSmartNullPointerOnToString
+org.mockitousage.stubbing.SmartNullsStubbingTest::shouldNotThrowSmartNullPointerOnObjectMethods

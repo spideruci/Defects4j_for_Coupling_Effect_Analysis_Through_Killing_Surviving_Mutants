@@ -1,0 +1,5 @@
+com.google.gson.functional.CustomDeserializerTest::testJsonTypeFieldBasedDeserialization
+com.google.gson.functional.JsonParserTest::testBadFieldTypeForDeserializingCustomTree
+com.google.gson.functional.ExclusionStrategyFunctionalTest::testExclusionStrategyDeserialization
+com.google.gson.internal.bind.JsonElementReaderTest::testSkipValue
+com.google.gson.functional.ExclusionStrategyFunctionalTest::testExclusionStrategyWithMode

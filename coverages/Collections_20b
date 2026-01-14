@@ -1,0 +1,9 @@
+org.apache.commons.collections.list.TreeListTest::testCollectionRetainAll
+org.apache.commons.collections.list.TreeListTest::testCollectionRemoveAll
+org.apache.commons.collections.list.TreeListTest::testListListIteratorNextRemovePrevious
+org.apache.commons.collections.list.TreeListTest::testListListIteratorPreviousRemoveNext
+org.apache.commons.collections.list.TreeListTest::testListListIteratorPreviousRemovePrevious
+org.apache.commons.collections.list.TreeListTest::testCollectionIteratorRemove
+org.apache.commons.collections.list.TreeListTest::testCollectionRemove
+org.apache.commons.collections.list.TreeListTest::testListListIteratorNextRemoveNext
+org.apache.commons.collections.list.TreeListTest::testBug35258

@@ -1,0 +1,6 @@
+org.apache.commons.math.analysis.solvers.RegulaFalsiSolverTest::testSolutionAboveSide
+org.apache.commons.math.analysis.solvers.RegulaFalsiSolverTest::testQuinticZero
+org.apache.commons.math.analysis.solvers.RegulaFalsiSolverTest::testSolutionLeftSide
+org.apache.commons.math.analysis.solvers.RegulaFalsiSolverTest::testSolutionRightSide
+org.apache.commons.math.analysis.solvers.RegulaFalsiSolverTest::testSolutionBelowSide
+org.apache.commons.math.analysis.solvers.RegulaFalsiSolverTest::testSinZero

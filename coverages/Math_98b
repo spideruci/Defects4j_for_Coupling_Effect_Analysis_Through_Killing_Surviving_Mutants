@@ -1,0 +1,4 @@
+org.apache.commons.math.linear.BigMatrixImplTest::testSolve
+org.apache.commons.math.linear.RealMatrixImplTest::testOperate
+org.apache.commons.math.linear.BigMatrixImplTest::testOperate
+org.apache.commons.math.linear.RealMatrixImplTest::testSolve

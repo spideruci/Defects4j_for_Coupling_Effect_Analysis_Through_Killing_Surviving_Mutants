@@ -92,6 +92,7 @@ Examples:
 
 use strict;
 use warnings;
+use File::Find;
 
 use Constants;
 use Utils;
@@ -99,15 +100,18 @@ use Project;
 use Coverage;
 use Getopt::Std;
 use Pod::Usage;
+use Time::HiRes qw(sleep);
+use List::Util qw(min uniq);
 
 my %cmd_opts;
-getopts('t:w:rs:i:', \%cmd_opts) or pod2usage( { -verbose => 1, -input => __FILE__} );
+getopts('t:w:rs:i:e', \%cmd_opts) or pod2usage( { -verbose => 1, -input => __FILE__} );
 
 my $WORK_DIR    = Utils::get_abs_path($cmd_opts{w} // ".");
 my $REL_TESTS   = defined $cmd_opts{r} ? 1 : 0;
 my $SINGLE_TEST = $cmd_opts{t};
 my $TEST_SUITE  = $cmd_opts{s};
 my $INSTRUMENT  = $cmd_opts{i};
+my $RUN_EACH_REL = defined $cmd_opts{e} ? 1 : 0;
 if ((defined $SINGLE_TEST || defined $TEST_SUITE) && $REL_TESTS==1) {
     pod2usage( { -verbose => 1, -input => __FILE__} );
 }
@@ -120,6 +124,95 @@ unless(defined $config) {
 my $pid = $config->{$CONFIG_PID};
 my $vid = $config->{$CONFIG_VID};
 my $bid = Utils::check_vid($vid)->{bid};
+
+sub transform_test_name {
+    my ($line) = @_;
+    chomp($line);                    # removes trailing newline (\n)
+    $line =~ s/^\s+|\s+$//g;         # removes leading and trailing spaces/tabs
+    if ($pid eq "Collections" && $line !~ /org\./) {
+        if ($line =~ /\(([^)]+)\)/) {
+            my $inside = $1;
+            
+            my @parts  = split /\./, $inside;
+            my $combined = join("::", @parts[0, 1]);
+            print "$combined\n";
+            print("hahah");
+
+            my $target_name = "$parts[0].java";
+            my $src_dir = "src";
+            my @found_files;
+
+            find(
+                sub {
+                    return unless -f $_;              # skip non-files
+                    return unless $_ eq $target_name; # exact filename match
+                    push @found_files, $File::Find::name;
+                },
+                $src_dir
+            );
+
+            # --- Check number of matches ---
+            if (@found_files == 0) {
+                die "Error: No match found for $target_name under $src_dir\n";
+            }
+            elsif (@found_files > 1) {
+                if ($found_files[0] =~ /TestUnboundedFifoBuffer\.java/) {
+                   # manually fix it for Collections, coverage analysis may not be accurate.
+                } else {
+                    die "Error: Multiple matches found for $target_name:\n" . join("\n", map { " - $_" } @found_files) . "\n";
+                }
+
+            }
+            # --- Exactly one match ---
+            my $found_file = $found_files[0];
+            #print "Found unique match: $found_file\n";
+
+            my $package_name;
+
+            open my $fh, '<', $found_file or die "Cannot open $found_file: $!\n";
+            while (my $line = <$fh>) {
+                chomp $line;
+                $line =~ s/^\s+|\s+$//g;   # trim leading/trailing spaces
+
+                if ($line =~ /^package\s+([\w\.]+);/) {
+                    $package_name = $1;
+                    last;  # stop after finding the first package declaration
+                }
+            }
+            close $fh;
+            print("$package_name");
+            print("jjj");
+            if (defined $package_name) {
+                print "Package: $package_name\n";
+            } else {
+                die "Error: No package declaration found in $found_file\n";
+            }
+
+            return "$package_name.$parts[0]::$parts[1]";
+
+
+        } else {
+            die "Unexpected format: $line";
+        }
+    } else {
+        # Match parameterized test: e.g., testAllMonomials[0](org.foo.BarTest)
+        if ($line =~ /^\w+\[\d+\]\(([^)]+)\)$/) {
+
+            return $1;  # Return only the class name
+        }
+
+
+        if ($line =~ /^(\w+)(?:\[[^\]]+\])?\(([^)]+)\)$/) {
+            return "$2::$1";
+        } else {
+            print ">$line<\n";
+            die "Unexpected format: $line";
+        }
+    }
+
+}
+
+
 
 # Instantiate project and set working directory
 my $project = Project::create_project($pid);
@@ -145,6 +238,101 @@ if (defined $TEST_SUITE) {
     # Compile and run only relevant developer-written tests
     $project->compile_tests() or die "Cannot compile test suite!";
     $cov_results = Coverage::coverage($project, $classes, $src_dir, $fail_tests, $REL_TESTS);
+} elsif ($RUN_EACH_REL) {
+    # run each relevant tests individually, use defects4j test -e
+    my $all_test_file = "all_tests";
+
+    # Compile and run all relevant tests
+    print("\nrunning all relevant test methods\n");
+    $project->compile_tests() or die "Cannot compile test suite!";
+    $project->run_relevant_tests($fail_tests) or die "Cannot run tests!";
+    my $relevant_test_methods = Utils::read_tests_from_file($all_test_file);
+    # my $relevant_method_count = scalar(@$relevant_test_methods);
+    # print "Number of test methods: $relevant_method_count\n";
+
+    my %seen;
+    my @unique_transformed_tests;
+    foreach my $test (@$relevant_test_methods) {
+        my $transformed_test_name = transform_test_name($test);
+        unless ($seen{$transformed_test_name}++) {
+            push @unique_transformed_tests, $transformed_test_name;
+        }
+    }
+
+    my $relevant_test_count = scalar(@unique_transformed_tests);
+    print "Unique Number of tests: $relevant_test_count\n";
+    mkdir "coverage" unless -d "coverage";
+    mkdir "terminal_logs" unless -d "terminal_logs";
+
+
+    # Step 1: Detect conflicting test names
+    my %case_insensitive_map;
+    my %conflicts;
+
+    for my $test (@unique_transformed_tests) {
+        my $lc = lc($test);
+        push @{ $case_insensitive_map{$lc} }, $test;
+    }
+
+    # Step 2: For each group with more than one variant, mark as conflict
+    for my $group (values %case_insensitive_map) {
+        if (@$group > 1) {
+            for my $t (@$group) {
+                $conflicts{$t} = $group;
+            }
+        }
+    }
+
+    # Step 3: Detect differing character positions
+    sub differing_indices {
+        my @tests = @_;
+        my $min_len = min(map { length($_) } @tests);
+        my @diffs;
+
+        for my $i (0 .. $min_len - 1) {
+            my @chars = map { substr($_, $i, 1) } @tests;
+            my @lcs   = map { lc($_) } @chars;
+            my %seen;
+            $seen{$_}++ for @lcs;
+
+            # if all chars are same letter ignoring case, but different casing
+            if (uniq(@chars) > 1 && uniq(@lcs) == 1) {
+                push @diffs, $i;
+            }
+        }
+        return @diffs;
+    }
+
+    # Step 4: Transform and rename
+    foreach my $transformed_test_name (@unique_transformed_tests) {
+        # my $transformed_test_name = transform_test_name($test);
+        print("Test: $transformed_test_name\n");
+
+        my $final_name = $transformed_test_name;
+
+        if (exists $conflicts{$transformed_test_name}) {
+            my @group = @{ $conflicts{$transformed_test_name} };
+            my @indices = differing_indices(@group);
+
+            my @charcases = map {
+                my $ch = substr($transformed_test_name, $_, 1);
+                (uc($ch) eq $ch) ? 'upper' : 'lower'
+            } @indices;
+
+            my $prefix = "[" . join(",", @charcases, @indices) . "]";
+            $final_name = "$prefix\_$transformed_test_name";
+        }
+
+
+        $cov_results = Coverage::coverage($project, $classes, $src_dir, $fail_tests, undef, $transformed_test_name, undef, "terminal_logs/$final_name.txt");
+        $project->_ant_call_comp("monitor.test", "-Dtest.entry=$transformed_test_name -Dtest.output=terminal_logs/$final_name.txt");
+
+        rename "coverage.xml", "coverage/$final_name.xml" or die "Rename failed: $!";
+    }
+
+
+    # early termination
+    exit 0;
 } else {
     # Compile and run developer-written tests
     $project->compile_tests() or die "Cannot compile test suite!";

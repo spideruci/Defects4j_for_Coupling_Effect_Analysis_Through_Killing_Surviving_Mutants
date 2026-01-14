@@ -1,0 +1,15 @@
+org.jsoup.integration.ParseTest::testYahooArticle
+org.jsoup.parser.HtmlParserTest::handlesUnclosedRawtextAtEof
+org.jsoup.integration.ParseTest::testSmhBizArticle
+org.jsoup.nodes.ElementTest::testGetDataNodes
+org.jsoup.parser.HtmlParserTest::handlesDataOnlyTags
+org.jsoup.helper.W3CDomTest::convertsGoogle
+org.jsoup.nodes.ElementTest::testNoIndentOnScriptAndStyle
+org.jsoup.integration.ParseTest::testNytArticle
+org.jsoup.nodes.DocumentTest::testLocation
+org.jsoup.integration.ParseTest::testBaidu
+org.jsoup.select.SelectorTest::containsData
+org.jsoup.integration.ParseTest::testNewsHomepage
+org.jsoup.integration.ParseTest::testYahooJp
+org.jsoup.integration.ParseTest::testGoogleSearchIpod
+org.jsoup.helper.W3CDomTest::namespacePreservation

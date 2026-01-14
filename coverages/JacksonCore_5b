@@ -1,0 +1,3 @@
+com.fasterxml.jackson.core.TestJsonPointer::testSimplePath
+com.fasterxml.jackson.core.TestJsonPointer::testQuotedPath
+com.fasterxml.jackson.core.TestJsonPointer::testLongNumbers

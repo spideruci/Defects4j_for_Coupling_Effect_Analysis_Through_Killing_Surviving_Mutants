@@ -1,0 +1,11 @@
+com.fasterxml.jackson.core.json.TestNumericValues::testParsingOfLongerSequences
+com.fasterxml.jackson.core.json.ArrayGenerationTest::testDoubleArray
+com.fasterxml.jackson.core.main.TestGeneratorObject::testConvenienceMethods
+com.fasterxml.jackson.core.main.TestGeneratorCopy::testCopyRootTokens
+com.fasterxml.jackson.core.json.TestNumericValues::testNumbers
+com.fasterxml.jackson.core.json.TestValueConversions::testAsDouble
+com.fasterxml.jackson.core.json.TestNumericValues::testSimpleDouble
+com.fasterxml.jackson.core.json.TestNumericValues::testParsingOfLongerSequencesWithNonNumeric
+com.fasterxml.jackson.core.json.TestValueConversions::testAsInt
+com.fasterxml.jackson.core.json.TestValueConversions::testAsLong
+com.fasterxml.jackson.core.json.TestParserErrorHandling::testMangledNumbersBytes

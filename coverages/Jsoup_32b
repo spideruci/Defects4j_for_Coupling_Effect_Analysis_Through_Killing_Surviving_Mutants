@@ -1,0 +1,5 @@
+org.jsoup.nodes.DocumentTest::testClone
+org.jsoup.nodes.NodeTest::childNodesCopy
+org.jsoup.nodes.ElementTest::insertChildrenAsCopy
+org.jsoup.nodes.ElementTest::testClone
+org.jsoup.nodes.DocumentTest::testClonesDeclarations

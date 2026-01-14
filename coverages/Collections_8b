@@ -1,0 +1,8 @@
+org.apache.commons.collections.buffer.TestBoundedBuffer::testSimpleSerialization
+org.apache.commons.collections.buffer.TestBoundedBuffer::testSerializeDeserializeThenCompare
+org.apache.commons.collections.buffer.TestUnmodifiableBuffer::testSerializeDeserializeThenCompare
+org.apache.commons.collections.buffer.TestUnmodifiableBuffer::testSimpleSerialization
+org.apache.commons.collections.buffer.TestSynchronizedBuffer::testSerializeDeserializeThenCompare
+org.apache.commons.collections.buffer.TestSynchronizedBuffer::testSimpleSerialization
+org.apache.commons.collections.buffer.TestUnboundedFifoBuffer::testInternalStateIteratorRemoveWithTailAtEnd1
+org.apache.commons.collections.TestUnboundedFifoBuffer::testInternalStateIteratorRemoveWithTailAtEnd1

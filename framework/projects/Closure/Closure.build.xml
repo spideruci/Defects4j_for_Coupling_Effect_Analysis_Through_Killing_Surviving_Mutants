@@ -71,5 +71,8 @@ of the checked-out project version.
     <path id="d4j.test.classpath">
         <path refid="compile.classpath" />
         <path refid="test.classpath" />
+        <fileset dir="${d4j.home}/state_utils/external_jars">
+            <include name="**/*.jar"/>
+        </fileset>
     </path>
 </project>

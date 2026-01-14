@@ -1,0 +1,3 @@
+org.apache.commons.codec.binary.Base64InputStreamTest::testSkipNone
+org.apache.commons.codec.binary.Base32InputStreamTest::testSkipNone
+org.apache.commons.codec.binary.Base64InputStreamTest::testInputStreamReader

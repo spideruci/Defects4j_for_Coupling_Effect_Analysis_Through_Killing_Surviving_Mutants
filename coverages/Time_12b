@@ -1,0 +1,16 @@
+org.joda.time.TestLocalDateTime_Constructors::testFactory_fromCalendarFields
+org.joda.time.TestLocalDateTime_Basics::testToDate_autumnDST
+org.joda.time.TestLocalDateTime_Constructors::testFactory_fromDateFields_after1970
+org.joda.time.TestLocalDateTime_Constructors::testFactory_fromDateFields_before1970
+org.joda.time.TestLocalDate_Constructors::testFactory_fromDateFields_after1970
+org.joda.time.TestLocalDateTime_Basics::testToDate_springDST_2Hour40Savings
+org.joda.time.TestLocalDate_Basics::testToDate_autumnDST
+org.joda.time.TestLocalDate_Basics::testToDate_springDST_2Hour40Savings
+org.joda.time.TestLocalDate_Basics::testToDate_summer
+org.joda.time.TestLocalDate_Constructors::testFactory_fromCalendarFields
+org.joda.time.TestLocalDateTime_Basics::testToDate_winter
+org.joda.time.TestLocalDateTime_Basics::testToDate_summer
+org.joda.time.TestLocalDate_Basics::testToDate_springDST
+org.joda.time.TestLocalDateTime_Basics::testToDate_springDST
+org.joda.time.TestLocalDate_Basics::testToDate_winter
+org.joda.time.TestLocalDate_Constructors::testFactory_fromDateFields_before1970

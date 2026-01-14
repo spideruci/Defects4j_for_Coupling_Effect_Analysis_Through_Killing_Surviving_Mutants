@@ -76,7 +76,7 @@ running coverage. This enables incremental analyses.
 
 sub coverage {
 	@_ >= 5 or die $ARG_ERROR;
-	my ($project, $instrument_classes, $src_dir, $log_file, $relevant_tests, $single_test, $merge_with) = @_;
+	my ($project, $instrument_classes, $src_dir, $log_file, $relevant_tests, $single_test, $merge_with, $output_file) = @_;
 
     my $root = $project->{prog_root};
 	my $datafile = "$root/datafile";
@@ -93,7 +93,7 @@ sub coverage {
     if ($relevant_tests) {
         $project->run_relevant_tests($log_file) or return undef;
     } else {
-        $project->run_tests($log_file, $single_test) or return undef;
+        $project->run_tests($log_file, $single_test,$output_file) or return undef;
     }
 
 	# Generate coverage report

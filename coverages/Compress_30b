@@ -1,0 +1,6 @@
+org.apache.commons.compress.compressors.bzip2.PythonTruncatedBzip2Test::testTruncatedData
+org.apache.commons.compress.ChainingTestCase::testTarBzip2
+org.apache.commons.compress.compressors.bzip2.PythonTruncatedBzip2Test::testPartialReadTruncatedData
+org.apache.commons.compress.compressors.BZip2TestCase::testBzipCreation
+org.apache.commons.compress.archivers.sevenz.SevenZOutputFileTest::testStackOfContentCompressions
+org.apache.commons.compress.compressors.BZip2TestCase::testBzip2Unarchive

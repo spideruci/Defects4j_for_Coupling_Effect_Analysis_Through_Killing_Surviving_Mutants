@@ -1,0 +1,5 @@
+org.apache.commons.lang3.ObjectUtilsTest::testNull
+org.apache.commons.lang3.CharSetTest::testSerialization
+org.apache.commons.lang3.CharRangeTest::testSerialization
+org.apache.commons.lang3.RangeTest::testSerializing
+org.apache.commons.lang3.SerializationUtilsTest::testClone

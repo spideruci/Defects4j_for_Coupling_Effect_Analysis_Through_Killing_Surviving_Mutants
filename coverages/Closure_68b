@@ -1,0 +1,7 @@
+com.google.javascript.jscomp.parsing.JsDocInfoParserTest::testParseUnionTypeError1
+com.google.javascript.jscomp.parsing.JsDocInfoParserTest::testParseUnionType10
+com.google.javascript.jscomp.parsing.JsDocInfoParserTest::testMalformedThisAnnotation
+com.google.javascript.jscomp.parsing.JsDocInfoParserTest::testParseFunctionalTypeError1
+com.google.javascript.jscomp.parsing.JsDocInfoParserTest::testParseUnionType11
+com.google.javascript.jscomp.parsing.JsDocInfoParserTest::testParseInvalidTypeViaStatic2
+com.google.javascript.jscomp.parsing.JsDocInfoParserTest::testParseUnionType12

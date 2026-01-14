@@ -1,0 +1,3 @@
+org.apache.commons.math.geometry.Vector3DTest::testAngle
+org.apache.commons.math.geometry.RotationTest::testVectorTwoPairs
+org.apache.commons.math.geometry.Vector3DTest::testVectorialProducts

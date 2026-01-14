@@ -27,7 +27,8 @@ of the checked-out project version.
 #############################################################################-->
 <project name="D4J-Time">
     <!-- Project-specific dependencies -->
-    <property name="config.jar" value="${d4j.home}/major/lib/major-rt.jar" />
+    <property name="config.jar" value="${d4j.home}/mutation_testing_utils/time" />
+        <!-- <property name="config.jar" value="${d4j.home}/major/lib/major-rt.jar" /> -->
     <property name="jodaconvert.jar" value="${d4j.home}/framework/projects/Time/lib/joda-convert-1.2.jar" />
 
     <!-- Do not download maven dependencies -->
@@ -134,5 +135,6 @@ of the checked-out project version.
         <path refid="test.classpath" />
         <pathelement path="${classes.dir}" />
         <pathelement path="${test.home}" />
+
     </path>
 </project>

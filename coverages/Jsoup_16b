@@ -1,0 +1,13 @@
+org.jsoup.integration.ParseTest::testBaiduVariant
+org.jsoup.integration.ParseTest::testYahooArticle
+org.jsoup.integration.ParseTest::testSmhBizArticle
+org.jsoup.nodes.DocumentTypeTest::constructorValidationOkWithBlankPublicAndSystemIds
+org.jsoup.parser.ParserTest::normalisesDocument
+org.jsoup.parser.ParserTest::handlesUnclosedFormattingElements
+org.jsoup.integration.ParseTest::testNytArticle
+org.jsoup.integration.ParseTest::testBaidu
+org.jsoup.integration.ParseTest::testNewsHomepage
+org.jsoup.integration.ParseTest::testYahooJp
+org.jsoup.integration.ParseTest::testGoogleSearchIpod
+org.jsoup.nodes.DocumentTypeTest::constructorValidationThrowsExceptionOnNulls
+org.jsoup.nodes.DocumentTest::testClonesDeclarations

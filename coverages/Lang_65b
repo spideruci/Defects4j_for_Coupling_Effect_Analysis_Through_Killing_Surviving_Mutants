@@ -1,0 +1,4 @@
+org.apache.commons.lang.time.DateUtilsTest::testTruncate
+org.apache.commons.lang.time.DateUtilsTest::testWeekIterator
+org.apache.commons.lang.time.DateUtilsTest::testMonthIterator
+org.apache.commons.lang.time.DateUtilsTest::testRound

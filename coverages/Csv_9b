@@ -1,0 +1,4 @@
+org.apache.commons.csv.CSVRecordTest::testToMapWithShortRecord
+org.apache.commons.csv.CSVRecordTest::testToMap
+org.apache.commons.csv.CSVRecordTest::testRemoveAndAddColumns
+org.apache.commons.csv.CSVRecordTest::testPutInMap

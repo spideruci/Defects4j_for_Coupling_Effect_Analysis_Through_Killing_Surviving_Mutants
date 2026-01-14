@@ -1,0 +1,12 @@
+org.apache.commons.compress.changes.ChangeSetTestCase::testDeleteFromTar
+org.apache.commons.compress.archivers.tar.TarUtilsTest::testParseOctal
+org.apache.commons.compress.archivers.TarTestCase::testDirectoryEntryFromFile
+org.apache.commons.compress.IOMethodsTest::testReadTar
+org.apache.commons.compress.archivers.TarTestCase::testExplicitFileEntry
+org.apache.commons.compress.changes.ChangeSetTestCase::testDeleteFromAndAddToTar
+org.apache.commons.compress.archivers.TarTestCase::testExplicitDirectoryEntry
+org.apache.commons.compress.archivers.TarTestCase::testCOMPRESS114
+org.apache.commons.compress.archivers.TarTestCase::testFileEntryFromFile
+org.apache.commons.compress.archivers.tar.TarArchiveEntryTest::testTarFileWithFSRoot
+org.apache.commons.compress.archivers.tar.TarUtilsTest::testRoundTripOctal
+org.apache.commons.compress.archivers.TarTestCase::testTarUnarchive

@@ -79,7 +79,7 @@ my $project = Project::create_project($config->{$CONFIG_PID});
 $project->{prog_root} = $WORK_DIR;
 
 # Checkout and compile project version
-$project->compile() or die "Cannot compile sources!";
-$project->compile_tests() or die "Cannot compile tests!";
+$project->compile("compile_log.txt") or die "Cannot compile sources!";
+$project->compile_tests("compile_log_test.txt") or die "Cannot compile tests!";
 
 1;

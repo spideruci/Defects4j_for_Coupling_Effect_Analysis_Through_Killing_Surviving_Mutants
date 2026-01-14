@@ -1,0 +1,6 @@
+org.joda.time.TestDateTimeComparator::testBasicComps5
+org.joda.time.TestLocalTime_Constructors::testConstructor_Object2
+org.joda.time.TestDateTimeZone::testForTimeZone_TimeZone
+org.joda.time.TestDateTimeZone::testTimeZoneConversion
+org.joda.time.convert.TestCalendarConverter::testGetChronology_Object_nullChronology
+org.joda.time.TestTimeOfDay_Constructors::testConstructor_Object2

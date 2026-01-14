@@ -1,0 +1,7 @@
+org.apache.commons.lang.text.StrBuilderTest::testDeleteAll_String
+org.apache.commons.lang.text.StrBuilderTest::testIndexOf_String_int
+org.apache.commons.lang.text.StrBuilderTest::testDeleteFirst_String
+org.apache.commons.lang.text.StrBuilderTest::testContains_String
+org.apache.commons.lang.text.StrBuilderTest::testIndexOf_String
+org.apache.commons.lang.text.StrBuilderTest::testReplaceFirst_String_String
+org.apache.commons.lang.text.StrBuilderTest::testReplaceAll_String_String

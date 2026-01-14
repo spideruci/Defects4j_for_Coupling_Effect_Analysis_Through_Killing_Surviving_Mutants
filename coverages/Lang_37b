@@ -1,0 +1,3 @@
+org.apache.commons.lang3.ValidateTest::testNoNullElementsCollection1
+org.apache.commons.lang3.ValidateTest::testNoNullElementsCollection2
+org.apache.commons.lang3.ArrayUtilsAddTest::testAddObjectArrayToObjectArray

@@ -1,0 +1,5 @@
+com.fasterxml.jackson.dataformat.xml.deser.TestStringValues::testEmptyStringElement
+com.fasterxml.jackson.dataformat.xml.RoundtripContentTest::testRoundtrip
+com.fasterxml.jackson.dataformat.xml.stream.XmlParserTest::testSimpleWithEmpty
+com.fasterxml.jackson.dataformat.xml.misc.EmptyPolymorphicTest::testEmpty
+com.fasterxml.jackson.dataformat.xml.lists.UnwrappedListsTest::testDefaultWrappingWithEmptyLists

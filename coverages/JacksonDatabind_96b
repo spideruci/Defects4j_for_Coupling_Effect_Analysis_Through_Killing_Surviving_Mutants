@@ -1,0 +1,5 @@
+com.fasterxml.jackson.databind.introspect.TestScalaLikeImplicitProperties::testVarWithBeanProperty
+com.fasterxml.jackson.databind.deser.creators.SingleArgCreatorTest::testSingleImplicitlyNamedNotDelegating
+com.fasterxml.jackson.databind.deser.creators.SingleArgCreatorTest::testSingleImplicitDelegating
+com.fasterxml.jackson.databind.deser.creators.DelegatingCreatorImplicitNames1001Test::testWithNamedParameters
+com.fasterxml.jackson.databind.introspect.TestScalaLikeImplicitProperties::testVarProperty

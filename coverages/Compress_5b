@@ -1,0 +1,17 @@
+org.apache.commons.compress.changes.ChangeSetTestCase::testDeleteFromAndAddToZip
+org.apache.commons.compress.changes.ChangeSetTestCase::testDeleteFromJar
+org.apache.commons.compress.IOMethodsTest::testReadJar
+org.apache.commons.compress.archivers.zip.UTF8ZipFilesTest::testZipFileReadsUnicodeFields
+org.apache.commons.compress.archivers.ZipTestCase::testZipUnarchive
+org.apache.commons.compress.archivers.JarTestCase::testJarUnarchive
+org.apache.commons.compress.changes.ChangeSetTestCase::testDeleteAddToOneFileArchive
+org.apache.commons.compress.archivers.ZipTestCase::testListAllFilesWithNestedArchive
+org.apache.commons.compress.changes.ChangeSetTestCase::testDeletePlusAddSame
+org.apache.commons.compress.IOMethodsTest::testReadZip
+org.apache.commons.compress.changes.ChangeSetTestCase::testAddAllreadyExistingWithReplaceTrue
+org.apache.commons.compress.archivers.JarTestCase::testJarUnarchiveAll
+org.apache.commons.compress.changes.ChangeSetTestCase::testAddAllreadyExistingWithReplaceFalse
+org.apache.commons.compress.changes.ChangeSetTestCase::testDeleteFromAndAddToJar
+org.apache.commons.compress.archivers.ZipTestCase::testZipArchiveCreation
+org.apache.commons.compress.changes.ChangeSetTestCase::testAddToEmptyArchive
+org.apache.commons.compress.changes.ChangeSetTestCase::testDeleteFromZip

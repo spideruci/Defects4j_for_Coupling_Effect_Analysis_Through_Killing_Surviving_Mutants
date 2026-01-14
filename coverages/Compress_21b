@@ -1,0 +1,2 @@
+org.apache.commons.compress.archivers.sevenz.SevenZOutputFileTest::testDirectoriesOnly
+org.apache.commons.compress.archivers.sevenz.SevenZOutputFileTest::testDirectoriesAndEmptyFiles

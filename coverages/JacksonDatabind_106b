@@ -1,0 +1,4 @@
+com.fasterxml.jackson.databind.node.TestTreeTraversingParser::testSimple
+com.fasterxml.jackson.databind.node.TestConversions::testTreeToValue
+com.fasterxml.jackson.databind.node.TestTreeTraversingParser::testDataBind
+com.fasterxml.jackson.databind.convert.TestUpdateViaObjectReader::testIssue744

@@ -1,0 +1,6 @@
+org.jsoup.parser.XmlTreeBuilderTest::handlesXmlDeclarationAsDeclaration
+org.jsoup.parser.XmlTreeBuilderTest::testParseDeclarationAttributes
+org.jsoup.parser.XmlTreeBuilderTest::caseSensitiveDeclaration
+org.jsoup.parser.XmlTreeBuilderTest::testDetectCharsetEncodingDeclaration
+org.jsoup.parser.XmlTreeBuilderTest::handlesDodgyXmlDecl
+org.jsoup.helper.DataUtilTest::supportsXmlCharsetDeclaration

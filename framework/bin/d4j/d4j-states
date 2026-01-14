@@ -1,0 +1,678 @@
+#-------------------------------------------------------------------------------
+# Copyright (c) 2014-2024 René Just, Darioush Jalali, and Defects4J contributors.
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+# THE SOFTWARE.
+#-------------------------------------------------------------------------------
+
+=pod
+
+=head1 NAME
+
+d4j-states -- run tests on a checked-out project version.
+
+=head1 SYNOPSIS
+
+  d4j-states [-w work_dir] [-r | [-t single_test] [-s test_suite]]
+
+=head1 DESCRIPTION
+
+This script executes a test or test suite on a checked-out project version and
+reports failing test cases with state instrumentation. It also writes all failing test cases to the file
+F<failing_tests_states>.
+
+=head1 OPTIONS
+
+=over 4
+
+=item -w F<work_dir>
+
+The working directory of the checked-out project version (optional). Default is
+the current directory.
+
+=item -r
+
+Only execute relevant developer-written tests (optional). By default all developer-written
+tests of the checked-out project version are executed.
+
+=item -t C<single_test>
+
+Only run this single test method (optional). By default all tests are executed.
+Format: <test_class>::<test_method>.
+
+=item -s F<test_suite>
+
+The archive file name of an external test suite (optional). The default test suite is the
+developer-written test suite of the checked-out project version.
+See L<Test suites|/"Test suites">.
+
+=back
+
+=head1 Test suites
+
+An external test suite has to be provided as an archive that contains the test sources.
+Format of the archive file name:
+
+F<C<project_id>-C<version_id>-C<test_suite_src>.C<test_id>.tar.bz2>
+
+Examples:
+
+=over 4
+
+=item * F<Lang-11f-randoop.1.tar.bz2>
+
+=item * F<Lang-12b-evosuite-weakmutation.1.tar.bz2>
+
+=item * F<Lang-12f-evosuite-branch.1.tar.bz2>
+
+=back
+
+=cut
+
+
+use strict;
+use warnings;
+use strict;
+use File::Basename;
+
+use Constants;
+use Utils;
+use Project;
+use Getopt::Std;
+use Pod::Usage;
+use File::Copy;
+use File::Path qw(make_path);
+use File::Find;
+use File::Spec;
+
+
+
+my $start0 = time();
+
+# ------------ Configure additional dependencies--------------------
+
+
+# find defects4j binary
+chomp(my $defects4j_bin = `which defects4j`);
+# get the root (three levels up)
+my $defects4j_root = dirname(dirname(dirname($defects4j_bin)));
+my $external_jars = "$defects4j_root/state_utils/external_jars";
+
+my %cmd_opts;
+getopts('t:w:rs:e', \%cmd_opts) or pod2usage( { -verbose => 1, -input => __FILE__} );
+my $WORK_DIR = Utils::get_abs_path($cmd_opts{w} // ".");
+my $config = Utils::read_config_file("$WORK_DIR/$CONFIG");
+my $pid = $config->{$CONFIG_PID};
+my $vid = $config->{$CONFIG_VID};
+my $bid = Utils::check_vid($vid)->{bid};
+
+if ($pid eq "JacksonCore" || $pid eq "JacksonDatabind" || $pid eq "JacksonXml") {
+    $external_jars = "$defects4j_root/state_utils/shaded_external_jars";
+} 
+
+
+
+
+if ($pid eq "Closure") {
+    my $build_xml = "build.xml";
+
+    my $injected_block = <<'XML';
+          <classpath>
+        <path refid="allclasspath.path"/>
+        <fileset dir="${d4j.home}/state_utils/external_jars">
+            <include name="**/*.jar"/>
+        </fileset>
+        <fileset dir="/Users/superhang/Downloads/defects4j-3.0.1/state_utils/external_jars">
+          <include name="**/*.jar"/>
+        </fileset>
+    </classpath>
+XML
+
+    open my $in, '<', $build_xml
+        or die "Cannot open $build_xml: $!";
+    my @lines = <$in>;
+    close $in;
+
+    # Avoid double injection
+    if (grep { /state_utils\/external_jars/ } @lines) {
+        warn "⚠️ External jars already present, skipping injection\n";
+    }
+
+    my @out;
+    my $inside_compile_tests = 0;
+    my $insert_count = 0;
+
+    for my $line (@lines) {
+
+        # Enter compile-tests target
+        if (!$inside_compile_tests && index($line, '<target name="compile-tests"') != -1) {
+            $inside_compile_tests = 1;
+        }
+
+        push @out, $line;
+
+        # Insert AFTER EVERY <path refid="allclasspath.path"/>
+        if (
+            $inside_compile_tests
+            && index($line, '<classpath refid="allclasspath.path" />') != -1
+        ) {
+            push @out, $injected_block;
+            $insert_count++;
+        }
+
+        # Exit target
+        if ($inside_compile_tests && $line =~ m{^\s*</target>}) {
+            $inside_compile_tests = 0;
+        }
+    }
+
+    die "❌ No <path refid=\"allclasspath.path\"/> found under compile-tests target\n"
+        unless $insert_count > 0;
+
+    open my $out_fh, '>', $build_xml
+        or die "Cannot write $build_xml: $!";
+    print $out_fh @out;
+    close $out_fh;
+
+    print "✅ Injected external jars under $insert_count <path refid=\"allclasspath.path\"/> occurrence(s)\n";
+}
+
+
+
+
+
+
+
+if (-e "build.xml") {
+    my $build_file = "build.xml"; # Put your external jars directory here (no hardcoding inline!) my $external_jars = "$defects4j_root/state_utils/external_jars";
+
+
+
+
+    # --- Read file ---
+    print("$build_file");
+    open my $in, "<", $build_file or die "Cannot open $build_file: $!";
+    my @lines = <$in>;
+    close $in;
+
+    # --- Snippet to insert ---
+    my $snippet = <<"END_XML";
+        <fileset dir="$external_jars">
+          <include name="**/*.jar"/>
+        </fileset>
+END_XML
+
+    # --- Check if already injected ---
+    my $already_present = grep { /\Q$external_jars\E/ } @lines;
+    print($already_present);
+    # --- Process lines ---
+    open my $out, ">", "$build_file.new" or die "Cannot write $build_file.new: $!";
+    my $inside_block = "";
+
+
+
+    my $inside_block = "";     # tracks <path> blocks (compile/test)
+    my $inside_target = "";    # tracks current <target>
+    my $inside_classpath = 0;  
+    for my $line (@lines) {
+        # Detect start of relevant <path> blocks
+        if ($line =~ m{<path\s+id="compile\.classpath"}) {
+            print("haha1");
+            $inside_block = "compile";
+        }
+        # it matches anything with test.classpath
+        elsif ($line =~ m{<path\s+id=".*test\.classpath"}) {
+            print("haha");
+            $inside_block = "test";
+        }
+
+
+
+      # --- Detect target start and end ---
+        if ($line =~ m{<target\s+name="([^"]+)"}) {
+            $inside_target = $1;    # e.g., "compile-tests" or "new"
+            print("Entering target: $inside_target\n");
+        }
+        elsif ($line =~ m{</target>}) {
+            $inside_target = "";
+        }
+
+        # --- Detect start of <classpath> block (only inside the target of interest) ---
+        if ($inside_target eq "compile-tests" && $line =~ m{<classpath(?![^>]*refid)}) {
+            $inside_classpath = 1;
+            print("Found <classpath> in target $inside_target\n");
+        }
+
+        if ($inside_target eq "compile.tests" && $line =~ m{<classpath(?![^>]*refid)}) {
+            $inside_classpath = 1;
+            print("Found <classpath> in target $inside_target\n");
+        }
+
+
+        # --- Inject snippet before closing </path> or </classpath> ---
+        if ($inside_block ne "" && $line =~ m{</path>}) {
+            print $out $snippet;
+            $inside_block = "";
+        }
+        elsif ($inside_target eq "compile-tests" && $inside_classpath && $line =~ m{</classpath>}) {
+            print $out $snippet;
+            $inside_classpath = 0;
+        }
+        elsif ($inside_target eq "compile.tests" && $inside_classpath && $line =~ m{</classpath>}) {
+            print $out $snippet;
+            $inside_classpath = 0;
+        }
+
+
+
+
+        # When reaching the end of the block, inject the snippet
+        if ($inside_block ne "" && $line =~ m{</path>}) {
+            print $out $snippet;
+            $inside_block = "";
+        }
+
+        print $out $line;
+    }
+
+    close $out;
+
+
+
+    # 
+    my $snippet_test = <<"END_XML";
+        <fileset dir="$external_jars">
+          <include name="**/*.jar"/>
+        </fileset>
+END_XML
+
+
+    # --- Replace the original file ---
+    rename "$build_file.new", $build_file or die "Cannot replace $build_file: $!";
+
+    print "✅ Successfully injected external jars into <path id=\"compile.classpath\"> and <path id=\"test.classpath\"> in $build_file\n";
+}
+
+
+
+
+
+
+
+# For maven-build.xml
+
+
+# Find defects4j binary
+
+# External jars directory
+
+
+
+if (-e "maven-build.xml"|| -e "gson/maven-build.xml") {
+
+    my $build_file = "maven-build.xml";
+    if (-e "gson/maven-build.xml") {
+        $build_file = "gson/maven-build.xml";
+    }
+    # Read file
+    open my $in, "<", $build_file or die "Cannot open $build_file: $!";
+    my @lines = <$in>;
+    close $in;
+
+    # Snippet to inject
+
+     # Snippet to inject
+    my $snippet = <<"END_XML";
+        <fileset dir="$external_jars">
+          <include name="**/*.jar"/>
+        </fileset>
+END_XML
+
+
+    #my $snippet = <<"END_XML";
+        #<fileset dir="$external_jars">
+         # <include name="**/*.jar"/>
+       # </fileset>
+   # END_XML
+
+    # Idempotency: don’t inject twice
+    my $already_present = grep { /\Q$external_jars\E/ } @lines;
+    if ($already_present) {
+        print "ℹ️ External jars already referenced in $build_file\n";
+  
+    }
+
+    open my $out, ">", "$build_file.new" or die "Cannot write $build_file.new: $!";
+
+
+
+
+    my $inside_block = "";
+    for my $line (@lines) {
+        # Detect start of compile/test classpath
+        if ($line =~ m{<path\s+id="compile\.classpath"}) {
+            $inside_block = "compile";
+        }
+        elsif ($line =~ m{<path\s+id="build\.test\.classpath"}) {
+            $inside_block = "test";
+        }
+
+        # Inject before closing </path>
+        if ($inside_block ne "" && $line =~ m{</path>}) {
+            print $out $snippet;
+            $inside_block = "";
+        }
+
+        print $out $line;
+    }
+    close $out;
+
+    rename "$build_file.new", $build_file or die "Cannot replace $build_file: $!";
+
+    print "✅ Snippet injected into <path id=\"compile.classpath\"> and <path id=\"build.test.classpath\"> in $build_file\n";
+
+
+}
+
+
+
+
+
+
+
+my $REL_TESTS = defined $cmd_opts{r} ? 1 : 0;
+my $RUN_EACH_REL = defined $cmd_opts{e} ? 1 : 0;
+my $SINGLE_TEST = $cmd_opts{t};
+my $TEST_SUITE = $cmd_opts{s};
+if ((defined $SINGLE_TEST || defined $TEST_SUITE) && $REL_TESTS==1) {
+    pod2usage( { -verbose => 1, -input => __FILE__} );
+}
+
+sub transform_test_name {
+    my ($line) = @_;
+    # Match parameterized test: e.g., testAllMonomials[0](org.foo.BarTest)
+    if ($line =~ /^\w+\[\d+\]\(([^)]+)\)$/) {
+        return $1;  # Return only the class name
+    }
+    if ($line =~ /^(\w+)\(([^)]+)\)$/) {
+        return "$2::$1";
+    } else {
+        die "Unexpected format: $line";
+    }
+}
+
+
+
+
+unless(defined $config) {
+    print(STDERR "$WORK_DIR is not a valid working directory!\n");
+    exit 1;
+}
+
+# Instantiate project and set working directory
+my $project = Project::create_project($config->{$CONFIG_PID});
+$project->{prog_root} = $WORK_DIR;
+
+
+
+# Clean temporary files that hold test results [for each command execution]
+print("\n[INFO Preparation] cleaning for Bug $bid Folder");
+my $fail_tests = "$WORK_DIR/failing_with_instrumentation.txt";
+Utils::clean_instrumentation_test_results($WORK_DIR);
+# Clean the ".classes_instrumented" folder
+my $instrumented_class_folder = ".classes_instrumented";
+system("rm", "-rf", $instrumented_class_folder);
+system("rm", "-rf", "all_states");
+system("rm", "-rf", "initialize");
+system("rm", "-rf", "stateData");
+system("rm", "-rf", "target");
+system("rm", "-rf", "build");
+system("rm", "-rf", "build-tests");
+
+
+my $target_dir = "target";
+
+# check if reachability analysis is performed
+# run the covering tests
+if (! -e "passing_covering_tests") {
+    die "Error: File 'passing_covering_tests' does not exist!\n";
+}
+
+# Distribute the Instrumentation Utility files to the target program.
+
+my $source_org = "$defects4j_root/state_utils/helper";
+if ($pid eq "JacksonCore" || $pid eq "JacksonDatabind" || $pid eq "JacksonXml") {
+    $source_org = "$defects4j_root/state_utils/helper_shaded";
+}
+
+my $target_org;
+
+if (-d "src/test/java") {
+    $target_org = "src/test/java/org/";
+} elsif (-d "src/test") {
+    $target_org = "src/test/org/";
+} elsif (-d "tests/org/") {
+    $target_org = "tests/org/";
+} elsif ($pid eq "Gson") {
+    $target_org = "gson/src/test/java/org/";
+} elsif ($pid eq "Clousre") {
+    $target_org = "test/org/";
+} elsif (-d "test") {
+    $target_org = "test/org/";
+} else {
+    die "❌ Error: Neither 'src/test/java/' nor 'src/test/' directory exists. Exiting.\n";
+}
+
+
+# copy recursively (keeps helper as subdir)
+system("cp", "-r", $source_org, $target_org) == 0 or die "Failed to copy $source_org to $target_org: $!";
+
+print "\n[INFO Preparation] Distributing the configuration utilities for state instrumentation...\n";
+
+
+
+
+my $covering_test_file = "passing_covering_tests";
+
+# Compile and run all "passing_overing tests"
+print("\n");
+print("\n[INFO Build] - Compiling");
+$project->compile_tests() or die "Cannot compile test suite!";
+print("\n[INFO Instrumentation] - State Instrumentation");
+
+#system("java", "-jar", "$defects4j_root/state_utils/o.jar",  "target", "all") == 0 or die "rm -rf failed: $!";
+#system("java", "-jar", "$defects4j_root/state_utils/o.jar",  "build-tests", "all") == 0 or die "rm -rf failed: $!";
+
+
+system("java", "-jar", "$defects4j_root/state_utils/o.jar",  ".", "all") == 0 or die "instrumentation failed using o.jar!";
+
+
+my $covering_test_methods = Utils::read_tests_from_file($covering_test_file);
+
+print("\n[INFO Buggy Execution Start] - running covering tests with STATE instrumentation\n");
+
+
+
+# output folder
+
+my $temp_state_file = "stateData/temp/statefile.json";
+my $all_state_folder = "all_states";
+
+system("mkdir", "-p", $all_state_folder) == 0
+    or die "Failed to create folder $all_state_folder: $!";
+
+
+use Time::HiRes qw(time);
+
+$| = 1;   # disable buffering
+
+my $total = scalar(@$covering_test_methods);
+my $count = 0;
+my $start = time();
+
+
+# Run Each test on buggy version one by one
+foreach my $test (@$covering_test_methods) {
+    $count++;
+    my $elapsed = time() - $start;
+    my $avg_time = $elapsed / $count;
+    my $eta = $avg_time * ($total - $count);
+
+    # format hh:mm:ss
+    my $elapsed_str = sprintf("%02d:%02d:%02d",
+                              int($elapsed/3600), int(($elapsed%3600)/60), int($elapsed%60));
+    my $eta_str     = sprintf("%02d:%02d:%02d",
+                              int($eta/3600), int(($eta%3600)/60), int($eta%60));
+
+    printf("\rBuggy Run Progress: %d/%d | elapsed %s | ETA %s",
+           $count, $total, $elapsed_str, $eta_str);
+
+    # Run on buggy version first!
+    $project->run_tests_for_states($fail_tests, $test);
+
+    # move the output file to a all_states folder 
+
+    system("mkdir", "-p", "$all_state_folder/$test/buggy") == 0
+    or die "Failed to create folder $all_state_folder: $!";
+    if (-e $temp_state_file) {
+        system("mv", $temp_state_file, "$all_state_folder/$test/buggy/state.json");
+    }
+}
+
+
+
+print("\n[INFO Fixed Execution Start] - running covering tests with STATE instrumentation\n");
+system("rm", "-rf", "stateData");
+# remember to remove the target directory first!!!!
+print("\n[INFO Applying Fixed Patches]");
+
+my $patch_file_src = "$defects4j_root/framework/projects/$pid/patches/$bid.src.patch";
+
+
+system("defects4j", "patch", "-f");
+# if ($pid eq "Chart" && $bid eq "7") {
+
+#     system(
+#     "git", "-C", "source",
+#     "apply", "-R", "--3way", $patch_file_src
+# ) == 0
+#     or die "Failed to reverse patch from $patch_file_src";
+
+# } else {
+#     system("patch", "-p1", "-R", "-i", $patch_file_src) == 0
+#         or die "Failed to apply reverse patch from $patch_file_src: $!";
+# }
+
+
+
+
+
+system("rm", "-rf", "target");
+system("rm", "-rf", "build");
+system("rm", "-rf", "build-tests");
+print("\n[INFO Build] - ReCompiling");
+$project->compile_tests() or die "Cannot compile test suite!";
+print("\n[INFO Instrumentation] - Re-State Instrumentation");
+system("java", "-jar", "$defects4j_root/state_utils/o.jar",  ".", "all") == 0 or die "instrumentation failed: $!";
+
+
+# Run Each test on fixed version one by one
+$count = 0;
+foreach my $test (@$covering_test_methods) {
+    $count++;
+    my $elapsed = time() - $start;
+    my $avg_time = $elapsed / $count;
+    my $eta = $avg_time * ($total - $count);
+
+    # format hh:mm:ss
+    my $elapsed_str = sprintf("%02d:%02d:%02d",
+                              int($elapsed/3600), int(($elapsed%3600)/60), int($elapsed%60));
+    my $eta_str     = sprintf("%02d:%02d:%02d",
+                              int($eta/3600), int(($eta%3600)/60), int($eta%60));
+
+    printf("\rFixed Run Progress: %d/%d | elapsed %s | ETA %s",
+           $count, $total, $elapsed_str, $eta_str);
+
+
+
+    # Run on FIX version 2 times
+    for my $i (1..2) {
+        $project->run_tests_for_states($fail_tests, $test);
+
+        # Ensure the output directory exists
+        system("mkdir", "-p", "$all_state_folder/$test/fixed") == 0
+            or die "Failed to create folder $all_state_folder/$test/fixed: $!";
+
+        my $dest_file = "$all_state_folder/$test/fixed/$i.json";
+
+        # Move the temp state file to the destination
+        if (-e $temp_state_file) {
+            system("mv", $temp_state_file, $dest_file) == 0
+                or die "Failed to move $temp_state_file to $dest_file: $!";
+        }
+
+    }
+
+
+}
+
+
+print("\n[INFO] applyin patch to fall back to the buggy code\n");
+
+my $patch_file_src = "$defects4j_root/framework/projects/$pid/patches/$bid.src.patch";
+
+# if ($pid eq "Chart" && $bid eq "7") {
+#     system(
+#         "git", "-C", "source",
+#         "apply", "--3way", $patch_file_src
+#     ) == 0
+#         or die "Failed to apply patch from $patch_file_src";
+
+# }
+# else {
+#     system("patch", "-p1", "-i", $patch_file_src) == 0
+#         or die "Failed to apply patch from $patch_file_src: $!";
+# }
+system("defects4j", "patch", "-b");
+
+
+
+print "\nDone!\n";
+
+if (-e "failing_with_instrumentation.txt") {
+    my $trigger = Utils::get_failing_tests("failing_with_instrumentation.txt") or die "Cannot determine triggering tests!";
+    $count = scalar(@{$trigger->{methods}}) + scalar(@{$trigger->{classes}});
+
+
+    # print "Failing tests: $count\n";
+    if ($count != 0) {
+        foreach my $test (@{$trigger->{classes}}) {
+            print "  - $test\n";
+        }
+        foreach my $test (@{$trigger->{methods}}) {
+            print "  - $test\n";
+        }
+    }
+    
+}
+
+
+my $end0 = time();
+Utils::record_execution_time("states_on_bugs", $start0, $end0);
+
+1;

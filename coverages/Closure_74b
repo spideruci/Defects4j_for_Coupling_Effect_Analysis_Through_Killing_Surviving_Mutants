@@ -1,0 +1,12 @@
+com.google.javascript.jscomp.PeepholeFoldConstantsTest::testFoldLiteralNames
+com.google.javascript.jscomp.PeepholeFoldConstantsTest::testUndefinedComparison3
+com.google.javascript.jscomp.CommandLineRunnerTest::testIssue297
+com.google.javascript.jscomp.PeepholeFoldConstantsTest::testFoldComplex
+com.google.javascript.jscomp.PeepholeFoldConstantsTest::testUndefinedComparison4
+com.google.javascript.jscomp.PeepholeFoldConstantsTest::testUndefinedComparison2
+com.google.javascript.jscomp.PeepholeFoldConstantsTest::testFoldComparison2
+com.google.javascript.jscomp.PeepholeFoldConstantsTest::testFoldLiteralsTypeMismatches
+com.google.javascript.jscomp.PeepholeIntegrationTest::testBug1059649
+com.google.javascript.jscomp.PeepholeFoldConstantsTest::testFoldComparison
+com.google.javascript.jscomp.PeepholeFoldConstantsTest::testUndefinedComparison1
+com.google.javascript.jscomp.PeepholeIntegrationTest::testBug1438784

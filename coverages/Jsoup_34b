@@ -1,0 +1,9 @@
+org.jsoup.parser.HtmlParserTest::handlesUnclosedTitle
+org.jsoup.parser.HtmlParserTest::parsesUnterminatedTextarea
+org.jsoup.parser.CharacterReaderTest::containsIgnoreCase
+org.jsoup.nodes.FormElementTest::hasAssociatedControls
+org.jsoup.parser.CharacterReaderTest::consumeLetterSequence
+org.jsoup.parser.HtmlParserTest::handlesCdata
+org.jsoup.parser.HtmlParserTest::handlesTagsInTextarea
+org.jsoup.parser.CharacterReaderTest::nextIndexOfString
+org.jsoup.parser.CharacterReaderTest::consumeToString

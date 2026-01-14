@@ -1,0 +1,2 @@
+org.apache.commons.lang3.StringEscapeUtilsTest::testUnescapeHexCharsHtml
+org.apache.commons.lang3.StringEscapeUtilsTest::testEscapeXml

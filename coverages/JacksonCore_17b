@@ -1,0 +1,10 @@
+com.fasterxml.jackson.core.util.TestDefaultPrettyPrinter::testWindowsLinefeed
+com.fasterxml.jackson.core.util.TestDefaultPrettyPrinter::testWithIndent
+com.fasterxml.jackson.core.util.TestDefaultPrettyPrinter::testWithLineFeed
+com.fasterxml.jackson.core.main.TestPrettyPrinter::testObjectCount
+com.fasterxml.jackson.core.util.TestDefaultPrettyPrinter::testTabIndent
+com.fasterxml.jackson.core.util.TestDefaultPrettyPrinter::testSystemLinefeed
+com.fasterxml.jackson.core.json.TestUtf8Generator::testSurrogatesWithRaw
+com.fasterxml.jackson.core.main.TestPrettyPrinter::testArrayCount
+com.fasterxml.jackson.core.util.TestDefaultPrettyPrinter::testUnixLinefeed
+com.fasterxml.jackson.core.json.TestJsonGeneratorFeatures::testBigDecimalAsPlainString

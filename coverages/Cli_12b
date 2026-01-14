@@ -1,0 +1,5 @@
+org.apache.commons.cli.ApplicationTest::testAnt
+org.apache.commons.cli.GnuParserTest::testShortWithoutEqual
+org.apache.commons.cli.BugsTest::test12210
+org.apache.commons.cli.GnuParserTest::testExtraOption
+org.apache.commons.cli.GnuParserTest::testNegativeArgument

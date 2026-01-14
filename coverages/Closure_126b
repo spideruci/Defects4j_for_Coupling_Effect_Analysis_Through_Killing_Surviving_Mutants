@@ -1,0 +1,4 @@
+com.google.javascript.jscomp.MinimizeExitPointsTest::testDoContinueOptimization
+com.google.javascript.jscomp.MinimizeExitPointsTest::testForContinueOptimization
+com.google.javascript.jscomp.MinimizeExitPointsTest::testWhileContinueOptimization
+com.google.javascript.jscomp.MinimizeExitPointsTest::testBreakOptimization

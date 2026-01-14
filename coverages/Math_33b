@@ -1,0 +1,17 @@
+org.apache.commons.math3.optimization.linear.SimplexSolverTest::testMath293
+org.apache.commons.math3.optimization.linear.SimplexSolverTest::testMath434PivotRowSelection2
+org.apache.commons.math3.optimization.linear.SimplexSolverTest::testMath713NegativeVariable
+org.apache.commons.math3.optimization.linear.SimplexSolverTest::testEpsilon
+org.apache.commons.math3.optimization.linear.SimplexSolverTest::testDegeneracy
+org.apache.commons.math3.optimization.linear.SimplexSolverTest::testSimplexSolver
+org.apache.commons.math3.optimization.linear.SimplexSolverTest::testMath272
+org.apache.commons.math3.optimization.linear.SimplexSolverTest::testLargeModel
+org.apache.commons.math3.optimization.linear.SimplexSolverTest::testRestrictVariablesToNonNegative
+org.apache.commons.math3.optimization.linear.SimplexTableauTest::testDropPhase1Objective
+org.apache.commons.math3.optimization.linear.SimplexSolverTest::testMath434PivotRowSelection
+org.apache.commons.math3.optimization.linear.SimplexSolverTest::testUnboundedSolution
+org.apache.commons.math3.optimization.linear.SimplexSolverTest::testSolutionWithNegativeDecisionVariable
+org.apache.commons.math3.optimization.linear.SimplexSolverTest::testMath434NegativeVariable
+org.apache.commons.math3.optimization.linear.SimplexSolverTest::testMath286
+org.apache.commons.math3.optimization.linear.SimplexSolverTest::testMinimization
+org.apache.commons.math3.optimization.linear.SimplexSolverTest::testTrivialModel

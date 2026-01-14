@@ -1,0 +1,3 @@
+com.fasterxml.jackson.databind.creators.DisablingCreatorsTest::testDisabling
+com.fasterxml.jackson.databind.creators.SingleArgCreatorTest::testExplicitFactory660b
+com.fasterxml.jackson.databind.creators.TestCreators::testConstructorCreator

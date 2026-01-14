@@ -1,0 +1,7 @@
+org.apache.commons.cli.HelpFormatterTest::testAutomaticUsage
+org.apache.commons.cli.HelpFormatterTest::testPrintRequiredOptionGroupUsage
+org.apache.commons.cli.HelpFormatterTest::testPrintUsage
+org.apache.commons.cli.bug.BugCLI18Test::testCLI18
+org.apache.commons.cli.HelpFormatterTest::testPrintSortedUsage
+org.apache.commons.cli.BugsTest::test19383
+org.apache.commons.cli.HelpFormatterTest::testPrintOptionGroupUsage

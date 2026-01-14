@@ -1,0 +1,3 @@
+org.jsoup.integration.ParseTest::testBaiduVariant
+org.jsoup.integration.ParseTest::testBaidu
+org.jsoup.integration.ParseTest::testNytArticle

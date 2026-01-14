@@ -1,0 +1,15 @@
+org.jfree.chart.renderer.xy.junit.StackedXYAreaRendererTests::testHashcode
+org.jfree.chart.renderer.xy.junit.XYAreaRenderer2Tests::testSerialization
+org.jfree.chart.renderer.xy.junit.StackedXYAreaRendererTests::testSerialization
+org.jfree.chart.renderer.xy.junit.StackedXYAreaRenderer2Tests::testEquals
+org.jfree.chart.renderer.xy.junit.XYAreaRendererTests::testHashcode
+org.jfree.chart.renderer.xy.junit.XYAreaRendererTests::testEquals
+org.jfree.chart.renderer.xy.junit.StackedXYAreaRendererTests::testEquals
+org.jfree.chart.renderer.xy.junit.XYAreaRenderer2Tests::testEquals
+org.jfree.chart.renderer.xy.junit.StackedXYAreaRendererTests::testCloning
+org.jfree.chart.renderer.xy.junit.StackedXYAreaRenderer2Tests::testHashcode
+org.jfree.chart.renderer.xy.junit.XYAreaRendererTests::testSerialization
+org.jfree.chart.renderer.xy.junit.StackedXYAreaRenderer2Tests::testCloning
+org.jfree.chart.renderer.xy.junit.XYAreaRenderer2Tests::testHashcode
+org.jfree.chart.util.junit.ShapeUtilitiesTests::testEqualShapes
+org.jfree.chart.renderer.xy.junit.StackedXYAreaRenderer2Tests::testSerialization

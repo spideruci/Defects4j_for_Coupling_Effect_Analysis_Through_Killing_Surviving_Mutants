@@ -1,0 +1,17 @@
+com.google.javascript.jscomp.PeepholeReplaceKnownMethodsTest::testJoinBug
+com.google.javascript.jscomp.CommandLineRunnerTest::testGoogAssertStripping
+com.google.javascript.jscomp.PeepholeReplaceKnownMethodsTest::testFoldStringSubstr
+com.google.javascript.jscomp.CommandLineRunnerTest::testIssue115
+com.google.javascript.jscomp.CommandLineRunnerTest::testGetMsgWiring
+com.google.javascript.jscomp.PeepholeReplaceKnownMethodsTest::testFoldStringSubstring
+com.google.javascript.jscomp.PeepholeReplaceKnownMethodsTest::testFoldStringCharCodeAt
+com.google.javascript.jscomp.PeepholeReplaceKnownMethodsTest::testFoldStringCharAt
+com.google.javascript.jscomp.CommandLineRunnerTest::testTypeCheckOverride1
+com.google.javascript.jscomp.CommandLineRunnerTest::testReflectedMethods
+com.google.javascript.jscomp.CommandLineRunnerTest::testGenerateExports
+com.google.javascript.jscomp.PeepholeReplaceKnownMethodsTest::testStringJoinAddSparse
+com.google.javascript.jscomp.CommandLineRunnerTest::testIssue297
+com.google.javascript.jscomp.CommandLineRunnerTest::testProcessClosurePrimitives
+com.google.javascript.jscomp.CommandLineRunnerTest::testTypeCheckOverride2
+com.google.javascript.jscomp.PeepholeReplaceKnownMethodsTest::testStringIndexOf
+com.google.javascript.jscomp.PeepholeReplaceKnownMethodsTest::testStringJoinAdd_b1992789

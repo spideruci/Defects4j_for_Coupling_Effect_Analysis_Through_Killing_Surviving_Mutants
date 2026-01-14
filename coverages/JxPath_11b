@@ -1,0 +1,5 @@
+org.apache.commons.jxpath.ri.model.dom.DOMModelTest::testAxisAttribute
+org.apache.commons.jxpath.ri.model.jdom.JDOMModelTest::testCreatePathAndSetValue
+org.apache.commons.jxpath.ri.model.jdom.JDOMModelTest::testAxisAttribute
+org.apache.commons.jxpath.ri.model.dom.DOMModelTest::testLang
+org.apache.commons.jxpath.ri.model.dom.DOMModelTest::testCreatePathAndSetValue

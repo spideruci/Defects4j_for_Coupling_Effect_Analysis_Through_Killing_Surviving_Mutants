@@ -1,0 +1,7 @@
+com.fasterxml.jackson.databind.ser.jdk.DateSerializationTest::testDatesAsMapKeys
+com.fasterxml.jackson.databind.ser.jdk.DateSerializationTest::testDateDefaultShape
+com.fasterxml.jackson.databind.ser.jdk.DateSerializationTest::testDateISO8601_colonInTZ
+com.fasterxml.jackson.databind.ser.jdk.DateSerializationTest::testDateISO8601_customTZ
+com.fasterxml.jackson.databind.ser.jdk.DateSerializationTest::testDateWithJsonFormat
+com.fasterxml.jackson.databind.ext.TestCoreXMLTypes::testXMLGregorianCalendarSerAndDeser
+com.fasterxml.jackson.databind.ser.jdk.DateSerializationTest::testDateISO8601

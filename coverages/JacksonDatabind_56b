@@ -1,0 +1,2 @@
+com.fasterxml.jackson.databind.deser.TestMapDeserialization::testLocaleKeyMap
+com.fasterxml.jackson.databind.jsontype.TestDefaultForLists::testDateTypes

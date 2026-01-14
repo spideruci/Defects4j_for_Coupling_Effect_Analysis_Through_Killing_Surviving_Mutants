@@ -1,0 +1,14 @@
+org.jsoup.select.ElementsTest::val
+org.jsoup.nodes.DocumentTest::testTitles
+org.jsoup.integration.ParseTest::testSmhBizArticle
+org.jsoup.parser.ParserTest::parsesRoughAttributes
+org.jsoup.parser.ParserTest::handlesDataOnlyTags
+org.jsoup.parser.ParserTest::parsesSimpleDocument
+org.jsoup.safety.CleanerTest::testIsValid
+org.jsoup.integration.ParseTest::testNewsHomepage
+org.jsoup.integration.ParseTest::testYahooJp
+org.jsoup.integration.ParseTest::testGoogleSearchIpod
+org.jsoup.safety.CleanerTest::testDropScript
+org.jsoup.parser.ParserTest::createsDocumentStructure
+org.jsoup.parser.ParserTest::handlesTextArea
+org.jsoup.parser.ParserTest::handlesFrames

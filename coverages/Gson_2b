@@ -1,0 +1,12 @@
+com.google.gson.functional.DefaultTypeAdaptersTest::testNullJsonElementSerialization
+com.google.gson.functional.DefaultTypeAdaptersTest::testJsonNullSerialization
+com.google.gson.functional.DefaultTypeAdaptersTest::testJsonArrayDeserialization
+com.google.gson.functional.DefaultTypeAdaptersTest::testJsonObjectDeserialization
+com.google.gson.functional.DefaultTypeAdaptersTest::testJsonObjectSerialization
+com.google.gson.functional.DefaultTypeAdaptersTest::testJsonArraySerialization
+com.google.gson.functional.TypeAdapterPrecedenceTest::testStreamingHierarchicalFollowedByNonstreamingHierarchical
+com.google.gson.functional.DefaultTypeAdaptersTest::testJsonNullDeserialization
+com.google.gson.DefaultInetAddressTypeAdapterTest::testInetAddressSerializationAndDeserialization
+com.google.gson.functional.DefaultTypeAdaptersTest::testJsonPrimitiveSerialization
+com.google.gson.functional.DefaultTypeAdaptersTest::testJsonPrimitiveDeserialization
+com.google.gson.functional.DefaultTypeAdaptersTest::testNullSerialization

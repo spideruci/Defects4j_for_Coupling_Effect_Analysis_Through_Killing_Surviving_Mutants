@@ -1,0 +1,17 @@
+org.apache.commons.math.ode.nonstiff.EulerIntegratorTest::testDecreasingSteps
+org.apache.commons.math.ode.nonstiff.HighamHall54IntegratorTest::testEvents
+org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testSolutionLeftSide
+org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testSolutionAboveSide
+org.apache.commons.math.ode.nonstiff.DormandPrince853IntegratorTest::testEvents
+org.apache.commons.math.ode.nonstiff.GillIntegratorTest::testDecreasingSteps
+org.apache.commons.math.ode.nonstiff.DormandPrince54IntegratorTest::testEvents
+org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testQuinticZero
+org.apache.commons.math.ode.nonstiff.GraggBulirschStoerIntegratorTest::testEvents
+org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testSinZero
+org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testConvergenceOnFunctionAccuracy
+org.apache.commons.math.ode.nonstiff.ThreeEighthesIntegratorTest::testDecreasingSteps
+org.apache.commons.math.ode.nonstiff.MidpointIntegratorTest::testDecreasingSteps
+org.apache.commons.math.ode.nonstiff.ClassicalRungeKuttaIntegratorTest::testDecreasingSteps
+org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testSolutionBelowSide
+org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testFasterThanNewton
+org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolverTest::testSolutionRightSide

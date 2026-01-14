@@ -1,0 +1,10 @@
+com.fasterxml.jackson.databind.jsontype.TestCustomTypeIdResolver::testCustomTypeIdResolver
+com.fasterxml.jackson.databind.jsontype.TestTypedArrayDeserialization::testIntList
+com.fasterxml.jackson.databind.jsontype.TestTypedArrayDeserialization::testLongListAsWrapper
+com.fasterxml.jackson.databind.jsontype.TestPolymorphicWithDefaultImpl::testInvalidTypeId511
+com.fasterxml.jackson.databind.jsontype.TestTypedDeserialization::testTypeAsWrapper
+com.fasterxml.jackson.databind.jsontype.TestTypeNames::testRoundTrip
+com.fasterxml.jackson.databind.jsontype.TestTypedArrayDeserialization::testLongArray
+com.fasterxml.jackson.databind.jsontype.TestVisibleTypeId::testVisibleWithWrapperObject
+com.fasterxml.jackson.databind.jsontype.TestPolymorphicWithDefaultImpl::testDefaultImplWithObjectWrapper
+com.fasterxml.jackson.databind.jsontype.TestTypeNames::testRoundTripMap

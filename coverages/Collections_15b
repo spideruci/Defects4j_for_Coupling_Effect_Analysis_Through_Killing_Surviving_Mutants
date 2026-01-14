@@ -1,0 +1,7 @@
+org.apache.commons.collections.list.TestSetUniqueList::testSetUpwardsInList
+org.apache.commons.collections.list.TestSetUniqueList::testUniqueListReInsert
+org.apache.commons.collections.list.TestSetUniqueList::testUniqueListDoubleInsert
+org.apache.commons.collections.list.TestSetUniqueList::testSet
+org.apache.commons.collections.list.TestSetUniqueList::testSetInBiggerList
+org.apache.commons.collections.list.TestSetUniqueList::testSetDownwardsInList
+org.apache.commons.collections.list.TestSetUniqueList::testListSetByIndex

@@ -1,0 +1,7 @@
+com.google.javascript.jscomp.IntegrationTest::testCheckConstants1
+com.google.javascript.jscomp.IntegrationTest::testIssue787
+com.google.javascript.jscomp.CollapseVariableDeclarationsTest::testAggressiveRedeclaration
+com.google.javascript.jscomp.CollapseVariableDeclarationsTest::testIssue397
+com.google.javascript.jscomp.CommandLineRunnerTest::testTransformAMDAndProcessCJS
+com.google.javascript.jscomp.IntegrationTest::testIssue550
+com.google.javascript.jscomp.CollapseVariableDeclarationsTest::testAggressiveRedeclarationInFor

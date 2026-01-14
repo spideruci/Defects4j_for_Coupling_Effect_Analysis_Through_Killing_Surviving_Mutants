@@ -1,0 +1,11 @@
+org.apache.commons.math3.util.Decimal64Test::testLinearCombinationDaFa
+org.apache.commons.math3.analysis.differentiation.DerivativeStructureTest::testLinearCombinationFaFa
+org.apache.commons.math3.util.Decimal64Test::testLinearCombinationFaFa
+org.apache.commons.math3.util.MathArraysTest::testLinearCombination1
+org.apache.commons.math3.util.MathArraysTest::testLinearCombinationInfinite
+org.apache.commons.math3.dfp.DfpTest::testLinearCombinationDaFa
+org.apache.commons.math3.util.MathArraysTest::testLinearCombination2
+org.apache.commons.math3.analysis.differentiation.DerivativeStructureTest::testLinearCombinationDaFa
+org.apache.commons.math3.dfp.DfpTest::testLinearCombinationFaFa
+org.apache.commons.math3.analysis.differentiation.DerivativeStructureTest::testLinearCombination1DSDS
+org.apache.commons.math3.analysis.differentiation.DerivativeStructureTest::testLinearCombination1DoubleDS

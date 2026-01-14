@@ -1,0 +1,15 @@
+com.fasterxml.jackson.databind.deser.TestAnyProperties::testIgnoredPart2
+com.fasterxml.jackson.databind.creators.TestCreatorWithPolymorphic113::testSubtypes
+com.fasterxml.jackson.databind.jsontype.TestPolymorphicWithDefaultImpl::testUnknownTypeIDRecovery
+com.fasterxml.jackson.databind.deser.TestAnnotationIgnore::testFailOnIgnore
+com.fasterxml.jackson.databind.deser.exc.TestExceptionSerialization::testIgnorals
+com.fasterxml.jackson.databind.node.TestTreeTraversingParser::testSkipChildrenWrt370
+com.fasterxml.jackson.databind.filter.ReadOnlyProperties95Test::testReadOnlyProp
+com.fasterxml.jackson.databind.filter.TestUnknownPropertyDeserialization::testWithClassIgnore
+com.fasterxml.jackson.databind.deser.TestAnyProperties::testIgnored
+com.fasterxml.jackson.databind.filter.IgnorePropertyOnDeserTest::testIgnoreViaConfigOverride1217
+com.fasterxml.jackson.databind.filter.TestUnknownPropertyDeserialization::testClassWithIgnoreUnknown
+com.fasterxml.jackson.databind.filter.TestUnknownPropertyDeserialization::testPropertyIgnoralWithClass
+com.fasterxml.jackson.databind.creators.TestCreators2::testJackson431
+com.fasterxml.jackson.databind.struct.TestFormatForCollections::testListAsObject
+com.fasterxml.jackson.databind.creators.BuilderSimpleTest::testSimpleWithIgnores

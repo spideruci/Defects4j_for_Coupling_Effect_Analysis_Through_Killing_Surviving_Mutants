@@ -1,0 +1,5 @@
+org.apache.commons.lang.text.StrBuilderAppendInsertTest::testAppendFixedWidthPadRight_int
+org.apache.commons.lang.text.StrBuilderAppendInsertTest::testLang299
+org.apache.commons.lang.text.StrBuilderAppendInsertTest::testAppendFixedWidthPadLeft_int
+org.apache.commons.lang.text.StrBuilderAppendInsertTest::testAppendFixedWidthPadRight
+org.apache.commons.lang.text.StrBuilderAppendInsertTest::testAppendFixedWidthPadLeft

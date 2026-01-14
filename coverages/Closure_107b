@@ -1,0 +1,16 @@
+com.google.javascript.jscomp.CommandLineRunnerTest::testIssue504
+com.google.javascript.jscomp.CommandLineRunnerTest::testGoogAssertStripping
+com.google.javascript.jscomp.CommandLineRunnerTest::testHiddenSideEffect
+com.google.javascript.jscomp.CommandLineRunnerTest::testIssue601b
+com.google.javascript.jscomp.CommandLineRunnerTest::testSideEffectIntegration
+com.google.javascript.jscomp.CommandLineRunnerTest::testIssue81
+com.google.javascript.jscomp.CommandLineRunnerTest::testDebugFlag4
+com.google.javascript.jscomp.CommandLineRunnerTest::testDebugFlag3
+com.google.javascript.jscomp.CommandLineRunnerTest::testGetMsgWiring
+com.google.javascript.jscomp.CommandLineRunnerTest::testCheckGlobalThisOnWithAdvancedMode
+com.google.javascript.jscomp.CommandLineRunnerTest::testInlineVariables
+com.google.javascript.jscomp.CommandLineRunnerTest::testIssue601c
+com.google.javascript.jscomp.CommandLineRunnerTest::testReflectedMethods
+com.google.javascript.jscomp.CommandLineRunnerTest::testIssue846
+com.google.javascript.jscomp.CommandLineRunnerTest::testAdvancedModeRemovesUnusedParams
+com.google.javascript.jscomp.CommandLineRunnerTest::testTypedAdvanced

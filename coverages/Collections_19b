@@ -1,0 +1,8 @@
+org.apache.commons.collections.list.SetUniqueListTest::testSet
+org.apache.commons.collections.list.SetUniqueListTest::testSetInBiggerList
+org.apache.commons.collections.list.SetUniqueListTest::testUniqueListReInsert
+org.apache.commons.collections.list.SetUniqueListTest::testCollections304
+org.apache.commons.collections.list.SetUniqueListTest::testUniqueListDoubleInsert
+org.apache.commons.collections.list.SetUniqueListTest::testListSetByIndex
+org.apache.commons.collections.list.SetUniqueListTest::testSetDownwardsInList
+org.apache.commons.collections.list.SetUniqueListTest::testSetUpwardsInList

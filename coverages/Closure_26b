@@ -1,0 +1,3 @@
+com.google.javascript.jscomp.CompilerTest::testCommonJSMissingRequire
+com.google.javascript.jscomp.CompilerTest::testCommonJSProvidesAndRequire
+com.google.javascript.jscomp.ProcessCommonJSModulesTest::testGuessModuleName

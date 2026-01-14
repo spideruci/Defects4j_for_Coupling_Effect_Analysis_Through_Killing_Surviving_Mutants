@@ -1,0 +1,7 @@
+org.apache.commons.math.distribution.NormalDistributionTest::testSampling
+org.apache.commons.math.distribution.PoissonDistributionTest::testNormalApproximateProbability
+org.apache.commons.math.distribution.NormalDistributionTest::testMath280
+org.apache.commons.math.distribution.NormalDistributionTest::testInverseCumulativeProbabilities
+org.apache.commons.math.distribution.NormalDistributionTest::testCumulativeProbabilities
+org.apache.commons.math.distribution.NormalDistributionTest::testQuantiles
+org.apache.commons.math.distribution.NormalDistributionTest::testConsistency

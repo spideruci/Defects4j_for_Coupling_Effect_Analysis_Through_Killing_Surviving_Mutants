@@ -1,0 +1,17 @@
+org.apache.commons.math3.ode.nonstiff.ClassicalRungeKuttaIntegratorTest::testDecreasingSteps
+org.apache.commons.math3.ode.events.OverlappingEventsTest::testOverlappingEvents1
+org.apache.commons.math3.ode.nonstiff.MidpointIntegratorTest::testDecreasingSteps
+org.apache.commons.math3.ode.nonstiff.DormandPrince853IntegratorTest::testUnstableDerivative
+org.apache.commons.math3.ode.nonstiff.GraggBulirschStoerIntegratorTest::testEvents
+org.apache.commons.math3.ode.nonstiff.GillIntegratorTest::testUnstableDerivative
+org.apache.commons.math3.ode.nonstiff.HighamHall54IntegratorTest::testEvents
+org.apache.commons.math3.ode.nonstiff.GraggBulirschStoerIntegratorTest::testUnstableDerivative
+org.apache.commons.math3.ode.nonstiff.DormandPrince853IntegratorTest::testEvents
+org.apache.commons.math3.ode.events.OverlappingEventsTest::testOverlappingEvents0
+org.apache.commons.math3.ode.nonstiff.ClassicalRungeKuttaIntegratorTest::testMissedEndEvent
+org.apache.commons.math3.ode.nonstiff.EulerIntegratorTest::testDecreasingSteps
+org.apache.commons.math3.ode.nonstiff.GillIntegratorTest::testDecreasingSteps
+org.apache.commons.math3.ode.nonstiff.DormandPrince853IntegratorTest::testMissedEndEvent
+org.apache.commons.math3.ode.nonstiff.ThreeEighthesIntegratorTest::testDecreasingSteps
+org.apache.commons.math3.ode.nonstiff.DormandPrince54IntegratorTest::testEvents
+org.apache.commons.math3.ode.events.EventStateTest::testIssue695

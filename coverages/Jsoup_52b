@@ -1,0 +1,3 @@
+org.jsoup.integration.ParseTest::testHtml5Charset
+org.jsoup.integration.ParseTest::testBrokenHtml5CharsetWithASingleDoubleQuote
+org.jsoup.helper.DataUtilTest::wrongMetaCharsetFallback

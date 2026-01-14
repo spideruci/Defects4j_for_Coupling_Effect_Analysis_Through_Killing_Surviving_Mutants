@@ -1,0 +1,5 @@
+org.apache.commons.math.optimization.fitting.GaussianFitterTest::testFit04
+org.apache.commons.math.optimization.fitting.GaussianFitterTest::testFit07
+org.apache.commons.math.optimization.fitting.GaussianFitterTest::testFit01
+org.apache.commons.math.optimization.fitting.GaussianFitterTest::testFit06
+org.apache.commons.math.optimization.fitting.GaussianFitterTest::testFit05

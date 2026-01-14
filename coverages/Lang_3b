@@ -1,0 +1,4 @@
+org.apache.commons.lang3.math.NumberUtilsTest::testCreateNumberFailure_4
+org.apache.commons.lang3.math.NumberUtilsTest::testIsNumber
+org.apache.commons.lang3.math.NumberUtilsTest::testCreateNumberMagnitude
+org.apache.commons.lang3.math.NumberUtilsTest::testCreateNumber

@@ -1,0 +1,2 @@
+org.jfree.data.time.junit.TimeSeriesTests::testClone
+org.jfree.data.time.junit.TimeSeriesTests::testClone2

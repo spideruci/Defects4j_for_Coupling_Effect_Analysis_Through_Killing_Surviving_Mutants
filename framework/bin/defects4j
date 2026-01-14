@@ -165,6 +165,96 @@ query the metadata for a particular project for automation purposes.
 =cut
 $cmd_descr{query}="query the metadata for a particular project for automation purposes";
 
+
+
+=pod
+
+=item * L<B<mycmd>|d4j::d4j-states/>
+
+a custom command to experiment with instrumentation.
+
+=cut
+$cmd_descr{states}="get program states";
+
+
+=pod
+
+=item * L<B<mycmd>|d4j::d4j-generate_specification/>
+
+a custom command to experiment with instrumentation.
+
+=cut
+$cmd_descr{generate_specification}="get assertion specification from state analysis";
+
+
+=pod
+
+=item * L<B<mycmd>|d4j::d4j-mutation_analysis>
+
+
+=cut
+$cmd_descr{mutation_analysis}="run mutation analysis";
+
+=pod
+
+=item * L<B<mycmd>|d4j::d4j-states_on_mutants>
+
+
+=cut
+$cmd_descr{states_on_mutants}="run one surviving mutant with states analysis";
+
+
+=pod
+
+=item * L<B<mycmd>|d4j::d4j-compute_surviving_to_run>
+
+
+=cut
+$cmd_descr{compute_surviving_to_run}="compute surviving mutants to be run with states analysis";
+
+
+=pod
+
+=item * L<B<mycmd>|d4j::d4j-patch>
+
+
+=cut
+$cmd_descr{patch}="patch the project production code to either buggy or fixed";
+
+=pod
+
+=item * L<B<mycmd>|d4j::d4j-update_oracle_helper->
+
+
+=cut
+$cmd_descr{update_oracle_helper}="update the verifyOracleData file accordingly";
+
+=pod
+
+=item * L<B<mycmd>|d4j::d4j-get_project->
+
+
+=cut
+$cmd_descr{get_project}="get_project";
+
+
+
+
+
+
+
+
+# =pod
+
+# =item * L<B<mycmd>|d4j::d4j-generate_specification/>
+
+# a custom command to experiment with instrumentation.
+
+# =cut
+# $cmd_descr{generate_specification}="get assertion specification from state analysis";
+
+
+
 #
 # Issue usage message and quit
 #

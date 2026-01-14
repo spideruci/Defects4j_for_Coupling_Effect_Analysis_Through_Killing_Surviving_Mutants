@@ -45,6 +45,11 @@ use Fcntl qw< LOCK_EX SEEK_END >;
 use String::Interpolate qw(safe_interpolate);
 
 use Constants;
+use JSON;
+use Time::HiRes qw(gettimeofday tv_interval);
+use Fcntl qw(:flock);
+
+
 
 my $dir = dirname(abs_path(__FILE__));
 
@@ -626,6 +631,8 @@ sub ensure_valid_bid {
         confess("Error: ${pid} is not a project id; for a list, see https://github.com/rjust/defects4j#the-projects\n");
     }
 
+    print("${project_dir}/trigger_tests/${bid}");
+    print("haha");
     if ( ! -e "${project_dir}/trigger_tests/${bid}" ) {
         confess("Error: ${pid}-${bid} is a not a bug id; for a list, see ${project_dir}/trigger_tests\n");
     }
@@ -842,14 +849,91 @@ sub clean_test_results {
     # Remove the files that list all tests and failing tests
     my $fail_tests = "$work_dir/$FILE_FAILING_TESTS";
     my $all_tests = "$work_dir/$FILE_ALL_TESTS";
+    # my $relevant_tests = "$work_dir/$FILE_RELEVANT_TESTS";
 
     if (-e "$fail_tests") {
         unlink("$fail_tests") == 1 or die("Cannot delete 'failing_tests': $!")
     }
+    # if (-e "$relevant_tests") {
+    #     unlink("$relevant_tests") == 1 or die("Cannot delete 'relevant_tests': $!")
+    # }
     if (-e "$all_tests") {
         unlink("$all_tests") == 1 or die("Cannot delete 'all_tests': $!")
     }
 }
+
+sub clean_instrumentation_test_results {
+    my ($work_dir) = @_;
+
+    # Remove the files that list all tests and failing tests
+    my $fail_tests = "$work_dir/failing_with_instrumentation.txt";
+    my $all_tests = "$work_dir/$FILE_ALL_TESTS";
+    # my $relevant_tests = "$work_dir/$FILE_RELEVANT_TESTS";
+
+    if (-e "$fail_tests") {
+        unlink("$fail_tests") == 1 or die("Cannot delete 'failing_tests': $!")
+    }
+    # if (-e "$relevant_tests") {
+    #     unlink("$relevant_tests") == 1 or die("Cannot delete 'relevant_tests': $!")
+    # }
+    if (-e "$all_tests") {
+        unlink("$all_tests") == 1 or die("Cannot delete 'all_tests': $!")
+    }
+}
+
+sub read_tests_from_file {
+    my ($file_path) = @_;
+    open(my $fh, '<', $file_path) or die "Cannot open file $file_path: $!";
+    
+    my @tests;
+    while (my $line = <$fh>) {
+        chomp $line;
+        next if $line =~ /^\s*$/;  # Skip empty lines
+        push @tests, $line;
+    }
+
+    close($fh);
+    return \@tests;  # Return reference to the array of test lines
+}
+
+
+
+
+sub record_execution_time {
+    my ($label, $start_time, $end_time) = @_;
+    my $file = "time.json";
+
+    my $elapsed = $end_time - $start_time;
+
+    # Load existing JSON data if available
+    my $data = [];
+    if (-e $file) {
+        open my $in, '<', $file or die "Cannot open $file: $!";
+        flock($in, LOCK_SH);
+        local $/;
+        my $json_text = <$in>;
+        close $in;
+        eval { $data = decode_json($json_text) };
+        $data = [] if $@;
+    }
+
+    # Append new record
+    push @$data, {
+        name   => $label,
+        time_s => sprintf("%.4f", $elapsed),
+        ts     => scalar localtime,
+    };
+
+    # Write back
+    open my $out, '>', $file or die "Cannot open $file: $!";
+    flock($out, LOCK_EX);
+    print $out to_json($data, { pretty => 1 });
+    close $out;
+}
+
+# Example usage:
+
+
 
 =pod
 

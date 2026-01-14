@@ -1,0 +1,3 @@
+com.google.javascript.jscomp.PeepholeSubstituteAlternateSyntaxTest::testFoldAssignments
+com.google.javascript.jscomp.PeepholeIntegrationTest::testHookIfIntegration
+com.google.javascript.jscomp.PeepholeSubstituteAlternateSyntaxTest::testRemoveDuplicateStatements

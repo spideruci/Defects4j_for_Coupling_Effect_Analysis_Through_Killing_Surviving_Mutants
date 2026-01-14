@@ -1,0 +1,8 @@
+com.fasterxml.jackson.databind.deser.TestDateDeserialization::testCalendar
+com.fasterxml.jackson.databind.deser.TestDateDeserialization::testDateUtilISO8601NoMilliseconds
+com.fasterxml.jackson.databind.deser.TestDateDeserialization::testDateUtilISO8601
+com.fasterxml.jackson.databind.deser.TestDateDeserialization::testDateUtil
+com.fasterxml.jackson.databind.deser.TestDateDeserialization::testDateUtilISO8601NoTimezone
+com.fasterxml.jackson.databind.deser.TestTimestampDeserialization::testTimestampUtil
+com.fasterxml.jackson.databind.deser.TestTimestampDeserialization::testTimestampUtilSingleElementArray
+com.fasterxml.jackson.databind.deser.TestDateDeserialization::test8601DateTimeNoMilliSecs

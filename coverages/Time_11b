@@ -1,0 +1,3 @@
+org.joda.time.tz.TestCompiler::testCompile
+org.joda.time.tz.TestCompiler::test_2400_last
+org.joda.time.tz.TestCompiler::test_2400_fromDay

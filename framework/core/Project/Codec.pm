@@ -132,9 +132,7 @@ sub _post_checkout {
     }
 
     # Set default Java target to 6.
-    if (-e "$work_dir/default.properties") {
-        Utils::sed_cmd("s/1\.[1-5]/1.6/", "$work_dir/default.properties");
-    }
+    Utils::sed_cmd("s/1\.[1-5]/1.6/", "$work_dir/default.properties");
 }
 
 #

@@ -1,0 +1,2 @@
+org.mockitousage.constructor.CreatingMocksWithConstructorTest::mocking_inner_classes_with_wrong_outer_instance
+org.mockitousage.constructor.CreatingMocksWithConstructorTest::can_mock_inner_classes

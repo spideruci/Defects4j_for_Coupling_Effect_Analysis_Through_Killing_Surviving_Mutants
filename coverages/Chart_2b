@@ -1,0 +1,16 @@
+org.jfree.chart.renderer.xy.junit.XYBarRendererTests::testFindRangeBounds
+org.jfree.chart.junit.JFreeChartTests::testSerialization4
+org.jfree.data.general.junit.DatasetUtilitiesTests::testIterateDomainBounds_NaN2
+org.jfree.chart.renderer.xy.junit.ClusteredXYBarRendererTests::testFindDomainBounds
+org.jfree.data.general.junit.DatasetUtilitiesTests::testIterateDomainBounds
+org.jfree.chart.junit.XYBarChartTests::testDrawWithNullInfo
+org.jfree.data.general.junit.DatasetUtilitiesTests::testIterateRangeBounds2
+org.jfree.data.general.junit.DatasetUtilitiesTests::testIterateRangeBounds
+org.jfree.chart.junit.XYBarChartTests::testSetSeriesToolTipGenerator
+org.jfree.data.general.junit.DatasetUtilitiesTests::testIterateRangeBounds3
+org.jfree.data.general.junit.DatasetUtilitiesTests::testIterateRangeBounds4
+org.jfree.data.general.junit.DatasetUtilitiesTests::testFindDomainBounds2
+org.jfree.data.general.junit.DatasetUtilitiesTests::testFindRangeBounds2
+org.jfree.data.general.junit.DatasetUtilitiesTests::testFindDomainBounds_NaN
+org.jfree.chart.junit.XYBarChartTests::testReplaceDataset
+org.jfree.chart.renderer.xy.junit.XYBarRendererTests::testGetLegendItemSeriesIndex
