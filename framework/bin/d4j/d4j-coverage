@@ -24,55 +24,66 @@
 
 =head1 NAME
 
-d4j-coverage -- run code coverage analysis for a checked-out project version.
+defects4j coverage -- run code coverage analysis for a checked-out project version.
 
 =head1 SYNOPSIS
 
-  d4j-coverage [-w work_dir] [-r | [-t single_test] [-s test_suite]] [-i instrument_classes]
+  defects4j coverage [-w work_dir]
+                     [-r | [-t single_test] [-s test_suite] | -e]
+                     [-i instrument_classes]
 
 =head1 DESCRIPTION
 
-This script executes a test or a test suite on a checked-out project version and
-measures statement and branch coverage, using Cobertura. See Cobertura's documentation
-for their definition of branch coverage.
+This command executes developer-written tests or an external test suite on a
+checked-out Defects4J project version and measures statement and branch coverage
+using Cobertura.
+
+By default, coverage is collected by executing the selected test suite as a
+whole. An additional execution mode is provided to support per-test coverage
+analysis.
 
 =head1 OPTIONS
 
 =over 4
 
-=item -w F<work_dir>
+=item B<-w> F<work_dir>
 
-The working directory of the checked-out project version (optional). Default is
-the current directory.
+The working directory of the checked-out project version (optional).
+Default is the current directory.
 
-=item -r
+=item B<-r>
 
-Only execute relevant developer-written tests (optional). By default all developer-written
-tests of the checked-out project version are executed.
+Only execute relevant developer-written tests.
+By default, all developer-written tests of the checked-out project version are executed.
 
-=item -t C<single_test>
+=item B<-t> C<single_test>
 
-Only run this single test method (optional). By default all tests are executed.
-Format: <test_class>::<test_method>.
+Only run a single test method.
+Format: C<< <test_class>::<test_method> >>.
 
-=item -s F<test_suite>
+=item B<-s> F<test_suite>
 
-The archive file name of an external test suite (optional). The default test suite is the
-developer-written test suite of the checked-out project version.
-See L<Test suites|/"Test suites">.
+Archive file of an external test suite.
+The default test suite is the developer-written test suite of the checked-out project version.
 
-=item -i F<instrument_classes>
+=item B<-i> F<instrument_classes>
 
-Measure code coverage for all classes listed in F<instrument_classes> (optional). By
-default, code coverage is measured only for the classes modified by the bug fix. The file
-F<instrument_classes> must contain fully-qualified class names -- one class per line.
+Measure coverage for the classes listed in F<instrument_classes>.
+By default, coverage is measured only for the classes modified by the bug fix.
+The file must contain fully-qualified class names, one per line.
+
+=item B<-e>
+
+Execute each relevant developer-written test method individually and collect
+coverage information for each test.
+This mode enables fine-grained, per-test coverage analysis.
 
 =back
 
-=head1 Test suites
+=head1 TEST SUITES
 
-An external test suite has to be provided as an archive that contains the test sources.
-Format of the archive file name:
+An external test suite must be provided as an archive containing test sources.
+The archive file name follows:
 
 F<C<project_id>-C<version_id>-C<test_suite_src>.C<test_id>.tar.bz2>
 
@@ -89,6 +100,7 @@ Examples:
 =back
 
 =cut
+
 
 use strict;
 use warnings;

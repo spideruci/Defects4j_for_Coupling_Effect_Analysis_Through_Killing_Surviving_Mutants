@@ -24,65 +24,84 @@
 
 =head1 NAME
 
-d4j-states -- run tests on a checked-out project version.
+defects4j patch -- apply or revert the developer patch for a checked-out Defects4J version.
 
 =head1 SYNOPSIS
 
-  d4j-states [-w work_dir] [-r | [-t single_test] [-s test_suite]]
+  defects4j patch -b
+  defects4j patch -f
 
 =head1 DESCRIPTION
 
-This script executes a test or test suite on a checked-out project version and
-reports failing test cases with state instrumentation. It also writes all failing test cases to the file
-F<failing_tests_states>.
+This command switches a checked-out Defects4J project version between its buggy
+and fixed program states by applying or reverting the corresponding developer
+patch.
+
+The command must be executed inside a valid Defects4J checkout directory.
+Project metadata (project ID and version ID) is read from the local Defects4J
+configuration file to determine which patch to apply.
 
 =head1 OPTIONS
 
 =over 4
 
-=item -w F<work_dir>
+=item B<-b>
 
-The working directory of the checked-out project version (optional). Default is
-the current directory.
+Apply the developer patch, switching the project to the buggy program state.
 
-=item -r
+=item B<-f>
 
-Only execute relevant developer-written tests (optional). By default all developer-written
-tests of the checked-out project version are executed.
-
-=item -t C<single_test>
-
-Only run this single test method (optional). By default all tests are executed.
-Format: <test_class>::<test_method>.
-
-=item -s F<test_suite>
-
-The archive file name of an external test suite (optional). The default test suite is the
-developer-written test suite of the checked-out project version.
-See L<Test suites|/"Test suites">.
+Revert the developer patch (apply it in reverse), switching the project to the
+fixed program state.
 
 =back
 
-=head1 Test suites
-
-An external test suite has to be provided as an archive that contains the test sources.
-Format of the archive file name:
-
-F<C<project_id>-C<version_id>-C<test_suite_src>.C<test_id>.tar.bz2>
-
-Examples:
+=head1 BEHAVIOR AND NOTES
 
 =over 4
 
-=item * F<Lang-11f-randoop.1.tar.bz2>
+=item *
 
-=item * F<Lang-12b-evosuite-weakmutation.1.tar.bz2>
+The patch file is resolved as:
 
-=item * F<Lang-12f-evosuite-branch.1.tar.bz2>
+  framework/projects/<project_id>/patches/<bug_id>.src.patch
+
+under the Defects4J installation root.
+
+=item *
+
+For project C<Chart> bug C<7>, patching is performed via
+C<git apply> in the C<source/> directory. For all other versions,
+the system C<patch> command is used with the C<-p1> option.
+
+=item *
+
+Patch application and reversion are executed with a short timeout to prevent
+stalled patch operations.
+
+=item *
+
+Exactly one of C<-b> or C<-f> should be specified.
 
 =back
 
+=head1 EXAMPLES
+
+Switch to the buggy program state:
+
+  defects4j patch -b
+
+Switch to the fixed program state:
+
+  defects4j patch -f
+
+=head1 EXIT STATUS
+
+If patch application or reversion fails (or times out), the command terminates
+with an error message.
+
 =cut
+
 
 use strict;
 use warnings;
@@ -192,18 +211,6 @@ if ($pid eq "Chart" && $bid eq "7") {
         run_with_timeout(5, "patch", "-p1", "-R", "-i", "$PATCH_FILE");
     }
 }
-
-
-
-# Usage
-# if (defined $cmd_opts{b}) {
-#     run_with_timeout(5, "git", "apply", "$PATCH_FILE");
-# }
-
-# if (defined $cmd_opts{f}) {
-#     run_with_timeout(5, "git", "apply", "-R", "$PATCH_FILE");
-# }
-
 
 
 

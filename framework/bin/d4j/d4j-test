@@ -28,54 +28,61 @@ d4j-test -- run tests on a checked-out project version.
 
 =head1 SYNOPSIS
 
-  d4j-test [-w work_dir] [-r | [-t single_test] [-s test_suite]]
+  d4j-test [-w work_dir]
+           [-r | [-t single_test] [-s test_suite] | -e | -c]
 
 =head1 DESCRIPTION
 
-This script executes a test or test suite on a checked-out project version and
-reports failing test cases. It also writes all failing test cases to the file
-F<failing_tests>.
+This command executes developer-written tests or an external test suite on a
+checked-out Defects4J project version and reports failing test cases.
+Failing tests are written to the file F<failing_tests>.
+
+Depending on the provided options, tests may be executed as a whole, individually,
+or individually with mutant coverage collection.
 
 =head1 OPTIONS
 
 =over 4
 
-=item -w F<work_dir>
+=item B<-w> F<work_dir>
 
-The working directory of the checked-out project version (optional). Default is
-the current directory.
+The working directory of the checked-out project version (optional).
+Default is the current directory.
 
-=item -r
+=item B<-r>
 
-Only execute relevant developer-written tests (optional). By default all developer-written
-tests of the checked-out project version are executed.
+Only execute relevant developer-written tests.
+By default, all developer-written tests of the checked-out project version are executed.
 
-=item -t C<single_test>
+=item B<-t> C<single_test>
 
-Only run this single test method (optional). By default all tests are executed.
-Format: <test_class>::<test_method>.
+Only run a single test method.
+Format: C<< <test_class>::<test_method> >>.
 
-=item -s F<test_suite>
+=item B<-s> F<test_suite>
 
-The archive file name of an external test suite (optional). The default test suite is the
-developer-written test suite of the checked-out project version.
-See L<Test suites|/"Test suites">.
+Archive file of an external test suite.
+The default test suite is the developer-written test suite of the checked-out project version.
 
-=item -e
+=item B<-e>
 
-Run individual test case one by one
+Execute each relevant developer-written test method individually.
+This mode first identifies relevant tests and then runs each test method
+one by one in isolation.
 
-=item -c
+=item B<-c>
 
-Run individual test case one by one and collect mutant coverage for each test case.
-
+Execute each relevant developer-written test method individually and collect
+mutant coverage information for each test.
+This mode instruments the program using Major and records mutant coverage
+into C<mutant_coverage.json>.
 
 =back
 
-=head1 Test suites
+=head1 TEST SUITES
 
-An external test suite has to be provided as an archive that contains the test sources.
-Format of the archive file name:
+An external test suite must be provided as an archive containing test sources.
+The archive file name must follow the format:
 
 F<C<project_id>-C<version_id>-C<test_suite_src>.C<test_id>.tar.bz2>
 
@@ -252,7 +259,7 @@ if (defined $TEST_SUITE){
 
     my $start = time();
 
-    # run each relevant tests individually, use defects4j test -e
+
     my $all_test_file = "all_tests";
 
     # Compile and run all relevant tests

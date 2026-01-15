@@ -24,65 +24,97 @@
 
 =head1 NAME
 
-d4j-states -- run tests on a checked-out project version.
+get_project -- checkout a Defects4J project version and prepare analysis workspace.
 
 =head1 SYNOPSIS
 
-  d4j-states [-w work_dir] [-r | [-t single_test] [-s test_suite]]
+  get_project <project_id> <version_id>
 
 =head1 DESCRIPTION
 
-This script executes a test or test suite on a checked-out project version and
-reports failing test cases with state instrumentation. It also writes all failing test cases to the file
-F<failing_tests_states>.
+This script prepares a working directory for analysis on a specific defects4J
+project/version pair.
 
-=head1 OPTIONS
-
-=over 4
-
-=item -w F<work_dir>
-
-The working directory of the checked-out project version (optional). Default is
-the current directory.
-
-=item -r
-
-Only execute relevant developer-written tests (optional). By default all developer-written
-tests of the checked-out project version are executed.
-
-=item -t C<single_test>
-
-Only run this single test method (optional). By default all tests are executed.
-Format: <test_class>::<test_method>.
-
-=item -s F<test_suite>
-
-The archive file name of an external test suite (optional). The default test suite is the
-developer-written test suite of the checked-out project version.
-See L<Test suites|/"Test suites">.
-
-=back
-
-=head1 Test suites
-
-An external test suite has to be provided as an archive that contains the test sources.
-Format of the archive file name:
-
-F<C<project_id>-C<version_id>-C<test_suite_src>.C<test_id>.tar.bz2>
-
-Examples:
+Given a project ID and version ID, it:
 
 =over 4
 
-=item * F<Lang-11f-randoop.1.tar.bz2>
+=item *
 
-=item * F<Lang-12b-evosuite-weakmutation.1.tar.bz2>
+Checks out the specified defects4J version into
+C<< <project_id>_<version_id> >>.
 
-=item * F<Lang-12f-evosuite-branch.1.tar.bz2>
+=item *
+
+Copies the precomputed coverage file
+C<coverages/<project_id>_<version_id>> into the checkout directory as
+C<passing_covering_tests>.
+
+=item *
+
+Copies state-analysis helper scripts and utilities from
+C<state_utils/> into the checkout directory.
 
 =back
+
+=head1 ARGUMENTS
+
+=over 4
+
+=item C<< project_id >>
+
+defects4J project identifier (e.g., C<Lang>, C<Chart>, C<Math>).
+
+=item C<< version_id >>
+
+defects4J version identifier (e.g., C<1b>, only the "buggy" version).
+
+=back
+
+=head1 OUTPUT
+
+A directory named C<< <project_id>_<version_id> >> containing:
+
+=over 4
+
+=item *
+
+A fresh defects4J checkout
+
+=item *
+
+C<passing_covering_tests>
+
+=item *
+
+Copied helper scripts and jars for downstream analysis
+
+=back
+
+=head1 REQUIREMENTS
+
+=over 4
+
+=item *
+
+C<defects4j> available on C<PATH>
+
+=item *
+
+C<coverages/<project_id>_<version_id>> exists under the defects4J root
+
+=item *
+
+C<state_utils/> exists under the defects4J root
+
+=back
+
+=head1 EXAMPLE
+
+  get_project Lang 11f
 
 =cut
+
 
 
 use strict;

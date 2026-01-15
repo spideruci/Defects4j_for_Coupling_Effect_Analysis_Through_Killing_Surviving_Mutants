@@ -24,65 +24,120 @@
 
 =head1 NAME
 
-d4j-states -- run tests on a checked-out project version.
+defects4j mutation_analysis -- perform customized mutation analysis for experimental evaluation.
 
 =head1 SYNOPSIS
 
-  d4j-states [-w work_dir] [-r | [-t single_test] [-s test_suite]]
+  defects4j mutation_analysis
 
 =head1 DESCRIPTION
 
-This script executes a test or test suite on a checked-out project version and
-reports failing test cases with state instrumentation. It also writes all failing test cases to the file
-F<failing_tests_states>.
+This command performs a customized mutation analysis designed specifically for
+our experimental workflow. It is \emph{not} equivalent to Defects4J’s original
+C<defects4j mutation> command.
 
-=head1 OPTIONS
+Unlike the standard Defects4J mutation analysis, which focuses on computing
+mutation scores at the test-suite level, this command supports fine-grained,
+test-driven mutation analysis with execution control, fail-fast behavior, and
+state-aware filtering tailored to our study.
 
-=over 4
-
-=item -w F<work_dir>
-
-The working directory of the checked-out project version (optional). Default is
-the current directory.
-
-=item -r
-
-Only execute relevant developer-written tests (optional). By default all developer-written
-tests of the checked-out project version are executed.
-
-=item -t C<single_test>
-
-Only run this single test method (optional). By default all tests are executed.
-Format: <test_class>::<test_method>.
-
-=item -s F<test_suite>
-
-The archive file name of an external test suite (optional). The default test suite is the
-developer-written test suite of the checked-out project version.
-See L<Test suites|/"Test suites">.
-
-=back
-
-=head1 Test suites
-
-An external test suite has to be provided as an archive that contains the test sources.
-Format of the archive file name:
-
-F<C<project_id>-C<version_id>-C<test_suite_src>.C<test_id>.tar.bz2>
-
-Examples:
+The command iterates over all generated mutants and, for each mutant:
 
 =over 4
 
-=item * F<Lang-11f-randoop.1.tar.bz2>
+=item 1.
 
-=item * F<Lang-12b-evosuite-weakmutation.1.tar.bz2>
+Configures the mutation by dynamically updating the mutation identifier in the
+mutation configuration.
 
-=item * F<Lang-12f-evosuite-branch.1.tar.bz2>
+=item 2.
+
+Compiles and installs the mutated bytecode into the project build directory.
+
+=item 3.
+
+Executes relevant developer-written tests with strict timeout and fail-fast
+controls to determine whether the mutant is killed or survives.
+
+=item 4.
+
+Filters failing tests to exclude tests that already fail on the fixed program
+or are known triggering tests, ensuring that only mutant-specific failures are
+considered.
+
+=item 5.
+
+Records the mutant outcome (killed or survived) and tracks execution statistics.
 
 =back
+
+This customized design enables controlled and scalable mutation analysis aligned
+with our experimental goals, including targeted mutant execution and precise
+attribution of mutant-killing behavior.
+
+=head1 DIFFERENCES FROM ORIGINAL DEFECTS4J MUTATION
+
+Compared to Defects4J’s original C<defects4j mutation> command, this customized
+command:
+
+=over 4
+
+=item *
+
+Executes mutants sequentially with explicit per-mutant control and monitoring.
+
+=item *
+
+Employs fail-fast termination based on test failures, timeouts, and resource
+usage constraints.
+
+=item *
+
+Excludes test failures unrelated to the mutant under analysis (e.g., failures
+present on the fixed version).
+
+=item *
+
+Records detailed mutant-level outcomes and execution statistics for downstream
+analysis.
+
+=back
+
+=head1 OUTPUT
+
+=over 4
+
+=item C<full_mutation_analysis.json>
+
+A JSON summary containing the number of killed and surviving mutants, the
+mutation score, and the identifiers of killed and surviving mutants.
+
+=back
+
+=head1 REQUIREMENTS
+
+=over 4
+
+=item *
+
+Must be executed inside a valid Defects4J project checkout.
+
+=item *
+
+Mutants must have been generated prior to execution.
+
+=item *
+
+Relevant developer-written tests must be available for execution.
+
+=back
+
+=head1 EXAMPLE
+
+  defects4j mutation_analysis
 
 =cut
+
 
 use strict;
 use warnings;

@@ -24,65 +24,106 @@
 
 =head1 NAME
 
-d4j-states -- run tests on a checked-out project version.
+defects4j compute_surviving_to_run -- compute a reduced set of test runs for surviving mutants.
 
 =head1 SYNOPSIS
 
-  d4j-states [-w work_dir] [-r | [-t single_test] [-s test_suite]]
+  defects4j compute_surviving_to_run
 
 =head1 DESCRIPTION
 
-This script executes a test or test suite on a checked-out project version and
-reports failing test cases with state instrumentation. It also writes all failing test cases to the file
-F<failing_tests_states>.
+This command prepares an optimized execution plan for subsequent mutant state
+collection by determining, for each surviving mutant, the subset of tests that
+should be executed.
 
-=head1 OPTIONS
-
-=over 4
-
-=item -w F<work_dir>
-
-The working directory of the checked-out project version (optional). Default is
-the current directory.
-
-=item -r
-
-Only execute relevant developer-written tests (optional). By default all developer-written
-tests of the checked-out project version are executed.
-
-=item -t C<single_test>
-
-Only run this single test method (optional). By default all tests are executed.
-Format: <test_class>::<test_method>.
-
-=item -s F<test_suite>
-
-The archive file name of an external test suite (optional). The default test suite is the
-developer-written test suite of the checked-out project version.
-See L<Test suites|/"Test suites">.
-
-=back
-
-=head1 Test suites
-
-An external test suite has to be provided as an archive that contains the test sources.
-Format of the archive file name:
-
-F<C<project_id>-C<version_id>-C<test_suite_src>.C<test_id>.tar.bz2>
-
-Examples:
+The command is intended for our experimental workflow and is used after:
 
 =over 4
 
-=item * F<Lang-11f-randoop.1.tar.bz2>
+=item *
 
-=item * F<Lang-12b-evosuite-weakmutation.1.tar.bz2>
+C<defects4j mutation_analysis> (to identify surviving mutants), and
 
-=item * F<Lang-12f-evosuite-branch.1.tar.bz2>
+=item *
+
+per-test mutant coverage collection (to associate tests with mutants).
 
 =back
+
+At a high level, the command:
+
+=over 4
+
+=item 1.
+
+Reads the list of surviving mutants from C<full_mutation_analysis.json>.
+
+=item 2.
+
+Loads per-test mutant coverage from C<mutant_coverage.json>.
+
+=item 3.
+
+Extracts the set of valid test methods by scanning oracle specification files
+under the directory C<oracle specification/> and collecting unique
+C<test_name> entries.
+
+=item 4.
+
+Filters the coverage mapping to retain only tests that appear in the extracted
+set of valid tests.
+
+=item 5.
+
+For each surviving mutant, records the filtered list of tests that cover it.
+Surviving mutants with no remaining covering tests are omitted.
+
+=back
+
+The resulting mapping reduces unnecessary executions by restricting downstream
+mutant analysis to relevant (coverage-confirmed) tests that are also present in
+the oracle-specification set used by our pipeline.
+
+=head1 INPUTS
+
+=over 4
+
+=item C<full_mutation_analysis.json>
+
+Required. Produced by C<defects4j mutation_analysis>. Must contain the field
+C<survived_ids>.
+
+=item C<mutant_coverage.json>
+
+Required. Produced by our per-test coverage workflow. Contains entries of the
+form C<{ name: <test>, mutant_ids: [...] }>.
+
+=item C<oracle specification/>
+
+Required directory. Contains JSON specification files produced by
+C<defects4j generate_specification> (bug-based mode). The command extracts
+unique test names from the field C<test_name>.
+
+=back
+
+=head1 OUTPUT
+
+=over 4
+
+=item C<surviving.json>
+
+A JSON object mapping each surviving mutant identifier to a list of test methods
+that (i) cover the mutant and (ii) appear in the extracted oracle-specification
+test set.
+
+=back
+
+=head1 EXAMPLE
+
+  defects4j compute_surviving_to_run
 
 =cut
+
 
 use strict;
 use warnings;
