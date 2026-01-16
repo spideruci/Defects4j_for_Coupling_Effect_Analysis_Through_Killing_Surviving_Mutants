@@ -7,26 +7,19 @@ Which contains the necessary code to generate fault-revealing augmentations from
 
 ## Table of Contents
 
-- [Artifact Description](#artifact-description)
+- [Artifact Description and PDF Documentation](#artifact-description-and-pdf-documentation)
 - [Table of Real Bugs Detectable Through Assertion Augmentation](#table-of-real-bugs-detectble-through-assertion-augmentation)
 - [Code](#code)
   - [How to Get Started](#how-to-get-started)
   - [Source Code](#source-code)
 - [Generated Assertions](#generated-assertions)
-- [Real Bug Detection](#real-bug-detection)
-- [Results](#results)
-- [Reproducibility](#reproducibility)
-- [Threats to Validity](#threats-to-validity)
-- [License](#license)
 
 
-# Artifact Description
+# Artifact Description and PDF Documentation
 
 This repository contains the multifaceted artifacts associated with our paper, including both the dataset and the supporting code.
 The contents of this repository are briefly introduced in this README.
 Detailed information—such as the experimental setup and the new commands we added to Defects4J to support our analysis—is provided in the accompanying documentation.
-
-
 
 
 👉 [Open Artifact Documentation (doc.pdf)](doc.pdf)
