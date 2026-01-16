@@ -82,6 +82,37 @@ The JAR file `state_utils/folder_utils/o.jar` is used to instrument test code in
 program states.  
 The source-code implementation for this functionality is included in the
 `observerForSpecification` directory.
+## Output of the Analysis
+
+For each program version, the analysis produces a set of structured outputs.
+These outputs are organized by analysis stage and stored under the corresponding
+program-version directory.
+
+### Overview of Output Artifacts
+
+| Category | File / Directory | Description |
+|--------|------------------|-------------|
+| General | `time.json` | Execution time for each stage of the analysis |
+| Mutation Analysis | `bin/` | Compiled mutant class files used to replace original class files during mutation analysis |
+| Mutation Analysis | `full_mutation_analysis.json` | Mutation score and lists of killed and surviving mutant IDs |
+| Mutation Analysis | `surviving.json` | Relevant surviving mutants selected for targeted mutant killing |
+| Mutation Analysis | `mutant_coverage.json` | Mapping between tests and the mutants they cover |
+| Mutation Analysis | `mutants.log` | Mutation metadata indexed by mutant ID |
+| Mutation Analysis | `default.mml` | List of source files subjected to mutation (located at the end of the file) |
+| Real-bug Assertions | `oracles_specification/` | Assertion specifications derived from real bugs |
+| Real-bug Assertions | `oracles/` | Generated Java test files containing real-bug–derived assertions |
+| Real-bug Assertions | `test_outcome.json` | Validation results; entries marked as `accept` detect the real bug |
+| Real-bug Assertions | `all_states/` | Program state information used to derive real-bug assertions |
+| Mutant Assertions | `mutant_oracle_specification/` | Assertion specifications derived from mutants |
+| Mutant Assertions | `oracles_mutants/` | Generated Java test files containing mutant-derived assertions |
+| Mutant Assertions | `test_outcome_mutants.json` | Validation results; entries marked as `accept` kill the corresponding mutants |
+| Mutant Assertions | `detect_real_bug.json` | Mutant-derived assertions that also detect real bugs (marked as `killing`) |
+
+
+
+
+
+
 
 
 # Generated Assertions
