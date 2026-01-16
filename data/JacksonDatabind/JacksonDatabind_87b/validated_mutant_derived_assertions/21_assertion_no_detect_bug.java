@@ -1,21 +1,66 @@
-{
-  "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.util.StdDateFormat",
-  "name": "instance",
-  "returnType": "com.fasterxml.jackson.databind.util.StdDateFormat",
-  "ordinal": 0,
-  "readable_access": "var.DEFAULT_TIMEZONE.name",
-  "python_access": [
-    "metas",
-    0,
-    "graph",
-    "fields",
-    "DEFAULT_TIMEZONE",
-    "fields",
-    "name"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.util.ISO8601DateFormatTest::testHashCodeEquals",
-  "line_number": "63",
-  "simple_class_name": "ISO8601DateFormatTest",
-  "loop": -1
+// Instrumented at 2026-01-02 00:34:09
+package com.fasterxml.jackson.databind.util;
+
+import java.text.DateFormat;
+import java.util.*;
+import com.fasterxml.jackson.databind.BaseMapTest;
+
+/**
+ * @see ISO8601DateFormat
+ */
+public class ISO8601DateFormatTest extends BaseMapTest {
+
+    private ISO8601DateFormat df;
+
+    private Date date;
+
+    @Override
+    public void setUp() {
+        Calendar cal = new GregorianCalendar(2007, 8 - 1, 13, 19, 51, 23);
+        cal.setTimeZone(TimeZone.getTimeZone("GMT"));
+        cal.set(Calendar.MILLISECOND, 0);
+        date = cal.getTime();
+        df = new ISO8601DateFormat();
+    }
+
+    public void testFormat() {
+        String result = df.format(date);
+        assertEquals("2007-08-13T19:51:23Z", result);
+    }
+
+    public void testParse() throws Exception {
+        Date result = df.parse("2007-08-13T19:51:23Z");
+        assertEquals(date, result);
+        // Test parsing date-only values with and without a timezone designation
+        Date dateOnly = df.parse("2007-08-14");
+        Calendar cal = new GregorianCalendar(2007, 8 - 1, 14);
+        assertEquals(cal.getTime(), dateOnly);
+        dateOnly = df.parse("2007-08-14Z");
+        cal = new GregorianCalendar(2007, 8 - 1, 14);
+        cal.setTimeZone(TimeZone.getTimeZone("GMT"));
+        assertEquals(cal.getTime(), dateOnly);
+    }
+
+    public void testPartialParse() throws Exception {
+        java.text.ParsePosition pos = new java.text.ParsePosition(0);
+        String timestamp = "2007-08-13T19:51:23Z";
+        Date result = df.parse(timestamp + "hello", pos);
+        assertEquals(date, result);
+        assertEquals(timestamp.length(), pos.getIndex());
+    }
+
+    public void testCloneObject() throws Exception {
+        DateFormat clone = (DateFormat) df.clone();
+        assertSame(df, clone);
+    }
+
+    public void testHashCodeEquals() throws Exception {
+        com.fasterxml.jackson.databind.util.StdDateFormat __ins_v1 = null;
+        __ins_v1 = StdDateFormat.instance;
+        // for [databind#1130]
+        DateFormat defaultDF = __ins_v1;
+        defaultDF.hashCode();
+        assertTrue(defaultDF.equals(defaultDF));
+        org.helper.Assertions.verify("var.DEFAULT_TIMEZONE.name_264_1", __ins_v1);
+    }
 }

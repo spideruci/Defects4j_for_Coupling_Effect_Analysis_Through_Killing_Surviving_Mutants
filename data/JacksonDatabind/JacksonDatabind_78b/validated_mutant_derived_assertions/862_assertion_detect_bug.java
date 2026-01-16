@@ -1,23 +1,68 @@
-{
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
-  "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
-  "python_access": [
-    "metas",
-    0,
-    "graph",
-    "fields",
-    "_deserializationContext",
-    "fields",
-    "_factory",
-    "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestStatics::testStaticMethods",
-  "line_number": "57",
-  "simple_class_name": "TestStatics",
-  "loop": -1
+// Instrumented at 2025-12-13 14:00:45
+package com.fasterxml.jackson.databind.ser;
+
+import java.util.*;
+import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.databind.*;
+
+/**
+ * This unit test suite verifies that static fields and methods are
+ * ignored wrt serialization
+ */
+public class TestStatics extends BaseMapTest {
+
+    /*
+    /**********************************************************
+    /* Annotated helper classes
+    /**********************************************************
+     */
+    final static class FieldBean {
+
+        public int x = 1;
+
+        public static int y = 2;
+
+        // not even @JsonProperty should make statics usable...
+        @JsonProperty
+        public static int z = 3;
+    }
+
+    final static class GetterBean {
+
+        public int getX() {
+            return 3;
+        }
+
+        public static int getA() {
+            return -3;
+        }
+
+        // not even @JsonProperty should make statics usable...
+        @JsonProperty
+        public static int getFoo() {
+            return 123;
+        }
+    }
+
+    /*
+    /**********************************************************
+    /* Unit tests
+    /**********************************************************
+     */
+    public void testStaticFields() throws Exception {
+        ObjectMapper m = new ObjectMapper();
+        Map<String, Object> result = writeAndMap(m, new FieldBean());
+        assertEquals(1, result.size());
+        assertEquals(Integer.valueOf(1), result.get("x"));
+    }
+
+    public void testStaticMethods() throws Exception {
+        ObjectMapper __ins_v1 = null;
+        __ins_v1 = new ObjectMapper();
+        ObjectMapper m = __ins_v1;
+        Map<String, Object> result = writeAndMap(m, new GetterBean());
+        assertEquals(1, result.size());
+        assertEquals(Integer.valueOf(3), result.get("x"));
+        org.helper.Assertions.verify("var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES_2803_18", __ins_v1);
+    }
 }

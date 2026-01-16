@@ -1,21 +1,51 @@
-{
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
-  "ordinal": 0,
-  "readable_access": "var._serializerFactory._concrete",
-  "python_access": [
-    "metas",
-    0,
-    "graph",
-    "fields",
-    "_serializerFactory",
-    "fields",
-    "_concrete"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.module.TestKeyDeserializers::testKeyDeserializers",
-  "line_number": "38",
-  "simple_class_name": "TestKeyDeserializers",
-  "loop": -1
+// Instrumented at 2025-12-09 23:50:24
+package com.fasterxml.jackson.databind.module;
+
+import java.util.Map;
+import com.fasterxml.jackson.core.Version;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.BaseMapTest;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.KeyDeserializer;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+public class TestKeyDeserializers extends BaseMapTest {
+
+    static class FooKeyDeserializer extends KeyDeserializer {
+
+        @Override
+        public Foo deserializeKey(String key, DeserializationContext ctxt) {
+            return new Foo(key);
+        }
+    }
+
+    static class Foo {
+
+        public String value;
+
+        public Foo(String v) {
+            value = v;
+        }
+    }
+
+    /*
+    /**********************************************************
+    /* Unit tests
+    /**********************************************************
+     */
+    public void testKeyDeserializers() throws Exception {
+        ObjectMapper __ins_v1 = null;
+        __ins_v1 = new ObjectMapper();
+        ObjectMapper mapper = __ins_v1;
+        SimpleModule mod = new SimpleModule("test", Version.unknownVersion());
+        mod.addKeyDeserializer(Foo.class, new FooKeyDeserializer());
+        mapper.registerModule(mod);
+        Map<Foo, Integer> map = mapper.readValue("{\"a\":3}", new TypeReference<Map<Foo, Integer>>() {
+        });
+        assertNotNull(map);
+        assertEquals(1, map.size());
+        Foo foo = map.keySet().iterator().next();
+        assertEquals("a", foo.value);
+        org.helper.Assertions.verify("var._serializerFactory._concrete_459_9", __ins_v1);
+    }
 }

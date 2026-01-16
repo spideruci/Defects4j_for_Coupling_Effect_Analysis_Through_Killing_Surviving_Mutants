@@ -1,23 +1,57 @@
-{
-  "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.filter.IgnorePropertyOnDeser1217Test",
-  "name": "MAPPER",
-  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
-  "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
-  "python_access": [
-    "metas",
-    0,
-    "graph",
-    "fields",
-    "_deserializationContext",
-    "fields",
-    "_factory",
-    "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.filter.IgnorePropertyOnDeser1217Test::testIgnoreOnProperty",
-  "line_number": "32",
-  "simple_class_name": "IgnorePropertyOnDeser1217Test",
-  "loop": -1
+// Instrumented at 2025-12-13 14:00:38
+package com.fasterxml.jackson.databind.filter;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.databind.BaseMapTest;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+public class IgnorePropertyOnDeser1217Test extends BaseMapTest {
+
+    static class IgnoreObject {
+
+        public int x = 1;
+
+        public int y = 2;
+    }
+
+    final static class TestIgnoreObject {
+
+        @JsonIgnoreProperties({ "x" })
+        public IgnoreObject obj;
+
+        @JsonIgnoreProperties({ "y" })
+        public IgnoreObject obj2;
+    }
+
+    /*
+    /****************************************************************
+    /* Unit tests
+    /****************************************************************
+     */
+    private final ObjectMapper MAPPER = new ObjectMapper();
+
+    public void testIgnoreOnProperty() throws Exception {
+        com.fasterxml.jackson.databind.ObjectMapper __ins_v1 = null;
+        __ins_v1 = MAPPER;
+        TestIgnoreObject result = __ins_v1.readValue(aposToQuotes("{'obj':{'x': 10, 'y': 20}, 'obj2':{'x': 10, 'y': 20}}"), TestIgnoreObject.class);
+        assertEquals(20, result.obj.y);
+        assertEquals(10, result.obj2.x);
+        assertEquals(1, result.obj.x);
+        assertEquals(2, result.obj2.y);
+        TestIgnoreObject result1 = MAPPER.readValue(aposToQuotes("{'obj':{'x': 20, 'y': 30}, 'obj2':{'x': 20, 'y': 40}}"), TestIgnoreObject.class);
+        assertEquals(1, result1.obj.x);
+        assertEquals(30, result1.obj.y);
+        assertEquals(20, result1.obj2.x);
+        assertEquals(2, result1.obj2.y);
+        org.helper.Assertions.verify("var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES_2127_18", __ins_v1);
+    }
+
+    public void testIgnoreViaConfigOverride() throws Exception {
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.configOverride(Point.class).setIgnorals(JsonIgnoreProperties.Value.forIgnoredProperties("y"));
+        Point p = mapper.readValue(aposToQuotes("{'x':1,'y':2}"), Point.class);
+        // bind 'x', but ignore 'y'
+        assertEquals(1, p.x);
+        assertEquals(0, p.y);
+    }
 }

@@ -1,23 +1,36 @@
-{
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
-  "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
-  "python_access": [
-    "metas",
-    0,
-    "graph",
-    "fields",
-    "_deserializationContext",
-    "fields",
-    "_factory",
-    "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.introspect.BeanNamingTest::testSimple",
-  "line_number": "22",
-  "simple_class_name": "BeanNamingTest",
-  "loop": -1
+// Instrumented at 2025-12-01 00:17:03
+package com.fasterxml.jackson.databind.introspect;
+
+import com.fasterxml.jackson.databind.*;
+
+// Tests for [databind#653]
+public class BeanNamingTest extends BaseMapTest {
+
+    static class URLBean {
+
+        public String getURL() {
+            return "http://foo";
+        }
+    }
+
+    static class ABean {
+
+        public int getA() {
+            return 3;
+        }
+    }
+
+    public void testSimple() throws Exception {
+        ObjectMapper __ins_v1 = null;
+        __ins_v1 = new ObjectMapper();
+        ObjectMapper mapper = __ins_v1;
+        assertFalse(mapper.isEnabled(MapperFeature.USE_STD_BEAN_NAMING));
+        assertEquals(aposToQuotes("{'url':'http://foo'}"), mapper.writeValueAsString(new URLBean()));
+        assertEquals(aposToQuotes("{'a':3}"), mapper.writeValueAsString(new ABean()));
+        mapper = new ObjectMapper();
+        mapper.enable(MapperFeature.USE_STD_BEAN_NAMING);
+        assertEquals(aposToQuotes("{'URL':'http://foo'}"), mapper.writeValueAsString(new URLBean()));
+        assertEquals(aposToQuotes("{'a':3}"), mapper.writeValueAsString(new ABean()));
+        org.helper.Assertions.verify("var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES_1849_32", __ins_v1);
+    }
 }

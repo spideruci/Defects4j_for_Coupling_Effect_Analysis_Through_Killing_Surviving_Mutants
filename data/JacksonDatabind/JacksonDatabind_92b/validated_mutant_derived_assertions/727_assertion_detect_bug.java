@@ -1,23 +1,66 @@
-{
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectReader",
-  "name": "forType",
-  "returnType": "com.fasterxml.jackson.databind.ObjectReader",
-  "ordinal": 0,
-  "readable_access": "var._context._factory.DEFAULT_NO_DESER_CLASS_NAMES",
-  "python_access": [
-    "metas",
-    18,
-    "graph",
-    "fields",
-    "_context",
-    "fields",
-    "_factory",
-    "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.convert.NumericConversionTest::testDoubleToLong",
-  "line_number": "63",
-  "simple_class_name": "NumericConversionTest",
-  "loop": -1
+// Instrumented at 2025-12-01 00:17:05
+package com.fasterxml.jackson.databind.convert;
+
+import com.fasterxml.jackson.databind.*;
+
+public class NumericConversionTest extends BaseMapTest {
+
+    private final ObjectMapper MAPPER = objectMapper();
+
+    private final ObjectReader R = MAPPER.reader().without(DeserializationFeature.ACCEPT_FLOAT_AS_INT);
+
+    public void testDoubleToInt() throws Exception {
+        // by default, should be ok
+        Integer I = MAPPER.readValue(" 1.25 ", Integer.class);
+        assertEquals(1, I.intValue());
+        IntWrapper w = MAPPER.readValue("{\"i\":-2.25 }", IntWrapper.class);
+        assertEquals(-2, w.i);
+        try {
+            R.forType(Integer.class).readValue("1.5");
+            fail("Should not pass");
+        } catch (JsonMappingException e) {
+            verifyException(e, "Can not coerce a floating-point");
+        }
+        try {
+            R.forType(Integer.TYPE).readValue("1.5");
+            fail("Should not pass");
+        } catch (JsonMappingException e) {
+            verifyException(e, "Can not coerce a floating-point");
+        }
+        try {
+            R.forType(IntWrapper.class).readValue("{\"i\":-2.25 }");
+            fail("Should not pass");
+        } catch (JsonMappingException e) {
+            verifyException(e, "Can not coerce a floating-point");
+        }
+    }
+
+    public void testDoubleToLong() throws Exception {
+        com.fasterxml.jackson.databind.ObjectReader __ins_v1 = null;
+        // by default, should be ok
+        Long L = MAPPER.readValue(" 3.33 ", Long.class);
+        assertEquals(3L, L.longValue());
+        LongWrapper w = MAPPER.readValue("{\"l\":-2.25 }", LongWrapper.class);
+        assertEquals(-2L, w.l);
+        try {
+            R.forType(Long.class).readValue("1.5");
+            fail("Should not pass");
+        } catch (JsonMappingException e) {
+            verifyException(e, "Can not coerce a floating-point");
+        }
+        try {
+            R.forType(Long.TYPE).readValue("1.5");
+            fail("Should not pass");
+        } catch (JsonMappingException e) {
+            verifyException(e, "Can not coerce a floating-point");
+        }
+        try {
+            __ins_v1 = R.forType(LongWrapper.class);
+            __ins_v1.readValue("{\"l\": 7.7 }");
+            fail("Should not pass");
+        } catch (JsonMappingException e) {
+            verifyException(e, "Can not coerce a floating-point");
+        }
+        org.helper.Assertions.verify("var._context._factory.DEFAULT_NO_DESER_CLASS_NAMES_1171_32", __ins_v1);
+    }
 }

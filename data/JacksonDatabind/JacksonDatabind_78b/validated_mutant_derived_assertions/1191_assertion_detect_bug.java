@@ -1,23 +1,27 @@
-{
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
-  "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
-  "python_access": [
-    "metas",
-    0,
-    "graph",
-    "fields",
-    "_deserializationContext",
-    "fields",
-    "_factory",
-    "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.jsontype.UnknownSubClassTest::testUnknownClassAsSubtype",
-  "line_number": "20",
-  "simple_class_name": "UnknownSubClassTest",
-  "loop": -1
+// Instrumented at 2025-12-13 14:00:47
+package com.fasterxml.jackson.databind.jsontype;
+
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.databind.*;
+
+public class UnknownSubClassTest extends BaseMapTest {
+
+    @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "clazz")
+    abstract static class BaseClass {
+    }
+
+    static class BaseWrapper {
+
+        public BaseClass value;
+    }
+
+    public void testUnknownClassAsSubtype() throws Exception {
+        ObjectMapper __ins_v1 = null;
+        __ins_v1 = new ObjectMapper();
+        ObjectMapper mapper = __ins_v1;
+        mapper.configure(DeserializationFeature.FAIL_ON_INVALID_SUBTYPE, false);
+        BaseWrapper w = mapper.readValue(aposToQuotes("{'value':{'clazz':'com.foobar.Nothing'}}'"), BaseWrapper.class);
+        assertNotNull(w);
+        org.helper.Assertions.verify("var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES_1718_18", __ins_v1);
+    }
 }

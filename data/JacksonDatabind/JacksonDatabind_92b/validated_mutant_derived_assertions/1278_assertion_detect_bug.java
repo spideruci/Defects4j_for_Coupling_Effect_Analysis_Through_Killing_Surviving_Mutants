@@ -1,23 +1,26 @@
-{
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
-  "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
-  "python_access": [
-    "metas",
-    0,
-    "graph",
-    "fields",
-    "_deserializationContext",
-    "fields",
-    "_factory",
-    "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.ext.TestJdk7Types::testPathRoundtrip",
-  "line_number": "15",
-  "simple_class_name": "TestJdk7Types",
-  "loop": -1
+// Instrumented at 2025-12-01 00:17:12
+package com.fasterxml.jackson.databind.ext;
+
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import com.fasterxml.jackson.databind.*;
+
+/**
+ * @since 2.7
+ */
+public class TestJdk7Types extends BaseMapTest {
+
+    public void testPathRoundtrip() throws Exception {
+        ObjectMapper __ins_v1 = null;
+        __ins_v1 = new ObjectMapper();
+        ObjectMapper mapper = __ins_v1;
+        // Start with serialization, actually
+        Path input = Paths.get("tmp", "foo.txt");
+        String json = mapper.writeValueAsString(input);
+        assertNotNull(json);
+        Path p = mapper.readValue(json, Path.class);
+        assertNotNull(p);
+        assertEquals(input.toUri(), p.toUri());
+        org.helper.Assertions.verify("var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES_1334_32", __ins_v1);
+    }
 }

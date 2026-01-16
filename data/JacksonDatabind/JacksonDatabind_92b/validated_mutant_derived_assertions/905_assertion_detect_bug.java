@@ -1,23 +1,78 @@
-{
-  "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.jsontype.TestAbstractContainers",
-  "name": "MAPPER",
-  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
-  "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
-  "python_access": [
-    "metas",
-    4,
-    "graph",
-    "fields",
-    "_deserializationContext",
-    "fields",
-    "_factory",
-    "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.jsontype.TestAbstractContainers::testAbstractMaps",
-  "line_number": "75",
-  "simple_class_name": "TestAbstractContainers",
-  "loop": -1
+// Instrumented at 2025-12-01 00:17:08
+package com.fasterxml.jackson.databind.jsontype;
+
+import java.util.*;
+import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.databind.*;
+
+/**
+ * For [databind#292]
+ */
+@SuppressWarnings("serial")
+public class TestAbstractContainers extends BaseMapTest {
+
+    // Polymorphic abstract Map type, wrapper
+    @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type")
+    @JsonSubTypes({ @JsonSubTypes.Type(value = MapWrapper.class, name = "wrapper") })
+    static class MapWrapper {
+
+        // This does NOT work
+        public IDataValueMap map = new DataValueMap();
+    }
+
+    @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "_type_")
+    @JsonSubTypes({ @JsonSubTypes.Type(value = DataValueMap.class, name = "DataValueMap") })
+    public interface IDataValueMap extends Map<String, String> {
+    }
+
+    static class DataValueMap extends HashMap<String, String> implements IDataValueMap {
+    }
+
+    @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type")
+    @JsonSubTypes({ @JsonSubTypes.Type(value = ListWrapper.class, name = "wrapper") })
+    static class ListWrapper {
+
+        // This does NOT work
+        public IDataValueList list = new DataValueList();
+    }
+
+    @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type")
+    @JsonSubTypes({ @JsonSubTypes.Type(value = DataValueList.class, name = "list") })
+    public interface IDataValueList extends List<String> {
+    }
+
+    static class DataValueList extends LinkedList<String> implements IDataValueList {
+    }
+
+    /*
+    /**********************************************************
+    /* Test methods
+    /**********************************************************
+     */
+    private final ObjectMapper MAPPER = new ObjectMapper();
+
+    public void testAbstractLists() throws Exception {
+        ListWrapper w = new ListWrapper();
+        w.list.add("x");
+        String json = MAPPER.writeValueAsString(w);
+        Object o = MAPPER.readValue(json, ListWrapper.class);
+        assertEquals(ListWrapper.class, o.getClass());
+        ListWrapper out = (ListWrapper) o;
+        assertNotNull(out.list);
+        assertEquals(1, out.list.size());
+        assertEquals("x", out.list.get(0));
+    }
+
+    public void testAbstractMaps() throws Exception {
+        com.fasterxml.jackson.databind.ObjectMapper __ins_v1 = null;
+        MapWrapper w = new MapWrapper();
+        w.map.put("key1", "name1");
+        __ins_v1 = MAPPER;
+        String json = __ins_v1.writeValueAsString(w);
+        Object o = MAPPER.readValue(json, MapWrapper.class);
+        assertEquals(MapWrapper.class, o.getClass());
+        MapWrapper out = (MapWrapper) o;
+        assertEquals(1, out.map.size());
+        org.helper.Assertions.verify("var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES_1797_32", __ins_v1);
+    }
 }

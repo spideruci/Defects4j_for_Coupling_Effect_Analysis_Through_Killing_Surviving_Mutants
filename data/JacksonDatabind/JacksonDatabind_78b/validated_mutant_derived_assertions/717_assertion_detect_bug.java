@@ -1,23 +1,37 @@
-{
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
-  "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
-  "python_access": [
-    "metas",
-    0,
-    "graph",
-    "fields",
-    "_deserializationContext",
-    "fields",
-    "_factory",
-    "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.objectid.AlwaysAsReferenceFirstTest::testIssue1255",
-  "line_number": "25",
-  "simple_class_name": "AlwaysAsReferenceFirstTest",
-  "loop": -1
+// Instrumented at 2025-12-13 14:00:43
+package com.fasterxml.jackson.databind.objectid;
+
+import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.databind.*;
+
+public class AlwaysAsReferenceFirstTest extends BaseMapTest {
+
+    @JsonPropertyOrder({ "bar1", "bar2" })
+    static class Foo {
+
+        @JsonIdentityReference(alwaysAsId = true)
+        public Bar bar1;
+
+        @JsonIdentityReference
+        public Bar bar2;
+    }
+
+    @JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class)
+    static class Bar {
+
+        public int value = 3;
+    }
+
+    public void testIssue1255() throws Exception {
+        ObjectMapper __ins_v1 = null;
+        __ins_v1 = new ObjectMapper();
+        ObjectMapper mapper = __ins_v1;
+        Foo mo = new Foo();
+        mo.bar1 = new Bar();
+        mo.bar2 = mo.bar1;
+        String json = mapper.writeValueAsString(mo);
+        Foo result = mapper.readValue(json, Foo.class);
+        assertNotNull(result);
+        org.helper.Assertions.verify("var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES_3025_18", __ins_v1);
+    }
 }

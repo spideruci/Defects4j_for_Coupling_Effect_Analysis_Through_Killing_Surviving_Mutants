@@ -1,23 +1,125 @@
-{
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
-  "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
-  "python_access": [
-    "metas",
-    0,
-    "graph",
-    "fields",
-    "_deserializationContext",
-    "fields",
-    "_factory",
-    "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.mixins.TestMixinDeserForCreators::testFactoryMixIn",
-  "line_number": "112",
-  "simple_class_name": "TestMixinDeserForCreators",
-  "loop": -1
+// Instrumented at 2025-12-13 14:00:42
+package com.fasterxml.jackson.databind.mixins;
+
+import java.io.*;
+import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.databind.*;
+
+public class TestMixinDeserForCreators extends BaseMapTest {
+
+    /*
+    /**********************************************************
+    /* Helper bean classes
+    /**********************************************************
+     */
+    static class BaseClass {
+
+        protected String _a;
+
+        public BaseClass(String a) {
+            _a = a + "...";
+        }
+
+        private BaseClass(String value, boolean dummy) {
+            _a = value;
+        }
+
+        public static BaseClass myFactory(String a) {
+            return new BaseClass(a + "X", true);
+        }
+    }
+
+    static class BaseClassWithPrivateCtor {
+
+        protected String _a;
+
+        private BaseClassWithPrivateCtor(String a) {
+            _a = a + "...";
+        }
+    }
+
+    /**
+     *  Mix-in class that will effectively suppresses String constructor,
+     *  and marks a non-auto-detectable static method as factory method
+     *  as a creator.
+     * <p>
+     *  Note that method implementations are not used for anything; but
+     *  we have to a class: interface won't do, as they can't have
+     *  constructors or static methods.
+     */
+    static class MixIn {
+
+        @JsonIgnore
+        protected MixIn(String s) {
+        }
+
+        @JsonCreator
+        static BaseClass myFactory(String a) {
+            return null;
+        }
+    }
+
+    static class MixInForPrivate {
+
+        @JsonCreator
+        MixInForPrivate(String s) {
+        }
+    }
+
+    static class StringWrapper {
+
+        String _value;
+
+        private StringWrapper(String s, boolean foo) {
+            _value = s;
+        }
+
+        @SuppressWarnings("unused")
+        private static StringWrapper create(String str) {
+            return new StringWrapper(str, false);
+        }
+    }
+
+    abstract static class StringWrapperMixIn {
+
+        @JsonCreator
+        static StringWrapper create(String str) {
+            return null;
+        }
+    }
+
+    /*
+    /**********************************************************
+    /* Unit tests
+    /**********************************************************
+     */
+    public void testForConstructor() throws IOException {
+        ObjectMapper m = new ObjectMapper();
+        m.addMixIn(BaseClassWithPrivateCtor.class, MixInForPrivate.class);
+        BaseClassWithPrivateCtor result = m.readValue("\"?\"", BaseClassWithPrivateCtor.class);
+        assertEquals("?...", result._a);
+    }
+
+    public void testForFactoryAndCtor() throws IOException {
+        ObjectMapper m = new ObjectMapper();
+        BaseClass result;
+        // First: test default behavior: should use constructor
+        result = m.readValue("\"string\"", BaseClass.class);
+        assertEquals("string...", result._a);
+        // Then with simple mix-in: should change to use the factory method
+        m = new ObjectMapper();
+        m.addMixIn(BaseClass.class, MixIn.class);
+        result = m.readValue("\"string\"", BaseClass.class);
+        assertEquals("stringX", result._a);
+    }
+
+    public void testFactoryMixIn() throws IOException {
+        ObjectMapper __ins_v1 = null;
+        __ins_v1 = new ObjectMapper();
+        ObjectMapper m = __ins_v1;
+        m.addMixIn(StringWrapper.class, StringWrapperMixIn.class);
+        StringWrapper result = m.readValue("\"a\"", StringWrapper.class);
+        assertEquals("a", result._value);
+        org.helper.Assertions.verify("var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES_3116_18", __ins_v1);
+    }
 }

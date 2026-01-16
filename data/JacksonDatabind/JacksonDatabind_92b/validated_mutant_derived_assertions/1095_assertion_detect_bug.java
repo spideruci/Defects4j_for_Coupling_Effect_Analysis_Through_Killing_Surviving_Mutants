@@ -1,23 +1,99 @@
-{
-  "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.seq.ObjectWriterTest",
-  "name": "MAPPER",
-  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
-  "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
-  "python_access": [
-    "metas",
-    0,
-    "graph",
-    "fields",
-    "_deserializationContext",
-    "fields",
-    "_factory",
-    "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.seq.ObjectWriterTest::testPrefetch",
-  "line_number": "69",
-  "simple_class_name": "ObjectWriterTest",
-  "loop": -1
+// Instrumented at 2025-12-01 00:17:10
+package com.fasterxml.jackson.databind.seq;
+
+import java.util.*;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.core.*;
+import com.fasterxml.jackson.databind.*;
+import com.fasterxml.jackson.databind.node.ObjectNode;
+
+/**
+ * Unit tests for checking features added to {@link ObjectWriter}, such
+ * as adding of explicit pretty printer.
+ */
+public class ObjectWriterTest extends BaseMapTest {
+
+    final ObjectMapper MAPPER = new ObjectMapper();
+
+    @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type")
+    static class PolyBase {
+    }
+
+    @JsonTypeName("A")
+    static class ImplA extends PolyBase {
+
+        public int value;
+
+        public ImplA(int v) {
+            value = v;
+        }
+    }
+
+    @JsonTypeName("B")
+    static class ImplB extends PolyBase {
+
+        public int b;
+
+        public ImplB(int v) {
+            b = v;
+        }
+    }
+
+    /*
+    /**********************************************************
+    /* Test methods
+    /**********************************************************
+     */
+    public void testPrettyPrinter() throws Exception {
+        ObjectWriter writer = MAPPER.writer();
+        HashMap<String, Integer> data = new HashMap<String, Integer>();
+        data.put("a", 1);
+        // default: no indentation
+        assertEquals("{\"a\":1}", writer.writeValueAsString(data));
+        // and then with standard
+        writer = writer.withDefaultPrettyPrinter();
+        // pretty printer uses system-specific line feeds, so we do that as well.
+        String lf = System.getProperty("line.separator");
+        assertEquals("{" + lf + "  \"a\" : 1" + lf + "}", writer.writeValueAsString(data));
+        // and finally, again without indentation
+        writer = writer.with((PrettyPrinter) null);
+        assertEquals("{\"a\":1}", writer.writeValueAsString(data));
+    }
+
+    public void testPrefetch() throws Exception {
+        com.fasterxml.jackson.databind.ObjectMapper __ins_v1 = null;
+        __ins_v1 = MAPPER;
+        ObjectWriter writer = __ins_v1.writer();
+        assertFalse(writer.hasPrefetchedSerializer());
+        writer = writer.forType(String.class);
+        assertTrue(writer.hasPrefetchedSerializer());
+        org.helper.Assertions.verify("var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES_1535_32", __ins_v1);
+    }
+
+    public void testObjectWriterFeatures() throws Exception {
+        ObjectWriter writer = MAPPER.writer().without(JsonGenerator.Feature.QUOTE_FIELD_NAMES);
+        Map<String, Integer> map = new HashMap<String, Integer>();
+        map.put("a", 1);
+        assertEquals("{a:1}", writer.writeValueAsString(map));
+        // but can also reconfigure
+        assertEquals("{\"a\":1}", writer.with(JsonGenerator.Feature.QUOTE_FIELD_NAMES).writeValueAsString(map));
+    }
+
+    public void testObjectWriterWithNode() throws Exception {
+        ObjectNode stuff = MAPPER.createObjectNode();
+        stuff.put("a", 5);
+        ObjectWriter writer = MAPPER.writerFor(JsonNode.class);
+        String json = writer.writeValueAsString(stuff);
+        assertEquals("{\"a\":5}", json);
+    }
+
+    public void testPolymorphicWithTyping() throws Exception {
+        ObjectWriter writer = MAPPER.writerFor(PolyBase.class);
+        String json;
+        json = writer.writeValueAsString(new ImplA(3));
+        assertEquals(aposToQuotes("{'type':'A','value':3}"), json);
+        json = writer.writeValueAsString(new ImplB(-5));
+        assertEquals(aposToQuotes("{'type':'B','b':-5}"), json);
+    }
 }

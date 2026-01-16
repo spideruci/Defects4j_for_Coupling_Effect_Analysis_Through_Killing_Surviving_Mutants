@@ -1,23 +1,51 @@
-{
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
-  "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
-  "python_access": [
-    "metas",
-    0,
-    "graph",
-    "fields",
-    "_deserializationContext",
-    "fields",
-    "_factory",
-    "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.type.TestGenericFieldInSubtype::testInnerType",
-  "line_number": "22",
-  "simple_class_name": "TestGenericFieldInSubtype",
-  "loop": -1
+// Instrumented at 2025-12-01 00:17:02
+package com.fasterxml.jackson.databind.type;
+
+import com.fasterxml.jackson.databind.*;
+
+public class TestGenericFieldInSubtype extends BaseMapTest {
+
+    // [JACKSON-677]
+    public void test677() throws Exception {
+        ObjectMapper mapper = new ObjectMapper();
+        // and bit more checking as per later comments
+        JavaType t677 = mapper.constructType(Result677.Success677.class);
+        assertNotNull(t677);
+        Result677.Success677<Integer> s = new Result677.Success677<Integer>(Integer.valueOf(4));
+        String json = mapper.writeValueAsString(s);
+        assertEquals("{\"value\":4}", json);
+    }
+
+    // [JACKSON-887]
+    public void testInnerType() throws Exception {
+        ObjectMapper __ins_v1 = null;
+        __ins_v1 = new ObjectMapper();
+        ObjectMapper mapper = __ins_v1;
+        BaseType.SubType<?> r = mapper.readValue("{}", BaseType.SubType.class);
+        assertNotNull(r);
+        org.helper.Assertions.verify("var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES_1097_32", __ins_v1);
+    }
+}
+
+class Result677<T> {
+
+    public static class Success677<K> extends Result677<K> {
+
+        public K value;
+
+        public Success677() {
+        }
+
+        public Success677(K k) {
+            value = k;
+        }
+    }
+}
+
+abstract class BaseType<T> {
+
+    public T value;
+
+    public final static class SubType<T extends Number> extends BaseType<T> {
+    }
 }

@@ -1,23 +1,50 @@
-{
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectReader",
-  "name": "forType",
-  "returnType": "com.fasterxml.jackson.databind.ObjectReader",
-  "ordinal": 0,
-  "readable_access": "var._context._factory.DEFAULT_NO_DESER_CLASS_NAMES",
-  "python_access": [
-    "metas",
-    1,
-    "graph",
-    "fields",
-    "_context",
-    "fields",
-    "_factory",
-    "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.interop.TestFormatDetection::testInvalid",
-  "line_number": "38",
-  "simple_class_name": "TestFormatDetection",
-  "loop": -1
+// Instrumented at 2025-12-01 00:17:12
+package com.fasterxml.jackson.databind.interop;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.*;
+
+public class TestFormatDetection extends BaseMapTest {
+
+    private final ObjectReader READER = objectReader();
+
+    static class POJO {
+
+        public int x, y;
+
+        public POJO() {
+        }
+
+        public POJO(int x, int y) {
+            this.x = x;
+            this.y = y;
+        }
+    }
+
+    /*
+    /**********************************************************
+    /* Test methods
+    /**********************************************************
+     */
+    public void testSimpleWithJSON() throws Exception {
+        ObjectReader detecting = READER.forType(POJO.class);
+        detecting = detecting.withFormatDetection(detecting);
+        POJO pojo = detecting.readValue(utf8Bytes("{\"x\":1}"));
+        assertNotNull(pojo);
+        assertEquals(1, pojo.x);
+    }
+
+    public void testInvalid() throws Exception {
+        com.fasterxml.jackson.databind.ObjectReader __ins_v1 = null;
+        __ins_v1 = READER.forType(POJO.class);
+        ObjectReader detecting = __ins_v1;
+        detecting = detecting.withFormatDetection(detecting);
+        try {
+            detecting.readValue(utf8Bytes("<POJO><x>1</x></POJO>"));
+            fail("Should have failed");
+        } catch (JsonProcessingException e) {
+            verifyException(e, "Can not detect format from input");
+        }
+        org.helper.Assertions.verify("var._context._factory.DEFAULT_NO_DESER_CLASS_NAMES_1836_32", __ins_v1);
+    }
 }

@@ -1,23 +1,41 @@
-{
-  "source": "return",
-  "owner": "org.jsoup.nodes.Element",
-  "name": "childNode",
-  "returnType": "org.jsoup.nodes.Node",
-  "ordinal": 0,
-  "readable_access": "var.parentNode.tag.tags",
-  "python_access": [
-    "metas",
-    5,
-    "graph",
-    "fields",
-    "parentNode",
-    "fields",
-    "tag",
-    "fields",
-    "tags"
-  ],
-  "test_name": "org.jsoup.nodes.TextNodeTest::testTextBean",
-  "line_number": "31",
-  "simple_class_name": "TextNodeTest",
-  "loop": -1
+// Instrumented at 2025-12-08 15:57:01
+package org.jsoup.nodes;
+
+import org.jsoup.Jsoup;
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+/**
+ * Test TextNodes
+ *
+ * @author Jonathan Hedley, jonathan@hedley.net
+ */
+public class TextNodeTest {
+
+    @Test
+    public void testBlank() {
+        TextNode one = new TextNode("", "");
+        TextNode two = new TextNode("     ", "");
+        TextNode three = new TextNode("  \n\n   ", "");
+        TextNode four = new TextNode("Hello", "");
+        TextNode five = new TextNode("  \nHello ", "");
+        assertTrue(one.isBlank());
+        assertTrue(two.isBlank());
+        assertTrue(three.isBlank());
+        assertFalse(four.isBlank());
+        assertFalse(five.isBlank());
+    }
+
+    @Test
+    public void testTextBean() {
+        org.jsoup.nodes.Node __ins_v1 = null;
+        Document doc = Jsoup.parse("<p>One <span>two</span> three</p>");
+        Element p = doc.select("p").first();
+        __ins_v1 = p.childNode(2);
+        TextNode tn = (TextNode) __ins_v1;
+        assertEquals(" three", tn.text());
+        tn.text(" POW!");
+        assertEquals("One <span>two</span> POW!", p.html());
+        org.helper.Assertions.verify("var.parentNode.tag.tags_357_569", __ins_v1);
+    }
 }

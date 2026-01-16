@@ -1,23 +1,51 @@
-{
-  "source": "return",
-  "owner": "org.jsoup.nodes.Document",
-  "name": "getElementsByTag",
-  "returnType": "org.jsoup.select.Elements",
-  "ordinal": 0,
-  "readable_access": "var.elements.tag.tags",
-  "python_access": [
-    "metas",
-    2,
-    "graph",
-    "elements",
-    0,
-    "fields",
-    "tag",
-    "fields",
-    "tags"
-  ],
-  "test_name": "org.jsoup.parser.AttributeParseTest::parsesEmptyString",
-  "line_number": "34",
-  "simple_class_name": "AttributeParseTest",
-  "loop": -1
+// Instrumented at 2025-12-08 15:57:04
+package org.jsoup.parser;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Attributes;
+import org.jsoup.nodes.Element;
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+/**
+ * Test suite for attribute parser.
+ *
+ * @author Jonathan Hedley, jonathan@hedley.net
+ */
+public class AttributeParseTest {
+
+    @Test
+    public void parsesRoughAttributeString() {
+        String html = "<a id=\"123\" class=\"baz = 'bar'\" style = 'border: 2px'qux zim foo = 12 mux=18 />";
+        // should be: <id=123>, <class=baz = 'bar'>, <qux=>, <zim=>, <foo=12>, <mux.=18>
+        Element el = Jsoup.parse(html).getElementsByTag("a").get(0);
+        Attributes attr = el.attributes();
+        assertEquals(7, attr.size());
+        assertEquals("123", attr.get("id"));
+        assertEquals("baz = 'bar'", attr.get("class"));
+        assertEquals("border: 2px", attr.get("style"));
+        assertEquals("", attr.get("qux"));
+        assertEquals("", attr.get("zim"));
+        assertEquals("12", attr.get("foo"));
+        assertEquals("18", attr.get("mux"));
+    }
+
+    @Test
+    public void parsesEmptyString() {
+        org.jsoup.select.Elements __ins_v1 = null;
+        String html = "<a />";
+        __ins_v1 = Jsoup.parse(html).getElementsByTag("a");
+        Element el = __ins_v1.get(0);
+        Attributes attr = el.attributes();
+        assertEquals(0, attr.size());
+        org.helper.Assertions.verify("var.elements.tag.tags_168_569", __ins_v1);
+    }
+
+    @Test
+    public void emptyOnNoKey() {
+        String html = "<a =empty />";
+        Element el = Jsoup.parse(html).getElementsByTag("a").get(0);
+        Attributes attr = el.attributes();
+        assertEquals(0, attr.size());
+    }
 }

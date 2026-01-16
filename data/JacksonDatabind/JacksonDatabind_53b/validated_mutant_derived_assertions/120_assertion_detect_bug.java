@@ -1,23 +1,41 @@
-{
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
-  "ordinal": 0,
-  "readable_access": "var._deserializationContext._cache._cachedDeserializers",
-  "python_access": [
-    "metas",
-    0,
-    "graph",
-    "fields",
-    "_deserializationContext",
-    "fields",
-    "_cache",
-    "fields",
-    "_cachedDeserializers"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.objectid.Objecid1083Test::testSimple",
-  "line_number": "37",
-  "simple_class_name": "Objecid1083Test",
-  "loop": -1
+// Instrumented at 2025-12-13 09:03:26
+package com.fasterxml.jackson.databind.objectid;
+
+import java.util.*;
+import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.databind.*;
+
+public class Objecid1083Test extends BaseMapTest {
+
+    public static class JsonRoot {
+
+        public final List<JsonSchema> schemas = new ArrayList<JsonSchema>();
+    }
+
+    @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "type", defaultImpl = JsonMapSchema.class)
+    @JsonSubTypes({ @JsonSubTypes.Type(value = JsonMapSchema.class, name = "map"), @JsonSubTypes.Type(value = JsonJdbcSchema.class, name = "jdbc") })
+    public static abstract class JsonSchema {
+
+        public String name;
+    }
+
+    static class JsonMapSchema extends JsonSchema {
+    }
+
+    static class JsonJdbcSchema extends JsonSchema {
+    }
+
+    /*
+      /*****************************************************
+      /* Unit tests, external id deserialization
+      /*****************************************************
+       */
+    public void testSimple() throws Exception {
+        ObjectMapper __ins_v1 = null;
+        __ins_v1 = new ObjectMapper();
+        final ObjectMapper mapper = __ins_v1;
+        final String json = aposToQuotes("{'schemas': [{\n" + "  'name': 'FoodMart'\n" + "}]}\n");
+        mapper.readValue(json, JsonRoot.class);
+        org.helper.Assertions.verify("var._deserializationContext._cache._cachedDeserializers_18_244", __ins_v1);
+    }
 }

@@ -1,23 +1,37 @@
-{
-  "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.introspect.SetterConflictTest",
-  "name": "MAPPER",
-  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
-  "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
-  "python_access": [
-    "metas",
-    0,
-    "graph",
-    "fields",
-    "_deserializationContext",
-    "fields",
-    "_factory",
-    "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.introspect.SetterConflictTest::testSetterPriority",
-  "line_number": "28",
-  "simple_class_name": "SetterConflictTest",
-  "loop": -1
+// Instrumented at 2025-12-01 00:17:01
+package com.fasterxml.jackson.databind.introspect;
+
+import com.fasterxml.jackson.databind.*;
+
+// mostly for [databind#1033]
+public class SetterConflictTest extends BaseMapTest {
+
+    // Should prefer primitives over Strings, more complex types, by default
+    static class Issue1033Bean {
+
+        public int value;
+
+        public void setValue(int v) {
+            value = v;
+        }
+
+        public void setValue(Issue1033Bean foo) {
+            throw new Error("Should not get called");
+        }
+    }
+
+    /*
+    /**********************************************************
+    /* Test methods
+    /**********************************************************
+     */
+    private final ObjectMapper MAPPER = objectMapper();
+
+    public void testSetterPriority() throws Exception {
+        com.fasterxml.jackson.databind.ObjectMapper __ins_v1 = null;
+        __ins_v1 = MAPPER;
+        Issue1033Bean bean = __ins_v1.readValue(aposToQuotes("{'value':42}"), Issue1033Bean.class);
+        assertEquals(42, bean.value);
+        org.helper.Assertions.verify("var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES_1209_32", __ins_v1);
+    }
 }

@@ -1,19 +1,83 @@
-{
-  "source": "return",
-  "owner": "com.fasterxml.jackson.core.JsonFactory",
-  "name": "createParser",
-  "returnType": "com.fasterxml.jackson.core.JsonParser",
-  "ordinal": 0,
-  "readable_access": "var._tokenInputCol",
-  "python_access": [
-    "metas",
-    4,
-    "graph",
-    "fields",
-    "_tokenInputCol"
-  ],
-  "test_name": "com.fasterxml.jackson.core.json.LocationInObjectTest::testOffsetWithObjectFieldsUsingUTF8",
-  "line_number": "13",
-  "simple_class_name": "LocationInObjectTest",
-  "loop": -1
+// Instrumented at 2025-12-06 19:26:45
+package com.fasterxml.jackson.core.json;
+
+import com.fasterxml.jackson.core.*;
+
+// tests for [core#37]
+public class LocationInObjectTest extends BaseTest {
+
+    public void testOffsetWithObjectFieldsUsingUTF8() throws Exception {
+        com.fasterxml.jackson.core.JsonParser __ins_v1 = null;
+        final JsonFactory f = new JsonFactory();
+        byte[] b = "{\"f1\":\"v1\",\"f2\":{\"f3\":\"v3\"},\"f4\":[true,false],\"f5\":5}".getBytes("UTF-8");
+        __ins_v1 = f.createParser(b);
+        //            1      6      11    16 17    22      28    33 34 39      46    51
+        JsonParser p = __ins_v1;
+        assertEquals(JsonToken.START_OBJECT, p.nextToken());
+        assertEquals(JsonToken.FIELD_NAME, p.nextToken());
+        assertEquals(1L, p.getTokenLocation().getByteOffset());
+        assertEquals(JsonToken.VALUE_STRING, p.nextToken());
+        assertEquals(6L, p.getTokenLocation().getByteOffset());
+        assertEquals("f2", p.nextFieldName());
+        assertEquals(11L, p.getTokenLocation().getByteOffset());
+        assertEquals(JsonToken.START_OBJECT, p.nextValue());
+        assertEquals(16L, p.getTokenLocation().getByteOffset());
+        assertEquals("f3", p.nextFieldName());
+        assertEquals(17L, p.getTokenLocation().getByteOffset());
+        assertEquals(JsonToken.VALUE_STRING, p.nextValue());
+        assertEquals(22L, p.getTokenLocation().getByteOffset());
+        assertEquals(JsonToken.END_OBJECT, p.nextToken());
+        assertEquals("f4", p.nextFieldName());
+        assertEquals(28L, p.getTokenLocation().getByteOffset());
+        assertEquals(JsonToken.START_ARRAY, p.nextValue());
+        assertEquals(33L, p.getTokenLocation().getByteOffset());
+        assertEquals(JsonToken.VALUE_TRUE, p.nextValue());
+        assertEquals(34L, p.getTokenLocation().getByteOffset());
+        assertEquals(JsonToken.VALUE_FALSE, p.nextValue());
+        assertEquals(39L, p.getTokenLocation().getByteOffset());
+        assertEquals(JsonToken.END_ARRAY, p.nextToken());
+        assertEquals("f5", p.nextFieldName());
+        assertEquals(46L, p.getTokenLocation().getByteOffset());
+        assertEquals(JsonToken.VALUE_NUMBER_INT, p.nextToken());
+        assertEquals(51L, p.getTokenLocation().getByteOffset());
+        assertEquals(JsonToken.END_OBJECT, p.nextToken());
+        p.close();
+        org.helper.Assertions.verify("var._tokenInputCol_209_533", __ins_v1);
+    }
+
+    public void testOffsetWithObjectFieldsUsingReader() throws Exception {
+        final JsonFactory f = new JsonFactory();
+        char[] c = "{\"f1\":\"v1\",\"f2\":{\"f3\":\"v3\"},\"f4\":[true,false],\"f5\":5}".toCharArray();
+        //            1      6      11    16 17    22      28    33 34 39      46    51
+        JsonParser p = f.createParser(c);
+        assertEquals(JsonToken.START_OBJECT, p.nextToken());
+        assertEquals(JsonToken.FIELD_NAME, p.nextToken());
+        assertEquals(1L, p.getTokenLocation().getCharOffset());
+        assertEquals(JsonToken.VALUE_STRING, p.nextToken());
+        assertEquals(6L, p.getTokenLocation().getCharOffset());
+        assertEquals("f2", p.nextFieldName());
+        assertEquals(11L, p.getTokenLocation().getCharOffset());
+        assertEquals(JsonToken.START_OBJECT, p.nextValue());
+        assertEquals(16L, p.getTokenLocation().getCharOffset());
+        assertEquals("f3", p.nextFieldName());
+        assertEquals(17L, p.getTokenLocation().getCharOffset());
+        assertEquals(JsonToken.VALUE_STRING, p.nextValue());
+        assertEquals(22L, p.getTokenLocation().getCharOffset());
+        assertEquals(JsonToken.END_OBJECT, p.nextToken());
+        assertEquals("f4", p.nextFieldName());
+        assertEquals(28L, p.getTokenLocation().getCharOffset());
+        assertEquals(JsonToken.START_ARRAY, p.nextValue());
+        assertEquals(33L, p.getTokenLocation().getCharOffset());
+        assertEquals(JsonToken.VALUE_TRUE, p.nextValue());
+        assertEquals(34L, p.getTokenLocation().getCharOffset());
+        assertEquals(JsonToken.VALUE_FALSE, p.nextValue());
+        assertEquals(39L, p.getTokenLocation().getCharOffset());
+        assertEquals(JsonToken.END_ARRAY, p.nextToken());
+        assertEquals("f5", p.nextFieldName());
+        assertEquals(46L, p.getTokenLocation().getCharOffset());
+        assertEquals(JsonToken.VALUE_NUMBER_INT, p.nextToken());
+        assertEquals(51L, p.getTokenLocation().getCharOffset());
+        assertEquals(JsonToken.END_OBJECT, p.nextToken());
+        p.close();
+    }
 }

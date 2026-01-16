@@ -1,23 +1,70 @@
-{
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
-  "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
-  "python_access": [
-    "metas",
-    0,
-    "graph",
-    "fields",
-    "_deserializationContext",
-    "fields",
-    "_factory",
-    "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.filter.TestAnyGetterFiltering::testAnyGetterIgnore",
-  "line_number": "69",
-  "simple_class_name": "TestAnyGetterFiltering",
-  "loop": -1
+// Instrumented at 2025-12-13 14:00:40
+package com.fasterxml.jackson.databind.filter;
+
+import java.util.*;
+import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.databind.BaseMapTest;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ser.FilterProvider;
+import com.fasterxml.jackson.databind.ser.impl.SimpleBeanPropertyFilter;
+import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
+
+/**
+ * Unit tests for ensuring that entries accessible via "any filter"
+ * can also be filtered with JSON Filter functionality.
+ */
+public class TestAnyGetterFiltering extends BaseMapTest {
+
+    @JsonFilter("anyFilter")
+    public static class AnyBean {
+
+        private Map<String, String> properties = new HashMap<String, String>();
+
+        {
+            properties.put("a", "1");
+            properties.put("b", "2");
+        }
+
+        @JsonAnyGetter
+        public Map<String, String> anyProperties() {
+            return properties;
+        }
+    }
+
+    public static class AnyBeanWithIgnores {
+
+        private Map<String, String> properties = new LinkedHashMap<String, String>();
+
+        {
+            properties.put("a", "1");
+            properties.put("bogus", "2");
+            properties.put("b", "3");
+        }
+
+        @JsonAnyGetter
+        @JsonIgnoreProperties({ "bogus" })
+        public Map<String, String> anyProperties() {
+            return properties;
+        }
+    }
+
+    /*
+    /**********************************************************
+    /* Test methods
+    /**********************************************************
+     */
+    public void testAnyGetterFiltering() throws Exception {
+        ObjectMapper mapper = new ObjectMapper();
+        FilterProvider prov = new SimpleFilterProvider().addFilter("anyFilter", SimpleBeanPropertyFilter.filterOutAllExcept("b"));
+        assertEquals("{\"b\":\"2\"}", mapper.writer(prov).writeValueAsString(new AnyBean()));
+    }
+
+    // for [databind#1142]
+    public void testAnyGetterIgnore() throws Exception {
+        ObjectMapper __ins_v1 = null;
+        __ins_v1 = new ObjectMapper();
+        ObjectMapper mapper = __ins_v1;
+        assertEquals(aposToQuotes("{'a':'1','b':'3'}"), mapper.writeValueAsString(new AnyBeanWithIgnores()));
+        org.helper.Assertions.verify("var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES_2628_18", __ins_v1);
+    }
 }

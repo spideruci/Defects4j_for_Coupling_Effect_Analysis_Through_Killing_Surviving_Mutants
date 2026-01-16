@@ -1,23 +1,45 @@
-{
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
-  "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
-  "python_access": [
-    "metas",
-    0,
-    "graph",
-    "fields",
-    "_deserializationContext",
-    "fields",
-    "_factory",
-    "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.format.DateFormatTest::testTypeDefaults",
-  "line_number": "21",
-  "simple_class_name": "DateFormatTest",
-  "loop": -1
+// Instrumented at 2025-12-13 14:00:46
+package com.fasterxml.jackson.databind.format;
+
+import java.util.Calendar;
+import java.util.Date;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.*;
+
+public class DateFormatTest extends BaseMapTest {
+
+    protected static class DateWrapper {
+
+        public Date value;
+
+        public DateWrapper() {
+        }
+
+        public DateWrapper(long l) {
+            value = new Date(l);
+        }
+
+        public DateWrapper(Date v) {
+            value = v;
+        }
+    }
+
+    public void testTypeDefaults() throws Exception {
+        ObjectMapper __ins_v1 = null;
+        __ins_v1 = new ObjectMapper();
+        ObjectMapper mapper = __ins_v1;
+        mapper.configOverride(Date.class).setFormat(JsonFormat.Value.forPattern("yyyy.dd.MM"));
+        // First serialize, should result in this (in UTC):
+        String json = mapper.writeValueAsString(new DateWrapper(0L));
+        assertEquals(aposToQuotes("{'value':'1970.01.01'}"), json);
+        // and then read back
+        DateWrapper w = mapper.readValue(aposToQuotes("{'value':'1981.13.3'}"), DateWrapper.class);
+        assertNotNull(w);
+        // arbitrary TimeZone, but good enough to ensure year is right
+        Calendar c = Calendar.getInstance();
+        c.setTime(w.value);
+        assertEquals(1981, c.get(Calendar.YEAR));
+        assertEquals(Calendar.MARCH, c.get(Calendar.MONTH));
+        org.helper.Assertions.verify("var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES_2119_18", __ins_v1);
+    }
 }

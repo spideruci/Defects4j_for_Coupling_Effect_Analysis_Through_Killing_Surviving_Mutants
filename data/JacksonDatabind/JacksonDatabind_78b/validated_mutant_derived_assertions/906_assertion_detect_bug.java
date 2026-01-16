@@ -1,23 +1,58 @@
-{
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
-  "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
-  "python_access": [
-    "metas",
-    3,
-    "graph",
-    "fields",
-    "_deserializationContext",
-    "fields",
-    "_factory",
-    "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.creators.TestPolymorphicDelegating::testAbstractDelegateWithCreator",
-  "line_number": "45",
-  "simple_class_name": "TestPolymorphicDelegating",
-  "loop": -1
+// Instrumented at 2025-12-13 14:00:45
+package com.fasterxml.jackson.databind.creators;
+
+import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.databind.*;
+
+public class TestPolymorphicDelegating extends BaseMapTest {
+
+    // For [databind#580]
+    @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS)
+    static abstract class Issue580Base {
+    }
+
+    static class Issue580Impl extends Issue580Base {
+
+        public int id = 3;
+
+        public Issue580Impl() {
+        }
+
+        public Issue580Impl(int id) {
+            this.id = id;
+        }
+    }
+
+    static class Issue580Bean {
+
+        public Issue580Base value;
+
+        @JsonCreator
+        public Issue580Bean(Issue580Base v) {
+            value = v;
+        }
+
+        @JsonValue
+        public Issue580Base value() {
+            return value;
+        }
+    }
+
+    /*
+    /**********************************************************
+    /* Unit tests
+    /**********************************************************
+     */
+    public void testAbstractDelegateWithCreator() throws Exception {
+        ObjectMapper __ins_v1 = null;
+        Issue580Bean input = new Issue580Bean(new Issue580Impl(13));
+        __ins_v1 = new ObjectMapper();
+        ObjectMapper mapper = __ins_v1;
+        String json = mapper.writeValueAsString(input);
+        Issue580Bean result = mapper.readValue(json, Issue580Bean.class);
+        assertNotNull(result);
+        assertNotNull(result.value);
+        assertEquals(13, ((Issue580Impl) result.value).id);
+        org.helper.Assertions.verify("var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES_3290_18", __ins_v1);
+    }
 }

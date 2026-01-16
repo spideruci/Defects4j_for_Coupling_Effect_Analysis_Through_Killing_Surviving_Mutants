@@ -1,23 +1,26 @@
-{
-  "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.introspect.BeanDescriptionTest",
-  "name": "MAPPER",
-  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
-  "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
-  "python_access": [
-    "metas",
-    0,
-    "graph",
-    "fields",
-    "_deserializationContext",
-    "fields",
-    "_factory",
-    "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.introspect.BeanDescriptionTest::testClassDesc",
-  "line_number": "19",
-  "simple_class_name": "BeanDescriptionTest",
-  "loop": -1
+// Instrumented at 2025-12-13 14:00:44
+package com.fasterxml.jackson.databind.introspect;
+
+import com.fasterxml.jackson.annotation.JsonClassDescription;
+import com.fasterxml.jackson.databind.*;
+
+public class BeanDescriptionTest extends BaseMapTest {
+
+    private final ObjectMapper MAPPER = objectMapper();
+
+    private final static String CLASS_DESC = "Description, yay!";
+
+    @JsonClassDescription(CLASS_DESC)
+    static class DocumentedBean {
+
+        public int x;
+    }
+
+    public void testClassDesc() throws Exception {
+        com.fasterxml.jackson.databind.ObjectMapper __ins_v1 = null;
+        __ins_v1 = MAPPER;
+        BeanDescription beanDesc = MAPPER.getDeserializationConfig().introspect(__ins_v1.constructType(DocumentedBean.class));
+        assertEquals(CLASS_DESC, beanDesc.findClassDescription());
+        org.helper.Assertions.verify("var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES_2792_18", __ins_v1);
+    }
 }

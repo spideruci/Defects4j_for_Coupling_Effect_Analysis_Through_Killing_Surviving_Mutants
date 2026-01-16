@@ -1,23 +1,85 @@
-{
-  "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.creators.TestCreatorWithNamingStrategy556",
-  "name": "MAPPER",
-  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
-  "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
-  "python_access": [
-    "metas",
-    0,
-    "graph",
-    "fields",
-    "_deserializationContext",
-    "fields",
-    "_factory",
-    "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.creators.TestCreatorWithNamingStrategy556::testRenameViaFactory",
-  "line_number": "78",
-  "simple_class_name": "TestCreatorWithNamingStrategy556",
-  "loop": -1
+// Instrumented at 2025-12-01 00:17:11
+package com.fasterxml.jackson.databind.creators;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.databind.*;
+import com.fasterxml.jackson.databind.introspect.AnnotatedMember;
+import com.fasterxml.jackson.databind.introspect.AnnotatedParameter;
+import com.fasterxml.jackson.databind.introspect.JacksonAnnotationIntrospector;
+
+public class TestCreatorWithNamingStrategy556 extends BaseMapTest {
+
+    static class RenamingCtorBean {
+
+        protected String myName;
+
+        protected int myAge;
+
+        @JsonCreator
+        public RenamingCtorBean(int myAge, String myName) {
+            this.myName = myName;
+            this.myAge = myAge;
+        }
+    }
+
+    // Try the same with factory, too
+    static class RenamedFactoryBean {
+
+        protected String myName;
+
+        protected int myAge;
+
+        private RenamedFactoryBean(int a, String n, boolean foo) {
+            myAge = a;
+            myName = n;
+        }
+
+        @JsonCreator
+        public static RenamedFactoryBean create(int age, String name) {
+            return new RenamedFactoryBean(age, name, true);
+        }
+    }
+
+    @SuppressWarnings("serial")
+    static class MyParamIntrospector extends JacksonAnnotationIntrospector {
+
+        @Override
+        public String findImplicitPropertyName(AnnotatedMember param) {
+            if (param instanceof AnnotatedParameter) {
+                AnnotatedParameter ap = (AnnotatedParameter) param;
+                switch(ap.getIndex()) {
+                    case 0:
+                        return "myAge";
+                    case 1:
+                        return "myName";
+                    default:
+                        return "param" + ap.getIndex();
+                }
+            }
+            return super.findImplicitPropertyName(param);
+        }
+    }
+
+    private final ObjectMapper MAPPER = new ObjectMapper().setPropertyNamingStrategy(PropertyNamingStrategy.UPPER_CAMEL_CASE);
+
+    {
+        MAPPER.setAnnotationIntrospector(new MyParamIntrospector());
+    }
+
+    private final static String CTOR_JSON = aposToQuotes("{ 'MyAge' : 42,  'MyName' : 'NotMyRealName' }");
+
+    public void testRenameViaCtor() throws Exception {
+        RenamingCtorBean bean = MAPPER.readValue(CTOR_JSON, RenamingCtorBean.class);
+        assertEquals(42, bean.myAge);
+        assertEquals("NotMyRealName", bean.myName);
+    }
+
+    public void testRenameViaFactory() throws Exception {
+        com.fasterxml.jackson.databind.ObjectMapper __ins_v1 = null;
+        __ins_v1 = MAPPER;
+        RenamedFactoryBean bean = __ins_v1.readValue(CTOR_JSON, RenamedFactoryBean.class);
+        assertEquals(42, bean.myAge);
+        assertEquals("NotMyRealName", bean.myName);
+        org.helper.Assertions.verify("var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES_952_32", __ins_v1);
+    }
 }

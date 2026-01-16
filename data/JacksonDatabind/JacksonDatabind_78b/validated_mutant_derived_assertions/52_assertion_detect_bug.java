@@ -1,23 +1,47 @@
-{
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
-  "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
-  "python_access": [
-    "metas",
-    0,
-    "graph",
-    "fields",
-    "_deserializationContext",
-    "fields",
-    "_factory",
-    "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.creators.Creator1476Test::testConstructorChoice",
-  "line_number": "37",
-  "simple_class_name": "Creator1476Test",
-  "loop": -1
+// Instrumented at 2025-12-13 14:00:38
+package com.fasterxml.jackson.databind.creators;
+
+import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.databind.*;
+
+public class Creator1476Test extends BaseMapTest {
+
+    static final class SimplePojo {
+
+        private final int intField;
+
+        private final String stringField;
+
+        public SimplePojo(@JsonProperty("intField") int intField) {
+            this(intField, "empty");
+        }
+
+        public SimplePojo(@JsonProperty("stringField") String stringField) {
+            this(-1, stringField);
+        }
+
+        @JsonCreator
+        public SimplePojo(@JsonProperty("intField") int intField, @JsonProperty("stringField") String stringField) {
+            this.intField = intField;
+            this.stringField = stringField;
+        }
+
+        public int getIntField() {
+            return intField;
+        }
+
+        public String getStringField() {
+            return stringField;
+        }
+    }
+
+    public void testConstructorChoice() throws Exception {
+        ObjectMapper __ins_v1 = null;
+        __ins_v1 = new ObjectMapper();
+        ObjectMapper mapper = __ins_v1;
+        SimplePojo pojo = mapper.readValue("{ \"intField\": 1, \"stringField\": \"foo\" }", SimplePojo.class);
+        assertEquals(1, pojo.getIntField());
+        assertEquals("foo", pojo.getStringField());
+        org.helper.Assertions.verify("var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES_2936_18", __ins_v1);
+    }
 }

@@ -1,21 +1,176 @@
-{
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "readTree",
-  "returnType": "com.fasterxml.jackson.databind.JsonNode",
-  "ordinal": 0,
-  "readable_access": "var.elements.elements",
-  "python_access": [
-    "metas",
-    9,
-    "graph",
-    "elements",
-    6,
-    "elements",
-    4
-  ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestExceptionDeserialization::testFailingNoSerdeConstructor",
-  "line_number": "165",
-  "simple_class_name": "TestExceptionDeserialization",
-  "loop": -1
+// Instrumented at 2025-12-01 00:20:10
+package com.fasterxml.jackson.databind.deser;
+
+import java.io.IOException;
+import java.util.*;
+import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.databind.*;
+
+/**
+ * Unit tests for verifying that simple exceptions can be deserialized.
+ */
+public class TestExceptionDeserialization extends BaseMapTest {
+
+    @SuppressWarnings("serial")
+    static class MyException extends Exception {
+
+        protected int value;
+
+        protected String myMessage;
+
+        protected HashMap<String, Object> stuff = new HashMap<String, Object>();
+
+        @JsonCreator
+        MyException(@JsonProperty("message") String msg, @JsonProperty("value") int v) {
+            super(msg);
+            myMessage = msg;
+            value = v;
+        }
+
+        public int getValue() {
+            return value;
+        }
+
+        public String getFoo() {
+            return "bar";
+        }
+
+        @JsonAnySetter
+        public void setter(String key, Object value) {
+            stuff.put(key, value);
+        }
+    }
+
+    @SuppressWarnings("serial")
+    static class MyNoArgException extends Exception {
+
+        @JsonCreator
+        MyNoArgException() {
+        }
+    }
+
+    /*
+    /**********************************************************
+    /* Tests
+    /**********************************************************
+     */
+    private final ObjectMapper MAPPER = new ObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+
+    public void testIOException() throws IOException {
+        IOException ioe = new IOException("TEST");
+        String json = MAPPER.writeValueAsString(ioe);
+        IOException result = MAPPER.readValue(json, IOException.class);
+        assertEquals(ioe.getMessage(), result.getMessage());
+    }
+
+    public void testWithCreator() throws IOException {
+        final String MSG = "the message";
+        String json = MAPPER.writeValueAsString(new MyException(MSG, 3));
+        MyException result = MAPPER.readValue(json, MyException.class);
+        assertEquals(MSG, result.getMessage());
+        assertEquals(3, result.value);
+        assertEquals(1, result.stuff.size());
+        assertEquals(result.getFoo(), result.stuff.get("foo"));
+    }
+
+    public void testWithNullMessage() throws IOException {
+        final ObjectMapper mapper = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
+        String json = mapper.writeValueAsString(new IOException((String) null));
+        IOException result = mapper.readValue(json, IOException.class);
+        assertNotNull(result);
+        assertNull(result.getMessage());
+    }
+
+    public void testNoArgsException() throws IOException {
+        MyNoArgException exc = MAPPER.readValue("{}", MyNoArgException.class);
+        assertNotNull(exc);
+    }
+
+    // [JACKSON-794]: try simulating JDK 7 behavior
+    public void testJDK7SuppressionProperty() throws IOException {
+        Exception exc = MAPPER.readValue("{\"suppressed\":[]}", IOException.class);
+        assertNotNull(exc);
+    }
+
+    // [databind#381]
+    public void testSingleValueArrayDeserialization() {
+    }
+
+    // Defects4J: flaky method
+    //     public void testSingleValueArrayDeserialization() throws Exception {
+    //         final ObjectMapper mapper = new ObjectMapper();
+    //         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+    //         mapper.enable(DeserializationFeature.UNWRAP_SINGLE_VALUE_ARRAYS);
+    //         final IOException exp;
+    //         try {
+    //             throw new IOException("testing");
+    //         } catch (IOException internal) {
+    //             exp = internal;
+    //         }
+    //         final String value = "[" + mapper.writeValueAsString(exp) + "]";
+    //
+    //         final IOException cloned = mapper.readValue(value, IOException.class);
+    //         assertEquals(exp.getMessage(), cloned.getMessage());
+    //
+    //         assertEquals(exp.getStackTrace().length, cloned.getStackTrace().length);
+    //         for (int i = 0; i < exp.getStackTrace().length; i ++) {
+    //             assertEquals(exp.getStackTrace()[i], cloned.getStackTrace()[i]);
+    //         }
+    //     }
+    public void testSingleValueArrayDeserializationException() throws Exception {
+        final ObjectMapper mapper = new ObjectMapper();
+        mapper.disable(DeserializationFeature.UNWRAP_SINGLE_VALUE_ARRAYS);
+        final IOException exp;
+        try {
+            throw new IOException("testing");
+        } catch (IOException internal) {
+            exp = internal;
+        }
+        final String value = "[" + mapper.writeValueAsString(exp) + "]";
+        try {
+            mapper.readValue(value, IOException.class);
+            fail("Exception not thrown when attempting to deserialize an IOException wrapped in a single value array with UNWRAP_SINGLE_VALUE_ARRAYS disabled");
+        } catch (JsonMappingException exp2) {
+            //Exception thrown correctly
+        }
+    }
+
+    static class NoSerdeConstructor {
+
+        private String strVal;
+
+        public String getVal() {
+            return strVal;
+        }
+
+        public NoSerdeConstructor(String strVal) {
+            this.strVal = strVal;
+        }
+    }
+
+    // [databind#1368]
+    public void testFailingNoSerdeConstructor() throws IOException {
+        com.fasterxml.jackson.databind.JsonNode __ins_v1 = null;
+        Exception e = null;
+        // cant deserialize due to unexpected constructor
+        try {
+            MAPPER.readValue("{ \"val\": \"foo\" }", NoSerdeConstructor.class);
+            fail("Should not pass");
+        } catch (JsonMappingException e0) {
+            verifyException(e0, "No suitable constructor");
+            e = e0;
+        }
+        // but should be able to serialize new exception we got
+        String json = MAPPER.writeValueAsString(e);
+        __ins_v1 = MAPPER.readTree(json);
+        JsonNode root = __ins_v1;
+        String msg = root.path("message").asText();
+        String MATCH = "No suitable constructor";
+        if (!msg.contains(MATCH)) {
+            fail("Exception should contain '" + MATCH + "', does not: '" + msg + "'");
+        }
+        org.helper.Assertions.verify("var.elements.elements_24321_23", __ins_v1);
+    }
 }

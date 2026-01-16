@@ -1,23 +1,46 @@
-{
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
-  "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
-  "python_access": [
-    "metas",
-    0,
-    "graph",
-    "fields",
-    "_deserializationContext",
-    "fields",
-    "_factory",
-    "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestJsonSerialize3::testCustomContentSerializer",
-  "line_number": "38",
-  "simple_class_name": "TestJsonSerialize3",
-  "loop": -1
+// Instrumented at 2025-12-01 00:17:03
+package com.fasterxml.jackson.databind.ser;
+
+import java.io.IOException;
+import java.util.*;
+import com.fasterxml.jackson.core.*;
+import com.fasterxml.jackson.databind.*;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+public class TestJsonSerialize3 extends BaseMapTest {
+
+    // [JACKSON-829]
+    static class FooToBarSerializer extends JsonSerializer<String> {
+
+        @Override
+        public void serialize(String value, JsonGenerator jgen, SerializerProvider provider) throws IOException {
+            if ("foo".equals(value)) {
+                jgen.writeString("bar");
+            } else {
+                jgen.writeString(value);
+            }
+        }
+    }
+
+    static class MyObject {
+
+        @JsonSerialize(contentUsing = FooToBarSerializer.class)
+        List<String> list;
+    }
+
+    /*
+    /**********************************************************
+    /* Test methods
+    /**********************************************************
+     */
+    public void testCustomContentSerializer() throws Exception {
+        ObjectMapper __ins_v1 = null;
+        __ins_v1 = new ObjectMapper();
+        ObjectMapper m = __ins_v1;
+        MyObject object = new MyObject();
+        object.list = Arrays.asList("foo");
+        String json = m.writeValueAsString(object);
+        assertEquals("{\"list\":[\"bar\"]}", json);
+        org.helper.Assertions.verify("var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES_394_32", __ins_v1);
+    }
 }

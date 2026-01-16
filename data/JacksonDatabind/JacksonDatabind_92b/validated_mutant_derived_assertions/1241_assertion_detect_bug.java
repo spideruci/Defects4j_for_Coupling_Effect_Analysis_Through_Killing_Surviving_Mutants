@@ -1,23 +1,103 @@
-{
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
-  "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
-  "python_access": [
-    "metas",
-    0,
-    "graph",
-    "fields",
-    "_deserializationContext",
-    "fields",
-    "_factory",
-    "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.deser.ExceptionFromCustomEnumKeyDeserializerTest::testLostMessage",
-  "line_number": "89",
-  "simple_class_name": "ExceptionFromCustomEnumKeyDeserializerTest",
-  "loop": -1
+// Instrumented at 2025-12-01 00:17:11
+/**
+ * ***************************************************************************
+ *  * This data and information is proprietary to, and a valuable trade secret
+ *  * of, Basis Technology Corp.  It is given in confidence by Basis Technology
+ *  * and may only be used as permitted under the license agreement under which
+ *  * it has been distributed, and in no other way.
+ *  *
+ *  * Copyright (c) 2015 Basis Technology Corporation All rights reserved.
+ *  *
+ *  * The technical data and information provided herein are provided with
+ *  * `limited rights', and the computer software provided herein is provided
+ *  * with `restricted rights' as those terms are defined in DAR and ASPR
+ *  * 7-104.9(a).
+ * ****************************************************************************
+ */
+package com.fasterxml.jackson.databind.deser;
+
+import java.io.IOException;
+import java.util.Map;
+import org.junit.Test;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.BaseMapTest;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.KeyDeserializer;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.FromStringDeserializer;
+import com.fasterxml.jackson.databind.module.SimpleModule;
+
+@SuppressWarnings("serial")
+public class ExceptionFromCustomEnumKeyDeserializerTest extends BaseMapTest {
+
+    public enum AnEnum {
+
+        ZERO, ONE
+    }
+
+    public static class AnEnumDeserializer extends FromStringDeserializer<AnEnum> {
+
+        public AnEnumDeserializer() {
+            super(AnEnum.class);
+        }
+
+        //CHECKSTYLE:OFF
+        @Override
+        protected AnEnum _deserialize(String value, DeserializationContext ctxt) throws IOException {
+            try {
+                return AnEnum.valueOf(value);
+            } catch (IllegalArgumentException e) {
+                throw ctxt.weirdKeyException(AnEnum.class, value, "Undefined AnEnum code");
+            }
+        }
+    }
+
+    public static class AnEnumKeyDeserializer extends KeyDeserializer {
+
+        @Override
+        public Object deserializeKey(String key, DeserializationContext ctxt) throws IOException {
+            try {
+                return AnEnum.valueOf(key);
+            } catch (IllegalArgumentException e) {
+                throw ctxt.weirdKeyException(AnEnum.class, key, "Undefined AnEnum code");
+            }
+        }
+    }
+
+    @JsonDeserialize(using = AnEnumDeserializer.class, keyUsing = AnEnumKeyDeserializer.class)
+    public enum LanguageCodeMixin {
+    }
+
+    public static class EnumModule extends SimpleModule {
+
+        @Override
+        public void setupModule(SetupContext context) {
+            context.setMixInAnnotations(AnEnum.class, LanguageCodeMixin.class);
+        }
+
+        public static ObjectMapper setupObjectMapper(ObjectMapper mapper) {
+            final EnumModule module = new EnumModule();
+            mapper.registerModule(module);
+            return mapper;
+        }
+    }
+
+    @Test
+    public void testLostMessage() {
+        ObjectMapper __ins_v1 = null;
+        __ins_v1 = new ObjectMapper();
+        ObjectMapper objectMapper = __ins_v1;
+        objectMapper.registerModule(new EnumModule());
+        try {
+            objectMapper.readValue("{\"TWO\": \"dumpling\"}", new TypeReference<Map<AnEnum, String>>() {
+            });
+        } catch (IOException e) {
+            assertTrue(e.getMessage().contains("Undefined AnEnum"));
+            org.helper.Assertions.verify("var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES_1811_32", __ins_v1);
+            return;
+        }
+        fail("No exception");
+        org.helper.Assertions.verify("var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES_1811_32", __ins_v1);
+    }
 }

@@ -1,23 +1,40 @@
-{
-  "source": "return",
-  "owner": "org.jsoup.nodes.Document",
-  "name": "select",
-  "returnType": "org.jsoup.select.Elements",
-  "ordinal": 0,
-  "readable_access": "var.elements.tag.preserveWhitespace",
-  "python_access": [
-    "metas",
-    6,
-    "graph",
-    "elements",
-    0,
-    "fields",
-    "tag",
-    "fields",
-    "preserveWhitespace"
-  ],
-  "test_name": "org.jsoup.nodes.DocumentTest::testTitles",
-  "line_number": "28",
-  "simple_class_name": "DocumentTest",
-  "loop": -1
+// Instrumented at 2025-12-08 16:01:05
+package org.jsoup.nodes;
+
+import org.jsoup.Jsoup;
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+/**
+ * Tests for Document.
+ *
+ * @author Jonathan Hedley, jonathan@hedley.net
+ */
+public class DocumentTest {
+
+    @Test
+    public void setTextPreservesDocumentStructure() {
+        Document doc = Jsoup.parse("<p>Hello</p>");
+        doc.text("Replaced");
+        assertEquals("Replaced", doc.text());
+        assertEquals("Replaced", doc.body().text());
+        assertEquals(1, doc.select("head").size());
+    }
+
+    @Test
+    public void testTitles() {
+        org.jsoup.select.Elements __ins_v1 = null;
+        Document noTitle = Jsoup.parse("<p>Hello</p>");
+        Document withTitle = Jsoup.parse("<title>First</title><title>Ignore</title><p>Hello</p>");
+        assertEquals("", noTitle.title());
+        noTitle.title("Hello");
+        assertEquals("Hello", noTitle.title());
+        __ins_v1 = noTitle.select("title");
+        assertEquals("Hello", __ins_v1.first().text());
+        assertEquals("First", withTitle.title());
+        withTitle.title("Hello");
+        assertEquals("Hello", withTitle.title());
+        assertEquals("Hello", withTitle.select("title").first().text());
+        org.helper.Assertions.verify("var.elements.tag.preserveWhitespace_29467_751", __ins_v1);
+    }
 }

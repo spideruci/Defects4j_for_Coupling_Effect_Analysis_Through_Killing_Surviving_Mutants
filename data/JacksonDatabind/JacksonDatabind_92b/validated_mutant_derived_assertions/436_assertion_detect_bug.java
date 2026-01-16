@@ -1,23 +1,62 @@
-{
-  "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.creators.RequiredCreatorTest",
-  "name": "POINT_READER",
-  "returnType": "com.fasterxml.jackson.databind.ObjectReader",
-  "ordinal": 0,
-  "readable_access": "var._context._factory.DEFAULT_NO_DESER_CLASS_NAMES",
-  "python_access": [
-    "metas",
-    0,
-    "graph",
-    "fields",
-    "_context",
-    "fields",
-    "_factory",
-    "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.creators.RequiredCreatorTest::testRequiredAnnotatedParam",
-  "line_number": "28",
-  "simple_class_name": "RequiredCreatorTest",
-  "loop": -1
+// Instrumented at 2025-12-01 00:17:01
+package com.fasterxml.jackson.databind.creators;
+
+import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.databind.*;
+
+public class RequiredCreatorTest extends BaseMapTest {
+
+    static class FascistPoint {
+
+        int x, y;
+
+        @JsonCreator
+        public FascistPoint(@JsonProperty(value = "x", required = true) int x, @JsonProperty(value = "y", required = false) int y) {
+            this.x = x;
+            this.y = y;
+        }
+    }
+
+    private final ObjectReader POINT_READER = objectMapper().readerFor(FascistPoint.class);
+
+    public void testRequiredAnnotatedParam() throws Exception {
+        com.fasterxml.jackson.databind.ObjectReader __ins_v1 = null;
+        FascistPoint p;
+        __ins_v1 = POINT_READER;
+        // First: fine if both params passed
+        p = __ins_v1.readValue(aposToQuotes("{'y':2,'x':1}"));
+        assertEquals(1, p.x);
+        assertEquals(2, p.y);
+        p = POINT_READER.readValue(aposToQuotes("{'x':3,'y':4}"));
+        assertEquals(3, p.x);
+        assertEquals(4, p.y);
+        // also fine if 'y' is MIA
+        p = POINT_READER.readValue(aposToQuotes("{'x':3}"));
+        assertEquals(3, p.x);
+        assertEquals(0, p.y);
+        // but not so good if 'x' missing
+        try {
+            POINT_READER.readValue(aposToQuotes("{'y':3}"));
+            fail("Should not pass");
+        } catch (JsonMappingException e) {
+            verifyException(e, "Missing required creator property 'x' (index 0)");
+        }
+        org.helper.Assertions.verify("var._context._factory.DEFAULT_NO_DESER_CLASS_NAMES_1081_32", __ins_v1);
+    }
+
+    public void testRequiredGloballyParam() throws Exception {
+        FascistPoint p;
+        // as per above, ok to miss 'y' with default settings:
+        p = POINT_READER.readValue(aposToQuotes("{'x':2}"));
+        assertEquals(2, p.x);
+        assertEquals(0, p.y);
+        // but not if global checks desired
+        ObjectReader r = POINT_READER.with(DeserializationFeature.FAIL_ON_MISSING_CREATOR_PROPERTIES);
+        try {
+            r.readValue(aposToQuotes("{'x':6}"));
+            fail("Should not pass");
+        } catch (JsonMappingException e) {
+            verifyException(e, "Missing creator property 'y' (index 1)");
+        }
+    }
 }

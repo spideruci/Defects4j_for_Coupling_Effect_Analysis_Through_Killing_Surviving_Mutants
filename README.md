@@ -135,4 +135,7 @@ is an assertion generated from surviving mutants for **Cli-2b**.
 This mutant-derived assertion is capable of detecting the corresponding real bug.
 
 
+Specifically, all generated assertions follow the form org.helper.Assertions.verify(...).
+The corresponding test method names and test source files in which these assertions are inserted are recorded in the assertion specifications.
+
 

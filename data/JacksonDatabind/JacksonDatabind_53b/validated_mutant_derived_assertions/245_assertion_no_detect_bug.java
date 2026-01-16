@@ -1,23 +1,51 @@
-{
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
-  "ordinal": 0,
-  "readable_access": "var._deserializationContext._cache._cachedDeserializers",
-  "python_access": [
-    "metas",
-    3,
-    "graph",
-    "fields",
-    "_deserializationContext",
-    "fields",
-    "_cache",
-    "fields",
-    "_cachedDeserializers"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.jsontype.AbstracTypeMapping1186Test::testDeserializeMyContainer",
-  "line_number": "37",
-  "simple_class_name": "AbstracTypeMapping1186Test",
-  "loop": -1
+// Instrumented at 2025-12-13 09:03:48
+package com.fasterxml.jackson.databind.jsontype;
+
+import java.util.List;
+import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.databind.*;
+import com.fasterxml.jackson.databind.module.SimpleModule;
+
+public class AbstracTypeMapping1186Test extends BaseMapTest {
+
+    public interface IContainer<T> {
+
+        @JsonProperty("ts")
+        List<T> getTs();
+    }
+
+    static class MyContainer<T> implements IContainer<T> {
+
+        final List<T> ts;
+
+        @JsonCreator
+        public MyContainer(@JsonProperty("ts") List<T> ts) {
+            this.ts = ts;
+        }
+
+        @Override
+        public List<T> getTs() {
+            return ts;
+        }
+    }
+
+    public static class MyObject {
+
+        public String msg;
+    }
+
+    public void testDeserializeMyContainer() throws Exception {
+        ObjectMapper __ins_v1 = null;
+        com.fasterxml.jackson.databind.Module module = new SimpleModule().addAbstractTypeMapping(IContainer.class, MyContainer.class);
+        __ins_v1 = new ObjectMapper();
+        final ObjectMapper mapper = __ins_v1.registerModule(module);
+        String json = "{\"ts\": [ { \"msg\": \"hello\"} ] }";
+        final Object o = mapper.readValue(json, mapper.getTypeFactory().constructParametricType(IContainer.class, MyObject.class));
+        assertEquals(MyContainer.class, o.getClass());
+        MyContainer<?> myc = (MyContainer<?>) o;
+        assertEquals(1, myc.ts.size());
+        Object value = myc.ts.get(0);
+        assertEquals(MyObject.class, value.getClass());
+        org.helper.Assertions.verify("var._deserializationContext._cache._cachedDeserializers_1216_223", __ins_v1);
+    }
 }

@@ -1,23 +1,46 @@
-{
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
-  "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
-  "python_access": [
-    "metas",
-    2,
-    "graph",
-    "fields",
-    "_deserializationContext",
-    "fields",
-    "_factory",
-    "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.filter.IgnorePropertiesDeser1575Test::testIgnorePropDeser1575",
-  "line_number": "26",
-  "simple_class_name": "IgnorePropertiesDeser1575Test",
-  "loop": -1
+// Instrumented at 2025-12-13 14:00:43
+package com.fasterxml.jackson.databind.filter;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.*;
+
+public class IgnorePropertiesDeser1575Test extends BaseMapTest {
+
+    static class Person {
+
+        public String name;
+
+        // renaming this to person_p works
+        @JsonProperty("person_z")
+        // renaming this to person_p works
+        @JsonIgnoreProperties({ "person_z" })
+        public Person //        public Set<Person> personZ;
+        personZ;
+    }
+
+    public void testIgnorePropDeser1575() throws Exception {
+        ObjectMapper __ins_v1 = null;
+        String st = aposToQuotes("{ 'name': 'admin',\n" + //                + "    'person_z': [ { 'name': 'admin' } ]"
+        "    'person_z': { 'name': 'admin' }" + "}");
+        __ins_v1 = new ObjectMapper();
+        ObjectMapper mapper = __ins_v1;
+        Person result = mapper.readValue(st, Person.class);
+        assertEquals("admin", result.name);
+        org.helper.Assertions.verify("var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES_3462_18", __ins_v1);
+    }
+    /*
+    public void testIgnorePropSer1575() throws Exception
+    {
+        ObjectMapper mapper = new ObjectMapper();
+        Person input = new Person();
+        input.name = "Bob";
+
+        // 24-Mar-2017, tatu: This shouldn't cause issues... but does as of now:
+        
+//        input.personZ = input;
+        String json = mapper.writeValueAsString(input);
+        assertNotNull(json);
+    }
+    */
 }

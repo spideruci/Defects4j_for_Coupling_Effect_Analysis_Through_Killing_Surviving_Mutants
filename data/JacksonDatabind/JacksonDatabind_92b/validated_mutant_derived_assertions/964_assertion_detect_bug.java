@@ -1,23 +1,101 @@
-{
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.type.RecursiveTypeTest",
-  "name": "objectMapper",
-  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
-  "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
-  "python_access": [
-    "metas",
-    0,
-    "graph",
-    "fields",
-    "_deserializationContext",
-    "fields",
-    "_factory",
-    "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.type.RecursiveTypeTest::testJavaTypeToString",
-  "line_number": "85",
-  "simple_class_name": "RecursiveTypeTest",
-  "loop": -1
+// Instrumented at 2025-12-01 00:17:09
+package com.fasterxml.jackson.databind.type;
+
+import java.util.*;
+import com.fasterxml.jackson.databind.*;
+
+public class RecursiveTypeTest extends BaseMapTest {
+
+    // for [databind#1301]
+    @SuppressWarnings("serial")
+    static class HashTree<K, V> extends HashMap<K, HashTree<K, V>> {
+    }
+
+    // for [databind#938]
+    public static interface Ability<T> {
+    }
+
+    public static final class ImmutablePair<L, R> implements Map.Entry<L, R>, Ability<ImmutablePair<L, R>> {
+
+        public final L key;
+
+        public final R value;
+
+        public ImmutablePair(final L key, final R value) {
+            this.key = key;
+            this.value = value;
+        }
+
+        @Override
+        public L getKey() {
+            return key;
+        }
+
+        @Override
+        public R getValue() {
+            return value;
+        }
+
+        @Override
+        public R setValue(final R value) {
+            throw new UnsupportedOperationException();
+        }
+
+        static <L, R> ImmutablePair<L, R> of(final L left, final R right) {
+            return new ImmutablePair<L, R>(left, right);
+        }
+    }
+
+    // for [databind#1301]
+    public void testRecursiveType() {
+        TypeFactory tf = TypeFactory.defaultInstance();
+        JavaType type = tf.constructType(HashTree.class);
+        assertNotNull(type);
+    }
+
+    // for [databind#1301]
+    @SuppressWarnings("serial")
+    static class DataDefinition extends HashMap<String, DataDefinition> {
+
+        public DataDefinition definition;
+
+        public DataDefinition elements;
+
+        public String regex;
+
+        public boolean required;
+
+        public String type;
+    }
+
+    private final ObjectMapper MAPPER = new ObjectMapper();
+
+    // [databind#938]
+    public void testRecursivePair() throws Exception {
+        JavaType t = MAPPER.constructType(ImmutablePair.class);
+        assertNotNull(t);
+        assertEquals(ImmutablePair.class, t.getRawClass());
+        List<ImmutablePair<String, Double>> list = new ArrayList<ImmutablePair<String, Double>>();
+        list.add(ImmutablePair.of("Hello World!", 123d));
+        String json = MAPPER.writeValueAsString(list);
+        assertNotNull(json);
+        // can not deserialize with current definition, however
+    }
+
+    // for [databind#1301]
+    public void testJavaTypeToString() throws Exception {
+        com.fasterxml.jackson.databind.ObjectMapper __ins_v1 = null;
+        __ins_v1 = objectMapper();
+        TypeFactory tf = __ins_v1.getTypeFactory();
+        String desc = tf.constructType(DataDefinition.class).toString();
+        assertNotNull(desc);
+        // could try comparing exact message, but since it's informational try looser:
+        if (!desc.contains("map type")) {
+            fail("Description should contain 'map type', did not: " + desc);
+        }
+        if (!desc.contains("recursive type")) {
+            fail("Description should contain 'recursive type', did not: " + desc);
+        }
+        org.helper.Assertions.verify("var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES_953_32", __ins_v1);
+    }
 }

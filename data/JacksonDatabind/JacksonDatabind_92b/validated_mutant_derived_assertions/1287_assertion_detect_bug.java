@@ -1,23 +1,47 @@
-{
-  "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.jsontype.TestDefaultForTreeNodes",
-  "name": "DEFAULT_MAPPER",
-  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
-  "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
-  "python_access": [
-    "metas",
-    2,
-    "graph",
-    "fields",
-    "_deserializationContext",
-    "fields",
-    "_factory",
-    "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.jsontype.TestDefaultForTreeNodes::testValueAsStringWithDefaultTyping",
-  "line_number": "29",
-  "simple_class_name": "TestDefaultForTreeNodes",
-  "loop": -1
+// Instrumented at 2025-12-01 00:17:12
+package com.fasterxml.jackson.databind.jsontype;
+
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.databind.*;
+
+public class TestDefaultForTreeNodes extends BaseMapTest {
+
+    public static class Foo {
+
+        public String bar;
+
+        public Foo() {
+        }
+
+        public Foo(String b) {
+            bar = b;
+        }
+    }
+
+    /*
+    /**********************************************************
+    /* Unit tests
+    /**********************************************************
+     */
+    private final ObjectMapper DEFAULT_MAPPER = new ObjectMapper();
+
+    {
+        DEFAULT_MAPPER.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL, JsonTypeInfo.As.PROPERTY);
+    }
+
+    public void testValueAsStringWithDefaultTyping() throws Exception {
+        com.fasterxml.jackson.databind.ObjectMapper __ins_v1 = null;
+        Foo foo = new Foo("baz");
+        __ins_v1 = DEFAULT_MAPPER;
+        String json = __ins_v1.writeValueAsString(foo);
+        JsonNode jsonNode = DEFAULT_MAPPER.readTree(json);
+        assertEquals(jsonNode.get("bar").textValue(), foo.bar);
+        org.helper.Assertions.verify("var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES_1508_32", __ins_v1);
+    }
+
+    public void testValueToTreeWithDefaultTyping() throws Exception {
+        Foo foo = new Foo("baz");
+        JsonNode jsonNode = DEFAULT_MAPPER.valueToTree(foo);
+        assertEquals(jsonNode.get("bar").textValue(), foo.bar);
+    }
 }

@@ -1,23 +1,49 @@
-{
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ser.TestJacksonTypes",
-  "name": "createParserUsingReader",
-  "returnType": "com.fasterxml.jackson.core.JsonParser",
-  "ordinal": 0,
-  "readable_access": "var._symbols._buckets.elements",
-  "python_access": [
-    "metas",
-    0,
-    "graph",
-    "fields",
-    "_symbols",
-    "fields",
-    "_buckets",
-    "elements",
-    9
-  ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestJacksonTypes::testTokenBuffer",
-  "line_number": "38",
-  "simple_class_name": "TestJacksonTypes",
-  "loop": -1
+// Instrumented at 2025-12-21 13:37:25
+package com.fasterxml.jackson.databind.ser;
+
+import java.io.*;
+import java.util.*;
+import com.fasterxml.jackson.core.*;
+import com.fasterxml.jackson.databind.*;
+import com.fasterxml.jackson.databind.util.TokenBuffer;
+
+/**
+ * Unit tests for those Jackson types we want to ensure can be serialized.
+ */
+public class TestJacksonTypes extends BaseMapTest {
+
+    public void testLocation() throws IOException {
+        File f = new File("/tmp/test.json");
+        JsonLocation loc = new JsonLocation(f, -1, 100, 13);
+        ObjectMapper mapper = new ObjectMapper();
+        Map<String, Object> result = writeAndMap(mapper, loc);
+        assertEquals(5, result.size());
+        assertEquals(f.getAbsolutePath(), result.get("sourceRef"));
+        assertEquals(Integer.valueOf(-1), result.get("charOffset"));
+        assertEquals(Integer.valueOf(-1), result.get("byteOffset"));
+        assertEquals(Integer.valueOf(100), result.get("lineNr"));
+        assertEquals(Integer.valueOf(13), result.get("columnNr"));
+    }
+
+    /**
+     * Verify that {@link TokenBuffer} can be properly serialized
+     * automatically, using the "standard" JSON sample document
+     */
+    public void testTokenBuffer() throws Exception {
+        com.fasterxml.jackson.core.JsonParser __ins_v1 = null;
+        __ins_v1 = createParserUsingReader(SAMPLE_DOC_JSON_SPEC);
+        // First, copy events from known good source (StringReader)
+        JsonParser jp = __ins_v1;
+        TokenBuffer tb = new TokenBuffer(null, false);
+        while (jp.nextToken() != null) {
+            tb.copyCurrentEvent(jp);
+        }
+        jp.close();
+        // Then serialize as String
+        String str = serializeAsString(tb);
+        tb.close();
+        // and verify it looks ok
+        verifyJsonSpecSampleDoc(createParserUsingReader(str), true);
+        org.helper.Assertions.verify("var._symbols._buckets.elements_1018_364", __ins_v1);
+    }
 }

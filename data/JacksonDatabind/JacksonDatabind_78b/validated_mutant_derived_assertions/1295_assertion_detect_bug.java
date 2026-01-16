@@ -1,23 +1,55 @@
-{
-  "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.misc.TestJSONP",
-  "name": "MAPPER",
-  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
-  "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
-  "python_access": [
-    "metas",
-    4,
-    "graph",
-    "fields",
-    "_deserializationContext",
-    "fields",
-    "_factory",
-    "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.misc.TestJSONP::testGeneralWrapping",
-  "line_number": "59",
-  "simple_class_name": "TestJSONP",
-  "loop": -1
+// Instrumented at 2025-12-13 14:00:48
+package com.fasterxml.jackson.databind.misc;
+
+import java.util.Arrays;
+import com.fasterxml.jackson.databind.*;
+import com.fasterxml.jackson.databind.util.JSONPObject;
+import com.fasterxml.jackson.databind.util.JSONWrappedObject;
+
+public class TestJSONP extends BaseMapTest {
+
+    static class Base {
+
+        public String a;
+    }
+
+    static class Impl extends Base {
+
+        public String b;
+
+        public Impl(String a, String b) {
+            this.a = a;
+            this.b = b;
+        }
+    }
+
+    private final ObjectMapper MAPPER = new ObjectMapper();
+
+    public void testSimpleScalars() throws Exception {
+        assertEquals("callback(\"abc\")", MAPPER.writeValueAsString(new JSONPObject("callback", "abc")));
+        assertEquals("calc(123)", MAPPER.writeValueAsString(new JSONPObject("calc", Integer.valueOf(123))));
+        assertEquals("dummy(null)", MAPPER.writeValueAsString(new JSONPObject("dummy", null)));
+    }
+
+    public void testSimpleBean() throws Exception {
+        assertEquals("xxx({\"a\":\"123\",\"b\":\"456\"})", MAPPER.writeValueAsString(new JSONPObject("xxx", new Impl("123", "456"))));
+    }
+
+    /**
+     * Test to ensure that it is possible to force a static type for wrapped
+     * value.
+     */
+    public void testWithType() throws Exception {
+        Object ob = new Impl("abc", "def");
+        JavaType type = MAPPER.constructType(Base.class);
+        assertEquals("do({\"a\":\"abc\"})", MAPPER.writeValueAsString(new JSONPObject("do", ob, type)));
+    }
+
+    public void testGeneralWrapping() throws Exception {
+        com.fasterxml.jackson.databind.ObjectMapper __ins_v1 = null;
+        JSONWrappedObject input = new JSONWrappedObject("/*Foo*/", "\n// the end", Arrays.asList());
+        __ins_v1 = MAPPER;
+        assertEquals("/*Foo*/[]\n// the end", __ins_v1.writeValueAsString(input));
+        org.helper.Assertions.verify("var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES_3400_18", __ins_v1);
+    }
 }

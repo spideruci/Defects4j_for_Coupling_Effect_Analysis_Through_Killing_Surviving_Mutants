@@ -1,23 +1,34 @@
-{
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
-  "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
-  "python_access": [
-    "metas",
-    0,
-    "graph",
-    "fields",
-    "_deserializationContext",
-    "fields",
-    "_factory",
-    "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.filter.ReadOnlyProperties95Test::testReadOnlyProp",
-  "line_number": "21",
-  "simple_class_name": "ReadOnlyProperties95Test",
-  "loop": -1
+// Instrumented at 2025-12-01 00:17:06
+package com.fasterxml.jackson.databind.filter;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.databind.*;
+
+/**
+ * Failing test related to [databind#95]
+ */
+public class ReadOnlyProperties95Test extends BaseMapTest {
+
+    @JsonIgnoreProperties(value = { "computed" }, allowGetters = true)
+    static class ReadOnlyBean {
+
+        public int value = 3;
+
+        public int getComputed() {
+            return 32;
+        }
+    }
+
+    public void testReadOnlyProp() throws Exception {
+        ObjectMapper __ins_v1 = null;
+        __ins_v1 = new ObjectMapper();
+        ObjectMapper m = __ins_v1;
+        String json = m.writeValueAsString(new ReadOnlyBean());
+        if (json.indexOf("computed") < 0) {
+            fail("Should have property 'computed', didn't: " + json);
+        }
+        ReadOnlyBean bean = m.readValue(json, ReadOnlyBean.class);
+        assertNotNull(bean);
+        org.helper.Assertions.verify("var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES_458_32", __ins_v1);
+    }
 }

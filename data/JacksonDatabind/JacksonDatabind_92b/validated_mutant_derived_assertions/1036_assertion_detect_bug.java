@@ -1,23 +1,109 @@
-{
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
-  "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
-  "python_access": [
-    "metas",
-    0,
-    "graph",
-    "fields",
-    "_deserializationContext",
-    "fields",
-    "_factory",
-    "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.introspect.TestAnnotationMerging::testSharedTypeInfoWithCtor",
-  "line_number": "88",
-  "simple_class_name": "TestAnnotationMerging",
-  "loop": -1
+// Instrumented at 2025-12-01 00:17:09
+package com.fasterxml.jackson.databind.introspect;
+
+import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.databind.BaseMapTest;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+/**
+ * Tests to verify that annotations are shared and merged between members
+ * of a property (getter and setter and so on)
+ */
+public class TestAnnotationMerging extends BaseMapTest {
+
+    static class Wrapper {
+
+        protected Object value;
+
+        public Wrapper() {
+        }
+
+        public Wrapper(Object o) {
+            value = o;
+        }
+
+        @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS)
+        public Object getValue() {
+            return value;
+        }
+
+        public void setValue(Object o) {
+            value = o;
+        }
+    }
+
+    static class SharedName {
+
+        @JsonProperty("x")
+        protected int value;
+
+        public SharedName(int v) {
+            value = v;
+        }
+
+        public int getValue() {
+            return value;
+        }
+    }
+
+    static class SharedName2 {
+
+        @JsonProperty("x")
+        public int getValue() {
+            return 1;
+        }
+
+        public void setValue(int x) {
+        }
+    }
+
+    // Testing to ensure that ctor param and getter can "share" @JsonTypeInfo stuff
+    static class TypeWrapper {
+
+        protected Object value;
+
+        @JsonCreator
+        public TypeWrapper(@JsonProperty("value") @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS) Object o) {
+            value = o;
+        }
+
+        public Object getValue() {
+            return value;
+        }
+    }
+
+    /*
+    /**********************************************************
+    /* Unit tests
+    /**********************************************************
+     */
+    public void testSharedNames() throws Exception {
+        ObjectMapper mapper = new ObjectMapper();
+        assertEquals("{\"x\":6}", mapper.writeValueAsString(new SharedName(6)));
+    }
+
+    public void testSharedNamesFromGetterToSetter() throws Exception {
+        ObjectMapper mapper = new ObjectMapper();
+        String json = mapper.writeValueAsString(new SharedName2());
+        assertEquals("{\"x\":1}", json);
+        SharedName2 result = mapper.readValue(json, SharedName2.class);
+        assertNotNull(result);
+    }
+
+    public void testSharedTypeInfo() throws Exception {
+        ObjectMapper mapper = new ObjectMapper();
+        String json = mapper.writeValueAsString(new Wrapper(13L));
+        Wrapper result = mapper.readValue(json, Wrapper.class);
+        assertEquals(Long.class, result.value.getClass());
+    }
+
+    public void testSharedTypeInfoWithCtor() throws Exception {
+        ObjectMapper __ins_v1 = null;
+        __ins_v1 = new ObjectMapper();
+        ObjectMapper mapper = __ins_v1;
+        String json = mapper.writeValueAsString(new TypeWrapper(13L));
+        TypeWrapper result = mapper.readValue(json, TypeWrapper.class);
+        assertEquals(Long.class, result.value.getClass());
+        org.helper.Assertions.verify("var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES_206_32", __ins_v1);
+    }
 }

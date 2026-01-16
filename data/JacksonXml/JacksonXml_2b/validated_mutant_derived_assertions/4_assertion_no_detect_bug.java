@@ -1,17 +1,18 @@
-{
-  "source": "return",
-  "owner": "java.lang.StringBuilder",
-  "name": "StringBuilder",
-  "returnType": "void",
-  "ordinal": 0,
-  "readable_access": "var.metas",
-  "python_access": [
-    "metas",
-    9,
-    "graph"
-  ],
-  "test_name": "com.fasterxml.jackson.dataformat.xml.misc.NodeTest::testMixed",
-  "line_number": "18",
-  "simple_class_name": "NodeTest",
-  "loop": -1
+// Instrumented at 2025-12-07 16:09:24
+package com.fasterxml.jackson.dataformat.xml.misc;
+
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import com.fasterxml.jackson.dataformat.xml.XmlTestBase;
+
+public class NodeTest extends XmlTestBase {
+
+    public void testMixed() throws Exception {
+        final XmlMapper xmlMapper = new XmlMapper();
+        final ObjectMapper jsonMapper = new ObjectMapper();
+        JsonNode root = xmlMapper.readTree("<root>first<child>4</child>second</root>");
+        String json = jsonMapper.writeValueAsString(root);
+        System.out.println("-> " + json);
+    }
 }

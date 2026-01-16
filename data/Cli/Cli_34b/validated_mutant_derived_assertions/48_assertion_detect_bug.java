@@ -1,23 +1,68 @@
-{
-  "source": "return",
-  "owner": "org.apache.commons.cli.Parser",
-  "name": "parse",
-  "returnType": "org.apache.commons.cli.CommandLine",
-  "ordinal": 0,
-  "readable_access": "var.options.elements.type",
-  "python_access": [
-    "metas",
-    15,
-    "graph",
-    "fields",
-    "options",
-    "elements",
-    2,
-    "fields",
-    "type"
-  ],
-  "test_name": "org.apache.commons.cli.CommandLineTest::testGetOptionProperties",
-  "line_number": "39",
-  "simple_class_name": "CommandLineTest",
-  "loop": -1
+// Instrumented at 2025-12-02 23:39:13
+/**
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package org.apache.commons.cli;
+
+import java.util.Properties;
+import junit.framework.TestCase;
+
+/**
+ * @author Emmanuel Bourg
+ * @version $Revision$, $Date$
+ */
+public class CommandLineTest extends TestCase {
+
+    public void testGetOptionProperties() throws Exception {
+        org.apache.commons.cli.CommandLine __ins_v1 = null;
+        String[] args = new String[] { "-Dparam1=value1", "-Dparam2=value2", "-Dparam3", "-Dparam4=value4", "-D", "--property", "foo=bar" };
+        Options options = new Options();
+        options.addOption(OptionBuilder.withValueSeparator().hasOptionalArgs(2).create('D'));
+        options.addOption(OptionBuilder.withValueSeparator().hasArgs(2).withLongOpt("property").create());
+        Parser parser = new GnuParser();
+        __ins_v1 = parser.parse(options, args);
+        CommandLine cl = __ins_v1;
+        Properties props = cl.getOptionProperties("D");
+        assertNotNull("null properties", props);
+        assertEquals("number of properties in " + props, 4, props.size());
+        assertEquals("property 1", "value1", props.getProperty("param1"));
+        assertEquals("property 2", "value2", props.getProperty("param2"));
+        assertEquals("property 3", "true", props.getProperty("param3"));
+        assertEquals("property 4", "value4", props.getProperty("param4"));
+        assertEquals("property with long format", "bar", cl.getOptionProperties("property").getProperty("foo"));
+        org.helper.Assertions.verify("var.options.elements.type_289_205", __ins_v1);
+    }
+
+    public void testGetOptions() {
+        CommandLine cmd = new CommandLine();
+        assertNotNull(cmd.getOptions());
+        assertEquals(0, cmd.getOptions().length);
+        cmd.addOption(new Option("a", null));
+        cmd.addOption(new Option("b", null));
+        cmd.addOption(new Option("c", null));
+        assertEquals(3, cmd.getOptions().length);
+    }
+
+    public void testGetParsedOptionValue() throws Exception {
+        Options options = new Options();
+        options.addOption(OptionBuilder.hasArg().withType(Number.class).create("i"));
+        options.addOption(OptionBuilder.hasArg().create("f"));
+        CommandLineParser parser = new DefaultParser();
+        CommandLine cmd = parser.parse(options, new String[] { "-i", "123", "-f", "foo" });
+        assertEquals(123, ((Number) cmd.getParsedOptionValue("i")).intValue());
+        assertEquals("foo", cmd.getParsedOptionValue("f"));
+    }
 }

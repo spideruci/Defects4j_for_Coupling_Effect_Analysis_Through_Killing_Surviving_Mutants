@@ -1,23 +1,31 @@
-{
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
-  "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
-  "python_access": [
-    "metas",
-    0,
-    "graph",
-    "fields",
-    "_deserializationContext",
-    "fields",
-    "_factory",
-    "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.creators.ArrayDelegatorCreatorForCollectionTest::testUnmodifiable",
-  "line_number": "21",
-  "simple_class_name": "ArrayDelegatorCreatorForCollectionTest",
-  "loop": -1
+// Instrumented at 2025-12-01 00:17:14
+package com.fasterxml.jackson.databind.creators;
+
+import java.util.Collections;
+import java.util.Set;
+import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.databind.*;
+
+public class ArrayDelegatorCreatorForCollectionTest extends BaseMapTest {
+
+    @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY)
+    abstract static class UnmodifiableSetMixin {
+
+        @JsonCreator
+        public UnmodifiableSetMixin(Set<?> s) {
+        }
+    }
+
+    public void testUnmodifiable() throws Exception {
+        ObjectMapper __ins_v1 = null;
+        __ins_v1 = new ObjectMapper();
+        ObjectMapper mapper = __ins_v1;
+        Class<?> unmodSetType = Collections.unmodifiableSet(Collections.<String>emptySet()).getClass();
+        mapper.addMixIn(unmodSetType, UnmodifiableSetMixin.class);
+        mapper.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL, JsonTypeInfo.As.PROPERTY);
+        final String EXPECTED_JSON = "[\"" + unmodSetType.getName() + "\",[]]";
+        Set<?> foo = mapper.readValue(EXPECTED_JSON, Set.class);
+        assertTrue(foo.isEmpty());
+        org.helper.Assertions.verify("var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES_1246_32", __ins_v1);
+    }
 }

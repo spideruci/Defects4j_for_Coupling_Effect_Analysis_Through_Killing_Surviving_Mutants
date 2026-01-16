@@ -1,23 +1,57 @@
-{
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
-  "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
-  "python_access": [
-    "metas",
-    0,
-    "graph",
-    "fields",
-    "_deserializationContext",
-    "fields",
-    "_factory",
-    "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestObjectOrArrayDeserialization::testEmptyArrayCase",
-  "line_number": "39",
-  "simple_class_name": "TestObjectOrArrayDeserialization",
-  "loop": -1
+// Instrumented at 2025-12-01 00:17:09
+package com.fasterxml.jackson.databind.deser;
+
+import java.util.List;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.databind.BaseMapTest;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+public class TestObjectOrArrayDeserialization extends BaseMapTest {
+
+    public static class SomeObject {
+
+        public String someField;
+    }
+
+    public static class ArrayOrObject {
+
+        private final List<SomeObject> objects;
+
+        private final SomeObject object;
+
+        @JsonCreator
+        public ArrayOrObject(List<SomeObject> objects) {
+            this.objects = objects;
+            this.object = null;
+        }
+
+        @JsonCreator
+        public ArrayOrObject(SomeObject object) {
+            this.objects = null;
+            this.object = object;
+        }
+    }
+
+    public void testObjectCase() throws Exception {
+        ArrayOrObject arrayOrObject = new ObjectMapper().readValue("{}", ArrayOrObject.class);
+        assertNull("expected objects field to be null", arrayOrObject.objects);
+        assertNotNull("expected object field not to be null", arrayOrObject.object);
+    }
+
+    public void testEmptyArrayCase() throws Exception {
+        ObjectMapper __ins_v1 = null;
+        __ins_v1 = new ObjectMapper();
+        ArrayOrObject arrayOrObject = __ins_v1.readValue("[]", ArrayOrObject.class);
+        assertNotNull("expected objects field not to be null", arrayOrObject.objects);
+        assertTrue("expected objects field to be an empty list", arrayOrObject.objects.isEmpty());
+        assertNull("expected object field to be null", arrayOrObject.object);
+        org.helper.Assertions.verify("var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES_1563_32", __ins_v1);
+    }
+
+    public void testNotEmptyArrayCase() throws Exception {
+        ArrayOrObject arrayOrObject = new ObjectMapper().readValue("[{}, {}]", ArrayOrObject.class);
+        assertNotNull("expected objects field not to be null", arrayOrObject.objects);
+        assertEquals("expected objects field to have size 2", 2, arrayOrObject.objects.size());
+        assertNull("expected object field to be null", arrayOrObject.object);
+    }
 }

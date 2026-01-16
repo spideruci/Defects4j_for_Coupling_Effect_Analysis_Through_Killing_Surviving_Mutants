@@ -1,23 +1,111 @@
-{
-  "source": "return",
-  "owner": "com.fasterxml.jackson.core.sym.TestJsonParserSymbols",
-  "name": "_getParser",
-  "returnType": "com.fasterxml.jackson.core.JsonParser",
-  "ordinal": 0,
-  "readable_access": "var._symbols._names.elements",
-  "python_access": [
-    "metas",
-    2,
-    "graph",
-    "fields",
-    "_symbols",
-    "fields",
-    "_names",
-    "elements",
-    7
-  ],
-  "test_name": "com.fasterxml.jackson.core.sym.TestJsonParserSymbols::testByteSymbolsWithEOF",
-  "line_number": "38",
-  "simple_class_name": "TestJsonParserSymbols",
-  "loop": -1
+// Instrumented at 2025-12-16 20:26:28
+package com.fasterxml.jackson.core.sym;
+
+import java.io.IOException;
+import com.fasterxml.jackson.core.*;
+import com.fasterxml.jackson.core.json.ReaderBasedJsonParser;
+import com.fasterxml.jackson.core.json.UTF8StreamJsonParser;
+
+/**
+ * Unit tests for verifying that {@link JsonParser} instances properly
+ * merge back symbols to the root symbol table
+ */
+@SuppressWarnings("serial")
+public class TestJsonParserSymbols extends com.fasterxml.jackson.core.BaseTest {
+
+    /**
+     * To peek into state of "root" symbol tables (parent of all symbol
+     * tables for parsers constructed by this factory) we need to
+     * add some methods.
+     */
+    final static class MyJsonFactory extends JsonFactory {
+
+        public int byteSymbolCount() {
+            return _byteSymbolCanonicalizer.size();
+        }
+
+        public int charSymbolCount() {
+            return _rootCharSymbols.size();
+        }
+    }
+
+    final static String JSON = "{ \"a\" : 3, \"aaa\" : 4, \"_a\" : 0 }";
+
+    public void testByteSymbolsWithClose() throws Exception {
+        _testWithClose(true);
+    }
+
+    public void testByteSymbolsWithEOF() throws Exception {
+        com.fasterxml.jackson.core.JsonParser __ins_v1 = null;
+        MyJsonFactory f = new MyJsonFactory();
+        __ins_v1 = _getParser(f, JSON, true);
+        JsonParser jp = __ins_v1;
+        while (jp.nextToken() != null) {
+            // shouldn't update before hitting end
+            assertEquals(0, f.byteSymbolCount());
+        }
+        // but now should have it after hitting EOF
+        assertEquals(3, f.byteSymbolCount());
+        jp.close();
+        assertEquals(3, f.byteSymbolCount());
+        org.helper.Assertions.verify("var._symbols._names.elements_1114_65", __ins_v1);
+    }
+
+    public void testHashCalc() throws Exception {
+        CharsToNameCanonicalizer sym = CharsToNameCanonicalizer.createRoot(123);
+        char[] str1 = "foo".toCharArray();
+        char[] str2 = " foo ".toCharArray();
+        assertEquals(sym.calcHash(str1, 0, 3), sym.calcHash(str2, 1, 3));
+    }
+
+    public void testCharSymbolsWithClose() throws Exception {
+        _testWithClose(false);
+    }
+
+    public void testCharSymbolsWithEOF() throws Exception {
+        MyJsonFactory f = new MyJsonFactory();
+        JsonParser jp = _getParser(f, JSON, false);
+        while (jp.nextToken() != null) {
+            // shouldn't update before hitting end
+            assertEquals(0, f.charSymbolCount());
+        }
+        // but now should have it
+        assertEquals(3, f.charSymbolCount());
+        jp.close();
+        assertEquals(3, f.charSymbolCount());
+    }
+
+    /*
+    /**********************************************************
+    /* Helper methods
+    /**********************************************************
+     */
+    private void _testWithClose(boolean useBytes) throws IOException {
+        MyJsonFactory f = new MyJsonFactory();
+        JsonParser jp = _getParser(f, JSON, useBytes);
+        // Let's check 2 names
+        assertToken(JsonToken.START_OBJECT, jp.nextToken());
+        assertToken(JsonToken.FIELD_NAME, jp.nextToken());
+        assertToken(JsonToken.VALUE_NUMBER_INT, jp.nextToken());
+        assertToken(JsonToken.FIELD_NAME, jp.nextToken());
+        // shouldn't update before close or EOF:
+        assertEquals(0, useBytes ? f.byteSymbolCount() : f.charSymbolCount());
+        jp.close();
+        // but should after close
+        assertEquals(2, useBytes ? f.byteSymbolCount() : f.charSymbolCount());
+    }
+
+    private JsonParser _getParser(MyJsonFactory f, String doc, boolean useBytes) throws IOException {
+        JsonParser jp;
+        if (useBytes) {
+            jp = f.createParser(doc.getBytes("UTF-8"));
+            assertEquals(UTF8StreamJsonParser.class, jp.getClass());
+            assertEquals(0, f.byteSymbolCount());
+        } else {
+            jp = f.createParser(doc);
+            assertEquals(ReaderBasedJsonParser.class, jp.getClass());
+            assertEquals(0, f.charSymbolCount());
+        }
+        return jp;
+    }
 }

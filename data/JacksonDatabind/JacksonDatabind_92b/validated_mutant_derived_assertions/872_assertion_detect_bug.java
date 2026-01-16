@@ -1,23 +1,120 @@
-{
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
-  "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
-  "python_access": [
-    "metas",
-    0,
-    "graph",
-    "fields",
-    "_deserializationContext",
-    "fields",
-    "_factory",
-    "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.creators.TestCreatorNullValue::testUsesDeserializersNullValue",
-  "line_number": "98",
-  "simple_class_name": "TestCreatorNullValue",
-  "loop": -1
+// Instrumented at 2025-12-01 00:17:07
+package com.fasterxml.jackson.databind.creators;
+
+import java.io.IOException;
+import java.util.UUID;
+import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.core.*;
+import com.fasterxml.jackson.databind.*;
+import com.fasterxml.jackson.databind.deser.*;
+
+public class TestCreatorNullValue extends BaseMapTest {
+
+    protected static class Container {
+
+        Contained<String> contained;
+
+        @JsonCreator
+        public Container(@JsonProperty("contained") Contained<String> contained) {
+            this.contained = contained;
+        }
+    }
+
+    protected static interface Contained<T> {
+    }
+
+    protected static class NullContained implements Contained<Object> {
+    }
+
+    protected static final NullContained NULL_CONTAINED = new NullContained();
+
+    protected static class ContainedDeserializer extends JsonDeserializer<Contained<?>> {
+
+        @Override
+        public Contained<?> deserialize(JsonParser jp, DeserializationContext ctxt) throws JsonProcessingException {
+            return null;
+        }
+
+        @Override
+        public Contained<?> getNullValue(DeserializationContext ctxt) {
+            return NULL_CONTAINED;
+        }
+    }
+
+    protected static class ContainerDeserializerResolver extends Deserializers.Base {
+
+        @Override
+        public JsonDeserializer<?> findBeanDeserializer(JavaType type, DeserializationConfig config, BeanDescription beanDesc) throws JsonMappingException {
+            if (!Contained.class.isAssignableFrom(type.getRawClass())) {
+                return null;
+            }
+            return new ContainedDeserializer();
+        }
+    }
+
+    protected static class TestModule extends com.fasterxml.jackson.databind.Module {
+
+        @Override
+        public String getModuleName() {
+            return "ContainedModule";
+        }
+
+        @Override
+        public Version version() {
+            return Version.unknownVersion();
+        }
+
+        @Override
+        public void setupModule(SetupContext setupContext) {
+            setupContext.addDeserializers(new ContainerDeserializerResolver());
+        }
+    }
+
+    // [databind#597]
+    static class JsonEntity {
+
+        protected final String type;
+
+        protected final UUID id;
+
+        private JsonEntity(String type, UUID id) {
+            this.type = type;
+            this.id = id;
+        }
+
+        @JsonCreator
+        public static JsonEntity create(@JsonProperty("type") String type, @JsonProperty("id") UUID id) {
+            if (type != null && !type.contains(" ") && (id != null)) {
+                return new JsonEntity(type, id);
+            }
+            return null;
+        }
+    }
+
+    /*
+    /**********************************************************
+    /* Unit tests
+    /**********************************************************
+     */
+    public void testUsesDeserializersNullValue() throws Exception {
+        ObjectMapper __ins_v1 = null;
+        __ins_v1 = new ObjectMapper();
+        ObjectMapper mapper = __ins_v1;
+        mapper.registerModule(new TestModule());
+        Container container = mapper.readValue("{}", Container.class);
+        assertEquals(NULL_CONTAINED, container.contained);
+        org.helper.Assertions.verify("var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES_1410_32", __ins_v1);
+    }
+
+    // [databind#597]: ensure that a useful exception is thrown
+    public void testCreatorReturningNull() throws IOException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        String json = "{ \"type\" : \"     \", \"id\" : \"000c0ffb-a0d6-4d2e-a379-4aeaaf283599\" }";
+        try {
+            objectMapper.readValue(json, JsonEntity.class);
+            fail("Should not have succeeded");
+        } catch (JsonMappingException e) {
+            verifyException(e, "JSON creator returned null");
+        }
+    }
 }

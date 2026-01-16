@@ -1,23 +1,94 @@
-{
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
-  "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
-  "python_access": [
-    "metas",
-    4,
-    "graph",
-    "fields",
-    "_deserializationContext",
-    "fields",
-    "_factory",
-    "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestUnwrappedWithTypeInfo::testUnwrappedWithTypeInfoAndFeatureDisabled",
-  "line_number": "79",
-  "simple_class_name": "TestUnwrappedWithTypeInfo",
-  "loop": -1
+// Instrumented at 2025-12-01 00:17:15
+package com.fasterxml.jackson.databind.ser;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonUnwrapped;
+import com.fasterxml.jackson.databind.BaseMapTest;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+
+// Tests for [#81]
+public class TestUnwrappedWithTypeInfo extends BaseMapTest {
+
+    @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "@type")
+    @JsonTypeName("OuterType")
+    static class Outer {
+
+        @JsonProperty
+        private String p1;
+
+        public String getP1() {
+            return p1;
+        }
+
+        public void setP1(String p1) {
+            this.p1 = p1;
+        }
+
+        private Inner inner;
+
+        public void setInner(Inner inner) {
+            this.inner = inner;
+        }
+
+        @JsonUnwrapped
+        public Inner getInner() {
+            return inner;
+        }
+    }
+
+    @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "@type")
+    @JsonTypeName("InnerType")
+    static class Inner {
+
+        @JsonProperty
+        private String p2;
+
+        public String getP2() {
+            return p2;
+        }
+
+        public void setP2(String p2) {
+            this.p2 = p2;
+        }
+    }
+
+    /*
+    /**********************************************************
+    /* Tests, serialization
+    /**********************************************************
+     */
+    // [Issue#81]
+    public void testDefaultUnwrappedWithTypeInfo() throws Exception {
+        Outer outer = new Outer();
+        outer.setP1("101");
+        Inner inner = new Inner();
+        inner.setP2("202");
+        outer.setInner(inner);
+        ObjectMapper mapper = new ObjectMapper();
+        try {
+            mapper.writeValueAsString(outer);
+            fail("Expected exception to be thrown.");
+        } catch (JsonMappingException ex) {
+            verifyException(ex, "requires use of type information");
+        }
+    }
+
+    public void testUnwrappedWithTypeInfoAndFeatureDisabled() throws Exception {
+        ObjectMapper __ins_v1 = null;
+        Outer outer = new Outer();
+        outer.setP1("101");
+        Inner inner = new Inner();
+        inner.setP2("202");
+        outer.setInner(inner);
+        __ins_v1 = new ObjectMapper();
+        ObjectMapper mapper = __ins_v1;
+        mapper = mapper.disable(SerializationFeature.FAIL_ON_UNWRAPPED_TYPE_IDENTIFIERS);
+        String json = mapper.writeValueAsString(outer);
+        assertEquals("{\"@type\":\"OuterType\",\"p1\":\"101\",\"p2\":\"202\"}", json);
+        org.helper.Assertions.verify("var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES_1525_32", __ins_v1);
+    }
 }

@@ -1,23 +1,103 @@
-{
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "writerWithDefaultPrettyPrinter",
-  "returnType": "com.fasterxml.jackson.databind.ObjectWriter",
-  "ordinal": 0,
-  "readable_access": "var._generatorFactory._objectCodec._rootDeserializers",
-  "python_access": [
-    "metas",
-    13,
-    "graph",
-    "fields",
-    "_generatorFactory",
-    "fields",
-    "_objectCodec",
-    "fields",
-    "_rootDeserializers"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.struct.PojoAsArray646Test::testWithCustomTypeId",
-  "line_number": "94",
-  "simple_class_name": "PojoAsArray646Test",
-  "loop": -1
+// Instrumented at 2025-12-13 09:05:03
+package com.fasterxml.jackson.databind.struct;
+
+import java.util.*;
+import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.databind.*;
+
+public class PojoAsArray646Test extends BaseMapTest {
+
+    @JsonFormat(shape = JsonFormat.Shape.ARRAY)
+    @JsonPropertyOrder(alphabetic = true)
+    static class Outer {
+
+        protected Map<String, TheItem> attributes;
+
+        public Outer() {
+            attributes = new HashMap<String, TheItem>();
+        }
+
+        @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.WRAPPER_ARRAY)
+        public Map<String, TheItem> getAttributes() {
+            return attributes;
+        }
+    }
+
+    @JsonFormat(shape = JsonFormat.Shape.ARRAY)
+    @JsonPropertyOrder(alphabetic = true)
+    static class TheItem {
+
+        @JsonFormat(shape = JsonFormat.Shape.ARRAY)
+        @JsonPropertyOrder(alphabetic = true)
+        public static class NestedItem {
+
+            public String nestedStrValue;
+
+            @JsonCreator
+            public NestedItem(@JsonProperty("nestedStrValue") String nestedStrValue) {
+                this.nestedStrValue = nestedStrValue;
+            }
+        }
+
+        private String strValue;
+
+        private boolean boolValue;
+
+        private List<NestedItem> nestedItems;
+
+        @JsonCreator
+        public TheItem(@JsonProperty("strValue") String strValue, @JsonProperty("boolValue") boolean boolValue, @JsonProperty("nestedItems") List<NestedItem> nestedItems) {
+            this.strValue = strValue;
+            this.boolValue = boolValue;
+            this.nestedItems = nestedItems;
+        }
+
+        public String getStrValue() {
+            return strValue;
+        }
+
+        public void setStrValue(String strValue) {
+            this.strValue = strValue;
+        }
+
+        public boolean isBoolValue() {
+            return boolValue;
+        }
+
+        public void setBoolValue(boolean boolValue) {
+            this.boolValue = boolValue;
+        }
+
+        public List<NestedItem> getNestedItems() {
+            return nestedItems;
+        }
+
+        public void setNestedItems(List<NestedItem> nestedItems) {
+            this.nestedItems = nestedItems;
+        }
+    }
+
+    /*
+    /**********************************************************
+    /* Tests
+    /**********************************************************
+     */
+    private final ObjectMapper MAPPER = new ObjectMapper();
+
+    public void testWithCustomTypeId() throws Exception {
+        com.fasterxml.jackson.databind.ObjectWriter __ins_v1 = null;
+        List<TheItem.NestedItem> nestedList = new ArrayList<TheItem.NestedItem>();
+        nestedList.add(new TheItem.NestedItem("foo1"));
+        nestedList.add(new TheItem.NestedItem("foo2"));
+        TheItem item = new TheItem("first", false, nestedList);
+        Outer outer = new Outer();
+        outer.getAttributes().put("entry1", item);
+        __ins_v1 = MAPPER.writerWithDefaultPrettyPrinter();
+        String json = __ins_v1.writeValueAsString(outer);
+        Outer result = MAPPER.readValue(json, Outer.class);
+        assertNotNull(result);
+        assertNotNull(result.attributes);
+        assertEquals(1, result.attributes.size());
+        org.helper.Assertions.verify("var._generatorFactory._objectCodec._rootDeserializers_4560_276", __ins_v1);
+    }
 }

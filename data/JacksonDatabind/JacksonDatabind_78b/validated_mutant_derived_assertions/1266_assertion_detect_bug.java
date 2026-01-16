@@ -1,23 +1,54 @@
-{
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
-  "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
-  "python_access": [
-    "metas",
-    0,
-    "graph",
-    "fields",
-    "_deserializationContext",
-    "fields",
-    "_factory",
-    "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.filter.JsonInclude1327Test::testClassDefaultsForAlways",
-  "line_number": "47",
-  "simple_class_name": "JsonInclude1327Test",
-  "loop": -1
+// Instrumented at 2025-12-13 14:00:48
+package com.fasterxml.jackson.databind.filter;
+
+import java.util.*;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.databind.*;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+/**
+ * Unit tests for checking that alternative settings for
+ * {@link JsonSerialize#include} annotation property work
+ * as expected.
+ */
+public class JsonInclude1327Test extends BaseMapTest {
+
+    @JsonInclude(JsonInclude.Include.NON_EMPTY)
+    static class Issue1327BeanEmpty {
+
+        public List<String> myList = new ArrayList<String>();
+    }
+
+    static class Issue1327BeanAlways {
+
+        @JsonInclude(JsonInclude.Include.ALWAYS)
+        public List<String> myList = new ArrayList<String>();
+    }
+
+    /*
+    /**********************************************************
+    /* Unit tests
+    /**********************************************************
+     */
+    // for [databind#1327]
+    public void testClassDefaultsForEmpty() throws Exception {
+        ObjectMapper om = new ObjectMapper();
+        om.setSerializationInclusion(JsonInclude.Include.NON_NULL);
+        final String jsonString = om.writeValueAsString(new Issue1327BeanEmpty());
+        if (jsonString.contains("myList")) {
+            fail("Should not contain `myList`: " + jsonString);
+        }
+    }
+
+    public void testClassDefaultsForAlways() throws Exception {
+        ObjectMapper __ins_v1 = null;
+        __ins_v1 = new ObjectMapper();
+        ObjectMapper om = __ins_v1;
+        om.setSerializationInclusion(JsonInclude.Include.NON_EMPTY);
+        final String jsonString = om.writeValueAsString(new Issue1327BeanAlways());
+        if (!jsonString.contains("myList")) {
+            fail("Should contain `myList` with Include.ALWAYS: " + jsonString);
+        }
+        org.helper.Assertions.verify("var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES_2548_18", __ins_v1);
+    }
 }

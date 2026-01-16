@@ -1,23 +1,59 @@
-{
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "constructType",
-  "returnType": "com.fasterxml.jackson.databind.JavaType",
-  "ordinal": 0,
-  "readable_access": "var._superInterfaces.elements._superInterfaces",
-  "python_access": [
-    "metas",
-    1,
-    "graph",
-    "fields",
-    "_superInterfaces",
-    "elements",
-    1,
-    "fields",
-    "_superInterfaces"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.type.RecursiveType938Test::testRecursivePair",
-  "line_number": "45",
-  "simple_class_name": "RecursiveType938Test",
-  "loop": -1
+// Instrumented at 2025-12-13 09:05:02
+package com.fasterxml.jackson.databind.type;
+
+import java.util.*;
+import com.fasterxml.jackson.databind.*;
+
+// for [databind#938]
+public class RecursiveType938Test extends BaseMapTest {
+
+    public static interface Ability<T> {
+    }
+
+    public static final class ImmutablePair<L, R> implements Map.Entry<L, R>, Ability<ImmutablePair<L, R>> {
+
+        public final L key;
+
+        public final R value;
+
+        public ImmutablePair(final L key, final R value) {
+            this.key = key;
+            this.value = value;
+        }
+
+        @Override
+        public L getKey() {
+            return key;
+        }
+
+        @Override
+        public R getValue() {
+            return value;
+        }
+
+        @Override
+        public R setValue(final R value) {
+            throw new UnsupportedOperationException();
+        }
+
+        static <L, R> ImmutablePair<L, R> of(final L left, final R right) {
+            return new ImmutablePair<L, R>(left, right);
+        }
+    }
+
+    private final ObjectMapper MAPPER = new ObjectMapper();
+
+    public void testRecursivePair() throws Exception {
+        // can not deserialize with current definition, however
+        com.fasterxml.jackson.databind.JavaType __ins_v1 = null;
+        __ins_v1 = MAPPER.constructType(ImmutablePair.class);
+        JavaType t = __ins_v1;
+        assertNotNull(t);
+        assertEquals(ImmutablePair.class, t.getRawClass());
+        List<ImmutablePair<String, Double>> list = new ArrayList<ImmutablePair<String, Double>>();
+        list.add(ImmutablePair.of("Hello World!", 123d));
+        String json = MAPPER.writeValueAsString(list);
+        assertNotNull(json);
+        org.helper.Assertions.verify("var._superInterfaces.elements._superInterfaces_4810_276", __ins_v1);
+    }
 }

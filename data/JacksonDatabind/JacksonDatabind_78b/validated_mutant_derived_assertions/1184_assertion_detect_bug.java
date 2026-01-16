@@ -1,23 +1,58 @@
-{
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectReader",
-  "name": "withValueToUpdate",
-  "returnType": "com.fasterxml.jackson.databind.ObjectReader",
-  "ordinal": 0,
-  "readable_access": "var._context._factory.DEFAULT_NO_DESER_CLASS_NAMES",
-  "python_access": [
-    "metas",
-    6,
-    "graph",
-    "fields",
-    "_context",
-    "fields",
-    "_factory",
-    "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.creators.TestValueUpdate::testValueUpdateOther",
-  "line_number": "55",
-  "simple_class_name": "TestValueUpdate",
-  "loop": -1
+// Instrumented at 2025-12-13 14:00:47
+package com.fasterxml.jackson.databind.creators;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.*;
+
+public class TestValueUpdate extends BaseMapTest {
+
+    static class Bean {
+
+        private String a;
+
+        private String b;
+
+        @JsonCreator
+        public Bean(@JsonProperty("a") String a, @JsonProperty("b") String b) {
+            this.a = a;
+            this.b = b;
+        }
+
+        String getA() {
+            return a;
+        }
+
+        void setA(String a) {
+            this.a = a;
+        }
+
+        String getB() {
+            return b;
+        }
+
+        void setB(String b) {
+            this.b = b;
+        }
+    }
+
+    private final ObjectMapper MAPPER = new ObjectMapper();
+
+    // [databind#318] (and Scala module issue #83]
+    public void testValueUpdateWithCreator() throws Exception {
+        Bean bean = new Bean("abc", "def");
+        MAPPER.readerFor(Bean.class).withValueToUpdate(bean).readValue("{\"a\":\"ghi\",\"b\":\"jkl\"}");
+        assertEquals("ghi", bean.getA());
+        assertEquals("jkl", bean.getB());
+    }
+
+    public void testValueUpdateOther() throws Exception {
+        com.fasterxml.jackson.databind.ObjectReader __ins_v1 = null;
+        Bean bean = new Bean("abc", "def");
+        ObjectReader r = MAPPER.reader().withValueToUpdate(bean);
+        __ins_v1 = r.withValueToUpdate(null);
+        // but, changed our minds, no update
+        r = __ins_v1;
+        org.helper.Assertions.verify("var._context._factory.DEFAULT_NO_DESER_CLASS_NAMES_2708_18", __ins_v1);
+    }
 }

@@ -1,23 +1,91 @@
-{
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
-  "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
-  "python_access": [
-    "metas",
-    0,
-    "graph",
-    "fields",
-    "_deserializationContext",
-    "fields",
-    "_factory",
-    "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.creators.TestConstructFromMap::testViaFactory",
-  "line_number": "83",
-  "simple_class_name": "TestConstructFromMap",
-  "loop": -1
+// Instrumented at 2025-12-01 00:16:58
+package com.fasterxml.jackson.databind.creators;
+
+// just for convenience
+import java.awt.Point;
+import java.math.BigDecimal;
+import java.util.*;
+import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.databind.*;
+
+/**
+ * This unit test suite that tests use of {@link JsonCreator}
+ * with "delegate" constructors and factory methods: ones that
+ * take a deserializable type that is bound from JSON content.
+ * This is usually done to get two-phase data binding, often using
+ * {@link java.util.Map} as the intermediate form.
+ */
+public class TestConstructFromMap extends BaseMapTest {
+
+    static class ConstructorFromMap {
+
+        int _x;
+
+        String _y;
+
+        @JsonCreator
+        ConstructorFromMap(Map<?, ?> arg) {
+            _x = ((Number) arg.get("x")).intValue();
+            _y = (String) arg.get("y");
+        }
+    }
+
+    static class FactoryFromPoint {
+
+        int _x, _y;
+
+        private FactoryFromPoint(Point p) {
+            _x = p.x;
+            _y = p.y;
+        }
+
+        @JsonCreator
+        static FactoryFromPoint createIt(Point p) {
+            return new FactoryFromPoint(p);
+        }
+    }
+
+    // Also: let's test BigDecimal-from-JSON-String factory
+    static class FactoryFromDecimalString {
+
+        int _value;
+
+        private FactoryFromDecimalString(BigDecimal d) {
+            _value = d.intValue();
+        }
+
+        @JsonCreator
+        static FactoryFromDecimalString whateverNameWontMatter(BigDecimal d) {
+            return new FactoryFromDecimalString(d);
+        }
+    }
+
+    /*
+    /**********************************************************
+    /* Test methods
+    /**********************************************************
+     */
+    public void testViaConstructor() throws Exception {
+        ObjectMapper m = new ObjectMapper();
+        ConstructorFromMap result = m.readValue("{ \"x\":1, \"y\" : \"abc\" }", ConstructorFromMap.class);
+        assertEquals(1, result._x);
+        assertEquals("abc", result._y);
+    }
+
+    public void testViaFactory() throws Exception {
+        ObjectMapper __ins_v1 = null;
+        __ins_v1 = new ObjectMapper();
+        ObjectMapper m = __ins_v1;
+        FactoryFromPoint result = m.readValue("{ \"x\" : 3, \"y\" : 4 }", FactoryFromPoint.class);
+        assertEquals(3, result._x);
+        assertEquals(4, result._y);
+        org.helper.Assertions.verify("var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES_1383_32", __ins_v1);
+    }
+
+    public void testViaFactoryUsingString() throws Exception {
+        ObjectMapper m = new ObjectMapper();
+        FactoryFromDecimalString result = m.readValue("\"12.57\"", FactoryFromDecimalString.class);
+        assertNotNull(result);
+        assertEquals(12, result._value);
+    }
 }

@@ -1,23 +1,65 @@
-{
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
-  "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
-  "python_access": [
-    "metas",
-    6,
-    "graph",
-    "fields",
-    "_deserializationContext",
-    "fields",
-    "_factory",
-    "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.objectid.TestAbstractWithObjectId::testIssue877",
-  "line_number": "55",
-  "simple_class_name": "TestAbstractWithObjectId",
-  "loop": -1
+// Instrumented at 2025-12-01 00:16:57
+package com.fasterxml.jackson.databind.objectid;
+
+import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.*;
+import java.util.*;
+
+public class TestAbstractWithObjectId extends BaseMapTest {
+
+    interface BaseInterface {
+    }
+
+    @JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "@id")
+    static class BaseInterfaceImpl implements BaseInterface {
+
+        @JsonProperty
+        private List<BaseInterfaceImpl> myInstances = new ArrayList<BaseInterfaceImpl>();
+
+        void addInstance(BaseInterfaceImpl instance) {
+            myInstances.add(instance);
+        }
+    }
+
+    static class ListWrapper<T extends BaseInterface> {
+
+        @JsonProperty
+        private List<T> myList = new ArrayList<T>();
+
+        void add(T t) {
+            myList.add(t);
+        }
+
+        int size() {
+            return myList.size();
+        }
+    }
+
+    public void testIssue877() throws Exception {
+        ObjectMapper __ins_v1 = null;
+        // make two instances
+        BaseInterfaceImpl one = new BaseInterfaceImpl();
+        BaseInterfaceImpl two = new BaseInterfaceImpl();
+        // add them to each other's list to show identify info being used
+        one.addInstance(two);
+        two.addInstance(one);
+        // make a typed version of the list and add the 2 instances to it
+        ListWrapper<BaseInterfaceImpl> myList = new ListWrapper<BaseInterfaceImpl>();
+        myList.add(one);
+        myList.add(two);
+        __ins_v1 = new ObjectMapper();
+        // make an object mapper that will add class info in so deserialisation works
+        ObjectMapper om = __ins_v1;
+        om.enableDefaultTypingAsProperty(ObjectMapper.DefaultTyping.NON_FINAL, "@class");
+        // write and print the JSON
+        String json = om.writerWithDefaultPrettyPrinter().writeValueAsString(myList);
+        ListWrapper<BaseInterfaceImpl> result;
+        result = om.readValue(json, new TypeReference<ListWrapper<BaseInterfaceImpl>>() {
+        });
+        assertNotNull(result);
+        // see what we get back
+        assertEquals(2, result.size());
+        org.helper.Assertions.verify("var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES_1438_32", __ins_v1);
+    }
 }

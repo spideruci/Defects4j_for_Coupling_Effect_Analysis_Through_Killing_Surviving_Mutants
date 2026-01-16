@@ -1,23 +1,67 @@
-{
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
-  "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
-  "python_access": [
-    "metas",
-    0,
-    "graph",
-    "fields",
-    "_deserializationContext",
-    "fields",
-    "_factory",
-    "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.creators.TestCreatorWithPolymorphic113::testSubtypes",
-  "line_number": "55",
-  "simple_class_name": "TestCreatorWithPolymorphic113",
-  "loop": -1
+// Instrumented at 2025-12-01 00:16:59
+package com.fasterxml.jackson.databind.creators;
+
+import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.databind.*;
+
+/**
+ * Test(s) for [Issue#113], problems with polymorphic types, JsonCreator.
+ */
+public class TestCreatorWithPolymorphic113 extends BaseMapTest {
+
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "_class")
+    @JsonSubTypes({ @JsonSubTypes.Type(Dog.class) })
+    public static abstract class Animal {
+
+        public final static String ID = "id";
+
+        private String id;
+
+        @JsonCreator
+        public Animal(@JsonProperty(ID) String id) {
+            this.id = id;
+        }
+
+        @JsonProperty(ID)
+        public String getId() {
+            return id;
+        }
+    }
+
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public static class Dog extends Animal {
+
+        @JsonCreator
+        public Dog(@JsonProperty(ID) String id) {
+            super(id);
+        }
+    }
+
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public static class AnimalWrapper {
+
+        private Animal animal;
+
+        @JsonCreator
+        public AnimalWrapper(@JsonProperty("animal") Animal animal) {
+            this.animal = animal;
+        }
+
+        public Animal getAnimal() {
+            return animal;
+        }
+    }
+
+    public void testSubtypes() throws Exception {
+        ObjectMapper __ins_v1 = null;
+        __ins_v1 = new ObjectMapper();
+        ObjectMapper mapper = __ins_v1;
+        String id = "nice dogy";
+        String json = mapper.writeValueAsString(new AnimalWrapper(new Dog(id)));
+        //System.err.println("JSON = "+json);
+        AnimalWrapper wrapper = mapper.readValue(json, AnimalWrapper.class);
+        assertEquals(id, wrapper.getAnimal().getId());
+        org.helper.Assertions.verify("var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES_219_32", __ins_v1);
+    }
 }

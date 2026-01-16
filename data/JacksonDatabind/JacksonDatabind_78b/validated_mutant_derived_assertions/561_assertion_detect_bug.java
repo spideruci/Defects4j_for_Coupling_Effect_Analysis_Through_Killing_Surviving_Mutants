@@ -1,23 +1,28 @@
-{
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
-  "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
-  "python_access": [
-    "metas",
-    0,
-    "graph",
-    "fields",
-    "_deserializationContext",
-    "fields",
-    "_factory",
-    "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.ext.TestJava6Types::test16Types",
-  "line_number": "17",
-  "simple_class_name": "TestJava6Types",
-  "loop": -1
+// Instrumented at 2025-12-13 14:00:42
+package com.fasterxml.jackson.databind.ext;
+
+import java.util.Deque;
+import java.util.NavigableSet;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+/**
+ * Tests to ensure that we can handle 1.6-only types, even if
+ * registrations are done without direct refs
+ */
+public class TestJava6Types extends com.fasterxml.jackson.databind.BaseMapTest {
+
+    // for [databind#216]
+    public void test16Types() throws Exception {
+        ObjectMapper __ins_v1 = null;
+        __ins_v1 = new ObjectMapper();
+        final ObjectMapper mapper = __ins_v1;
+        Deque<?> dq = mapper.readValue("[1]", Deque.class);
+        assertNotNull(dq);
+        assertEquals(1, dq.size());
+        assertTrue(dq instanceof Deque<?>);
+        NavigableSet<?> ns = mapper.readValue("[ true ]", NavigableSet.class);
+        assertEquals(1, ns.size());
+        assertTrue(ns instanceof NavigableSet<?>);
+        org.helper.Assertions.verify("var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES_1687_18", __ins_v1);
+    }
 }

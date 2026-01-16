@@ -1,23 +1,54 @@
-{
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
-  "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
-  "python_access": [
-    "metas",
-    2,
-    "graph",
-    "fields",
-    "_deserializationContext",
-    "fields",
-    "_factory",
-    "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.filter.IgnoreCreatorProp1317Test::testThatJsonIgnoreWorksWithConstructorProperties",
-  "line_number": "45",
-  "simple_class_name": "IgnoreCreatorProp1317Test",
-  "loop": -1
+// Instrumented at 2025-12-13 14:00:39
+package com.fasterxml.jackson.databind.filter;
+
+import java.beans.ConstructorProperties;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.databind.*;
+
+public class IgnoreCreatorProp1317Test extends BaseMapTest {
+
+    static class Testing {
+
+        @JsonIgnore
+        public String ignore;
+
+        String notIgnore;
+
+        public Testing() {
+        }
+
+        @ConstructorProperties({ "ignore", "notIgnore" })
+        public Testing(String ignore, String notIgnore) {
+            super();
+            this.ignore = ignore;
+            this.notIgnore = notIgnore;
+        }
+
+        public String getIgnore() {
+            return ignore;
+        }
+
+        public void setIgnore(String ignore) {
+            this.ignore = ignore;
+        }
+
+        public String getNotIgnore() {
+            return notIgnore;
+        }
+
+        public void setNotIgnore(String notIgnore) {
+            this.notIgnore = notIgnore;
+        }
+    }
+
+    public void testThatJsonIgnoreWorksWithConstructorProperties() throws Exception {
+        ObjectMapper __ins_v1 = null;
+        Testing testing = new Testing("shouldBeIgnored", "notIgnore");
+        __ins_v1 = new ObjectMapper();
+        ObjectMapper om = __ins_v1;
+        String json = om.writeValueAsString(testing);
+        System.out.println(json);
+        assertFalse(json.contains("shouldBeIgnored"));
+        org.helper.Assertions.verify("var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES_1750_18", __ins_v1);
+    }
 }

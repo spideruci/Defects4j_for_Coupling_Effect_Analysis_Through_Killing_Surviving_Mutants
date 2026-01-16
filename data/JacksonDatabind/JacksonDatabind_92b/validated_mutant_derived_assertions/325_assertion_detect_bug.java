@@ -1,23 +1,49 @@
-{
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
-  "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
-  "python_access": [
-    "metas",
-    0,
-    "graph",
-    "fields",
-    "_deserializationContext",
-    "fields",
-    "_factory",
-    "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.misc.TestJSONP::testSimpleBean",
-  "line_number": "35",
-  "simple_class_name": "TestJSONP",
-  "loop": -1
+// Instrumented at 2025-12-01 00:16:59
+package com.fasterxml.jackson.databind.misc;
+
+import com.fasterxml.jackson.databind.*;
+import com.fasterxml.jackson.databind.util.JSONPObject;
+
+public class TestJSONP extends BaseMapTest {
+
+    static class Base {
+
+        public String a;
+    }
+
+    static class Impl extends Base {
+
+        public String b;
+
+        public Impl(String a, String b) {
+            this.a = a;
+            this.b = b;
+        }
+    }
+
+    public void testSimpleScalars() throws Exception {
+        ObjectMapper m = new ObjectMapper();
+        assertEquals("callback(\"abc\")", serializeAsString(m, new JSONPObject("callback", "abc")));
+        assertEquals("calc(123)", serializeAsString(m, new JSONPObject("calc", Integer.valueOf(123))));
+        assertEquals("dummy(null)", serializeAsString(m, new JSONPObject("dummy", null)));
+    }
+
+    public void testSimpleBean() throws Exception {
+        ObjectMapper __ins_v1 = null;
+        __ins_v1 = new ObjectMapper();
+        ObjectMapper m = __ins_v1;
+        assertEquals("xxx({\"a\":\"123\",\"b\":\"456\"})", serializeAsString(m, new JSONPObject("xxx", new Impl("123", "456"))));
+        org.helper.Assertions.verify("var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES_540_32", __ins_v1);
+    }
+
+    /**
+     * Test to ensure that it is possible to force a static type for wrapped
+     * value.
+     */
+    public void testWithType() throws Exception {
+        ObjectMapper m = new ObjectMapper();
+        Object ob = new Impl("abc", "def");
+        JavaType type = m.constructType(Base.class);
+        assertEquals("do({\"a\":\"abc\"})", serializeAsString(m, new JSONPObject("do", ob, type)));
+    }
 }

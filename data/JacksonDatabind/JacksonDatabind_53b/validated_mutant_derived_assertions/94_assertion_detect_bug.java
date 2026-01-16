@@ -1,19 +1,80 @@
-{
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
-  "ordinal": 0,
-  "readable_access": "var._rootDeserializers",
-  "python_access": [
-    "metas",
-    0,
-    "graph",
-    "fields",
-    "_rootDeserializers"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestGenericCollectionDeser::testListSubClass",
-  "line_number": "47",
-  "simple_class_name": "TestGenericCollectionDeser",
-  "loop": -1
+// Instrumented at 2025-12-13 09:03:24
+package com.fasterxml.jackson.databind.deser;
+
+import java.util.*;
+import com.fasterxml.jackson.databind.*;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+
+@SuppressWarnings("serial")
+public class TestGenericCollectionDeser extends BaseMapTest {
+
+    /*
+    /**********************************************************
+    /* Test classes, enums
+    /**********************************************************
+     */
+    static class ListSubClass extends ArrayList<StringWrapper> {
+    }
+
+    /**
+     * Map class that should behave like {@link ListSubClass}, but by
+     * using annotations.
+     */
+    @JsonDeserialize(contentAs = StringWrapper.class)
+    static class AnnotatedStringList extends ArrayList<Object> {
+    }
+
+    @JsonDeserialize(contentAs = BooleanWrapper.class)
+    static class AnnotatedBooleanList extends ArrayList<Object> {
+    }
+
+    /*
+    /**********************************************************
+    /* Test methods
+    /**********************************************************
+     */
+    /*
+    /**********************************************************
+    /* Tests for sub-classing
+    /**********************************************************
+     */
+    /**
+     * Verifying that sub-classing works ok wrt generics information
+     */
+    public void testListSubClass() throws Exception {
+        ObjectMapper __ins_v1 = null;
+        __ins_v1 = new ObjectMapper();
+        ObjectMapper mapper = __ins_v1;
+        ListSubClass result = mapper.readValue("[ \"123\" ]", ListSubClass.class);
+        assertEquals(1, result.size());
+        Object value = result.get(0);
+        assertEquals(StringWrapper.class, value.getClass());
+        StringWrapper bw = (StringWrapper) value;
+        assertEquals("123", bw.str);
+        org.helper.Assertions.verify("var._rootDeserializers_122_244", __ins_v1);
+    }
+
+    /*
+    /**********************************************************
+    /* Tests for annotations
+    /**********************************************************
+     */
+    // Verifying that sub-classing works ok wrt generics information
+    public void testAnnotatedLStringist() throws Exception {
+        ObjectMapper mapper = new ObjectMapper();
+        AnnotatedStringList result = mapper.readValue("[ \"...\" ]", AnnotatedStringList.class);
+        assertEquals(1, result.size());
+        Object ob = result.get(0);
+        assertEquals(StringWrapper.class, ob.getClass());
+        assertEquals("...", ((StringWrapper) ob).str);
+    }
+
+    public void testAnnotatedBooleanList() throws Exception {
+        ObjectMapper mapper = new ObjectMapper();
+        AnnotatedBooleanList result = mapper.readValue("[ false ]", AnnotatedBooleanList.class);
+        assertEquals(1, result.size());
+        Object ob = result.get(0);
+        assertEquals(BooleanWrapper.class, ob.getClass());
+        assertFalse(((BooleanWrapper) ob).b);
+    }
 }

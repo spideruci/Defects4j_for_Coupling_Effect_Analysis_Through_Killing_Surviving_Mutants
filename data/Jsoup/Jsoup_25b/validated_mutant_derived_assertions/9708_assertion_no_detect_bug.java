@@ -1,23 +1,68 @@
-{
-  "source": "return",
-  "owner": "org.jsoup.nodes.Document",
-  "name": "select",
-  "returnType": "org.jsoup.select.Elements",
-  "ordinal": 0,
-  "readable_access": "var.elements.tag.canContainInline",
-  "python_access": [
-    "metas",
-    3,
-    "graph",
-    "elements",
-    0,
-    "fields",
-    "tag",
-    "fields",
-    "canContainInline"
-  ],
-  "test_name": "org.jsoup.nodes.EntitiesTest::letterDigitEntities",
-  "line_number": "59",
-  "simple_class_name": "EntitiesTest",
-  "loop": -1
+// Instrumented at 2025-12-02 03:26:13
+package org.jsoup.nodes;
+
+import org.jsoup.Jsoup;
+import org.junit.Test;
+import static org.junit.Assert.*;
+import org.jsoup.nodes.Entities;
+import java.nio.charset.Charset;
+
+public class EntitiesTest {
+
+    @Test
+    public void escape() {
+        String text = "Hello &<> Å å π 新 there ¾ ©";
+        String escapedAscii = Entities.escape(text, Charset.forName("ascii").newEncoder(), Entities.EscapeMode.base);
+        String escapedAsciiFull = Entities.escape(text, Charset.forName("ascii").newEncoder(), Entities.EscapeMode.extended);
+        String escapedAsciiXhtml = Entities.escape(text, Charset.forName("ascii").newEncoder(), Entities.EscapeMode.xhtml);
+        String escapedUtf = Entities.escape(text, Charset.forName("UTF-8").newEncoder(), Entities.EscapeMode.base);
+        assertEquals("Hello &amp;&lt;&gt; &Aring; &aring; &#960; &#26032; there &frac34; &copy;", escapedAscii);
+        assertEquals("Hello &amp;&lt;&gt; &angst; &aring; &pi; &#26032; there &frac34; &copy;", escapedAsciiFull);
+        assertEquals("Hello &amp;&lt;&gt; &#197; &#229; &#960; &#26032; there &#190; &#169;", escapedAsciiXhtml);
+        assertEquals("Hello &amp;&lt;&gt; &Aring; &aring; π 新 there &frac34; &copy;", escapedUtf);
+        // odd that it's defined as aring in base but angst in full
+    }
+
+    @Test
+    public void unescape() {
+        String text = "Hello &amp;&LT&gt; &angst &#960; &#960 &#x65B0; there &! &frac34; &copy; &COPY;";
+        assertEquals("Hello &<> Å π π 新 there &! ¾ © ©", Entities.unescape(text));
+        assertEquals("&0987654321; &unknown", Entities.unescape("&0987654321; &unknown"));
+    }
+
+    @Test
+    public void strictUnescape() {
+        // for attributes, enforce strict unescaping (must look like &xxx; , not just &xxx)
+        String text = "Hello &mid &amp;";
+        assertEquals("Hello &mid &", Entities.unescape(text, true));
+        assertEquals("Hello ∣ &", Entities.unescape(text));
+        assertEquals("Hello ∣ &", Entities.unescape(text, false));
+    }
+
+    @Test
+    public void caseSensitive() {
+        String unescaped = "Ü ü & &";
+        assertEquals("&Uuml; &uuml; &amp; &amp;", Entities.escape(unescaped, Charset.forName("ascii").newEncoder(), Entities.EscapeMode.extended));
+        String escaped = "&Uuml; &uuml; &amp; &AMP";
+        assertEquals("Ü ü & &", Entities.unescape(escaped));
+    }
+
+    @Test
+    public void quoteReplacements() {
+        String escaped = "&#92; &#36;";
+        String unescaped = "\\ $";
+        assertEquals(unescaped, Entities.unescape(escaped));
+    }
+
+    @Test
+    public void letterDigitEntities() {
+        org.jsoup.select.Elements __ins_v1 = null;
+        String html = "<p>&sup1;&sup2;&sup3;&frac14;&frac12;&frac34;</p>";
+        Document doc = Jsoup.parse(html);
+        __ins_v1 = doc.select("p");
+        Element p = __ins_v1.first();
+        assertEquals("&sup1;&sup2;&sup3;&frac14;&frac12;&frac34;", p.html());
+        assertEquals("¹²³¼½¾", p.text());
+        org.helper.Assertions.verify("var.elements.tag.canContainInline_78834_4", __ins_v1);
+    }
 }

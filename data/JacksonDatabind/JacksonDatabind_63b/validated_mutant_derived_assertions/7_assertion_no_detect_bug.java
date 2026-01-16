@@ -1,20 +1,82 @@
-{
-  "source": "local",
-  "owner": "Lcom/fasterxml/jackson/core/JsonProcessingException;",
-  "name": "e",
-  "ordinal": 0,
-  "readable_access": "var.cause._path",
-  "python_access": [
-    "metas",
-    5,
-    "graph",
-    "fields",
-    "cause",
-    "fields",
-    "_path"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.misc.CaseInsensitiveDeserTest::testCaseInsensitiveDeserialization",
-  "line_number": "58",
-  "simple_class_name": "CaseInsensitiveDeserTest",
-  "loop": -1
+// Instrumented at 2025-12-11 05:50:26
+package com.fasterxml.jackson.databind.misc;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.*;
+
+public class CaseInsensitiveDeserTest extends BaseMapTest {
+
+    // [databind#1036]
+    static class BaseResponse {
+
+        public int errorCode;
+
+        public String debugMessage;
+        /*
+        public String getDebugMessage() {
+            return debugMessage;
+        }
+
+        public void setDebugMessage(String debugMessage) {
+            this.debugMessage = debugMessage;
+        }
+
+        public int getErrorCode() {
+            return errorCode;
+        }
+
+        public void setErrorCode(int errorCode) {
+            this.errorCode = errorCode;
+        }
+        */
+    }
+
+    static class Issue476Bean {
+
+        public Issue476Type value1, value2;
+    }
+
+    static class Issue476Type {
+
+        public String name, value;
+    }
+
+    /*
+    /********************************************************
+    /* Test methods
+    /********************************************************
+     */
+    // [databind#566]
+    public void testCaseInsensitiveDeserialization() throws Exception {
+        final String JSON = "{\"Value1\" : {\"nAme\" : \"fruit\", \"vALUe\" : \"apple\"}, \"valUE2\" : {\"NAME\" : \"color\", \"value\" : \"red\"}}";
+        // first, verify default settings which do not accept improper case
+        ObjectMapper mapper = new ObjectMapper();
+        assertFalse(mapper.isEnabled(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES));
+        try {
+            mapper.readValue(JSON, Issue476Bean.class);
+            fail("Should not accept improper case properties by default");
+        } catch (JsonProcessingException e) {
+            org.helper.Assertions.verify("var.cause._path_93_67", e);
+            verifyException(e, "Unrecognized field");
+            assertValidLocation(e.getLocation());
+        }
+        // Definitely not OK to enable dynamically - the BeanPropertyMap (which is the consumer of this particular feature) gets cached.
+        mapper = new ObjectMapper();
+        mapper.enable(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES);
+        ObjectReader r = mapper.readerFor(Issue476Bean.class);
+        Issue476Bean result = r.readValue(JSON);
+        assertEquals(result.value1.name, "fruit");
+        assertEquals(result.value1.value, "apple");
+    }
+
+    // [databind#1036]
+    public void testCaseInsensitive1036() throws Exception {
+        final String json = "{\"ErrorCode\":2,\"DebugMessage\":\"Signature not valid!\"}";
+        //        final String json = "{\"errorCode\":2,\"debugMessage\":\"Signature not valid!\"}";
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.enable(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES);
+        BaseResponse response = mapper.readValue(json, BaseResponse.class);
+        assertEquals(2, response.errorCode);
+        assertEquals("Signature not valid!", response.debugMessage);
+    }
 }

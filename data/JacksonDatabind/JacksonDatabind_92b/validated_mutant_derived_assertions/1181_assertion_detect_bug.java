@@ -1,23 +1,39 @@
-{
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
-  "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
-  "python_access": [
-    "metas",
-    0,
-    "graph",
-    "fields",
-    "_deserializationContext",
-    "fields",
-    "_factory",
-    "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.TestVersions::testMapperVersions",
-  "line_number": "18",
-  "simple_class_name": "TestVersions",
-  "loop": -1
+// Instrumented at 2025-12-01 00:17:11
+package com.fasterxml.jackson.databind;
+
+import com.fasterxml.jackson.core.Version;
+import com.fasterxml.jackson.core.Versioned;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.introspect.JacksonAnnotationIntrospector;
+import com.fasterxml.jackson.databind.cfg.PackageVersion;
+
+/**
+ * Tests to ensure that we get proper Version information via
+ * things defined as Versioned.
+ */
+public class TestVersions extends BaseMapTest {
+
+    public void testMapperVersions() {
+        ObjectMapper __ins_v1 = null;
+        __ins_v1 = new ObjectMapper();
+        ObjectMapper mapper = __ins_v1;
+        assertVersion(mapper);
+        assertVersion(mapper.reader());
+        assertVersion(mapper.writer());
+        assertVersion(new JacksonAnnotationIntrospector());
+        org.helper.Assertions.verify("var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES_1128_32", __ins_v1);
+    }
+
+    /*
+    /**********************************************************
+    /* Helper methods
+    /**********************************************************
+     */
+    private void assertVersion(Versioned vers) {
+        Version v = vers.version();
+        assertFalse("Should find version information (got " + v + ")", v.isUnknownVersion());
+        Version exp = PackageVersion.VERSION;
+        assertEquals(exp.toFullString(), v.toFullString());
+        assertEquals(exp, v);
+    }
 }

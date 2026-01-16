@@ -1,19 +1,67 @@
-{
-  "source": "return",
-  "owner": "com.fasterxml.jackson.core.sym.ByteQuadsCanonicalizer",
-  "name": "createRoot",
-  "returnType": "com.fasterxml.jackson.core.sym.ByteQuadsCanonicalizer",
-  "ordinal": 0,
-  "readable_access": "var._intern",
-  "python_access": [
-    "metas",
-    1,
-    "graph",
-    "fields",
-    "_intern"
-  ],
-  "test_name": "com.fasterxml.jackson.core.sym.TestSymbolsWithMediaItem::testSmallSymbolSetWithBytes",
-  "line_number": "39",
-  "simple_class_name": "TestSymbolsWithMediaItem",
-  "loop": -1
+// Instrumented at 2025-12-16 20:26:54
+package com.fasterxml.jackson.core.sym;
+
+import java.io.IOException;
+import com.fasterxml.jackson.core.*;
+
+public class TestSymbolsWithMediaItem extends com.fasterxml.jackson.core.BaseTest {
+
+    private final String JSON = aposToQuotes("{'media' : {\n" + "      'uri' : 'http://foo.com'," + "      'title' : 'Test title 1'," + "      'width' : 640, 'height' : 480," + "      'format' : 'video/mpeg4'," + "      'duration' : 18000000," + "      'size' : 58982400," + "      'bitrate' : 262144," + "      'persons' : [ ]," + "      'player' : 'native'," + "      'copyright' : 'None'" + "   },\n" + "   'images' : [ {\n" + "      'uri' : 'http://bar.com',\n" + "      'title' : 'Test title 1',\n" + "      'width' : 1024,'height' : 768,\n" + "      'size' : 'LARGE'\n" + "    }, {\n" + "      'uri' : 'http://foobar.org',\n" + "      'title' : 'Javaone Keynote',\n" + "      'width' : 320, 'height' : 240,\n" + "      'size' : 'SMALL'\n" + "    } ]\n" + "}\n");
+
+    public void testSmallSymbolSetWithBytes() throws IOException {
+        com.fasterxml.jackson.core.sym.ByteQuadsCanonicalizer __ins_v1 = null;
+        final int SEED = 33333;
+        __ins_v1 = ByteQuadsCanonicalizer.createRoot(SEED);
+        ByteQuadsCanonicalizer symbolsRoot = __ins_v1;
+        ByteQuadsCanonicalizer symbols = symbolsRoot.makeChild(JsonFactory.Feature.collectDefaults());
+        JsonFactory f = new JsonFactory();
+        JsonParser p = f.createParser(JSON.getBytes("UTF-8"));
+        JsonToken t;
+        while ((t = p.nextToken()) != null) {
+            if (t != JsonToken.FIELD_NAME) {
+                continue;
+            }
+            String name = p.getCurrentName();
+            int[] quads = calcQuads(name.getBytes("UTF-8"));
+            if (symbols.findName(quads, quads.length) != null) {
+                continue;
+            }
+            symbols.addName(name, quads, quads.length);
+        }
+        p.close();
+        assertEquals(13, symbols.size());
+        // 80% primary hit rate
+        assertEquals(12, symbols.primaryCount());
+        // 13% secondary
+        assertEquals(1, symbols.secondaryCount());
+        // 7% tertiary
+        assertEquals(0, symbols.tertiaryCount());
+        // and couple of leftovers
+        assertEquals(0, symbols.spilloverCount());
+        org.helper.Assertions.verify("var._intern_2935_1", __ins_v1);
+    }
+
+    public void testSmallSymbolSetWithChars() throws IOException {
+        final int SEED = 33333;
+        CharsToNameCanonicalizer symbols = CharsToNameCanonicalizer.createRoot(SEED);
+        JsonFactory f = new JsonFactory();
+        JsonParser p = f.createParser(JSON);
+        JsonToken t;
+        while ((t = p.nextToken()) != null) {
+            if (t != JsonToken.FIELD_NAME) {
+                continue;
+            }
+            String name = p.getCurrentName();
+            char[] ch = name.toCharArray();
+            symbols.findSymbol(ch, 0, ch.length, symbols.calcHash(name));
+        }
+        p.close();
+        assertEquals(13, symbols.size());
+        assertEquals(13, symbols.size());
+        assertEquals(64, symbols.bucketCount());
+        // usually get 1 collision, but sometimes get lucky with 0; other times less so with 2
+        // (with differing shifting for hash etc)
+        assertEquals(0, symbols.collisionCount());
+        assertEquals(0, symbols.maxCollisionLength());
+    }
 }

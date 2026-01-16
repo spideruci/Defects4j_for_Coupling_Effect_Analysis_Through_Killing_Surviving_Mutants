@@ -1,23 +1,48 @@
-{
-  "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.deser.exc.ExceptionPathTest",
-  "name": "MAPPER",
-  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
-  "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
-  "python_access": [
-    "metas",
-    0,
-    "graph",
-    "fields",
-    "_deserializationContext",
-    "fields",
-    "_factory",
-    "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.deser.exc.ExceptionPathTest::testReferenceChainForInnerClass",
-  "line_number": "31",
-  "simple_class_name": "ExceptionPathTest",
-  "loop": -1
+// Instrumented at 2025-12-13 14:00:48
+package com.fasterxml.jackson.databind.deser.exc;
+
+import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.databind.*;
+
+public class ExceptionPathTest extends BaseMapTest {
+
+    static class Outer {
+
+        public Inner inner = new Inner();
+    }
+
+    static class Inner {
+
+        public int x;
+
+        @JsonCreator
+        public static Inner create(@JsonProperty("x") int x) {
+            throw new RuntimeException("test-exception");
+        }
+    }
+
+    /*
+    /**********************************************************
+    /* Test methods
+    /**********************************************************
+     */
+    private final ObjectMapper MAPPER = new ObjectMapper();
+
+    public void testReferenceChainForInnerClass() throws Exception {
+        com.fasterxml.jackson.databind.ObjectMapper __ins_v1 = null;
+        __ins_v1 = MAPPER;
+        String json = __ins_v1.writeValueAsString(new Outer());
+        try {
+            MAPPER.readValue(json, Outer.class);
+            fail("Should not pass");
+        } catch (JsonMappingException e) {
+            JsonMappingException.Reference reference = e.getPath().get(0);
+            assertEquals(getClass().getName() + "$Outer[\"inner\"]", reference.toString());
+        }
+        org.helper.Assertions.verify("var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES_2883_18", __ins_v1);
+    }
+
+    public static void main(String[] args) {
+        System.err.println("Int, full: " + Integer.TYPE.getName());
+    }
 }

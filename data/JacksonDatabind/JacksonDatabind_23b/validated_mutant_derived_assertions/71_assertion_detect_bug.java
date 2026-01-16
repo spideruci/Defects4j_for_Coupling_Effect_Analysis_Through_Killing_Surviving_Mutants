@@ -1,21 +1,46 @@
-{
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ser.DefaultSerializerProvider",
-  "name": "createInstance",
-  "returnType": "com.fasterxml.jackson.databind.ser.DefaultSerializerProvider",
-  "ordinal": 0,
-  "readable_access": "var._serializerFactory._concrete",
-  "python_access": [
-    "metas",
-    19,
-    "graph",
-    "fields",
-    "_serializerFactory",
-    "fields",
-    "_concrete"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestSerializerProvider::testFindExplicit",
-  "line_number": "36",
-  "simple_class_name": "TestSerializerProvider",
-  "loop": -1
+// Instrumented at 2025-12-09 23:50:26
+package com.fasterxml.jackson.databind.ser;
+
+import java.util.concurrent.atomic.AtomicReference;
+import com.fasterxml.jackson.databind.*;
+import com.fasterxml.jackson.databind.ser.BeanSerializerFactory;
+
+public class TestSerializerProvider extends com.fasterxml.jackson.databind.BaseMapTest {
+
+    static class MyBean {
+
+        public int getX() {
+            return 3;
+        }
+    }
+
+    static class NoPropsBean {
+    }
+
+    public void testFindExplicit() throws JsonMappingException {
+        com.fasterxml.jackson.databind.ser.DefaultSerializerProvider __ins_v1 = null;
+        ObjectMapper mapper = new ObjectMapper();
+        SerializationConfig config = mapper.getSerializationConfig();
+        SerializerFactory f = new BeanSerializerFactory(null);
+        DefaultSerializerProvider prov = new DefaultSerializerProvider.Impl().createInstance(config, f);
+        // Should have working default key and null key serializers
+        assertNotNull(prov.findKeySerializer(mapper.constructType(String.class), null));
+        assertNotNull(prov.getDefaultNullKeySerializer());
+        assertNotNull(prov.getDefaultNullValueSerializer());
+        // as well as 'unknown type' one (throws exception)
+        assertNotNull(prov.getUnknownTypeSerializer(getClass()));
+        assertTrue(prov.createInstance(config, f).hasSerializerFor(String.class, null));
+        // call twice to verify it'll be cached (second code path)
+        assertTrue(prov.createInstance(config, f).hasSerializerFor(String.class, null));
+        __ins_v1 = prov.createInstance(config, f);
+        assertTrue(__ins_v1.hasSerializerFor(MyBean.class, null));
+        assertTrue(prov.createInstance(config, f).hasSerializerFor(MyBean.class, null));
+        // And then some negative testing
+        AtomicReference<Throwable> cause = new AtomicReference<Throwable>();
+        assertFalse(prov.createInstance(config, f).hasSerializerFor(NoPropsBean.class, cause));
+        Throwable t = cause.get();
+        // no actual exception: just fails since there are no properties
+        assertNull(t);
+        org.helper.Assertions.verify("var._serializerFactory._concrete_447_9", __ins_v1);
+    }
 }

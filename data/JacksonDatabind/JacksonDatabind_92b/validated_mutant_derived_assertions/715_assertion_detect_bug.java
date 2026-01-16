@@ -1,23 +1,41 @@
-{
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
-  "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
-  "python_access": [
-    "metas",
-    0,
-    "graph",
-    "fields",
-    "_deserializationContext",
-    "fields",
-    "_factory",
-    "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.jsontype.TestNoTypeInfo::testWithIdNone",
-  "line_number": "28",
-  "simple_class_name": "TestNoTypeInfo",
-  "loop": -1
+// Instrumented at 2025-12-01 00:17:05
+package com.fasterxml.jackson.databind.jsontype;
+
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.databind.*;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+
+public class TestNoTypeInfo extends BaseMapTest {
+
+    @JsonTypeInfo(use = JsonTypeInfo.Id.NONE)
+    @JsonDeserialize(as = NoType.class)
+    static interface NoTypeInterface {
+    }
+
+    final static class NoType implements NoTypeInterface {
+
+        public int a = 3;
+    }
+
+    /*
+    /**********************************************************
+    /* Unit tests
+    /**********************************************************
+     */
+    // for [JACKSON-746]
+    public void testWithIdNone() throws Exception {
+        ObjectMapper __ins_v1 = null;
+        __ins_v1 = new ObjectMapper();
+        final ObjectMapper mapper = __ins_v1;
+        mapper.enableDefaultTyping();
+        // serialize without type info
+        String json = mapper.writeValueAsString(new NoType());
+        assertEquals("{\"a\":3}", json);
+        // and deserialize successfully
+        NoTypeInterface bean = mapper.readValue("{\"a\":6}", NoTypeInterface.class);
+        assertNotNull(bean);
+        NoType impl = (NoType) bean;
+        assertEquals(6, impl.a);
+        org.helper.Assertions.verify("var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES_1537_32", __ins_v1);
+    }
 }

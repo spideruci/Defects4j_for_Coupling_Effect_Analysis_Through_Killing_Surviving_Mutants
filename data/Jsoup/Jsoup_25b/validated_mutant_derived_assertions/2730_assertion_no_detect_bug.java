@@ -1,23 +1,39 @@
-{
-  "source": "return",
-  "owner": "org.jsoup.nodes.Document",
-  "name": "head",
-  "returnType": "org.jsoup.nodes.Element",
-  "ordinal": 0,
-  "readable_access": "var.tag.blockTags.elements",
-  "python_access": [
-    "metas",
-    7,
-    "graph",
-    "fields",
-    "tag",
-    "fields",
-    "blockTags",
-    "elements",
-    3
-  ],
-  "test_name": "org.jsoup.helper.DataUtilTest::discardsSpuriousByteOrderMark",
-  "line_number": "32",
-  "simple_class_name": "DataUtilTest",
-  "loop": -1
+// Instrumented at 2025-12-02 03:13:02
+package org.jsoup.helper;
+
+import static org.junit.Assert.assertEquals;
+import org.jsoup.nodes.Document;
+import org.jsoup.parser.Parser;
+import org.junit.Test;
+import java.nio.ByteBuffer;
+import java.nio.charset.Charset;
+
+public class DataUtilTest {
+
+    @Test
+    public void testCharset() {
+        assertEquals("UTF-8", DataUtil.getCharsetFromContentType("text/html;charset=utf-8 "));
+        assertEquals("UTF-8", DataUtil.getCharsetFromContentType("text/html; charset=UTF-8"));
+        assertEquals("ISO-8859-1", DataUtil.getCharsetFromContentType("text/html; charset=ISO-8859-1"));
+        assertEquals(null, DataUtil.getCharsetFromContentType("text/html"));
+        assertEquals(null, DataUtil.getCharsetFromContentType(null));
+    }
+
+    @Test
+    public void testQuotedCharset() {
+        assertEquals("UTF-8", DataUtil.getCharsetFromContentType("text/html; charset=\"utf-8\""));
+        assertEquals("UTF-8", DataUtil.getCharsetFromContentType("text/html;charset=\"utf-8\""));
+        assertEquals("ISO-8859-1", DataUtil.getCharsetFromContentType("text/html; charset=\"ISO-8859-1\""));
+    }
+
+    @Test
+    public void discardsSpuriousByteOrderMark() {
+        org.jsoup.nodes.Element __ins_v1 = null;
+        String html = "\uFEFF<html><head><title>One</title></head><body>Two</body></html>";
+        ByteBuffer buffer = Charset.forName("UTF-8").encode(html);
+        Document doc = DataUtil.parseByteData(buffer, "UTF-8", "http://foo.com/", Parser.htmlParser());
+        __ins_v1 = doc.head();
+        assertEquals("One", __ins_v1.text());
+        org.helper.Assertions.verify("var.tag.blockTags.elements_6321_193", __ins_v1);
+    }
 }

@@ -1,23 +1,64 @@
-{
-  "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.struct.TestPOJOAsArrayWithBuilder",
-  "name": "MAPPER",
-  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
-  "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
-  "python_access": [
-    "metas",
-    0,
-    "graph",
-    "fields",
-    "_deserializationContext",
-    "fields",
-    "_factory",
-    "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.struct.TestPOJOAsArrayWithBuilder::testSimpleBuilder",
-  "line_number": "58",
-  "simple_class_name": "TestPOJOAsArrayWithBuilder",
-  "loop": -1
+// Instrumented at 2025-12-01 00:17:11
+package com.fasterxml.jackson.databind.struct;
+
+import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.databind.BaseMapTest;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+
+/**
+ * Unit tests for "POJO as array" feature using Builder-style
+ * POJO construction.
+ */
+public class TestPOJOAsArrayWithBuilder extends BaseMapTest {
+
+    @JsonDeserialize(builder = SimpleBuilderXY.class)
+    @JsonFormat(shape = JsonFormat.Shape.ARRAY)
+    @JsonPropertyOrder(alphabetic = true)
+    static class ValueClassXY {
+
+        final int _x, _y;
+
+        protected ValueClassXY(int x, int y) {
+            _x = x + 1;
+            _y = y + 1;
+        }
+    }
+
+    @JsonFormat(shape = JsonFormat.Shape.ARRAY)
+    static class SimpleBuilderXY {
+
+        public int x, y;
+
+        public SimpleBuilderXY withX(int x0) {
+            this.x = x0;
+            return this;
+        }
+
+        public SimpleBuilderXY withY(int y0) {
+            this.y = y0;
+            return this;
+        }
+
+        public ValueClassXY build() {
+            return new ValueClassXY(x, y);
+        }
+    }
+
+    /*
+    /*****************************************************
+    /* Basic tests
+    /*****************************************************
+     */
+    private final static ObjectMapper MAPPER = new ObjectMapper();
+
+    public void testSimpleBuilder() throws Exception {
+        com.fasterxml.jackson.databind.ObjectMapper __ins_v1 = null;
+        __ins_v1 = MAPPER;
+        // Ok, first, ensure that serializer will "black out" filtered properties
+        ValueClassXY value = __ins_v1.readValue("[1,2]", ValueClassXY.class);
+        assertEquals(2, value._x);
+        assertEquals(3, value._y);
+        org.helper.Assertions.verify("var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES_421_32", __ins_v1);
+    }
 }

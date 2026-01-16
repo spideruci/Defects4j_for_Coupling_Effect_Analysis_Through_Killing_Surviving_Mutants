@@ -1,23 +1,30 @@
-{
-  "source": "return",
-  "owner": "com.fasterxml.jackson.core.JsonFactory",
-  "name": "createParser",
-  "returnType": "com.fasterxml.jackson.core.JsonParser",
-  "ordinal": 0,
-  "readable_access": "var._symbols._symbols.elements",
-  "python_access": [
-    "metas",
-    4,
-    "graph",
-    "fields",
-    "_symbols",
-    "fields",
-    "_symbols",
-    "elements",
-    0
-  ],
-  "test_name": "com.fasterxml.jackson.databind.node.TestEndOfInputHandling::testErrorHandling",
-  "line_number": "15",
-  "simple_class_name": "TestEndOfInputHandling",
-  "loop": -1
+// Instrumented at 2026-01-02 00:34:15
+package com.fasterxml.jackson.databind.node;
+
+import java.io.IOException;
+import com.fasterxml.jackson.core.*;
+import com.fasterxml.jackson.databind.*;
+
+public class TestEndOfInputHandling extends BaseMapTest {
+
+    public void testErrorHandling() throws IOException {
+        com.fasterxml.jackson.core.JsonParser __ins_v1 = null;
+        ObjectMapper mapper = new ObjectMapper();
+        String json = "{\"A\":{\"B\":\n";
+        __ins_v1 = mapper.getFactory().createParser(json);
+        JsonParser parser = __ins_v1;
+        parser.setCodec(new ObjectMapper());
+        try {
+            parser.readValueAsTree();
+        } catch (JsonParseException e) {
+            verifyException(e, "Unexpected end-of-input");
+        }
+        parser.close();
+        try {
+            mapper.readTree(json);
+        } catch (JsonParseException e) {
+            verifyException(e, "Unexpected end-of-input");
+        }
+        org.helper.Assertions.verify("var._symbols._symbols.elements_557_4", __ins_v1);
+    }
 }

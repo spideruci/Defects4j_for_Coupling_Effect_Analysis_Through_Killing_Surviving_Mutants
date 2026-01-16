@@ -1,23 +1,52 @@
-{
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
-  "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
-  "python_access": [
-    "metas",
-    0,
-    "graph",
-    "fields",
-    "_deserializationContext",
-    "fields",
-    "_factory",
-    "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.creators.ImplicitParamsForCreatorTest::testNonSingleArgCreator",
-  "line_number": "42",
-  "simple_class_name": "ImplicitParamsForCreatorTest",
-  "loop": -1
+// Instrumented at 2025-12-13 14:00:46
+package com.fasterxml.jackson.databind.creators;
+
+import com.fasterxml.jackson.databind.*;
+import com.fasterxml.jackson.databind.introspect.AnnotatedMember;
+import com.fasterxml.jackson.databind.introspect.AnnotatedParameter;
+import com.fasterxml.jackson.databind.introspect.JacksonAnnotationIntrospector;
+
+public class ImplicitParamsForCreatorTest extends BaseMapTest {
+
+    @SuppressWarnings("serial")
+    static class MyParamIntrospector extends JacksonAnnotationIntrospector {
+
+        @Override
+        public String findImplicitPropertyName(AnnotatedMember param) {
+            if (param instanceof AnnotatedParameter) {
+                AnnotatedParameter ap = (AnnotatedParameter) param;
+                return "paramName" + ap.getIndex();
+            }
+            return super.findImplicitPropertyName(param);
+        }
+    }
+
+    static class XY {
+
+        protected int x, y;
+
+        // annotation should NOT be needed with 2.6 any more (except for single-arg case)
+        //@com.fasterxml.jackson.annotation.JsonCreator
+        public XY(int x, int y) {
+            this.x = x;
+            this.y = y;
+        }
+    }
+
+    /*
+    /**********************************************************
+    /* Test methods
+    /**********************************************************
+     */
+    public void testNonSingleArgCreator() throws Exception {
+        ObjectMapper __ins_v1 = null;
+        __ins_v1 = new ObjectMapper();
+        ObjectMapper mapper = __ins_v1;
+        mapper.setAnnotationIntrospector(new MyParamIntrospector());
+        XY value = mapper.readValue(aposToQuotes("{'paramName0':1,'paramName1':2}"), XY.class);
+        assertNotNull(value);
+        assertEquals(1, value.x);
+        assertEquals(2, value.y);
+        org.helper.Assertions.verify("var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES_2894_18", __ins_v1);
+    }
 }

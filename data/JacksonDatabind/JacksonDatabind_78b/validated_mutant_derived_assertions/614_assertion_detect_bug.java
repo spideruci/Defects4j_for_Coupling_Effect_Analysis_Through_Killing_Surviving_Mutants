@@ -1,23 +1,62 @@
-{
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.creators.DisablingCreatorsTest",
-  "name": "objectMapper",
-  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
-  "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
-  "python_access": [
-    "metas",
-    0,
-    "graph",
-    "fields",
-    "_deserializationContext",
-    "fields",
-    "_factory",
-    "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.creators.DisablingCreatorsTest::testDisabling",
-  "line_number": "39",
-  "simple_class_name": "DisablingCreatorsTest",
-  "loop": -1
+// Instrumented at 2025-12-13 14:00:43
+package com.fasterxml.jackson.databind.creators;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.*;
+
+/**
+ * Tests to ensure one can disable {@link JsonCreator} annotations.
+ */
+public class DisablingCreatorsTest extends BaseMapTest {
+
+    static class ConflictingCreators {
+
+        @JsonCreator(mode = JsonCreator.Mode.PROPERTIES)
+        public ConflictingCreators(@JsonProperty("foo") String foo) {
+        }
+
+        @JsonCreator(mode = JsonCreator.Mode.PROPERTIES)
+        public ConflictingCreators(@JsonProperty("foo") String foo, @JsonProperty("value") int value) {
+        }
+    }
+
+    static class NonConflictingCreators {
+
+        public String _value;
+
+        @JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+        public NonConflictingCreators(String foo) {
+            _value = foo;
+        }
+
+        @JsonCreator(mode = JsonCreator.Mode.DISABLED)
+        public NonConflictingCreators(String foo, int value) {
+        }
+    }
+
+    /*
+     /**********************************************************
+     /* Helper methods
+     /**********************************************************
+      */
+    public void testDisabling() throws Exception {
+        com.fasterxml.jackson.databind.ObjectMapper __ins_v1 = null;
+        __ins_v1 = objectMapper();
+        final ObjectMapper mapper = __ins_v1;
+        // first, non-problematic case
+        NonConflictingCreators value = mapper.readValue(quote("abc"), NonConflictingCreators.class);
+        assertNotNull(value);
+        assertEquals("abc", value._value);
+        // then something that ought to fail
+        try {
+            /*ConflictingCreators value =*/
+            mapper.readValue(quote("abc"), ConflictingCreators.class);
+            fail("Should have failed with JsonCreator conflict");
+        } catch (JsonProcessingException e) {
+            verifyException(e, "Conflicting property-based creators");
+        }
+        org.helper.Assertions.verify("var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES_3399_18", __ins_v1);
+    }
 }

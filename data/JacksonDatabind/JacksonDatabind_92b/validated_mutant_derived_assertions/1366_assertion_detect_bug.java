@@ -1,23 +1,93 @@
-{
-  "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.convert.ConvertingAbstractSerializer795Test",
-  "name": "JSON_MAPPER",
-  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
-  "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
-  "python_access": [
-    "metas",
-    1,
-    "graph",
-    "fields",
-    "_deserializationContext",
-    "fields",
-    "_factory",
-    "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
-  ],
-  "test_name": "com.fasterxml.jackson.databind.convert.ConvertingAbstractSerializer795Test::testNonAbstractDeserialization",
-  "line_number": "78",
-  "simple_class_name": "ConvertingAbstractSerializer795Test",
-  "loop": -1
+// Instrumented at 2025-12-01 00:17:13
+package com.fasterxml.jackson.databind.convert;
+
+import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.databind.*;
+import com.fasterxml.jackson.databind.annotation.*;
+import com.fasterxml.jackson.databind.util.StdConverter;
+
+// for [databind#795]
+public class ConvertingAbstractSerializer795Test extends BaseMapTest {
+
+    public static abstract class AbstractCustomType {
+
+        final String value;
+
+        public AbstractCustomType(String v) {
+            this.value = v;
+        }
+    }
+
+    public static class ConcreteCustomType extends AbstractCustomType {
+
+        public ConcreteCustomType(String v) {
+            super(v);
+        }
+    }
+
+    public static class AbstractCustomTypeDeserializationConverter extends StdConverter<String, AbstractCustomType> {
+
+        @Override
+        public AbstractCustomType convert(String arg) {
+            return new ConcreteCustomType(arg);
+        }
+    }
+
+    public static class AbstractCustomTypeUser {
+
+        @JsonProperty
+        @JsonDeserialize(converter = AbstractCustomTypeDeserializationConverter.class)
+        private final AbstractCustomType customField;
+
+        @JsonCreator
+        AbstractCustomTypeUser(@JsonProperty("customField") AbstractCustomType customField) {
+            this.customField = customField;
+        }
+    }
+
+    public static class NonAbstractCustomType {
+
+        final String value;
+
+        public NonAbstractCustomType(String v) {
+            this.value = v;
+        }
+    }
+
+    public static class NonAbstractCustomTypeDeserializationConverter extends StdConverter<String, NonAbstractCustomType> {
+
+        @Override
+        public NonAbstractCustomType convert(String arg) {
+            return new NonAbstractCustomType(arg);
+        }
+    }
+
+    public static class NonAbstractCustomTypeUser {
+
+        @JsonProperty
+        @JsonDeserialize(converter = NonAbstractCustomTypeDeserializationConverter.class)
+        private final NonAbstractCustomType customField;
+
+        @JsonCreator
+        NonAbstractCustomTypeUser(@JsonProperty("customField") NonAbstractCustomType customField) {
+            this.customField = customField;
+        }
+    }
+
+    private static final ObjectMapper JSON_MAPPER = new ObjectMapper();
+
+    public void testAbstractTypeDeserialization() throws Exception {
+        String test = "{\"customField\": \"customString\"}";
+        AbstractCustomTypeUser cu = JSON_MAPPER.readValue(test, AbstractCustomTypeUser.class);
+        assertNotNull(cu);
+    }
+
+    public void testNonAbstractDeserialization() throws Exception {
+        com.fasterxml.jackson.databind.ObjectMapper __ins_v1 = null;
+        String test = "{\"customField\": \"customString\"}";
+        __ins_v1 = JSON_MAPPER;
+        NonAbstractCustomTypeUser cu = __ins_v1.readValue(test, NonAbstractCustomTypeUser.class);
+        assertNotNull(cu);
+        org.helper.Assertions.verify("var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES_538_32", __ins_v1);
+    }
 }
