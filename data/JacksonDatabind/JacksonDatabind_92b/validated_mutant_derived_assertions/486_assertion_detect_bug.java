@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.creators.BuilderSimpleTest",
+  "owner": "com.fasterxml.jackson.databind.deser.TestSimpleTypes",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.creators.BuilderSimpleTest::testImmutable",
-  "line_number": "333",
-  "simple_class_name": "BuilderSimpleTest",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestSimpleTypes::testSingleString",
+  "line_number": "476",
+  "simple_class_name": "TestSimpleTypes",
   "loop": -1
 }

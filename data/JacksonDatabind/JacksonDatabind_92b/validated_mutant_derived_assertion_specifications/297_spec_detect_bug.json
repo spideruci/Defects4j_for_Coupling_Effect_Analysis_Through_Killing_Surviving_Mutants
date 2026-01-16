@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestBeanSerializer::testBuilderReplacement",
-  "line_number": "278",
-  "simple_class_name": "TestBeanSerializer",
+  "test_name": "com.fasterxml.jackson.databind.creators.TestCreatorWithPolymorphic113::testSubtypes",
+  "line_number": "55",
+  "simple_class_name": "TestCreatorWithPolymorphic113",
   "loop": -1
 }

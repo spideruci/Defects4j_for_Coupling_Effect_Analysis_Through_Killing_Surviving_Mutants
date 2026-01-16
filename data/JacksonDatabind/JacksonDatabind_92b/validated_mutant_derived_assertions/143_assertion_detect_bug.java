@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.creators.TestValueInstantiator",
+  "owner": "com.fasterxml.jackson.databind.ser.TestJsonValue",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.creators.TestValueInstantiator::testCustomDelegateInstantiator",
-  "line_number": "395",
-  "simple_class_name": "TestValueInstantiator",
+  "test_name": "com.fasterxml.jackson.databind.ser.TestJsonValue::testMapWithJsonValue",
+  "line_number": "232",
+  "simple_class_name": "TestJsonValue",
   "loop": -1
 }

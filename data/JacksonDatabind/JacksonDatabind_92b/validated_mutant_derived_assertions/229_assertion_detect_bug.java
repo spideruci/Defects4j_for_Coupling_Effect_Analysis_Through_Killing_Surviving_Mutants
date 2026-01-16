@@ -1,7 +1,7 @@
 {
-  "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.ser.TestEmptyClass",
-  "name": "mapper",
+  "source": "return",
+  "owner": "com.fasterxml.jackson.databind.big.TestBiggerData",
+  "name": "objectMapper",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestEmptyClass::testCustomNoEmpty",
-  "line_number": "97",
-  "simple_class_name": "TestEmptyClass",
+  "test_name": "com.fasterxml.jackson.databind.big.TestBiggerData::testReading",
+  "line_number": "77",
+  "simple_class_name": "TestBiggerData",
   "loop": -1
 }

@@ -1,17 +1,17 @@
 {
   "source": "return",
-  "owner": "com.fasterxml.jackson.databind.deser.TestObjectOrArrayDeserialization$ArrayOrObject",
-  "name": "access$000",
-  "returnType": "java.util.List",
+  "owner": "com.fasterxml.jackson.databind.ser.TestAutoDetect",
+  "name": "writeAndMap",
+  "returnType": "java.util.Map",
   "ordinal": 0,
   "readable_access": "var.metas",
   "python_access": [
     "metas",
-    3,
+    24,
     "graph"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestObjectOrArrayDeserialization::testNotEmptyArrayCase",
-  "line_number": "47",
-  "simple_class_name": "TestObjectOrArrayDeserialization",
+  "test_name": "com.fasterxml.jackson.databind.ser.TestAutoDetect::testPrivateUsingGlobals",
+  "line_number": "89",
+  "simple_class_name": "TestAutoDetect",
   "loop": -1
 }

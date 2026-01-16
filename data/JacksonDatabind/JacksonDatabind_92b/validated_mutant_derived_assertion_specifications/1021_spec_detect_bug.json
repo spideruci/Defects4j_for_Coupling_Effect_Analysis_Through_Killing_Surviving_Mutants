@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.jsontype.TestTypedDeserialization::testTypeAsWrapper",
-  "line_number": "129",
-  "simple_class_name": "TestTypedDeserialization",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestObjectOrArrayDeserialization::testEmptyArrayCase",
+  "line_number": "39",
+  "simple_class_name": "TestObjectOrArrayDeserialization",
   "loop": -1
 }

@@ -7,7 +7,7 @@
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    14,
+    0,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.module.TestSimpleModule::testMultipleModules",
-  "line_number": "289",
-  "simple_class_name": "TestSimpleModule",
+  "test_name": "com.fasterxml.jackson.databind.introspect.TestAutoDetect::testPrivateCtor",
+  "line_number": "29",
+  "simple_class_name": "TestAutoDetect",
   "loop": -1
 }

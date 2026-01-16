@@ -1,13 +1,13 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.access.TestSerAnyGetter",
+  "owner": "com.fasterxml.jackson.databind.deser.TestAnnotationIgnore",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    2,
+    0,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.access.TestSerAnyGetter::testDynaBean",
-  "line_number": "61",
-  "simple_class_name": "TestSerAnyGetter",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestAnnotationIgnore::testSimpleIgnore",
+  "line_number": "50",
+  "simple_class_name": "TestAnnotationIgnore",
   "loop": -1
 }

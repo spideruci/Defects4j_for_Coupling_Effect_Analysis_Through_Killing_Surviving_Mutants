@@ -7,7 +7,7 @@
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    0,
+    3,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.jsontype.TestTypedDeserialization::testAbstractEmptyBaseClass",
-  "line_number": "210",
-  "simple_class_name": "TestTypedDeserialization",
+  "test_name": "com.fasterxml.jackson.databind.struct.TestPOJOAsArray::testAnnotationOverride",
+  "line_number": "215",
+  "simple_class_name": "TestPOJOAsArray",
   "loop": -1
 }

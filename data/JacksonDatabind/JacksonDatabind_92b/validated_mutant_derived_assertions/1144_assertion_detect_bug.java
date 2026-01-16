@@ -1,8 +1,8 @@
 {
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
+  "source": "getField",
+  "owner": "com.fasterxml.jackson.databind.jsontype.TestPolymorphicWithDefaultImpl",
+  "name": "MAPPER",
+  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.DateSerializationTest::testDateWithJsonFormat",
-  "line_number": "210",
-  "simple_class_name": "DateSerializationTest",
+  "test_name": "com.fasterxml.jackson.databind.jsontype.TestPolymorphicWithDefaultImpl::testDeserializationWithObject",
+  "line_number": "136",
+  "simple_class_name": "TestPolymorphicWithDefaultImpl",
   "loop": -1
 }

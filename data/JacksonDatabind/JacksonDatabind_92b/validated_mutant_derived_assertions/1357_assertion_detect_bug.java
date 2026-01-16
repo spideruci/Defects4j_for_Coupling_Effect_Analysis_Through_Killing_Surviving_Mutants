@@ -1,13 +1,13 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.jsontype.TestVisibleTypeId",
-  "name": "MAPPER",
+  "owner": "com.fasterxml.jackson.databind.ser.TestRootType",
+  "name": "WRAP_ROOT_MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    0,
+    2,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.jsontype.TestVisibleTypeId::testTypeIdFromArray",
-  "line_number": "205",
-  "simple_class_name": "TestVisibleTypeId",
+  "test_name": "com.fasterxml.jackson.databind.ser.TestRootType::testRootNameWithExplicitType",
+  "line_number": "200",
+  "simple_class_name": "TestRootType",
   "loop": -1
 }

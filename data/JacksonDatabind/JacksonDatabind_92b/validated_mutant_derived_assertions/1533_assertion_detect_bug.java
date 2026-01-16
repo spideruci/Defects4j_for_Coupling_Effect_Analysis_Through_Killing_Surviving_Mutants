@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.introspect.TestAnnotionBundles::testIssue92",
-  "line_number": "130",
+  "test_name": "com.fasterxml.jackson.databind.introspect.TestAnnotionBundles::testRecursiveBundles",
+  "line_number": "115",
   "simple_class_name": "TestAnnotionBundles",
   "loop": -1
 }

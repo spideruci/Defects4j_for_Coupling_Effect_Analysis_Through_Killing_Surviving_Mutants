@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.deser.TestJDKAtomicTypes",
+  "owner": "com.fasterxml.jackson.databind.jsontype.TestPolymorphicWithDefaultImpl",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestJDKAtomicTypes::testDeserializeWithContentAs",
-  "line_number": "231",
-  "simple_class_name": "TestJDKAtomicTypes",
+  "test_name": "com.fasterxml.jackson.databind.jsontype.TestPolymorphicWithDefaultImpl::testDeserializationWithString",
+  "line_number": "144",
+  "simple_class_name": "TestPolymorphicWithDefaultImpl",
   "loop": -1
 }

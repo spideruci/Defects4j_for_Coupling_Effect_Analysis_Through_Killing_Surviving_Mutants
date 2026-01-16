@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestEnumSerialization::testGenericEnumSerializer",
-  "line_number": "371",
-  "simple_class_name": "TestEnumSerialization",
+  "test_name": "com.fasterxml.jackson.databind.module.TestDuplicateRegistration::testDuplicateRegistration",
+  "line_number": "34",
+  "simple_class_name": "TestDuplicateRegistration",
   "loop": -1
 }

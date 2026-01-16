@@ -1,23 +1,23 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.interop.TestFormatDetection",
-  "name": "READER",
-  "returnType": "com.fasterxml.jackson.databind.ObjectReader",
+  "owner": "com.fasterxml.jackson.databind.filter.JsonIncludeTest",
+  "name": "MAPPER",
+  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
-  "readable_access": "var._context._factory.DEFAULT_NO_DESER_CLASS_NAMES",
+  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
     0,
     "graph",
     "fields",
-    "_context",
+    "_deserializationContext",
     "fields",
     "_factory",
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.interop.TestFormatDetection::testSimpleWithJSON",
-  "line_number": "29",
-  "simple_class_name": "TestFormatDetection",
+  "test_name": "com.fasterxml.jackson.databind.filter.JsonIncludeTest::testEmptyInclusionScalars",
+  "line_number": "214",
+  "simple_class_name": "JsonIncludeTest",
   "loop": -1
 }

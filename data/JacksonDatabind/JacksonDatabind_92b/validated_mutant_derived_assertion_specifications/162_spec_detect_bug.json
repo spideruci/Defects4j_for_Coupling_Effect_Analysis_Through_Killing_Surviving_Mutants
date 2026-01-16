@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestAnnotationUsing::testRootValueWithCustomKey",
-  "line_number": "218",
-  "simple_class_name": "TestAnnotationUsing",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestValueAnnotations::testRootListAs",
+  "line_number": "305",
+  "simple_class_name": "TestValueAnnotations",
   "loop": -1
 }

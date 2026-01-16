@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.deser.TestEnumDeserialization",
+  "owner": "com.fasterxml.jackson.databind.jsontype.TestSubtypesExistingProperty",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestEnumDeserialization::testEnumWithCreatorEnumMaps",
-  "line_number": "345",
-  "simple_class_name": "TestEnumDeserialization",
+  "test_name": "com.fasterxml.jackson.databind.jsontype.TestSubtypesExistingProperty::testExistingPropertySerializationFruits",
+  "line_number": "219",
+  "simple_class_name": "TestSubtypesExistingProperty",
   "loop": -1
 }

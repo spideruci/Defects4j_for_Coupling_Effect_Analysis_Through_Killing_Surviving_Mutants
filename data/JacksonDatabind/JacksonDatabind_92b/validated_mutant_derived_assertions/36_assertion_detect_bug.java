@@ -1,13 +1,13 @@
 {
-  "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.ser.FieldSerializationTest",
-  "name": "MAPPER",
+  "source": "return",
+  "owner": "com.fasterxml.jackson.databind.node.TestTreeMapperDeserializer",
+  "name": "objectMapper",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    2,
+    1,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.FieldSerializationTest::testNoAutoDetect",
-  "line_number": "172",
-  "simple_class_name": "FieldSerializationTest",
+  "test_name": "com.fasterxml.jackson.databind.node.TestTreeMapperDeserializer::testLong",
+  "line_number": "166",
+  "simple_class_name": "TestTreeMapperDeserializer",
   "loop": -1
 }

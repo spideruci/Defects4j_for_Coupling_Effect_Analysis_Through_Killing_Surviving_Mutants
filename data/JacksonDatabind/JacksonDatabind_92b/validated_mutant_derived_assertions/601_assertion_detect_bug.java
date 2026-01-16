@@ -7,7 +7,7 @@
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    3,
+    0,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestMapSerialization::testNullJsonInTypedMap691",
-  "line_number": "264",
-  "simple_class_name": "TestMapSerialization",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestValueAnnotations::testOverrideMapContents",
+  "line_number": "387",
+  "simple_class_name": "TestValueAnnotations",
   "loop": -1
 }

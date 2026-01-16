@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.filter.IgnorePropsForSerTest",
+  "owner": "com.fasterxml.jackson.databind.deser.UntypedNumbersTest",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.filter.IgnorePropsForSerTest::testIgnoreViaPropForUntyped",
-  "line_number": "111",
-  "simple_class_name": "IgnorePropsForSerTest",
+  "test_name": "com.fasterxml.jackson.databind.deser.UntypedNumbersTest::testFpTypeOverrideStructured",
+  "line_number": "98",
+  "simple_class_name": "UntypedNumbersTest",
   "loop": -1
 }

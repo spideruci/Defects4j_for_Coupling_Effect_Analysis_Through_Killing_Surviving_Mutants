@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.deser.TestBasicAnnotations",
+  "owner": "com.fasterxml.jackson.databind.deser.TestBeanDeserializer",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestBasicAnnotations::testImpliedProperty",
-  "line_number": "160",
-  "simple_class_name": "TestBasicAnnotations",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestBeanDeserializer::testPOJOFromEmptyString",
+  "line_number": "280",
+  "simple_class_name": "TestBeanDeserializer",
   "loop": -1
 }

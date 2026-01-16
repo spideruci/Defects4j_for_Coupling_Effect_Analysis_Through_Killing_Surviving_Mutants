@@ -1,23 +1,23 @@
 {
-  "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.interop.TestFormatDetection",
-  "name": "READER",
-  "returnType": "com.fasterxml.jackson.databind.ObjectReader",
+  "source": "return",
+  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
+  "name": "copy",
+  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
-  "readable_access": "var._context._factory.DEFAULT_NO_DESER_CLASS_NAMES",
+  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    0,
+    8,
     "graph",
     "fields",
-    "_context",
+    "_deserializationContext",
     "fields",
     "_factory",
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.interop.TestFormatDetection::testInvalid",
-  "line_number": "38",
-  "simple_class_name": "TestFormatDetection",
+  "test_name": "com.fasterxml.jackson.databind.ObjectMapperTest::testCopyOfParserFeatures",
+  "line_number": "294",
+  "simple_class_name": "ObjectMapperTest",
   "loop": -1
 }

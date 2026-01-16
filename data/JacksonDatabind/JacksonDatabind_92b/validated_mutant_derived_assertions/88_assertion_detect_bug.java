@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestExceptionHandlingWithDefaultDeserialization::testShouldThrowJsonMappingExceptionWithPathReference",
-  "line_number": "49",
-  "simple_class_name": "TestExceptionHandlingWithDefaultDeserialization",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestJacksonTypes::testJsonLocation",
+  "line_number": "18",
+  "simple_class_name": "TestJacksonTypes",
   "loop": -1
 }

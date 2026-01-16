@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.ser.TestSimpleTypes",
+  "owner": "com.fasterxml.jackson.databind.deser.TestJdkTypes",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestSimpleTypes::testIntArray",
-  "line_number": "72",
-  "simple_class_name": "TestSimpleTypes",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestJdkTypes::testUntypedWithJsonArrays",
+  "line_number": "361",
+  "simple_class_name": "TestJdkTypes",
   "loop": -1
 }

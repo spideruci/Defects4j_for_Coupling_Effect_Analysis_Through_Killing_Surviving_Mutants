@@ -1,23 +1,23 @@
 {
-  "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.ser.TestJsonSerialize2",
-  "name": "MAPPER",
-  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
+  "source": "return",
+  "owner": "com.fasterxml.jackson.databind.ObjectReader",
+  "name": "with",
+  "returnType": "com.fasterxml.jackson.databind.ObjectReader",
   "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
+  "readable_access": "var._context._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    0,
+    14,
     "graph",
     "fields",
-    "_deserializationContext",
+    "_context",
     "fields",
     "_factory",
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestJsonSerialize2::testEmptyInclusionContainers",
-  "line_number": "181",
-  "simple_class_name": "TestJsonSerialize2",
+  "test_name": "com.fasterxml.jackson.databind.TestRootName::testReconfiguringOfWrapping",
+  "line_number": "70",
+  "simple_class_name": "TestRootName",
   "loop": -1
 }

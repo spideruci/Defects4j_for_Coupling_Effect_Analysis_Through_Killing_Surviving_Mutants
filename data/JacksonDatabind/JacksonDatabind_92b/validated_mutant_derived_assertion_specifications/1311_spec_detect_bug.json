@@ -1,23 +1,23 @@
 {
   "source": "return",
   "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
+  "name": "readerFor",
+  "returnType": "com.fasterxml.jackson.databind.ObjectReader",
   "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
+  "readable_access": "var._context._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    0,
+    28,
     "graph",
     "fields",
-    "_deserializationContext",
+    "_context",
     "fields",
     "_factory",
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestEnumDeserialization::testEnumsWithEmpty",
-  "line_number": "409",
-  "simple_class_name": "TestEnumDeserialization",
+  "test_name": "com.fasterxml.jackson.databind.jsontype.PolymorphicList1451SerTest::testCollectionWithTypeInfo",
+  "line_number": "47",
+  "simple_class_name": "PolymorphicList1451SerTest",
   "loop": -1
 }

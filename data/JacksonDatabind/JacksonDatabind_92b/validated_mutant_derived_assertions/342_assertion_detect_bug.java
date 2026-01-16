@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.seq.ObjectWriterTest",
+  "owner": "com.fasterxml.jackson.databind.ser.TestKeySerializers",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.seq.ObjectWriterTest::testObjectWriterFeatures",
-  "line_number": "77",
-  "simple_class_name": "ObjectWriterTest",
+  "test_name": "com.fasterxml.jackson.databind.ser.TestKeySerializers::testKarl",
+  "line_number": "123",
+  "simple_class_name": "TestKeySerializers",
   "loop": -1
 }

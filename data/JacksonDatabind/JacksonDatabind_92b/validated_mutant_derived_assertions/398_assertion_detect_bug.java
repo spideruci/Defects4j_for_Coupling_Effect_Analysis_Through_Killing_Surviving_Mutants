@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.introspect.TestPOJOPropertiesCollector",
+  "owner": "com.fasterxml.jackson.databind.deser.TestBasicAnnotations",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.introspect.TestPOJOPropertiesCollector::testJackson744",
-  "line_number": "441",
-  "simple_class_name": "TestPOJOPropertiesCollector",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestBasicAnnotations::testSimpleSetter",
+  "line_number": "118",
+  "simple_class_name": "TestBasicAnnotations",
   "loop": -1
 }

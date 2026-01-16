@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestIgnoredTypes::testIgnoredType",
-  "line_number": "62",
-  "simple_class_name": "TestIgnoredTypes",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestEnumDeserialization::testToStringEnums",
+  "line_number": "268",
+  "simple_class_name": "TestEnumDeserialization",
   "loop": -1
 }

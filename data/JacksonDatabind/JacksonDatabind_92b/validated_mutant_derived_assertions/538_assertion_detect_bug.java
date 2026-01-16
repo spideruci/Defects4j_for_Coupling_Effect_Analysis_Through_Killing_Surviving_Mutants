@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.mixins.TestMixinInheritance::testMixinFieldInheritance",
-  "line_number": "53",
-  "simple_class_name": "TestMixinInheritance",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestExceptionHandling::testExceptionWithEmpty",
+  "line_number": "54",
+  "simple_class_name": "TestExceptionHandling",
   "loop": -1
 }

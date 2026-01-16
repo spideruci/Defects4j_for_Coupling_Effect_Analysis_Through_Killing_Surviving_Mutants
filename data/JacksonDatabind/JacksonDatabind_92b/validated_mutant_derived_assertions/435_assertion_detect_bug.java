@@ -1,8 +1,8 @@
 {
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
+  "source": "getField",
+  "owner": "com.fasterxml.jackson.databind.ser.TestEnumSerialization",
+  "name": "MAPPER",
+  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.objectid.TestObjectIdWithEquals::testSimpleEquals",
-  "line_number": "83",
-  "simple_class_name": "TestObjectIdWithEquals",
+  "test_name": "com.fasterxml.jackson.databind.ser.TestEnumSerialization::testSimple",
+  "line_number": "234",
+  "simple_class_name": "TestEnumSerialization",
   "loop": -1
 }

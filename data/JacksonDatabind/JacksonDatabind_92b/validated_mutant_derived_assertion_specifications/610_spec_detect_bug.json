@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestFeatures::testFlushingAutomatic",
-  "line_number": "192",
-  "simple_class_name": "TestFeatures",
+  "test_name": "com.fasterxml.jackson.databind.jsontype.TestDefaultForObject::testJackson311",
+  "line_number": "250",
+  "simple_class_name": "TestDefaultForObject",
   "loop": -1
 }

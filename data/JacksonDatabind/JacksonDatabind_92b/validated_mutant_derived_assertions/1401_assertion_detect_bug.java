@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.introspect.NoClassDefFoundWorkaroundTest::testDeserialize",
-  "line_number": "35",
-  "simple_class_name": "NoClassDefFoundWorkaroundTest",
+  "test_name": "com.fasterxml.jackson.databind.mixins.TestMixinDeserForCreators::testFactoryMixIn",
+  "line_number": "112",
+  "simple_class_name": "TestMixinDeserForCreators",
   "loop": -1
 }

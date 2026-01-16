@@ -7,7 +7,7 @@
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    16,
+    0,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.mixins.TestMixinSerForClass::testClassMixInsMidLevel",
-  "line_number": "117",
-  "simple_class_name": "TestMixinSerForClass",
+  "test_name": "com.fasterxml.jackson.databind.jsontype.TestTypedSerialization::testEmptyBean",
+  "line_number": "184",
+  "simple_class_name": "TestTypedSerialization",
   "loop": -1
 }

@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.jsonschema.TestGenerateJsonSchema",
+  "owner": "com.fasterxml.jackson.databind.creators.TestCreators",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.jsonschema.TestGenerateJsonSchema::testSchemaId",
-  "line_number": "223",
-  "simple_class_name": "TestGenerateJsonSchema",
+  "test_name": "com.fasterxml.jackson.databind.creators.TestCreators::testConstructorAndProps",
+  "line_number": "368",
+  "simple_class_name": "TestCreators",
   "loop": -1
 }

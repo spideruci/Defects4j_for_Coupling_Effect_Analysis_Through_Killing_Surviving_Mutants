@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.ser.TestAnnotations",
+  "owner": "com.fasterxml.jackson.databind.creators.TestCreators2",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestAnnotations::testGetterInheritance",
-  "line_number": "197",
-  "simple_class_name": "TestAnnotations",
+  "test_name": "com.fasterxml.jackson.databind.creators.TestCreators2::testJackson438",
+  "line_number": "217",
+  "simple_class_name": "TestCreators2",
   "loop": -1
 }

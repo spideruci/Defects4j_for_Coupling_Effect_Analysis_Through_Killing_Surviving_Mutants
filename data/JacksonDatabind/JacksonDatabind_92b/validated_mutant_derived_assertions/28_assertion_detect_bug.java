@@ -1,8 +1,8 @@
 {
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
+  "source": "getField",
+  "owner": "com.fasterxml.jackson.databind.seq.ReadValuesTest",
+  "name": "MAPPER",
+  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.jsontype.TypeRefinementForMapTest::testMapKeyRefinement1384",
-  "line_number": "122",
-  "simple_class_name": "TypeRefinementForMapTest",
+  "test_name": "com.fasterxml.jackson.databind.seq.ReadValuesTest::testNonRootArraysUsingParser",
+  "line_number": "314",
+  "simple_class_name": "ReadValuesTest",
   "loop": -1
 }

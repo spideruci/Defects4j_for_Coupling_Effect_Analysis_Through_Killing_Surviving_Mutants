@@ -1,23 +1,23 @@
 {
   "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectReader",
-  "name": "readValues",
-  "returnType": "com.fasterxml.jackson.databind.MappingIterator",
+  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
+  "name": "ObjectMapper",
+  "returnType": "void",
   "ordinal": 0,
-  "readable_access": "var._context._factory.DEFAULT_NO_DESER_CLASS_NAMES",
+  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    10,
+    0,
     "graph",
     "fields",
-    "_context",
+    "_deserializationContext",
     "fields",
     "_factory",
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.seq.ReadValuesTest::testHasNextWithEndArray",
-  "line_number": "212",
-  "simple_class_name": "ReadValuesTest",
+  "test_name": "com.fasterxml.jackson.databind.ser.TestStatics::testStaticFields",
+  "line_number": "49",
+  "simple_class_name": "TestStatics",
   "loop": -1
 }

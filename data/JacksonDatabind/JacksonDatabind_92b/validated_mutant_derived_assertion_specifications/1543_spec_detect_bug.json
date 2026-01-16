@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestSerializationOrder::testOrderWithFeature",
-  "line_number": "132",
-  "simple_class_name": "TestSerializationOrder",
+  "test_name": "com.fasterxml.jackson.databind.module.TestAbstractTypes::testMapDefaultingBasic",
+  "line_number": "58",
+  "simple_class_name": "TestAbstractTypes",
   "loop": -1
 }

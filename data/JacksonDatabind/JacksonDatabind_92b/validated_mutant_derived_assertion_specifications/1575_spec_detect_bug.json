@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestCachingOfDeser::testCustomMapCaching2",
-  "line_number": "76",
-  "simple_class_name": "TestCachingOfDeser",
+  "test_name": "com.fasterxml.jackson.databind.objectid.TestObjectIdSerialization::testEmptyObjectWithId",
+  "line_number": "224",
+  "simple_class_name": "TestObjectIdSerialization",
   "loop": -1
 }

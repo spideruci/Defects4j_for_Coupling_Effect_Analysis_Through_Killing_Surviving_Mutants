@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestValueAnnotations::testRootInterfaceAs",
-  "line_number": "291",
-  "simple_class_name": "TestValueAnnotations",
+  "test_name": "com.fasterxml.jackson.databind.jsontype.TestPropertyTypeInfo::testSimpleArrayField",
+  "line_number": "142",
+  "simple_class_name": "TestPropertyTypeInfo",
   "loop": -1
 }

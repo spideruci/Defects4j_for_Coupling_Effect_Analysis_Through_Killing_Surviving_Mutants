@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.AnyGetterTest::testAnyOnly",
-  "line_number": "144",
-  "simple_class_name": "AnyGetterTest",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestMapDeserialization::testEnumPolymorphicSerializationTest",
+  "line_number": "373",
+  "simple_class_name": "TestMapDeserialization",
   "loop": -1
 }

@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.deser.TestJdkTypes",
+  "owner": "com.fasterxml.jackson.databind.ser.DateSerializationTest",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestJdkTypes::testInetSocketAddress",
-  "line_number": "255",
-  "simple_class_name": "TestJdkTypes",
+  "test_name": "com.fasterxml.jackson.databind.ser.DateSerializationTest::testDateNumeric",
+  "line_number": "107",
+  "simple_class_name": "DateSerializationTest",
   "loop": -1
 }

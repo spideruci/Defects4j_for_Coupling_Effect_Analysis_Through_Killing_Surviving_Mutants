@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.seq.ObjectWriterTest",
+  "owner": "com.fasterxml.jackson.databind.creators.TestCreators2",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.seq.ObjectWriterTest::testObjectWriterWithNode",
-  "line_number": "89",
-  "simple_class_name": "ObjectWriterTest",
+  "test_name": "com.fasterxml.jackson.databind.creators.TestCreators2::testCreatorWithDupNames",
+  "line_number": "259",
+  "simple_class_name": "TestCreators2",
   "loop": -1
 }

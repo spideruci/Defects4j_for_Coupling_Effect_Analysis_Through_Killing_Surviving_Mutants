@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.deser.TestCollectionDeserialization",
+  "owner": "com.fasterxml.jackson.databind.filter.TestMapFiltering",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestCollectionDeserialization::testArrayBlockingQueue",
-  "line_number": "183",
-  "simple_class_name": "TestCollectionDeserialization",
+  "test_name": "com.fasterxml.jackson.databind.filter.TestMapFiltering::testMapAbsentValue",
+  "line_number": "209",
+  "simple_class_name": "TestMapFiltering",
   "loop": -1
 }

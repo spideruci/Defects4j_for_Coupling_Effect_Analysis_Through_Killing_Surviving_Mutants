@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.node.TestObjectNode",
+  "owner": "com.fasterxml.jackson.databind.node.TestJsonNode",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.node.TestObjectNode::testEqualityWrtOrder",
-  "line_number": "365",
-  "simple_class_name": "TestObjectNode",
+  "test_name": "com.fasterxml.jackson.databind.node.TestJsonNode::testCustomComparators",
+  "line_number": "126",
+  "simple_class_name": "TestJsonNode",
   "loop": -1
 }

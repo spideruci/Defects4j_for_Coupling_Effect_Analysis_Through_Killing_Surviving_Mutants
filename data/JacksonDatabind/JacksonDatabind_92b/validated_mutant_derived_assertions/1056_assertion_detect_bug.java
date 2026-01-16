@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.filter.TestUnknownPropertyDeserialization::testUnknownHandlingIgnoreWithHandlerAndObjectReader",
-  "line_number": "165",
-  "simple_class_name": "TestUnknownPropertyDeserialization",
+  "test_name": "com.fasterxml.jackson.databind.jsontype.TestDefaultForObject::testBeanAsObject",
+  "line_number": "92",
+  "simple_class_name": "TestDefaultForObject",
   "loop": -1
 }

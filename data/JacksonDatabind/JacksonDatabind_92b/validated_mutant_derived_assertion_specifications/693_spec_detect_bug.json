@@ -1,13 +1,13 @@
 {
   "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "readerFor",
-  "returnType": "com.fasterxml.jackson.databind.ObjectReader",
+  "owner": "com.fasterxml.jackson.core.JsonParser",
+  "name": "readValuesAs",
+  "returnType": "java.util.Iterator",
   "ordinal": 0,
   "readable_access": "var._context._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    10,
+    5,
     "graph",
     "fields",
     "_context",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.jsontype.TestExternalId::testBigDecimal965",
-  "line_number": "538",
-  "simple_class_name": "TestExternalId",
+  "test_name": "com.fasterxml.jackson.databind.seq.ReadValuesTest::testRootBeansWithParser",
+  "line_number": "171",
+  "simple_class_name": "ReadValuesTest",
   "loop": -1
 }

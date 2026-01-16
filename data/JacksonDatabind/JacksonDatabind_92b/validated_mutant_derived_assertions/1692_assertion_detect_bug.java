@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.creators.ImplicitNameMatch792Test::testBindingOfImplicitCreatorNames",
-  "line_number": "96",
-  "simple_class_name": "ImplicitNameMatch792Test",
+  "test_name": "com.fasterxml.jackson.databind.module.TestCustomEnumKeyDeserializer::testWithEnumKeys",
+  "line_number": "161",
+  "simple_class_name": "TestCustomEnumKeyDeserializer",
   "loop": -1
 }

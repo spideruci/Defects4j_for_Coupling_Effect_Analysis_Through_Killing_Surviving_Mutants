@@ -1,23 +1,23 @@
 {
-  "source": "return",
+  "source": "getField",
   "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "reader",
-  "returnType": "com.fasterxml.jackson.databind.ObjectReader",
+  "name": "_deserializationContext",
+  "returnType": "com.fasterxml.jackson.databind.deser.DefaultDeserializationContext",
   "ordinal": 0,
-  "readable_access": "var._context._factory.DEFAULT_NO_DESER_CLASS_NAMES",
+  "readable_access": "var._factory.DEFAULT_NO_DESER_CLASS_NAMES.elements",
   "python_access": [
     "metas",
-    2,
+    20,
     "graph",
-    "fields",
-    "_context",
     "fields",
     "_factory",
     "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
+    "DEFAULT_NO_DESER_CLASS_NAMES",
+    "elements",
+    3
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestEnumDeserialization::testAllowUnknownEnumValuesAsMapKeysReadAsNull",
-  "line_number": "382",
-  "simple_class_name": "TestEnumDeserialization",
+  "test_name": "com.fasterxml.jackson.databind.ObjectMapperTest::testProviderConfig",
+  "line_number": "150",
+  "simple_class_name": "ObjectMapperTest",
   "loop": -1
 }

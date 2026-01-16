@@ -1,13 +1,13 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.TestObjectMapperBeanDeserializer",
+  "owner": "com.fasterxml.jackson.databind.type.TestAnnotatedClass",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    0,
+    2,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.TestObjectMapperBeanDeserializer::testFromIntFactory",
-  "line_number": "263",
-  "simple_class_name": "TestObjectMapperBeanDeserializer",
+  "test_name": "com.fasterxml.jackson.databind.type.TestAnnotatedClass::testConstructorIntrospection",
+  "line_number": "102",
+  "simple_class_name": "TestAnnotatedClass",
   "loop": -1
 }

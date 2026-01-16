@@ -1,13 +1,13 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.deser.TestCollectionDeserialization",
+  "owner": "com.fasterxml.jackson.databind.TestObjectMapperBeanDeserializer",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    1,
+    0,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestCollectionDeserialization::testHashSet",
-  "line_number": "118",
-  "simple_class_name": "TestCollectionDeserialization",
+  "test_name": "com.fasterxml.jackson.databind.TestObjectMapperBeanDeserializer::testFromDoubleCtor",
+  "line_number": "243",
+  "simple_class_name": "TestObjectMapperBeanDeserializer",
   "loop": -1
 }

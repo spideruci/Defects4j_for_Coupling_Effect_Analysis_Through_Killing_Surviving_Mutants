@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.jsontype.TestAbstractTypeNames::testInnerClassWithType",
-  "line_number": "130",
-  "simple_class_name": "TestAbstractTypeNames",
+  "test_name": "com.fasterxml.jackson.databind.jsontype.TestDefaultForObject::testNoGoWithExternalProperty",
+  "line_number": "345",
+  "simple_class_name": "TestDefaultForObject",
   "loop": -1
 }

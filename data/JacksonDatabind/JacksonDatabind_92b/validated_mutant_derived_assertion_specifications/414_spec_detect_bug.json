@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.filter.TestMapFiltering::testMapNullSerialization",
-  "line_number": "217",
-  "simple_class_name": "TestMapFiltering",
+  "test_name": "com.fasterxml.jackson.databind.creators.TestValueInstantiator::testCustomListInstantiator",
+  "line_number": "340",
+  "simple_class_name": "TestValueInstantiator",
   "loop": -1
 }

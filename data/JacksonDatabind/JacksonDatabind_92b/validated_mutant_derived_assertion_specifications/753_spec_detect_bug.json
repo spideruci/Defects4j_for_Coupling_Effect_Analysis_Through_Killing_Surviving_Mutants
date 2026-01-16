@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestEnumSerialization::testEnumMapSerDisableToString",
-  "line_number": "409",
-  "simple_class_name": "TestEnumSerialization",
+  "test_name": "com.fasterxml.jackson.databind.ser.TestBeanSerializer::testModifyMapSerializer",
+  "line_number": "343",
+  "simple_class_name": "TestBeanSerializer",
   "loop": -1
 }

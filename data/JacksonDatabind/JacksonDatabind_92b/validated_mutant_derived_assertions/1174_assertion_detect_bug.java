@@ -1,8 +1,8 @@
 {
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
+  "source": "getField",
+  "owner": "com.fasterxml.jackson.databind.deser.TestDateDeserialization",
+  "name": "MAPPER",
+  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestAnnotationUsing::testClassDeserializer",
-  "line_number": "131",
-  "simple_class_name": "TestAnnotationUsing",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestDateDeserialization::testCustomCalendarWithAnnotation",
+  "line_number": "470",
+  "simple_class_name": "TestDateDeserialization",
   "loop": -1
 }

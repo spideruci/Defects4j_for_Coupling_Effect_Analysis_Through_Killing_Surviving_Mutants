@@ -1,13 +1,13 @@
 {
   "source": "return",
-  "owner": "com.fasterxml.jackson.databind.node.TestTreeMapperDeserializer",
-  "name": "objectMapper",
-  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
+  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
+  "name": "ObjectMapper",
+  "returnType": "void",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    1,
+    0,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.node.TestTreeMapperDeserializer::testDouble",
-  "line_number": "114",
-  "simple_class_name": "TestTreeMapperDeserializer",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestExceptionDeserialization::testWithNullMessage",
+  "line_number": "78",
+  "simple_class_name": "TestExceptionDeserialization",
   "loop": -1
 }

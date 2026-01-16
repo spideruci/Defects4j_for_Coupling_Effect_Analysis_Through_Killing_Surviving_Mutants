@@ -1,13 +1,13 @@
 {
-  "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.interop.TestJDKProxy",
-  "name": "MAPPER",
-  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
+  "source": "return",
+  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
+  "name": "ObjectMapper",
+  "returnType": "void",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    3,
+    1,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.interop.TestJDKProxy::testSimple",
-  "line_number": "41",
-  "simple_class_name": "TestJDKProxy",
+  "test_name": "com.fasterxml.jackson.databind.TestFormatSchema::testFormatForParsers",
+  "line_number": "248",
+  "simple_class_name": "TestFormatSchema",
   "loop": -1
 }

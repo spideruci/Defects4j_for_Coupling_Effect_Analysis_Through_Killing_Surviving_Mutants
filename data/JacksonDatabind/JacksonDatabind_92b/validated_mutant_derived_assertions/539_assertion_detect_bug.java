@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestSerializerProvider::testFindExplicit",
-  "line_number": "20",
-  "simple_class_name": "TestSerializerProvider",
+  "test_name": "com.fasterxml.jackson.databind.module.TestSimpleModule::testWithoutModule",
+  "line_number": "199",
+  "simple_class_name": "TestSimpleModule",
   "loop": -1
 }

@@ -7,7 +7,7 @@
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    3,
+    0,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.creators.TestPolymorphicDelegating::testAbstractDelegateWithCreator",
-  "line_number": "45",
-  "simple_class_name": "TestPolymorphicDelegating",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestEnumDeserialization::testUnwrappedEnum",
+  "line_number": "438",
+  "simple_class_name": "TestEnumDeserialization",
   "loop": -1
 }

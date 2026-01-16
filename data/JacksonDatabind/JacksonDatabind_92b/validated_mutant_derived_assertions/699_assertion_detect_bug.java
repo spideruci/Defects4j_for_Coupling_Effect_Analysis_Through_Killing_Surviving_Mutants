@@ -1,13 +1,13 @@
 {
   "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectReader",
-  "name": "forType",
+  "owner": "com.fasterxml.jackson.databind.convert.TestConvertingDeserializer",
+  "name": "objectReader",
   "returnType": "com.fasterxml.jackson.databind.ObjectReader",
   "ordinal": 0,
   "readable_access": "var._context._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    4,
+    0,
     "graph",
     "fields",
     "_context",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestCollectionDeserialization::testFromEmptyString",
-  "line_number": "175",
-  "simple_class_name": "TestCollectionDeserialization",
+  "test_name": "com.fasterxml.jackson.databind.convert.TestConvertingDeserializer::testClassAnnotationForLists",
+  "line_number": "134",
+  "simple_class_name": "TestConvertingDeserializer",
   "loop": -1
 }

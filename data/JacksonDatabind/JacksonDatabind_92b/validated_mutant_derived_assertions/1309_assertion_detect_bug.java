@@ -1,23 +1,23 @@
 {
   "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectReader",
-  "name": "with",
-  "returnType": "com.fasterxml.jackson.databind.ObjectReader",
+  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
+  "name": "ObjectMapper",
+  "returnType": "void",
   "ordinal": 0,
-  "readable_access": "var._context._factory.DEFAULT_NO_DESER_CLASS_NAMES",
+  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    6,
+    0,
     "graph",
     "fields",
-    "_context",
+    "_deserializationContext",
     "fields",
     "_factory",
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestInjectables::testTwoInjectablesViaCreator",
-  "line_number": "134",
-  "simple_class_name": "TestInjectables",
+  "test_name": "com.fasterxml.jackson.databind.ObjectMapperTest::testCustomDefaultPrettyPrinter",
+  "line_number": "222",
+  "simple_class_name": "ObjectMapperTest",
   "loop": -1
 }

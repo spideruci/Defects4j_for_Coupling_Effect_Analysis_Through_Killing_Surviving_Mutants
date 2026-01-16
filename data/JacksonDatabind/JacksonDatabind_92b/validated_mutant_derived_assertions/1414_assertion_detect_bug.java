@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.creators.SingleArgCreatorTest",
+  "owner": "com.fasterxml.jackson.databind.ser.TestEnumSerialization",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.creators.SingleArgCreatorTest::testExplicitFactory660a",
-  "line_number": "185",
-  "simple_class_name": "SingleArgCreatorTest",
+  "test_name": "com.fasterxml.jackson.databind.ser.TestEnumSerialization::testEnumAsObjectBroken",
+  "line_number": "364",
+  "simple_class_name": "TestEnumSerialization",
   "loop": -1
 }

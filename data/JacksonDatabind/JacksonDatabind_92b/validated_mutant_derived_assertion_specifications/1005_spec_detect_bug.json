@@ -7,7 +7,7 @@
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    4,
+    0,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestJDKAtomicTypes::testSerPropInclusionNonEmpty",
-  "line_number": "174",
-  "simple_class_name": "TestJDKAtomicTypes",
+  "test_name": "com.fasterxml.jackson.databind.module.TestAbstractTypes::testDefaultingRecursive",
+  "line_number": "70",
+  "simple_class_name": "TestAbstractTypes",
   "loop": -1
 }

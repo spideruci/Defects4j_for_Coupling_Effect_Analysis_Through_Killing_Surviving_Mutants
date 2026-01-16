@@ -7,7 +7,7 @@
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    0,
+    12,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestGenerics::testSimpleNumberBean",
-  "line_number": "57",
-  "simple_class_name": "TestGenerics",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestJdkTypes::testFile",
+  "line_number": "117",
+  "simple_class_name": "TestJdkTypes",
   "loop": -1
 }

@@ -1,23 +1,23 @@
 {
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectReader",
-  "name": "withFormatDetection",
-  "returnType": "com.fasterxml.jackson.databind.ObjectReader",
+  "source": "getField",
+  "owner": "com.fasterxml.jackson.databind.objectid.TestObjectIdSerialization",
+  "name": "MAPPER",
+  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
-  "readable_access": "var._context._factory.DEFAULT_NO_DESER_CLASS_NAMES",
+  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    4,
+    3,
     "graph",
     "fields",
-    "_context",
+    "_deserializationContext",
     "fields",
     "_factory",
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.interop.TestFormatDetection::testInvalid",
-  "line_number": "39",
-  "simple_class_name": "TestFormatDetection",
+  "test_name": "com.fasterxml.jackson.databind.objectid.TestObjectIdSerialization::testSimpleSerializationProperty",
+  "line_number": "214",
+  "simple_class_name": "TestObjectIdSerialization",
   "loop": -1
 }

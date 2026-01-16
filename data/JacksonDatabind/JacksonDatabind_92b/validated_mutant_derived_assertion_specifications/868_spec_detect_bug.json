@@ -1,8 +1,8 @@
 {
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
+  "source": "getField",
+  "owner": "com.fasterxml.jackson.databind.introspect.TestNamingStrategyStd",
+  "name": "_lcWithUndescoreMapper",
+  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.creators.TestValueInstantiator::testCustomMapInstantiator",
-  "line_number": "350",
-  "simple_class_name": "TestValueInstantiator",
+  "test_name": "com.fasterxml.jackson.databind.introspect.TestNamingStrategyStd::testLowerCaseUnchangedNames",
+  "line_number": "246",
+  "simple_class_name": "TestNamingStrategyStd",
   "loop": -1
 }

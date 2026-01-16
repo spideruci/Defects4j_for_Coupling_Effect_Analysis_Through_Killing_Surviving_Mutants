@@ -1,23 +1,23 @@
 {
   "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectReader",
-  "name": "readValues",
-  "returnType": "com.fasterxml.jackson.databind.MappingIterator",
+  "owner": "com.fasterxml.jackson.core.JsonFactory",
+  "name": "createParser",
+  "returnType": "com.fasterxml.jackson.core.JsonParser",
   "ordinal": 0,
-  "readable_access": "var._parser._symbols._longestCollisionList",
+  "readable_access": "var._symbols._symbols.elements",
   "python_access": [
     "metas",
-    15,
+    3,
     "graph",
-    "fields",
-    "_parser",
     "fields",
     "_symbols",
     "fields",
-    "_longestCollisionList"
+    "_symbols",
+    "elements",
+    8
   ],
   "test_name": "com.fasterxml.jackson.databind.seq.ReadValuesTest::testNonRootBeans",
-  "line_number": "255",
+  "line_number": "246",
   "simple_class_name": "ReadValuesTest",
   "loop": -1
 }

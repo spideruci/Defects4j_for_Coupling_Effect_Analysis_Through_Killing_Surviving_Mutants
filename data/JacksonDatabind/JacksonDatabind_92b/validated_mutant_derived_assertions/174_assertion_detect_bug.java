@@ -1,8 +1,8 @@
 {
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
+  "source": "getField",
+  "owner": "com.fasterxml.jackson.databind.convert.TestArrayConversions",
+  "name": "mapper",
+  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.module.TestAbstractTypes::testCollectionDefaulting",
-  "line_number": "46",
-  "simple_class_name": "TestAbstractTypes",
+  "test_name": "com.fasterxml.jackson.databind.convert.TestArrayConversions::testNullXform",
+  "line_number": "24",
+  "simple_class_name": "TestArrayConversions",
   "loop": -1
 }

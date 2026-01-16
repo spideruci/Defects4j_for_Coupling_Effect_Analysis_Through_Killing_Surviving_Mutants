@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.deser.TestEnumDeserialization",
+  "owner": "com.fasterxml.jackson.databind.filter.TestSimpleSerializationIgnore",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestEnumDeserialization::testNumbersToEnums",
-  "line_number": "287",
-  "simple_class_name": "TestEnumDeserialization",
+  "test_name": "com.fasterxml.jackson.databind.filter.TestSimpleSerializationIgnore::testIgnoreType",
+  "line_number": "113",
+  "simple_class_name": "TestSimpleSerializationIgnore",
   "loop": -1
 }

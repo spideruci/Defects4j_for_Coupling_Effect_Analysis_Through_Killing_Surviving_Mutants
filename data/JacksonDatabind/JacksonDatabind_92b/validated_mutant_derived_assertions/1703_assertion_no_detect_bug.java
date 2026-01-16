@@ -7,15 +7,15 @@
   "readable_access": "var._symbols._longestCollisionList",
   "python_access": [
     "metas",
-    3,
+    14,
     "graph",
     "fields",
     "_symbols",
     "fields",
     "_longestCollisionList"
   ],
-  "test_name": "com.fasterxml.jackson.databind.seq.ReadValuesTest::testNonRootBeans",
-  "line_number": "246",
-  "simple_class_name": "ReadValuesTest",
-  "loop": -1
+  "test_name": "com.fasterxml.jackson.databind.ser.TestUntypedSerialization::testFromMap",
+  "line_number": "80",
+  "simple_class_name": "TestUntypedSerialization",
+  "loop": 2
 }

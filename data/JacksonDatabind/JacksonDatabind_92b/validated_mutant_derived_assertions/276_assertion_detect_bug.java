@@ -1,23 +1,23 @@
 {
-  "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.deser.TestDateDeserialization",
-  "name": "MAPPER",
-  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
+  "source": "return",
+  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
+  "name": "reader",
+  "returnType": "com.fasterxml.jackson.databind.ObjectReader",
   "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
+  "readable_access": "var._context._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    9,
+    2,
     "graph",
     "fields",
-    "_deserializationContext",
+    "_context",
     "fields",
     "_factory",
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestDateDeserialization::testDateUtilRFC1123OnNonUSLocales",
-  "line_number": "97",
-  "simple_class_name": "TestDateDeserialization",
+  "test_name": "com.fasterxml.jackson.databind.seq.ReadValuesTest::testNonRootMapsWithObjectReader",
+  "line_number": "297",
+  "simple_class_name": "ReadValuesTest",
   "loop": -1
 }

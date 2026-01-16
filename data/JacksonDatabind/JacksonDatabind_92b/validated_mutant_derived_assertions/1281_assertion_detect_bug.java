@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ext.TestJdk7Types::testPathRoundtrip",
-  "line_number": "15",
-  "simple_class_name": "TestJdk7Types",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestGenerics::testGenericWrapper",
+  "line_number": "67",
+  "simple_class_name": "TestGenerics",
   "loop": -1
 }

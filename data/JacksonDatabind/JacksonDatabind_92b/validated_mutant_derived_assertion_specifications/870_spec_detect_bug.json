@@ -1,13 +1,13 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.introspect.TestNamingStrategyStd",
-  "name": "_lcWithUndescoreMapper",
+  "owner": "com.fasterxml.jackson.databind.seq.ReadValuesTest",
+  "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    0,
+    1,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.introspect.TestNamingStrategyStd::testLowerCaseUnchangedNames",
+  "test_name": "com.fasterxml.jackson.databind.seq.ReadValuesTest::testNonRootBeans",
   "line_number": "246",
-  "simple_class_name": "TestNamingStrategyStd",
+  "simple_class_name": "ReadValuesTest",
   "loop": -1
 }

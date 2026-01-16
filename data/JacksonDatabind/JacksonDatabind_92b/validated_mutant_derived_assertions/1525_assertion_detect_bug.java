@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.deser.TestMapDeserialization",
+  "owner": "com.fasterxml.jackson.databind.jsontype.TestVisibleTypeId",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestMapDeserialization::testKeyWithCreator",
-  "line_number": "488",
-  "simple_class_name": "TestMapDeserialization",
+  "test_name": "com.fasterxml.jackson.databind.jsontype.TestVisibleTypeId::testVisibleWithProperty",
+  "line_number": "164",
+  "simple_class_name": "TestVisibleTypeId",
   "loop": -1
 }

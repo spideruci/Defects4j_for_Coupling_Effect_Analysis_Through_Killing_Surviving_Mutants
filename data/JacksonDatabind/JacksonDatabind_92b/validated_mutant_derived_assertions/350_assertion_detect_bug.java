@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.ser.FieldSerializationTest",
+  "owner": "com.fasterxml.jackson.databind.deser.TestJDKAtomicTypes",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.FieldSerializationTest::testIssue240",
-  "line_number": "206",
-  "simple_class_name": "FieldSerializationTest",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestJDKAtomicTypes::testFilteringOfAtomicReference",
+  "line_number": "197",
+  "simple_class_name": "TestJDKAtomicTypes",
   "loop": -1
 }

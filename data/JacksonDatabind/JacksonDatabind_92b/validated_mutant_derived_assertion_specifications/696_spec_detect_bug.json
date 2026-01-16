@@ -1,23 +1,23 @@
 {
-  "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.ser.TestJdkTypes",
-  "name": "MAPPER",
-  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
+  "source": "return",
+  "owner": "com.fasterxml.jackson.databind.ObjectReader",
+  "name": "withRootName",
+  "returnType": "com.fasterxml.jackson.databind.ObjectReader",
   "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
+  "readable_access": "var._context._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    3,
+    31,
     "graph",
     "fields",
-    "_deserializationContext",
+    "_context",
     "fields",
     "_factory",
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestJdkTypes::testCurrency",
-  "line_number": "68",
-  "simple_class_name": "TestJdkTypes",
+  "test_name": "com.fasterxml.jackson.databind.TestRootName::testRootUsingExplicitConfig",
+  "line_number": "105",
+  "simple_class_name": "TestRootName",
   "loop": -1
 }

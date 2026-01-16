@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.jsontype.TestTypedArrayDeserialization::testBooleanListAsProp",
-  "line_number": "69",
-  "simple_class_name": "TestTypedArrayDeserialization",
+  "test_name": "com.fasterxml.jackson.databind.mixins.TestMixinSerForClass::testClassMixInsTopLevel",
+  "line_number": "72",
+  "simple_class_name": "TestMixinSerForClass",
   "loop": -1
 }

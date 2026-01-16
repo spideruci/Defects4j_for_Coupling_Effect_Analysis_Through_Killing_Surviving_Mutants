@@ -7,7 +7,7 @@
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    5,
+    0,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestJsonValue::testJsonValueWithCustomOverride",
-  "line_number": "278",
-  "simple_class_name": "TestJsonValue",
+  "test_name": "com.fasterxml.jackson.databind.ser.TestSerializationOrder::testOrderWithFeature",
+  "line_number": "132",
+  "simple_class_name": "TestSerializationOrder",
   "loop": -1
 }

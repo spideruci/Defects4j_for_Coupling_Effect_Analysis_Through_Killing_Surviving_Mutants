@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestCustomFactory::testCustomBeanDeserializer",
-  "line_number": "102",
-  "simple_class_name": "TestCustomFactory",
+  "test_name": "com.fasterxml.jackson.databind.introspect.TestAnnotationMerging::testSharedTypeInfoWithCtor",
+  "line_number": "88",
+  "simple_class_name": "TestAnnotationMerging",
   "loop": -1
 }

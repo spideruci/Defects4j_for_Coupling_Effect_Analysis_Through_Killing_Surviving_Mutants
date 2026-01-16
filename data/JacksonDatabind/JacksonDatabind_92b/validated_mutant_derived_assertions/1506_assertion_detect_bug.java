@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestMapSerialization::testDefaultKeySerializer",
-  "line_number": "172",
-  "simple_class_name": "TestMapSerialization",
+  "test_name": "com.fasterxml.jackson.databind.TestRootName::testReconfiguringOfWrapping",
+  "line_number": "56",
+  "simple_class_name": "TestRootName",
   "loop": -1
 }

@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.filter.IgnorePropsForSerTest",
+  "owner": "com.fasterxml.jackson.databind.deser.NumberDeserTest",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.filter.IgnorePropsForSerTest::testIgnoreViaPropsAndClass",
-  "line_number": "122",
-  "simple_class_name": "IgnorePropsForSerTest",
+  "test_name": "com.fasterxml.jackson.databind.deser.NumberDeserTest::testEmptyAsNumber",
+  "line_number": "84",
+  "simple_class_name": "NumberDeserTest",
   "loop": -1
 }

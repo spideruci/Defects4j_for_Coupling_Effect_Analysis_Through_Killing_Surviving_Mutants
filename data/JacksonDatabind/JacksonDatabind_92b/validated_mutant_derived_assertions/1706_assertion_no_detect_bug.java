@@ -1,17 +1,23 @@
 {
   "source": "return",
-  "owner": "com.fasterxml.jackson.databind.struct.PojoAsArray646Test$Outer",
-  "name": "getAttributes",
-  "returnType": "java.util.Map",
+  "owner": "com.fasterxml.jackson.core.JsonFactory",
+  "name": "createParser",
+  "returnType": "com.fasterxml.jackson.core.JsonParser",
   "ordinal": 0,
-  "readable_access": "var.metas",
+  "readable_access": "var._symbols._symbols.elements",
   "python_access": [
     "metas",
-    10,
-    "graph"
+    3,
+    "graph",
+    "fields",
+    "_symbols",
+    "fields",
+    "_symbols",
+    "elements",
+    7
   ],
-  "test_name": "com.fasterxml.jackson.databind.struct.PojoAsArray646Test::testWithCustomTypeId",
-  "line_number": "92",
-  "simple_class_name": "PojoAsArray646Test",
+  "test_name": "com.fasterxml.jackson.databind.seq.ReadValuesTest::testNonRootBeans",
+  "line_number": "246",
+  "simple_class_name": "ReadValuesTest",
   "loop": -1
 }

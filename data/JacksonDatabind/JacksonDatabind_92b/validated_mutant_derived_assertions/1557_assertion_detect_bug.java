@@ -7,7 +7,7 @@
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    0,
+    4,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestBeanSerializer::testModifyEnumSerializer",
-  "line_number": "351",
-  "simple_class_name": "TestBeanSerializer",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestJDKAtomicTypes::testSerPropInclusionAlways",
+  "line_number": "144",
+  "simple_class_name": "TestJDKAtomicTypes",
   "loop": -1
 }

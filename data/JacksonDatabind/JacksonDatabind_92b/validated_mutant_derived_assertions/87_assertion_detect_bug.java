@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestJsonSerialize::testStaticTypingWithLinkedList",
-  "line_number": "208",
-  "simple_class_name": "TestJsonSerialize",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestExceptionHandlingWithDefaultDeserialization::testShouldThrowJsonMappingExceptionWithPathReference",
+  "line_number": "49",
+  "simple_class_name": "TestExceptionHandlingWithDefaultDeserialization",
   "loop": -1
 }

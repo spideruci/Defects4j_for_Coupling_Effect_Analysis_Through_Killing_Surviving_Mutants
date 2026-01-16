@@ -1,7 +1,7 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.jsontype.TestPolymorphicWithDefaultImpl",
-  "name": "MAPPER",
+  "owner": "com.fasterxml.jackson.databind.node.TestDeepCopy",
+  "name": "mapper",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.jsontype.TestPolymorphicWithDefaultImpl::testInvalidTypeId511",
-  "line_number": "194",
-  "simple_class_name": "TestPolymorphicWithDefaultImpl",
+  "test_name": "com.fasterxml.jackson.databind.node.TestDeepCopy::testWithArraySimple",
+  "line_number": "35",
+  "simple_class_name": "TestDeepCopy",
   "loop": -1
 }

@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.mixins.TestMixinSerForFields::testFieldMixInsTopLevel",
-  "line_number": "61",
-  "simple_class_name": "TestMixinSerForFields",
+  "test_name": "com.fasterxml.jackson.databind.introspect.TestNamingStrategyCustom::testLowerCase",
+  "line_number": "233",
+  "simple_class_name": "TestNamingStrategyCustom",
   "loop": -1
 }

@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.jsontype.TestAbstractTypeNames::testEmptyCollection",
-  "line_number": "101",
-  "simple_class_name": "TestAbstractTypeNames",
+  "test_name": "com.fasterxml.jackson.databind.contextual.TestContextualKeyTypes::testSimpleKeyDeser",
+  "line_number": "112",
+  "simple_class_name": "TestContextualKeyTypes",
   "loop": -1
 }

@@ -7,7 +7,7 @@
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    1,
+    7,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.NumberSerTest::testNumbersAsString",
-  "line_number": "71",
+  "test_name": "com.fasterxml.jackson.databind.ser.NumberSerTest::testDouble",
+  "line_number": "50",
   "simple_class_name": "NumberSerTest",
-  "loop": -1
+  "loop": 1
 }

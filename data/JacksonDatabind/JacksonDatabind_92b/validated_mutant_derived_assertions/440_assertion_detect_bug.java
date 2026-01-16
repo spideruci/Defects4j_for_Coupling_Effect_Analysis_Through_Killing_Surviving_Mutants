@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestKeySerializers::testBoth",
-  "line_number": "131",
-  "simple_class_name": "TestKeySerializers",
+  "test_name": "com.fasterxml.jackson.databind.filter.TestUnknownPropertyDeserialization::testUnknownHandlingIgnoreWithHandler",
+  "line_number": "149",
+  "simple_class_name": "TestUnknownPropertyDeserialization",
   "loop": -1
 }

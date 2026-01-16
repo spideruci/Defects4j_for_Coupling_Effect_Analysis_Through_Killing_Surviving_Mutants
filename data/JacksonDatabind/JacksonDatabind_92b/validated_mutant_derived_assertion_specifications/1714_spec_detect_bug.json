@@ -1,23 +1,21 @@
 {
   "source": "return",
   "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
+  "name": "readTree",
+  "returnType": "com.fasterxml.jackson.databind.JsonNode",
   "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
+  "readable_access": "var.elements.elements",
   "python_access": [
     "metas",
-    0,
+    9,
     "graph",
-    "fields",
-    "_deserializationContext",
-    "fields",
-    "_factory",
-    "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
+    "elements",
+    6,
+    "elements",
+    1
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestNullHandling::testPolymorphicDataNull",
-  "line_number": "182",
-  "simple_class_name": "TestNullHandling",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestExceptionDeserialization::testFailingNoSerdeConstructor",
+  "line_number": "165",
+  "simple_class_name": "TestExceptionDeserialization",
   "loop": -1
 }

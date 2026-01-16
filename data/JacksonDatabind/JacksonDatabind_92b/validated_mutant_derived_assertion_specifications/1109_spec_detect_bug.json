@@ -7,7 +7,7 @@
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    0,
+    8,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.node.TestNumberNodes::testBigDecimalAsPlain",
-  "line_number": "270",
-  "simple_class_name": "TestNumberNodes",
+  "test_name": "com.fasterxml.jackson.databind.introspect.TestInferredMutators::testDeserializationInference",
+  "line_number": "56",
+  "simple_class_name": "TestInferredMutators",
   "loop": -1
 }

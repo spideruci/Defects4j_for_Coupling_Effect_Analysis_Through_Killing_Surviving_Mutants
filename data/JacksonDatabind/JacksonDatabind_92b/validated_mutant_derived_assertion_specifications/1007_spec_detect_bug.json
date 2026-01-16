@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.module.TestAbstractTypes::testDefaultingRecursive",
-  "line_number": "70",
-  "simple_class_name": "TestAbstractTypes",
+  "test_name": "com.fasterxml.jackson.databind.creators.TestCreatorsDelegating::testWithCtorAndDelegate",
+  "line_number": "94",
+  "simple_class_name": "TestCreatorsDelegating",
   "loop": -1
 }

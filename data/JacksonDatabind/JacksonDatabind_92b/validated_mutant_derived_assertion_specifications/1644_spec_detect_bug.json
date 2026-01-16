@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.struct.TestForwardReference",
+  "owner": "com.fasterxml.jackson.databind.ser.TestIterable",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.struct.TestForwardReference::testForwardRef",
-  "line_number": "24",
-  "simple_class_name": "TestForwardReference",
+  "test_name": "com.fasterxml.jackson.databind.ser.TestIterable::testWithIterable",
+  "line_number": "123",
+  "simple_class_name": "TestIterable",
   "loop": -1
 }

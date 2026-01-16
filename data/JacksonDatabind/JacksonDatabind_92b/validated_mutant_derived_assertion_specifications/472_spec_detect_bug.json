@@ -1,23 +1,23 @@
 {
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectReader",
-  "name": "withHandler",
-  "returnType": "com.fasterxml.jackson.databind.ObjectReader",
+  "source": "getField",
+  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
+  "name": "_deserializationContext",
+  "returnType": "com.fasterxml.jackson.databind.deser.DefaultDeserializationContext",
   "ordinal": 0,
-  "readable_access": "var._context._factory.DEFAULT_NO_DESER_CLASS_NAMES",
+  "readable_access": "var._factory.DEFAULT_NO_DESER_CLASS_NAMES.elements",
   "python_access": [
     "metas",
-    5,
+    3,
     "graph",
-    "fields",
-    "_context",
     "fields",
     "_factory",
     "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
+    "DEFAULT_NO_DESER_CLASS_NAMES",
+    "elements",
+    8
   ],
-  "test_name": "com.fasterxml.jackson.databind.filter.TestUnknownPropertyDeserialization::testUnknownHandlingIgnoreWithHandlerAndObjectReader",
-  "line_number": "167",
-  "simple_class_name": "TestUnknownPropertyDeserialization",
+  "test_name": "com.fasterxml.jackson.databind.ObjectMapperTest::testProviderConfig",
+  "line_number": "135",
+  "simple_class_name": "ObjectMapperTest",
   "loop": -1
 }

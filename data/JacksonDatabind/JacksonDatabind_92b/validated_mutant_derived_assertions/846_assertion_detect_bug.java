@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestSimpleTypes::testSingleStringWrapped",
-  "line_number": "482",
-  "simple_class_name": "TestSimpleTypes",
+  "test_name": "com.fasterxml.jackson.databind.jsontype.TestDefaultForArrays::testNodeInArray",
+  "line_number": "58",
+  "simple_class_name": "TestDefaultForArrays",
   "loop": -1
 }

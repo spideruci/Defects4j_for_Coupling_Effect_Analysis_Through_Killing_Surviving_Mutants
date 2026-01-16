@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.introspect.TestPOJOPropertiesCollector",
+  "owner": "com.fasterxml.jackson.databind.deser.TestCyclicTypes",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.introspect.TestPOJOPropertiesCollector::testPartialIgnore",
-  "line_number": "297",
-  "simple_class_name": "TestPOJOPropertiesCollector",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestCyclicTypes::testLinked",
+  "line_number": "70",
+  "simple_class_name": "TestCyclicTypes",
   "loop": -1
 }

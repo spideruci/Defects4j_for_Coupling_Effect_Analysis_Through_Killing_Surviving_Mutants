@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestBeanDeserializer::testModifyCollectionDeserializer",
-  "line_number": "330",
-  "simple_class_name": "TestBeanDeserializer",
+  "test_name": "com.fasterxml.jackson.databind.introspect.TestNamingStrategyCustom::testSimpleSetters",
+  "line_number": "183",
+  "simple_class_name": "TestNamingStrategyCustom",
   "loop": -1
 }

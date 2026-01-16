@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.filter.NullSerializationTest",
+  "owner": "com.fasterxml.jackson.databind.ser.TestIterable",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.filter.NullSerializationTest::testSimple",
-  "line_number": "84",
-  "simple_class_name": "NullSerializationTest",
+  "test_name": "com.fasterxml.jackson.databind.ser.TestIterable::testIterable358",
+  "line_number": "132",
+  "simple_class_name": "TestIterable",
   "loop": -1
 }

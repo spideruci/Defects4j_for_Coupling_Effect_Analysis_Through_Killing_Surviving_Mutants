@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestJDKAtomicTypes::testAbsentExclusion",
-  "line_number": "132",
-  "simple_class_name": "TestJDKAtomicTypes",
+  "test_name": "com.fasterxml.jackson.databind.ser.DateSerializationTest::testDateWithJsonFormat",
+  "line_number": "210",
+  "simple_class_name": "DateSerializationTest",
   "loop": -1
 }

@@ -7,7 +7,7 @@
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    4,
+    0,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestKeySerializers::testUnWrappedMapWithKeySerializer",
-  "line_number": "196",
-  "simple_class_name": "TestKeySerializers",
+  "test_name": "com.fasterxml.jackson.databind.creators.TestValueInstantiator::testPolymorphicCreatorBean",
+  "line_number": "554",
+  "simple_class_name": "TestValueInstantiator",
   "loop": -1
 }

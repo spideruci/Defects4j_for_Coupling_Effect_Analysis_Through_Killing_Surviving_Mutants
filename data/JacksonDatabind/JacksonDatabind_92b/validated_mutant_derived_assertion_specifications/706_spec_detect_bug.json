@@ -7,7 +7,7 @@
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    0,
+    1,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.objectid.TestObjectIdDeserialization::testCustomDeserializationProperty",
-  "line_number": "414",
+  "test_name": "com.fasterxml.jackson.databind.objectid.TestObjectIdDeserialization::testKeepCollectionOrdering",
+  "line_number": "361",
   "simple_class_name": "TestObjectIdDeserialization",
   "loop": -1
 }

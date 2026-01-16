@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.TestVersions::testMapperVersions",
-  "line_number": "18",
-  "simple_class_name": "TestVersions",
+  "test_name": "com.fasterxml.jackson.databind.ser.TestConfig::testDateFormatConfig",
+  "line_number": "197",
+  "simple_class_name": "TestConfig",
   "loop": -1
 }

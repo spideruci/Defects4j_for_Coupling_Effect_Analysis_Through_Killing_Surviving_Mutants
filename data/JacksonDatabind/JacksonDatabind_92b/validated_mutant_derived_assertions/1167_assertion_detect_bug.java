@@ -7,7 +7,7 @@
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    1,
+    0,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.node.TestObjectNode::testFailOnDupKeys",
-  "line_number": "349",
-  "simple_class_name": "TestObjectNode",
+  "test_name": "com.fasterxml.jackson.databind.type.LocalTypeTest::testLocalPartialType609",
+  "line_number": "25",
+  "simple_class_name": "LocalTypeTest",
   "loop": -1
 }

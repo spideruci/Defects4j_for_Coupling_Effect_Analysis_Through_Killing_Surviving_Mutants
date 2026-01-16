@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestFeatures::testPerClassAutoDetectionForIsGetter",
-  "line_number": "132",
-  "simple_class_name": "TestFeatures",
+  "test_name": "com.fasterxml.jackson.databind.node.TestTreeMapperSerializer::testNull",
+  "line_number": "131",
+  "simple_class_name": "TestTreeMapperSerializer",
   "loop": -1
 }

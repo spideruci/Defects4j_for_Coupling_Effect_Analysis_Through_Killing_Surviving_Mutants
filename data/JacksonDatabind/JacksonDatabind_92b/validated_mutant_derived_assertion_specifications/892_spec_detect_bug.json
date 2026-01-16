@@ -1,8 +1,8 @@
 {
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
+  "source": "getField",
+  "owner": "com.fasterxml.jackson.databind.introspect.TestPOJOPropertiesCollector",
+  "name": "MAPPER",
+  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.jsontype.TestDefaultForObject::testNonFinalBean",
-  "line_number": "158",
-  "simple_class_name": "TestDefaultForObject",
+  "test_name": "com.fasterxml.jackson.databind.introspect.TestPOJOPropertiesCollector::testPropertyDesc",
+  "line_number": "451",
+  "simple_class_name": "TestPOJOPropertiesCollector",
   "loop": -1
 }

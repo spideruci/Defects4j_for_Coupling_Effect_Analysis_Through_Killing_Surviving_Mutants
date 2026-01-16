@@ -1,13 +1,13 @@
 {
-  "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.convert.TestMapConversions",
-  "name": "MAPPER",
-  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
+  "source": "return",
+  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
+  "name": "ObjectMapper",
+  "returnType": "void",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    6,
+    4,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.convert.TestMapConversions::testMapToBean",
-  "line_number": "75",
-  "simple_class_name": "TestMapConversions",
+  "test_name": "com.fasterxml.jackson.databind.views.TestViewSerialization::testDefaultExclusion",
+  "line_number": "137",
+  "simple_class_name": "TestViewSerialization",
   "loop": -1
 }

@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.jsontype.TestPropertyTypeInfo::testSimpleArrayMethod",
-  "line_number": "157",
-  "simple_class_name": "TestPropertyTypeInfo",
+  "test_name": "com.fasterxml.jackson.databind.ser.TestFeatures::testCloseCloseable",
+  "line_number": "158",
+  "simple_class_name": "TestFeatures",
   "loop": -1
 }

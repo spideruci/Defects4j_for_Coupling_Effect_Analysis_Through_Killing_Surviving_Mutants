@@ -1,17 +1,23 @@
 {
   "source": "return",
-  "owner": "com.fasterxml.jackson.databind.jsontype.TestDefaultForObject$ObjectHolder",
-  "name": "TestDefaultForObject$ObjectHolder",
-  "returnType": "void",
+  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
+  "name": "readerFor",
+  "returnType": "com.fasterxml.jackson.databind.ObjectReader",
   "ordinal": 0,
-  "readable_access": "var.metas",
+  "readable_access": "var._context._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    28,
-    "graph"
+    1,
+    "graph",
+    "fields",
+    "_context",
+    "fields",
+    "_factory",
+    "fields",
+    "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.jsontype.TestDefaultForObject::testTokenBuffer",
-  "line_number": "287",
-  "simple_class_name": "TestDefaultForObject",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestAnnotationIgnore::testFailOnIgnore",
+  "line_number": "60",
+  "simple_class_name": "TestAnnotationIgnore",
   "loop": -1
 }

@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.jsontype.TestWithGenerics::testJackson430",
-  "line_number": "202",
-  "simple_class_name": "TestWithGenerics",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestValueAnnotations::testOverrideContentClassValid",
+  "line_number": "363",
+  "simple_class_name": "TestValueAnnotations",
   "loop": -1
 }

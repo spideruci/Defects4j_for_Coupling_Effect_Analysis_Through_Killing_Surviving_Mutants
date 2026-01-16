@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestBeanSerializer::testPropertyReorder",
-  "line_number": "270",
-  "simple_class_name": "TestBeanSerializer",
+  "test_name": "com.fasterxml.jackson.databind.TestVersions::testMapperVersions",
+  "line_number": "18",
+  "simple_class_name": "TestVersions",
   "loop": -1
 }

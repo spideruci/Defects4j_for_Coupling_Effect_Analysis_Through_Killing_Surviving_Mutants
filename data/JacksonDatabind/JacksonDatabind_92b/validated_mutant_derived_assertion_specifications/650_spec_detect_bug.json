@@ -1,7 +1,7 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.deser.TestEnumDeserialization",
-  "name": "MAPPER",
+  "owner": "com.fasterxml.jackson.databind.ser.TestEmptyClass",
+  "name": "mapper",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestEnumDeserialization::testAnnotated",
-  "line_number": "235",
-  "simple_class_name": "TestEnumDeserialization",
+  "test_name": "com.fasterxml.jackson.databind.ser.TestEmptyClass::testEmptyWithFeature",
+  "line_number": "88",
+  "simple_class_name": "TestEmptyClass",
   "loop": -1
 }

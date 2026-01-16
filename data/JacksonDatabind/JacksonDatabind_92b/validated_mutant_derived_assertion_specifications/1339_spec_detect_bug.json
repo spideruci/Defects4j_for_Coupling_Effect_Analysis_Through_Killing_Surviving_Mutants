@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.introspect.TestNamingStrategyCustom::testCStyleNaming",
-  "line_number": "205",
-  "simple_class_name": "TestNamingStrategyCustom",
+  "test_name": "com.fasterxml.jackson.databind.creators.TestCreatorsDelegating::testDelegateWithTokenBuffer",
+  "line_number": "128",
+  "simple_class_name": "TestCreatorsDelegating",
   "loop": -1
 }

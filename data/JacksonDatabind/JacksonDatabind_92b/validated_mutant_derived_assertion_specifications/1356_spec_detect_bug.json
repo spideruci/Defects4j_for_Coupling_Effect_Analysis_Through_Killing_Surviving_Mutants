@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.jsontype.TestDefaultForEnums::testSimpleEnumsAsField",
-  "line_number": "70",
-  "simple_class_name": "TestDefaultForEnums",
+  "test_name": "com.fasterxml.jackson.databind.module.TestAbstractTypes::testInterfaceDefaulting",
+  "line_number": "98",
+  "simple_class_name": "TestAbstractTypes",
   "loop": -1
 }

@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.convert.TestUpdateValue::testUpdatingWithViews",
-  "line_number": "177",
+  "test_name": "com.fasterxml.jackson.databind.convert.TestUpdateValue::testUpdateSequence",
+  "line_number": "147",
   "simple_class_name": "TestUpdateValue",
   "loop": -1
 }

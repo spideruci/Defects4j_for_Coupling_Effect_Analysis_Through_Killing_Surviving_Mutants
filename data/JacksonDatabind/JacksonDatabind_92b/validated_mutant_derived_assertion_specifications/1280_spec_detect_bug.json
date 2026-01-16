@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.node.TestObjectNode",
+  "owner": "com.fasterxml.jackson.databind.introspect.TestPOJOPropertiesCollector",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.node.TestObjectNode::testValidWithArray",
-  "line_number": "258",
-  "simple_class_name": "TestObjectNode",
+  "test_name": "com.fasterxml.jackson.databind.introspect.TestPOJOPropertiesCollector::testSimpleIgnoreAndRename",
+  "line_number": "349",
+  "simple_class_name": "TestPOJOPropertiesCollector",
   "loop": -1
 }

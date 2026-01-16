@@ -7,7 +7,7 @@
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    0,
+    2,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.filter.JsonIncludeTest::testDefaultForIntegers",
-  "line_number": "207",
+  "test_name": "com.fasterxml.jackson.databind.filter.JsonIncludeTest::testNonDefaultByClass",
+  "line_number": "160",
   "simple_class_name": "JsonIncludeTest",
   "loop": -1
 }

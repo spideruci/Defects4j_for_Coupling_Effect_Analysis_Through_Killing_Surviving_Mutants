@@ -7,7 +7,7 @@
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    1,
+    0,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestSimpleTypes::testSingleString",
-  "line_number": "476",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestSimpleTypes::testUUIDInvalid",
+  "line_number": "660",
   "simple_class_name": "TestSimpleTypes",
   "loop": -1
 }

@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ObjectMapperTest::testProviderConfig",
-  "line_number": "132",
-  "simple_class_name": "ObjectMapperTest",
+  "test_name": "com.fasterxml.jackson.databind.introspect.TestJacksonAnnotationIntrospector::testEnumHandling",
+  "line_number": "202",
+  "simple_class_name": "TestJacksonAnnotationIntrospector",
   "loop": -1
 }

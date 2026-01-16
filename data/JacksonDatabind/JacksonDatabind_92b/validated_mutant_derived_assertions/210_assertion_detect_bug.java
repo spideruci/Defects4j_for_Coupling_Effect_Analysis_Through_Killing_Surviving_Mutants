@@ -7,7 +7,7 @@
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    0,
+    3,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestValueAnnotations::testOverrideKeyClassInvalid",
-  "line_number": "346",
-  "simple_class_name": "TestValueAnnotations",
+  "test_name": "com.fasterxml.jackson.databind.jsontype.AbstracTypeMapping1186Test::testDeserializeMyContainer",
+  "line_number": "37",
+  "simple_class_name": "AbstracTypeMapping1186Test",
   "loop": -1
 }

@@ -7,7 +7,7 @@
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    7,
+    0,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.jsontype.TestDefaultForObject::testNonFinalBean",
-  "line_number": "164",
-  "simple_class_name": "TestDefaultForObject",
+  "test_name": "com.fasterxml.jackson.databind.node.TestTreeWithType::testIssue353",
+  "line_number": "111",
+  "simple_class_name": "TestTreeWithType",
   "loop": -1
 }

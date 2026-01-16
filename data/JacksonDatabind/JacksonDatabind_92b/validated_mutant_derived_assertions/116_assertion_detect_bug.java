@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.node.TestJsonNode::testArrayWithDefaultTyping",
-  "line_number": "180",
-  "simple_class_name": "TestJsonNode",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestJDKAtomicTypes::testNullValueHandling",
+  "line_number": "258",
+  "simple_class_name": "TestJDKAtomicTypes",
   "loop": -1
 }

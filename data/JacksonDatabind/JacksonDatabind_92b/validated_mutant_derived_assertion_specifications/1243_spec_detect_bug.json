@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestJacksonTypes::testTokenBufferWithSequence",
-  "line_number": "60",
-  "simple_class_name": "TestJacksonTypes",
+  "test_name": "com.fasterxml.jackson.databind.jsontype.TestDefaultForScalars::testMiscScalars",
+  "line_number": "68",
+  "simple_class_name": "TestDefaultForScalars",
   "loop": -1
 }

@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.contextual.TestContextualSerialization::testMethodAnnotations",
-  "line_number": "205",
-  "simple_class_name": "TestContextualSerialization",
+  "test_name": "com.fasterxml.jackson.databind.mixins.TestMixinDeserForCreators::testForFactoryAndCtor",
+  "line_number": "96",
+  "simple_class_name": "TestMixinDeserForCreators",
   "loop": -1
 }

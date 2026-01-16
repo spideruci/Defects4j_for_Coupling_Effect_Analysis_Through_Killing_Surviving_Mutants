@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.deser.TestBasicAnnotations",
+  "owner": "com.fasterxml.jackson.databind.jsontype.TestPolymorphicWithDefaultImpl",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestBasicAnnotations::testSimpleSetter",
-  "line_number": "118",
-  "simple_class_name": "TestBasicAnnotations",
+  "test_name": "com.fasterxml.jackson.databind.jsontype.TestPolymorphicWithDefaultImpl::testDefaultAsVoid",
+  "line_number": "175",
+  "simple_class_name": "TestPolymorphicWithDefaultImpl",
   "loop": -1
 }

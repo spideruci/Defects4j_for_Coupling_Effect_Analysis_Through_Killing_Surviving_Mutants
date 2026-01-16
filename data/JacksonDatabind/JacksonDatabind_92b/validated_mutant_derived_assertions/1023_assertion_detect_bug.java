@@ -1,8 +1,8 @@
 {
   "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
+  "owner": "com.fasterxml.jackson.databind.views.TestViewsSerialization2",
+  "name": "createObjectMapper",
+  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestObjectOrArrayDeserialization::testEmptyArrayCase",
-  "line_number": "39",
-  "simple_class_name": "TestObjectOrArrayDeserialization",
+  "test_name": "com.fasterxml.jackson.databind.views.TestViewsSerialization2::testDataBindingUsageWithoutView",
+  "line_number": "26",
+  "simple_class_name": "TestViewsSerialization2",
   "loop": -1
 }

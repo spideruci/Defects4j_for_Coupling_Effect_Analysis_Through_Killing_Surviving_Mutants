@@ -1,13 +1,13 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.deser.TestJDKAtomicTypes",
+  "owner": "com.fasterxml.jackson.databind.node.TestObjectNode",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    5,
+    1,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestJDKAtomicTypes::testTypeRefinement",
-  "line_number": "218",
-  "simple_class_name": "TestJDKAtomicTypes",
+  "test_name": "com.fasterxml.jackson.databind.node.TestObjectNode::testSimpleObject",
+  "line_number": "74",
+  "simple_class_name": "TestObjectNode",
   "loop": -1
 }

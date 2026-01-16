@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.jsontype.TestDefaultForEnums::testSimpleEnumsInObjectArray",
-  "line_number": "55",
-  "simple_class_name": "TestDefaultForEnums",
+  "test_name": "com.fasterxml.jackson.databind.mixins.TestMixinSerForFields::testMultipleFieldMixIns",
+  "line_number": "81",
+  "simple_class_name": "TestMixinSerForFields",
   "loop": -1
 }

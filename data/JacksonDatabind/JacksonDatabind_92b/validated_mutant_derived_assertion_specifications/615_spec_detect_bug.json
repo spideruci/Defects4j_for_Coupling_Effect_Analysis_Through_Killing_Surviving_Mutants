@@ -1,23 +1,19 @@
 {
-  "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.deser.TestCustomDeserializers",
-  "name": "MAPPER",
-  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
+  "source": "return",
+  "owner": "com.fasterxml.jackson.databind.TestJDKSerialization",
+  "name": "jdkSerialize",
+  "returnType": "byte[]",
   "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
+  "readable_access": "var.elements",
   "python_access": [
     "metas",
-    4,
+    19,
     "graph",
-    "fields",
-    "_deserializationContext",
-    "fields",
-    "_factory",
-    "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
+    "elements",
+    0
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestCustomDeserializers::testIssue882",
-  "line_number": "356",
-  "simple_class_name": "TestCustomDeserializers",
+  "test_name": "com.fasterxml.jackson.databind.TestJDKSerialization::testEnumHandlers",
+  "line_number": "93",
+  "simple_class_name": "TestJDKSerialization",
   "loop": -1
 }

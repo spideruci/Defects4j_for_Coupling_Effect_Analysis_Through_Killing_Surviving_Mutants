@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.node.TestJsonNode",
+  "owner": "com.fasterxml.jackson.databind.convert.TestBeanConversions",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.node.TestJsonNode::testCustomComparators",
-  "line_number": "126",
-  "simple_class_name": "TestJsonNode",
+  "test_name": "com.fasterxml.jackson.databind.convert.TestBeanConversions::testNodeConvert",
+  "line_number": "176",
+  "simple_class_name": "TestBeanConversions",
   "loop": -1
 }

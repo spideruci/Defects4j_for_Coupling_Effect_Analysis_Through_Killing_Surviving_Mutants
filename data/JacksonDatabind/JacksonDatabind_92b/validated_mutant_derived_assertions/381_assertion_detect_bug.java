@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.jsontype.TestDefaultForObject::testNullValue",
-  "line_number": "172",
-  "simple_class_name": "TestDefaultForObject",
+  "test_name": "com.fasterxml.jackson.databind.creators.TestValueInstantiator::testBeanFromString",
+  "line_number": "454",
+  "simple_class_name": "TestValueInstantiator",
   "loop": -1
 }

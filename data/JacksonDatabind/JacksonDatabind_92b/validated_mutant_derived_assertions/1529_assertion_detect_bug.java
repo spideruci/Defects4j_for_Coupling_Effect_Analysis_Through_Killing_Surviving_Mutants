@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestStatics::testStaticFields",
-  "line_number": "49",
-  "simple_class_name": "TestStatics",
+  "test_name": "com.fasterxml.jackson.databind.ser.TestExceptionSerialization::testSimple",
+  "line_number": "21",
+  "simple_class_name": "TestExceptionSerialization",
   "loop": -1
 }

@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestAnnotationInheritance::testSimpleGetterInheritance",
-  "line_number": "77",
-  "simple_class_name": "TestAnnotationInheritance",
+  "test_name": "com.fasterxml.jackson.databind.jsontype.TestWithGenerics::testJackson430",
+  "line_number": "202",
+  "simple_class_name": "TestWithGenerics",
   "loop": -1
 }

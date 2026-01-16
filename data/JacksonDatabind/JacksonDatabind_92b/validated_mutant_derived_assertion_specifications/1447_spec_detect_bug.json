@@ -1,13 +1,13 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.objectid.TestObjectIdWithPolymorphic",
-  "name": "mapper",
+  "owner": "com.fasterxml.jackson.databind.ser.TestEnumSerialization",
+  "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    4,
+    0,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.objectid.TestObjectIdWithPolymorphic::testPolymorphicRoundtrip",
-  "line_number": "119",
-  "simple_class_name": "TestObjectIdWithPolymorphic",
+  "test_name": "com.fasterxml.jackson.databind.ser.TestEnumSerialization::testOverrideEnumAsString",
+  "line_number": "380",
+  "simple_class_name": "TestEnumSerialization",
   "loop": -1
 }

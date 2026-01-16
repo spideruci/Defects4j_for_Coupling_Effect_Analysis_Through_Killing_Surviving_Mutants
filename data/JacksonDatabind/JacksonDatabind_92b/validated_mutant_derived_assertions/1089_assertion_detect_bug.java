@@ -1,13 +1,13 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.ser.TestEnumSerialization",
+  "owner": "com.fasterxml.jackson.databind.TestObjectMapperBeanDeserializer",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    0,
+    1,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestEnumSerialization::testEnumsWithJsonPropertyInSet",
-  "line_number": "432",
-  "simple_class_name": "TestEnumSerialization",
+  "test_name": "com.fasterxml.jackson.databind.TestObjectMapperBeanDeserializer::testFromLongCtor",
+  "line_number": "229",
+  "simple_class_name": "TestObjectMapperBeanDeserializer",
   "loop": -1
 }

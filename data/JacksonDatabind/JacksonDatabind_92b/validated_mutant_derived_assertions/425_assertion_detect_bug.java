@@ -1,23 +1,23 @@
 {
   "source": "return",
   "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
+  "name": "readerFor",
+  "returnType": "com.fasterxml.jackson.databind.ObjectReader",
   "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
+  "readable_access": "var._context._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    26,
+    2,
     "graph",
     "fields",
-    "_deserializationContext",
+    "_context",
     "fields",
     "_factory",
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestSimpleTypes::testDoublePrimitive",
-  "line_number": "189",
-  "simple_class_name": "TestSimpleTypes",
+  "test_name": "com.fasterxml.jackson.databind.seq.ObjectReaderTest::testPointerLoadingAsJsonNode",
+  "line_number": "65",
+  "simple_class_name": "ObjectReaderTest",
   "loop": -1
 }

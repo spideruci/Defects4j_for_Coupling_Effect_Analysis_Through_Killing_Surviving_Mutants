@@ -1,13 +1,13 @@
 {
-  "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.deser.TestMapDeserialization",
-  "name": "MAPPER",
-  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
+  "source": "return",
+  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
+  "name": "ObjectMapper",
+  "returnType": "void",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    1,
+    0,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestMapDeserialization::testUntypedMap",
-  "line_number": "97",
-  "simple_class_name": "TestMapDeserialization",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestArrayDeserialization::testCustomDeserializers",
+  "line_number": "578",
+  "simple_class_name": "TestArrayDeserialization",
   "loop": -1
 }

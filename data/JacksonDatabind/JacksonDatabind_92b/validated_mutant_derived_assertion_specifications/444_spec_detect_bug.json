@@ -1,13 +1,13 @@
 {
-  "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.util.TestTokenBuffer",
-  "name": "MAPPER",
-  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
+  "source": "return",
+  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
+  "name": "ObjectMapper",
+  "returnType": "void",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    4,
+    0,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.util.TestTokenBuffer::testOutputContext",
-  "line_number": "261",
-  "simple_class_name": "TestTokenBuffer",
+  "test_name": "com.fasterxml.jackson.databind.ser.TestExceptionHandling::testExceptionWithSimpleMapper",
+  "line_number": "85",
+  "simple_class_name": "TestExceptionHandling",
   "loop": -1
 }

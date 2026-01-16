@@ -1,13 +1,13 @@
 {
   "source": "return",
   "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
+  "name": "copy",
+  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    0,
+    18,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ObjectMapperTest::testConfigForPropertySorting",
-  "line_number": "93",
+  "test_name": "com.fasterxml.jackson.databind.ObjectMapperTest::testCopy",
+  "line_number": "168",
   "simple_class_name": "ObjectMapperTest",
   "loop": -1
 }

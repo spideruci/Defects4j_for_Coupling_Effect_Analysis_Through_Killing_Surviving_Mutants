@@ -1,8 +1,8 @@
 {
-  "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.jsontype.TestSubtypes",
-  "name": "MAPPER",
-  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
+  "source": "return",
+  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
+  "name": "ObjectMapper",
+  "returnType": "void",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.jsontype.TestSubtypes::testDefaultImplViaModule",
-  "line_number": "274",
-  "simple_class_name": "TestSubtypes",
+  "test_name": "com.fasterxml.jackson.databind.node.TestConversions::testTreeToValue",
+  "line_number": "124",
+  "simple_class_name": "TestConversions",
   "loop": -1
 }

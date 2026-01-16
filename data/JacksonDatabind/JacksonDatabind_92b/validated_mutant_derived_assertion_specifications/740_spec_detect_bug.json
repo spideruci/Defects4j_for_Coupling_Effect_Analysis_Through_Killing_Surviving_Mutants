@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.jsontype.PolymorphicViaRefTypeTest::testAtomicRefViaDefaultTyping",
-  "line_number": "64",
-  "simple_class_name": "PolymorphicViaRefTypeTest",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestValueAnnotations::testOverrideArrayClass",
+  "line_number": "261",
+  "simple_class_name": "TestValueAnnotations",
   "loop": -1
 }

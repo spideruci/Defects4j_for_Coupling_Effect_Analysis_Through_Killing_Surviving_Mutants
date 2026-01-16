@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.deser.TestSimpleTypes",
+  "owner": "com.fasterxml.jackson.databind.ser.RawValueTest",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestSimpleTypes::testFloatPrimitiveNonNumeric",
-  "line_number": "242",
-  "simple_class_name": "TestSimpleTypes",
+  "test_name": "com.fasterxml.jackson.databind.ser.RawValueTest::testSimpleNonStringGetter",
+  "line_number": "69",
+  "simple_class_name": "RawValueTest",
   "loop": -1
 }

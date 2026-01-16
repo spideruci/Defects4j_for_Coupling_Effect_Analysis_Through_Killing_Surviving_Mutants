@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.contextual.TestContextualSerialization::testMethodAnnotationInMap",
-  "line_number": "257",
-  "simple_class_name": "TestContextualSerialization",
+  "test_name": "com.fasterxml.jackson.databind.creators.TestValueInstantiator::testBeanFromDouble",
+  "line_number": "508",
+  "simple_class_name": "TestValueInstantiator",
   "loop": -1
 }

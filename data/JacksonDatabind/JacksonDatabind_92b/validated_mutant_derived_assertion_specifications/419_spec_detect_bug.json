@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.deser.TestCyclicTypes",
+  "owner": "com.fasterxml.jackson.databind.ser.TestConfig",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestCyclicTypes::testIgnoredCycle",
-  "line_number": "105",
-  "simple_class_name": "TestCyclicTypes",
+  "test_name": "com.fasterxml.jackson.databind.ser.TestConfig::testIndentWithPassedGenerator",
+  "line_number": "165",
+  "simple_class_name": "TestConfig",
   "loop": -1
 }

@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestExceptionHandling::testExceptionWithEmpty",
-  "line_number": "54",
-  "simple_class_name": "TestExceptionHandling",
+  "test_name": "com.fasterxml.jackson.databind.seq.PolyMapWriter827Test::testPolyCustomKeySerializer",
+  "line_number": "35",
+  "simple_class_name": "PolyMapWriter827Test",
   "loop": -1
 }

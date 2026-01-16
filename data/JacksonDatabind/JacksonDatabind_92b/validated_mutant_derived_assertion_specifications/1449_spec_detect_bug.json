@@ -7,7 +7,7 @@
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    1,
+    0,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.node.TestConversions::testTreeToValue",
-  "line_number": "124",
-  "simple_class_name": "TestConversions",
+  "test_name": "com.fasterxml.jackson.databind.type.TestTypeFactory::testSneakyBeanProperties",
+  "line_number": "436",
+  "simple_class_name": "TestTypeFactory",
   "loop": -1
 }

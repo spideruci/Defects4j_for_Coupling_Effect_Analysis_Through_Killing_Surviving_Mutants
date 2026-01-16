@@ -1,13 +1,13 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.filter.JsonIncludeTest",
+  "owner": "com.fasterxml.jackson.databind.filter.IgnorePropsForSerTest",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    0,
+    2,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.filter.JsonIncludeTest::testGlobal",
-  "line_number": "138",
-  "simple_class_name": "JsonIncludeTest",
+  "test_name": "com.fasterxml.jackson.databind.filter.IgnorePropsForSerTest::testExplicitIgnoralWithBean",
+  "line_number": "78",
+  "simple_class_name": "IgnorePropsForSerTest",
   "loop": -1
 }

@@ -7,7 +7,7 @@
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    4,
+    0,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestMapDeserialization::testMapFromEmptyArray",
-  "line_number": "307",
-  "simple_class_name": "TestMapDeserialization",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestConfig::testNoAccessOverrides",
+  "line_number": "114",
+  "simple_class_name": "TestConfig",
   "loop": -1
 }

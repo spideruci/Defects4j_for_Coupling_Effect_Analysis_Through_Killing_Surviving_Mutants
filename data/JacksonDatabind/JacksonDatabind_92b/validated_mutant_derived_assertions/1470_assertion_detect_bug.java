@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.mixins.TestMixinDeserForCreators::testForConstructor",
-  "line_number": "88",
-  "simple_class_name": "TestMixinDeserForCreators",
+  "test_name": "com.fasterxml.jackson.databind.ser.TestFeatures::testVisibilityFeatures",
+  "line_number": "285",
+  "simple_class_name": "TestFeatures",
   "loop": -1
 }

@@ -1,13 +1,13 @@
 {
   "source": "return",
   "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "reader",
+  "name": "readerFor",
   "returnType": "com.fasterxml.jackson.databind.ObjectReader",
   "ordinal": 0,
   "readable_access": "var._context._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    2,
+    8,
     "graph",
     "fields",
     "_context",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.UntypedNumbersTest::testIntTypeOverride",
-  "line_number": "50",
-  "simple_class_name": "UntypedNumbersTest",
+  "test_name": "com.fasterxml.jackson.databind.seq.ReadValuesTest::testNonRootMapsWithParser",
+  "line_number": "278",
+  "simple_class_name": "ReadValuesTest",
   "loop": -1
 }

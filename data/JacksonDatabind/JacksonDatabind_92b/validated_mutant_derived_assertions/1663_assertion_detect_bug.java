@@ -1,7 +1,7 @@
 {
-  "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.deser.UntypedNumbersTest",
-  "name": "MAPPER",
+  "source": "return",
+  "owner": "com.fasterxml.jackson.databind.introspect.TestScalaLikeImplicitProperties",
+  "name": "manglingMapper",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.UntypedNumbersTest::testFpTypeOverrideSimple",
-  "line_number": "78",
-  "simple_class_name": "UntypedNumbersTest",
+  "test_name": "com.fasterxml.jackson.databind.introspect.TestScalaLikeImplicitProperties::testVarProperty",
+  "line_number": "142",
+  "simple_class_name": "TestScalaLikeImplicitProperties",
   "loop": -1
 }

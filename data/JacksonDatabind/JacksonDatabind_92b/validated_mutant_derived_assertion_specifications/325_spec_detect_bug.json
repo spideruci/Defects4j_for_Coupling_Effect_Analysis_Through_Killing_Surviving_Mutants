@@ -7,7 +7,7 @@
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    1,
+    0,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.TestFormatSchema::testFormatForGenerators",
-  "line_number": "262",
-  "simple_class_name": "TestFormatSchema",
+  "test_name": "com.fasterxml.jackson.databind.misc.TestJSONP::testSimpleBean",
+  "line_number": "35",
+  "simple_class_name": "TestJSONP",
   "loop": -1
 }

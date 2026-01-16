@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestEnumDeserialization::testDoNotAllowUnknownEnumValuesAsMapKeysWhenReadAsNullDisabled",
-  "line_number": "390",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestEnumDeserialization::testEnumsWithJsonValue",
+  "line_number": "323",
   "simple_class_name": "TestEnumDeserialization",
   "loop": -1
 }

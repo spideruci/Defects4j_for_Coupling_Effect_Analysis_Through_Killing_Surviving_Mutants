@@ -1,8 +1,8 @@
 {
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
+  "source": "getField",
+  "owner": "com.fasterxml.jackson.databind.deser.TestCyclicTypes",
+  "name": "MAPPER",
+  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.TestJDKSerialization::testEnumHandlers",
-  "line_number": "73",
-  "simple_class_name": "TestJDKSerialization",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestCyclicTypes::testLinkedGeneric",
+  "line_number": "85",
+  "simple_class_name": "TestCyclicTypes",
   "loop": -1
 }

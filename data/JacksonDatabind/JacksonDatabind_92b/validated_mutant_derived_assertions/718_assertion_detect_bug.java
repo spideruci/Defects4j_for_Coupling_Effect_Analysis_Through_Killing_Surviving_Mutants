@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestNullHandling::testListOfNulls",
-  "line_number": "135",
-  "simple_class_name": "TestNullHandling",
+  "test_name": "com.fasterxml.jackson.databind.jsontype.TestDefaultForObject::testBeanAsObjectUsingAsProperty",
+  "line_number": "111",
+  "simple_class_name": "TestDefaultForObject",
   "loop": -1
 }

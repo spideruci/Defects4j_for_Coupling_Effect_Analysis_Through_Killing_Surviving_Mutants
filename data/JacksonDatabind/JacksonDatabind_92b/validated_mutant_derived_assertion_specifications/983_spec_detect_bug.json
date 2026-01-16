@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.jsonschema.NewSchemaTest::testSimpleNumbers",
-  "line_number": "143",
+  "test_name": "com.fasterxml.jackson.databind.jsonschema.NewSchemaTest::testJsonValueFormatHandling",
+  "line_number": "132",
   "simple_class_name": "NewSchemaTest",
   "loop": -1
 }

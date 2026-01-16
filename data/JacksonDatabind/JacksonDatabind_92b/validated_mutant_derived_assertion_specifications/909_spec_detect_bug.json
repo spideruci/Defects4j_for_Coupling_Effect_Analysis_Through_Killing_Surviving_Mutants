@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.introspect.TestAnnotionBundles",
+  "owner": "com.fasterxml.jackson.databind.TestJDKSerialization",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.introspect.TestAnnotionBundles::testBundledIgnore",
-  "line_number": "120",
-  "simple_class_name": "TestAnnotionBundles",
+  "test_name": "com.fasterxml.jackson.databind.TestJDKSerialization::testObjectWriter",
+  "line_number": "106",
+  "simple_class_name": "TestJDKSerialization",
   "loop": -1
 }

@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.creators.TestPolymorphicCreators",
+  "owner": "com.fasterxml.jackson.databind.struct.TestUnwrapped",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.creators.TestPolymorphicCreators::testManualPolymorphicDog",
-  "line_number": "102",
-  "simple_class_name": "TestPolymorphicCreators",
+  "test_name": "com.fasterxml.jackson.databind.struct.TestUnwrapped::testDeepUnwrapping",
+  "line_number": "151",
+  "simple_class_name": "TestUnwrapped",
   "loop": -1
 }

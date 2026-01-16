@@ -7,7 +7,7 @@
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    11,
+    0,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestKeySerializers::testCustomEnumInnerMapKey",
-  "line_number": "158",
-  "simple_class_name": "TestKeySerializers",
+  "test_name": "com.fasterxml.jackson.databind.ObjectMapperTest::testCopyOfParserFeatures",
+  "line_number": "289",
+  "simple_class_name": "ObjectMapperTest",
   "loop": -1
 }

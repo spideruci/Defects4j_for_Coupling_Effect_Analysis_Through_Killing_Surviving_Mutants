@@ -7,7 +7,7 @@
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    11,
+    0,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestTimestampDeserialization::testTimestampUtil",
-  "line_number": "24",
-  "simple_class_name": "TestTimestampDeserialization",
+  "test_name": "com.fasterxml.jackson.databind.jsontype.TestDefaultForEnums::testSimpleEnumsInObjectArray",
+  "line_number": "55",
+  "simple_class_name": "TestDefaultForEnums",
   "loop": -1
 }

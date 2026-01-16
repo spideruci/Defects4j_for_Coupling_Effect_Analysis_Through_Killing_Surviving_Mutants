@@ -7,7 +7,7 @@
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    0,
+    3,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestBeanSerializer::testEmptyBean",
-  "line_number": "294",
-  "simple_class_name": "TestBeanSerializer",
+  "test_name": "com.fasterxml.jackson.databind.filter.NullSerializationTest::testOverriddenDefaultNulls",
+  "line_number": "91",
+  "simple_class_name": "NullSerializationTest",
   "loop": -1
 }

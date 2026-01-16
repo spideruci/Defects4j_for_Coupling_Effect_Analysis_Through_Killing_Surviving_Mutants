@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.ser.TestSimpleTypes",
+  "owner": "com.fasterxml.jackson.databind.creators.TestCreators",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestSimpleTypes::testShortArray",
-  "line_number": "66",
-  "simple_class_name": "TestSimpleTypes",
+  "test_name": "com.fasterxml.jackson.databind.creators.TestCreators::testMultipleCreators",
+  "line_number": "395",
+  "simple_class_name": "TestCreators",
   "loop": -1
 }

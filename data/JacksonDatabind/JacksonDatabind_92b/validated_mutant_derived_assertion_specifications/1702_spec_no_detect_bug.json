@@ -1,17 +1,23 @@
 {
   "source": "return",
-  "owner": "com.fasterxml.jackson.databind.deser.TestObjectOrArrayDeserialization$ArrayOrObject",
-  "name": "access$000",
-  "returnType": "java.util.List",
+  "owner": "com.fasterxml.jackson.core.JsonFactory",
+  "name": "createParser",
+  "returnType": "com.fasterxml.jackson.core.JsonParser",
   "ordinal": 0,
-  "readable_access": "var.metas",
+  "readable_access": "var._symbols._parent._longestCollisionList",
   "python_access": [
     "metas",
-    3,
-    "graph"
+    14,
+    "graph",
+    "fields",
+    "_symbols",
+    "fields",
+    "_parent",
+    "fields",
+    "_longestCollisionList"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestObjectOrArrayDeserialization::testNotEmptyArrayCase",
-  "line_number": "47",
-  "simple_class_name": "TestObjectOrArrayDeserialization",
-  "loop": -1
+  "test_name": "com.fasterxml.jackson.databind.ser.TestUntypedSerialization::testFromMap",
+  "line_number": "80",
+  "simple_class_name": "TestUntypedSerialization",
+  "loop": 1
 }

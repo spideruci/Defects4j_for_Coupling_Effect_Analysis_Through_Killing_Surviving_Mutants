@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.ExceptionFromCustomEnumKeyDeserializerTest::testLostMessage",
-  "line_number": "89",
-  "simple_class_name": "ExceptionFromCustomEnumKeyDeserializerTest",
+  "test_name": "com.fasterxml.jackson.databind.creators.TestValueInstantiator::testBeanFromLong",
+  "line_number": "490",
+  "simple_class_name": "TestValueInstantiator",
   "loop": -1
 }

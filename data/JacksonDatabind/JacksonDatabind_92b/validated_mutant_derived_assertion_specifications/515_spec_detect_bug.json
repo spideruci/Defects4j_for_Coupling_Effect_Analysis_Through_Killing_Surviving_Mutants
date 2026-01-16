@@ -1,7 +1,7 @@
 {
-  "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.deser.TestOverloaded",
-  "name": "MAPPER",
+  "source": "return",
+  "owner": "com.fasterxml.jackson.databind.introspect.TestScalaLikeImplicitProperties",
+  "name": "manglingMapper",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestOverloaded::testSetterConflict",
-  "line_number": "151",
-  "simple_class_name": "TestOverloaded",
+  "test_name": "com.fasterxml.jackson.databind.introspect.TestScalaLikeImplicitProperties::testValProperty",
+  "line_number": "127",
+  "simple_class_name": "TestScalaLikeImplicitProperties",
   "loop": -1
 }

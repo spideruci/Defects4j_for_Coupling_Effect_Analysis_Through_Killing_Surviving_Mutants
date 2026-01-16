@@ -1,23 +1,23 @@
 {
   "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
+  "owner": "com.fasterxml.jackson.core.JsonFactory",
+  "name": "createParser",
+  "returnType": "com.fasterxml.jackson.core.JsonParser",
   "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
+  "readable_access": "var._symbols._symbols.elements",
   "python_access": [
     "metas",
-    0,
+    14,
     "graph",
     "fields",
-    "_deserializationContext",
+    "_symbols",
     "fields",
-    "_factory",
-    "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
+    "_symbols",
+    "elements",
+    3
   ],
-  "test_name": "com.fasterxml.jackson.databind.creators.TestCreatorWithPolymorphic113::testSubtypes",
-  "line_number": "55",
-  "simple_class_name": "TestCreatorWithPolymorphic113",
-  "loop": -1
+  "test_name": "com.fasterxml.jackson.databind.ser.TestUntypedSerialization::testFromMap",
+  "line_number": "80",
+  "simple_class_name": "TestUntypedSerialization",
+  "loop": 1
 }

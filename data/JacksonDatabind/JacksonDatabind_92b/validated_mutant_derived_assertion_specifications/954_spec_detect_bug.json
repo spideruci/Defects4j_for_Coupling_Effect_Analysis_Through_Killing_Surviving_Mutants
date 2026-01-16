@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.DateSerializationTest::testDateISO8601",
-  "line_number": "115",
-  "simple_class_name": "DateSerializationTest",
+  "test_name": "com.fasterxml.jackson.databind.module.TestSimpleModule::testSimpleBeanSerializer",
+  "line_number": "225",
+  "simple_class_name": "TestSimpleModule",
   "loop": -1
 }

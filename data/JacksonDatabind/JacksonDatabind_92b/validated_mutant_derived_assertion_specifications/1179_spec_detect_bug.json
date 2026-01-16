@@ -7,7 +7,7 @@
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    7,
+    0,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.jsontype.TestTypedArraySerialization::testGenericArray",
-  "line_number": "151",
-  "simple_class_name": "TestTypedArraySerialization",
+  "test_name": "com.fasterxml.jackson.databind.ser.TestBeanSerializer::testPropertyReorder",
+  "line_number": "270",
+  "simple_class_name": "TestBeanSerializer",
   "loop": -1
 }

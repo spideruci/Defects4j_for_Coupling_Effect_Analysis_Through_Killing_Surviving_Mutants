@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestAnnotationUsing::testMapKeyUsing",
-  "line_number": "204",
-  "simple_class_name": "TestAnnotationUsing",
+  "test_name": "com.fasterxml.jackson.databind.creators.TestValueInstantiator::testDelegateListInstantiator",
+  "line_number": "375",
+  "simple_class_name": "TestValueInstantiator",
   "loop": -1
 }

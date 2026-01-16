@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.node.TestTreeTraversingParser::testDataBind",
-  "line_number": "248",
-  "simple_class_name": "TestTreeTraversingParser",
+  "test_name": "com.fasterxml.jackson.databind.deser.ExceptionFromCustomEnumKeyDeserializerTest::testLostMessage",
+  "line_number": "89",
+  "simple_class_name": "ExceptionFromCustomEnumKeyDeserializerTest",
   "loop": -1
 }

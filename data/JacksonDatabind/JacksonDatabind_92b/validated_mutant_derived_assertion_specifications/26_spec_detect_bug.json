@@ -1,13 +1,13 @@
 {
-  "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.seq.ObjectReaderTest",
-  "name": "MAPPER",
-  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
+  "source": "return",
+  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
+  "name": "ObjectMapper",
+  "returnType": "void",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    1,
+    0,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.seq.ObjectReaderTest::testPointerLoadingMappingIteratorMany",
-  "line_number": "90",
-  "simple_class_name": "ObjectReaderTest",
+  "test_name": "com.fasterxml.jackson.databind.node.TestTreeTraversingParser::testSkipChildrenWrt370",
+  "line_number": "268",
+  "simple_class_name": "TestTreeTraversingParser",
   "loop": -1
 }

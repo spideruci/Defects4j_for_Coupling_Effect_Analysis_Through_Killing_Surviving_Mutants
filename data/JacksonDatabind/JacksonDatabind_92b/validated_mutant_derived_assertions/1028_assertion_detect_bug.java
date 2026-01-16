@@ -7,7 +7,7 @@
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    4,
+    0,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestJacksonTypes::testLocation",
-  "line_number": "20",
-  "simple_class_name": "TestJacksonTypes",
+  "test_name": "com.fasterxml.jackson.databind.ser.TestTypedRootValueSerialization::testTypedLists",
+  "line_number": "47",
+  "simple_class_name": "TestTypedRootValueSerialization",
   "loop": -1
 }

@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.ser.TestSimpleAtomicTypes",
+  "owner": "com.fasterxml.jackson.databind.seq.ObjectWriterTest",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestSimpleAtomicTypes::testAtomicInteger",
-  "line_number": "39",
-  "simple_class_name": "TestSimpleAtomicTypes",
+  "test_name": "com.fasterxml.jackson.databind.seq.ObjectWriterTest::testObjectWriterWithNode",
+  "line_number": "89",
+  "simple_class_name": "ObjectWriterTest",
   "loop": -1
 }

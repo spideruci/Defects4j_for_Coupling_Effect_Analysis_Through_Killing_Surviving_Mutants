@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.filter.JsonIncludeTest::testIssue1327",
-  "line_number": "242",
-  "simple_class_name": "JsonIncludeTest",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestSetterlessProperties::testSimpleSetterlessMapOk",
+  "line_number": "90",
+  "simple_class_name": "TestSetterlessProperties",
   "loop": -1
 }

@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.ser.TestJsonSerialize",
+  "owner": "com.fasterxml.jackson.databind.deser.TestInjectables",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestJsonSerialize::testStaticTypingForClass",
-  "line_number": "159",
-  "simple_class_name": "TestJsonSerialize",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestInjectables::testInvalidDup",
+  "line_number": "145",
+  "simple_class_name": "TestInjectables",
   "loop": -1
 }

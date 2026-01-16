@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.jsontype.TestDefaultForObject::testAbstractBean",
-  "line_number": "131",
-  "simple_class_name": "TestDefaultForObject",
+  "test_name": "com.fasterxml.jackson.databind.ser.TestSerializationOrder::testOrderWithMixins",
+  "line_number": "118",
+  "simple_class_name": "TestSerializationOrder",
   "loop": -1
 }

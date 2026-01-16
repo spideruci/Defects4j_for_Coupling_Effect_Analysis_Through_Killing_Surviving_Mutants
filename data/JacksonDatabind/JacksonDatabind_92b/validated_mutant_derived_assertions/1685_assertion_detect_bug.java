@@ -7,7 +7,7 @@
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    0,
+    8,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestValueAnnotations::testRootMapAs",
-  "line_number": "314",
-  "simple_class_name": "TestValueAnnotations",
+  "test_name": "com.fasterxml.jackson.databind.mixins.TestMixinSerForFields::testFieldMixInsTopLevel",
+  "line_number": "71",
+  "simple_class_name": "TestMixinSerForFields",
   "loop": -1
 }

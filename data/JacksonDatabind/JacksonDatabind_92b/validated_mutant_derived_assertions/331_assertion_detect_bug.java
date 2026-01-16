@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.deser.TestArrayDeserialization",
+  "owner": "com.fasterxml.jackson.databind.deser.TestUntypedDeserialization",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestArrayDeserialization::testCharArray",
-  "line_number": "279",
-  "simple_class_name": "TestArrayDeserialization",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestUntypedDeserialization::testSampleDoc",
+  "line_number": "120",
+  "simple_class_name": "TestUntypedDeserialization",
   "loop": -1
 }

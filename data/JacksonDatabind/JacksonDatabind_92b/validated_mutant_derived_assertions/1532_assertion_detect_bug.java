@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestExceptionSerialization::testSimple",
-  "line_number": "21",
-  "simple_class_name": "TestExceptionSerialization",
+  "test_name": "com.fasterxml.jackson.databind.ser.TestEnumSerialization::testToStringEnumWithEnumMap",
+  "line_number": "308",
+  "simple_class_name": "TestEnumSerialization",
   "loop": -1
 }

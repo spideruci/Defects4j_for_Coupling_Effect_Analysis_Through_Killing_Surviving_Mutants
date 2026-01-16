@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestValueAnnotations::testOverrideMapContents",
-  "line_number": "387",
-  "simple_class_name": "TestValueAnnotations",
+  "test_name": "com.fasterxml.jackson.databind.jsontype.TestExternalId::testImproperExternalIdSerialization",
+  "line_number": "309",
+  "simple_class_name": "TestExternalId",
   "loop": -1
 }

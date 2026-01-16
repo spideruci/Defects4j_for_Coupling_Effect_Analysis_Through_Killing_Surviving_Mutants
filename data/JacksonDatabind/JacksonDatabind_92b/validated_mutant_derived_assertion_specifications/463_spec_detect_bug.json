@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.node.TestObjectNode",
+  "owner": "com.fasterxml.jackson.databind.deser.TestInjectables",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.node.TestObjectNode::testSetAll",
-  "line_number": "308",
-  "simple_class_name": "TestObjectNode",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestInjectables::testWithCtors",
+  "line_number": "122",
+  "simple_class_name": "TestInjectables",
   "loop": -1
 }

@@ -1,13 +1,13 @@
 {
   "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
+  "owner": "com.fasterxml.jackson.databind.mixins.TestMixinSerWithViews",
+  "name": "createObjectMapper",
+  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    1,
+    0,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestBeanDeserializer::testIssue476",
-  "line_number": "269",
-  "simple_class_name": "TestBeanDeserializer",
+  "test_name": "com.fasterxml.jackson.databind.mixins.TestMixinSerWithViews::testDataBindingUsage",
+  "line_number": "164",
+  "simple_class_name": "TestMixinSerWithViews",
   "loop": -1
 }

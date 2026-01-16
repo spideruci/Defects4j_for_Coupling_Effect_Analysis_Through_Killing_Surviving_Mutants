@@ -1,13 +1,13 @@
 {
   "source": "return",
-  "owner": "com.fasterxml.jackson.databind.type.RecursiveTypeTest",
-  "name": "objectMapper",
-  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
+  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
+  "name": "ObjectMapper",
+  "returnType": "void",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    0,
+    13,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.type.RecursiveTypeTest::testJavaTypeToString",
-  "line_number": "85",
-  "simple_class_name": "RecursiveTypeTest",
+  "test_name": "com.fasterxml.jackson.databind.ser.TestMapSerialization::testMapEntry",
+  "line_number": "213",
+  "simple_class_name": "TestMapSerialization",
   "loop": -1
 }

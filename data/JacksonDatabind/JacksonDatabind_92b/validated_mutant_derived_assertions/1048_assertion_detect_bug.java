@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.contextual.TestContextualKeyTypes::testSimpleKeyDeser",
-  "line_number": "112",
-  "simple_class_name": "TestContextualKeyTypes",
+  "test_name": "com.fasterxml.jackson.databind.ser.TestEnumSerialization::testEnumMapSerEnableToString",
+  "line_number": "417",
+  "simple_class_name": "TestEnumSerialization",
   "loop": -1
 }

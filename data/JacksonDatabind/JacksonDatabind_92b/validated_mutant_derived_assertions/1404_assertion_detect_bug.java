@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.mixins.TestMixinDeserForCreators::testFactoryMixIn",
-  "line_number": "112",
-  "simple_class_name": "TestMixinDeserForCreators",
+  "test_name": "com.fasterxml.jackson.databind.module.TestTypeModifierNameResolution::testTypeModiferNameResolution",
+  "line_number": "49",
+  "simple_class_name": "TestTypeModifierNameResolution",
   "loop": -1
 }

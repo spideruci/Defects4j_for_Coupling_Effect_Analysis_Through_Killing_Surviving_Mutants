@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.jsonschema.TestGenerateJsonSchema",
+  "owner": "com.fasterxml.jackson.databind.jsontype.TestSubtypes",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.jsonschema.TestGenerateJsonSchema::testThatObjectsHaveNoItems",
-  "line_number": "213",
-  "simple_class_name": "TestGenerateJsonSchema",
+  "test_name": "com.fasterxml.jackson.databind.jsontype.TestSubtypes::testIssue1125NonDefault",
+  "line_number": "334",
+  "simple_class_name": "TestSubtypes",
   "loop": -1
 }

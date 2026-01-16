@@ -7,7 +7,7 @@
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    8,
+    0,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestConfig::testAnnotationsDisabled",
-  "line_number": "93",
-  "simple_class_name": "TestConfig",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestEnumDeserialization::testToStringEnumMaps",
+  "line_number": "277",
+  "simple_class_name": "TestEnumDeserialization",
   "loop": -1
 }

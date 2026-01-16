@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.jsonschema.TestGenerateJsonSchema",
+  "owner": "com.fasterxml.jackson.databind.struct.TestUnwrapped",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.jsonschema.TestGenerateJsonSchema::testSchemaSerialization",
-  "line_number": "201",
-  "simple_class_name": "TestGenerateJsonSchema",
+  "test_name": "com.fasterxml.jackson.databind.struct.TestUnwrapped::testDoubleUnwrapping",
+  "line_number": "137",
+  "simple_class_name": "TestUnwrapped",
   "loop": -1
 }

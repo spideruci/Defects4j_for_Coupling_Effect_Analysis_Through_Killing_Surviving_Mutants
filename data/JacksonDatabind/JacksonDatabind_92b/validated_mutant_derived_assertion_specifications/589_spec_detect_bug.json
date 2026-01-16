@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.node.TestTreeMapperSerializer::testNull",
-  "line_number": "131",
-  "simple_class_name": "TestTreeMapperSerializer",
+  "test_name": "com.fasterxml.jackson.databind.ser.TestJsonSerialize::testStaticTypingWithArray",
+  "line_number": "217",
+  "simple_class_name": "TestJsonSerialize",
   "loop": -1
 }

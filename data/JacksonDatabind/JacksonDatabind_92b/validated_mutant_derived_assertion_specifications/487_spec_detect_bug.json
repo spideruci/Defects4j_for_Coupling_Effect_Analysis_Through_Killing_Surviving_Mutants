@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.jsontype.TestSubtypes::testErrorMessage",
-  "line_number": "297",
-  "simple_class_name": "TestSubtypes",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestDateDeserialization::testCustom",
+  "line_number": "371",
+  "simple_class_name": "TestDateDeserialization",
   "loop": -1
 }

@@ -1,8 +1,8 @@
 {
-  "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.creators.ImplicitNameMatch792Test",
-  "name": "MAPPER",
-  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
+  "source": "return",
+  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
+  "name": "ObjectMapper",
+  "returnType": "void",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.creators.ImplicitNameMatch792Test::testReadWriteWithPrivateField",
-  "line_number": "110",
-  "simple_class_name": "ImplicitNameMatch792Test",
+  "test_name": "com.fasterxml.jackson.databind.jsontype.TestTypedDeserialization::testSimpleClassAsProperty",
+  "line_number": "116",
+  "simple_class_name": "TestTypedDeserialization",
   "loop": -1
 }

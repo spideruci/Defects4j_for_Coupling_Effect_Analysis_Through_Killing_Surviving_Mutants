@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.jsontype.TestPropertyTypeInfo::testSimpleListField",
-  "line_number": "105",
-  "simple_class_name": "TestPropertyTypeInfo",
+  "test_name": "com.fasterxml.jackson.databind.creators.Creator1476Test::testConstructorChoice",
+  "line_number": "37",
+  "simple_class_name": "Creator1476Test",
   "loop": -1
 }

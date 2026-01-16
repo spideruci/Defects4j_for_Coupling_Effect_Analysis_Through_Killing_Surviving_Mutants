@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.deser.TestSimpleTypes",
+  "owner": "com.fasterxml.jackson.databind.struct.TestPOJOAsArray",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestSimpleTypes::testIntWithOverride",
-  "line_number": "258",
-  "simple_class_name": "TestSimpleTypes",
+  "test_name": "com.fasterxml.jackson.databind.struct.TestPOJOAsArray::testWriteSimpleRootValue",
+  "line_number": "169",
+  "simple_class_name": "TestPOJOAsArray",
   "loop": -1
 }

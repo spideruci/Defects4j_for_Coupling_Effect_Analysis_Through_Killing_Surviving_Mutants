@@ -1,23 +1,23 @@
 {
-  "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.filter.JsonIncludeTest",
-  "name": "MAPPER",
-  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
+  "source": "return",
+  "owner": "com.fasterxml.jackson.databind.ObjectReader",
+  "name": "withAttribute",
+  "returnType": "com.fasterxml.jackson.databind.ObjectReader",
   "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
+  "readable_access": "var._context._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    2,
+    12,
     "graph",
     "fields",
-    "_deserializationContext",
+    "_context",
     "fields",
     "_factory",
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.filter.JsonIncludeTest::testNonDefaultByClassNoCtor",
-  "line_number": "172",
-  "simple_class_name": "JsonIncludeTest",
+  "test_name": "com.fasterxml.jackson.databind.contextual.TestContextAttributeWithDeser::testSimpleDefaults",
+  "line_number": "75",
+  "simple_class_name": "TestContextAttributeWithDeser",
   "loop": -1
 }

@@ -1,23 +1,23 @@
 {
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectReader",
-  "name": "readValues",
-  "returnType": "com.fasterxml.jackson.databind.MappingIterator",
+  "source": "getField",
+  "owner": "com.fasterxml.jackson.databind.ser.TestJdkTypes",
+  "name": "MAPPER",
+  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
-  "readable_access": "var._context._factory.DEFAULT_NO_DESER_CLASS_NAMES",
+  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    5,
+    2,
     "graph",
     "fields",
-    "_context",
+    "_deserializationContext",
     "fields",
     "_factory",
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.seq.ObjectReaderTest::testPointerLoadingMappingIteratorMany",
-  "line_number": "92",
-  "simple_class_name": "ObjectReaderTest",
+  "test_name": "com.fasterxml.jackson.databind.ser.TestJdkTypes::testByteBuffer",
+  "line_number": "121",
+  "simple_class_name": "TestJdkTypes",
   "loop": -1
 }

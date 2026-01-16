@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.convert.TestBeanConversions::testWrapping",
-  "line_number": "143",
-  "simple_class_name": "TestBeanConversions",
+  "test_name": "com.fasterxml.jackson.databind.jsontype.TestDefaultForArrays::testArrayTypingSimple",
+  "line_number": "34",
+  "simple_class_name": "TestDefaultForArrays",
   "loop": -1
 }

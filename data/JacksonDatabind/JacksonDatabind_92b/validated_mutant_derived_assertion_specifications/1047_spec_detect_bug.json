@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestGenerics::testGenericWrapperWithSingleElementArray",
-  "line_number": "82",
-  "simple_class_name": "TestGenerics",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestGenericMapDeser::testKeyViaCtor",
+  "line_number": "146",
+  "simple_class_name": "TestGenericMapDeser",
   "loop": -1
 }

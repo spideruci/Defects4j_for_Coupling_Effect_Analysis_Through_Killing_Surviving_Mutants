@@ -7,7 +7,7 @@
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    16,
+    0,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.mixins.TestMixinSerForClass::testClassMixInsTopLevel",
-  "line_number": "89",
-  "simple_class_name": "TestMixinSerForClass",
+  "test_name": "com.fasterxml.jackson.databind.creators.MultiArgConstructorTest::testMultiArgVisible",
+  "line_number": "66",
+  "simple_class_name": "MultiArgConstructorTest",
   "loop": -1
 }

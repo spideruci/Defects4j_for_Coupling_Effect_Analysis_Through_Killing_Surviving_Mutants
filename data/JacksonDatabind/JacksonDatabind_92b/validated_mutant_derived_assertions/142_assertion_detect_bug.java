@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.introspect.TestPOJOPropertiesCollector",
+  "owner": "com.fasterxml.jackson.databind.creators.TestValueInstantiator",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.introspect.TestPOJOPropertiesCollector::testInnerClassWithAnnotationsInCreator",
-  "line_number": "419",
-  "simple_class_name": "TestPOJOPropertiesCollector",
+  "test_name": "com.fasterxml.jackson.databind.creators.TestValueInstantiator::testCustomDelegateInstantiator",
+  "line_number": "395",
+  "simple_class_name": "TestValueInstantiator",
   "loop": -1
 }

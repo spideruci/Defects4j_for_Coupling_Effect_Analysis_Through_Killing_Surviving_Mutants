@@ -7,7 +7,7 @@
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    0,
+    3,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestConfig::testEnumsWhenDisabled",
-  "line_number": "103",
-  "simple_class_name": "TestConfig",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestInjectables::testIssueGH471",
+  "line_number": "162",
+  "simple_class_name": "TestInjectables",
   "loop": -1
 }

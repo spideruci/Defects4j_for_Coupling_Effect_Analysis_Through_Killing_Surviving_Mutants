@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestConfig::testDateFormatConfig",
-  "line_number": "197",
-  "simple_class_name": "TestConfig",
+  "test_name": "com.fasterxml.jackson.databind.contextual.TestContextualSerialization::testMethodAnnotationInMap",
+  "line_number": "257",
+  "simple_class_name": "TestContextualSerialization",
   "loop": -1
 }

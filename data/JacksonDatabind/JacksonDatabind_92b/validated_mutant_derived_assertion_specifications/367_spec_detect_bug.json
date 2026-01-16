@@ -1,13 +1,13 @@
 {
-  "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.seq.ReadRecoveryTest",
-  "name": "MAPPER",
-  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
+  "source": "return",
+  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
+  "name": "ObjectMapper",
+  "returnType": "void",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    2,
+    0,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.seq.ReadRecoveryTest::testSimpleArrayRecovery",
-  "line_number": "82",
-  "simple_class_name": "ReadRecoveryTest",
+  "test_name": "com.fasterxml.jackson.databind.introspect.TestNamingStrategyStd::testNamingWithObjectNode",
+  "line_number": "363",
+  "simple_class_name": "TestNamingStrategyStd",
   "loop": -1
 }

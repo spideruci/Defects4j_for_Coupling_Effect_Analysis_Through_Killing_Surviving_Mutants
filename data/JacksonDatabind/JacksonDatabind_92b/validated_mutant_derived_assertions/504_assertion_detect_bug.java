@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.deser.TestExceptionDeserialization",
+  "owner": "com.fasterxml.jackson.databind.deser.TestJdkTypes",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestExceptionDeserialization::testJDK7SuppressionProperty",
-  "line_number": "96",
-  "simple_class_name": "TestExceptionDeserialization",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestJdkTypes::testClassWithParams",
+  "line_number": "299",
+  "simple_class_name": "TestJdkTypes",
   "loop": -1
 }

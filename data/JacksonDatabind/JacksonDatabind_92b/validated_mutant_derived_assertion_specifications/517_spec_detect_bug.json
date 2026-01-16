@@ -1,8 +1,8 @@
 {
   "source": "return",
-  "owner": "com.fasterxml.jackson.databind.introspect.TestScalaLikeImplicitProperties",
-  "name": "manglingMapper",
-  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
+  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
+  "name": "ObjectMapper",
+  "returnType": "void",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.introspect.TestScalaLikeImplicitProperties::testValProperty",
-  "line_number": "127",
-  "simple_class_name": "TestScalaLikeImplicitProperties",
+  "test_name": "com.fasterxml.jackson.databind.jsontype.TestDefaultForScalars::test417",
+  "line_number": "100",
+  "simple_class_name": "TestDefaultForScalars",
   "loop": -1
 }

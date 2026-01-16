@@ -1,23 +1,23 @@
 {
-  "source": "return",
-  "owner": "com.fasterxml.jackson.core.JsonFactory",
-  "name": "createParser",
-  "returnType": "com.fasterxml.jackson.core.JsonParser",
+  "source": "getField",
+  "owner": "com.fasterxml.jackson.databind.struct.FormatFeaturesTest",
+  "name": "MAPPER",
+  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
-  "readable_access": "var._symbols._symbols.elements",
+  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    14,
+    2,
     "graph",
     "fields",
-    "_symbols",
+    "_deserializationContext",
     "fields",
-    "_symbols",
-    "elements",
-    10
+    "_factory",
+    "fields",
+    "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestUntypedSerialization::testFromMap",
-  "line_number": "80",
-  "simple_class_name": "TestUntypedSerialization",
-  "loop": 1
+  "test_name": "com.fasterxml.jackson.databind.struct.FormatFeaturesTest::testSingleStringListRead",
+  "line_number": "172",
+  "simple_class_name": "FormatFeaturesTest",
+  "loop": -1
 }

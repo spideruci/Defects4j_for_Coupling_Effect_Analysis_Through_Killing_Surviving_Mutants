@@ -1,23 +1,23 @@
 {
   "source": "return",
-  "owner": "com.fasterxml.jackson.databind.views.TestViewsSerialization2",
-  "name": "createObjectMapper",
-  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
+  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
+  "name": "readerFor",
+  "returnType": "com.fasterxml.jackson.databind.ObjectReader",
   "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
+  "readable_access": "var._context._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    0,
+    15,
     "graph",
     "fields",
-    "_deserializationContext",
+    "_context",
     "fields",
     "_factory",
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.views.TestViewsSerialization2::testDataBindingUsageWithoutView",
-  "line_number": "26",
-  "simple_class_name": "TestViewsSerialization2",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestDateDeserialization::testCustomDateWithAnnotation",
+  "line_number": "440",
+  "simple_class_name": "TestDateDeserialization",
   "loop": -1
 }

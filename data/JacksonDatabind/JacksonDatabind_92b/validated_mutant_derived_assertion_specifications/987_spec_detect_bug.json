@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.jsontype.TestSubtypes",
+  "owner": "com.fasterxml.jackson.databind.ser.TestMapSerialization",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.jsontype.TestSubtypes::testIssue1125WithDefault",
-  "line_number": "347",
-  "simple_class_name": "TestSubtypes",
+  "test_name": "com.fasterxml.jackson.databind.ser.TestMapSerialization::testMapSerializer",
+  "line_number": "145",
+  "simple_class_name": "TestMapSerialization",
   "loop": -1
 }

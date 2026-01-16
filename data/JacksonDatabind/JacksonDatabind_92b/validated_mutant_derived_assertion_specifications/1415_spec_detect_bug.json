@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.mixins.TestMixinSerForClass::testClassMixInsMidLevel",
-  "line_number": "98",
-  "simple_class_name": "TestMixinSerForClass",
+  "test_name": "com.fasterxml.jackson.databind.contextual.TestContextualSerialization::testClassAnnotations",
+  "line_number": "216",
+  "simple_class_name": "TestContextualSerialization",
   "loop": -1
 }

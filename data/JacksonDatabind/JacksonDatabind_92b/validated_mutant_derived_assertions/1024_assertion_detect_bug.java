@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestCustomDeserializers::testJsonNodeDelegating",
-  "line_number": "336",
-  "simple_class_name": "TestCustomDeserializers",
+  "test_name": "com.fasterxml.jackson.databind.ser.TestTreeSerialization::testPOJOBean",
+  "line_number": "99",
+  "simple_class_name": "TestTreeSerialization",
   "loop": -1
 }

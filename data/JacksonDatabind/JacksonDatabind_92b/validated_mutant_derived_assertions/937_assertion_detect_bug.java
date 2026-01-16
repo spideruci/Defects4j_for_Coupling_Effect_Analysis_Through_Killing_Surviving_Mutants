@@ -1,19 +1,23 @@
 {
   "source": "return",
-  "owner": "com.fasterxml.jackson.databind.TestJDKSerialization",
-  "name": "jdkSerialize",
-  "returnType": "byte[]",
+  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
+  "name": "reader",
+  "returnType": "com.fasterxml.jackson.databind.ObjectReader",
   "ordinal": 0,
-  "readable_access": "var.elements",
+  "readable_access": "var._context._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    9,
+    15,
     "graph",
-    "elements",
-    0
+    "fields",
+    "_context",
+    "fields",
+    "_factory",
+    "fields",
+    "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.TestJDKSerialization::testEnumHandlers",
-  "line_number": "82",
-  "simple_class_name": "TestJDKSerialization",
+  "test_name": "com.fasterxml.jackson.databind.ser.TestConfig::testDateFormatConfig",
+  "line_number": "214",
+  "simple_class_name": "TestConfig",
   "loop": -1
 }

@@ -1,7 +1,7 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.convert.TestArrayConversions",
-  "name": "mapper",
+  "owner": "com.fasterxml.jackson.databind.type.DeprecatedConstructType1456Test",
+  "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.convert.TestArrayConversions::testNullXform",
-  "line_number": "24",
-  "simple_class_name": "TestArrayConversions",
+  "test_name": "com.fasterxml.jackson.databind.type.DeprecatedConstructType1456Test::testGenericParameterViaClass",
+  "line_number": "40",
+  "simple_class_name": "DeprecatedConstructType1456Test",
   "loop": -1
 }

@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.creators.TestCreators::testFactoryCreatorWithMixin",
-  "line_number": "438",
-  "simple_class_name": "TestCreators",
+  "test_name": "com.fasterxml.jackson.databind.ser.TestAnnotations::testGettersWithoutSetters",
+  "line_number": "240",
+  "simple_class_name": "TestAnnotations",
   "loop": -1
 }

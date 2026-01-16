@@ -1,8 +1,8 @@
 {
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
+  "source": "getField",
+  "owner": "com.fasterxml.jackson.databind.objectid.TestObjectIdDeserialization",
+  "name": "MAPPER",
+  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.creators.TestValueInstantiator::testBeanFromDouble",
-  "line_number": "508",
-  "simple_class_name": "TestValueInstantiator",
+  "test_name": "com.fasterxml.jackson.databind.objectid.TestObjectIdDeserialization::testNullObjectId",
+  "line_number": "464",
+  "simple_class_name": "TestObjectIdDeserialization",
   "loop": -1
 }

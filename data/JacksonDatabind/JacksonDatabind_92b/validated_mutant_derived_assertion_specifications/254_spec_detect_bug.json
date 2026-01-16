@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.jsontype.TestVisibleTypeId",
+  "owner": "com.fasterxml.jackson.databind.jsontype.TestSubtypes",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.jsontype.TestVisibleTypeId::testVisibleWithWrapperObject",
-  "line_number": "190",
-  "simple_class_name": "TestVisibleTypeId",
+  "test_name": "com.fasterxml.jackson.databind.jsontype.TestSubtypes::testDefaultImpl",
+  "line_number": "249",
+  "simple_class_name": "TestSubtypes",
   "loop": -1
 }

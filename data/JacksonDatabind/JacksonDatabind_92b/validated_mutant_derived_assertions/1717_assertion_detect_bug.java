@@ -1,23 +1,23 @@
 {
-  "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.jsontype.TestPolymorphicWithDefaultImpl",
-  "name": "MAPPER",
-  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
+  "source": "return",
+  "owner": "com.fasterxml.jackson.core.JsonFactory",
+  "name": "createParser",
+  "returnType": "com.fasterxml.jackson.core.JsonParser",
   "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
+  "readable_access": "var._symbols._symbols.elements",
   "python_access": [
     "metas",
-    0,
+    3,
     "graph",
     "fields",
-    "_deserializationContext",
+    "_symbols",
     "fields",
-    "_factory",
-    "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
+    "_symbols",
+    "elements",
+    10
   ],
-  "test_name": "com.fasterxml.jackson.databind.jsontype.TestPolymorphicWithDefaultImpl::testDeserializationWithArrayOfSize2",
-  "line_number": "158",
-  "simple_class_name": "TestPolymorphicWithDefaultImpl",
+  "test_name": "com.fasterxml.jackson.databind.seq.ReadValuesTest::testNonRootBeans",
+  "line_number": "246",
+  "simple_class_name": "ReadValuesTest",
   "loop": -1
 }

@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.jsontype.TestExternalId::testImproperExternalIdSerialization",
-  "line_number": "309",
-  "simple_class_name": "TestExternalId",
+  "test_name": "com.fasterxml.jackson.databind.ObjectMapperTest::testNonSerializabilityOfObject",
+  "line_number": "248",
+  "simple_class_name": "ObjectMapperTest",
   "loop": -1
 }

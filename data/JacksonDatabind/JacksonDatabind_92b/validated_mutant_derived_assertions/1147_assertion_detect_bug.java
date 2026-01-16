@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.interop.DeprecatedTypeHandling1102Test",
+  "owner": "com.fasterxml.jackson.databind.struct.TestParentChildReferences",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.interop.DeprecatedTypeHandling1102Test::testExplicitCollectionType",
-  "line_number": "63",
-  "simple_class_name": "DeprecatedTypeHandling1102Test",
+  "test_name": "com.fasterxml.jackson.databind.struct.TestParentChildReferences::testFullRefs",
+  "line_number": "247",
+  "simple_class_name": "TestParentChildReferences",
   "loop": -1
 }

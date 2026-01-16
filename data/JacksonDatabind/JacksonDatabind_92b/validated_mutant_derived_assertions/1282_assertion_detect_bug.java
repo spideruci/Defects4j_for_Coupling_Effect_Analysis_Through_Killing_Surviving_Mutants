@@ -7,7 +7,7 @@
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    0,
+    5,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.objectid.Objecid1083Test::testSimple",
-  "line_number": "37",
-  "simple_class_name": "Objecid1083Test",
+  "test_name": "com.fasterxml.jackson.databind.module.TestCustomEnumKeyDeserializer::testWithEnumKeys",
+  "line_number": "164",
+  "simple_class_name": "TestCustomEnumKeyDeserializer",
   "loop": -1
 }

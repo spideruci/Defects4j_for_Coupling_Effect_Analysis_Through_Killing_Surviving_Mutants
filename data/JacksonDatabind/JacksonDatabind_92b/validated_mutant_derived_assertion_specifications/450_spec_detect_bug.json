@@ -1,7 +1,7 @@
 {
-  "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.ser.TestSerializationOrder",
-  "name": "MAPPER",
+  "source": "return",
+  "owner": "com.fasterxml.jackson.databind.contextual.TestContextualDeserialization",
+  "name": "_mapperWithAnnotatedContextual",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestSerializationOrder::testAlphabeticOrder",
-  "line_number": "112",
-  "simple_class_name": "TestSerializationOrder",
+  "test_name": "com.fasterxml.jackson.databind.contextual.TestContextualDeserialization::testAnnotatedArray",
+  "line_number": "239",
+  "simple_class_name": "TestContextualDeserialization",
   "loop": -1
 }

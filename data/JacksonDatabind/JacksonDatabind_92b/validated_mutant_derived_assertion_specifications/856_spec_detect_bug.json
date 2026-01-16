@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.filter.TestSimpleSerializationIgnore::testDisabledIgnore",
-  "line_number": "87",
+  "test_name": "com.fasterxml.jackson.databind.filter.TestSimpleSerializationIgnore::testSimpleIgnore",
+  "line_number": "78",
   "simple_class_name": "TestSimpleSerializationIgnore",
   "loop": -1
 }

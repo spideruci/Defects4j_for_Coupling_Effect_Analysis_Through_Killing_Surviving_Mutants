@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.objectid.TestObjectIdDeserialization",
+  "owner": "com.fasterxml.jackson.databind.deser.TestSimpleTypes",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.objectid.TestObjectIdDeserialization::testForwardReferenceAnySetterCombo",
-  "line_number": "318",
-  "simple_class_name": "TestObjectIdDeserialization",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestSimpleTypes::testDoublePrimitiveNonNumeric",
+  "line_number": "228",
+  "simple_class_name": "TestSimpleTypes",
   "loop": -1
 }

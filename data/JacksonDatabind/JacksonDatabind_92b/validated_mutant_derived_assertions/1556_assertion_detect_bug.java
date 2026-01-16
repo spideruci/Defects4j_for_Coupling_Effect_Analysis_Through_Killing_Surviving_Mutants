@@ -1,8 +1,8 @@
 {
   "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
+  "owner": "com.fasterxml.jackson.databind.introspect.TestNameConflicts",
+  "name": "objectMapper",
+  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestSetterlessProperties::testSimpleSetterlessMapOk",
-  "line_number": "90",
-  "simple_class_name": "TestSetterlessProperties",
+  "test_name": "com.fasterxml.jackson.databind.introspect.TestNameConflicts::testOverrideName",
+  "line_number": "112",
+  "simple_class_name": "TestNameConflicts",
   "loop": -1
 }

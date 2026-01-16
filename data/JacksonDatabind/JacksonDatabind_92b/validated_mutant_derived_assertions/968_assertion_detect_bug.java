@@ -7,7 +7,7 @@
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    13,
+    0,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestMapSerialization::testMapEntry",
-  "line_number": "213",
-  "simple_class_name": "TestMapSerialization",
+  "test_name": "com.fasterxml.jackson.databind.node.TestTreeTraversingParser::testArray",
+  "line_number": "112",
+  "simple_class_name": "TestTreeTraversingParser",
   "loop": -1
 }

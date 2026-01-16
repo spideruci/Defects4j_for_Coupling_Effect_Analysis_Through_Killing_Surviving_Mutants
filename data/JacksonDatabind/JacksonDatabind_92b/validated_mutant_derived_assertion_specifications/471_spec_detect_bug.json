@@ -1,23 +1,23 @@
 {
-  "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.creators.BigCreatorTest",
-  "name": "BIGGIE_READER",
-  "returnType": "com.fasterxml.jackson.databind.ObjectReader",
+  "source": "return",
+  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
+  "name": "ObjectMapper",
+  "returnType": "void",
   "ordinal": 0,
-  "readable_access": "var._context._factory.DEFAULT_NO_DESER_CLASS_NAMES",
+  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
     0,
     "graph",
     "fields",
-    "_context",
+    "_deserializationContext",
     "fields",
     "_factory",
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.creators.BigCreatorTest::testBigPartial",
-  "line_number": "50",
-  "simple_class_name": "BigCreatorTest",
+  "test_name": "com.fasterxml.jackson.databind.filter.JsonIgnoreProperties1595Test::testIgnoreGetterNotSetter1595",
+  "line_number": "34",
+  "simple_class_name": "JsonIgnoreProperties1595Test",
   "loop": -1
 }

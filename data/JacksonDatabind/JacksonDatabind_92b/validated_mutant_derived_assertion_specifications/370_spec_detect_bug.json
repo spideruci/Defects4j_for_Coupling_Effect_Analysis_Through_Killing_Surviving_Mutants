@@ -1,13 +1,13 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.ser.NumberSerTest",
+  "owner": "com.fasterxml.jackson.databind.creators.TestCreators2",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    11,
+    0,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.NumberSerTest::testBigInteger",
-  "line_number": "65",
-  "simple_class_name": "NumberSerTest",
-  "loop": 1
+  "test_name": "com.fasterxml.jackson.databind.creators.TestCreators2::testSimpleConstructor",
+  "line_number": "187",
+  "simple_class_name": "TestCreators2",
+  "loop": -1
 }

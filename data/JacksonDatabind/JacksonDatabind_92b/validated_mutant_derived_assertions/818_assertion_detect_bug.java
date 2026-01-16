@@ -1,8 +1,8 @@
 {
-  "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.struct.TestUnwrapped",
-  "name": "MAPPER",
-  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
+  "source": "return",
+  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
+  "name": "ObjectMapper",
+  "returnType": "void",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.struct.TestUnwrapped::testUnwrappedDeserializeWithCreator",
-  "line_number": "164",
-  "simple_class_name": "TestUnwrapped",
+  "test_name": "com.fasterxml.jackson.databind.ser.DateSerializationTest::testDatesAsMapKeys",
+  "line_number": "196",
+  "simple_class_name": "DateSerializationTest",
   "loop": -1
 }

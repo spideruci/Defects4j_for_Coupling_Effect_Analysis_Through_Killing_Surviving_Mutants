@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.jsontype.TestTypedArrayDeserialization::testIntList",
-  "line_number": "50",
-  "simple_class_name": "TestTypedArrayDeserialization",
+  "test_name": "com.fasterxml.jackson.databind.ser.TestTypedRootValueSerialization::testTypedArrays",
+  "line_number": "37",
+  "simple_class_name": "TestTypedRootValueSerialization",
   "loop": -1
 }

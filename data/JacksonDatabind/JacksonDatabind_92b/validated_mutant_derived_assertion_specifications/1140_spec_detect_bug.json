@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.contextual.TestContextualDeserialization::testSimple",
-  "line_number": "186",
-  "simple_class_name": "TestContextualDeserialization",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestJDKAtomicTypes::testAbsentExclusion",
+  "line_number": "132",
+  "simple_class_name": "TestJDKAtomicTypes",
   "loop": -1
 }

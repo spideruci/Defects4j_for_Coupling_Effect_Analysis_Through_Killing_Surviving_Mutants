@@ -7,7 +7,7 @@
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    14,
+    0,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestUntypedSerialization::testFromArray",
-  "line_number": "29",
-  "simple_class_name": "TestUntypedSerialization",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestFieldDeserialization::testOkFieldOverride",
+  "line_number": "155",
+  "simple_class_name": "TestFieldDeserialization",
   "loop": -1
 }

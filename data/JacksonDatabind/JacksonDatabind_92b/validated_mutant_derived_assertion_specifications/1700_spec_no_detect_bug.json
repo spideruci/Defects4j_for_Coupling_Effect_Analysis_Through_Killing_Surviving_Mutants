@@ -1,17 +1,23 @@
 {
   "source": "return",
-  "owner": "com.fasterxml.jackson.databind.deser.TestGenericMapDeser$AnnotatedMap",
-  "name": "entrySet",
-  "returnType": "java.util.Set",
+  "owner": "com.fasterxml.jackson.core.JsonFactory",
+  "name": "createParser",
+  "returnType": "com.fasterxml.jackson.core.JsonParser",
   "ordinal": 0,
-  "readable_access": "var.metas",
+  "readable_access": "var._symbols._symbols.elements",
   "python_access": [
     "metas",
-    5,
-    "graph"
+    4,
+    "graph",
+    "fields",
+    "_symbols",
+    "fields",
+    "_symbols",
+    "elements",
+    4
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestGenericMapDeser::testAnnotatedMap",
-  "line_number": "131",
-  "simple_class_name": "TestGenericMapDeser",
+  "test_name": "com.fasterxml.jackson.databind.node.TestTreeMapperDeserializer::testEOF",
+  "line_number": "292",
+  "simple_class_name": "TestTreeMapperDeserializer",
   "loop": -1
 }

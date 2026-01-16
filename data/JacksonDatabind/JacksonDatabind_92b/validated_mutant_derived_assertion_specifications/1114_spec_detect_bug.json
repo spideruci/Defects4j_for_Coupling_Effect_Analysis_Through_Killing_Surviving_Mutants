@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.creators.SingleArgCreatorTest::testSingleImplicitDelegating",
-  "line_number": "201",
-  "simple_class_name": "SingleArgCreatorTest",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestValueAnnotations::testOverrideKeyClassValid",
+  "line_number": "330",
+  "simple_class_name": "TestValueAnnotations",
   "loop": -1
 }

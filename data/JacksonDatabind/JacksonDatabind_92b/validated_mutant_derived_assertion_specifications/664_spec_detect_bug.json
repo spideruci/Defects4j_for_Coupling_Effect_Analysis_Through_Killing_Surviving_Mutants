@@ -7,7 +7,7 @@
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    16,
+    0,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestJdkTypes::testNullForPrimitives",
-  "line_number": "174",
-  "simple_class_name": "TestJdkTypes",
+  "test_name": "com.fasterxml.jackson.databind.jsontype.TestDefaultForArrays::testArraysOfArrays",
+  "line_number": "73",
+  "simple_class_name": "TestDefaultForArrays",
   "loop": -1
 }

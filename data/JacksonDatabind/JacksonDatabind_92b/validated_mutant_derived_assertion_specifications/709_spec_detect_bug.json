@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.deser.TestEnumDeserialization",
+  "owner": "com.fasterxml.jackson.databind.creators.TestCreators",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestEnumDeserialization::testEnumsFromInts",
-  "line_number": "401",
-  "simple_class_name": "TestEnumDeserialization",
+  "test_name": "com.fasterxml.jackson.databind.creators.TestCreators::testConstructorCreator",
+  "line_number": "360",
+  "simple_class_name": "TestCreators",
   "loop": -1
 }

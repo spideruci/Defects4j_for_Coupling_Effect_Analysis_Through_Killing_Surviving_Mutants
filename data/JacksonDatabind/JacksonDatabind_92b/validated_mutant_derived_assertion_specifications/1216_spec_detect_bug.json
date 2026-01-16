@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.deser.TestMapDeserialization",
+  "owner": "com.fasterxml.jackson.databind.deser.NumberDeserTest",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestMapDeserialization::testGenericStringIntMap",
-  "line_number": "288",
-  "simple_class_name": "TestMapDeserialization",
+  "test_name": "com.fasterxml.jackson.databind.deser.NumberDeserTest::testDeserializeDecimalProperException",
+  "line_number": "103",
+  "simple_class_name": "NumberDeserTest",
   "loop": -1
 }

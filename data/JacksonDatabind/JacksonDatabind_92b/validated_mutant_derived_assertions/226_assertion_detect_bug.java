@@ -7,7 +7,7 @@
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    4,
+    0,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.introspect.TransientTest::testTransientFieldHandling",
-  "line_number": "49",
-  "simple_class_name": "TransientTest",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestConfig::testAnnotationsDisabled",
+  "line_number": "87",
+  "simple_class_name": "TestConfig",
   "loop": -1
 }

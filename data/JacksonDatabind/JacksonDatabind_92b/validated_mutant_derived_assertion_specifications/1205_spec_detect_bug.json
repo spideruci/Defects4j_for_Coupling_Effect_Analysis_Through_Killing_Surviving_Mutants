@@ -1,23 +1,23 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.deser.TestInjectables",
-  "name": "MAPPER",
-  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
+  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
+  "name": "_deserializationContext",
+  "returnType": "com.fasterxml.jackson.databind.deser.DefaultDeserializationContext",
   "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
+  "readable_access": "var._factory.DEFAULT_NO_DESER_CLASS_NAMES.elements",
   "python_access": [
     "metas",
-    0,
+    3,
     "graph",
-    "fields",
-    "_deserializationContext",
     "fields",
     "_factory",
     "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
+    "DEFAULT_NO_DESER_CLASS_NAMES",
+    "elements",
+    7
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestInjectables::testInvalidDup",
-  "line_number": "145",
-  "simple_class_name": "TestInjectables",
+  "test_name": "com.fasterxml.jackson.databind.ObjectMapperTest::testProviderConfig",
+  "line_number": "135",
+  "simple_class_name": "ObjectMapperTest",
   "loop": -1
 }

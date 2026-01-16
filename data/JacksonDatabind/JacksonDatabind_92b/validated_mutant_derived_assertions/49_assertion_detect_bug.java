@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.jsontype.TestDefaultForScalars::testScalarArrays",
-  "line_number": "82",
-  "simple_class_name": "TestDefaultForScalars",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestCollectionDeserialization::testWrapExceptions",
+  "line_number": "265",
+  "simple_class_name": "TestCollectionDeserialization",
   "loop": -1
 }

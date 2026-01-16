@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.jsontype.PolymorphicList1451SerTest::testCollectionWithTypeInfo",
-  "line_number": "22",
-  "simple_class_name": "PolymorphicList1451SerTest",
+  "test_name": "com.fasterxml.jackson.databind.ser.TestTreeSerialization::testSimpleViaObjectMapper",
+  "line_number": "28",
+  "simple_class_name": "TestTreeSerialization",
   "loop": -1
 }

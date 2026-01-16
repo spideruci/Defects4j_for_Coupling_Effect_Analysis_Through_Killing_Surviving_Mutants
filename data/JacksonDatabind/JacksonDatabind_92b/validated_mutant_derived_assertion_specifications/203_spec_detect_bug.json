@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.creators.BuilderSimpleTest",
+  "owner": "com.fasterxml.jackson.databind.introspect.TransientTest",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.creators.BuilderSimpleTest::testBuilderMethodReturnMoreSpecific",
-  "line_number": "367",
-  "simple_class_name": "BuilderSimpleTest",
+  "test_name": "com.fasterxml.jackson.databind.introspect.TransientTest::testTransientFieldHandling",
+  "line_number": "45",
+  "simple_class_name": "TransientTest",
   "loop": -1
 }

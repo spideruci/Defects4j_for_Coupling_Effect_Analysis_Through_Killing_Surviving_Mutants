@@ -1,13 +1,13 @@
 {
   "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
+  "owner": "com.fasterxml.jackson.databind.interop.TestExternalizable$MapperHolder",
+  "name": "mapper",
+  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    0,
+    9,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.TestHandlerInstantiation::testDeserializer",
-  "line_number": "236",
-  "simple_class_name": "TestHandlerInstantiation",
+  "test_name": "com.fasterxml.jackson.databind.interop.TestExternalizable::testSerializeAsExternalizable",
+  "line_number": "193",
+  "simple_class_name": "TestExternalizable",
   "loop": -1
 }

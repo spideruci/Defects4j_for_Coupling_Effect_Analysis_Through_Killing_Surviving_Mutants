@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.introspect.TestNamingStrategyStd::testExplicitRename",
-  "line_number": "378",
-  "simple_class_name": "TestNamingStrategyStd",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestJacksonTypes::testTokenBufferWithSample",
+  "line_number": "50",
+  "simple_class_name": "TestJacksonTypes",
   "loop": -1
 }

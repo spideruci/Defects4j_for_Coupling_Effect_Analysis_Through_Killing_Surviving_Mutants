@@ -1,13 +1,13 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.deser.TestDateDeserialization",
+  "owner": "com.fasterxml.jackson.databind.introspect.TestPOJOPropertiesCollector",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    1,
+    0,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestDateDeserialization::testCustomDateWithAnnotation",
-  "line_number": "425",
-  "simple_class_name": "TestDateDeserialization",
+  "test_name": "com.fasterxml.jackson.databind.introspect.TestPOJOPropertiesCollector::testMergeWithRename",
+  "line_number": "336",
+  "simple_class_name": "TestPOJOPropertiesCollector",
   "loop": -1
 }

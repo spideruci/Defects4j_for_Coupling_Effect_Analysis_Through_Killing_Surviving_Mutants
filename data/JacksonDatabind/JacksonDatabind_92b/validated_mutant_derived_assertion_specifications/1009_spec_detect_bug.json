@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.creators.TestCreatorsDelegating::testWithCtorAndDelegate",
-  "line_number": "94",
-  "simple_class_name": "TestCreatorsDelegating",
+  "test_name": "com.fasterxml.jackson.databind.jsontype.TestPropertyTypeInfo::testSimpleField",
+  "line_number": "83",
+  "simple_class_name": "TestPropertyTypeInfo",
   "loop": -1
 }

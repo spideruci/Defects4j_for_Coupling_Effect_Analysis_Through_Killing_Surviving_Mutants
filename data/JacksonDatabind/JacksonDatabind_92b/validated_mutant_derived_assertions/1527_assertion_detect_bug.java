@@ -1,23 +1,23 @@
 {
-  "source": "getField",
+  "source": "return",
   "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "_deserializationContext",
-  "returnType": "com.fasterxml.jackson.databind.deser.DefaultDeserializationContext",
+  "name": "ObjectMapper",
+  "returnType": "void",
   "ordinal": 0,
-  "readable_access": "var._factory.DEFAULT_NO_DESER_CLASS_NAMES.elements",
+  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    3,
+    0,
     "graph",
+    "fields",
+    "_deserializationContext",
     "fields",
     "_factory",
     "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES",
-    "elements",
-    5
+    "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ObjectMapperTest::testProviderConfig",
-  "line_number": "135",
-  "simple_class_name": "ObjectMapperTest",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestSetterlessProperties::testSimpleSetterlessCollectionOk",
+  "line_number": "53",
+  "simple_class_name": "TestSetterlessProperties",
   "loop": -1
 }

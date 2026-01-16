@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.ser.TestAnnotations",
+  "owner": "com.fasterxml.jackson.databind.ser.TestJsonValue",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestAnnotations::testSimpleGetter2",
-  "line_number": "178",
-  "simple_class_name": "TestAnnotations",
+  "test_name": "com.fasterxml.jackson.databind.ser.TestJsonValue::testSimpleJsonValue",
+  "line_number": "201",
+  "simple_class_name": "TestJsonValue",
   "loop": -1
 }

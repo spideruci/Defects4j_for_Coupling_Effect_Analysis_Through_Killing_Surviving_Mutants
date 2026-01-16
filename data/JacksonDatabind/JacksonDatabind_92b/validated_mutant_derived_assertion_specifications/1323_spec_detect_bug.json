@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.creators.TestPolymorphicCreators",
+  "owner": "com.fasterxml.jackson.databind.node.TestObjectNode",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.creators.TestPolymorphicCreators::testManualPolymorphicCatBasic",
-  "line_number": "111",
-  "simple_class_name": "TestPolymorphicCreators",
+  "test_name": "com.fasterxml.jackson.databind.node.TestObjectNode::testValidWith",
+  "line_number": "249",
+  "simple_class_name": "TestObjectNode",
   "loop": -1
 }

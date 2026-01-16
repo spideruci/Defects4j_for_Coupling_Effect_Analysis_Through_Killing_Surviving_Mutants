@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.creators.BuilderSimpleTest::testWithCreator",
-  "line_number": "349",
+  "test_name": "com.fasterxml.jackson.databind.creators.BuilderSimpleTest::testBuilderMethodReturnInvalidType",
+  "line_number": "375",
   "simple_class_name": "BuilderSimpleTest",
   "loop": -1
 }

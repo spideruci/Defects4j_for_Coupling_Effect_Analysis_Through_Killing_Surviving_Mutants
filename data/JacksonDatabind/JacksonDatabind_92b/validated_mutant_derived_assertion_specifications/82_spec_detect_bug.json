@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.jsontype.TestScalars",
+  "owner": "com.fasterxml.jackson.databind.ser.TestMapSerialization",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.jsontype.TestScalars::testScalarsWithTyping",
-  "line_number": "62",
-  "simple_class_name": "TestScalars",
+  "test_name": "com.fasterxml.jackson.databind.ser.TestMapSerialization::testUsingObjectWriter",
+  "line_number": "136",
+  "simple_class_name": "TestMapSerialization",
   "loop": -1
 }

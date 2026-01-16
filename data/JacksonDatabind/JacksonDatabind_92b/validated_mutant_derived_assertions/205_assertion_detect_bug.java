@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.ser.TestJsonValue",
+  "owner": "com.fasterxml.jackson.databind.deser.TestMapDeserialization",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestJsonValue::testJsonValueWithUseSerializer",
-  "line_number": "207",
-  "simple_class_name": "TestJsonValue",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestMapDeserialization::testCalendarMap",
+  "line_number": "425",
+  "simple_class_name": "TestMapDeserialization",
   "loop": -1
 }

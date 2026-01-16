@@ -1,7 +1,7 @@
 {
-  "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.introspect.TestPOJOPropertiesCollector",
-  "name": "MAPPER",
+  "source": "return",
+  "owner": "com.fasterxml.jackson.databind.node.TestTreeMapperDeserializer",
+  "name": "objectMapper",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.introspect.TestPOJOPropertiesCollector::testSimpleIgnoreAndRename",
-  "line_number": "349",
-  "simple_class_name": "TestPOJOPropertiesCollector",
+  "test_name": "com.fasterxml.jackson.databind.node.TestTreeMapperDeserializer::testSimpleArray",
+  "line_number": "231",
+  "simple_class_name": "TestTreeMapperDeserializer",
   "loop": -1
 }

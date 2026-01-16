@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestBeanSerializer::testPropertyRemoval",
-  "line_number": "262",
-  "simple_class_name": "TestBeanSerializer",
+  "test_name": "com.fasterxml.jackson.databind.module.TestSimpleModule::testSimpleBeanDeserializer",
+  "line_number": "260",
+  "simple_class_name": "TestSimpleModule",
   "loop": -1
 }

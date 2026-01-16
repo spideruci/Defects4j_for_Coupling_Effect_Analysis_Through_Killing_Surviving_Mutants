@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.TestHandlerInstantiation::testTypeIdResolver",
-  "line_number": "260",
-  "simple_class_name": "TestHandlerInstantiation",
+  "test_name": "com.fasterxml.jackson.databind.node.TestTreeMapperSerializer::testFromMap",
+  "line_number": "62",
+  "simple_class_name": "TestTreeMapperSerializer",
   "loop": -1
 }

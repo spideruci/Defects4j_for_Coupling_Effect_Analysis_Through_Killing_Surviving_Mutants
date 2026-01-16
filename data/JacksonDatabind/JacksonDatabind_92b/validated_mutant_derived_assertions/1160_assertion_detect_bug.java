@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestBeanSerializer::testSerializerReplacement",
-  "line_number": "285",
-  "simple_class_name": "TestBeanSerializer",
+  "test_name": "com.fasterxml.jackson.databind.ser.TestAutoDetect::testProtectedViaAnnotations",
+  "line_number": "57",
+  "simple_class_name": "TestAutoDetect",
   "loop": -1
 }

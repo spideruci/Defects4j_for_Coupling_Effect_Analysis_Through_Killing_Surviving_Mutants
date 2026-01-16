@@ -1,8 +1,8 @@
 {
   "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
+  "owner": "com.fasterxml.jackson.databind.deser.TestSimpleTypes",
+  "name": "objectMapper",
+  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.node.TestTreeWithType::testValueAsStringWithDefaultTyping",
-  "line_number": "71",
-  "simple_class_name": "TestTreeWithType",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestSimpleTypes::testBigInteger",
+  "line_number": "572",
+  "simple_class_name": "TestSimpleTypes",
   "loop": -1
 }

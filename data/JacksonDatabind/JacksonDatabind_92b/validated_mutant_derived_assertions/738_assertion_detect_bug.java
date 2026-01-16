@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.creators.TestValueInstantiator::testBeanFromBoolean",
-  "line_number": "526",
-  "simple_class_name": "TestValueInstantiator",
+  "test_name": "com.fasterxml.jackson.databind.jsontype.PolymorphicViaRefTypeTest::testAtomicRefViaDefaultTyping",
+  "line_number": "64",
+  "simple_class_name": "PolymorphicViaRefTypeTest",
   "loop": -1
 }

@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.jsontype.TestDefaultForObject::testTokenBuffer",
-  "line_number": "261",
-  "simple_class_name": "TestDefaultForObject",
+  "test_name": "com.fasterxml.jackson.databind.type.TestTypeFactory::testSneakySelfRefs",
+  "line_number": "453",
+  "simple_class_name": "TestTypeFactory",
   "loop": -1
 }

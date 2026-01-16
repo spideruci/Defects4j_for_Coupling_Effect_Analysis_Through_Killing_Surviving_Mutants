@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.views.TestViewSerialization::testVisibility",
-  "line_number": "167",
-  "simple_class_name": "TestViewSerialization",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestEnumDeserialization::testDeserializerForCreatorWithEnumMaps",
+  "line_number": "470",
+  "simple_class_name": "TestEnumDeserialization",
   "loop": -1
 }

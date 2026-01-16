@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.ser.TestMapSerialization",
+  "owner": "com.fasterxml.jackson.databind.ser.TestJsonValue",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestMapSerialization::testOrderByKeyViaProperty",
-  "line_number": "197",
-  "simple_class_name": "TestMapSerialization",
+  "test_name": "com.fasterxml.jackson.databind.ser.TestJsonValue::testPolymorphicSerdeWithDelegate",
+  "line_number": "258",
+  "simple_class_name": "TestJsonValue",
   "loop": -1
 }

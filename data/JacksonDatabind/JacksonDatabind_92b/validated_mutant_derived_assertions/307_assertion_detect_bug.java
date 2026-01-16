@@ -1,13 +1,13 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.TestObjectMapperBeanDeserializer",
+  "owner": "com.fasterxml.jackson.databind.node.TestConversions",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    34,
+    3,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.TestObjectMapperBeanDeserializer::testListBean",
-  "line_number": "307",
-  "simple_class_name": "TestObjectMapperBeanDeserializer",
+  "test_name": "com.fasterxml.jackson.databind.node.TestConversions::testConversionOfPojos",
+  "line_number": "264",
+  "simple_class_name": "TestConversions",
   "loop": -1
 }

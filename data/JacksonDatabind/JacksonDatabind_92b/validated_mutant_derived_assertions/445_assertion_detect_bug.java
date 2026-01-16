@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.creators.TestValueInstantiator::testCustomBeanInstantiator",
-  "line_number": "331",
-  "simple_class_name": "TestValueInstantiator",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestAnnotationUsing::testListContentUsing",
+  "line_number": "174",
+  "simple_class_name": "TestAnnotationUsing",
   "loop": -1
 }

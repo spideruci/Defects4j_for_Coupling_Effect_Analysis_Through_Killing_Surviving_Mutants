@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.jsontype.TestSubtypes",
+  "owner": "com.fasterxml.jackson.databind.deser.TestBasicAnnotations",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.jsontype.TestSubtypes::testDefaultImpl",
-  "line_number": "249",
-  "simple_class_name": "TestSubtypes",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestBasicAnnotations::testImpliedProperty",
+  "line_number": "160",
+  "simple_class_name": "TestBasicAnnotations",
   "loop": -1
 }

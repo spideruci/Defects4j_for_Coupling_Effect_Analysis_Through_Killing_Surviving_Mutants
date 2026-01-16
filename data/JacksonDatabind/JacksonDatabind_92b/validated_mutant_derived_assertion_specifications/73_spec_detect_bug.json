@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.jsontype.TestEnumTyping::testEnumInterface",
-  "line_number": "72",
-  "simple_class_name": "TestEnumTyping",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestCustomDeserializers::testContextReadValue",
+  "line_number": "366",
+  "simple_class_name": "TestCustomDeserializers",
   "loop": -1
 }

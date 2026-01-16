@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestAutoDetect::testPrivateUsingGlobals",
-  "line_number": "74",
-  "simple_class_name": "TestAutoDetect",
+  "test_name": "com.fasterxml.jackson.databind.creators.SingleArgCreatorTest::testSingleImplicitDelegating",
+  "line_number": "201",
+  "simple_class_name": "SingleArgCreatorTest",
   "loop": -1
 }

@@ -1,23 +1,23 @@
 {
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectReader",
-  "name": "without",
-  "returnType": "com.fasterxml.jackson.databind.ObjectReader",
+  "source": "getField",
+  "owner": "com.fasterxml.jackson.databind.creators.TestCreators",
+  "name": "MAPPER",
+  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
-  "readable_access": "var._context._factory.DEFAULT_NO_DESER_CLASS_NAMES",
+  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    9,
+    0,
     "graph",
     "fields",
-    "_context",
+    "_deserializationContext",
     "fields",
     "_factory",
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.seq.ObjectReaderTest::testParserFeatures",
-  "line_number": "35",
-  "simple_class_name": "ObjectReaderTest",
+  "test_name": "com.fasterxml.jackson.databind.creators.TestCreators::testDeferredConstructorAndProps",
+  "line_number": "411",
+  "simple_class_name": "TestCreators",
   "loop": -1
 }

@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.creators.ImplicitParamsForCreatorTest::testNonSingleArgCreator",
-  "line_number": "42",
-  "simple_class_name": "ImplicitParamsForCreatorTest",
+  "test_name": "com.fasterxml.jackson.databind.jsontype.TestSubtypes::testPropertyWithSubtypes",
+  "line_number": "162",
+  "simple_class_name": "TestSubtypes",
   "loop": -1
 }

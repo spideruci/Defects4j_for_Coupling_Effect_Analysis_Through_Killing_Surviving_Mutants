@@ -7,7 +7,7 @@
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    0,
+    4,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestFieldDeserialization::testSimpleAutoDetect",
-  "line_number": "96",
-  "simple_class_name": "TestFieldDeserialization",
+  "test_name": "com.fasterxml.jackson.databind.ObjectMapperTest::testNonSerializabilityOfObject",
+  "line_number": "254",
+  "simple_class_name": "ObjectMapperTest",
   "loop": -1
 }

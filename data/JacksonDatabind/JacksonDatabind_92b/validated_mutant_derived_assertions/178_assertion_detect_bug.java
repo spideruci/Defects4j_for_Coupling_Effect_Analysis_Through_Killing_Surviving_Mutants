@@ -1,23 +1,23 @@
 {
-  "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.creators.ImplicitNameMatch792Test",
-  "name": "MAPPER",
-  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
+  "source": "return",
+  "owner": "com.fasterxml.jackson.databind.ObjectReader",
+  "name": "forType",
+  "returnType": "com.fasterxml.jackson.databind.ObjectReader",
   "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
+  "readable_access": "var._context._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    0,
+    11,
     "graph",
     "fields",
-    "_deserializationContext",
+    "_context",
     "fields",
     "_factory",
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.creators.ImplicitNameMatch792Test::testWriteOnly",
-  "line_number": "116",
-  "simple_class_name": "ImplicitNameMatch792Test",
+  "test_name": "com.fasterxml.jackson.databind.deser.UntypedNumbersTest::testFpTypeOverrideSimple",
+  "line_number": "87",
+  "simple_class_name": "UntypedNumbersTest",
   "loop": -1
 }

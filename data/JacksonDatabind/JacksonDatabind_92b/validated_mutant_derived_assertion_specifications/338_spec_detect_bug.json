@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.convert.NumericConversionTest",
+  "owner": "com.fasterxml.jackson.databind.filter.NullSerializationTest",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.convert.NumericConversionTest::testDoubleToInt",
-  "line_number": "13",
-  "simple_class_name": "NumericConversionTest",
+  "test_name": "com.fasterxml.jackson.databind.filter.NullSerializationTest::testSimple",
+  "line_number": "84",
+  "simple_class_name": "NullSerializationTest",
   "loop": -1
 }

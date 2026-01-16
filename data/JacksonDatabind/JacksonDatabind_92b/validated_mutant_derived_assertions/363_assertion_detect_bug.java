@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.creators.TestValueInstantiator::testDelegateListInstantiator",
-  "line_number": "375",
-  "simple_class_name": "TestValueInstantiator",
+  "test_name": "com.fasterxml.jackson.databind.jsontype.TestDefaultForLists::testDateTypes",
+  "line_number": "110",
+  "simple_class_name": "TestDefaultForLists",
   "loop": -1
 }

@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.creators.SingleArgCreatorTest::testSingleImplicitlyNamedNotDelegating",
-  "line_number": "168",
-  "simple_class_name": "SingleArgCreatorTest",
+  "test_name": "com.fasterxml.jackson.databind.ser.TestCustomSerializers::testCustomLists",
+  "line_number": "152",
+  "simple_class_name": "TestCustomSerializers",
   "loop": -1
 }

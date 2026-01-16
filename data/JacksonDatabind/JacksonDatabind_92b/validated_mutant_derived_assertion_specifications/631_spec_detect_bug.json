@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestJsonSerialize3::testCustomContentSerializer",
-  "line_number": "38",
-  "simple_class_name": "TestJsonSerialize3",
+  "test_name": "com.fasterxml.jackson.databind.mixins.MixinsWithBundlesTest::testMixinWithBundles",
+  "line_number": "39",
+  "simple_class_name": "MixinsWithBundlesTest",
   "loop": -1
 }

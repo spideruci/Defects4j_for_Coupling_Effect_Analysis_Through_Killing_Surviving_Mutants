@@ -1,13 +1,13 @@
 {
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
+  "source": "getField",
+  "owner": "com.fasterxml.jackson.databind.convert.NumericConversionTest",
+  "name": "MAPPER",
+  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    11,
+    0,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.jsontype.TypeRefinementForMapTest::testMapRefinement",
-  "line_number": "106",
-  "simple_class_name": "TypeRefinementForMapTest",
+  "test_name": "com.fasterxml.jackson.databind.convert.NumericConversionTest::testDoubleToLong",
+  "line_number": "43",
+  "simple_class_name": "NumericConversionTest",
   "loop": -1
 }

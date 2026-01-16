@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.creators.TestCreators",
+  "owner": "com.fasterxml.jackson.databind.ser.TestArraySerialization",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.creators.TestCreators::testSimpleBooleanConstructor",
-  "line_number": "324",
-  "simple_class_name": "TestCreators",
+  "test_name": "com.fasterxml.jackson.databind.ser.TestArraySerialization::testDoubleArray",
+  "line_number": "82",
+  "simple_class_name": "TestArraySerialization",
   "loop": -1
 }

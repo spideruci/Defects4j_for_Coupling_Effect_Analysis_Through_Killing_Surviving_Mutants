@@ -1,23 +1,23 @@
 {
-  "source": "return",
-  "owner": "com.fasterxml.jackson.core.JsonParser",
-  "name": "readValuesAs",
-  "returnType": "java.util.Iterator",
+  "source": "getField",
+  "owner": "com.fasterxml.jackson.databind.deser.UntypedNumbersTest",
+  "name": "MAPPER",
+  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
-  "readable_access": "var._context._factory.DEFAULT_NO_DESER_CLASS_NAMES",
+  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    5,
+    1,
     "graph",
     "fields",
-    "_context",
+    "_deserializationContext",
     "fields",
     "_factory",
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.seq.ReadValuesTest::testRootBeansWithParser",
-  "line_number": "171",
-  "simple_class_name": "ReadValuesTest",
+  "test_name": "com.fasterxml.jackson.databind.deser.UntypedNumbersTest::testLongAsNumber",
+  "line_number": "32",
+  "simple_class_name": "UntypedNumbersTest",
   "loop": -1
 }

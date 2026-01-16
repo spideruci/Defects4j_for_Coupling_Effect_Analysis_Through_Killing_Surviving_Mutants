@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.jsontype.TestDefaultForScalars::testMiscScalars",
-  "line_number": "68",
-  "simple_class_name": "TestDefaultForScalars",
+  "test_name": "com.fasterxml.jackson.databind.introspect.TestJacksonAnnotationIntrospector::testJsonTypeResolver",
+  "line_number": "191",
+  "simple_class_name": "TestJacksonAnnotationIntrospector",
   "loop": -1
 }

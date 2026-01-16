@@ -1,13 +1,13 @@
 {
-  "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.jsontype.TestPolymorphicWithDefaultImpl",
-  "name": "MAPPER",
+  "source": "return",
+  "owner": "com.fasterxml.jackson.databind.introspect.TestPropertyConflicts",
+  "name": "objectMapper",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    0,
+    6,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.jsontype.TestPolymorphicWithDefaultImpl::testDefaultAsVoid",
-  "line_number": "175",
-  "simple_class_name": "TestPolymorphicWithDefaultImpl",
+  "test_name": "com.fasterxml.jackson.databind.introspect.TestPropertyConflicts::testRegularAndIsGetter",
+  "line_number": "112",
+  "simple_class_name": "TestPropertyConflicts",
   "loop": -1
 }

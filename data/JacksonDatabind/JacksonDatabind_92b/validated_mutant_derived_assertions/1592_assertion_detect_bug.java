@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestTreeSerialization::testPOJOIntArray",
-  "line_number": "76",
-  "simple_class_name": "TestTreeSerialization",
+  "test_name": "com.fasterxml.jackson.databind.TestHandlerInstantiation::testDeserializer",
+  "line_number": "236",
+  "simple_class_name": "TestHandlerInstantiation",
   "loop": -1
 }

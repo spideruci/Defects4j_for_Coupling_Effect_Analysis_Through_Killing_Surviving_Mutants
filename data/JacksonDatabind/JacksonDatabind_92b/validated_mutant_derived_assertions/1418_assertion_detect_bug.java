@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.contextual.TestContextualSerialization::testClassAnnotations",
-  "line_number": "216",
-  "simple_class_name": "TestContextualSerialization",
+  "test_name": "com.fasterxml.jackson.databind.jsontype.TestDefaultForLists::testJackson628",
+  "line_number": "128",
+  "simple_class_name": "TestDefaultForLists",
   "loop": -1
 }

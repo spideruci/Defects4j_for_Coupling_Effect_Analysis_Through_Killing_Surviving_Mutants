@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.introspect.TestJacksonAnnotationIntrospector::testEnumHandling",
-  "line_number": "202",
-  "simple_class_name": "TestJacksonAnnotationIntrospector",
+  "test_name": "com.fasterxml.jackson.databind.creators.TestValueInstantiator::testDelegateBeanInstantiator",
+  "line_number": "366",
+  "simple_class_name": "TestValueInstantiator",
   "loop": -1
 }

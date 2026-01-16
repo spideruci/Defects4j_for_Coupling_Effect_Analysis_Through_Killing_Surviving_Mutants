@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.introspect.TestAnnotionBundles",
+  "owner": "com.fasterxml.jackson.databind.node.TestObjectNode",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.introspect.TestAnnotionBundles::testVisibilityBundle",
-  "line_number": "125",
-  "simple_class_name": "TestAnnotionBundles",
+  "test_name": "com.fasterxml.jackson.databind.node.TestObjectNode::testInvalidWith",
+  "line_number": "267",
+  "simple_class_name": "TestObjectNode",
   "loop": -1
 }

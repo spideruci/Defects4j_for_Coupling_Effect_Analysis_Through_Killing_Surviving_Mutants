@@ -7,7 +7,7 @@
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    9,
+    1,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.filter.NullSerializationTest::testCustomNullForTrees",
-  "line_number": "116",
-  "simple_class_name": "NullSerializationTest",
+  "test_name": "com.fasterxml.jackson.databind.introspect.TestInferredMutators::testDeserializationInference",
+  "line_number": "49",
+  "simple_class_name": "TestInferredMutators",
   "loop": -1
 }

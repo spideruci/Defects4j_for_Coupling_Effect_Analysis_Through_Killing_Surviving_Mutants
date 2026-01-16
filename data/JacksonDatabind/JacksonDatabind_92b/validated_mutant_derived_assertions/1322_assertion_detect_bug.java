@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestKeySerializers::testCustomForEnum",
-  "line_number": "142",
-  "simple_class_name": "TestKeySerializers",
+  "test_name": "com.fasterxml.jackson.databind.jsontype.TestExternalId::testMultipleTypeIdsDeserialization",
+  "line_number": "356",
+  "simple_class_name": "TestExternalId",
   "loop": -1
 }

@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.module.TestTypeModifiers::testMapLikeDeserialization",
-  "line_number": "277",
-  "simple_class_name": "TestTypeModifiers",
+  "test_name": "com.fasterxml.jackson.databind.module.TestKeyDeserializers::testKeyDeserializers",
+  "line_number": "38",
+  "simple_class_name": "TestKeyDeserializers",
   "loop": -1
 }

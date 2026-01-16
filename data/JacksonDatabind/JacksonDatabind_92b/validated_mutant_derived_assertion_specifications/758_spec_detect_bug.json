@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.jsontype.TestExternalId",
+  "owner": "com.fasterxml.jackson.databind.interop.TestJDKProxy",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.jsontype.TestExternalId::testWithNaturalScalar118",
-  "line_number": "446",
-  "simple_class_name": "TestExternalId",
+  "test_name": "com.fasterxml.jackson.databind.interop.TestJDKProxy::testSimple",
+  "line_number": "41",
+  "simple_class_name": "TestJDKProxy",
   "loop": -1
 }

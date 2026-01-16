@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.node.TestTreeMapperSerializer::testFromMap",
-  "line_number": "62",
-  "simple_class_name": "TestTreeMapperSerializer",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestArrayDeserialization::testFromEmptyString",
+  "line_number": "191",
+  "simple_class_name": "TestArrayDeserialization",
   "loop": -1
 }

@@ -1,13 +1,13 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.creators.BuilderSimpleTest",
+  "owner": "com.fasterxml.jackson.databind.deser.TestOverloaded",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    1,
+    0,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.creators.BuilderSimpleTest::testBuilderMethodReturnMoreGeneral",
-  "line_number": "360",
-  "simple_class_name": "BuilderSimpleTest",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestOverloaded::testSpecialization",
+  "line_number": "108",
+  "simple_class_name": "TestOverloaded",
   "loop": -1
 }

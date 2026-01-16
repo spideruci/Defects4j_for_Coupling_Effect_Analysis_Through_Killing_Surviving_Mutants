@@ -7,7 +7,7 @@
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    6,
+    0,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.convert.TestBeanConversions::testWrapping",
-  "line_number": "152",
-  "simple_class_name": "TestBeanConversions",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestUntypedDeserialization::testObjectSerializeWithLong",
+  "line_number": "185",
+  "simple_class_name": "TestUntypedDeserialization",
   "loop": -1
 }

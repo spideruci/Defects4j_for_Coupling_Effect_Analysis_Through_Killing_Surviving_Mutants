@@ -1,7 +1,7 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.introspect.TestNamingStrategyStd",
-  "name": "_lcWithUndescoreMapper",
+  "owner": "com.fasterxml.jackson.databind.ser.TestSimpleTypes",
+  "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.introspect.TestNamingStrategyStd::testLowerCaseOtherNonStandardNamesTranslations",
-  "line_number": "232",
-  "simple_class_name": "TestNamingStrategyStd",
+  "test_name": "com.fasterxml.jackson.databind.ser.TestSimpleTypes::testIntArray",
+  "line_number": "72",
+  "simple_class_name": "TestSimpleTypes",
   "loop": -1
 }

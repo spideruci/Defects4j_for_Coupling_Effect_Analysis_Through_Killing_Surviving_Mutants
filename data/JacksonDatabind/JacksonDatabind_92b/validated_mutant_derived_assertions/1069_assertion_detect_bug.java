@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.node.TestObjectNode",
+  "owner": "com.fasterxml.jackson.databind.filter.TestMapFiltering",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.node.TestObjectNode::testNullChecking2",
-  "line_number": "215",
-  "simple_class_name": "TestObjectNode",
+  "test_name": "com.fasterxml.jackson.databind.filter.TestMapFiltering::testNonNullValueMapViaProp",
+  "line_number": "168",
+  "simple_class_name": "TestMapFiltering",
   "loop": -1
 }

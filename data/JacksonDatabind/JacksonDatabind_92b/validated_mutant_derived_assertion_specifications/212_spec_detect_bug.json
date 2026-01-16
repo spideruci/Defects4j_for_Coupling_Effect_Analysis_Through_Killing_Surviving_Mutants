@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.contextual.TestContextualSerialization::testMethodAnnotationInList",
-  "line_number": "246",
-  "simple_class_name": "TestContextualSerialization",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestFieldDeserialization::testFailureDueToDups",
+  "line_number": "137",
+  "simple_class_name": "TestFieldDeserialization",
   "loop": -1
 }

@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.introspect.TestMixinMerging::testDisappearingMixins515",
-  "line_number": "40",
-  "simple_class_name": "TestMixinMerging",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestSetterlessProperties::testSimpleSetterlessCollectionFailure",
+  "line_number": "68",
+  "simple_class_name": "TestSetterlessProperties",
   "loop": -1
 }

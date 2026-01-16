@@ -1,17 +1,23 @@
 {
   "source": "return",
-  "owner": "com.fasterxml.jackson.databind.jsontype.TestDefaultForObject$ObjectHolder",
-  "name": "TestDefaultForObject$ObjectHolder",
+  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
+  "name": "ObjectMapper",
   "returnType": "void",
   "ordinal": 0,
-  "readable_access": "var.metas",
+  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    6,
-    "graph"
+    0,
+    "graph",
+    "fields",
+    "_deserializationContext",
+    "fields",
+    "_factory",
+    "fields",
+    "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.jsontype.TestDefaultForObject::testTokenBuffer",
-  "line_number": "269",
-  "simple_class_name": "TestDefaultForObject",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestGenericCollectionDeser::testListSubClass",
+  "line_number": "47",
+  "simple_class_name": "TestGenericCollectionDeser",
   "loop": -1
 }

@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.misc.TestBlocking::testEagerAdvance",
-  "line_number": "24",
-  "simple_class_name": "TestBlocking",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestCachingOfDeser::testCustomListCaching2",
+  "line_number": "100",
+  "simple_class_name": "TestCachingOfDeser",
   "loop": -1
 }

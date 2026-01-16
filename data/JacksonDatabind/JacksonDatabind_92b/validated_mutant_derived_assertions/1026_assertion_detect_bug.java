@@ -7,7 +7,7 @@
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    0,
+    4,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestTreeSerialization::testPOJOBean",
-  "line_number": "99",
-  "simple_class_name": "TestTreeSerialization",
+  "test_name": "com.fasterxml.jackson.databind.ser.TestJacksonTypes::testLocation",
+  "line_number": "20",
+  "simple_class_name": "TestJacksonTypes",
   "loop": -1
 }

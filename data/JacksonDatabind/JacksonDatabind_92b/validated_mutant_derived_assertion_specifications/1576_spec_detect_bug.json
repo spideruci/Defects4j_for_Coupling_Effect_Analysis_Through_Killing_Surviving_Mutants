@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.jsonschema.NewSchemaTest",
+  "owner": "com.fasterxml.jackson.databind.struct.TestPOJOAsArray",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.jsonschema.NewSchemaTest::testBasicTraversal",
-  "line_number": "68",
-  "simple_class_name": "NewSchemaTest",
+  "test_name": "com.fasterxml.jackson.databind.struct.TestPOJOAsArray::testWriteSimplePropertyValue",
+  "line_number": "159",
+  "simple_class_name": "TestPOJOAsArray",
   "loop": -1
 }

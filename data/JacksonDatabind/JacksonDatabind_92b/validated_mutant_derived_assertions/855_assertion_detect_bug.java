@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.convert.TestMapConversions::testIssue287",
-  "line_number": "95",
-  "simple_class_name": "TestMapConversions",
+  "test_name": "com.fasterxml.jackson.databind.creators.TestConstructFromMap::testViaFactoryUsingString",
+  "line_number": "91",
+  "simple_class_name": "TestConstructFromMap",
   "loop": -1
 }

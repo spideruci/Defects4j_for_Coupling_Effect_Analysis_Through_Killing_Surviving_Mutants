@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.filter.TestAnyGetterFiltering::testAnyGetterFiltering",
-  "line_number": "46",
-  "simple_class_name": "TestAnyGetterFiltering",
+  "test_name": "com.fasterxml.jackson.databind.ser.TestEnumSerialization::testEnumMapSerDisableToString",
+  "line_number": "409",
+  "simple_class_name": "TestEnumSerialization",
   "loop": -1
 }

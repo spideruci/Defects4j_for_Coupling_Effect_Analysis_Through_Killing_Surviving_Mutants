@@ -1,13 +1,13 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.contextual.TestContextAttributeWithDeser",
+  "owner": "com.fasterxml.jackson.databind.TestObjectMapperBeanDeserializer",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    2,
+    34,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.contextual.TestContextAttributeWithDeser::testHierarchic",
-  "line_number": "83",
-  "simple_class_name": "TestContextAttributeWithDeser",
+  "test_name": "com.fasterxml.jackson.databind.TestObjectMapperBeanDeserializer::testListBean",
+  "line_number": "307",
+  "simple_class_name": "TestObjectMapperBeanDeserializer",
   "loop": -1
 }

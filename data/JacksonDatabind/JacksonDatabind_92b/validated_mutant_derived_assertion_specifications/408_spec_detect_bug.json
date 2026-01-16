@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.ser.RawValueTest",
+  "owner": "com.fasterxml.jackson.databind.ser.TestJsonSerialize2",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.RawValueTest::testWithValueToTree",
-  "line_number": "83",
-  "simple_class_name": "RawValueTest",
+  "test_name": "com.fasterxml.jackson.databind.ser.TestJsonSerialize2::testEmptyInclusionContainers",
+  "line_number": "181",
+  "simple_class_name": "TestJsonSerialize2",
   "loop": -1
 }

@@ -1,8 +1,8 @@
 {
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
+  "source": "getField",
+  "owner": "com.fasterxml.jackson.databind.creators.TestPolymorphicCreators",
+  "name": "MAPPER",
+  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestNullHandling::testCustomRootNulls",
-  "line_number": "115",
-  "simple_class_name": "TestNullHandling",
+  "test_name": "com.fasterxml.jackson.databind.creators.TestPolymorphicCreators::testManualPolymorphicDog",
+  "line_number": "102",
+  "simple_class_name": "TestPolymorphicCreators",
   "loop": -1
 }

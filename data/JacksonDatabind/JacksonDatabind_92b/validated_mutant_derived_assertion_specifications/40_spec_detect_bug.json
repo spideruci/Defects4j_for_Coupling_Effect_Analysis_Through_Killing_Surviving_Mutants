@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.introspect.TestNamingStrategyStd::testIssue428PascalWithOverrides",
-  "line_number": "292",
-  "simple_class_name": "TestNamingStrategyStd",
+  "test_name": "com.fasterxml.jackson.databind.ser.DateSerializationTest::testDateDefaultShape",
+  "line_number": "268",
+  "simple_class_name": "DateSerializationTest",
   "loop": -1
 }

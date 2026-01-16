@@ -7,7 +7,7 @@
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    0,
+    6,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestStatics::testStaticMethods",
-  "line_number": "57",
-  "simple_class_name": "TestStatics",
+  "test_name": "com.fasterxml.jackson.databind.objectid.TestAbstractWithObjectId::testIssue877",
+  "line_number": "55",
+  "simple_class_name": "TestAbstractWithObjectId",
   "loop": -1
 }

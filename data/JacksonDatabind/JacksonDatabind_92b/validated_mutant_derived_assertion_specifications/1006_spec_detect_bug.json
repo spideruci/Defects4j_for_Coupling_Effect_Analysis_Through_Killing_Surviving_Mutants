@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestTypedRootValueSerialization::testTypedMaps",
-  "line_number": "60",
-  "simple_class_name": "TestTypedRootValueSerialization",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestJacksonTypes::testJavaType",
+  "line_number": "100",
+  "simple_class_name": "TestJacksonTypes",
   "loop": -1
 }

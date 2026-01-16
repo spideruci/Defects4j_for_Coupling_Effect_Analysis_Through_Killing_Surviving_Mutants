@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.filter.NullSerializationTest",
+  "owner": "com.fasterxml.jackson.databind.ser.TestArraySerialization",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.filter.NullSerializationTest::testCustomNullForTrees",
-  "line_number": "107",
-  "simple_class_name": "NullSerializationTest",
+  "test_name": "com.fasterxml.jackson.databind.ser.TestArraySerialization::testLongArray",
+  "line_number": "70",
+  "simple_class_name": "TestArraySerialization",
   "loop": -1
 }

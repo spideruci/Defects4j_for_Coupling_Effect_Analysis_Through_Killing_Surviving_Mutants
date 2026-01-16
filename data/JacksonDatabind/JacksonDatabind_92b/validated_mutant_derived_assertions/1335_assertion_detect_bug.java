@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.creators.TestCreators",
+  "owner": "com.fasterxml.jackson.databind.ser.TestJsonValue",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.creators.TestCreators::testBrokenConstructor",
-  "line_number": "495",
-  "simple_class_name": "TestCreators",
+  "test_name": "com.fasterxml.jackson.databind.ser.TestJsonValue::testMixedJsonValue",
+  "line_number": "216",
+  "simple_class_name": "TestJsonValue",
   "loop": -1
 }

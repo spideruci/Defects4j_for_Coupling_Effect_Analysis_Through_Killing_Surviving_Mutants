@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestJsonSerialize::testStaticTypingWithArrayList",
-  "line_number": "199",
-  "simple_class_name": "TestJsonSerialize",
+  "test_name": "com.fasterxml.jackson.databind.creators.TestCreatorsDelegating::testBooleanDelegate",
+  "line_number": "81",
+  "simple_class_name": "TestCreatorsDelegating",
   "loop": -1
 }

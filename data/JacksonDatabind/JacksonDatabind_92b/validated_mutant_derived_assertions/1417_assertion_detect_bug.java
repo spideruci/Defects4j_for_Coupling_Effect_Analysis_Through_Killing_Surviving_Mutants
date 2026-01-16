@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.ser.TestEnumSerialization",
+  "owner": "com.fasterxml.jackson.databind.deser.TestEnumDeserialization",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestEnumSerialization::testEnumAsObjectBroken",
-  "line_number": "364",
-  "simple_class_name": "TestEnumSerialization",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestEnumDeserialization::testEnumWithJsonPropertyRename",
+  "line_number": "479",
+  "simple_class_name": "TestEnumDeserialization",
   "loop": -1
 }

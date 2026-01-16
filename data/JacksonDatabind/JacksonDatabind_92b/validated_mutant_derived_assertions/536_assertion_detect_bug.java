@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.misc.TestJSONP::testSimpleScalars",
-  "line_number": "24",
-  "simple_class_name": "TestJSONP",
+  "test_name": "com.fasterxml.jackson.databind.mixins.TestMixinInheritance::testMixinFieldInheritance",
+  "line_number": "53",
+  "simple_class_name": "TestMixinInheritance",
   "loop": -1
 }

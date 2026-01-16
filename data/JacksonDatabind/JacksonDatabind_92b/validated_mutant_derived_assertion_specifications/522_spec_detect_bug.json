@@ -1,8 +1,8 @@
 {
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
+  "source": "getField",
+  "owner": "com.fasterxml.jackson.databind.TestJDKSerialization",
+  "name": "MAPPER",
+  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.module.TestTypeModifiers::testCollectionLikeTypeConstruction",
-  "line_number": "236",
-  "simple_class_name": "TestTypeModifiers",
+  "test_name": "com.fasterxml.jackson.databind.TestJDKSerialization::testConfigs",
+  "line_number": "52",
+  "simple_class_name": "TestJDKSerialization",
   "loop": -1
 }

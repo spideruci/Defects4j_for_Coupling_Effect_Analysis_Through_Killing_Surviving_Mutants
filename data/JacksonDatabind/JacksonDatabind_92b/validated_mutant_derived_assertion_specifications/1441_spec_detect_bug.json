@@ -1,13 +1,13 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.jsontype.TestTypedContainerSerialization",
-  "name": "mapper",
+  "owner": "com.fasterxml.jackson.databind.filter.TestSimpleSerializationIgnore",
+  "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    4,
+    0,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.jsontype.TestTypedContainerSerialization::testPolymorphicWithContainer",
-  "line_number": "114",
-  "simple_class_name": "TestTypedContainerSerialization",
+  "test_name": "com.fasterxml.jackson.databind.filter.TestSimpleSerializationIgnore::testIgnoreOver",
+  "line_number": "100",
+  "simple_class_name": "TestSimpleSerializationIgnore",
   "loop": -1
 }

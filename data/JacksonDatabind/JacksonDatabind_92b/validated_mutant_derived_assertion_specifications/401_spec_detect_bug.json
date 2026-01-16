@@ -1,13 +1,13 @@
 {
   "source": "return",
-  "owner": "com.fasterxml.jackson.databind.introspect.TestPropertyConflicts",
-  "name": "objectMapper",
-  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
+  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
+  "name": "ObjectMapper",
+  "returnType": "void",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    6,
+    0,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.introspect.TestPropertyConflicts::testRegularAndIsGetter",
-  "line_number": "112",
-  "simple_class_name": "TestPropertyConflicts",
+  "test_name": "com.fasterxml.jackson.databind.jsontype.TestDefaultForScalars::testNumericScalars",
+  "line_number": "35",
+  "simple_class_name": "TestDefaultForScalars",
   "loop": -1
 }

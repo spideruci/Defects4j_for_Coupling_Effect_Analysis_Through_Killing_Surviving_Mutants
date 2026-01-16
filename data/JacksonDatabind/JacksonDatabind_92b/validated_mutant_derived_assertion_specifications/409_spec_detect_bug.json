@@ -1,7 +1,7 @@
 {
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.views.TestViewsSerialization2",
-  "name": "createObjectMapper",
+  "source": "getField",
+  "owner": "com.fasterxml.jackson.databind.node.TestObjectNode",
+  "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.views.TestViewsSerialization2::testDataBindingUsage",
-  "line_number": "19",
-  "simple_class_name": "TestViewsSerialization2",
+  "test_name": "com.fasterxml.jackson.databind.node.TestObjectNode::testIssue941",
+  "line_number": "403",
+  "simple_class_name": "TestObjectNode",
   "loop": -1
 }

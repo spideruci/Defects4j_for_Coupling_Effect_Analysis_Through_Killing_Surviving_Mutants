@@ -1,13 +1,13 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.jsontype.TestWithGenerics",
+  "owner": "com.fasterxml.jackson.databind.deser.UntypedNumbersTest",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    2,
+    0,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.jsontype.TestWithGenerics::testWrapperWithField",
-  "line_number": "149",
-  "simple_class_name": "TestWithGenerics",
+  "test_name": "com.fasterxml.jackson.databind.deser.UntypedNumbersTest::testForceIntsToLongs",
+  "line_number": "120",
+  "simple_class_name": "UntypedNumbersTest",
   "loop": -1
 }

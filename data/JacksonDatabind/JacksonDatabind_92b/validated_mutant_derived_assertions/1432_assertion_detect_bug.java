@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.TestHandlerInstantiation::testSerializer",
-  "line_number": "253",
-  "simple_class_name": "TestHandlerInstantiation",
+  "test_name": "com.fasterxml.jackson.databind.creators.MultiArgConstructorTest::testMultiArgWithPartialOverride",
+  "line_number": "79",
+  "simple_class_name": "MultiArgConstructorTest",
   "loop": -1
 }

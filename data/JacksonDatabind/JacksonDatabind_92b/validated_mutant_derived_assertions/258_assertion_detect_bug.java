@@ -7,7 +7,7 @@
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    0,
+    2,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.jsontype.TestTypeNames::testRoundTrip",
-  "line_number": "46",
-  "simple_class_name": "TestTypeNames",
-  "loop": -1
+  "test_name": "com.fasterxml.jackson.databind.deser.TestConcurrency::testDeserializerResolution",
+  "line_number": "78",
+  "simple_class_name": "TestConcurrency",
+  "loop": 1
 }

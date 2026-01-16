@@ -7,7 +7,7 @@
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    0,
+    14,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestAnnotationUsing::testArrayContentUsing",
-  "line_number": "158",
-  "simple_class_name": "TestAnnotationUsing",
+  "test_name": "com.fasterxml.jackson.databind.jsontype.TestAbstractTypeNames::testEmptyCollection",
+  "line_number": "113",
+  "simple_class_name": "TestAbstractTypeNames",
   "loop": -1
 }

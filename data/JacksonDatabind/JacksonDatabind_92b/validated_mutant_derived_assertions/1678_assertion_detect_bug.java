@@ -1,8 +1,8 @@
 {
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
+  "source": "getField",
+  "owner": "com.fasterxml.jackson.databind.deser.NumberDeserTest",
+  "name": "MAPPER",
+  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestTreeSerialization::testSimpleViaObjectMapper",
-  "line_number": "28",
-  "simple_class_name": "TestTreeSerialization",
+  "test_name": "com.fasterxml.jackson.databind.deser.NumberDeserTest::testScientificNotationForString",
+  "line_number": "123",
+  "simple_class_name": "NumberDeserTest",
   "loop": -1
 }

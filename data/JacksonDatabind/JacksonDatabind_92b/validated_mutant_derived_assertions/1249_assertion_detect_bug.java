@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.introspect.TestJacksonAnnotationIntrospector::testJsonTypeResolver",
-  "line_number": "191",
-  "simple_class_name": "TestJacksonAnnotationIntrospector",
+  "test_name": "com.fasterxml.jackson.databind.ser.TestBeanSerializer::testEmptyBean539",
+  "line_number": "310",
+  "simple_class_name": "TestBeanSerializer",
   "loop": -1
 }

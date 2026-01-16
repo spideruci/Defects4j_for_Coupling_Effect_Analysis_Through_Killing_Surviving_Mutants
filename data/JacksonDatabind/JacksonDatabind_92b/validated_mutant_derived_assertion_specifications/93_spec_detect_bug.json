@@ -1,7 +1,7 @@
 {
-  "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.objectid.JSOGDeserialize622Test",
-  "name": "MAPPER",
+  "source": "return",
+  "owner": "com.fasterxml.jackson.databind.ser.TestRootType",
+  "name": "objectMapper",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.objectid.JSOGDeserialize622Test::testStructJSOGRef",
-  "line_number": "207",
-  "simple_class_name": "JSOGDeserialize622Test",
+  "test_name": "com.fasterxml.jackson.databind.ser.TestRootType::testJackson398",
+  "line_number": "148",
+  "simple_class_name": "TestRootType",
   "loop": -1
 }

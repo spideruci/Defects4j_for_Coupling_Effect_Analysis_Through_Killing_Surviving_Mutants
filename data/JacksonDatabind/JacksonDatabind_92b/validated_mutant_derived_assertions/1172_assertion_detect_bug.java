@@ -1,8 +1,8 @@
 {
   "source": "return",
-  "owner": "com.fasterxml.jackson.databind.node.TestJsonPointer",
-  "name": "objectMapper",
-  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
+  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
+  "name": "ObjectMapper",
+  "returnType": "void",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.node.TestJsonPointer::testLongNumbers",
-  "line_number": "40",
-  "simple_class_name": "TestJsonPointer",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestAnnotationUsing::testClassDeserializer",
+  "line_number": "131",
+  "simple_class_name": "TestAnnotationUsing",
   "loop": -1
 }

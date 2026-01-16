@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.module.TestKeyDeserializers::testKeyDeserializers",
-  "line_number": "38",
-  "simple_class_name": "TestKeyDeserializers",
+  "test_name": "com.fasterxml.jackson.databind.mixins.TestMixinInheritance::testMixinMethodInheritance",
+  "line_number": "66",
+  "simple_class_name": "TestMixinInheritance",
   "loop": -1
 }

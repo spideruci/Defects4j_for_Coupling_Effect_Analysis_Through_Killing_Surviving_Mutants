@@ -1,13 +1,13 @@
 {
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.introspect.TestScalaLikeImplicitProperties",
-  "name": "manglingMapper",
+  "source": "getField",
+  "owner": "com.fasterxml.jackson.databind.ser.TestGenericTypes",
+  "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    0,
+    6,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.introspect.TestScalaLikeImplicitProperties::testGetterSetterProperty",
-  "line_number": "162",
-  "simple_class_name": "TestScalaLikeImplicitProperties",
+  "test_name": "com.fasterxml.jackson.databind.ser.TestGenericTypes::testRootTypeForCollections727",
+  "line_number": "174",
+  "simple_class_name": "TestGenericTypes",
   "loop": -1
 }

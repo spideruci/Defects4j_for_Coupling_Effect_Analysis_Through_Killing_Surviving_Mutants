@@ -7,7 +7,7 @@
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    0,
+    5,
     "graph",
     "fields",
     "_deserializationContext",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.creators.TestCreatorsDelegating::testDelegateWithTokenBuffer",
-  "line_number": "128",
-  "simple_class_name": "TestCreatorsDelegating",
+  "test_name": "com.fasterxml.jackson.databind.views.TestViewDeserialization::testWithoutDefaultInclusion",
+  "line_number": "93",
+  "simple_class_name": "TestViewDeserialization",
   "loop": -1
 }

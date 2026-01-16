@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestFeatures::testVisibilityFeatures",
-  "line_number": "285",
-  "simple_class_name": "TestFeatures",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestAnnotationUsing::testMethodDeserializer",
+  "line_number": "140",
+  "simple_class_name": "TestAnnotationUsing",
   "loop": -1
 }

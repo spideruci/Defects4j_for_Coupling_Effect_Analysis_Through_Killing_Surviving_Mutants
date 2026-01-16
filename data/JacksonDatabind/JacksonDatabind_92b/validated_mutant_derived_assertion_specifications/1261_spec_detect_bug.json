@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestNullHandling::testAnySetterNulls",
-  "line_number": "88",
-  "simple_class_name": "TestNullHandling",
+  "test_name": "com.fasterxml.jackson.databind.jsontype.TestPropertyTypeInfo::testSimpleArrayMethod",
+  "line_number": "157",
+  "simple_class_name": "TestPropertyTypeInfo",
   "loop": -1
 }

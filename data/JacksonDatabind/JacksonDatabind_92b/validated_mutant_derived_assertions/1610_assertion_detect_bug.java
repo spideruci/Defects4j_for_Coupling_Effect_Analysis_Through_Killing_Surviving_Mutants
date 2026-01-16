@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.creators.CreatorPropertiesTest",
+  "owner": "com.fasterxml.jackson.databind.filter.MapInclusionTest",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.creators.CreatorPropertiesTest::testCreatorPropertiesAnnotation",
-  "line_number": "60",
-  "simple_class_name": "CreatorPropertiesTest",
+  "test_name": "com.fasterxml.jackson.databind.filter.MapInclusionTest::testNonNullValueMapViaProp",
+  "line_number": "34",
+  "simple_class_name": "MapInclusionTest",
   "loop": -1
 }

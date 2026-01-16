@@ -1,8 +1,8 @@
 {
-  "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
+  "source": "getField",
+  "owner": "com.fasterxml.jackson.databind.TestObjectMapperBeanDeserializer",
+  "name": "MAPPER",
+  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestCustomDeserializers::testDelegating",
-  "line_number": "312",
-  "simple_class_name": "TestCustomDeserializers",
+  "test_name": "com.fasterxml.jackson.databind.TestObjectMapperBeanDeserializer::testFromIntCtor",
+  "line_number": "213",
+  "simple_class_name": "TestObjectMapperBeanDeserializer",
   "loop": -1
 }

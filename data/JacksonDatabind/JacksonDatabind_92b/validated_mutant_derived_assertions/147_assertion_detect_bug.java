@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.deser.TestSimpleTypes",
+  "owner": "com.fasterxml.jackson.databind.objectid.TestObjectId",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestSimpleTypes::testUUIDAux",
-  "line_number": "682",
-  "simple_class_name": "TestSimpleTypes",
+  "test_name": "com.fasterxml.jackson.databind.objectid.TestObjectId::testColumnMetadata",
+  "line_number": "119",
+  "simple_class_name": "TestObjectId",
   "loop": -1
 }

@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.convert.TestUpdateValue::testIssue744",
-  "line_number": "189",
-  "simple_class_name": "TestUpdateValue",
+  "test_name": "com.fasterxml.jackson.databind.introspect.TestNamingStrategyStd::testIssue428PascalWithOverrides",
+  "line_number": "292",
+  "simple_class_name": "TestNamingStrategyStd",
   "loop": -1
 }

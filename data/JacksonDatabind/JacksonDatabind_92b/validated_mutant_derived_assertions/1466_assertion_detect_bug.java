@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.jsontype.TestSubtypesExistingProperty",
+  "owner": "com.fasterxml.jackson.databind.deser.TestCollectionDeserialization",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.jsontype.TestSubtypesExistingProperty::testExistingPropertySerializationFruits",
-  "line_number": "219",
-  "simple_class_name": "TestSubtypesExistingProperty",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestCollectionDeserialization::testCustomDeserializer",
+  "line_number": "131",
+  "simple_class_name": "TestCollectionDeserialization",
   "loop": -1
 }

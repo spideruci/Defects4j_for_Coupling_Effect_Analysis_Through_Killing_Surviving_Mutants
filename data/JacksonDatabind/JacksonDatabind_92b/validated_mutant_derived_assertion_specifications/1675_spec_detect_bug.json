@@ -1,23 +1,19 @@
 {
   "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "ObjectMapper",
-  "returnType": "void",
+  "owner": "com.fasterxml.jackson.databind.TestJDKSerialization",
+  "name": "jdkSerialize",
+  "returnType": "byte[]",
   "ordinal": 0,
-  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
+  "readable_access": "var.elements",
   "python_access": [
     "metas",
-    0,
+    7,
     "graph",
-    "fields",
-    "_deserializationContext",
-    "fields",
-    "_factory",
-    "fields",
-    "DEFAULT_NO_DESER_CLASS_NAMES"
+    "elements",
+    0
   ],
-  "test_name": "com.fasterxml.jackson.databind.creators.TestValueInstantiator::testBeanFromInt",
-  "line_number": "472",
-  "simple_class_name": "TestValueInstantiator",
+  "test_name": "com.fasterxml.jackson.databind.TestJDKSerialization::testObjectReader",
+  "line_number": "121",
+  "simple_class_name": "TestJDKSerialization",
   "loop": -1
 }

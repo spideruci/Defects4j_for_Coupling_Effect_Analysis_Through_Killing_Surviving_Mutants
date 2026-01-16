@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.ObjectMapperTest",
+  "owner": "com.fasterxml.jackson.databind.ser.TestEnumSerialization",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ObjectMapperTest::testEmptyBeanSerializability",
-  "line_number": "267",
-  "simple_class_name": "ObjectMapperTest",
+  "test_name": "com.fasterxml.jackson.databind.ser.TestEnumSerialization::testOverrideEnumAsNumber",
+  "line_number": "384",
+  "simple_class_name": "TestEnumSerialization",
   "loop": -1
 }

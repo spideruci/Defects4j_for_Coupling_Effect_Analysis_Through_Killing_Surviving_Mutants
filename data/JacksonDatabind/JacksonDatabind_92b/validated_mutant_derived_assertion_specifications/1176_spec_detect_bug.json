@@ -1,6 +1,6 @@
 {
   "source": "getField",
-  "owner": "com.fasterxml.jackson.databind.deser.TestDateDeserialization",
+  "owner": "com.fasterxml.jackson.databind.deser.TestEnumDeserialization",
   "name": "MAPPER",
   "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
   "ordinal": 0,
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.deser.TestDateDeserialization::testCustomCalendarWithAnnotation",
-  "line_number": "470",
-  "simple_class_name": "TestDateDeserialization",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestEnumDeserialization::testAllowUnknownEnumValuesReadAsNull",
+  "line_number": "367",
+  "simple_class_name": "TestEnumDeserialization",
   "loop": -1
 }

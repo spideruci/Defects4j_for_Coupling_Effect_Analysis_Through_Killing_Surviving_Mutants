@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.TestRootName::testRootUsingExplicitConfig",
-  "line_number": "85",
-  "simple_class_name": "TestRootName",
+  "test_name": "com.fasterxml.jackson.databind.type.TestGenericFieldInSubtype::testInnerType",
+  "line_number": "22",
+  "simple_class_name": "TestGenericFieldInSubtype",
   "loop": -1
 }

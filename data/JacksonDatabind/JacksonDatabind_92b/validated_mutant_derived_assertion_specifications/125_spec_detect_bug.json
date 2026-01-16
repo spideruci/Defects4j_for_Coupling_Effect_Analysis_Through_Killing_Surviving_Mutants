@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.creators.TestCreators541::testCreator541",
-  "line_number": "66",
-  "simple_class_name": "TestCreators541",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestPolymorphicDeserialization676::testDeSerCorrect",
+  "line_number": "88",
+  "simple_class_name": "TestPolymorphicDeserialization676",
   "loop": -1
 }

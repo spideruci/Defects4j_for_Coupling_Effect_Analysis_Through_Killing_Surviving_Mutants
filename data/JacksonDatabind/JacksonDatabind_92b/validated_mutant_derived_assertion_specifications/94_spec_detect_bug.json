@@ -1,8 +1,8 @@
 {
   "source": "return",
-  "owner": "com.fasterxml.jackson.databind.ser.TestRootType",
-  "name": "objectMapper",
-  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
+  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
+  "name": "ObjectMapper",
+  "returnType": "void",
   "ordinal": 0,
   "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.ser.TestRootType::testJackson398",
-  "line_number": "148",
-  "simple_class_name": "TestRootType",
+  "test_name": "com.fasterxml.jackson.databind.deser.TestJdkTypes::testMultiValueArrayException",
+  "line_number": "638",
+  "simple_class_name": "TestJdkTypes",
   "loop": -1
 }

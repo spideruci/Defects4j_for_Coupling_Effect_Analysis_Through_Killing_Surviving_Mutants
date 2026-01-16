@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.introspect.BeanNamingTest::testSimple",
-  "line_number": "22",
-  "simple_class_name": "BeanNamingTest",
+  "test_name": "com.fasterxml.jackson.databind.ser.TestFeatures::testPerClassAutoDetectionForIsGetter",
+  "line_number": "132",
+  "simple_class_name": "TestFeatures",
   "loop": -1
 }

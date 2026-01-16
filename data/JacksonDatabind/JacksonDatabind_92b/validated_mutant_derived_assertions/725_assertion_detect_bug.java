@@ -1,13 +1,13 @@
 {
   "source": "return",
   "owner": "com.fasterxml.jackson.databind.ObjectMapper",
-  "name": "readerFor",
+  "name": "reader",
   "returnType": "com.fasterxml.jackson.databind.ObjectReader",
   "ordinal": 0,
   "readable_access": "var._context._factory.DEFAULT_NO_DESER_CLASS_NAMES",
   "python_access": [
     "metas",
-    13,
+    28,
     "graph",
     "fields",
     "_context",
@@ -16,8 +16,8 @@
     "fields",
     "DEFAULT_NO_DESER_CLASS_NAMES"
   ],
-  "test_name": "com.fasterxml.jackson.databind.TestJDKSerialization::testEnumHandlers",
-  "line_number": "86",
-  "simple_class_name": "TestJDKSerialization",
+  "test_name": "com.fasterxml.jackson.databind.ser.TestConfig::testDateFormatConfig",
+  "line_number": "224",
+  "simple_class_name": "TestConfig",
   "loop": -1
 }
