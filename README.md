@@ -12,7 +12,7 @@ Which contains the necessary code to generate fault-revealing augmentations from
 - [Code](#code)
   - [How to Get Started](#how-to-get-started)
   - [Source Code](#source-code)
-- [Mutation Analysis](#mutation-analysis)
+- [Generated Assertions](#generated-assertions)
 - [Real Bug Detection](#real-bug-detection)
 - [Results](#results)
 - [Reproducibility](#reproducibility)
@@ -73,76 +73,42 @@ In particular, pages 2–3 list the required dependencies and their versions for
 Pages 3–4 provide a step-by-step example demonstrating how to run the experiment for **Cli-2**, which takes approximately **13 minutes** on a **MacBook Pro (2021, M1 Pro)**.
 
 ## Source Code
+The Defects4J customizations introduced in this work are implemented directly in this repository.  
+The main additions and modifications to Defects4J commands are located under `framework/bin`.
 
-The direct customization is in the current repositories, with the main new and customized defects4j command customization under framework/bin. 
-Specifically, the coverage related to each bugs are pre-computed under "coverages" directory. 
-There are some other utilities directories that are used for the experiments, including "mutation_testing_utils", "mutation_testing_utils_shaded",and "state_utils".
+Coverage information for each bug is precomputed and stored in the `coverages` directory.  
+In addition, several utility directories are used throughout the experiments, including
+`mutation_testing_utils`, `mutation_testing_utils_shaded`, and `state_utils`.
 
-For the jar file named state_utils/folder_utils/transform.jar, it is used to generate concrete assertion code from assertion specifications, which is introduced in Section 4 in [doc.pdf](doc.pdf).
-Their source-code implementation is included in SourceCodeInstrumentation folder.
+The JAR file `state_utils/folder_utils/transform.jar` is used to generate concrete assertion
+code from assertion specifications, as introduced in Section 4 of the accompanying documentation
+([doc.pdf](doc.pdf)).  
+The corresponding source code is provided in the `SourceCodeInstrumentation` directory.
 
-For the jar file named state_utils/folder_utils/o.jar, it is used to instrument test code to observe program states. Their source-code implementation is included in observerForSpecification folder.
-
-
-
-
-
-
-
-
-
+The JAR file `state_utils/folder_utils/o.jar` is used to instrument test code in order to observe
+program states.  
+The source-code implementation for this functionality is included in the
+`observerForSpecification` directory.
 
 
+# Generated Assertions
 
+The assertions generated from both real bugs and mutants are collected in the `data` directory.
+They are organized by subject and program version.
 
+Assertions derived from real bugs are stored in the `validated_real_bug_derived_assertions` directory,
+with the corresponding specifications located in
+`validated_real_bug_derived_assertion_specifications`.
 
+Similarly, assertions derived from mutants are stored in the
+`validated_mutant_derived_assertions` directory, with their specifications located in
+`validated_mutant_derived_assertion_specifications`.
+For mutant-derived assertions, file names indicate whether the assertion is able to detect the real bug.
 
-
-
-The complete artifact documentation is provided in **doc.pdf**, which describes the design and implementation of our framework, explains how to run the experiments, and highlights important methodological considerations and limitations.
-
-👉 [Open Artifact Documentation (doc.pdf)](doc.pdf)
-
-The remainder of this README focuses on the structure and contents of the dataset repository.
-
-
-
-
-Program versions where we successfully generate assertions on passing covering tests that detects the real bugs.
-
-
+For example,
+`data/Cli/Cli_2b/validated_mutant_derived_assertions/5_assertion_detect_bugs.java`
+is an assertion generated from surviving mutants for **Cli-2b**.
+This mutant-derived assertion is capable of detecting the corresponding real bug.
 
 
 
-Generated Assertions for Real Bugs
-List of Accepted Assertions 
-
-
-Generated Assertions from Mutants
-List of Accepted Assertions
-List of meal-bug detecting mutant-based Assertions
-
-
-
-
-
-
-
-
-Folder "" for Source Code for test code instrumentation for state collection
-Folder "" for Source Code for test code assertion generation
-
-Extended 9 defects4j commands and their corresponding code stay in, including ......
-
-dataset -> 
-generated real-bug detecting assertion options
-generated mutant-killing assertions options
-statistics of if mutant-killing assertions detect real bugs.
-
-Analysis Scripts
-
-
-
-
-Analyzing Scripts
-Runtimes
