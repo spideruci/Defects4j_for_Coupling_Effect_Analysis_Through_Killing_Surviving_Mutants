@@ -1,0 +1,18 @@
+{
+  "source": "local",
+  "owner": "Lorg/apache/commons/cli2/OptionException;",
+  "name": "exp",
+  "ordinal": 0,
+  "readable_access": "var.option",
+  "python_access": [
+    "metas",
+    19,
+    "graph",
+    "fields",
+    "option"
+  ],
+  "test_name": "org.apache.commons.cli2.bug.Bug13886Test::testMandatoryGroup",
+  "line_number": "61",
+  "simple_class_name": "Bug13886Test",
+  "loop": -1
+}

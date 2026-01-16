@@ -1,0 +1,21 @@
+{
+  "source": "return",
+  "owner": "org.joda.time.DateMidnight",
+  "name": "minusYears",
+  "returnType": "org.joda.time.DateMidnight",
+  "ordinal": 0,
+  "readable_access": "var.iChronology.cCache",
+  "python_access": [
+    "metas",
+    3,
+    "graph",
+    "fields",
+    "iChronology",
+    "fields",
+    "cCache"
+  ],
+  "test_name": "org.joda.time.TestDateMidnight_Basics::testMinusYears_int",
+  "line_number": "948",
+  "simple_class_name": "TestDateMidnight_Basics",
+  "loop": -1
+}

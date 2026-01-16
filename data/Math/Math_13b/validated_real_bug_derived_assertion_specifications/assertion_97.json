@@ -1,0 +1,21 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.math3.optimization.fitting.HarmonicFitter",
+  "name": "HarmonicFitter",
+  "returnType": "void",
+  "ordinal": 0,
+  "readable_access": "var.oldOptimizer.weightMatrixSqrt",
+  "python_access": [
+    "metas",
+    8,
+    "graph",
+    "fields",
+    "oldOptimizer",
+    "fields",
+    "weightMatrixSqrt"
+  ],
+  "test_name": "org.apache.commons.math3.optimization.fitting.HarmonicFitterTest::testUnsorted",
+  "line_number": "146",
+  "simple_class_name": "HarmonicFitterTest",
+  "loop": -1
+}

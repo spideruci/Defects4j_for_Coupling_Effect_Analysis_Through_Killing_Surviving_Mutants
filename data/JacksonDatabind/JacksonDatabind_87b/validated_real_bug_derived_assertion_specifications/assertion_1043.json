@@ -1,0 +1,23 @@
+{
+  "source": "return",
+  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
+  "name": "readerForUpdating",
+  "returnType": "com.fasterxml.jackson.databind.ObjectReader",
+  "ordinal": 0,
+  "readable_access": "var._config._base._dateFormat",
+  "python_access": [
+    "metas",
+    3,
+    "graph",
+    "fields",
+    "_config",
+    "fields",
+    "_base",
+    "fields",
+    "_dateFormat"
+  ],
+  "test_name": "com.fasterxml.jackson.databind.convert.TestUpdateValue::testUpdateSequence",
+  "line_number": "149",
+  "simple_class_name": "TestUpdateValue",
+  "loop": -1
+}

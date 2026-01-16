@@ -1,0 +1,19 @@
+{
+  "source": "return",
+  "owner": "org.jsoup.select.Elements",
+  "name": "last",
+  "returnType": "org.jsoup.nodes.Element",
+  "ordinal": 0,
+  "readable_access": "var.tag",
+  "python_access": [
+    "metas",
+    17,
+    "graph",
+    "fields",
+    "tag"
+  ],
+  "test_name": "org.jsoup.select.ElementsTest::attributes",
+  "line_number": "38",
+  "simple_class_name": "ElementsTest",
+  "loop": -1
+}

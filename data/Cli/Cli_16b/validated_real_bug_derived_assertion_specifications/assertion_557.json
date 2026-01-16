@@ -1,0 +1,18 @@
+{
+  "source": "local",
+  "owner": "Lorg/apache/commons/cli2/OptionException;",
+  "name": "uoe",
+  "ordinal": 0,
+  "readable_access": "var.option",
+  "python_access": [
+    "metas",
+    70,
+    "graph",
+    "fields",
+    "option"
+  ],
+  "test_name": "org.apache.commons.cli2.DocumentationTest::testBasicUsage",
+  "line_number": "146",
+  "simple_class_name": "DocumentationTest",
+  "loop": -1
+}

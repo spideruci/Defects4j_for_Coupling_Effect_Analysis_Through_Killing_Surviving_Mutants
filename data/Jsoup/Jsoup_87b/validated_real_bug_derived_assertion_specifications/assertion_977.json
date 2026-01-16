@@ -1,0 +1,23 @@
+{
+  "source": "return",
+  "owner": "org.jsoup.Jsoup",
+  "name": "parse",
+  "returnType": "org.jsoup.nodes.Document",
+  "ordinal": 0,
+  "readable_access": "var.childNodes.elements.tag",
+  "python_access": [
+    "metas",
+    0,
+    "graph",
+    "fields",
+    "childNodes",
+    "elements",
+    0,
+    "fields",
+    "tag"
+  ],
+  "test_name": "org.jsoup.parser.HtmlParserTest::parsesUnterminatedTextarea",
+  "line_number": "116",
+  "simple_class_name": "HtmlParserTest",
+  "loop": -1
+}

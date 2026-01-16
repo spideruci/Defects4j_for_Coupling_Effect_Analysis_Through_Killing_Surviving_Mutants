@@ -1,0 +1,21 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.compress.archivers.zip.ZipArchiveInputStream",
+  "name": "getNextZipEntry",
+  "returnType": "org.apache.commons.compress.archivers.zip.ZipArchiveEntry",
+  "ordinal": 0,
+  "readable_access": "var.extraFields.elements",
+  "python_access": [
+    "metas",
+    4,
+    "graph",
+    "fields",
+    "extraFields",
+    "elements",
+    1
+  ],
+  "test_name": "org.apache.commons.compress.archivers.zip.ZipArchiveInputStreamTest::testReadingOfFirstStoredEntry",
+  "line_number": "164",
+  "simple_class_name": "ZipArchiveInputStreamTest",
+  "loop": -1
+}

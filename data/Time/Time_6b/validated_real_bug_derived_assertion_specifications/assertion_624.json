@@ -1,0 +1,21 @@
+{
+  "source": "return",
+  "owner": "org.joda.time.DateTime",
+  "name": "toTimeOfDay",
+  "returnType": "org.joda.time.TimeOfDay",
+  "ordinal": 0,
+  "readable_access": "var.iChronology.cCache",
+  "python_access": [
+    "metas",
+    4,
+    "graph",
+    "fields",
+    "iChronology",
+    "fields",
+    "cCache"
+  ],
+  "test_name": "org.joda.time.TestDateTime_Basics::testToTimeOfDay",
+  "line_number": "728",
+  "simple_class_name": "TestDateTime_Basics",
+  "loop": -1
+}

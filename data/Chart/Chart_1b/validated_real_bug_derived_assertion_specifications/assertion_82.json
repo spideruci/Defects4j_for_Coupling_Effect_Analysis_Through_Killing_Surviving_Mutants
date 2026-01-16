@@ -1,0 +1,21 @@
+{
+  "source": "return",
+  "owner": "org.jfree.chart.renderer.category.BoxAndWhiskerRenderer",
+  "name": "BoxAndWhiskerRenderer",
+  "returnType": "void",
+  "ordinal": 0,
+  "readable_access": "var.paintList.size",
+  "python_access": [
+    "metas",
+    13,
+    "graph",
+    "fields",
+    "paintList",
+    "fields",
+    "size"
+  ],
+  "test_name": "org.jfree.chart.renderer.category.junit.BoxAndWhiskerRendererTests::testDrawWithNullMedian",
+  "line_number": "417",
+  "simple_class_name": "BoxAndWhiskerRendererTests",
+  "loop": -1
+}

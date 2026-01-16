@@ -1,0 +1,21 @@
+{
+  "source": "return",
+  "owner": "com.fasterxml.jackson.databind.introspect.TestPropertyConflicts",
+  "name": "objectMapper",
+  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
+  "ordinal": 0,
+  "readable_access": "var.DEFAULT_BASE._dateFormat",
+  "python_access": [
+    "metas",
+    6,
+    "graph",
+    "fields",
+    "DEFAULT_BASE",
+    "fields",
+    "_dateFormat"
+  ],
+  "test_name": "com.fasterxml.jackson.databind.introspect.TestPropertyConflicts::testRegularAndIsGetter",
+  "line_number": "112",
+  "simple_class_name": "TestPropertyConflicts",
+  "loop": -1
+}

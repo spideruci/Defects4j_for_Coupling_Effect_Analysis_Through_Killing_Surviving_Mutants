@@ -1,0 +1,19 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.cli2.util.HelpFormatter",
+  "name": "HelpFormatter",
+  "returnType": "void",
+  "ordinal": 0,
+  "readable_access": "var.group",
+  "python_access": [
+    "metas",
+    5,
+    "graph",
+    "fields",
+    "group"
+  ],
+  "test_name": "org.apache.commons.cli2.option.NestedGroupTest::testNestedGroupHelp",
+  "line_number": "136",
+  "simple_class_name": "NestedGroupTest",
+  "loop": -1
+}

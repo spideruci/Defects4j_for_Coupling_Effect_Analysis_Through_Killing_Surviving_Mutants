@@ -1,0 +1,22 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.cli2.PrecedenceTest",
+  "name": "buildCommandLine",
+  "returnType": "org.apache.commons.cli2.CommandLine",
+  "ordinal": 0,
+  "readable_access": "var.nameToOption[-i]",
+  "python_access": [
+    "metas",
+    19,
+    "graph",
+    "fields",
+    "nameToOption",
+    "entries",
+    2,
+    "value"
+  ],
+  "test_name": "org.apache.commons.cli2.PrecedenceTest::testBurst",
+  "line_number": "76",
+  "simple_class_name": "PrecedenceTest",
+  "loop": -1
+}

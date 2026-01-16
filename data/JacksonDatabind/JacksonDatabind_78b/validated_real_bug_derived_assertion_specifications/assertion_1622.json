@@ -1,0 +1,21 @@
+{
+  "source": "getField",
+  "owner": "com.fasterxml.jackson.databind.jsontype.TestSubtypes",
+  "name": "MAPPER",
+  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
+  "ordinal": 0,
+  "readable_access": "var._deserializationContext._factory",
+  "python_access": [
+    "metas",
+    2,
+    "graph",
+    "fields",
+    "_deserializationContext",
+    "fields",
+    "_factory"
+  ],
+  "test_name": "com.fasterxml.jackson.databind.jsontype.TestSubtypes::testViaAtomic",
+  "line_number": "303",
+  "simple_class_name": "TestSubtypes",
+  "loop": -1
+}

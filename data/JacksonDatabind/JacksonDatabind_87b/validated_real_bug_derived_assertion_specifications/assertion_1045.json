@@ -1,0 +1,21 @@
+{
+  "source": "getField",
+  "owner": "com.fasterxml.jackson.databind.ser.TestJsonSerialize2",
+  "name": "MAPPER",
+  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
+  "ordinal": 0,
+  "readable_access": "var.DEFAULT_BASE._dateFormat",
+  "python_access": [
+    "metas",
+    0,
+    "graph",
+    "fields",
+    "DEFAULT_BASE",
+    "fields",
+    "_dateFormat"
+  ],
+  "test_name": "com.fasterxml.jackson.databind.ser.TestJsonSerialize2::testNullSerializer",
+  "line_number": "202",
+  "simple_class_name": "TestJsonSerialize2",
+  "loop": -1
+}

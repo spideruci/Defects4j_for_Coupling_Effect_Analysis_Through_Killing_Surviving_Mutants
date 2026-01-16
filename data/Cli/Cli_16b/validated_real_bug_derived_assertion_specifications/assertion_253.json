@@ -1,0 +1,18 @@
+{
+  "source": "local",
+  "owner": "Lorg/apache/commons/cli2/OptionException;",
+  "name": "e",
+  "ordinal": 0,
+  "readable_access": "var.option",
+  "python_access": [
+    "metas",
+    2,
+    "graph",
+    "fields",
+    "option"
+  ],
+  "test_name": "org.apache.commons.cli2.commandline.ParserTest::testParse_WithUnexpectedOption",
+  "line_number": "79",
+  "simple_class_name": "ParserTest",
+  "loop": -1
+}

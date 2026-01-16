@@ -1,0 +1,23 @@
+{
+  "source": "return",
+  "owner": "org.jsoup.select.Elements",
+  "name": "first",
+  "returnType": "org.jsoup.nodes.Element",
+  "ordinal": 0,
+  "readable_access": "var.childNodes.elements.classNames",
+  "python_access": [
+    "metas",
+    6,
+    "graph",
+    "fields",
+    "childNodes",
+    "elements",
+    1,
+    "fields",
+    "classNames"
+  ],
+  "test_name": "org.jsoup.nodes.NodeTest::childNodesCopy",
+  "line_number": "229",
+  "simple_class_name": "NodeTest",
+  "loop": -1
+}

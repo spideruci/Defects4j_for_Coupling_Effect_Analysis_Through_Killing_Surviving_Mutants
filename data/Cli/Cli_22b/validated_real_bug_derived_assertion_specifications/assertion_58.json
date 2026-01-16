@@ -1,0 +1,17 @@
+{
+  "source": "getField",
+  "owner": "org.apache.commons.cli.OptionGroupTest",
+  "name": "parser",
+  "returnType": "org.apache.commons.cli.CommandLineParser",
+  "ordinal": 0,
+  "readable_access": "var.metas",
+  "python_access": [
+    "metas",
+    2,
+    "graph"
+  ],
+  "test_name": "org.apache.commons.cli.OptionGroupTest::testSingleLongOption",
+  "line_number": "104",
+  "simple_class_name": "OptionGroupTest",
+  "loop": -1
+}

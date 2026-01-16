@@ -1,0 +1,21 @@
+{
+  "source": "return",
+  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
+  "name": "getSerializationConfig",
+  "returnType": "com.fasterxml.jackson.databind.SerializationConfig",
+  "ordinal": 0,
+  "readable_access": "var._base._dateFormat",
+  "python_access": [
+    "metas",
+    1,
+    "graph",
+    "fields",
+    "_base",
+    "fields",
+    "_dateFormat"
+  ],
+  "test_name": "com.fasterxml.jackson.databind.deser.TestMapDeserialization::testCalendarMap",
+  "line_number": "400",
+  "simple_class_name": "TestMapDeserialization",
+  "loop": -1
+}

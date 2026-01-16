@@ -1,0 +1,21 @@
+{
+  "source": "return",
+  "owner": "org.joda.time.MutablePeriod",
+  "name": "toPeriod",
+  "returnType": "org.joda.time.Period",
+  "ordinal": 0,
+  "readable_access": "var.iType.cTime",
+  "python_access": [
+    "metas",
+    2,
+    "graph",
+    "fields",
+    "iType",
+    "fields",
+    "cTime"
+  ],
+  "test_name": "org.joda.time.TestMutablePeriod_Basics::testToPeriod",
+  "line_number": "417",
+  "simple_class_name": "TestMutablePeriod_Basics",
+  "loop": -1
+}

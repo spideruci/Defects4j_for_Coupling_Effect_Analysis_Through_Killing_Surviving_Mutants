@@ -1,0 +1,17 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.cli2.commandline.WriteableCommandLineImpl",
+  "name": "WriteableCommandLineImpl",
+  "returnType": "void",
+  "ordinal": 0,
+  "readable_access": "var.metas",
+  "python_access": [
+    "metas",
+    33,
+    "graph"
+  ],
+  "test_name": "org.apache.commons.cli2.DocumentationTest::testManualIntroduction",
+  "line_number": "201",
+  "simple_class_name": "DocumentationTest",
+  "loop": -1
+}

@@ -1,0 +1,23 @@
+{
+  "source": "return",
+  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
+  "name": "getFactory",
+  "returnType": "com.fasterxml.jackson.core.JsonFactory",
+  "ordinal": 0,
+  "readable_access": "var._objectCodec._deserializationContext._factory",
+  "python_access": [
+    "metas",
+    205,
+    "graph",
+    "fields",
+    "_objectCodec",
+    "fields",
+    "_deserializationContext",
+    "fields",
+    "_factory"
+  ],
+  "test_name": "com.fasterxml.jackson.databind.deser.JDKScalarsTest::testSequenceOfInts",
+  "line_number": "653",
+  "simple_class_name": "JDKScalarsTest",
+  "loop": -1
+}

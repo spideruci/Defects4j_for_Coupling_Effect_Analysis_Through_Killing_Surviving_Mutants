@@ -1,0 +1,23 @@
+{
+  "source": "return",
+  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
+  "name": "readerForUpdating",
+  "returnType": "com.fasterxml.jackson.databind.ObjectReader",
+  "ordinal": 0,
+  "readable_access": "var._context._cache._cachedDeserializers",
+  "python_access": [
+    "metas",
+    4,
+    "graph",
+    "fields",
+    "_context",
+    "fields",
+    "_cache",
+    "fields",
+    "_cachedDeserializers"
+  ],
+  "test_name": "com.fasterxml.jackson.databind.convert.TestUpdateValue::testListUpdate",
+  "line_number": "119",
+  "simple_class_name": "TestUpdateValue",
+  "loop": -1
+}

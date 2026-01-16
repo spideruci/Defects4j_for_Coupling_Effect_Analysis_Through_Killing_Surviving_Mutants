@@ -1,0 +1,23 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.collections.TransformerUtils",
+  "name": "switchMapTransformer",
+  "returnType": "org.apache.commons.collections.Transformer",
+  "ordinal": 0,
+  "readable_access": "var.iPredicates.elements.equator",
+  "python_access": [
+    "metas",
+    14,
+    "graph",
+    "fields",
+    "iPredicates",
+    "elements",
+    0,
+    "fields",
+    "equator"
+  ],
+  "test_name": "org.apache.commons.collections.TestTransformerUtils::testSwitchMapTransformer",
+  "line_number": "325",
+  "simple_class_name": "TestTransformerUtils",
+  "loop": -1
+}

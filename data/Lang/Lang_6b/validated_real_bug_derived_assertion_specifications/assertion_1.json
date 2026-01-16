@@ -1,0 +1,15 @@
+{
+  "source": "local",
+  "owner": "Ljava/lang/String;",
+  "name": "escaped",
+  "ordinal": 0,
+  "readable_access": "primitive",
+  "python_access": [
+    "metas",
+    4
+  ],
+  "test_name": "org.apache.commons.lang3.StringEscapeUtilsTest::testLang708",
+  "line_number": "498",
+  "simple_class_name": "StringEscapeUtilsTest",
+  "loop": -1
+}

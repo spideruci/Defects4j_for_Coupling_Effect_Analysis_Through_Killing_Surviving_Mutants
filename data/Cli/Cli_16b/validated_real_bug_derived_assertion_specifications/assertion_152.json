@@ -1,0 +1,19 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.cli2.commandline.Parser",
+  "name": "Parser",
+  "returnType": "void",
+  "ordinal": 0,
+  "readable_access": "var.group",
+  "python_access": [
+    "metas",
+    15,
+    "graph",
+    "fields",
+    "group"
+  ],
+  "test_name": "org.apache.commons.cli2.bug.Bug15648Test::testQuotedArgumentValue",
+  "line_number": "51",
+  "simple_class_name": "Bug15648Test",
+  "loop": -1
+}

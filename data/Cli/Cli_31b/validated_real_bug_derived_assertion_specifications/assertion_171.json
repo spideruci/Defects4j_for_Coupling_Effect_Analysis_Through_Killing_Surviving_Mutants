@@ -1,0 +1,19 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.cli.Option",
+  "name": "Option",
+  "returnType": "void",
+  "ordinal": 0,
+  "readable_access": "var.argName",
+  "python_access": [
+    "metas",
+    4,
+    "graph",
+    "fields",
+    "argName"
+  ],
+  "test_name": "org.apache.commons.cli.ApplicationTest::testNLT",
+  "line_number": "228",
+  "simple_class_name": "ApplicationTest",
+  "loop": -1
+}

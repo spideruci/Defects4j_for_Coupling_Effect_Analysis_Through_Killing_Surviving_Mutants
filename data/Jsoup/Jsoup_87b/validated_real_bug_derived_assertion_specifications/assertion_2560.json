@@ -1,0 +1,23 @@
+{
+  "source": "return",
+  "owner": "org.jsoup.helper.DataUtil",
+  "name": "parseInputStream",
+  "returnType": "org.jsoup.nodes.Document",
+  "ordinal": 0,
+  "readable_access": "var.childNodes.elements.tag",
+  "python_access": [
+    "metas",
+    3,
+    "graph",
+    "fields",
+    "childNodes",
+    "elements",
+    0,
+    "fields",
+    "tag"
+  ],
+  "test_name": "org.jsoup.helper.DataUtilTest::secondMetaElementWithContentTypeContainsCharsetParameter",
+  "line_number": "120",
+  "simple_class_name": "DataUtilTest",
+  "loop": -1
+}

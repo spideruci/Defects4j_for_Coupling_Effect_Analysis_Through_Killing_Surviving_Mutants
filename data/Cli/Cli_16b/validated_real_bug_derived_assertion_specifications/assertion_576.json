@@ -1,0 +1,22 @@
+{
+  "source": "getField",
+  "owner": "org.apache.commons.cli2.commandline.DefaultingCommandLineTest",
+  "name": "second",
+  "returnType": "org.apache.commons.cli2.CommandLine",
+  "ordinal": 0,
+  "readable_access": "var.nameToOption[--insecond]",
+  "python_access": [
+    "metas",
+    3,
+    "graph",
+    "fields",
+    "nameToOption",
+    "entries",
+    1,
+    "value"
+  ],
+  "test_name": "org.apache.commons.cli2.commandline.DefaultingCommandLineTest::testTriggers",
+  "line_number": "136",
+  "simple_class_name": "DefaultingCommandLineTest",
+  "loop": -1
+}

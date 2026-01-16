@@ -1,0 +1,19 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.cli.OptionBuilder",
+  "name": "withDescription",
+  "returnType": "org.apache.commons.cli.OptionBuilder",
+  "ordinal": 0,
+  "readable_access": "var.type",
+  "python_access": [
+    "metas",
+    2,
+    "graph",
+    "fields",
+    "type"
+  ],
+  "test_name": "org.apache.commons.cli.BugsTest::test13666",
+  "line_number": "221",
+  "simple_class_name": "BugsTest",
+  "loop": -1
+}

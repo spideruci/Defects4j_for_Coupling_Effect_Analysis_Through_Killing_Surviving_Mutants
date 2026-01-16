@@ -1,0 +1,21 @@
+{
+  "source": "return",
+  "owner": "org.jsoup.select.Elements",
+  "name": "clone",
+  "returnType": "org.jsoup.select.Elements",
+  "ordinal": 0,
+  "readable_access": "var.elements.classNames",
+  "python_access": [
+    "metas",
+    9,
+    "graph",
+    "elements",
+    0,
+    "fields",
+    "classNames"
+  ],
+  "test_name": "org.jsoup.nodes.ElementTest::insertChildrenAsCopy",
+  "line_number": "665",
+  "simple_class_name": "ElementTest",
+  "loop": -1
+}

@@ -1,0 +1,23 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.math3.fitting.CurveFitter",
+  "name": "CurveFitter",
+  "returnType": "void",
+  "ordinal": 0,
+  "readable_access": "var.optimizer.weightedResidual.elements",
+  "python_access": [
+    "metas",
+    2,
+    "graph",
+    "fields",
+    "optimizer",
+    "fields",
+    "weightedResidual",
+    "elements",
+    0
+  ],
+  "test_name": "org.apache.commons.math3.fitting.CurveFitterTest::testMath303",
+  "line_number": "29",
+  "simple_class_name": "CurveFitterTest",
+  "loop": -1
+}

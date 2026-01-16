@@ -1,0 +1,21 @@
+{
+  "source": "return",
+  "owner": "org.jfree.chart.ChartRenderingInfo",
+  "name": "ChartRenderingInfo",
+  "returnType": "void",
+  "ordinal": 0,
+  "readable_access": "var.entities.entities",
+  "python_access": [
+    "metas",
+    23,
+    "graph",
+    "fields",
+    "entities",
+    "fields",
+    "entities"
+  ],
+  "test_name": "org.jfree.chart.renderer.category.junit.BoxAndWhiskerRendererTests::testBug1572478Horizontal",
+  "line_number": "315",
+  "simple_class_name": "BoxAndWhiskerRendererTests",
+  "loop": -1
+}

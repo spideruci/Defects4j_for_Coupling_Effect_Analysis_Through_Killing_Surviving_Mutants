@@ -1,0 +1,21 @@
+{
+  "source": "return",
+  "owner": "com.fasterxml.jackson.databind.convert.TestConvertingDeserializer",
+  "name": "objectReader",
+  "returnType": "com.fasterxml.jackson.databind.ObjectReader",
+  "ordinal": 0,
+  "readable_access": "var._context._factory",
+  "python_access": [
+    "metas",
+    0,
+    "graph",
+    "fields",
+    "_context",
+    "fields",
+    "_factory"
+  ],
+  "test_name": "com.fasterxml.jackson.databind.convert.TestConvertingDeserializer::testPropertyAnnotationForArrays",
+  "line_number": "170",
+  "simple_class_name": "TestConvertingDeserializer",
+  "loop": -1
+}

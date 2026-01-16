@@ -1,0 +1,21 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.math.ode.nonstiff.AdamsBashforthIntegrator",
+  "name": "AdamsBashforthIntegrator",
+  "returnType": "void",
+  "ordinal": 0,
+  "readable_access": "var.starter.minReduction",
+  "python_access": [
+    "metas",
+    2,
+    "graph",
+    "fields",
+    "starter",
+    "fields",
+    "minReduction"
+  ],
+  "test_name": "org.apache.commons.math.ode.sampling.NordsieckStepInterpolatorTest::derivativesConsistency",
+  "line_number": "43",
+  "simple_class_name": "NordsieckStepInterpolatorTest",
+  "loop": -1
+}

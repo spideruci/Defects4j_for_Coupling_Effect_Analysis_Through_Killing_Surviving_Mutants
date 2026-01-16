@@ -1,0 +1,21 @@
+{
+  "source": "return",
+  "owner": "org.jsoup.parser.Parser",
+  "name": "xmlParser",
+  "returnType": "org.jsoup.parser.Parser",
+  "ordinal": 0,
+  "readable_access": "var.treeBuilder.stack",
+  "python_access": [
+    "metas",
+    1,
+    "graph",
+    "fields",
+    "treeBuilder",
+    "fields",
+    "stack"
+  ],
+  "test_name": "org.jsoup.parser.XmlTreeBuilderTest::preservesCaseByDefault",
+  "line_number": "183",
+  "simple_class_name": "XmlTreeBuilderTest",
+  "loop": -1
+}

@@ -1,0 +1,23 @@
+{
+  "source": "return",
+  "owner": "org.jsoup.select.Elements",
+  "name": "first",
+  "returnType": "org.jsoup.nodes.Element",
+  "ordinal": 0,
+  "readable_access": "var.parentNode.parentNode.tag",
+  "python_access": [
+    "metas",
+    6,
+    "graph",
+    "fields",
+    "parentNode",
+    "fields",
+    "parentNode",
+    "fields",
+    "tag"
+  ],
+  "test_name": "org.jsoup.nodes.DocumentTest::testMetaCharsetUpdateIso8859",
+  "line_number": "228",
+  "simple_class_name": "DocumentTest",
+  "loop": -1
+}

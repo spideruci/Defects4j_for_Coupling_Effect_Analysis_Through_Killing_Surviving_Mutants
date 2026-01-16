@@ -1,0 +1,19 @@
+{
+  "source": "getField",
+  "owner": "org.apache.commons.cli2.util.HelpFormatterTest",
+  "name": "helpFormatter",
+  "returnType": "org.apache.commons.cli2.util.HelpFormatter",
+  "ordinal": 0,
+  "readable_access": "var.group",
+  "python_access": [
+    "metas",
+    4,
+    "graph",
+    "fields",
+    "group"
+  ],
+  "test_name": "org.apache.commons.cli2.util.HelpFormatterTest::testComparator",
+  "line_number": "160",
+  "simple_class_name": "HelpFormatterTest",
+  "loop": -1
+}

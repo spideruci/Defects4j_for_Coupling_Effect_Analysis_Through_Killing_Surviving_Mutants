@@ -1,0 +1,19 @@
+{
+  "source": "return",
+  "owner": "org.jsoup.safety.Cleaner",
+  "name": "clean",
+  "returnType": "org.jsoup.nodes.Document",
+  "ordinal": 0,
+  "readable_access": "var.tag",
+  "python_access": [
+    "metas",
+    8,
+    "graph",
+    "fields",
+    "tag"
+  ],
+  "test_name": "org.jsoup.safety.CleanerTest::handlesFramesets",
+  "line_number": "270",
+  "simple_class_name": "CleanerTest",
+  "loop": -1
+}

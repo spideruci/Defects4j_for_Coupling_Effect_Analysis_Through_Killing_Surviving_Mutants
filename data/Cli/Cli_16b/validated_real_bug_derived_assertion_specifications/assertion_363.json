@@ -1,0 +1,18 @@
+{
+  "source": "local",
+  "owner": "Lorg/apache/commons/cli2/OptionException;",
+  "name": "uoe",
+  "ordinal": 0,
+  "readable_access": "var.option",
+  "python_access": [
+    "metas",
+    7,
+    "graph",
+    "fields",
+    "option"
+  ],
+  "test_name": "org.apache.commons.cli2.option.GroupTest::testValidate_UnexpectedOption",
+  "line_number": "217",
+  "simple_class_name": "GroupTest",
+  "loop": -1
+}

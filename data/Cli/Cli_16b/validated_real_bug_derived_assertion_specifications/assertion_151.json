@@ -1,0 +1,17 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.cli2.builder.GroupBuilder",
+  "name": "create",
+  "returnType": "org.apache.commons.cli2.Group",
+  "ordinal": 0,
+  "readable_access": "var.metas",
+  "python_access": [
+    "metas",
+    13,
+    "graph"
+  ],
+  "test_name": "org.apache.commons.cli2.bug.Bug15648Test::testQuotedArgumentValue",
+  "line_number": "49",
+  "simple_class_name": "Bug15648Test",
+  "loop": -1
+}

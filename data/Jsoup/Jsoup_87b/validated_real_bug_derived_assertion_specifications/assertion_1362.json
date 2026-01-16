@@ -1,0 +1,21 @@
+{
+  "source": "return",
+  "owner": "org.jsoup.select.Elements",
+  "name": "select",
+  "returnType": "org.jsoup.select.Elements",
+  "ordinal": 0,
+  "readable_access": "var.elements.tag",
+  "python_access": [
+    "metas",
+    6,
+    "graph",
+    "elements",
+    0,
+    "fields",
+    "tag"
+  ],
+  "test_name": "org.jsoup.select.SelectorTest::selectSameElements",
+  "line_number": "707",
+  "simple_class_name": "SelectorTest",
+  "loop": -1
+}

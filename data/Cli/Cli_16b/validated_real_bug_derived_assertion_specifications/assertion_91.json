@@ -1,0 +1,19 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.cli2.commandline.PropertiesCommandLineTest",
+  "name": "createCommandLine",
+  "returnType": "org.apache.commons.cli2.CommandLine",
+  "ordinal": 0,
+  "readable_access": "var.root",
+  "python_access": [
+    "metas",
+    0,
+    "graph",
+    "fields",
+    "root"
+  ],
+  "test_name": "org.apache.commons.cli2.commandline.PropertiesCommandLineTest::testNullOption",
+  "line_number": "80",
+  "simple_class_name": "PropertiesCommandLineTest",
+  "loop": -1
+}

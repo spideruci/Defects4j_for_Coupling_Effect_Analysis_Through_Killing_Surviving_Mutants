@@ -1,0 +1,23 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.cli.CommandLine",
+  "name": "CommandLine",
+  "returnType": "void",
+  "ordinal": 0,
+  "readable_access": "var.options.elements.argName",
+  "python_access": [
+    "metas",
+    0,
+    "graph",
+    "fields",
+    "options",
+    "elements",
+    2,
+    "fields",
+    "argName"
+  ],
+  "test_name": "org.apache.commons.cli.CommandLineTest::testGetOptions",
+  "line_number": "54",
+  "simple_class_name": "CommandLineTest",
+  "loop": -1
+}

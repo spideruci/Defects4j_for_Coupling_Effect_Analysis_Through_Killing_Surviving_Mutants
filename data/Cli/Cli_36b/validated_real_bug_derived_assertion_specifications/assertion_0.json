@@ -1,0 +1,17 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.cli.Options",
+  "name": "getOptions",
+  "returnType": "java.util.Collection",
+  "ordinal": 0,
+  "readable_access": "var.metas",
+  "python_access": [
+    "metas",
+    3,
+    "graph"
+  ],
+  "test_name": "org.apache.commons.cli.bug.BugCLI266Test::testOptionComparatorDefaultOrder",
+  "line_number": "25",
+  "simple_class_name": "BugCLI266Test",
+  "loop": -1
+}

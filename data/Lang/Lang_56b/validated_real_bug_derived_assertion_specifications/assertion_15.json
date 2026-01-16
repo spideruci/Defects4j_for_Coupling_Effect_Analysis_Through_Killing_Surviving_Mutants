@@ -1,0 +1,19 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.lang.time.DateFormatUtils",
+  "name": "DateFormatUtils",
+  "returnType": "void",
+  "ordinal": 0,
+  "readable_access": "var.ISO_DATE_FORMAT",
+  "python_access": [
+    "metas",
+    0,
+    "graph",
+    "fields",
+    "ISO_DATE_FORMAT"
+  ],
+  "test_name": "org.apache.commons.lang.time.DateFormatUtilsTest::testConstructor",
+  "line_number": "57",
+  "simple_class_name": "DateFormatUtilsTest",
+  "loop": -1
+}

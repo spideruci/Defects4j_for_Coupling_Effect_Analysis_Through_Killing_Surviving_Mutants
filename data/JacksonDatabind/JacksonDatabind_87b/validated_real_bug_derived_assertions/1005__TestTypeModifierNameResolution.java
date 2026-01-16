@@ -1,0 +1,63 @@
+// Instrumented at 2025-12-11 17:25:44
+package com.fasterxml.jackson.databind.module;
+
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.databind.*;
+import com.fasterxml.jackson.databind.type.TypeBindings;
+import com.fasterxml.jackson.databind.type.TypeFactory;
+import com.fasterxml.jackson.databind.type.TypeModifier;
+import java.lang.reflect.Type;
+
+public class TestTypeModifierNameResolution extends BaseMapTest {
+
+    interface MyType {
+
+        String getData();
+
+        void setData(String data);
+    }
+
+    static class MyTypeImpl implements MyType {
+
+        private String data;
+
+        @Override
+        public String getData() {
+            return data;
+        }
+
+        @Override
+        public void setData(String data) {
+            this.data = data;
+        }
+    }
+
+    static class CustomTypeModifier extends TypeModifier {
+
+        @Override
+        public JavaType modifyType(JavaType type, Type jdkType, TypeBindings context, TypeFactory typeFactory) {
+            if (type.getRawClass().equals(MyTypeImpl.class)) {
+                return typeFactory.constructType(MyType.class);
+            }
+            return type;
+        }
+    }
+
+    @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.WRAPPER_OBJECT)
+    public interface Mixin {
+    }
+
+    // Expect that the TypeModifier kicks in when the type id is written.
+    public void testTypeModiferNameResolution() throws Exception {
+        com.fasterxml.jackson.databind.ObjectWriter __ins_v1 = null;
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.setTypeFactory(mapper.getTypeFactory().withModifier(new CustomTypeModifier()));
+        mapper.addMixIn(MyType.class, Mixin.class);
+        MyType obj = new MyTypeImpl();
+        obj.setData("something");
+        __ins_v1 = mapper.writer();
+        String s = __ins_v1.writeValueAsString(obj);
+        assertTrue(s.startsWith("{\"TestTypeModifierNameResolution$MyType\":"));
+        org.helper.Assertions.verify("var._config._base._dateFormat_1005_", __ins_v1);
+    }
+}

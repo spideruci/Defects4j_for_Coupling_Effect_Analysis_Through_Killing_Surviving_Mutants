@@ -1,0 +1,97 @@
+// Instrumented at 2025-12-07 17:50:02
+package org.jsoup.parser;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+/**
+ * Tag tests.
+ * @author Jonathan Hedley, jonathan@hedley.net
+ */
+public class TagTest {
+
+    @Test
+    public void isCaseInsensitive() {
+        Tag p1 = Tag.valueOf("P");
+        Tag p2 = Tag.valueOf("p");
+        assertEquals(p1, p2);
+    }
+
+    @Test
+    public void trims() {
+        Tag p1 = Tag.valueOf("p");
+        Tag p2 = Tag.valueOf(" p ");
+        assertEquals(p1, p2);
+    }
+
+    @Test
+    public void equality() {
+        Tag p1 = Tag.valueOf("p");
+        Tag p2 = Tag.valueOf("p");
+        assertTrue(p1.equals(p2));
+        assertTrue(p1 == p2);
+    }
+
+    @Test
+    public void divSemantics() {
+        Tag div = Tag.valueOf("div");
+        Tag p = Tag.valueOf("p");
+        assertTrue(div.canContain(div));
+        assertTrue(div.canContain(p));
+    }
+
+    @Test
+    public void pSemantics() {
+        org.jsoup.parser.Tag __ins_v1 = null;
+        Tag div = Tag.valueOf("div");
+        Tag p = Tag.valueOf("p");
+        Tag img = Tag.valueOf("img");
+        __ins_v1 = Tag.valueOf("span");
+        Tag span = __ins_v1;
+        assertTrue(p.canContain(img));
+        assertTrue(p.canContain(span));
+        assertFalse(p.canContain(div));
+        assertFalse(p.canContain(p));
+        org.helper.Assertions.verify("var.metas_210_", __ins_v1);
+    }
+
+    @Test
+    public void spanSemantics() {
+        Tag span = Tag.valueOf("span");
+        Tag p = Tag.valueOf("p");
+        Tag div = Tag.valueOf("div");
+        assertTrue(span.canContain(span));
+        assertFalse(span.canContain(p));
+        assertFalse(span.canContain(div));
+    }
+
+    @Test
+    public void imgSemantics() {
+        Tag img = Tag.valueOf("img");
+        Tag p = Tag.valueOf("p");
+        assertFalse(img.canContain(img));
+        assertFalse(img.canContain(p));
+    }
+
+    @Test
+    public void defaultSemantics() {
+        // not defined
+        Tag foo = Tag.valueOf("foo");
+        Tag foo2 = Tag.valueOf("FOO");
+        Tag div = Tag.valueOf("div");
+        assertEquals(foo, foo2);
+        assertTrue(foo.canContain(foo));
+        assertTrue(foo.canContain(div));
+        assertTrue(div.canContain(foo));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void valueOfChecksNotNull() {
+        Tag.valueOf(null);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void valueOfChecksNotEmpty() {
+        Tag.valueOf(" ");
+    }
+}

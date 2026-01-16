@@ -1,0 +1,21 @@
+{
+  "source": "getField",
+  "owner": "org.apache.commons.cli.OptionGroupTest",
+  "name": "parser",
+  "returnType": "org.apache.commons.cli.Parser",
+  "ordinal": 0,
+  "readable_access": "var.currentOption.argName",
+  "python_access": [
+    "metas",
+    0,
+    "graph",
+    "fields",
+    "currentOption",
+    "fields",
+    "argName"
+  ],
+  "test_name": "org.apache.commons.cli.OptionGroupTest::testValidLongOnlyOptions",
+  "line_number": "205",
+  "simple_class_name": "OptionGroupTest",
+  "loop": -1
+}

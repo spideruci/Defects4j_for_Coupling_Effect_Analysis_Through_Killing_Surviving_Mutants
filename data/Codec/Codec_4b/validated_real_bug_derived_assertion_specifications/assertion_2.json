@@ -1,0 +1,19 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.codec.binary.Base64",
+  "name": "encode",
+  "returnType": "java.lang.Object",
+  "ordinal": 0,
+  "readable_access": "var.elements",
+  "python_access": [
+    "metas",
+    5,
+    "graph",
+    "elements",
+    0
+  ],
+  "test_name": "org.apache.commons.codec.binary.Base64Test::testObjectEncodeWithValidParameter",
+  "line_number": "479",
+  "simple_class_name": "Base64Test",
+  "loop": -1
+}

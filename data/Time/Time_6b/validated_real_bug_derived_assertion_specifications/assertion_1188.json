@@ -1,0 +1,21 @@
+{
+  "source": "return",
+  "owner": "org.joda.time.DateMidnight",
+  "name": "DateMidnight",
+  "returnType": "void",
+  "ordinal": 0,
+  "readable_access": "var.iChronology.cCache",
+  "python_access": [
+    "metas",
+    6,
+    "graph",
+    "fields",
+    "iChronology",
+    "fields",
+    "cCache"
+  ],
+  "test_name": "org.joda.time.TestDateMidnight_Basics::testMinusWeeks_int",
+  "line_number": "969",
+  "simple_class_name": "TestDateMidnight_Basics",
+  "loop": -1
+}

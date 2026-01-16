@@ -1,0 +1,87 @@
+// Instrumented at 2025-12-07 12:55:04
+package com.fasterxml.jackson.dataformat.xml.stream;
+
+import java.io.*;
+import javax.xml.stream.*;
+import com.fasterxml.jackson.dataformat.xml.XmlTestBase;
+import com.fasterxml.jackson.dataformat.xml.deser.XmlTokenStream;
+
+public class XmlTokenStreamTest extends XmlTestBase {
+
+    public void testSimple() throws Exception {
+        String XML = "<root><leaf id='123'>abc</leaf></root>";
+        XMLStreamReader sr = XMLInputFactory.newInstance().createXMLStreamReader(new StringReader(XML));
+        // must point to START_ELEMENT, so:
+        sr.nextTag();
+        XmlTokenStream tokens = new XmlTokenStream(sr, XML);
+        assertEquals(XmlTokenStream.XML_START_ELEMENT, tokens.getCurrentToken());
+        assertEquals("root", tokens.getLocalName());
+        assertEquals(XmlTokenStream.XML_START_ELEMENT, tokens.next());
+        assertEquals("leaf", tokens.getLocalName());
+        assertEquals(XmlTokenStream.XML_ATTRIBUTE_NAME, tokens.next());
+        assertEquals("id", tokens.getLocalName());
+        assertEquals(XmlTokenStream.XML_ATTRIBUTE_VALUE, tokens.next());
+        assertEquals("123", tokens.getText());
+        assertEquals(XmlTokenStream.XML_TEXT, tokens.next());
+        assertEquals("abc", tokens.getText());
+        assertEquals(XmlTokenStream.XML_END_ELEMENT, tokens.next());
+        assertEquals(XmlTokenStream.XML_END_ELEMENT, tokens.next());
+        assertEquals(XmlTokenStream.XML_END, tokens.next());
+    }
+
+    public void testRootAttributes() throws Exception {
+        String XML = "<root id='x' />";
+        XMLStreamReader sr = XMLInputFactory.newInstance().createXMLStreamReader(new StringReader(XML));
+        // must point to START_ELEMENT, so:
+        sr.nextTag();
+        XmlTokenStream tokens = new XmlTokenStream(sr, XML);
+        assertEquals(XmlTokenStream.XML_START_ELEMENT, tokens.getCurrentToken());
+        assertEquals("root", tokens.getLocalName());
+        assertEquals(XmlTokenStream.XML_ATTRIBUTE_NAME, tokens.next());
+        assertEquals("id", tokens.getLocalName());
+        assertEquals(XmlTokenStream.XML_ATTRIBUTE_VALUE, tokens.next());
+        assertEquals("x", tokens.getText());
+        assertEquals(XmlTokenStream.XML_END_ELEMENT, tokens.next());
+        assertEquals(XmlTokenStream.XML_END, tokens.next());
+    }
+
+    public void testEmptyTags() throws Exception {
+        String XML = "<root><leaf /></root>";
+        XMLStreamReader sr = XMLInputFactory.newInstance().createXMLStreamReader(new StringReader(XML));
+        // must point to START_ELEMENT, so:
+        sr.nextTag();
+        XmlTokenStream tokens = new XmlTokenStream(sr, XML);
+        assertEquals(XmlTokenStream.XML_START_ELEMENT, tokens.getCurrentToken());
+        assertEquals("root", tokens.getLocalName());
+        assertEquals(XmlTokenStream.XML_START_ELEMENT, tokens.next());
+        assertEquals("leaf", tokens.getLocalName());
+        assertEquals(XmlTokenStream.XML_END_ELEMENT, tokens.next());
+        assertEquals(XmlTokenStream.XML_END_ELEMENT, tokens.next());
+        assertEquals(XmlTokenStream.XML_END, tokens.next());
+    }
+
+    public void testNested() throws Exception {
+        XmlTokenStream __ins_v1 = null;
+        String XML = "<root><a><b><c>abc</c></b></a></root>";
+        XMLStreamReader sr = XMLInputFactory.newInstance().createXMLStreamReader(new StringReader(XML));
+        sr.nextTag();
+        __ins_v1 = new XmlTokenStream(sr, XML);
+        XmlTokenStream tokens = __ins_v1;
+        assertEquals(XmlTokenStream.XML_START_ELEMENT, tokens.getCurrentToken());
+        assertEquals("root", tokens.getLocalName());
+        assertEquals(XmlTokenStream.XML_START_ELEMENT, tokens.next());
+        assertEquals("a", tokens.getLocalName());
+        assertEquals(XmlTokenStream.XML_START_ELEMENT, tokens.next());
+        assertEquals("b", tokens.getLocalName());
+        assertEquals(XmlTokenStream.XML_START_ELEMENT, tokens.next());
+        assertEquals("c", tokens.getLocalName());
+        assertEquals(XmlTokenStream.XML_TEXT, tokens.next());
+        assertEquals("abc", tokens.getText());
+        assertEquals(XmlTokenStream.XML_END_ELEMENT, tokens.next());
+        assertEquals(XmlTokenStream.XML_END_ELEMENT, tokens.next());
+        assertEquals(XmlTokenStream.XML_END_ELEMENT, tokens.next());
+        assertEquals(XmlTokenStream.XML_END_ELEMENT, tokens.next());
+        assertEquals(XmlTokenStream.XML_END, tokens.next());
+        org.helper.Assertions.verify("var.metas_11_", __ins_v1);
+    }
+}

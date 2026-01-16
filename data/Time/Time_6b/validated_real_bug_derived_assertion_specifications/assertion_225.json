@@ -1,0 +1,21 @@
+{
+  "source": "return",
+  "owner": "org.joda.time.DateTime",
+  "name": "DateTime",
+  "returnType": "void",
+  "ordinal": 0,
+  "readable_access": "var.iChronology.cCache",
+  "python_access": [
+    "metas",
+    0,
+    "graph",
+    "fields",
+    "iChronology",
+    "fields",
+    "cCache"
+  ],
+  "test_name": "org.joda.time.TestInterval_Constructors::testConstructor_RI_RI_chronoEnd",
+  "line_number": "241",
+  "simple_class_name": "TestInterval_Constructors",
+  "loop": -1
+}

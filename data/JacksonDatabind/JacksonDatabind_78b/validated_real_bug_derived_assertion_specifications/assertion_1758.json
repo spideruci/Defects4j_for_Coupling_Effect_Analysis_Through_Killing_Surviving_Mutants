@@ -1,0 +1,21 @@
+{
+  "source": "return",
+  "owner": "com.fasterxml.jackson.databind.ObjectReader",
+  "name": "forType",
+  "returnType": "com.fasterxml.jackson.databind.ObjectReader",
+  "ordinal": 0,
+  "readable_access": "var._context._factory",
+  "python_access": [
+    "metas",
+    6,
+    "graph",
+    "fields",
+    "_context",
+    "fields",
+    "_factory"
+  ],
+  "test_name": "com.fasterxml.jackson.databind.deser.JDKNumberDeserTest::testFpTypeOverrideStructured",
+  "line_number": "217",
+  "simple_class_name": "JDKNumberDeserTest",
+  "loop": -1
+}

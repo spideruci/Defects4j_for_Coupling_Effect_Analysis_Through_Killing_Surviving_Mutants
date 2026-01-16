@@ -1,0 +1,19 @@
+{
+  "source": "return",
+  "owner": "org.jsoup.Connection",
+  "name": "get",
+  "returnType": "org.jsoup.nodes.Document",
+  "ordinal": 0,
+  "readable_access": "var.tag",
+  "python_access": [
+    "metas",
+    10,
+    "graph",
+    "fields",
+    "tag"
+  ],
+  "test_name": "org.jsoup.integration.ConnectTest::doesGet",
+  "line_number": "166",
+  "simple_class_name": "ConnectTest",
+  "loop": -1
+}

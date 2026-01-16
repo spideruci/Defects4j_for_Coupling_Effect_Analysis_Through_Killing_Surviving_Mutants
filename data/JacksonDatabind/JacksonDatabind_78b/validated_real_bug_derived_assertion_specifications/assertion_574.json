@@ -1,0 +1,21 @@
+{
+  "source": "return",
+  "owner": "com.fasterxml.jackson.databind.ObjectReader",
+  "name": "withAttribute",
+  "returnType": "com.fasterxml.jackson.databind.ObjectReader",
+  "ordinal": 0,
+  "readable_access": "var._context._factory",
+  "python_access": [
+    "metas",
+    12,
+    "graph",
+    "fields",
+    "_context",
+    "fields",
+    "_factory"
+  ],
+  "test_name": "com.fasterxml.jackson.databind.contextual.TestContextAttributeWithDeser::testSimpleDefaults",
+  "line_number": "75",
+  "simple_class_name": "TestContextAttributeWithDeser",
+  "loop": -1
+}

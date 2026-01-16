@@ -1,0 +1,19 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.cli.OptionBuilder",
+  "name": "create",
+  "returnType": "org.apache.commons.cli.Option",
+  "ordinal": 0,
+  "readable_access": "var.argName",
+  "python_access": [
+    "metas",
+    2,
+    "graph",
+    "fields",
+    "argName"
+  ],
+  "test_name": "org.apache.commons.cli.OptionBuilderTest::testCreateIncompleteOption",
+  "line_number": "158",
+  "simple_class_name": "OptionBuilderTest",
+  "loop": -1
+}

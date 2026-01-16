@@ -1,0 +1,23 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.collections.ClosureUtils",
+  "name": "switchClosure",
+  "returnType": "org.apache.commons.collections.Closure",
+  "ordinal": 0,
+  "readable_access": "var.iPredicates.elements.equator",
+  "python_access": [
+    "metas",
+    34,
+    "graph",
+    "fields",
+    "iPredicates",
+    "elements",
+    1,
+    "fields",
+    "equator"
+  ],
+  "test_name": "org.apache.commons.collections.TestClosureUtils::testSwitchClosure",
+  "line_number": "289",
+  "simple_class_name": "TestClosureUtils",
+  "loop": -1
+}

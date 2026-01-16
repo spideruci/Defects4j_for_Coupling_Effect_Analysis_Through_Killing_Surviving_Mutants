@@ -1,0 +1,19 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.cli2.OptionException",
+  "name": "OptionException",
+  "returnType": "void",
+  "ordinal": 0,
+  "readable_access": "var.option",
+  "python_access": [
+    "metas",
+    6,
+    "graph",
+    "fields",
+    "option"
+  ],
+  "test_name": "org.apache.commons.cli2.option.ArgumentTest::testValidate_ValidatorInvalidDate",
+  "line_number": "385",
+  "simple_class_name": "ArgumentTest",
+  "loop": -1
+}

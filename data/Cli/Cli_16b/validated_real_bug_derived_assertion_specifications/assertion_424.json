@@ -1,0 +1,17 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.cli2.option.ArgumentTest",
+  "name": "buildUsernameArgument",
+  "returnType": "org.apache.commons.cli2.Argument",
+  "ordinal": 0,
+  "readable_access": "var.metas",
+  "python_access": [
+    "metas",
+    0,
+    "graph"
+  ],
+  "test_name": "org.apache.commons.cli2.option.ArgumentTest::testProcessValues_BoundaryQuotes",
+  "line_number": "151",
+  "simple_class_name": "ArgumentTest",
+  "loop": -1
+}

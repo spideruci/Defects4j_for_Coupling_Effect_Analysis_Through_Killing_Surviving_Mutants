@@ -1,0 +1,23 @@
+{
+  "source": "return",
+  "owner": "org.jsoup.select.Elements",
+  "name": "get",
+  "returnType": "org.jsoup.nodes.Element",
+  "ordinal": 0,
+  "readable_access": "var.parentNode.tag.ancestors",
+  "python_access": [
+    "metas",
+    8,
+    "graph",
+    "fields",
+    "parentNode",
+    "fields",
+    "tag",
+    "fields",
+    "ancestors"
+  ],
+  "test_name": "org.jsoup.select.ElementsTest::parents",
+  "line_number": "145",
+  "simple_class_name": "ElementsTest",
+  "loop": -1
+}

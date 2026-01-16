@@ -1,0 +1,23 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.math3.analysis.interpolation.SmoothingPolynomialBicubicSplineInterpolator",
+  "name": "SmoothingPolynomialBicubicSplineInterpolator",
+  "returnType": "void",
+  "ordinal": 0,
+  "readable_access": "var.yFitter.optimizer.weightMatrix",
+  "python_access": [
+    "metas",
+    6,
+    "graph",
+    "fields",
+    "yFitter",
+    "fields",
+    "optimizer",
+    "fields",
+    "weightMatrix"
+  ],
+  "test_name": "org.apache.commons.math3.analysis.interpolation.SmoothingPolynomialBicubicSplineInterpolatorTest::testPreconditions",
+  "line_number": "41",
+  "simple_class_name": "SmoothingPolynomialBicubicSplineInterpolatorTest",
+  "loop": -1
+}

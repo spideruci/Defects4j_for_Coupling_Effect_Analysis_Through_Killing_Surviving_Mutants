@@ -1,0 +1,17 @@
+{
+  "source": "return",
+  "owner": "java.util.List",
+  "name": "subList",
+  "returnType": "java.util.List",
+  "ordinal": 0,
+  "readable_access": "var.metas",
+  "python_access": [
+    "metas",
+    10,
+    "graph"
+  ],
+  "test_name": "org.apache.commons.collections4.list.SetUniqueListTest::testCollections307",
+  "line_number": "486",
+  "simple_class_name": "SetUniqueListTest",
+  "loop": -1
+}

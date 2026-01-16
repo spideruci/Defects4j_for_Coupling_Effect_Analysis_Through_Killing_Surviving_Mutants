@@ -1,0 +1,23 @@
+{
+  "source": "return",
+  "owner": "com.fasterxml.jackson.core.JsonFactory",
+  "name": "JsonFactory",
+  "returnType": "void",
+  "ordinal": 0,
+  "readable_access": "var._objectCodec._deserializationContext._factory",
+  "python_access": [
+    "metas",
+    4,
+    "graph",
+    "fields",
+    "_objectCodec",
+    "fields",
+    "_deserializationContext",
+    "fields",
+    "_factory"
+  ],
+  "test_name": "com.fasterxml.jackson.databind.ObjectMapperTest::testJsonFactoryLinkage",
+  "line_number": "121",
+  "simple_class_name": "ObjectMapperTest",
+  "loop": -1
+}

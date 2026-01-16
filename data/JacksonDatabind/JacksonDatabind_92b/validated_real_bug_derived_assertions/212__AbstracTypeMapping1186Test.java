@@ -1,0 +1,51 @@
+// Instrumented at 2025-11-28 09:38:31
+package com.fasterxml.jackson.databind.jsontype;
+
+import java.util.List;
+import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.databind.*;
+import com.fasterxml.jackson.databind.module.SimpleModule;
+
+public class AbstracTypeMapping1186Test extends BaseMapTest {
+
+    public interface IContainer<T> {
+
+        @JsonProperty("ts")
+        List<T> getTs();
+    }
+
+    static class MyContainer<T> implements IContainer<T> {
+
+        final List<T> ts;
+
+        @JsonCreator
+        public MyContainer(@JsonProperty("ts") List<T> ts) {
+            this.ts = ts;
+        }
+
+        @Override
+        public List<T> getTs() {
+            return ts;
+        }
+    }
+
+    public static class MyObject {
+
+        public String msg;
+    }
+
+    public void testDeserializeMyContainer() throws Exception {
+        ObjectMapper __ins_v1 = null;
+        com.fasterxml.jackson.databind.Module module = new SimpleModule().addAbstractTypeMapping(IContainer.class, MyContainer.class);
+        __ins_v1 = new ObjectMapper();
+        final ObjectMapper mapper = __ins_v1.registerModule(module);
+        String json = "{\"ts\": [ { \"msg\": \"hello\"} ] }";
+        final Object o = mapper.readValue(json, mapper.getTypeFactory().constructParametricType(IContainer.class, MyObject.class));
+        assertEquals(MyContainer.class, o.getClass());
+        MyContainer<?> myc = (MyContainer<?>) o;
+        assertEquals(1, myc.ts.size());
+        Object value = myc.ts.get(0);
+        assertEquals(MyObject.class, value.getClass());
+        org.helper.Assertions.verify("var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES_212_", __ins_v1);
+    }
+}

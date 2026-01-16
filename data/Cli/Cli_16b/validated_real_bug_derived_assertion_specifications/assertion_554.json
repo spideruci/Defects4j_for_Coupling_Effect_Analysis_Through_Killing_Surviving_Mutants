@@ -1,0 +1,17 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.cli2.builder.GroupBuilder",
+  "name": "create",
+  "returnType": "org.apache.commons.cli2.Group",
+  "ordinal": 0,
+  "readable_access": "var.metas",
+  "python_access": [
+    "metas",
+    62,
+    "graph"
+  ],
+  "test_name": "org.apache.commons.cli2.DocumentationTest::testBasicUsage",
+  "line_number": "122",
+  "simple_class_name": "DocumentationTest",
+  "loop": -1
+}

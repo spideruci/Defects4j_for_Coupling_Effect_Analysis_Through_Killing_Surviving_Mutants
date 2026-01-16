@@ -1,0 +1,23 @@
+{
+  "source": "return",
+  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
+  "name": "readerFor",
+  "returnType": "com.fasterxml.jackson.databind.ObjectReader",
+  "ordinal": 0,
+  "readable_access": "var._config._base._dateFormat",
+  "python_access": [
+    "metas",
+    5,
+    "graph",
+    "fields",
+    "_config",
+    "fields",
+    "_base",
+    "fields",
+    "_dateFormat"
+  ],
+  "test_name": "com.fasterxml.jackson.databind.jsontype.TestPolymorphicWithDefaultImpl::testDefaultAsVoid",
+  "line_number": "193",
+  "simple_class_name": "TestPolymorphicWithDefaultImpl",
+  "loop": -1
+}

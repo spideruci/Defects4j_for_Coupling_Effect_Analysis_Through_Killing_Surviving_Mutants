@@ -1,0 +1,21 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.math3.optim.nonlinear.vector.jacobian.LevenbergMarquardtOptimizer",
+  "name": "LevenbergMarquardtOptimizer",
+  "returnType": "void",
+  "ordinal": 0,
+  "readable_access": "var.weightMatrixSqrt.data",
+  "python_access": [
+    "metas",
+    6,
+    "graph",
+    "fields",
+    "weightMatrixSqrt",
+    "fields",
+    "data"
+  ],
+  "test_name": "org.apache.commons.math3.fitting.PolynomialFitterTest::testMath798",
+  "line_number": "117",
+  "simple_class_name": "PolynomialFitterTest",
+  "loop": -1
+}

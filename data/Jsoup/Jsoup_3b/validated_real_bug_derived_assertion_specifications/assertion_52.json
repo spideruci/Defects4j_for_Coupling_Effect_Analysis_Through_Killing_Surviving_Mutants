@@ -1,0 +1,23 @@
+{
+  "source": "return",
+  "owner": "org.jsoup.nodes.Element",
+  "name": "children",
+  "returnType": "org.jsoup.select.Elements",
+  "ordinal": 0,
+  "readable_access": "var.elements.parentNode.tag",
+  "python_access": [
+    "metas",
+    23,
+    "graph",
+    "elements",
+    0,
+    "fields",
+    "parentNode",
+    "fields",
+    "tag"
+  ],
+  "test_name": "org.jsoup.parser.ParserTest::createsDocumentStructure",
+  "line_number": "102",
+  "simple_class_name": "ParserTest",
+  "loop": -1
+}

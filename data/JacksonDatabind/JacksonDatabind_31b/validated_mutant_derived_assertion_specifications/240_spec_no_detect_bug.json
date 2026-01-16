@@ -1,0 +1,19 @@
+{
+  "source": "getField",
+  "owner": "com.fasterxml.jackson.databind.creators.TestCreatorsDelegating$Value592",
+  "name": "stuff",
+  "returnType": "java.lang.Object",
+  "ordinal": 0,
+  "readable_access": "var._hasNativeId",
+  "python_access": [
+    "metas",
+    4,
+    "graph",
+    "fields",
+    "_hasNativeId"
+  ],
+  "test_name": "com.fasterxml.jackson.databind.creators.TestCreatorsDelegating::testDelegateWithTokenBuffer",
+  "line_number": "131",
+  "simple_class_name": "TestCreatorsDelegating",
+  "loop": -1
+}

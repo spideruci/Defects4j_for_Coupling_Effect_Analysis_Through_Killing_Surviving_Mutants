@@ -1,0 +1,17 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.cli.CommandLineParser",
+  "name": "parse",
+  "returnType": "org.apache.commons.cli.CommandLine",
+  "ordinal": 0,
+  "readable_access": "var.metas",
+  "python_access": [
+    "metas",
+    4,
+    "graph"
+  ],
+  "test_name": "org.apache.commons.cli.ParseTest::testMultiple",
+  "line_number": "201",
+  "simple_class_name": "ParseTest",
+  "loop": -1
+}

@@ -1,0 +1,22 @@
+{
+  "source": "return",
+  "owner": "com.google.gson.GsonBuilder",
+  "name": "create",
+  "returnType": "com.google.gson.Gson",
+  "ordinal": 0,
+  "readable_access": "var.typeTokenCache[{rawType=visited,type=visited}]",
+  "python_access": [
+    "metas",
+    7,
+    "graph",
+    "fields",
+    "typeTokenCache",
+    "entries",
+    0,
+    "value"
+  ],
+  "test_name": "com.google.gson.functional.TypeAdapterPrecedenceTest::testStreamingHierarchicalFollowedByNonstreamingHierarchical",
+  "line_number": "100",
+  "simple_class_name": "TypeAdapterPrecedenceTest",
+  "loop": -1
+}

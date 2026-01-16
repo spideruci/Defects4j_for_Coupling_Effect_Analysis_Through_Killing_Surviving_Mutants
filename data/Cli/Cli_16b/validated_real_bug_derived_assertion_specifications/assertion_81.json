@@ -1,0 +1,19 @@
+{
+  "source": "getField",
+  "owner": "org.apache.commons.cli2.commandline.ParserTest",
+  "name": "parser",
+  "returnType": "org.apache.commons.cli2.commandline.Parser",
+  "ordinal": 0,
+  "readable_access": "var.group",
+  "python_access": [
+    "metas",
+    0,
+    "graph",
+    "fields",
+    "group"
+  ],
+  "test_name": "org.apache.commons.cli2.commandline.ParserTest::testParse_Successful",
+  "line_number": "63",
+  "simple_class_name": "ParserTest",
+  "loop": -1
+}

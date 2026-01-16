@@ -1,0 +1,23 @@
+{
+  "source": "return",
+  "owner": "com.fasterxml.jackson.databind.type.TypeFactory",
+  "name": "constructType",
+  "returnType": "com.fasterxml.jackson.databind.JavaType",
+  "ordinal": 0,
+  "readable_access": "var._superInterfaces.elements._bindings",
+  "python_access": [
+    "metas",
+    2,
+    "graph",
+    "fields",
+    "_superInterfaces",
+    "elements",
+    2,
+    "fields",
+    "_bindings"
+  ],
+  "test_name": "com.fasterxml.jackson.databind.type.TestTypeFactory::testCanonicalNames",
+  "line_number": "208",
+  "simple_class_name": "TestTypeFactory",
+  "loop": -1
+}

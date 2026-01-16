@@ -1,0 +1,23 @@
+{
+  "source": "return",
+  "owner": "com.fasterxml.jackson.core.JsonFactory",
+  "name": "createGenerator",
+  "returnType": "com.fasterxml.jackson.core.JsonGenerator",
+  "ordinal": 0,
+  "readable_access": "var._objectCodec._deserializationContext._factory",
+  "python_access": [
+    "metas",
+    24,
+    "graph",
+    "fields",
+    "_objectCodec",
+    "fields",
+    "_deserializationContext",
+    "fields",
+    "_factory"
+  ],
+  "test_name": "com.fasterxml.jackson.databind.ser.TestConfig::testIndentWithPassedGenerator",
+  "line_number": "173",
+  "simple_class_name": "TestConfig",
+  "loop": -1
+}

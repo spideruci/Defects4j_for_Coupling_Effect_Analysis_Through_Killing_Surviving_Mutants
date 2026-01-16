@@ -1,0 +1,21 @@
+{
+  "source": "return",
+  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
+  "name": "ObjectMapper",
+  "returnType": "void",
+  "ordinal": 0,
+  "readable_access": "var.DEFAULT_BASE._dateFormat",
+  "python_access": [
+    "metas",
+    0,
+    "graph",
+    "fields",
+    "DEFAULT_BASE",
+    "fields",
+    "_dateFormat"
+  ],
+  "test_name": "com.fasterxml.jackson.databind.introspect.BeanNamingTest::testSimple",
+  "line_number": "22",
+  "simple_class_name": "BeanNamingTest",
+  "loop": -1
+}

@@ -1,0 +1,19 @@
+{
+  "source": "return",
+  "owner": "org.joda.time.PeriodType",
+  "name": "dayTime",
+  "returnType": "org.joda.time.PeriodType",
+  "ordinal": 0,
+  "readable_access": "var.cTime",
+  "python_access": [
+    "metas",
+    27,
+    "graph",
+    "fields",
+    "cTime"
+  ],
+  "test_name": "org.joda.time.TestPeriod_Basics::testEqualsHashCode",
+  "line_number": "216",
+  "simple_class_name": "TestPeriod_Basics",
+  "loop": -1
+}

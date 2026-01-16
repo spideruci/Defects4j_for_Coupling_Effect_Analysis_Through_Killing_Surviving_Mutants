@@ -1,0 +1,22 @@
+{
+  "source": "return",
+  "owner": "com.fasterxml.jackson.databind.ser.BeanSerializerFactory",
+  "name": "BeanSerializerFactory",
+  "returnType": "void",
+  "ordinal": 0,
+  "readable_access": "var._concrete[java.lang.Short]",
+  "python_access": [
+    "metas",
+    4,
+    "graph",
+    "fields",
+    "_concrete",
+    "entries",
+    13,
+    "value"
+  ],
+  "test_name": "com.fasterxml.jackson.databind.ser.TestSerializerProvider::testFindExplicit",
+  "line_number": "22",
+  "simple_class_name": "TestSerializerProvider",
+  "loop": -1
+}

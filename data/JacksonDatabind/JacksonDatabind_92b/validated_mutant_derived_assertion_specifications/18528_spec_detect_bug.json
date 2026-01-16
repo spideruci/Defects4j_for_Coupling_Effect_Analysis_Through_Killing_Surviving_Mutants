@@ -1,0 +1,23 @@
+{
+  "source": "return",
+  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
+  "name": "copy",
+  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
+  "ordinal": 0,
+  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
+  "python_access": [
+    "metas",
+    21,
+    "graph",
+    "fields",
+    "_deserializationContext",
+    "fields",
+    "_factory",
+    "fields",
+    "DEFAULT_NO_DESER_CLASS_NAMES"
+  ],
+  "test_name": "com.fasterxml.jackson.databind.mixins.TestMixinSerForClass::testClassMixInsMidLevel",
+  "line_number": "120",
+  "simple_class_name": "TestMixinSerForClass",
+  "loop": -1
+}

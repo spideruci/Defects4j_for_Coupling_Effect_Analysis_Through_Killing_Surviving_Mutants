@@ -1,0 +1,21 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.cli2.commandline.Parser",
+  "name": "Parser",
+  "returnType": "void",
+  "ordinal": 0,
+  "readable_access": "var.helpOption.parent",
+  "python_access": [
+    "metas",
+    66,
+    "graph",
+    "fields",
+    "helpOption",
+    "fields",
+    "parent"
+  ],
+  "test_name": "org.apache.commons.cli2.DocumentationTest::testBasicUsage",
+  "line_number": "126",
+  "simple_class_name": "DocumentationTest",
+  "loop": -1
+}

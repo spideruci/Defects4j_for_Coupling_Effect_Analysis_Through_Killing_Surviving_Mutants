@@ -1,0 +1,21 @@
+{
+  "source": "return",
+  "owner": "org.joda.time.TimeOfDay",
+  "name": "plusHours",
+  "returnType": "org.joda.time.TimeOfDay",
+  "ordinal": 0,
+  "readable_access": "var.iChronology.iGapDuration",
+  "python_access": [
+    "metas",
+    6,
+    "graph",
+    "fields",
+    "iChronology",
+    "fields",
+    "iGapDuration"
+  ],
+  "test_name": "org.joda.time.chrono.TestGJChronology::testTimeOfDayAdd",
+  "line_number": "471",
+  "simple_class_name": "TestGJChronology",
+  "loop": -1
+}

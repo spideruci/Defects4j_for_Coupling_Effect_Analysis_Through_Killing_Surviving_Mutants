@@ -1,0 +1,18 @@
+{
+  "source": "local",
+  "owner": "Lorg/apache/commons/cli2/OptionException;",
+  "name": "mve",
+  "ordinal": 0,
+  "readable_access": "var.option",
+  "python_access": [
+    "metas",
+    8,
+    "graph",
+    "fields",
+    "option"
+  ],
+  "test_name": "org.apache.commons.cli2.option.ArgumentTest::testProcessValues_ContractedTooFew",
+  "line_number": "236",
+  "simple_class_name": "ArgumentTest",
+  "loop": -1
+}

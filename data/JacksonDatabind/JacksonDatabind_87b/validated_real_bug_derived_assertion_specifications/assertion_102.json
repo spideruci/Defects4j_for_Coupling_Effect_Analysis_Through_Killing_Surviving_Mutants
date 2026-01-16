@@ -1,0 +1,21 @@
+{
+  "source": "return",
+  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
+  "name": "ObjectMapper",
+  "returnType": "void",
+  "ordinal": 0,
+  "readable_access": "var.DEFAULT_BASE._dateFormat",
+  "python_access": [
+    "metas",
+    0,
+    "graph",
+    "fields",
+    "DEFAULT_BASE",
+    "fields",
+    "_dateFormat"
+  ],
+  "test_name": "com.fasterxml.jackson.databind.ser.SerializationFeaturesTest::testGlobalAutoDetection",
+  "line_number": "107",
+  "simple_class_name": "SerializationFeaturesTest",
+  "loop": -1
+}

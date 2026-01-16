@@ -1,0 +1,19 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.compress.archivers.ArchiveStreamFactory",
+  "name": "createArchiveOutputStream",
+  "returnType": "org.apache.commons.compress.archivers.ArchiveOutputStream",
+  "ordinal": 0,
+  "readable_access": "var.finished",
+  "python_access": [
+    "metas",
+    8,
+    "graph",
+    "fields",
+    "finished"
+  ],
+  "test_name": "org.apache.commons.compress.archivers.TarTestCase::testTarArchiveCreation",
+  "line_number": "39",
+  "simple_class_name": "TarTestCase",
+  "loop": -1
+}

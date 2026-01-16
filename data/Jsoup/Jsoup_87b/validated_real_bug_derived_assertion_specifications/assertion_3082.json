@@ -1,0 +1,19 @@
+{
+  "source": "return",
+  "owner": "org.jsoup.Connection$Response",
+  "name": "parse",
+  "returnType": "org.jsoup.nodes.Document",
+  "ordinal": 0,
+  "readable_access": "var.tag",
+  "python_access": [
+    "metas",
+    4,
+    "graph",
+    "fields",
+    "tag"
+  ],
+  "test_name": "org.jsoup.integration.ConnectTest::parseParseThrowsValidates",
+  "line_number": "355",
+  "simple_class_name": "ConnectTest",
+  "loop": -1
+}

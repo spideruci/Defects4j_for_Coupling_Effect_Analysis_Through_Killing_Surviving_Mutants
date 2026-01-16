@@ -1,0 +1,21 @@
+{
+  "source": "return",
+  "owner": "org.jsoup.nodes.FormElement",
+  "name": "elements",
+  "returnType": "org.jsoup.select.Elements",
+  "ordinal": 0,
+  "readable_access": "var.elements.tag",
+  "python_access": [
+    "metas",
+    6,
+    "graph",
+    "elements",
+    5,
+    "fields",
+    "tag"
+  ],
+  "test_name": "org.jsoup.nodes.FormElementTest::hasAssociatedControls",
+  "line_number": "24",
+  "simple_class_name": "FormElementTest",
+  "loop": -1
+}

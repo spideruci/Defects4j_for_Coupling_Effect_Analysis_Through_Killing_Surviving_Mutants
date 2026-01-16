@@ -1,0 +1,23 @@
+{
+  "source": "return",
+  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
+  "name": "writer",
+  "returnType": "com.fasterxml.jackson.databind.ObjectWriter",
+  "ordinal": 0,
+  "readable_access": "var._config._base._dateFormat",
+  "python_access": [
+    "metas",
+    15,
+    "graph",
+    "fields",
+    "_config",
+    "fields",
+    "_base",
+    "fields",
+    "_dateFormat"
+  ],
+  "test_name": "com.fasterxml.jackson.databind.ObjectMapperTest::testNonSerializabilityOfObject",
+  "line_number": "259",
+  "simple_class_name": "ObjectMapperTest",
+  "loop": -1
+}

@@ -1,0 +1,23 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.math.ode.ContinuousOutputModel",
+  "name": "ContinuousOutputModel",
+  "returnType": "void",
+  "ordinal": 0,
+  "readable_access": "var.steps.elements.interpolatedTime",
+  "python_access": [
+    "metas",
+    1,
+    "graph",
+    "fields",
+    "steps",
+    "elements",
+    6,
+    "fields",
+    "interpolatedTime"
+  ],
+  "test_name": "org.apache.commons.math.ode.ContinuousOutputModelTest::testBoundaries",
+  "line_number": "43",
+  "simple_class_name": "ContinuousOutputModelTest",
+  "loop": -1
+}

@@ -1,0 +1,23 @@
+{
+  "source": "return",
+  "owner": "org.jsoup.nodes.Document",
+  "name": "selectFirst",
+  "returnType": "org.jsoup.nodes.Element",
+  "ordinal": 0,
+  "readable_access": "var.parentNode.parentNode.tag",
+  "python_access": [
+    "metas",
+    2,
+    "graph",
+    "fields",
+    "parentNode",
+    "fields",
+    "parentNode",
+    "fields",
+    "tag"
+  ],
+  "test_name": "org.jsoup.nodes.ElementTest::booleanAttributeOutput",
+  "line_number": "1311",
+  "simple_class_name": "ElementTest",
+  "loop": -1
+}

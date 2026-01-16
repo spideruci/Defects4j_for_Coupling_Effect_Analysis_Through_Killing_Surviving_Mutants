@@ -1,0 +1,16 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.lang3.StringEscapeUtils",
+  "name": "escapeEcmaScript",
+  "returnType": "java.lang.String",
+  "ordinal": 0,
+  "readable_access": "primitive",
+  "python_access": [
+    "metas",
+    3
+  ],
+  "test_name": "org.apache.commons.lang3.StringEscapeUtilsTest::testLang708",
+  "line_number": "498",
+  "simple_class_name": "StringEscapeUtilsTest",
+  "loop": -1
+}

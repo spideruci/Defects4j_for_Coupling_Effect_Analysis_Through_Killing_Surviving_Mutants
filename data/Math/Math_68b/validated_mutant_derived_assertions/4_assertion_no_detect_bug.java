@@ -1,0 +1,21 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.math.optimization.general.LevenbergMarquardtOptimizer",
+  "name": "LevenbergMarquardtOptimizer",
+  "returnType": "void",
+  "ordinal": 0,
+  "readable_access": "var.lmDir.elements",
+  "python_access": [
+    "metas",
+    0,
+    "graph",
+    "fields",
+    "lmDir",
+    "elements",
+    0
+  ],
+  "test_name": "org.apache.commons.math.optimization.fitting.CurveFitterTest::testMath304",
+  "line_number": "56",
+  "simple_class_name": "CurveFitterTest",
+  "loop": -1
+}

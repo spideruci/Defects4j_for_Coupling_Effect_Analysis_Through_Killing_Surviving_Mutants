@@ -1,0 +1,19 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.math.ode.nonstiff.DormandPrince54IntegratorTest$VariableHandler",
+  "name": "DormandPrince54IntegratorTest$VariableHandler",
+  "returnType": "void",
+  "ordinal": 0,
+  "readable_access": "var.minStep",
+  "python_access": [
+    "metas",
+    10,
+    "graph",
+    "fields",
+    "minStep"
+  ],
+  "test_name": "org.apache.commons.math.ode.nonstiff.DormandPrince54IntegratorTest::testVariableSteps",
+  "line_number": "270",
+  "simple_class_name": "DormandPrince54IntegratorTest",
+  "loop": -1
+}

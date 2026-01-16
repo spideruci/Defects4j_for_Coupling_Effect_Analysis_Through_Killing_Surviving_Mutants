@@ -1,0 +1,23 @@
+{
+  "source": "getField",
+  "owner": "org.apache.commons.cli2.util.HelpFormatterTest",
+  "name": "helpFormatter",
+  "returnType": "org.apache.commons.cli2.util.HelpFormatter",
+  "ordinal": 0,
+  "readable_access": "var.exception.option.parent",
+  "python_access": [
+    "metas",
+    2,
+    "graph",
+    "fields",
+    "exception",
+    "fields",
+    "option",
+    "fields",
+    "parent"
+  ],
+  "test_name": "org.apache.commons.cli2.util.HelpFormatterTest::testPrintHelp_WithException",
+  "line_number": "240",
+  "simple_class_name": "HelpFormatterTest",
+  "loop": -1
+}

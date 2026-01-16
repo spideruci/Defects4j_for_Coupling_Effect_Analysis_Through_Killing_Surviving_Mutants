@@ -1,0 +1,23 @@
+{
+  "source": "getField",
+  "owner": "com.fasterxml.jackson.databind.struct.PojoAsArray646Test",
+  "name": "MAPPER",
+  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
+  "ordinal": 0,
+  "readable_access": "var._deserializationContext._cache._cachedDeserializers",
+  "python_access": [
+    "metas",
+    12,
+    "graph",
+    "fields",
+    "_deserializationContext",
+    "fields",
+    "_cache",
+    "fields",
+    "_cachedDeserializers"
+  ],
+  "test_name": "com.fasterxml.jackson.databind.struct.PojoAsArray646Test::testWithCustomTypeId",
+  "line_number": "94",
+  "simple_class_name": "PojoAsArray646Test",
+  "loop": -1
+}

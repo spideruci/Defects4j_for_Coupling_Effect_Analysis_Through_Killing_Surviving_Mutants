@@ -1,0 +1,19 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.cli2.OptionException",
+  "name": "OptionException",
+  "returnType": "void",
+  "ordinal": 0,
+  "readable_access": "var.option",
+  "python_access": [
+    "metas",
+    9,
+    "graph",
+    "fields",
+    "option"
+  ],
+  "test_name": "org.apache.commons.cli2.option.ParentTest::testProcess_NoMatch",
+  "line_number": "151",
+  "simple_class_name": "ParentTest",
+  "loop": -1
+}

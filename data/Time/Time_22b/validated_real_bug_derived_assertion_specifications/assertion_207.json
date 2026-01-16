@@ -1,0 +1,21 @@
+{
+  "source": "return",
+  "owner": "org.joda.time.PeriodType",
+  "name": "standard",
+  "returnType": "org.joda.time.PeriodType",
+  "ordinal": 0,
+  "readable_access": "var.cStandard.cTime",
+  "python_access": [
+    "metas",
+    12,
+    "graph",
+    "fields",
+    "cStandard",
+    "fields",
+    "cTime"
+  ],
+  "test_name": "org.joda.time.format.TestISOPeriodFormat::testFormatAlternate",
+  "line_number": "127",
+  "simple_class_name": "TestISOPeriodFormat",
+  "loop": -1
+}

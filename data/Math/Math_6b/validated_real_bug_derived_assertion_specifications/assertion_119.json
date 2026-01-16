@@ -1,0 +1,21 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.math3.optim.univariate.BrentOptimizer",
+  "name": "BrentOptimizer",
+  "returnType": "void",
+  "ordinal": 0,
+  "readable_access": "var.iterations.maximalCount",
+  "python_access": [
+    "metas",
+    2,
+    "graph",
+    "fields",
+    "iterations",
+    "fields",
+    "maximalCount"
+  ],
+  "test_name": "org.apache.commons.math3.optim.univariate.MultiStartUnivariateOptimizerTest::testBadFunction",
+  "line_number": "110",
+  "simple_class_name": "MultiStartUnivariateOptimizerTest",
+  "loop": -1
+}

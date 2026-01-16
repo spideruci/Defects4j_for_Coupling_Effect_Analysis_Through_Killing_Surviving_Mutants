@@ -1,0 +1,19 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.cli.PosixParser",
+  "name": "PosixParser",
+  "returnType": "void",
+  "ordinal": 0,
+  "readable_access": "var.cmd",
+  "python_access": [
+    "metas",
+    4,
+    "graph",
+    "fields",
+    "cmd"
+  ],
+  "test_name": "org.apache.commons.cli.PatternOptionBuilderTest::testSimplePattern",
+  "line_number": "51",
+  "simple_class_name": "PatternOptionBuilderTest",
+  "loop": -1
+}

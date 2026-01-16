@@ -1,0 +1,91 @@
+// Instrumented at 2025-12-01 10:04:26
+package org.jsoup.parser;
+
+import org.jsoup.Jsoup;
+import org.jsoup.TextUtil;
+import org.jsoup.nodes.Document;
+import org.junit.Ignore;
+import org.junit.Test;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URISyntaxException;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotSame;
+
+/**
+ * Tests XmlTreeBuilder.
+ *
+ * @author Jonathan Hedley
+ */
+public class XmlTreeBuilderTest {
+
+    @Test
+    public void testSimpleXmlParse() {
+        String xml = "<doc id=2 href='/bar'>Foo <br /><link>One</link><link>Two</link></doc>";
+        XmlTreeBuilder tb = new XmlTreeBuilder();
+        Document doc = tb.parse(xml, "http://foo.com/");
+        assertEquals("<doc id=\"2\" href=\"/bar\">Foo <br /><link>One</link><link>Two</link></doc>", TextUtil.stripNewlines(doc.html()));
+        assertEquals(doc.getElementById("2").absUrl("href"), "http://foo.com/bar");
+    }
+
+    @Test
+    public void testPopToClose() {
+        // test: </val> closes Two, </bar> ignored
+        String xml = "<doc><val>One<val>Two</val></bar>Three</doc>";
+        XmlTreeBuilder tb = new XmlTreeBuilder();
+        Document doc = tb.parse(xml, "http://foo.com/");
+        assertEquals("<doc><val>One<val>Two</val>Three</val></doc>", TextUtil.stripNewlines(doc.html()));
+    }
+
+    @Test
+    public void testCommentAndDocType() {
+        org.jsoup.nodes.Document __ins_v1 = null;
+        String xml = "<!DOCTYPE html><!-- a comment -->One <qux />Two";
+        XmlTreeBuilder tb = new XmlTreeBuilder();
+        __ins_v1 = tb.parse(xml, "http://foo.com/");
+        Document doc = __ins_v1;
+        assertEquals("<!DOCTYPE html><!-- a comment -->One <qux />Two", TextUtil.stripNewlines(doc.html()));
+        org.helper.Assertions.verify("var.tag.preserveWhitespaceTags_328_", __ins_v1);
+    }
+
+    @Test
+    public void testSupplyParserToJsoupClass() {
+        String xml = "<doc><val>One<val>Two</val></bar>Three</doc>";
+        Document doc = Jsoup.parse(xml, "http://foo.com/", Parser.xmlParser());
+        assertEquals("<doc><val>One<val>Two</val>Three</val></doc>", TextUtil.stripNewlines(doc.html()));
+    }
+
+    @Ignore
+    @Test
+    public void testSupplyParserToConnection() throws IOException {
+        String xmlUrl = "http://direct.infohound.net/tools/jsoup-xml-test.xml";
+        // parse with both xml and html parser, ensure different
+        Document xmlDoc = Jsoup.connect(xmlUrl).parser(Parser.xmlParser()).get();
+        Document htmlDoc = Jsoup.connect(xmlUrl).get();
+        assertEquals("<doc><val>One<val>Two</val>Three</val></doc>", TextUtil.stripNewlines(xmlDoc.html()));
+        assertNotSame(htmlDoc, xmlDoc);
+        // html parser normalises
+        assertEquals(1, htmlDoc.select("head").size());
+        // xml parser does not
+        assertEquals(0, xmlDoc.select("head").size());
+    }
+
+    @Test
+    public void testSupplyParserToDataStream() throws IOException, URISyntaxException {
+        File xmlFile = new File(XmlTreeBuilder.class.getResource("/htmltests/xml-test.xml").toURI());
+        InputStream inStream = new FileInputStream(xmlFile);
+        Document doc = Jsoup.parse(inStream, null, "http://foo.com", Parser.xmlParser());
+        assertEquals("<doc><val>One<val>Two</val>Three</val></doc>", TextUtil.stripNewlines(doc.html()));
+    }
+
+    @Test
+    public void testDoesNotForceSelfClosingKnownTags() {
+        // html will force "<br>one</br>" to "<br />One<br />". XML should be stay "<br>one</br> -- don't recognise tag.
+        Document htmlDoc = Jsoup.parse("<br>one</br>");
+        assertEquals("<br />one\n<br />", htmlDoc.body().html());
+        Document xmlDoc = Jsoup.parse("<br>one</br>", "", Parser.xmlParser());
+        assertEquals("<br>one</br>", xmlDoc.html());
+    }
+}

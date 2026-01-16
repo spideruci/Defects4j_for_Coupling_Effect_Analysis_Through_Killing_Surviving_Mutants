@@ -1,0 +1,23 @@
+{
+  "source": "return",
+  "owner": "org.jsoup.parser.Parser",
+  "name": "parseInput",
+  "returnType": "org.jsoup.nodes.Document",
+  "ordinal": 0,
+  "readable_access": "var.childNodes.elements.tag",
+  "python_access": [
+    "metas",
+    4,
+    "graph",
+    "fields",
+    "childNodes",
+    "elements",
+    0,
+    "fields",
+    "tag"
+  ],
+  "test_name": "org.jsoup.parser.HtmlParserTest::canPreserveAttributeCase",
+  "line_number": "1089",
+  "simple_class_name": "HtmlParserTest",
+  "loop": -1
+}

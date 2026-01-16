@@ -1,0 +1,19 @@
+{
+  "source": "return",
+  "owner": "com.fasterxml.jackson.databind.jsontype.TestWithGenerics$CustomJsonSerializerFactory",
+  "name": "TestWithGenerics$CustomJsonSerializerFactory",
+  "returnType": "void",
+  "ordinal": 0,
+  "readable_access": "var._concrete",
+  "python_access": [
+    "metas",
+    2,
+    "graph",
+    "fields",
+    "_concrete"
+  ],
+  "test_name": "com.fasterxml.jackson.databind.jsontype.TestWithGenerics::testJackson430",
+  "line_number": "204",
+  "simple_class_name": "TestWithGenerics",
+  "loop": -1
+}

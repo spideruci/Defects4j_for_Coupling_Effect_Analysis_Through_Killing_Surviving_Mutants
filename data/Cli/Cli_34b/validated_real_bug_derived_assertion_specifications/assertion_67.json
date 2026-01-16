@@ -1,0 +1,19 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.cli.Option",
+  "name": "Option",
+  "returnType": "void",
+  "ordinal": 0,
+  "readable_access": "var.type",
+  "python_access": [
+    "metas",
+    129,
+    "graph",
+    "fields",
+    "type"
+  ],
+  "test_name": "org.apache.commons.cli.bug.BugCLI162Test::testPrintHelpLongLines",
+  "line_number": "227",
+  "simple_class_name": "BugCLI162Test",
+  "loop": -1
+}

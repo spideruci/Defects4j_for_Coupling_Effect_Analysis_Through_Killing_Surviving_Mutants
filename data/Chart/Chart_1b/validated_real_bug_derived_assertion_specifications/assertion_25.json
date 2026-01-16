@@ -1,0 +1,23 @@
+{
+  "source": "getField",
+  "owner": "org.jfree.chart.junit.AreaChartTests",
+  "name": "chart",
+  "returnType": "org.jfree.chart.JFreeChart",
+  "ordinal": 0,
+  "readable_access": "var.plot.drawingSupplier.strokeIndex",
+  "python_access": [
+    "metas",
+    5,
+    "graph",
+    "fields",
+    "plot",
+    "fields",
+    "drawingSupplier",
+    "fields",
+    "strokeIndex"
+  ],
+  "test_name": "org.jfree.chart.junit.AreaChartTests::testDrawWithNullInfo",
+  "line_number": "140",
+  "simple_class_name": "AreaChartTests",
+  "loop": -1
+}

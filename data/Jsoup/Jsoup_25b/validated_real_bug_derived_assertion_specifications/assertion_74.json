@@ -1,0 +1,23 @@
+{
+  "source": "return",
+  "owner": "org.jsoup.nodes.Document",
+  "name": "select",
+  "returnType": "org.jsoup.select.Elements",
+  "ordinal": 0,
+  "readable_access": "var.elements.tag.preserveWhitespaceTags",
+  "python_access": [
+    "metas",
+    12,
+    "graph",
+    "elements",
+    0,
+    "fields",
+    "tag",
+    "fields",
+    "preserveWhitespaceTags"
+  ],
+  "test_name": "org.jsoup.select.SelectorTest::testPseudoContains",
+  "line_number": "476",
+  "simple_class_name": "SelectorTest",
+  "loop": -1
+}

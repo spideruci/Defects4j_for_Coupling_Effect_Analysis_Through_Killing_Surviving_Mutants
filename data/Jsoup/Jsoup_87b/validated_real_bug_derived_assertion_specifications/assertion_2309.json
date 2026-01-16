@@ -1,0 +1,23 @@
+{
+  "source": "return",
+  "owner": "org.jsoup.nodes.Document",
+  "name": "getElementsByClass",
+  "returnType": "org.jsoup.select.Elements",
+  "ordinal": 0,
+  "readable_access": "var.elements.parentNode.tag",
+  "python_access": [
+    "metas",
+    3,
+    "graph",
+    "elements",
+    0,
+    "fields",
+    "parentNode",
+    "fields",
+    "tag"
+  ],
+  "test_name": "org.jsoup.select.SelectorTest::descendant",
+  "line_number": "242",
+  "simple_class_name": "SelectorTest",
+  "loop": -1
+}

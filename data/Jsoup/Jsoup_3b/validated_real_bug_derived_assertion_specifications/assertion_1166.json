@@ -1,0 +1,23 @@
+{
+  "source": "return",
+  "owner": "org.jsoup.nodes.Document",
+  "name": "getElementsByTag",
+  "returnType": "org.jsoup.select.Elements",
+  "ordinal": 0,
+  "readable_access": "var.elements.parentNode.tag",
+  "python_access": [
+    "metas",
+    2,
+    "graph",
+    "elements",
+    0,
+    "fields",
+    "parentNode",
+    "fields",
+    "tag"
+  ],
+  "test_name": "org.jsoup.parser.AttributeParseTest::parsesRoughAttributeString",
+  "line_number": "20",
+  "simple_class_name": "AttributeParseTest",
+  "loop": -1
+}

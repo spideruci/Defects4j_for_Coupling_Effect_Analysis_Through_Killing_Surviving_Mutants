@@ -1,0 +1,21 @@
+{
+  "source": "return",
+  "owner": "org.jfree.chart.axis.NumberAxis",
+  "name": "NumberAxis",
+  "returnType": "void",
+  "ordinal": 0,
+  "readable_access": "var.tickUnit.size",
+  "python_access": [
+    "metas",
+    6,
+    "graph",
+    "fields",
+    "tickUnit",
+    "fields",
+    "size"
+  ],
+  "test_name": "org.jfree.chart.renderer.category.junit.GroupedStackedBarRendererTests::testDrawWithNullInfo",
+  "line_number": "172",
+  "simple_class_name": "GroupedStackedBarRendererTests",
+  "loop": -1
+}

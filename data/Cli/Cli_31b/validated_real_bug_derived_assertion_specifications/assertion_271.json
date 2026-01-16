@@ -1,0 +1,19 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.cli.Options",
+  "name": "getOption",
+  "returnType": "org.apache.commons.cli.Option",
+  "ordinal": 0,
+  "readable_access": "var.argName",
+  "python_access": [
+    "metas",
+    3,
+    "graph",
+    "fields",
+    "argName"
+  ],
+  "test_name": "org.apache.commons.cli.bug.BugCLI71Test::testGetsDefaultIfOptional",
+  "line_number": "77",
+  "simple_class_name": "BugCLI71Test",
+  "loop": -1
+}

@@ -1,0 +1,19 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.cli.OptionTest$TestOption",
+  "name": "clone",
+  "returnType": "java.lang.Object",
+  "ordinal": 0,
+  "readable_access": "var.type",
+  "python_access": [
+    "metas",
+    2,
+    "graph",
+    "fields",
+    "type"
+  ],
+  "test_name": "org.apache.commons.cli.OptionTest::testClone",
+  "line_number": "55",
+  "simple_class_name": "OptionTest",
+  "loop": -1
+}

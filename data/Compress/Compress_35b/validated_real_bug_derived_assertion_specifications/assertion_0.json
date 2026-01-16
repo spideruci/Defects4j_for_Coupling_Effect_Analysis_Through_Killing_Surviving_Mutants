@@ -1,0 +1,21 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.compress.archivers.tar.TarArchiveInputStreamTest",
+  "name": "getTestStream",
+  "returnType": "org.apache.commons.compress.archivers.tar.TarArchiveInputStream",
+  "ordinal": 0,
+  "readable_access": "var.currEntry.checkSumOK",
+  "python_access": [
+    "metas",
+    0,
+    "graph",
+    "fields",
+    "currEntry",
+    "fields",
+    "checkSumOK"
+  ],
+  "test_name": "org.apache.commons.compress.archivers.tar.TarArchiveInputStreamTest::shouldReadGNULongNameEntryWithWrongName",
+  "line_number": "264",
+  "simple_class_name": "TarArchiveInputStreamTest",
+  "loop": -1
+}

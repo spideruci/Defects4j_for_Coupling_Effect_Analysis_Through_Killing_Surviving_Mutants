@@ -1,0 +1,21 @@
+{
+  "source": "getField",
+  "owner": "com.fasterxml.jackson.databind.convert.ConvertingAbstractSerializer795Test",
+  "name": "JSON_MAPPER",
+  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
+  "ordinal": 0,
+  "readable_access": "var._deserializationContext._factory",
+  "python_access": [
+    "metas",
+    1,
+    "graph",
+    "fields",
+    "_deserializationContext",
+    "fields",
+    "_factory"
+  ],
+  "test_name": "com.fasterxml.jackson.databind.convert.ConvertingAbstractSerializer795Test::testNonAbstractDeserialization",
+  "line_number": "84",
+  "simple_class_name": "ConvertingAbstractSerializer795Test",
+  "loop": -1
+}

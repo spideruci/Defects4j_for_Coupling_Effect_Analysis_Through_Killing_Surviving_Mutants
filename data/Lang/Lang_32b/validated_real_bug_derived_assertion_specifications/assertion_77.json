@@ -1,0 +1,19 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.lang3.builder.HashCodeBuilder",
+  "name": "HashCodeBuilder",
+  "returnType": "void",
+  "ordinal": 0,
+  "readable_access": "var.REGISTRY",
+  "python_access": [
+    "metas",
+    6,
+    "graph",
+    "fields",
+    "REGISTRY"
+  ],
+  "test_name": "org.apache.commons.lang3.builder.HashCodeBuilderTest::testLongArrayAsObject",
+  "line_number": "296",
+  "simple_class_name": "HashCodeBuilderTest",
+  "loop": -1
+}

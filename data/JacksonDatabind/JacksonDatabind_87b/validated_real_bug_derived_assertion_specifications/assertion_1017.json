@@ -1,0 +1,21 @@
+{
+  "source": "return",
+  "owner": "com.fasterxml.jackson.databind.introspect.TestScalaLikeImplicitProperties",
+  "name": "manglingMapper",
+  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
+  "ordinal": 0,
+  "readable_access": "var.DEFAULT_BASE._dateFormat",
+  "python_access": [
+    "metas",
+    0,
+    "graph",
+    "fields",
+    "DEFAULT_BASE",
+    "fields",
+    "_dateFormat"
+  ],
+  "test_name": "com.fasterxml.jackson.databind.introspect.TestScalaLikeImplicitProperties::testGetterSetterProperty",
+  "line_number": "162",
+  "simple_class_name": "TestScalaLikeImplicitProperties",
+  "loop": -1
+}

@@ -1,0 +1,23 @@
+{
+  "source": "return",
+  "owner": "org.jsoup.nodes.Document",
+  "name": "select",
+  "returnType": "org.jsoup.select.Elements",
+  "ordinal": 0,
+  "readable_access": "var.elements.parentNode.tag",
+  "python_access": [
+    "metas",
+    5,
+    "graph",
+    "elements",
+    0,
+    "fields",
+    "parentNode",
+    "fields",
+    "tag"
+  ],
+  "test_name": "org.jsoup.select.TraversorTest::filterStop",
+  "line_number": "104",
+  "simple_class_name": "TraversorTest",
+  "loop": -1
+}

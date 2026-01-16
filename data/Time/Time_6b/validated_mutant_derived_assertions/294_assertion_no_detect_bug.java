@@ -1,0 +1,23 @@
+{
+  "source": "return",
+  "owner": "org.joda.time.DateTime",
+  "name": "DateTime",
+  "returnType": "void",
+  "ordinal": 0,
+  "readable_access": "var.iChronology.cFastCache.elements",
+  "python_access": [
+    "metas",
+    13,
+    "graph",
+    "fields",
+    "iChronology",
+    "fields",
+    "cFastCache",
+    "elements",
+    4
+  ],
+  "test_name": "org.joda.time.chrono.TestGJChronology::testFactory_Zone_RI",
+  "line_number": "133",
+  "simple_class_name": "TestGJChronology",
+  "loop": -1
+}

@@ -1,0 +1,22 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.cli2.commandline.Parser",
+  "name": "parse",
+  "returnType": "org.apache.commons.cli2.CommandLine",
+  "ordinal": 0,
+  "readable_access": "var.nameToOption[-b]",
+  "python_access": [
+    "metas",
+    24,
+    "graph",
+    "fields",
+    "nameToOption",
+    "entries",
+    0,
+    "value"
+  ],
+  "test_name": "org.apache.commons.cli2.bug.Bug13886Test::testMandatoryGroup",
+  "line_number": "73",
+  "simple_class_name": "Bug13886Test",
+  "loop": -1
+}

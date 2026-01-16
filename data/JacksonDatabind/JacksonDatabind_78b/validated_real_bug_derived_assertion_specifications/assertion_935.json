@@ -1,0 +1,21 @@
+{
+  "source": "return",
+  "owner": "com.fasterxml.jackson.databind.deser.JDKScalarsTest",
+  "name": "objectMapper",
+  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
+  "ordinal": 0,
+  "readable_access": "var._deserializationContext._factory",
+  "python_access": [
+    "metas",
+    0,
+    "graph",
+    "fields",
+    "_deserializationContext",
+    "fields",
+    "_factory"
+  ],
+  "test_name": "com.fasterxml.jackson.databind.deser.JDKScalarsTest::testBigDecimal",
+  "line_number": "580",
+  "simple_class_name": "JDKScalarsTest",
+  "loop": -1
+}

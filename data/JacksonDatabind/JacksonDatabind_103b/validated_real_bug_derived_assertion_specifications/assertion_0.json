@@ -1,0 +1,18 @@
+{
+  "source": "local",
+  "owner": "Lcom/fasterxml/jackson/core/JsonProcessingException;",
+  "name": "e",
+  "ordinal": 0,
+  "readable_access": "var.detailMessage",
+  "python_access": [
+    "metas",
+    2,
+    "graph",
+    "fields",
+    "detailMessage"
+  ],
+  "test_name": "com.fasterxml.jackson.databind.deser.jdk.JDKNumberDeserTest::testDeserializeDecimalProperException",
+  "line_number": "155",
+  "simple_class_name": "JDKNumberDeserTest",
+  "loop": -1
+}

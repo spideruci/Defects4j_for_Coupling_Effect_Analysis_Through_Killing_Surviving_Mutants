@@ -1,0 +1,21 @@
+{
+  "source": "return",
+  "owner": "java.io.ObjectInputStream",
+  "name": "readObject",
+  "returnType": "java.lang.Object",
+  "ordinal": 0,
+  "readable_access": "var.iChronology.cCache",
+  "python_access": [
+    "metas",
+    13,
+    "graph",
+    "fields",
+    "iChronology",
+    "fields",
+    "cCache"
+  ],
+  "test_name": "org.joda.time.TestDateMidnight_Basics::testSerialization",
+  "line_number": "430",
+  "simple_class_name": "TestDateMidnight_Basics",
+  "loop": -1
+}

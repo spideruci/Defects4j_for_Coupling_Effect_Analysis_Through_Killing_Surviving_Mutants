@@ -1,0 +1,19 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.cli.OptionBuilder",
+  "name": "create",
+  "returnType": "org.apache.commons.cli.Option",
+  "ordinal": 0,
+  "readable_access": "var.argName",
+  "python_access": [
+    "metas",
+    6,
+    "graph",
+    "fields",
+    "argName"
+  ],
+  "test_name": "org.apache.commons.cli.OptionsTest::testGetMatchingOpts",
+  "line_number": "167",
+  "simple_class_name": "OptionsTest",
+  "loop": -1
+}

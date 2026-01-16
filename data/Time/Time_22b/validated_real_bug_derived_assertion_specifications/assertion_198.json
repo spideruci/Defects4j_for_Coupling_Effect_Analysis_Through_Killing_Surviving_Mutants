@@ -1,0 +1,23 @@
+{
+  "source": "return",
+  "owner": "java.io.ObjectInputStream",
+  "name": "readObject",
+  "returnType": "java.lang.Object",
+  "ordinal": 0,
+  "readable_access": "var.ZERO.iType.cTime",
+  "python_access": [
+    "metas",
+    12,
+    "graph",
+    "fields",
+    "ZERO",
+    "fields",
+    "iType",
+    "fields",
+    "cTime"
+  ],
+  "test_name": "org.joda.time.TestPeriod_Basics::testSerialization",
+  "line_number": "237",
+  "simple_class_name": "TestPeriod_Basics",
+  "loop": -1
+}

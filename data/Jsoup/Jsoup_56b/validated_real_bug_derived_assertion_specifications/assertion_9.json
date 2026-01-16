@@ -1,0 +1,23 @@
+{
+  "source": "return",
+  "owner": "org.jsoup.parser.Parser",
+  "name": "xmlParser",
+  "returnType": "org.jsoup.parser.Parser",
+  "ordinal": 0,
+  "readable_access": "var.treeBuilder.tokeniser.doctypePending",
+  "python_access": [
+    "metas",
+    6,
+    "graph",
+    "fields",
+    "treeBuilder",
+    "fields",
+    "tokeniser",
+    "fields",
+    "doctypePending"
+  ],
+  "test_name": "org.jsoup.parser.XmlTreeBuilderTest::testDetectCharsetEncodingDeclaration",
+  "line_number": "141",
+  "simple_class_name": "XmlTreeBuilderTest",
+  "loop": -1
+}

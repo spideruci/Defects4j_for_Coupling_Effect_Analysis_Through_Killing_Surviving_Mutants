@@ -1,0 +1,21 @@
+{
+  "source": "getField",
+  "owner": "org.joda.time.format.TestISOPeriodFormat",
+  "name": "YEAR_DAY_PERIOD",
+  "returnType": "org.joda.time.Period",
+  "ordinal": 0,
+  "readable_access": "var.iType.cTime",
+  "python_access": [
+    "metas",
+    20,
+    "graph",
+    "fields",
+    "iType",
+    "fields",
+    "cTime"
+  ],
+  "test_name": "org.joda.time.format.TestISOPeriodFormat::testFormatAlternateWithWeeks",
+  "line_number": "166",
+  "simple_class_name": "TestISOPeriodFormat",
+  "loop": -1
+}

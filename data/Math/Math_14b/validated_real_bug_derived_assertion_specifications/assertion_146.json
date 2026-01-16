@@ -1,0 +1,21 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.math3.optim.nonlinear.vector.Weight",
+  "name": "Weight",
+  "returnType": "void",
+  "ordinal": 0,
+  "readable_access": "var.weightMatrix.data",
+  "python_access": [
+    "metas",
+    12,
+    "graph",
+    "fields",
+    "weightMatrix",
+    "fields",
+    "data"
+  ],
+  "test_name": "org.apache.commons.math3.optim.nonlinear.vector.jacobian.GaussNewtonOptimizerTest::testMaxEvaluations",
+  "line_number": "134",
+  "simple_class_name": "GaussNewtonOptimizerTest",
+  "loop": -1
+}

@@ -1,0 +1,19 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.math3.optim.nonlinear.vector.jacobian.GaussNewtonOptimizer",
+  "name": "GaussNewtonOptimizer",
+  "returnType": "void",
+  "ordinal": 0,
+  "readable_access": "var.weightMatrixSqrt",
+  "python_access": [
+    "metas",
+    9,
+    "graph",
+    "fields",
+    "weightMatrixSqrt"
+  ],
+  "test_name": "org.apache.commons.math3.fitting.PolynomialFitterTest::testMath798WithToleranceTooLowButNoException",
+  "line_number": "156",
+  "simple_class_name": "PolynomialFitterTest",
+  "loop": -1
+}

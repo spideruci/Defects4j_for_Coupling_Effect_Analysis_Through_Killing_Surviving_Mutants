@@ -1,0 +1,19 @@
+{
+  "source": "return",
+  "owner": "org.jsoup.select.Elements",
+  "name": "first",
+  "returnType": "org.jsoup.nodes.Element",
+  "ordinal": 0,
+  "readable_access": "var.tag",
+  "python_access": [
+    "metas",
+    6,
+    "graph",
+    "fields",
+    "tag"
+  ],
+  "test_name": "org.jsoup.nodes.TextNodeTest::testTextBean",
+  "line_number": "34",
+  "simple_class_name": "TextNodeTest",
+  "loop": -1
+}

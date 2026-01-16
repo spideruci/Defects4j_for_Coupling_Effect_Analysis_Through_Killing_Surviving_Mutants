@@ -1,0 +1,19 @@
+{
+  "source": "return",
+  "owner": "com.fasterxml.jackson.core.json.TestUtf8Parser",
+  "name": "createParserUsingStream",
+  "returnType": "com.fasterxml.jackson.core.JsonParser",
+  "ordinal": 0,
+  "readable_access": "var._inputBuffer",
+  "python_access": [
+    "metas",
+    105,
+    "graph",
+    "fields",
+    "_inputBuffer"
+  ],
+  "test_name": "com.fasterxml.jackson.core.json.TestUtf8Parser::testUtf8Name2Bytes",
+  "line_number": "58",
+  "simple_class_name": "TestUtf8Parser",
+  "loop": 7
+}

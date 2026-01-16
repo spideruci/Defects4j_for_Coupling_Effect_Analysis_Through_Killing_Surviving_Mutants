@@ -1,0 +1,19 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.cli.PosixParser",
+  "name": "PosixParser",
+  "returnType": "void",
+  "ordinal": 0,
+  "readable_access": "var.cmd",
+  "python_access": [
+    "metas",
+    2,
+    "graph",
+    "fields",
+    "cmd"
+  ],
+  "test_name": "org.apache.commons.cli.ValueTest::testLongOptionalNArgValues",
+  "line_number": "269",
+  "simple_class_name": "ValueTest",
+  "loop": -1
+}

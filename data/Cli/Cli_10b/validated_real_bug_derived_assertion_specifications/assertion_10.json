@@ -1,0 +1,21 @@
+{
+  "source": "getField",
+  "owner": "org.apache.commons.cli.GnuParseTest",
+  "name": "_parser",
+  "returnType": "org.apache.commons.cli.Parser",
+  "ordinal": 0,
+  "readable_access": "var.options.requiredOpts",
+  "python_access": [
+    "metas",
+    2,
+    "graph",
+    "fields",
+    "options",
+    "fields",
+    "requiredOpts"
+  ],
+  "test_name": "org.apache.commons.cli.GnuParseTest::testDoubleDash",
+  "line_number": "234",
+  "simple_class_name": "GnuParseTest",
+  "loop": -1
+}

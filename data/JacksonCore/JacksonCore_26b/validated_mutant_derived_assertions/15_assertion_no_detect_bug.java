@@ -1,0 +1,21 @@
+{
+  "source": "return",
+  "owner": "com.fasterxml.jackson.core.json.async.AsyncNumberCoercionTest",
+  "name": "createParser",
+  "returnType": "com.fasterxml.jackson.core.testsupport.AsyncReaderWrapper",
+  "ordinal": 0,
+  "readable_access": "var._streamReader._currInputRowStart",
+  "python_access": [
+    "metas",
+    0,
+    "graph",
+    "fields",
+    "_streamReader",
+    "fields",
+    "_currInputRowStart"
+  ],
+  "test_name": "com.fasterxml.jackson.core.json.async.AsyncNumberCoercionTest::testToBigDecimalCoercion",
+  "line_number": "271",
+  "simple_class_name": "AsyncNumberCoercionTest",
+  "loop": -1
+}

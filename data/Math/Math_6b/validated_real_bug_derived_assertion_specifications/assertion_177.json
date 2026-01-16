@@ -1,0 +1,21 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.math3.optim.nonlinear.scalar.noderiv.SimplexOptimizer",
+  "name": "SimplexOptimizer",
+  "returnType": "void",
+  "ordinal": 0,
+  "readable_access": "var.iterations.count",
+  "python_access": [
+    "metas",
+    10,
+    "graph",
+    "fields",
+    "iterations",
+    "fields",
+    "count"
+  ],
+  "test_name": "org.apache.commons.math3.optim.nonlinear.scalar.noderiv.SimplexOptimizerNelderMeadTest::testLeastSquares2",
+  "line_number": "212",
+  "simple_class_name": "SimplexOptimizerNelderMeadTest",
+  "loop": -1
+}

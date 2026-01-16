@@ -1,0 +1,23 @@
+{
+  "source": "return",
+  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
+  "name": "ObjectMapper",
+  "returnType": "void",
+  "ordinal": 0,
+  "readable_access": "var._deserializationContext._factory.DEFAULT_NO_DESER_CLASS_NAMES",
+  "python_access": [
+    "metas",
+    0,
+    "graph",
+    "fields",
+    "_deserializationContext",
+    "fields",
+    "_factory",
+    "fields",
+    "DEFAULT_NO_DESER_CLASS_NAMES"
+  ],
+  "test_name": "com.fasterxml.jackson.databind.creators.TestCreators421::testMultiCtor421",
+  "line_number": "59",
+  "simple_class_name": "TestCreators421",
+  "loop": -1
+}

@@ -1,0 +1,21 @@
+{
+  "source": "return",
+  "owner": "org.joda.time.MutableInterval",
+  "name": "MutableInterval",
+  "returnType": "void",
+  "ordinal": 0,
+  "readable_access": "var.iChronology.cCache",
+  "python_access": [
+    "metas",
+    7,
+    "graph",
+    "fields",
+    "iChronology",
+    "fields",
+    "cCache"
+  ],
+  "test_name": "org.joda.time.TestMutableInterval_Constructors::testConstructor_long_long_Chronology1",
+  "line_number": "157",
+  "simple_class_name": "TestMutableInterval_Constructors",
+  "loop": -1
+}

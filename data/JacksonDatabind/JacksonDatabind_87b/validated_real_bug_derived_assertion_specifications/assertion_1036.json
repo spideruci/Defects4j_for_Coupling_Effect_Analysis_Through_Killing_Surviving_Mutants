@@ -1,0 +1,23 @@
+{
+  "source": "return",
+  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
+  "name": "writerFor",
+  "returnType": "com.fasterxml.jackson.databind.ObjectWriter",
+  "ordinal": 0,
+  "readable_access": "var._config._base._dateFormat",
+  "python_access": [
+    "metas",
+    10,
+    "graph",
+    "fields",
+    "_config",
+    "fields",
+    "_base",
+    "fields",
+    "_dateFormat"
+  ],
+  "test_name": "com.fasterxml.jackson.databind.jsontype.TestTypedContainerSerialization::testIssue508",
+  "line_number": "142",
+  "simple_class_name": "TestTypedContainerSerialization",
+  "loop": -1
+}

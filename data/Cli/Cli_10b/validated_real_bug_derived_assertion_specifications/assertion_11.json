@@ -1,0 +1,19 @@
+{
+  "source": "getField",
+  "owner": "org.apache.commons.cli.ParseRequiredTest",
+  "name": "_options",
+  "returnType": "org.apache.commons.cli.Options",
+  "ordinal": 0,
+  "readable_access": "var.requiredOpts",
+  "python_access": [
+    "metas",
+    3,
+    "graph",
+    "fields",
+    "requiredOpts"
+  ],
+  "test_name": "org.apache.commons.cli.ParseRequiredTest::testOptionAndRequiredOption",
+  "line_number": "86",
+  "simple_class_name": "ParseRequiredTest",
+  "loop": -1
+}

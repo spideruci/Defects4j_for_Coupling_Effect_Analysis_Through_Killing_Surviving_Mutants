@@ -1,0 +1,21 @@
+{
+  "source": "return",
+  "owner": "org.jsoup.nodes.Document",
+  "name": "selectFirst",
+  "returnType": "org.jsoup.nodes.Element",
+  "ordinal": 0,
+  "readable_access": "var.parentNode.tag",
+  "python_access": [
+    "metas",
+    5,
+    "graph",
+    "fields",
+    "parentNode",
+    "fields",
+    "tag"
+  ],
+  "test_name": "org.jsoup.integration.ConnectTest::canConnectToLocalServer",
+  "line_number": "53",
+  "simple_class_name": "ConnectTest",
+  "loop": -1
+}

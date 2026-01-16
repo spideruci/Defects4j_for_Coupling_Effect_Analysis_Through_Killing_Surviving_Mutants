@@ -1,0 +1,19 @@
+{
+  "source": "return",
+  "owner": "org.jsoup.helper.DataUtil",
+  "name": "parseInputStream",
+  "returnType": "org.jsoup.nodes.Document",
+  "ordinal": 0,
+  "readable_access": "var.tag",
+  "python_access": [
+    "metas",
+    3,
+    "graph",
+    "fields",
+    "tag"
+  ],
+  "test_name": "org.jsoup.helper.DataUtilTest::wrongMetaCharsetFallback",
+  "line_number": "101",
+  "simple_class_name": "DataUtilTest",
+  "loop": -1
+}

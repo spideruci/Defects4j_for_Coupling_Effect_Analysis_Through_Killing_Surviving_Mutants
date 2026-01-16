@@ -1,0 +1,23 @@
+{
+  "source": "getField",
+  "owner": "com.google.gson.functional.DefaultTypeAdaptersTest",
+  "name": "gson",
+  "returnType": "com.google.gson.Gson",
+  "ordinal": 0,
+  "readable_access": "var.factories.elements.val$typeAdapter",
+  "python_access": [
+    "metas",
+    9,
+    "graph",
+    "fields",
+    "factories",
+    "elements",
+    0,
+    "fields",
+    "val$typeAdapter"
+  ],
+  "test_name": "com.google.gson.functional.DefaultTypeAdaptersTest::testJsonArrayDeserialization",
+  "line_number": "592",
+  "simple_class_name": "DefaultTypeAdaptersTest",
+  "loop": -1
+}

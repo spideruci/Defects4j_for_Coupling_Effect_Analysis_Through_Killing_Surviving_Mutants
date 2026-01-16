@@ -1,0 +1,51 @@
+// Instrumented at 2025-12-07 17:50:05
+package org.jsoup.parser;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Attributes;
+import org.jsoup.nodes.Element;
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+/**
+ * Test suite for attribute parser.
+ *
+ * @author Jonathan Hedley, jonathan@hedley.net
+ */
+public class AttributeParseTest {
+
+    @Test
+    public void parsesRoughAttributeString() {
+        String html = "<a id=\"123\" class=\"baz = 'bar'\" style = 'border: 2px'qux zim foo = 12 mux=18 />";
+        // should be: <id=123>, <class=baz = 'bar'>, <qux=>, <zim=>, <foo=12>, <mux.=18>
+        Element el = Jsoup.parse(html).getElementsByTag("a").get(0);
+        Attributes attr = el.attributes();
+        assertEquals(7, attr.size());
+        assertEquals("123", attr.get("id"));
+        assertEquals("baz = 'bar'", attr.get("class"));
+        assertEquals("border: 2px", attr.get("style"));
+        assertEquals("", attr.get("qux"));
+        assertEquals("", attr.get("zim"));
+        assertEquals("12", attr.get("foo"));
+        assertEquals("18", attr.get("mux"));
+    }
+
+    @Test
+    public void parsesEmptyString() {
+        org.jsoup.nodes.Element __ins_v1 = null;
+        String html = "<a />";
+        __ins_v1 = Jsoup.parse(html).getElementsByTag("a").get(0);
+        Element el = __ins_v1;
+        Attributes attr = el.attributes();
+        assertEquals(0, attr.size());
+        org.helper.Assertions.verify("var.parentNode.parentNode.tag_387_", __ins_v1);
+    }
+
+    @Test
+    public void emptyOnNoKey() {
+        String html = "<a =empty />";
+        Element el = Jsoup.parse(html).getElementsByTag("a").get(0);
+        Attributes attr = el.attributes();
+        assertEquals(0, attr.size());
+    }
+}

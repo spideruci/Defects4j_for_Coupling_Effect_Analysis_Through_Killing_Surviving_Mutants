@@ -1,0 +1,21 @@
+{
+  "source": "return",
+  "owner": "org.joda.time.Period",
+  "name": "withPeriodType",
+  "returnType": "org.joda.time.Period",
+  "ordinal": 0,
+  "readable_access": "var.iType.cTime",
+  "python_access": [
+    "metas",
+    3,
+    "graph",
+    "fields",
+    "iType",
+    "fields",
+    "cTime"
+  ],
+  "test_name": "org.joda.time.TestPeriod_Basics::testWithPeriodType2",
+  "line_number": "532",
+  "simple_class_name": "TestPeriod_Basics",
+  "loop": -1
+}

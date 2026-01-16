@@ -1,0 +1,21 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.math3.optim.nonlinear.scalar.MultiStartMultivariateOptimizer",
+  "name": "MultiStartMultivariateOptimizer",
+  "returnType": "void",
+  "ordinal": 0,
+  "readable_access": "var.iterations.maximalCount",
+  "python_access": [
+    "metas",
+    16,
+    "graph",
+    "fields",
+    "iterations",
+    "fields",
+    "maximalCount"
+  ],
+  "test_name": "org.apache.commons.math3.optim.nonlinear.scalar.MultiStartMultivariateOptimizerTest::testRosenbrock",
+  "line_number": "92",
+  "simple_class_name": "MultiStartMultivariateOptimizerTest",
+  "loop": -1
+}

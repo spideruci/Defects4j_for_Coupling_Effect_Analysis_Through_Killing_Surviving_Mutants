@@ -1,0 +1,21 @@
+{
+  "source": "getField",
+  "owner": "org.apache.commons.cli.ArgumentIsOptionTest",
+  "name": "parser",
+  "returnType": "org.apache.commons.cli.CommandLineParser",
+  "ordinal": 0,
+  "readable_access": "var.currentOption.argName",
+  "python_access": [
+    "metas",
+    2,
+    "graph",
+    "fields",
+    "currentOption",
+    "fields",
+    "argName"
+  ],
+  "test_name": "org.apache.commons.cli.ArgumentIsOptionTest::testOptionWithArgument",
+  "line_number": "56",
+  "simple_class_name": "ArgumentIsOptionTest",
+  "loop": -1
+}

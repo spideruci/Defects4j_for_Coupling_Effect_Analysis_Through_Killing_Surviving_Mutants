@@ -1,0 +1,19 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.cli2.option.PropertyOption",
+  "name": "PropertyOption",
+  "returnType": "void",
+  "ordinal": 0,
+  "readable_access": "var.parent",
+  "python_access": [
+    "metas",
+    4,
+    "graph",
+    "fields",
+    "parent"
+  ],
+  "test_name": "org.apache.commons.cli2.bug.BugCLI12Test::testBug",
+  "line_number": "38",
+  "simple_class_name": "BugCLI12Test",
+  "loop": -1
+}

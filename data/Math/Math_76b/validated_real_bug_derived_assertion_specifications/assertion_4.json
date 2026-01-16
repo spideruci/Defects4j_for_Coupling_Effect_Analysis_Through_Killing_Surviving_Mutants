@@ -1,0 +1,23 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.math.linear.RealMatrix",
+  "name": "multiply",
+  "returnType": "org.apache.commons.math.linear.RealMatrix",
+  "ordinal": 0,
+  "readable_access": "var.data.elements.elements",
+  "python_access": [
+    "metas",
+    18,
+    "graph",
+    "fields",
+    "data",
+    "elements",
+    1,
+    "elements",
+    0
+  ],
+  "test_name": "org.apache.commons.math.linear.SingularValueSolverTest::testTruncated",
+  "line_number": "162",
+  "simple_class_name": "SingularValueSolverTest",
+  "loop": -1
+}

@@ -1,0 +1,21 @@
+{
+  "source": "return",
+  "owner": "org.joda.time.MutablePeriod",
+  "name": "MutablePeriod",
+  "returnType": "void",
+  "ordinal": 0,
+  "readable_access": "var.iType.cTime",
+  "python_access": [
+    "metas",
+    0,
+    "graph",
+    "fields",
+    "iType",
+    "fields",
+    "cTime"
+  ],
+  "test_name": "org.joda.time.TestMutablePeriod_Updates::testAdd_RP1",
+  "line_number": "1235",
+  "simple_class_name": "TestMutablePeriod_Updates",
+  "loop": -1
+}

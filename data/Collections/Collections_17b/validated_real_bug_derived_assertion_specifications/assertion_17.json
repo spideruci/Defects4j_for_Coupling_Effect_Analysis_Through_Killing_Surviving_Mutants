@@ -1,0 +1,19 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.collections.functors.EqualPredicate",
+  "name": "equalPredicate",
+  "returnType": "org.apache.commons.collections.Predicate",
+  "ordinal": 0,
+  "readable_access": "var.equator",
+  "python_access": [
+    "metas",
+    38,
+    "graph",
+    "fields",
+    "equator"
+  ],
+  "test_name": "org.apache.commons.collections.TestTransformerUtils::testSwitchTransformer",
+  "line_number": "274",
+  "simple_class_name": "TestTransformerUtils",
+  "loop": -1
+}

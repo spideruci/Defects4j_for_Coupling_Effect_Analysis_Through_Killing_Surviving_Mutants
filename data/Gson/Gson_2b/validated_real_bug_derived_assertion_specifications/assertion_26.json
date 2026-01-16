@@ -1,0 +1,22 @@
+{
+  "source": "getField",
+  "owner": "com.google.gson.functional.DefaultTypeAdaptersTest",
+  "name": "gson",
+  "returnType": "com.google.gson.Gson",
+  "ordinal": 0,
+  "readable_access": "var.typeTokenCache[{rawType=visited,type=visited}]",
+  "python_access": [
+    "metas",
+    0,
+    "graph",
+    "fields",
+    "typeTokenCache",
+    "entries",
+    0,
+    "value"
+  ],
+  "test_name": "com.google.gson.functional.DefaultTypeAdaptersTest::testJsonPrimitiveSerialization",
+  "line_number": "550",
+  "simple_class_name": "DefaultTypeAdaptersTest",
+  "loop": -1
+}

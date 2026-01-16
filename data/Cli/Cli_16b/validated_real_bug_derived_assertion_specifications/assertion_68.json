@@ -1,0 +1,17 @@
+{
+  "source": "getField",
+  "owner": "org.apache.commons.cli2.application.CpTest",
+  "name": "source",
+  "returnType": "org.apache.commons.cli2.option.ArgumentImpl",
+  "ordinal": 0,
+  "readable_access": "var.metas",
+  "python_access": [
+    "metas",
+    7,
+    "graph"
+  ],
+  "test_name": "org.apache.commons.cli2.application.CpTest::testMultiSource",
+  "line_number": "370",
+  "simple_class_name": "CpTest",
+  "loop": -1
+}

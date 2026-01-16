@@ -1,0 +1,17 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.cli2.builder.ArgumentBuilder",
+  "name": "create",
+  "returnType": "org.apache.commons.cli2.Argument",
+  "ordinal": 0,
+  "readable_access": "var.metas",
+  "python_access": [
+    "metas",
+    12,
+    "graph"
+  ],
+  "test_name": "org.apache.commons.cli2.bug.Bug28005Test::testInfiniteLoop",
+  "line_number": "46",
+  "simple_class_name": "Bug28005Test",
+  "loop": -1
+}

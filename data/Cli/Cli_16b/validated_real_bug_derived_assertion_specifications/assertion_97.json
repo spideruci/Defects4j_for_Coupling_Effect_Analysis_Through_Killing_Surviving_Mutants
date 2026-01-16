@@ -1,0 +1,19 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.cli2.util.HelpFormatter",
+  "name": "HelpFormatter",
+  "returnType": "void",
+  "ordinal": 0,
+  "readable_access": "var.group",
+  "python_access": [
+    "metas",
+    2,
+    "graph",
+    "fields",
+    "group"
+  ],
+  "test_name": "org.apache.commons.cli2.util.HelpFormatterTest::testPrintHelp_TooNarrow",
+  "line_number": "258",
+  "simple_class_name": "HelpFormatterTest",
+  "loop": -1
+}

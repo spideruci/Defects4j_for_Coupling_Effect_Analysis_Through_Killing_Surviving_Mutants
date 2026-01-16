@@ -1,0 +1,19 @@
+{
+  "source": "return",
+  "owner": "org.jsoup.nodes.Element",
+  "name": "clone",
+  "returnType": "org.jsoup.nodes.Element",
+  "ordinal": 0,
+  "readable_access": "var.classNames",
+  "python_access": [
+    "metas",
+    5,
+    "graph",
+    "fields",
+    "classNames"
+  ],
+  "test_name": "org.jsoup.nodes.ElementTest::testClone",
+  "line_number": "461",
+  "simple_class_name": "ElementTest",
+  "loop": -1
+}

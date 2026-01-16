@@ -1,0 +1,21 @@
+{
+  "source": "return",
+  "owner": "com.fasterxml.jackson.databind.ObjectMapper",
+  "name": "ObjectMapper",
+  "returnType": "void",
+  "ordinal": 0,
+  "readable_access": "var._deserializationContext._factory",
+  "python_access": [
+    "metas",
+    8,
+    "graph",
+    "fields",
+    "_deserializationContext",
+    "fields",
+    "_factory"
+  ],
+  "test_name": "com.fasterxml.jackson.databind.introspect.TestInferredMutators::testDeserializationInference",
+  "line_number": "56",
+  "simple_class_name": "TestInferredMutators",
+  "loop": -1
+}

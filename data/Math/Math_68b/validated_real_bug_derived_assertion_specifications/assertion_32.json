@@ -1,0 +1,19 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.math.optimization.general.LevenbergMarquardtOptimizer",
+  "name": "LevenbergMarquardtOptimizer",
+  "returnType": "void",
+  "ordinal": 0,
+  "readable_access": "var.checker",
+  "python_access": [
+    "metas",
+    6,
+    "graph",
+    "fields",
+    "checker"
+  ],
+  "test_name": "org.apache.commons.math.optimization.general.LevenbergMarquardtOptimizerTest::testInconsistentSizes",
+  "line_number": "329",
+  "simple_class_name": "LevenbergMarquardtOptimizerTest",
+  "loop": -1
+}

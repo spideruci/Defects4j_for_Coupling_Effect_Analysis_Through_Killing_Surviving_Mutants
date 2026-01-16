@@ -1,0 +1,19 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.cli.OptionBuilder",
+  "name": "withLongOpt",
+  "returnType": "org.apache.commons.cli.OptionBuilder",
+  "ordinal": 0,
+  "readable_access": "var.argName",
+  "python_access": [
+    "metas",
+    2,
+    "graph",
+    "fields",
+    "argName"
+  ],
+  "test_name": "org.apache.commons.cli.BugsTest::test13425",
+  "line_number": "185",
+  "simple_class_name": "BugsTest",
+  "loop": -1
+}

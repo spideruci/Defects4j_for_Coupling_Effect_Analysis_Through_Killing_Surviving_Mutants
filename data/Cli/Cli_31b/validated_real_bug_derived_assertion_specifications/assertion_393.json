@@ -1,0 +1,19 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.cli.Option",
+  "name": "Option",
+  "returnType": "void",
+  "ordinal": 0,
+  "readable_access": "var.argName",
+  "python_access": [
+    "metas",
+    10,
+    "graph",
+    "fields",
+    "argName"
+  ],
+  "test_name": "org.apache.commons.cli.OptionGroupTest::testToString",
+  "line_number": "223",
+  "simple_class_name": "OptionGroupTest",
+  "loop": -1
+}

@@ -1,0 +1,23 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.math3.fitting.PolynomialFitter",
+  "name": "PolynomialFitter",
+  "returnType": "void",
+  "ordinal": 0,
+  "readable_access": "var.optimizer.evaluations.count",
+  "python_access": [
+    "metas",
+    4,
+    "graph",
+    "fields",
+    "optimizer",
+    "fields",
+    "evaluations",
+    "fields",
+    "count"
+  ],
+  "test_name": "org.apache.commons.math3.fitting.PolynomialFitterTest::testFit",
+  "line_number": "46",
+  "simple_class_name": "PolynomialFitterTest",
+  "loop": -1
+}

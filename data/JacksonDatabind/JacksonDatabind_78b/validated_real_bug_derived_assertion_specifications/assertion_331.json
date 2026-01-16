@@ -1,0 +1,23 @@
+{
+  "source": "return",
+  "owner": "com.fasterxml.jackson.core.JsonFactory",
+  "name": "createParser",
+  "returnType": "com.fasterxml.jackson.core.JsonParser",
+  "ordinal": 0,
+  "readable_access": "var._objectCodec._deserializationContext._factory",
+  "python_access": [
+    "metas",
+    20,
+    "graph",
+    "fields",
+    "_objectCodec",
+    "fields",
+    "_deserializationContext",
+    "fields",
+    "_factory"
+  ],
+  "test_name": "com.fasterxml.jackson.databind.TestParserUsingMapper::testReadingArrayAsTree",
+  "line_number": "81",
+  "simple_class_name": "TestParserUsingMapper",
+  "loop": 2
+}

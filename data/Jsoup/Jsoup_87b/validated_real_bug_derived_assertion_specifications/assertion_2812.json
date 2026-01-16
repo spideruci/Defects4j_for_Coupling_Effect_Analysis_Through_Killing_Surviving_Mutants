@@ -1,0 +1,19 @@
+{
+  "source": "return",
+  "owner": "org.jsoup.nodes.Document",
+  "name": "selectFirst",
+  "returnType": "org.jsoup.nodes.Element",
+  "ordinal": 0,
+  "readable_access": "var.tag",
+  "python_access": [
+    "metas",
+    7,
+    "graph",
+    "fields",
+    "tag"
+  ],
+  "test_name": "org.jsoup.integration.ConnectTest::supportsDeflate",
+  "line_number": "385",
+  "simple_class_name": "ConnectTest",
+  "loop": -1
+}

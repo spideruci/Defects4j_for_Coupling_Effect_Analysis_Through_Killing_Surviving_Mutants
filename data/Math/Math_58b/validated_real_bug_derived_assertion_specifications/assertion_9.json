@@ -1,0 +1,23 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.math.optimization.fitting.GaussianFitter",
+  "name": "GaussianFitter",
+  "returnType": "void",
+  "ordinal": 0,
+  "readable_access": "var.optimizer.function.f",
+  "python_access": [
+    "metas",
+    1,
+    "graph",
+    "fields",
+    "optimizer",
+    "fields",
+    "function",
+    "fields",
+    "f"
+  ],
+  "test_name": "org.apache.commons.math.optimization.fitting.GaussianFitterTest::testFit01",
+  "line_number": "191",
+  "simple_class_name": "GaussianFitterTest",
+  "loop": -1
+}

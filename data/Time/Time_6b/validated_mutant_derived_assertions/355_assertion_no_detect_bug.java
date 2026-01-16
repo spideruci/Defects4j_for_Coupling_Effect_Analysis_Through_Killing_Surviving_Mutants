@@ -1,0 +1,21 @@
+{
+  "source": "return",
+  "owner": "org.joda.time.format.DateTimeFormatter",
+  "name": "parseLocalDateTime",
+  "returnType": "org.joda.time.LocalDateTime",
+  "ordinal": 0,
+  "readable_access": "var.iChronology.iGapDuration",
+  "python_access": [
+    "metas",
+    9,
+    "graph",
+    "fields",
+    "iChronology",
+    "fields",
+    "iGapDuration"
+  ],
+  "test_name": "org.joda.time.format.TestDateTimeFormatter::testParseLocalDateTime_monthDay_withDefaultYear_feb29",
+  "line_number": "537",
+  "simple_class_name": "TestDateTimeFormatter",
+  "loop": -1
+}

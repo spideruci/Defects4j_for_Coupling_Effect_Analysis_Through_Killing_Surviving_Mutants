@@ -1,0 +1,19 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.cli.PosixParser",
+  "name": "PosixParser",
+  "returnType": "void",
+  "ordinal": 0,
+  "readable_access": "var.currentOption",
+  "python_access": [
+    "metas",
+    6,
+    "graph",
+    "fields",
+    "currentOption"
+  ],
+  "test_name": "org.apache.commons.cli.BugsTest::test11680",
+  "line_number": "94",
+  "simple_class_name": "BugsTest",
+  "loop": -1
+}

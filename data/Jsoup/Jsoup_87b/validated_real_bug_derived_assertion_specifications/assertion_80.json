@@ -1,0 +1,23 @@
+{
+  "source": "return",
+  "owner": "org.jsoup.Connection",
+  "name": "post",
+  "returnType": "org.jsoup.nodes.Document",
+  "ordinal": 0,
+  "readable_access": "var.childNodes.elements.tag",
+  "python_access": [
+    "metas",
+    8,
+    "graph",
+    "fields",
+    "childNodes",
+    "elements",
+    0,
+    "fields",
+    "tag"
+  ],
+  "test_name": "org.jsoup.integration.ConnectTest::sendsRequestBodyJsonWithData",
+  "line_number": "112",
+  "simple_class_name": "ConnectTest",
+  "loop": -1
+}

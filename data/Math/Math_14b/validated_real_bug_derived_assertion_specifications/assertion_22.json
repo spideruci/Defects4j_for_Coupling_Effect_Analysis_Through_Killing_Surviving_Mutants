@@ -1,0 +1,21 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.math3.optim.nonlinear.vector.Weight",
+  "name": "Weight",
+  "returnType": "void",
+  "ordinal": 0,
+  "readable_access": "var.weightMatrix.data",
+  "python_access": [
+    "metas",
+    53,
+    "graph",
+    "fields",
+    "weightMatrix",
+    "fields",
+    "data"
+  ],
+  "test_name": "org.apache.commons.math3.optim.nonlinear.vector.jacobian.LevenbergMarquardtOptimizerTest::testCircleFitting2",
+  "line_number": "296",
+  "simple_class_name": "LevenbergMarquardtOptimizerTest",
+  "loop": -1
+}

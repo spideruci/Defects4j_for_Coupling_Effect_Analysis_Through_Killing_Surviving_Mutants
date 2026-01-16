@@ -1,0 +1,17 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.cli2.builder.DefaultOptionBuilder",
+  "name": "create",
+  "returnType": "org.apache.commons.cli2.option.DefaultOption",
+  "ordinal": 0,
+  "readable_access": "var.metas",
+  "python_access": [
+    "metas",
+    9,
+    "graph"
+  ],
+  "test_name": "org.apache.commons.cli2.bug.BugCLI18Test::testBug",
+  "line_number": "42",
+  "simple_class_name": "BugCLI18Test",
+  "loop": -1
+}

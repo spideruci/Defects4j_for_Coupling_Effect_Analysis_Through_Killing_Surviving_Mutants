@@ -1,0 +1,21 @@
+{
+  "source": "return",
+  "owner": "org.joda.time.DateTime",
+  "name": "withPeriodAdded",
+  "returnType": "org.joda.time.DateTime",
+  "ordinal": 0,
+  "readable_access": "var.iChronology.cCache",
+  "python_access": [
+    "metas",
+    4,
+    "graph",
+    "fields",
+    "iChronology",
+    "fields",
+    "cCache"
+  ],
+  "test_name": "org.joda.time.TestDateTime_Basics::testWithDurationAdded_RP_int",
+  "line_number": "959",
+  "simple_class_name": "TestDateTime_Basics",
+  "loop": -1
+}

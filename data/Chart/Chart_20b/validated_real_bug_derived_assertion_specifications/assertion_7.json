@@ -1,0 +1,19 @@
+{
+  "source": "return",
+  "owner": "java.io.ByteArrayOutputStream",
+  "name": "toByteArray",
+  "returnType": "byte[]",
+  "ordinal": 0,
+  "readable_access": "var.elements",
+  "python_access": [
+    "metas",
+    16,
+    "graph",
+    "elements",
+    0
+  ],
+  "test_name": "org.jfree.chart.plot.junit.CategoryPlotTests::testSerialization4",
+  "line_number": "545",
+  "simple_class_name": "CategoryPlotTests",
+  "loop": -1
+}

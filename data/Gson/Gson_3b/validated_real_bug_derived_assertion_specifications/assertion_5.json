@@ -1,0 +1,19 @@
+{
+  "source": "return",
+  "owner": "com.google.gson.Gson",
+  "name": "getAdapter",
+  "returnType": "com.google.gson.TypeAdapter",
+  "ordinal": 0,
+  "readable_access": "var.constructor",
+  "python_access": [
+    "metas",
+    1,
+    "graph",
+    "fields",
+    "constructor"
+  ],
+  "test_name": "com.google.gson.functional.StreamingTypeAdaptersTest::testSerializeRecursive",
+  "line_number": "190",
+  "simple_class_name": "StreamingTypeAdaptersTest",
+  "loop": -1
+}

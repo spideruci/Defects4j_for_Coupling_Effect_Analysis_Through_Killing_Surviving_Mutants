@@ -1,0 +1,16 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.math.ode.nonstiff.AdamsBashforthIntegrator",
+  "name": "getEvaluations",
+  "returnType": "int",
+  "ordinal": 0,
+  "readable_access": "primitive",
+  "python_access": [
+    "metas",
+    83
+  ],
+  "test_name": "org.apache.commons.math.ode.nonstiff.AdamsBashforthIntegratorTest::polynomial",
+  "line_number": "150",
+  "simple_class_name": "AdamsBashforthIntegratorTest",
+  "loop": 4
+}

@@ -1,0 +1,21 @@
+{
+  "source": "return",
+  "owner": "org.joda.time.TestMutablePeriod_Basics$MockMutablePeriod",
+  "name": "TestMutablePeriod_Basics$MockMutablePeriod",
+  "returnType": "void",
+  "ordinal": 0,
+  "readable_access": "var.iType.cTime",
+  "python_access": [
+    "metas",
+    25,
+    "graph",
+    "fields",
+    "iType",
+    "fields",
+    "cTime"
+  ],
+  "test_name": "org.joda.time.TestMutablePeriod_Basics::testEqualsHashCode",
+  "line_number": "149",
+  "simple_class_name": "TestMutablePeriod_Basics",
+  "loop": -1
+}

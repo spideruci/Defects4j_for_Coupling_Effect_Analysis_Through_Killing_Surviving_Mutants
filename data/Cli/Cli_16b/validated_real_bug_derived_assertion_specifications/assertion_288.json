@@ -1,0 +1,22 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.cli2.option.ArgumentTest",
+  "name": "commandLine",
+  "returnType": "org.apache.commons.cli2.WriteableCommandLine",
+  "ordinal": 0,
+  "readable_access": "var.nameToOption[path]",
+  "python_access": [
+    "metas",
+    4,
+    "graph",
+    "fields",
+    "nameToOption",
+    "entries",
+    0,
+    "value"
+  ],
+  "test_name": "org.apache.commons.cli2.option.ArgumentTest::testProcess_ConsumeRemaining",
+  "line_number": "488",
+  "simple_class_name": "ArgumentTest",
+  "loop": -1
+}

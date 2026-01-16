@@ -1,0 +1,19 @@
+{
+  "source": "return",
+  "owner": "com.fasterxml.jackson.databind.util.TokenBuffer",
+  "name": "TokenBuffer",
+  "returnType": "void",
+  "ordinal": 0,
+  "readable_access": "var._generatorFeatures",
+  "python_access": [
+    "metas",
+    4,
+    "graph",
+    "fields",
+    "_generatorFeatures"
+  ],
+  "test_name": "com.fasterxml.jackson.databind.util.TestTokenBuffer::testWithMultipleJsonParserSequences",
+  "line_number": "409",
+  "simple_class_name": "TestTokenBuffer",
+  "loop": -1
+}

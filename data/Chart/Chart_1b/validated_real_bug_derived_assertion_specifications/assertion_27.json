@@ -1,0 +1,17 @@
+{
+  "source": "return",
+  "owner": "java.awt.image.BufferedImage",
+  "name": "createGraphics",
+  "returnType": "java.awt.Graphics2D",
+  "ordinal": 0,
+  "readable_access": "var.metas",
+  "python_access": [
+    "metas",
+    3,
+    "graph"
+  ],
+  "test_name": "org.jfree.chart.junit.BarChartTests::testDrawWithNullInfo",
+  "line_number": "116",
+  "simple_class_name": "BarChartTests",
+  "loop": -1
+}

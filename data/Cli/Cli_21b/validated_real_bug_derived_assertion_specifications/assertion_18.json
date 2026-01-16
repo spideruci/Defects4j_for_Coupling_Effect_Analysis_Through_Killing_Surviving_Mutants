@@ -1,0 +1,17 @@
+{
+  "source": "return",
+  "owner": "org.apache.commons.cli2.commandline.WriteableCommandLineImpl",
+  "name": "WriteableCommandLineImpl",
+  "returnType": "void",
+  "ordinal": 0,
+  "readable_access": "var.metas",
+  "python_access": [
+    "metas",
+    2,
+    "graph"
+  ],
+  "test_name": "org.apache.commons.cli2.option.ArgumentTest::testCanProcess",
+  "line_number": "263",
+  "simple_class_name": "ArgumentTest",
+  "loop": -1
+}

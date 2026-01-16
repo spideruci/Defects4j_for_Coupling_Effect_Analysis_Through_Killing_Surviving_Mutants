@@ -1,0 +1,21 @@
+{
+  "source": "getField",
+  "owner": "com.fasterxml.jackson.databind.struct.EmptyArrayAsNullTest",
+  "name": "DEFAULT_READER",
+  "returnType": "com.fasterxml.jackson.databind.ObjectReader",
+  "ordinal": 0,
+  "readable_access": "var._context._factory",
+  "python_access": [
+    "metas",
+    0,
+    "graph",
+    "fields",
+    "_context",
+    "fields",
+    "_factory"
+  ],
+  "test_name": "com.fasterxml.jackson.databind.struct.EmptyArrayAsNullTest::testPOJOFromEmptyArray",
+  "line_number": "56",
+  "simple_class_name": "EmptyArrayAsNullTest",
+  "loop": -1
+}

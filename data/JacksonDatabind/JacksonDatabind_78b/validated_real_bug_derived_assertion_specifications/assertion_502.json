@@ -1,0 +1,21 @@
+{
+  "source": "getField",
+  "owner": "com.fasterxml.jackson.databind.jsontype.ext.TestSubtypesExternalPropertyMissingProperty",
+  "name": "MAPPER",
+  "returnType": "com.fasterxml.jackson.databind.ObjectMapper",
+  "ordinal": 0,
+  "readable_access": "var._deserializationContext._factory",
+  "python_access": [
+    "metas",
+    0,
+    "graph",
+    "fields",
+    "_deserializationContext",
+    "fields",
+    "_factory"
+  ],
+  "test_name": "com.fasterxml.jackson.databind.jsontype.ext.TestSubtypesExternalPropertyMissingProperty::testDeserializationEmpty",
+  "line_number": "159",
+  "simple_class_name": "TestSubtypesExternalPropertyMissingProperty",
+  "loop": -1
+}

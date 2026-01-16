@@ -1,0 +1,23 @@
+{
+  "source": "return",
+  "owner": "org.jfree.chart.renderer.category.MinMaxCategoryRenderer",
+  "name": "MinMaxCategoryRenderer",
+  "returnType": "void",
+  "ordinal": 0,
+  "readable_access": "var.plot.drawingSupplier.shapeIndex",
+  "python_access": [
+    "metas",
+    5,
+    "graph",
+    "fields",
+    "plot",
+    "fields",
+    "drawingSupplier",
+    "fields",
+    "shapeIndex"
+  ],
+  "test_name": "org.jfree.chart.renderer.category.junit.MinMaxCategoryRendererTests::testDrawWithNullInfo",
+  "line_number": "188",
+  "simple_class_name": "MinMaxCategoryRendererTests",
+  "loop": -1
+}
