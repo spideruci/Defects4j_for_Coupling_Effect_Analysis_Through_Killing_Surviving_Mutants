@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+BASE="$(dirname "$0")/.."
+
+java \
+    -XX:ReservedCodeCacheSize=256M \
+    -Djava.awt.headless=true \
+    "-Xbootclasspath/a:$BASE/lib/major-rt.jar" \
+    -jar "$BASE/lib/ant/ant-launcher.jar" $*
