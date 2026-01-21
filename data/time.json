@@ -1,0 +1,5051 @@
+{
+  "Chart/Chart_10b": {
+    "category_time_h": {
+      "bug_analysis": 0.016445611111111112,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.016445611111111112,
+    "total_time_s": 59.2042
+  },
+  "Chart/Chart_11b": {
+    "category_time_h": {
+      "bug_analysis": 0.05832055555555555,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.05832055555555555,
+    "total_time_s": 209.95399999999998
+  },
+  "Chart/Chart_12b": {
+    "category_time_h": {
+      "bug_analysis": 0.027005305555555553,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.027005305555555553,
+    "total_time_s": 97.2191
+  },
+  "Chart/Chart_13b": {
+    "category_time_h": {
+      "bug_analysis": 0.016910444444444443,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.016910444444444443,
+    "total_time_s": 60.877599999999994
+  },
+  "Chart/Chart_14b": {
+    "category_time_h": {
+      "bug_analysis": 0.017493722222222223,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.017493722222222223,
+    "total_time_s": 62.9774
+  },
+  "Chart/Chart_15b": {
+    "category_time_h": {
+      "bug_analysis": 0.024667416666666664,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.024667416666666664,
+    "total_time_s": 88.80269999999999
+  },
+  "Chart/Chart_16b": {
+    "category_time_h": {
+      "bug_analysis": 0.19337055555555557,
+      "detect real bugs": 0.03932336111111111,
+      "mutant_analysis": 0.6983333333333334,
+      "surviving_mutant_analysis": 0.18970302777777776
+    },
+    "machine": "linux",
+    "total_time_h": 1.1207302777777777,
+    "total_time_s": 4034.629
+  },
+  "Chart/Chart_17b": {
+    "category_time_h": {
+      "bug_analysis": 0.017322416666666667,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.017322416666666667,
+    "total_time_s": 62.3607
+  },
+  "Chart/Chart_18b": {
+    "category_time_h": {
+      "bug_analysis": 0.016003305555555555,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.016003305555555555,
+    "total_time_s": 57.6119
+  },
+  "Chart/Chart_19b": {
+    "category_time_h": {
+      "bug_analysis": 0.01510988888888889,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.01510988888888889,
+    "total_time_s": 54.3956
+  },
+  "Chart/Chart_1b": {
+    "category_time_h": {
+      "bug_analysis": 1.8192271388888888,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 1.6622222222222223,
+      "surviving_mutant_analysis": 0.455
+    },
+    "machine": "linux",
+    "total_time_h": 3.936449361111111,
+    "total_time_s": 14171.2177
+  },
+  "Chart/Chart_20b": {
+    "category_time_h": {
+      "bug_analysis": 0.45923813888888887,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.14694444444444443,
+      "surviving_mutant_analysis": 0.012222222222222223
+    },
+    "machine": "linux",
+    "total_time_h": 0.6184048055555557,
+    "total_time_s": 2226.2573
+  },
+  "Chart/Chart_21b": {
+    "category_time_h": {
+      "bug_analysis": 0.02166797222222222,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.02166797222222222,
+    "total_time_s": 78.0047
+  },
+  "Chart/Chart_22b": {
+    "category_time_h": {
+      "bug_analysis": 0.02612211111111111,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.02612211111111111,
+    "total_time_s": 94.0396
+  },
+  "Chart/Chart_23b": {
+    "category_time_h": {
+      "bug_analysis": 0.02759277777777778,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.02759277777777778,
+    "total_time_s": 99.334
+  },
+  "Chart/Chart_24b": {
+    "category_time_h": {
+      "bug_analysis": 0.0194565,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.0194565,
+    "total_time_s": 70.0434
+  },
+  "Chart/Chart_25b": {
+    "category_time_h": {
+      "bug_analysis": 0.02294461111111111,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.02294461111111111,
+    "total_time_s": 82.6006
+  },
+  "Chart/Chart_26b": {
+    "category_time_h": {
+      "bug_analysis": 0.029011833333333334,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.029011833333333334,
+    "total_time_s": 104.4426
+  },
+  "Chart/Chart_2b": {
+    "category_time_h": {
+      "bug_analysis": 0.061781805555555555,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.061781805555555555,
+    "total_time_s": 222.4145
+  },
+  "Chart/Chart_3b": {
+    "category_time_h": {
+      "bug_analysis": 0.43920772222222226,
+      "detect real bugs": 0.20664183333333336,
+      "mutant_analysis": 1.6847222222222222,
+      "surviving_mutant_analysis": 0.8437119999999999
+    },
+    "machine": "linux",
+    "total_time_h": 3.1742837777777777,
+    "total_time_s": 11427.4216
+  },
+  "Chart/Chart_4b": {
+    "category_time_h": {
+      "bug_analysis": 0.2726364444444444,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.2726364444444444,
+    "total_time_s": 981.4911999999999
+  },
+  "Chart/Chart_5b": {
+    "category_time_h": {
+      "bug_analysis": 0.030207166666666667,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.030207166666666667,
+    "total_time_s": 108.7458
+  },
+  "Chart/Chart_6b": {
+    "category_time_h": {
+      "bug_analysis": 0.7067474166666666,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.7067474166666666,
+    "total_time_s": 2544.2907
+  },
+  "Chart/Chart_7b": {
+    "category_time_h": {
+      "bug_analysis": 0.09884533333333334,
+      "detect real bugs": 0.05891097222222222,
+      "mutant_analysis": 0.37194444444444447,
+      "surviving_mutant_analysis": 0.26829200000000003
+    },
+    "machine": "linux",
+    "total_time_h": 0.79799275,
+    "total_time_s": 2872.7739
+  },
+  "Chart/Chart_8b": {
+    "category_time_h": {
+      "bug_analysis": 0.07176233333333333,
+      "detect real bugs": 0.011863222222222221,
+      "mutant_analysis": 0.5113888888888889,
+      "surviving_mutant_analysis": 0.07724372222222223
+    },
+    "machine": "linux",
+    "total_time_h": 0.6722581666666666,
+    "total_time_s": 2420.1294
+  },
+  "Chart/Chart_9b": {
+    "category_time_h": {
+      "bug_analysis": 0.019838361111111112,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.019838361111111112,
+    "total_time_s": 71.41810000000001
+  },
+  "Cli/Cli_10b": {
+    "category_time_h": {
+      "bug_analysis": 0.42281658333333333,
+      "detect real bugs": 0.018939749999999998,
+      "mutant_analysis": 0.31083333333333335,
+      "surviving_mutant_analysis": 0.11038897222222223
+    },
+    "machine": "linux",
+    "total_time_h": 0.8629786388888889,
+    "total_time_s": 3106.7231
+  },
+  "Cli/Cli_11b": {
+    "category_time_h": {
+      "bug_analysis": 0.017978472222222222,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.017978472222222222,
+    "total_time_s": 64.7225
+  },
+  "Cli/Cli_12b": {
+    "category_time_h": {
+      "bug_analysis": 0.014349138888888889,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.014349138888888889,
+    "total_time_s": 51.6569
+  },
+  "Cli/Cli_13b": {
+    "category_time_h": {
+      "bug_analysis": 0.1897568888888889,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.1897568888888889,
+    "total_time_s": 683.1248
+  },
+  "Cli/Cli_14b": {
+    "category_time_h": {
+      "bug_analysis": 0.19980391666666666,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.19980391666666666,
+    "total_time_s": 719.2941
+  },
+  "Cli/Cli_15b": {
+    "category_time_h": {
+      "bug_analysis": 0.33736172222222227,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.33736172222222227,
+    "total_time_s": 1214.5022000000001
+  },
+  "Cli/Cli_16b": {
+    "category_time_h": {
+      "bug_analysis": 15.338086138888888,
+      "detect real bugs": 2.481564361111111,
+      "mutant_analysis": 1.0608333333333333,
+      "surviving_mutant_analysis": 10.135424638888887
+    },
+    "machine": "linux",
+    "total_time_h": 29.015908472222222,
+    "total_time_s": 104457.2705
+  },
+  "Cli/Cli_17b": {
+    "category_time_h": {
+      "bug_analysis": 0.007836444444444444,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.007836444444444444,
+    "total_time_s": 28.2112
+  },
+  "Cli/Cli_18b": {
+    "category_time_h": {
+      "bug_analysis": 0.011101055555555555,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.011101055555555555,
+    "total_time_s": 39.9638
+  },
+  "Cli/Cli_19b": {
+    "category_time_h": {
+      "bug_analysis": 0.2178931666666667,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.2178931666666667,
+    "total_time_s": 784.4154000000001
+  },
+  "Cli/Cli_1b": {
+    "category_time_h": {
+      "bug_analysis": 2.410679194444444,
+      "detect real bugs": 0.004418861111111111,
+      "mutant_analysis": 0.09305555555555556,
+      "surviving_mutant_analysis": 0.07645663888888889
+    },
+    "machine": "linux",
+    "total_time_h": 2.5846102499999994,
+    "total_time_s": 9304.596899999999
+  },
+  "Cli/Cli_20b": {
+    "category_time_h": {
+      "bug_analysis": 0.139521,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.139521,
+    "total_time_s": 502.2756
+  },
+  "Cli/Cli_21b": {
+    "category_time_h": {
+      "bug_analysis": 3.870276777777778,
+      "detect real bugs": 0.5711976666666667,
+      "mutant_analysis": 0.8705555555555555,
+      "surviving_mutant_analysis": 2.8294244444444443
+    },
+    "machine": "linux",
+    "total_time_h": 8.141454444444445,
+    "total_time_s": 29309.236
+  },
+  "Cli/Cli_22b": {
+    "category_time_h": {
+      "bug_analysis": 1.5692175277777778,
+      "detect real bugs": 0.2109447777777778,
+      "mutant_analysis": 0.2727777777777778,
+      "surviving_mutant_analysis": 1.2930944166666667
+    },
+    "machine": "linux",
+    "total_time_h": 3.3460345,
+    "total_time_s": 12045.7242
+  },
+  "Cli/Cli_23b": {
+    "category_time_h": {
+      "bug_analysis": 0.02500588888888889,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.02500588888888889,
+    "total_time_s": 90.02120000000001
+  },
+  "Cli/Cli_24b": {
+    "category_time_h": {
+      "bug_analysis": 0.008268305555555557,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.008268305555555557,
+    "total_time_s": 29.765900000000002
+  },
+  "Cli/Cli_25b": {
+    "category_time_h": {
+      "bug_analysis": 0.007978805555555555,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.007978805555555555,
+    "total_time_s": 28.723699999999997
+  },
+  "Cli/Cli_26b": {
+    "category_time_h": {
+      "bug_analysis": 0.20200225,
+      "detect real bugs": 0.014868416666666667,
+      "mutant_analysis": 0.16361111111111112,
+      "surviving_mutant_analysis": 0.06809736111111112
+    },
+    "machine": "linux",
+    "total_time_h": 0.4485791388888889,
+    "total_time_s": 1614.8849
+  },
+  "Cli/Cli_27b": {
+    "category_time_h": {
+      "bug_analysis": 0.0576055,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.0576055,
+    "total_time_s": 207.3798
+  },
+  "Cli/Cli_28b": {
+    "category_time_h": {
+      "bug_analysis": 0.010637138888888889,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.010637138888888889,
+    "total_time_s": 38.2937
+  },
+  "Cli/Cli_29b": {
+    "category_time_h": {
+      "bug_analysis": 0.5703090833333334,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.5703090833333334,
+    "total_time_s": 2053.1127
+  },
+  "Cli/Cli_2b": {
+    "category_time_h": {
+      "bug_analysis": 0.10212375000000001,
+      "detect real bugs": 0.01668736111111111,
+      "mutant_analysis": 0.14083333333333334,
+      "surviving_mutant_analysis": 0.06591727777777778
+    },
+    "machine": "macbook",
+    "total_time_h": 0.32556172222222224,
+    "total_time_s": 1172.0222
+  },
+  "Cli/Cli_30b": {
+    "category_time_h": {
+      "bug_analysis": 0.12298330555555555,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.12298330555555555,
+    "total_time_s": 442.7399
+  },
+  "Cli/Cli_31b": {
+    "category_time_h": {
+      "bug_analysis": 7.62325925,
+      "detect real bugs": 0.08781694444444445,
+      "mutant_analysis": 2.694166666666667,
+      "surviving_mutant_analysis": 1.3339851388888888
+    },
+    "machine": "linux",
+    "total_time_h": 11.739228,
+    "total_time_s": 42261.2208
+  },
+  "Cli/Cli_32b": {
+    "category_time_h": {
+      "bug_analysis": 0.01274047222222222,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.01274047222222222,
+    "total_time_s": 45.8657
+  },
+  "Cli/Cli_33b": {
+    "category_time_h": {
+      "bug_analysis": 0.14391544444444448,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.14391544444444448,
+    "total_time_s": 518.0956000000001
+  },
+  "Cli/Cli_34b": {
+    "category_time_h": {
+      "bug_analysis": 8.459418583333333,
+      "detect real bugs": 0.9345101944444444,
+      "mutant_analysis": 0.6308333333333334,
+      "surviving_mutant_analysis": 4.962504888888889
+    },
+    "machine": "linux",
+    "total_time_h": 14.987267000000001,
+    "total_time_s": 53954.1612
+  },
+  "Cli/Cli_35b": {
+    "category_time_h": {
+      "bug_analysis": 0.6860898888888889,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.6860898888888889,
+    "total_time_s": 2469.9236
+  },
+  "Cli/Cli_36b": {
+    "category_time_h": {
+      "bug_analysis": 0.6339836111111111,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.3630555555555556,
+      "surviving_mutant_analysis": 0.004166666666666667
+    },
+    "machine": "linux",
+    "total_time_h": 1.0012058333333334,
+    "total_time_s": 3604.341
+  },
+  "Cli/Cli_37b": {
+    "category_time_h": {
+      "bug_analysis": 0.12329605555555555,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.12329605555555555,
+    "total_time_s": 443.8658
+  },
+  "Cli/Cli_38b": {
+    "category_time_h": {
+      "bug_analysis": 0.06275113888888889,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.06275113888888889,
+    "total_time_s": 225.9041
+  },
+  "Cli/Cli_39b": {
+    "category_time_h": {
+      "bug_analysis": 0.01714561111111111,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.01714561111111111,
+    "total_time_s": 61.7242
+  },
+  "Cli/Cli_3b": {
+    "category_time_h": {
+      "bug_analysis": 0.004070138888888889,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.004070138888888889,
+    "total_time_s": 14.6525
+  },
+  "Cli/Cli_40b": {
+    "category_time_h": {
+      "bug_analysis": 0.01797202777777778,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.01797202777777778,
+    "total_time_s": 64.69930000000001
+  },
+  "Cli/Cli_4b": {
+    "category_time_h": {
+      "bug_analysis": 0.10008175000000001,
+      "detect real bugs": 0.02701175,
+      "mutant_analysis": 0.2836111111111111,
+      "surviving_mutant_analysis": 0.12782683333333333
+    },
+    "machine": "linux",
+    "total_time_h": 0.5385314444444445,
+    "total_time_s": 1938.7132000000001
+  },
+  "Cli/Cli_5b": {
+    "category_time_h": {
+      "bug_analysis": 0.15010011111111113,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.15010011111111113,
+    "total_time_s": 540.3604
+  },
+  "Cli/Cli_7b": {
+    "category_time_h": {
+      "bug_analysis": 0.006147361111111111,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.006147361111111111,
+    "total_time_s": 22.1305
+  },
+  "Cli/Cli_8b": {
+    "category_time_h": {
+      "bug_analysis": 0.010680944444444444,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.010680944444444444,
+    "total_time_s": 38.4514
+  },
+  "Cli/Cli_9b": {
+    "category_time_h": {
+      "bug_analysis": 0.010619805555555554,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.010619805555555554,
+    "total_time_s": 38.2313
+  },
+  "Codec/Codec_10b": {
+    "category_time_h": {
+      "bug_analysis": 0.024420638888888888,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.024420638888888888,
+    "total_time_s": 87.9143
+  },
+  "Codec/Codec_11b": {
+    "category_time_h": {
+      "bug_analysis": 0.05244477777777778,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.05244477777777778,
+    "total_time_s": 188.8012
+  },
+  "Codec/Codec_12b": {
+    "category_time_h": {
+      "bug_analysis": 0.006496777777777777,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.006496777777777777,
+    "total_time_s": 23.388399999999997
+  },
+  "Codec/Codec_13b": {
+    "category_time_h": {
+      "bug_analysis": 0.07221122222222222,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.07221122222222222,
+    "total_time_s": 259.9604
+  },
+  "Codec/Codec_14b": {
+    "category_time_h": {
+      "bug_analysis": 1.8182492777777777,
+      "detect real bugs": 0.24786105555555557,
+      "mutant_analysis": 2.549722222222222,
+      "surviving_mutant_analysis": 8.938327388888888
+    },
+    "machine": "linux",
+    "total_time_h": 13.554159944444445,
+    "total_time_s": 48794.9758
+  },
+  "Codec/Codec_15b": {
+    "category_time_h": {
+      "bug_analysis": 0.04084316666666666,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.04084316666666666,
+    "total_time_s": 147.03539999999998
+  },
+  "Codec/Codec_16b": {
+    "category_time_h": {
+      "bug_analysis": 0.9971333333333333,
+      "detect real bugs": 0.2800097222222222,
+      "mutant_analysis": 1.1166666666666667,
+      "surviving_mutant_analysis": 5.487380944444444
+    },
+    "machine": "macbook",
+    "total_time_h": 7.881190666666667,
+    "total_time_s": 28372.2864
+  },
+  "Codec/Codec_17b": {
+    "category_time_h": {
+      "bug_analysis": 0.011444611111111112,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.011444611111111112,
+    "total_time_s": 41.2006
+  },
+  "Codec/Codec_18b": {
+    "category_time_h": {
+      "bug_analysis": 0.011989833333333335,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.011989833333333335,
+    "total_time_s": 43.1634
+  },
+  "Codec/Codec_1b": {
+    "category_time_h": {
+      "bug_analysis": 0.04759575,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.04759575,
+    "total_time_s": 171.3447
+  },
+  "Codec/Codec_2b": {
+    "category_time_h": {
+      "bug_analysis": 0.11163777777777777,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.11163777777777777,
+    "total_time_s": 401.89599999999996
+  },
+  "Codec/Codec_3b": {
+    "category_time_h": {
+      "bug_analysis": 0.18290555555555557,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.18290555555555557,
+    "total_time_s": 658.46
+  },
+  "Codec/Codec_4b": {
+    "category_time_h": {
+      "bug_analysis": 0.056135694444444446,
+      "detect real bugs": 0.00317,
+      "mutant_analysis": 1.0627777777777778,
+      "surviving_mutant_analysis": 0.07548138888888889
+    },
+    "machine": "macmini",
+    "total_time_h": 1.1975648611111112,
+    "total_time_s": 4311.2335
+  },
+  "Codec/Codec_5b": {
+    "category_time_h": {
+      "bug_analysis": 0.21284741666666668,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.21284741666666668,
+    "total_time_s": 766.2507
+  },
+  "Codec/Codec_6b": {
+    "category_time_h": {
+      "bug_analysis": 0.026006111111111112,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.026006111111111112,
+    "total_time_s": 93.622
+  },
+  "Codec/Codec_7b": {
+    "category_time_h": {
+      "bug_analysis": 0.010237555555555555,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.010237555555555555,
+    "total_time_s": 36.855199999999996
+  },
+  "Codec/Codec_8b": {
+    "category_time_h": {
+      "bug_analysis": 0.028573166666666667,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.028573166666666667,
+    "total_time_s": 102.8634
+  },
+  "Codec/Codec_9b": {
+    "category_time_h": {
+      "bug_analysis": 0.1542569166666667,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.1542569166666667,
+    "total_time_s": 555.3249000000001
+  },
+  "Collections/Collections_10b": {
+    "category_time_h": {
+      "bug_analysis": 0.07685722222222222,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.07685722222222222,
+    "total_time_s": 276.686
+  },
+  "Collections/Collections_11b": {
+    "category_time_h": {
+      "bug_analysis": 0.01773638888888889,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.01773638888888889,
+    "total_time_s": 63.851
+  },
+  "Collections/Collections_12b": {
+    "category_time_h": {
+      "bug_analysis": 0.013737555555555555,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.013737555555555555,
+    "total_time_s": 49.4552
+  },
+  "Collections/Collections_13b": {
+    "category_time_h": {
+      "bug_analysis": 0.015286388888888891,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.015286388888888891,
+    "total_time_s": 55.031000000000006
+  },
+  "Collections/Collections_14b": {
+    "category_time_h": {
+      "bug_analysis": 0.07045102777777777,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.07045102777777777,
+    "total_time_s": 253.62369999999999
+  },
+  "Collections/Collections_15b": {
+    "category_time_h": {
+      "bug_analysis": 0.02525069444444444,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.02525069444444444,
+    "total_time_s": 90.90249999999999
+  },
+  "Collections/Collections_16b": {
+    "category_time_h": {
+      "bug_analysis": 0.009956888888888888,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.009956888888888888,
+    "total_time_s": 35.8448
+  },
+  "Collections/Collections_17b": {
+    "category_time_h": {
+      "bug_analysis": 0.6948305277777778,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.014166666666666666,
+      "surviving_mutant_analysis": 0.0025
+    },
+    "machine": "macbook",
+    "total_time_h": 0.7114971944444445,
+    "total_time_s": 2561.3899
+  },
+  "Collections/Collections_18b": {
+    "category_time_h": {
+      "bug_analysis": 0.020247055555555553,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.020247055555555553,
+    "total_time_s": 72.8894
+  },
+  "Collections/Collections_19b": {
+    "category_time_h": {
+      "bug_analysis": 0.034882444444444445,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.034882444444444445,
+    "total_time_s": 125.5768
+  },
+  "Collections/Collections_1b": {
+    "category_time_h": {
+      "bug_analysis": 0.10497597222222224,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.10497597222222224,
+    "total_time_s": 377.91350000000006
+  },
+  "Collections/Collections_20b": {
+    "category_time_h": {
+      "bug_analysis": 0.017526277777777776,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.017526277777777776,
+    "total_time_s": 63.0946
+  },
+  "Collections/Collections_21b": {
+    "category_time_h": {
+      "bug_analysis": 0.026012527777777777,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.20777777777777778,
+      "surviving_mutant_analysis": 0.005277777777777778
+    },
+    "machine": "macbook",
+    "total_time_h": 0.23906808333333332,
+    "total_time_s": 860.6451
+  },
+  "Collections/Collections_22b": {
+    "category_time_h": {
+      "bug_analysis": 0.02430002777777778,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.02430002777777778,
+    "total_time_s": 87.48010000000001
+  },
+  "Collections/Collections_23b": {
+    "category_time_h": {
+      "bug_analysis": 0.0638193888888889,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.0638193888888889,
+    "total_time_s": 229.74980000000002
+  },
+  "Collections/Collections_24b": {
+    "category_time_h": {
+      "bug_analysis": 0.03288141666666666,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.03288141666666666,
+    "total_time_s": 118.3731
+  },
+  "Collections/Collections_25b": {
+    "category_time_h": {
+      "bug_analysis": 0.00817638888888889,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.00817638888888889,
+    "total_time_s": 29.435
+  },
+  "Collections/Collections_26b": {
+    "category_time_h": {
+      "bug_analysis": 0.011670749999999999,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.011670749999999999,
+    "total_time_s": 42.0147
+  },
+  "Collections/Collections_27b": {
+    "category_time_h": {
+      "bug_analysis": 0.03910986111111111,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.03910986111111111,
+    "total_time_s": 140.7955
+  },
+  "Collections/Collections_28b": {
+    "category_time_h": {
+      "bug_analysis": 0.030702666666666666,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.030702666666666666,
+    "total_time_s": 110.5296
+  },
+  "Collections/Collections_2b": {
+    "category_time_h": {
+      "bug_analysis": 0.027466666666666667,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.027466666666666667,
+    "total_time_s": 98.88
+  },
+  "Collections/Collections_3b": {
+    "category_time_h": {
+      "bug_analysis": 0.012753388888888889,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.012753388888888889,
+    "total_time_s": 45.9122
+  },
+  "Collections/Collections_4b": {
+    "category_time_h": {
+      "bug_analysis": 0.18027433333333331,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.18027433333333331,
+    "total_time_s": 648.9875999999999
+  },
+  "Collections/Collections_5b": {
+    "category_time_h": {
+      "bug_analysis": 0.073406,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.073406,
+    "total_time_s": 264.2616
+  },
+  "Collections/Collections_6b": {
+    "category_time_h": {
+      "bug_analysis": 0.010281638888888889,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.010281638888888889,
+    "total_time_s": 37.0139
+  },
+  "Collections/Collections_7b": {
+    "category_time_h": {
+      "bug_analysis": 0.03134541666666667,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.03134541666666667,
+    "total_time_s": 112.84349999999999
+  },
+  "Collections/Collections_8b": {
+    "category_time_h": {
+      "bug_analysis": 0.028580333333333333,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.028580333333333333,
+    "total_time_s": 102.8892
+  },
+  "Collections/Collections_9b": {
+    "category_time_h": {
+      "bug_analysis": 0.011313722222222222,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.011313722222222222,
+    "total_time_s": 40.7294
+  },
+  "Csv/Csv_10b": {
+    "category_time_h": {
+      "bug_analysis": 0.03743272222222222,
+      "detect real bugs": 0.0023642777777777776,
+      "mutant_analysis": 0.29944444444444446,
+      "surviving_mutant_analysis": 0.01282513888888889
+    },
+    "machine": "macmini",
+    "total_time_h": 0.3520665833333333,
+    "total_time_s": 1267.4397
+  },
+  "Csv/Csv_11b": {
+    "category_time_h": {
+      "bug_analysis": 0.028070055555555556,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.028070055555555556,
+    "total_time_s": 101.0522
+  },
+  "Csv/Csv_12b": {
+    "category_time_h": {
+      "bug_analysis": 0.29839319444444445,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.29839319444444445,
+    "total_time_s": 1074.2155
+  },
+  "Csv/Csv_13b": {
+    "category_time_h": {
+      "bug_analysis": 0.3423819166666667,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.3423819166666667,
+    "total_time_s": 1232.5749
+  },
+  "Csv/Csv_14b": {
+    "category_time_h": {
+      "bug_analysis": 0.13296341666666667,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.13296341666666667,
+    "total_time_s": 478.6683
+  },
+  "Csv/Csv_15b": {
+    "category_time_h": {
+      "bug_analysis": 0.1553788611111111,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.1553788611111111,
+    "total_time_s": 559.3639
+  },
+  "Csv/Csv_16b": {
+    "category_time_h": {
+      "bug_analysis": 0.15902772222222222,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0925,
+      "surviving_mutant_analysis": 0.04861111111111111
+    },
+    "machine": "macmini",
+    "total_time_h": 0.30013883333333335,
+    "total_time_s": 1080.4998
+  },
+  "Csv/Csv_1b": {
+    "category_time_h": {
+      "bug_analysis": 0.06441286111111111,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.06441286111111111,
+    "total_time_s": 231.8863
+  },
+  "Csv/Csv_2b": {
+    "category_time_h": {
+      "bug_analysis": 0.005213249999999999,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.005213249999999999,
+    "total_time_s": 18.767699999999998
+  },
+  "Csv/Csv_3b": {
+    "category_time_h": {
+      "bug_analysis": 0.01272425,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.01272425,
+    "total_time_s": 45.8073
+  },
+  "Csv/Csv_4b": {
+    "category_time_h": {
+      "bug_analysis": 0.20824458333333332,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.20824458333333332,
+    "total_time_s": 749.6804999999999
+  },
+  "Csv/Csv_5b": {
+    "category_time_h": {
+      "bug_analysis": 0.056417833333333334,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.056417833333333334,
+    "total_time_s": 203.1042
+  },
+  "Csv/Csv_6b": {
+    "category_time_h": {
+      "bug_analysis": 0.010248694444444444,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.010248694444444444,
+    "total_time_s": 36.8953
+  },
+  "Csv/Csv_7b": {
+    "category_time_h": {
+      "bug_analysis": 0.02054527777777778,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.02054527777777778,
+    "total_time_s": 73.96300000000001
+  },
+  "Csv/Csv_8b": {
+    "category_time_h": {
+      "bug_analysis": 0.11565102777777778,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.11565102777777778,
+    "total_time_s": 416.3437
+  },
+  "Csv/Csv_9b": {
+    "category_time_h": {
+      "bug_analysis": 0.008902888888888889,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.008902888888888889,
+    "total_time_s": 32.0504
+  },
+  "Gson/Gson_10b": {
+    "category_time_h": {
+      "bug_analysis": 0.8385005833333333,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.8385005833333333,
+    "total_time_s": 3018.6021
+  },
+  "Gson/Gson_11b": {
+    "category_time_h": {
+      "bug_analysis": 2.417789972222222,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 2.417789972222222,
+    "total_time_s": 8704.043899999999
+  },
+  "Gson/Gson_12b": {
+    "category_time_h": {
+      "bug_analysis": 0.031179083333333333,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.031179083333333333,
+    "total_time_s": 112.2447
+  },
+  "Gson/Gson_13b": {
+    "category_time_h": {
+      "bug_analysis": 0.6811313333333333,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.6811313333333333,
+    "total_time_s": 2452.0728
+  },
+  "Gson/Gson_14b": {
+    "category_time_h": {
+      "bug_analysis": 0.008872444444444445,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.008872444444444445,
+    "total_time_s": 31.9408
+  },
+  "Gson/Gson_15b": {
+    "category_time_h": {
+      "bug_analysis": 0.03352477777777778,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.03352477777777778,
+    "total_time_s": 120.68920000000001
+  },
+  "Gson/Gson_16b": {
+    "category_time_h": {
+      "bug_analysis": 0.13032288888888888,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.13032288888888888,
+    "total_time_s": 469.1624
+  },
+  "Gson/Gson_17b": {
+    "category_time_h": {
+      "bug_analysis": 0.05703947222222223,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.05703947222222223,
+    "total_time_s": 205.34210000000002
+  },
+  "Gson/Gson_18b": {
+    "category_time_h": {
+      "bug_analysis": 0.4625327222222223,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.4625327222222223,
+    "total_time_s": 1665.1178000000002
+  },
+  "Gson/Gson_1b": {
+    "category_time_h": {
+      "bug_analysis": 0.008324194444444445,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.008324194444444445,
+    "total_time_s": 29.9671
+  },
+  "Gson/Gson_2b": {
+    "category_time_h": {
+      "bug_analysis": 1.2415236944444445,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 1.293611111111111,
+      "surviving_mutant_analysis": 0.021111111111111112
+    },
+    "machine": "linux",
+    "total_time_h": 2.5562459166666667,
+    "total_time_s": 9202.4853
+  },
+  "Gson/Gson_3b": {
+    "category_time_h": {
+      "bug_analysis": 0.7219493055555556,
+      "detect real bugs": 0.03128188888888889,
+      "mutant_analysis": 0.4236111111111111,
+      "surviving_mutant_analysis": 0.35227575
+    },
+    "machine": "linux",
+    "total_time_h": 1.5291180555555555,
+    "total_time_s": 5504.825
+  },
+  "Gson/Gson_4b": {
+    "category_time_h": {
+      "bug_analysis": 2.9599853888888887,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 2.9599853888888887,
+    "total_time_s": 10655.9474
+  },
+  "Gson/Gson_5b": {
+    "category_time_h": {
+      "bug_analysis": 0.0060085,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.0060085,
+    "total_time_s": 21.6306
+  },
+  "Gson/Gson_6b": {
+    "category_time_h": {
+      "bug_analysis": 0.04421852777777778,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.04421852777777778,
+    "total_time_s": 159.1867
+  },
+  "Gson/Gson_7b": {
+    "category_time_h": {
+      "bug_analysis": 0.0861801388888889,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.0861801388888889,
+    "total_time_s": 310.24850000000004
+  },
+  "Gson/Gson_8b": {
+    "category_time_h": {
+      "bug_analysis": 0.2343861388888889,
+      "detect real bugs": 0.011273638888888889,
+      "mutant_analysis": 0.12638888888888888,
+      "surviving_mutant_analysis": 0.057210055555555556
+    },
+    "machine": "linux",
+    "total_time_h": 0.4292587222222222,
+    "total_time_s": 1545.3314
+  },
+  "Gson/Gson_9b": {
+    "category_time_h": {
+      "bug_analysis": 0.19570486111111113,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.19570486111111113,
+    "total_time_s": 704.5375
+  },
+  "JacksonCore/JacksonCore_10b": {
+    "category_time_h": {
+      "bug_analysis": 5.477834555555555,
+      "detect real bugs": 4.632292722222222,
+      "mutant_analysis": 14.206111111111111,
+      "surviving_mutant_analysis": 34.88117075
+    },
+    "machine": "linux",
+    "total_time_h": 59.197409138888894,
+    "total_time_s": 213110.6729
+  },
+  "JacksonCore/JacksonCore_11b": {
+    "category_time_h": {
+      "bug_analysis": 0.5065578888888889,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.5065578888888889,
+    "total_time_s": 1823.6083999999998
+  },
+  "JacksonCore/JacksonCore_12b": {
+    "category_time_h": {
+      "bug_analysis": 2.779349916666667,
+      "detect real bugs": 1.241380611111111,
+      "mutant_analysis": 15.777222222222223,
+      "surviving_mutant_analysis": 10.589637222222223
+    },
+    "machine": "macmini",
+    "total_time_h": 30.387589972222223,
+    "total_time_s": 109395.3239
+  },
+  "JacksonCore/JacksonCore_13b": {
+    "category_time_h": {
+      "bug_analysis": 0.005478972222222222,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.005478972222222222,
+    "total_time_s": 19.7243
+  },
+  "JacksonCore/JacksonCore_14b": {
+    "category_time_h": {
+      "bug_analysis": 2.018790722222222,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 2.018790722222222,
+    "total_time_s": 7267.6466
+  },
+  "JacksonCore/JacksonCore_15b": {
+    "category_time_h": {
+      "bug_analysis": 7.0141213888888885,
+      "detect real bugs": 2.544683583333333,
+      "mutant_analysis": 1.82,
+      "surviving_mutant_analysis": 12.208088138888888
+    },
+    "machine": "linux",
+    "total_time_h": 23.58689311111111,
+    "total_time_s": 84912.8152
+  },
+  "JacksonCore/JacksonCore_16b": {
+    "category_time_h": {
+      "bug_analysis": 0.028483722222222226,
+      "detect real bugs": 0.014619444444444445,
+      "mutant_analysis": 0.15138888888888888,
+      "surviving_mutant_analysis": 0.06988394444444444
+    },
+    "machine": "macmini",
+    "total_time_h": 0.264376,
+    "total_time_s": 951.7536
+  },
+  "JacksonCore/JacksonCore_17b": {
+    "category_time_h": {
+      "bug_analysis": 0.05379788888888888,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.05379788888888888,
+    "total_time_s": 193.67239999999998
+  },
+  "JacksonCore/JacksonCore_18b": {
+    "category_time_h": {
+      "bug_analysis": 0.9568542777777777,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.9568542777777777,
+    "total_time_s": 3444.6753999999996
+  },
+  "JacksonCore/JacksonCore_19b": {
+    "category_time_h": {
+      "bug_analysis": 0.32576980555555557,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.32576980555555557,
+    "total_time_s": 1172.7713
+  },
+  "JacksonCore/JacksonCore_1b": {
+    "category_time_h": {
+      "bug_analysis": 0.0032559444444444446,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.0032559444444444446,
+    "total_time_s": 11.721400000000001
+  },
+  "JacksonCore/JacksonCore_20b": {
+    "category_time_h": {
+      "bug_analysis": 0.006602972222222222,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.006602972222222222,
+    "total_time_s": 23.770699999999998
+  },
+  "JacksonCore/JacksonCore_21b": {
+    "category_time_h": {
+      "bug_analysis": 0.06771794444444444,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.06771794444444444,
+    "total_time_s": 243.7846
+  },
+  "JacksonCore/JacksonCore_22b": {
+    "category_time_h": {
+      "bug_analysis": 0.08959986111111111,
+      "detect real bugs": 0.03117811111111111,
+      "mutant_analysis": 0.405,
+      "surviving_mutant_analysis": 0.4798774444444445
+    },
+    "machine": "macbook",
+    "total_time_h": 1.0056554166666667,
+    "total_time_s": 3620.3595000000005
+  },
+  "JacksonCore/JacksonCore_23b": {
+    "category_time_h": {
+      "bug_analysis": 0.00883411111111111,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.00883411111111111,
+    "total_time_s": 31.802799999999998
+  },
+  "JacksonCore/JacksonCore_24b": {
+    "category_time_h": {
+      "bug_analysis": 0.011208555555555555,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.011208555555555555,
+    "total_time_s": 40.3508
+  },
+  "JacksonCore/JacksonCore_25b": {
+    "category_time_h": {
+      "bug_analysis": 0.007850166666666667,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.007850166666666667,
+    "total_time_s": 28.2606
+  },
+  "JacksonCore/JacksonCore_26b": {
+    "category_time_h": {
+      "bug_analysis": 0.8085167222222223,
+      "detect real bugs": 0.32210161111111113,
+      "mutant_analysis": 13.465,
+      "surviving_mutant_analysis": 1.7737429444444444
+    },
+    "machine": "macmini",
+    "total_time_h": 16.369361277777777,
+    "total_time_s": 58929.7006
+  },
+  "JacksonCore/JacksonCore_2b": {
+    "category_time_h": {
+      "bug_analysis": 0.6851736111111111,
+      "detect real bugs": 0.36054033333333335,
+      "mutant_analysis": 12.593055555555555,
+      "surviving_mutant_analysis": 4.171196805555556
+    },
+    "machine": "macbook",
+    "total_time_h": 17.809966305555555,
+    "total_time_s": 64115.8787
+  },
+  "JacksonCore/JacksonCore_3b": {
+    "category_time_h": {
+      "bug_analysis": 6.003190583333333,
+      "detect real bugs": 4.637833638888888,
+      "mutant_analysis": 20.841944444444444,
+      "surviving_mutant_analysis": 24.004154
+    },
+    "machine": "linux",
+    "total_time_h": 55.487122666666664,
+    "total_time_s": 199753.6416
+  },
+  "JacksonCore/JacksonCore_4b": {
+    "category_time_h": {
+      "bug_analysis": 0.010571277777777777,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.010571277777777777,
+    "total_time_s": 38.056599999999996
+  },
+  "JacksonCore/JacksonCore_5b": {
+    "category_time_h": {
+      "bug_analysis": 0.017101444444444447,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.017101444444444447,
+    "total_time_s": 61.565200000000004
+  },
+  "JacksonCore/JacksonCore_6b": {
+    "category_time_h": {
+      "bug_analysis": 0.023035972222222218,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.023035972222222218,
+    "total_time_s": 82.92949999999999
+  },
+  "JacksonCore/JacksonCore_7b": {
+    "category_time_h": {
+      "bug_analysis": 0.04414216666666667,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macmini",
+    "total_time_h": 0.04414216666666667,
+    "total_time_s": 158.9118
+  },
+  "JacksonCore/JacksonCore_8b": {
+    "category_time_h": {
+      "bug_analysis": 0.10003938888888887,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macmini",
+    "total_time_h": 0.10003938888888887,
+    "total_time_s": 360.14179999999993
+  },
+  "JacksonCore/JacksonCore_9b": {
+    "category_time_h": {
+      "bug_analysis": 0.00775263888888889,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.00775263888888889,
+    "total_time_s": 27.9095
+  },
+  "JacksonXml/JacksonXml_1b": {
+    "category_time_h": {
+      "bug_analysis": 0.01575061111111111,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.01575061111111111,
+    "total_time_s": 56.7022
+  },
+  "JacksonXml/JacksonXml_2b": {
+    "category_time_h": {
+      "bug_analysis": 1.2970497222222224,
+      "detect real bugs": 0.08286963888888889,
+      "mutant_analysis": 2.3333333333333335,
+      "surviving_mutant_analysis": 0.6025639166666666
+    },
+    "machine": "linux",
+    "total_time_h": 4.315816611111111,
+    "total_time_s": 15536.9398
+  },
+  "JacksonXml/JacksonXml_3b": {
+    "category_time_h": {
+      "bug_analysis": 0.001568638888888889,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.001568638888888889,
+    "total_time_s": 5.6471
+  },
+  "JacksonXml/JacksonXml_4b": {
+    "category_time_h": {
+      "bug_analysis": 0.0018692222222222222,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.0018692222222222222,
+    "total_time_s": 6.7292
+  },
+  "JacksonXml/JacksonXml_5b": {
+    "category_time_h": {
+      "bug_analysis": 0.003973388888888889,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.003973388888888889,
+    "total_time_s": 14.3042
+  },
+  "JacksonXml/JacksonXml_6b": {
+    "category_time_h": {
+      "bug_analysis": 0.0012712222222222222,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.0012712222222222222,
+    "total_time_s": 4.5764
+  },
+  "Jsoup/Jsoup_10b": {
+    "category_time_h": {
+      "bug_analysis": 0.010598916666666668,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.010598916666666668,
+    "total_time_s": 38.1561
+  },
+  "Jsoup/Jsoup_11b": {
+    "category_time_h": {
+      "bug_analysis": 0.11953608333333332,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.11953608333333332,
+    "total_time_s": 430.32989999999995
+  },
+  "Jsoup/Jsoup_12b": {
+    "category_time_h": {
+      "bug_analysis": 0.03047008333333333,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.03047008333333333,
+    "total_time_s": 109.69229999999999
+  },
+  "Jsoup/Jsoup_13b": {
+    "category_time_h": {
+      "bug_analysis": 0.03437177777777778,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.03437177777777778,
+    "total_time_s": 123.7384
+  },
+  "Jsoup/Jsoup_14b": {
+    "category_time_h": {
+      "bug_analysis": 0.0018706666666666667,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.0018706666666666667,
+    "total_time_s": 6.7344
+  },
+  "Jsoup/Jsoup_15b": {
+    "category_time_h": {
+      "bug_analysis": 0.0019176111111111113,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.0019176111111111113,
+    "total_time_s": 6.9034
+  },
+  "Jsoup/Jsoup_16b": {
+    "category_time_h": {
+      "bug_analysis": 0.011295277777777779,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.011295277777777779,
+    "total_time_s": 40.663000000000004
+  },
+  "Jsoup/Jsoup_17b": {
+    "category_time_h": {
+      "bug_analysis": 0.19227508333333332,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.19227508333333332,
+    "total_time_s": 692.1903
+  },
+  "Jsoup/Jsoup_18b": {
+    "category_time_h": {
+      "bug_analysis": 0.19536730555555554,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.19536730555555554,
+    "total_time_s": 703.3222999999999
+  },
+  "Jsoup/Jsoup_19b": {
+    "category_time_h": {
+      "bug_analysis": 0.005037805555555557,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.005037805555555557,
+    "total_time_s": 18.136100000000003
+  },
+  "Jsoup/Jsoup_1b": {
+    "category_time_h": {
+      "bug_analysis": 0.0014293055555555556,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.0014293055555555556,
+    "total_time_s": 5.1455
+  },
+  "Jsoup/Jsoup_20b": {
+    "category_time_h": {
+      "bug_analysis": 0.009418055555555556,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.009418055555555556,
+    "total_time_s": 33.905
+  },
+  "Jsoup/Jsoup_21b": {
+    "category_time_h": {
+      "bug_analysis": 0.051791361111111114,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.051791361111111114,
+    "total_time_s": 186.4489
+  },
+  "Jsoup/Jsoup_22b": {
+    "category_time_h": {
+      "bug_analysis": 0.009015833333333334,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.009015833333333334,
+    "total_time_s": 32.457
+  },
+  "Jsoup/Jsoup_23b": {
+    "category_time_h": {
+      "bug_analysis": 0.017391583333333335,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.017391583333333335,
+    "total_time_s": 62.609700000000004
+  },
+  "Jsoup/Jsoup_24b": {
+    "category_time_h": {
+      "bug_analysis": 0.0010273333333333332,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.0010273333333333332,
+    "total_time_s": 3.6984
+  },
+  "Jsoup/Jsoup_25b": {
+    "category_time_h": {
+      "bug_analysis": 24.662201083333333,
+      "detect real bugs": 17.546507444444444,
+      "mutant_analysis": 0.7019444444444445,
+      "surviving_mutant_analysis": 74.52420677777778
+    },
+    "machine": "macbook",
+    "total_time_h": 117.43485975,
+    "total_time_s": 422765.4951
+  },
+  "Jsoup/Jsoup_26b": {
+    "category_time_h": {
+      "bug_analysis": 0.010781194444444444,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.010781194444444444,
+    "total_time_s": 38.8123
+  },
+  "Jsoup/Jsoup_27b": {
+    "category_time_h": {
+      "bug_analysis": 0.0038846944444444445,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.0038846944444444445,
+    "total_time_s": 13.9849
+  },
+  "Jsoup/Jsoup_28b": {
+    "category_time_h": {
+      "bug_analysis": 0.02022536111111111,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.02022536111111111,
+    "total_time_s": 72.8113
+  },
+  "Jsoup/Jsoup_29b": {
+    "category_time_h": {
+      "bug_analysis": 0.007955833333333332,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.007955833333333332,
+    "total_time_s": 28.641
+  },
+  "Jsoup/Jsoup_2b": {
+    "category_time_h": {
+      "bug_analysis": 0.008746777777777779,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.008746777777777779,
+    "total_time_s": 31.488400000000002
+  },
+  "Jsoup/Jsoup_30b": {
+    "category_time_h": {
+      "bug_analysis": 0.012119888888888888,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.012119888888888888,
+    "total_time_s": 43.6316
+  },
+  "Jsoup/Jsoup_31b": {
+    "category_time_h": {
+      "bug_analysis": 0.02746961111111111,
+      "detect real bugs": 0.0022788333333333332,
+      "mutant_analysis": 2.863888888888889,
+      "surviving_mutant_analysis": 0.02218636111111111
+    },
+    "machine": "macmini",
+    "total_time_h": 2.9158236944444442,
+    "total_time_s": 10496.9653
+  },
+  "Jsoup/Jsoup_32b": {
+    "category_time_h": {
+      "bug_analysis": 0.06723972222222221,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.5480555555555555,
+      "surviving_mutant_analysis": 0.03111111111111111
+    },
+    "machine": "macmini",
+    "total_time_h": 0.6464063888888889,
+    "total_time_s": 2327.063
+  },
+  "Jsoup/Jsoup_33b": {
+    "category_time_h": {
+      "bug_analysis": 0.018274999999999996,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.018274999999999996,
+    "total_time_s": 65.78999999999999
+  },
+  "Jsoup/Jsoup_34b": {
+    "category_time_h": {
+      "bug_analysis": 0.006845444444444444,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.006845444444444444,
+    "total_time_s": 24.6436
+  },
+  "Jsoup/Jsoup_35b": {
+    "category_time_h": {
+      "bug_analysis": 0.0019044166666666667,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.0019044166666666667,
+    "total_time_s": 6.8559
+  },
+  "Jsoup/Jsoup_36b": {
+    "category_time_h": {
+      "bug_analysis": 0.012625111111111111,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.012625111111111111,
+    "total_time_s": 45.4504
+  },
+  "Jsoup/Jsoup_37b": {
+    "category_time_h": {
+      "bug_analysis": 0.10089972222222221,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.10089972222222221,
+    "total_time_s": 363.239
+  },
+  "Jsoup/Jsoup_38b": {
+    "category_time_h": {
+      "bug_analysis": 0.001131777777777778,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.001131777777777778,
+    "total_time_s": 4.074400000000001
+  },
+  "Jsoup/Jsoup_39b": {
+    "category_time_h": {
+      "bug_analysis": 0.0018018333333333335,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.0018018333333333335,
+    "total_time_s": 6.4866
+  },
+  "Jsoup/Jsoup_3b": {
+    "category_time_h": {
+      "bug_analysis": 8.810792083333332,
+      "detect real bugs": 1.3472318333333333,
+      "mutant_analysis": 1.5494444444444444,
+      "surviving_mutant_analysis": 19.085445916666664
+    },
+    "machine": "macbook",
+    "total_time_h": 30.79291427777778,
+    "total_time_s": 110854.4914
+  },
+  "Jsoup/Jsoup_40b": {
+    "category_time_h": {
+      "bug_analysis": 0.015531166666666667,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.015531166666666667,
+    "total_time_s": 55.9122
+  },
+  "Jsoup/Jsoup_41b": {
+    "category_time_h": {
+      "bug_analysis": 0.008946527777777777,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.008946527777777777,
+    "total_time_s": 32.207499999999996
+  },
+  "Jsoup/Jsoup_42b": {
+    "category_time_h": {
+      "bug_analysis": 0.00382825,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.00382825,
+    "total_time_s": 13.7817
+  },
+  "Jsoup/Jsoup_43b": {
+    "category_time_h": {
+      "bug_analysis": 0.024789555555555554,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.024789555555555554,
+    "total_time_s": 89.24239999999999
+  },
+  "Jsoup/Jsoup_44b": {
+    "category_time_h": {
+      "bug_analysis": 0.25151675,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.25151675,
+    "total_time_s": 905.4603
+  },
+  "Jsoup/Jsoup_45b": {
+    "category_time_h": {
+      "bug_analysis": 0.22364780555555558,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.22364780555555558,
+    "total_time_s": 805.1321
+  },
+  "Jsoup/Jsoup_46b": {
+    "category_time_h": {
+      "bug_analysis": 0.0012766111111111112,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.0012766111111111112,
+    "total_time_s": 4.5958000000000006
+  },
+  "Jsoup/Jsoup_47b": {
+    "category_time_h": {
+      "bug_analysis": 0.008528138888888889,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.008528138888888889,
+    "total_time_s": 30.7013
+  },
+  "Jsoup/Jsoup_48b": {
+    "category_time_h": {
+      "bug_analysis": 0.0013598333333333331,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.0013598333333333331,
+    "total_time_s": 4.8953999999999995
+  },
+  "Jsoup/Jsoup_49b": {
+    "category_time_h": {
+      "bug_analysis": 0.02863625,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.02863625,
+    "total_time_s": 103.09049999999999
+  },
+  "Jsoup/Jsoup_4b": {
+    "category_time_h": {
+      "bug_analysis": 0.12346775,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.12346775,
+    "total_time_s": 444.4839
+  },
+  "Jsoup/Jsoup_50b": {
+    "category_time_h": {
+      "bug_analysis": 0.033676055555555556,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.41305555555555556,
+      "surviving_mutant_analysis": 0.03888888888888889
+    },
+    "machine": "macmini",
+    "total_time_h": 0.4856205,
+    "total_time_s": 1748.2338
+  },
+  "Jsoup/Jsoup_51b": {
+    "category_time_h": {
+      "bug_analysis": 0.5535029444444445,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.5535029444444445,
+    "total_time_s": 1992.6106
+  },
+  "Jsoup/Jsoup_52b": {
+    "category_time_h": {
+      "bug_analysis": 0.005146833333333334,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.005146833333333334,
+    "total_time_s": 18.5286
+  },
+  "Jsoup/Jsoup_53b": {
+    "category_time_h": {
+      "bug_analysis": 0.07121163888888889,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.07121163888888889,
+    "total_time_s": 256.3619
+  },
+  "Jsoup/Jsoup_54b": {
+    "category_time_h": {
+      "bug_analysis": 0.0029106944444444445,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.0029106944444444445,
+    "total_time_s": 10.4785
+  },
+  "Jsoup/Jsoup_55b": {
+    "category_time_h": {
+      "bug_analysis": 0.0013997777777777778,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.0013997777777777778,
+    "total_time_s": 5.0392
+  },
+  "Jsoup/Jsoup_56b": {
+    "category_time_h": {
+      "bug_analysis": 0.7929238611111111,
+      "detect real bugs": 8.888888888888888e-06,
+      "mutant_analysis": 7.105555555555555,
+      "surviving_mutant_analysis": 4.439628861111111
+    },
+    "machine": "macmini",
+    "total_time_h": 12.338117166666667,
+    "total_time_s": 44417.2218
+  },
+  "Jsoup/Jsoup_57b": {
+    "category_time_h": {
+      "bug_analysis": 0.002646805555555556,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.002646805555555556,
+    "total_time_s": 9.528500000000001
+  },
+  "Jsoup/Jsoup_58b": {
+    "category_time_h": {
+      "bug_analysis": 0.006797583333333333,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.006797583333333333,
+    "total_time_s": 24.4713
+  },
+  "Jsoup/Jsoup_59b": {
+    "category_time_h": {
+      "bug_analysis": 0.5197354166666667,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.5197354166666667,
+    "total_time_s": 1871.0475
+  },
+  "Jsoup/Jsoup_5b": {
+    "category_time_h": {
+      "bug_analysis": 0.0016629444444444445,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.0016629444444444445,
+    "total_time_s": 5.9866
+  },
+  "Jsoup/Jsoup_60b": {
+    "category_time_h": {
+      "bug_analysis": 0.22691652777777777,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.22691652777777777,
+    "total_time_s": 816.8995
+  },
+  "Jsoup/Jsoup_61b": {
+    "category_time_h": {
+      "bug_analysis": 0.07987666666666667,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.07987666666666667,
+    "total_time_s": 287.556
+  },
+  "Jsoup/Jsoup_62b": {
+    "category_time_h": {
+      "bug_analysis": 0.4259008611111111,
+      "detect real bugs": 0.026230055555555555,
+      "mutant_analysis": 10.369444444444444,
+      "surviving_mutant_analysis": 0.916435638888889
+    },
+    "machine": "linux",
+    "total_time_h": 11.738011,
+    "total_time_s": 42256.8396
+  },
+  "Jsoup/Jsoup_63b": {
+    "category_time_h": {
+      "bug_analysis": 6.63400825,
+      "detect real bugs": 2.8535519166666665,
+      "mutant_analysis": 3.868888888888889,
+      "surviving_mutant_analysis": 20.09603238888889
+    },
+    "machine": "linux",
+    "total_time_h": 33.452481444444444,
+    "total_time_s": 120428.9332
+  },
+  "Jsoup/Jsoup_64b": {
+    "category_time_h": {
+      "bug_analysis": 0.05885122222222222,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.05885122222222222,
+    "total_time_s": 211.8644
+  },
+  "Jsoup/Jsoup_65b": {
+    "category_time_h": {
+      "bug_analysis": 0.09858641666666668,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.09858641666666668,
+    "total_time_s": 354.91110000000003
+  },
+  "Jsoup/Jsoup_66b": {
+    "category_time_h": {
+      "bug_analysis": 2.2673366944444444,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 2.2673366944444444,
+    "total_time_s": 8162.4121
+  },
+  "Jsoup/Jsoup_67b": {
+    "category_time_h": {
+      "bug_analysis": 2.283616638888889,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 2.283616638888889,
+    "total_time_s": 8221.019900000001
+  },
+  "Jsoup/Jsoup_68b": {
+    "category_time_h": {
+      "bug_analysis": 2.7362983888888888,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 2.7362983888888888,
+    "total_time_s": 9850.6742
+  },
+  "Jsoup/Jsoup_69b": {
+    "category_time_h": {
+      "bug_analysis": 0.007304361111111111,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.007304361111111111,
+    "total_time_s": 26.2957
+  },
+  "Jsoup/Jsoup_6b": {
+    "category_time_h": {
+      "bug_analysis": 0.16134611111111113,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.16134611111111113,
+    "total_time_s": 580.8460000000001
+  },
+  "Jsoup/Jsoup_70b": {
+    "category_time_h": {
+      "bug_analysis": 1.2297881666666666,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 1.2297881666666666,
+    "total_time_s": 4427.2374
+  },
+  "Jsoup/Jsoup_71b": {
+    "category_time_h": {
+      "bug_analysis": 0.004805944444444443,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.004805944444444443,
+    "total_time_s": 17.301399999999997
+  },
+  "Jsoup/Jsoup_72b": {
+    "category_time_h": {
+      "bug_analysis": 1.345445861111111,
+      "detect real bugs": 0.007382638888888889,
+      "mutant_analysis": 2.9030555555555555,
+      "surviving_mutant_analysis": 0.04473230555555555
+    },
+    "machine": "macbook",
+    "total_time_h": 4.3006163611111115,
+    "total_time_s": 15482.2189
+  },
+  "Jsoup/Jsoup_73b": {
+    "category_time_h": {
+      "bug_analysis": 0.01594747222222222,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.01594747222222222,
+    "total_time_s": 57.4109
+  },
+  "Jsoup/Jsoup_74b": {
+    "category_time_h": {
+      "bug_analysis": 0.3740193333333333,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.3740193333333333,
+    "total_time_s": 1346.4696
+  },
+  "Jsoup/Jsoup_75b": {
+    "category_time_h": {
+      "bug_analysis": 0.33211583333333333,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.33211583333333333,
+    "total_time_s": 1195.617
+  },
+  "Jsoup/Jsoup_76b": {
+    "category_time_h": {
+      "bug_analysis": 0.1651699722222222,
+      "detect real bugs": 0.05542247222222223,
+      "mutant_analysis": 13.67,
+      "surviving_mutant_analysis": 0.9128863333333332
+    },
+    "machine": "linux",
+    "total_time_h": 14.803478777777778,
+    "total_time_s": 53292.5236
+  },
+  "Jsoup/Jsoup_77b": {
+    "category_time_h": {
+      "bug_analysis": 0.04396869444444445,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.3875,
+      "surviving_mutant_analysis": 0.011666666666666667
+    },
+    "machine": "macmini",
+    "total_time_h": 0.4431353611111111,
+    "total_time_s": 1595.2873
+  },
+  "Jsoup/Jsoup_78b": {
+    "category_time_h": {
+      "bug_analysis": 0.25740636111111115,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.25740636111111115,
+    "total_time_s": 926.6629
+  },
+  "Jsoup/Jsoup_79b": {
+    "category_time_h": {
+      "bug_analysis": 3.219110138888889,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 3.219110138888889,
+    "total_time_s": 11588.7965
+  },
+  "Jsoup/Jsoup_7b": {
+    "category_time_h": {
+      "bug_analysis": 0.1736615833333333,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.1736615833333333,
+    "total_time_s": 625.1817
+  },
+  "Jsoup/Jsoup_80b": {
+    "category_time_h": {
+      "bug_analysis": 0.02409655555555556,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.02409655555555556,
+    "total_time_s": 86.7476
+  },
+  "Jsoup/Jsoup_81b": {
+    "category_time_h": {
+      "bug_analysis": 0.016365055555555556,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.016365055555555556,
+    "total_time_s": 58.9142
+  },
+  "Jsoup/Jsoup_82b": {
+    "category_time_h": {
+      "bug_analysis": 0.27734875,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.27734875,
+    "total_time_s": 998.4554999999999
+  },
+  "Jsoup/Jsoup_83b": {
+    "category_time_h": {
+      "bug_analysis": 3.3670659166666668,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 3.3670659166666668,
+    "total_time_s": 12121.4373
+  },
+  "Jsoup/Jsoup_84b": {
+    "category_time_h": {
+      "bug_analysis": 0.02647080555555556,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.02647080555555556,
+    "total_time_s": 95.29490000000001
+  },
+  "Jsoup/Jsoup_85b": {
+    "category_time_h": {
+      "bug_analysis": 0.17624947222222223,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.17624947222222223,
+    "total_time_s": 634.4981
+  },
+  "Jsoup/Jsoup_86b": {
+    "category_time_h": {
+      "bug_analysis": 0.03318888888888889,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.03318888888888889,
+    "total_time_s": 119.48
+  },
+  "Jsoup/Jsoup_87b": {
+    "category_time_h": {
+      "bug_analysis": 20.598826055555556,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 11.064722222222223,
+      "surviving_mutant_analysis": 44.69972222222222
+    },
+    "machine": "macmini",
+    "total_time_h": 76.36327049999998,
+    "total_time_s": 274907.77379999997
+  },
+  "Jsoup/Jsoup_88b": {
+    "category_time_h": {
+      "bug_analysis": 0.14207002777777777,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.14207002777777777,
+    "total_time_s": 511.4521
+  },
+  "Jsoup/Jsoup_89b": {
+    "category_time_h": {
+      "bug_analysis": 0.03395069444444444,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.03395069444444444,
+    "total_time_s": 122.2225
+  },
+  "Jsoup/Jsoup_8b": {
+    "category_time_h": {
+      "bug_analysis": 0.06346338888888889,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.06346338888888889,
+    "total_time_s": 228.4682
+  },
+  "Jsoup/Jsoup_90b": {
+    "category_time_h": {
+      "bug_analysis": 0.007242694444444444,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.007242694444444444,
+    "total_time_s": 26.0737
+  },
+  "Jsoup/Jsoup_91b": {
+    "category_time_h": {
+      "bug_analysis": 3.317541361111111,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 3.317541361111111,
+    "total_time_s": 11943.1489
+  },
+  "Jsoup/Jsoup_92b": {
+    "category_time_h": {
+      "bug_analysis": 2.5277646111111114,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 2.5277646111111114,
+    "total_time_s": 9099.9526
+  },
+  "Jsoup/Jsoup_93b": {
+    "category_time_h": {
+      "bug_analysis": 0.0270145,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.0270145,
+    "total_time_s": 97.2522
+  },
+  "Jsoup/Jsoup_9b": {
+    "category_time_h": {
+      "bug_analysis": 0.18715997222222222,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.18715997222222222,
+    "total_time_s": 673.7759
+  },
+  "JxPath/JxPath_10b": {
+    "category_time_h": {
+      "bug_analysis": 0.006850111111111111,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.006850111111111111,
+    "total_time_s": 24.6604
+  },
+  "JxPath/JxPath_11b": {
+    "category_time_h": {
+      "bug_analysis": 0.004270222222222222,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.004270222222222222,
+    "total_time_s": 15.3728
+  },
+  "JxPath/JxPath_12b": {
+    "category_time_h": {
+      "bug_analysis": 0.03344313888888889,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.03344313888888889,
+    "total_time_s": 120.3953
+  },
+  "JxPath/JxPath_13b": {
+    "category_time_h": {
+      "bug_analysis": 0.020439,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.020439,
+    "total_time_s": 73.5804
+  },
+  "JxPath/JxPath_14b": {
+    "category_time_h": {
+      "bug_analysis": 0.0019024166666666666,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.0019024166666666666,
+    "total_time_s": 6.8487
+  },
+  "JxPath/JxPath_15b": {
+    "category_time_h": {
+      "bug_analysis": 0.005968444444444445,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.005968444444444445,
+    "total_time_s": 21.4864
+  },
+  "JxPath/JxPath_16b": {
+    "category_time_h": {
+      "bug_analysis": 0.025101916666666665,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.025101916666666665,
+    "total_time_s": 90.36689999999999
+  },
+  "JxPath/JxPath_17b": {
+    "category_time_h": {
+      "bug_analysis": 0.012798,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.012798,
+    "total_time_s": 46.0728
+  },
+  "JxPath/JxPath_18b": {
+    "category_time_h": {
+      "bug_analysis": 0.023350111111111113,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.023350111111111113,
+    "total_time_s": 84.0604
+  },
+  "JxPath/JxPath_19b": {
+    "category_time_h": {
+      "bug_analysis": 0.03095888888888889,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.03095888888888889,
+    "total_time_s": 111.452
+  },
+  "JxPath/JxPath_1b": {
+    "category_time_h": {
+      "bug_analysis": 0.026456416666666666,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.026456416666666666,
+    "total_time_s": 95.2431
+  },
+  "JxPath/JxPath_20b": {
+    "category_time_h": {
+      "bug_analysis": 0.001673611111111111,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.001673611111111111,
+    "total_time_s": 6.0249999999999995
+  },
+  "JxPath/JxPath_21b": {
+    "category_time_h": {
+      "bug_analysis": 0.06892052777777778,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.06892052777777778,
+    "total_time_s": 248.1139
+  },
+  "JxPath/JxPath_22b": {
+    "category_time_h": {
+      "bug_analysis": 0.04147211111111111,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.04147211111111111,
+    "total_time_s": 149.2996
+  },
+  "JxPath/JxPath_2b": {
+    "category_time_h": {
+      "bug_analysis": 0.0020358888888888887,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.0020358888888888887,
+    "total_time_s": 7.3292
+  },
+  "JxPath/JxPath_3b": {
+    "category_time_h": {
+      "bug_analysis": 0.020472416666666667,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.020472416666666667,
+    "total_time_s": 73.7007
+  },
+  "JxPath/JxPath_4b": {
+    "category_time_h": {
+      "bug_analysis": 0.38799791666666666,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 4.872222222222222,
+      "surviving_mutant_analysis": 0.06427391666666667
+    },
+    "machine": "linux",
+    "total_time_h": 5.324494055555555,
+    "total_time_s": 19168.1786
+  },
+  "JxPath/JxPath_5b": {
+    "category_time_h": {
+      "bug_analysis": 0.0013833611111111112,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.0013833611111111112,
+    "total_time_s": 4.9801
+  },
+  "JxPath/JxPath_6b": {
+    "category_time_h": {
+      "bug_analysis": 0.03351108333333333,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.03351108333333333,
+    "total_time_s": 120.6399
+  },
+  "JxPath/JxPath_7b": {
+    "category_time_h": {
+      "bug_analysis": 0.0049906111111111115,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.0049906111111111115,
+    "total_time_s": 17.9662
+  },
+  "JxPath/JxPath_8b": {
+    "category_time_h": {
+      "bug_analysis": 0.006031972222222222,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.006031972222222222,
+    "total_time_s": 21.7151
+  },
+  "JxPath/JxPath_9b": {
+    "category_time_h": {
+      "bug_analysis": 1.71797675,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 1.71797675,
+    "total_time_s": 6184.7163
+  },
+  "Lang/Lang_10b": {
+    "category_time_h": {
+      "bug_analysis": 1.2389658333333333,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 1.2389658333333333,
+    "total_time_s": 4460.277
+  },
+  "Lang/Lang_11b": {
+    "category_time_h": {
+      "bug_analysis": 0.9322085277777777,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.9322085277777777,
+    "total_time_s": 3355.9507
+  },
+  "Lang/Lang_12b": {
+    "category_time_h": {
+      "bug_analysis": 3.4807621666666666,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 3.4807621666666666,
+    "total_time_s": 12530.7438
+  },
+  "Lang/Lang_13b": {
+    "category_time_h": {
+      "bug_analysis": 0.03705911111111111,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.03705911111111111,
+    "total_time_s": 133.4128
+  },
+  "Lang/Lang_14b": {
+    "category_time_h": {
+      "bug_analysis": 0.05364880555555556,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.05364880555555556,
+    "total_time_s": 193.1357
+  },
+  "Lang/Lang_15b": {
+    "category_time_h": {
+      "bug_analysis": 0.022836194444444447,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.022836194444444447,
+    "total_time_s": 82.2103
+  },
+  "Lang/Lang_16b": {
+    "category_time_h": {
+      "bug_analysis": 0.020349694444444445,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.020349694444444445,
+    "total_time_s": 73.2589
+  },
+  "Lang/Lang_17b": {
+    "category_time_h": {
+      "bug_analysis": 0.08830138888888889,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.08830138888888889,
+    "total_time_s": 317.885
+  },
+  "Lang/Lang_19b": {
+    "category_time_h": {
+      "bug_analysis": 0.03680397222222222,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.03680397222222222,
+    "total_time_s": 132.49429999999998
+  },
+  "Lang/Lang_1b": {
+    "category_time_h": {
+      "bug_analysis": 0.005964805555555555,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.005964805555555555,
+    "total_time_s": 21.4733
+  },
+  "Lang/Lang_20b": {
+    "category_time_h": {
+      "bug_analysis": 0.024016944444444445,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.024016944444444445,
+    "total_time_s": 86.461
+  },
+  "Lang/Lang_21b": {
+    "category_time_h": {
+      "bug_analysis": 0.014678888888888889,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.014678888888888889,
+    "total_time_s": 52.844
+  },
+  "Lang/Lang_22b": {
+    "category_time_h": {
+      "bug_analysis": 0.03784091666666666,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.03784091666666666,
+    "total_time_s": 136.22729999999999
+  },
+  "Lang/Lang_23b": {
+    "category_time_h": {
+      "bug_analysis": 0.13631905555555557,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.13631905555555557,
+    "total_time_s": 490.7486
+  },
+  "Lang/Lang_24b": {
+    "category_time_h": {
+      "bug_analysis": 0.013609138888888891,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.013609138888888891,
+    "total_time_s": 48.992900000000006
+  },
+  "Lang/Lang_26b": {
+    "category_time_h": {
+      "bug_analysis": 0.11051858333333332,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.11051858333333332,
+    "total_time_s": 397.8669
+  },
+  "Lang/Lang_27b": {
+    "category_time_h": {
+      "bug_analysis": 0.01564261111111111,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.01564261111111111,
+    "total_time_s": 56.3134
+  },
+  "Lang/Lang_28b": {
+    "category_time_h": {
+      "bug_analysis": 0.01939766666666667,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.01939766666666667,
+    "total_time_s": 69.83160000000001
+  },
+  "Lang/Lang_29b": {
+    "category_time_h": {
+      "bug_analysis": 1.5560838055555557,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 1.5560838055555557,
+    "total_time_s": 5601.9017
+  },
+  "Lang/Lang_30b": {
+    "category_time_h": {
+      "bug_analysis": 0.010814888888888891,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.010814888888888891,
+    "total_time_s": 38.933600000000006
+  },
+  "Lang/Lang_31b": {
+    "category_time_h": {
+      "bug_analysis": 0.02506127777777778,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.02506127777777778,
+    "total_time_s": 90.2206
+  },
+  "Lang/Lang_32b": {
+    "category_time_h": {
+      "bug_analysis": 4.478907055555555,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.775,
+      "surviving_mutant_analysis": 1.1353002777777779
+    },
+    "machine": "linux",
+    "total_time_h": 6.389207333333332,
+    "total_time_s": 23001.146399999998
+  },
+  "Lang/Lang_33b": {
+    "category_time_h": {
+      "bug_analysis": 0.012695833333333333,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.012695833333333333,
+    "total_time_s": 45.705
+  },
+  "Lang/Lang_34b": {
+    "category_time_h": {
+      "bug_analysis": 0.16005663888888888,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.16005663888888888,
+    "total_time_s": 576.2039
+  },
+  "Lang/Lang_35b": {
+    "category_time_h": {
+      "bug_analysis": 0.01221425,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.01221425,
+    "total_time_s": 43.9713
+  },
+  "Lang/Lang_36b": {
+    "category_time_h": {
+      "bug_analysis": 0.014605083333333334,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.014605083333333334,
+    "total_time_s": 52.578300000000006
+  },
+  "Lang/Lang_37b": {
+    "category_time_h": {
+      "bug_analysis": 0.01562508333333333,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.01562508333333333,
+    "total_time_s": 56.250299999999996
+  },
+  "Lang/Lang_38b": {
+    "category_time_h": {
+      "bug_analysis": 0.012068277777777778,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.012068277777777778,
+    "total_time_s": 43.445800000000006
+  },
+  "Lang/Lang_39b": {
+    "category_time_h": {
+      "bug_analysis": 0.014055694444444444,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.014055694444444444,
+    "total_time_s": 50.6005
+  },
+  "Lang/Lang_3b": {
+    "category_time_h": {
+      "bug_analysis": 0.007086833333333334,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.007086833333333334,
+    "total_time_s": 25.512600000000003
+  },
+  "Lang/Lang_40b": {
+    "category_time_h": {
+      "bug_analysis": 0.01452725,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.01452725,
+    "total_time_s": 52.2981
+  },
+  "Lang/Lang_41b": {
+    "category_time_h": {
+      "bug_analysis": 0.08209547222222223,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.08209547222222223,
+    "total_time_s": 295.5437
+  },
+  "Lang/Lang_42b": {
+    "category_time_h": {
+      "bug_analysis": 0.02869033333333333,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.02869033333333333,
+    "total_time_s": 103.28519999999999
+  },
+  "Lang/Lang_43b": {
+    "category_time_h": {
+      "bug_analysis": 0.013434694444444444,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.013434694444444444,
+    "total_time_s": 48.3649
+  },
+  "Lang/Lang_44b": {
+    "category_time_h": {
+      "bug_analysis": 0.01812372222222222,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.01812372222222222,
+    "total_time_s": 65.2454
+  },
+  "Lang/Lang_45b": {
+    "category_time_h": {
+      "bug_analysis": 0.018208333333333333,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.018208333333333333,
+    "total_time_s": 65.55
+  },
+  "Lang/Lang_46b": {
+    "category_time_h": {
+      "bug_analysis": 0.02596588888888889,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.02596588888888889,
+    "total_time_s": 93.4772
+  },
+  "Lang/Lang_47b": {
+    "category_time_h": {
+      "bug_analysis": 0.023976277777777777,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.023976277777777777,
+    "total_time_s": 86.3146
+  },
+  "Lang/Lang_49b": {
+    "category_time_h": {
+      "bug_analysis": 0.01410188888888889,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.01410188888888889,
+    "total_time_s": 50.7668
+  },
+  "Lang/Lang_4b": {
+    "category_time_h": {
+      "bug_analysis": 0.02537438888888889,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.02537438888888889,
+    "total_time_s": 91.3478
+  },
+  "Lang/Lang_50b": {
+    "category_time_h": {
+      "bug_analysis": 0.016205666666666667,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.016205666666666667,
+    "total_time_s": 58.3404
+  },
+  "Lang/Lang_51b": {
+    "category_time_h": {
+      "bug_analysis": 0.01489111111111111,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.01489111111111111,
+    "total_time_s": 53.608
+  },
+  "Lang/Lang_52b": {
+    "category_time_h": {
+      "bug_analysis": 0.013545749999999999,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.013545749999999999,
+    "total_time_s": 48.7647
+  },
+  "Lang/Lang_53b": {
+    "category_time_h": {
+      "bug_analysis": 0.11293138888888889,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.11293138888888889,
+    "total_time_s": 406.553
+  },
+  "Lang/Lang_54b": {
+    "category_time_h": {
+      "bug_analysis": 0.015436444444444444,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.015436444444444444,
+    "total_time_s": 55.5712
+  },
+  "Lang/Lang_55b": {
+    "category_time_h": {
+      "bug_analysis": 0.05449613888888889,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.05449613888888889,
+    "total_time_s": 196.1861
+  },
+  "Lang/Lang_56b": {
+    "category_time_h": {
+      "bug_analysis": 1.8969836944444445,
+      "detect real bugs": 0.02385027777777778,
+      "mutant_analysis": 3.028611111111111,
+      "surviving_mutant_analysis": 2.061306555555556
+    },
+    "machine": "linux",
+    "total_time_h": 7.010751638888889,
+    "total_time_s": 25238.7059
+  },
+  "Lang/Lang_57b": {
+    "category_time_h": {
+      "bug_analysis": 0.012832055555555555,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.012832055555555555,
+    "total_time_s": 46.1954
+  },
+  "Lang/Lang_58b": {
+    "category_time_h": {
+      "bug_analysis": 0.018470416666666666,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.018470416666666666,
+    "total_time_s": 66.4935
+  },
+  "Lang/Lang_59b": {
+    "category_time_h": {
+      "bug_analysis": 0.019405666666666665,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.019405666666666665,
+    "total_time_s": 69.8604
+  },
+  "Lang/Lang_5b": {
+    "category_time_h": {
+      "bug_analysis": 0.020521555555555557,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.020521555555555557,
+    "total_time_s": 73.8776
+  },
+  "Lang/Lang_60b": {
+    "category_time_h": {
+      "bug_analysis": 0.036631972222222225,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.036631972222222225,
+    "total_time_s": 131.8751
+  },
+  "Lang/Lang_61b": {
+    "category_time_h": {
+      "bug_analysis": 0.033312,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.033312,
+    "total_time_s": 119.9232
+  },
+  "Lang/Lang_62b": {
+    "category_time_h": {
+      "bug_analysis": 0.028760611111111112,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.028760611111111112,
+    "total_time_s": 103.5382
+  },
+  "Lang/Lang_63b": {
+    "category_time_h": {
+      "bug_analysis": 0.018366694444444442,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.018366694444444442,
+    "total_time_s": 66.1201
+  },
+  "Lang/Lang_64b": {
+    "category_time_h": {
+      "bug_analysis": 0.022570416666666666,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.022570416666666666,
+    "total_time_s": 81.2535
+  },
+  "Lang/Lang_65b": {
+    "category_time_h": {
+      "bug_analysis": 0.024144166666666664,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.024144166666666664,
+    "total_time_s": 86.919
+  },
+  "Lang/Lang_6b": {
+    "category_time_h": {
+      "bug_analysis": 0.18309463888888886,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.46694444444444444,
+      "surviving_mutant_analysis": 0.022222222222222223
+    },
+    "machine": "linux",
+    "total_time_h": 0.6722613055555555,
+    "total_time_s": 2420.1407
+  },
+  "Lang/Lang_7b": {
+    "category_time_h": {
+      "bug_analysis": 0.01807388888888889,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.01807388888888889,
+    "total_time_s": 65.066
+  },
+  "Lang/Lang_8b": {
+    "category_time_h": {
+      "bug_analysis": 0.03107627777777778,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.03107627777777778,
+    "total_time_s": 111.8746
+  },
+  "Lang/Lang_9b": {
+    "category_time_h": {
+      "bug_analysis": 1.2335144722222222,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 1.2335144722222222,
+    "total_time_s": 4440.6521
+  },
+  "Math/Math_100b": {
+    "category_time_h": {
+      "bug_analysis": 0.03091086111111111,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.03091086111111111,
+    "total_time_s": 111.2791
+  },
+  "Math/Math_101b": {
+    "category_time_h": {
+      "bug_analysis": 0.11617469444444445,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.11617469444444445,
+    "total_time_s": 418.2289
+  },
+  "Math/Math_102b": {
+    "category_time_h": {
+      "bug_analysis": 0.008930305555555554,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.008930305555555554,
+    "total_time_s": 32.1491
+  },
+  "Math/Math_103b": {
+    "category_time_h": {
+      "bug_analysis": 0.011521416666666666,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.011521416666666666,
+    "total_time_s": 41.4771
+  },
+  "Math/Math_104b": {
+    "category_time_h": {
+      "bug_analysis": 0.35252486111111114,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.35252486111111114,
+    "total_time_s": 1269.0895
+  },
+  "Math/Math_105b": {
+    "category_time_h": {
+      "bug_analysis": 0.010111027777777778,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.010111027777777778,
+    "total_time_s": 36.3997
+  },
+  "Math/Math_106b": {
+    "category_time_h": {
+      "bug_analysis": 0.018079,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.018079,
+    "total_time_s": 65.0844
+  },
+  "Math/Math_10b": {
+    "category_time_h": {
+      "bug_analysis": 0.04215336111111111,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.04215336111111111,
+    "total_time_s": 151.75209999999998
+  },
+  "Math/Math_11b": {
+    "category_time_h": {
+      "bug_analysis": 0.03945105555555555,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.03945105555555555,
+    "total_time_s": 142.0238
+  },
+  "Math/Math_12b": {
+    "category_time_h": {
+      "bug_analysis": 1.6023174722222224,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 1.6023174722222224,
+    "total_time_s": 5768.342900000001
+  },
+  "Math/Math_13b": {
+    "category_time_h": {
+      "bug_analysis": 2.46672525,
+      "detect real bugs": 0.44056022222222224,
+      "mutant_analysis": 0.4011111111111111,
+      "surviving_mutant_analysis": 2.1571974444444444
+    },
+    "machine": "macbook",
+    "total_time_h": 5.465594027777778,
+    "total_time_s": 19676.1385
+  },
+  "Math/Math_14b": {
+    "category_time_h": {
+      "bug_analysis": 4.468027444444444,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.2175,
+      "surviving_mutant_analysis": 0.07611111111111112
+    },
+    "machine": "macbook",
+    "total_time_h": 4.761638555555555,
+    "total_time_s": 17141.8988
+  },
+  "Math/Math_15b": {
+    "category_time_h": {
+      "bug_analysis": 7.052992027777778,
+      "detect real bugs": 0.24424741666666666,
+      "mutant_analysis": 106.69083333333333,
+      "surviving_mutant_analysis": 36.200646416666665
+    },
+    "machine": "macbook",
+    "total_time_h": 150.18871919444445,
+    "total_time_s": 540679.3891
+  },
+  "Math/Math_16b": {
+    "category_time_h": {
+      "bug_analysis": 5.188433027777777,
+      "detect real bugs": 0.1338676388888889,
+      "mutant_analysis": 75.14555555555556,
+      "surviving_mutant_analysis": 29.449871
+    },
+    "machine": "macmini",
+    "total_time_h": 109.91772722222223,
+    "total_time_s": 395703.818
+  },
+  "Math/Math_17b": {
+    "category_time_h": {
+      "bug_analysis": 0.23546055555555556,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.23546055555555556,
+    "total_time_s": 847.658
+  },
+  "Math/Math_18b": {
+    "category_time_h": {
+      "bug_analysis": 0.03612405555555556,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.03612405555555556,
+    "total_time_s": 130.0466
+  },
+  "Math/Math_19b": {
+    "category_time_h": {
+      "bug_analysis": 0.03441319444444444,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.03441319444444444,
+    "total_time_s": 123.88749999999999
+  },
+  "Math/Math_1b": {
+    "category_time_h": {
+      "bug_analysis": 0.02219238888888889,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.02219238888888889,
+    "total_time_s": 79.8926
+  },
+  "Math/Math_20b": {
+    "category_time_h": {
+      "bug_analysis": 0.06269152777777777,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.06269152777777777,
+    "total_time_s": 225.68949999999998
+  },
+  "Math/Math_21b": {
+    "category_time_h": {
+      "bug_analysis": 0.021581166666666665,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.021581166666666665,
+    "total_time_s": 77.6922
+  },
+  "Math/Math_22b": {
+    "category_time_h": {
+      "bug_analysis": 0.015991444444444444,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.015991444444444444,
+    "total_time_s": 57.5692
+  },
+  "Math/Math_23b": {
+    "category_time_h": {
+      "bug_analysis": 0.7548560833333334,
+      "detect real bugs": 0.025844,
+      "mutant_analysis": 0.9441666666666667,
+      "surviving_mutant_analysis": 0.2234778611111111
+    },
+    "machine": "macbook",
+    "total_time_h": 1.9483446111111111,
+    "total_time_s": 7014.0406
+  },
+  "Math/Math_24b": {
+    "category_time_h": {
+      "bug_analysis": 3.5544944166666665,
+      "detect real bugs": 0.6903161111111111,
+      "mutant_analysis": 1.5586111111111112,
+      "surviving_mutant_analysis": 4.805306916666666
+    },
+    "machine": "linux",
+    "total_time_h": 10.608728555555556,
+    "total_time_s": 38191.4228
+  },
+  "Math/Math_25b": {
+    "category_time_h": {
+      "bug_analysis": 0.03423572222222222,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.03423572222222222,
+    "total_time_s": 123.24860000000001
+  },
+  "Math/Math_26b": {
+    "category_time_h": {
+      "bug_analysis": 1.8432521944444442,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 1.8432521944444442,
+    "total_time_s": 6635.707899999999
+  },
+  "Math/Math_27b": {
+    "category_time_h": {
+      "bug_analysis": 0.01927475,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.01927475,
+    "total_time_s": 69.3891
+  },
+  "Math/Math_28b": {
+    "category_time_h": {
+      "bug_analysis": 0.042122527777777787,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.042122527777777787,
+    "total_time_s": 151.64110000000002
+  },
+  "Math/Math_29b": {
+    "category_time_h": {
+      "bug_analysis": 0.018060611111111114,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.018060611111111114,
+    "total_time_s": 65.01820000000001
+  },
+  "Math/Math_2b": {
+    "category_time_h": {
+      "bug_analysis": 0.07323127777777778,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.07323127777777778,
+    "total_time_s": 263.6326
+  },
+  "Math/Math_30b": {
+    "category_time_h": {
+      "bug_analysis": 0.01751475,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.01751475,
+    "total_time_s": 63.0531
+  },
+  "Math/Math_31b": {
+    "category_time_h": {
+      "bug_analysis": 0.3216496666666666,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.3216496666666666,
+    "total_time_s": 1157.9388
+  },
+  "Math/Math_32b": {
+    "category_time_h": {
+      "bug_analysis": 0.013876250000000001,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.013876250000000001,
+    "total_time_s": 49.9545
+  },
+  "Math/Math_33b": {
+    "category_time_h": {
+      "bug_analysis": 0.05596647222222223,
+      "detect real bugs": 0.005224944444444444,
+      "mutant_analysis": 1.438611111111111,
+      "surviving_mutant_analysis": 0.12079011111111111
+    },
+    "machine": "macbook",
+    "total_time_h": 1.620592638888889,
+    "total_time_s": 5834.1335
+  },
+  "Math/Math_34b": {
+    "category_time_h": {
+      "bug_analysis": 0.010669333333333334,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.010669333333333334,
+    "total_time_s": 38.409600000000005
+  },
+  "Math/Math_35b": {
+    "category_time_h": {
+      "bug_analysis": 3.811062583333333,
+      "detect real bugs": 0.8997973333333333,
+      "mutant_analysis": 0.23222222222222222,
+      "surviving_mutant_analysis": 29.44721397222222
+    },
+    "machine": "linux",
+    "total_time_h": 34.390296111111105,
+    "total_time_s": 123805.06599999999
+  },
+  "Math/Math_36b": {
+    "category_time_h": {
+      "bug_analysis": 0.15816380555555556,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.15816380555555556,
+    "total_time_s": 569.3897000000001
+  },
+  "Math/Math_37b": {
+    "category_time_h": {
+      "bug_analysis": 0.04091338888888889,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.04091338888888889,
+    "total_time_s": 147.2882
+  },
+  "Math/Math_38b": {
+    "category_time_h": {
+      "bug_analysis": 0.021026555555555555,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.021026555555555555,
+    "total_time_s": 75.6956
+  },
+  "Math/Math_39b": {
+    "category_time_h": {
+      "bug_analysis": 0.23769486111111113,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.23769486111111113,
+    "total_time_s": 855.7015
+  },
+  "Math/Math_3b": {
+    "category_time_h": {
+      "bug_analysis": 0.0520988611111111,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.0520988611111111,
+    "total_time_s": 187.55589999999998
+  },
+  "Math/Math_40b": {
+    "category_time_h": {
+      "bug_analysis": 0.0679905,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.0679905,
+    "total_time_s": 244.76579999999998
+  },
+  "Math/Math_41b": {
+    "category_time_h": {
+      "bug_analysis": 0.027094583333333335,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.027094583333333335,
+    "total_time_s": 97.54050000000001
+  },
+  "Math/Math_42b": {
+    "category_time_h": {
+      "bug_analysis": 0.07262972222222222,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.07262972222222222,
+    "total_time_s": 261.467
+  },
+  "Math/Math_43b": {
+    "category_time_h": {
+      "bug_analysis": 0.18992408333333335,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.18992408333333335,
+    "total_time_s": 683.7267
+  },
+  "Math/Math_44b": {
+    "category_time_h": {
+      "bug_analysis": 1.1963877777777778,
+      "detect real bugs": 0.03519563888888889,
+      "mutant_analysis": 0.9061111111111111,
+      "surviving_mutant_analysis": 0.9225515000000001
+    },
+    "machine": "macbook",
+    "total_time_h": 3.060246027777778,
+    "total_time_s": 11016.8857
+  },
+  "Math/Math_45b": {
+    "category_time_h": {
+      "bug_analysis": 0.1293911111111111,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.1293911111111111,
+    "total_time_s": 465.808
+  },
+  "Math/Math_46b": {
+    "category_time_h": {
+      "bug_analysis": 0.024211888888888887,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.024211888888888887,
+    "total_time_s": 87.16279999999999
+  },
+  "Math/Math_47b": {
+    "category_time_h": {
+      "bug_analysis": 0.8207755277777778,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.8207755277777778,
+    "total_time_s": 2954.7919
+  },
+  "Math/Math_48b": {
+    "category_time_h": {
+      "bug_analysis": 0.05203047222222222,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.05203047222222222,
+    "total_time_s": 187.3097
+  },
+  "Math/Math_49b": {
+    "category_time_h": {
+      "bug_analysis": 0.02738475,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.02738475,
+    "total_time_s": 98.5851
+  },
+  "Math/Math_4b": {
+    "category_time_h": {
+      "bug_analysis": 0.04793705555555555,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.04793705555555555,
+    "total_time_s": 172.5734
+  },
+  "Math/Math_50b": {
+    "category_time_h": {
+      "bug_analysis": 0.051103972222222224,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.051103972222222224,
+    "total_time_s": 183.9743
+  },
+  "Math/Math_51b": {
+    "category_time_h": {
+      "bug_analysis": 0.04656116666666667,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.04656116666666667,
+    "total_time_s": 167.6202
+  },
+  "Math/Math_52b": {
+    "category_time_h": {
+      "bug_analysis": 0.02278036111111111,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.02278036111111111,
+    "total_time_s": 82.0093
+  },
+  "Math/Math_53b": {
+    "category_time_h": {
+      "bug_analysis": 0.09997283333333333,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.09997283333333333,
+    "total_time_s": 359.9022
+  },
+  "Math/Math_54b": {
+    "category_time_h": {
+      "bug_analysis": 0.043712722222222215,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "macbook",
+    "total_time_h": 0.043712722222222215,
+    "total_time_s": 157.36579999999998
+  },
+  "Math/Math_55b": {
+    "category_time_h": {
+      "bug_analysis": 0.029953972222222226,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.029953972222222226,
+    "total_time_s": 107.83430000000001
+  },
+  "Math/Math_56b": {
+    "category_time_h": {
+      "bug_analysis": 0.018364277777777778,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.018364277777777778,
+    "total_time_s": 66.1114
+  },
+  "Math/Math_57b": {
+    "category_time_h": {
+      "bug_analysis": 1.981339638888889,
+      "detect real bugs": 0.33994608333333337,
+      "mutant_analysis": 0.7625,
+      "surviving_mutant_analysis": 4.832995638888889
+    },
+    "machine": "linux",
+    "total_time_h": 7.916781361111111,
+    "total_time_s": 28500.4129
+  },
+  "Math/Math_58b": {
+    "category_time_h": {
+      "bug_analysis": 0.8000615,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 1.1519444444444444,
+      "surviving_mutant_analysis": 0.5916666666666667
+    },
+    "machine": "linux",
+    "total_time_h": 2.5436726111111114,
+    "total_time_s": 9157.2214
+  },
+  "Math/Math_59b": {
+    "category_time_h": {
+      "bug_analysis": 0.01588527777777778,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.01588527777777778,
+    "total_time_s": 57.187000000000005
+  },
+  "Math/Math_5b": {
+    "category_time_h": {
+      "bug_analysis": 0.017055944444444446,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.017055944444444446,
+    "total_time_s": 61.4014
+  },
+  "Math/Math_60b": {
+    "category_time_h": {
+      "bug_analysis": 0.04643163888888889,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.04643163888888889,
+    "total_time_s": 167.1539
+  },
+  "Math/Math_61b": {
+    "category_time_h": {
+      "bug_analysis": 0.019229583333333335,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.019229583333333335,
+    "total_time_s": 69.2265
+  },
+  "Math/Math_62b": {
+    "category_time_h": {
+      "bug_analysis": 5.629240527777777,
+      "detect real bugs": 0.8941166388888889,
+      "mutant_analysis": 0.31444444444444447,
+      "surviving_mutant_analysis": 6.073941333333333
+    },
+    "machine": "linux",
+    "total_time_h": 12.911742944444443,
+    "total_time_s": 46482.2746
+  },
+  "Math/Math_63b": {
+    "category_time_h": {
+      "bug_analysis": 0.02048822222222222,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.02048822222222222,
+    "total_time_s": 73.7576
+  },
+  "Math/Math_64b": {
+    "category_time_h": {
+      "bug_analysis": 2.2920469444444445,
+      "detect real bugs": 0.31809830555555557,
+      "mutant_analysis": 5.683888888888889,
+      "surviving_mutant_analysis": 4.382470361111111
+    },
+    "machine": "linux",
+    "total_time_h": 12.6765045,
+    "total_time_s": 45635.4162
+  },
+  "Math/Math_65b": {
+    "category_time_h": {
+      "bug_analysis": 0.19921186111111114,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.19921186111111114,
+    "total_time_s": 717.1627000000001
+  },
+  "Math/Math_66b": {
+    "category_time_h": {
+      "bug_analysis": 0.4065081388888888,
+      "detect real bugs": 0.029886083333333334,
+      "mutant_analysis": 2.513333333333333,
+      "surviving_mutant_analysis": 0.3047431388888889
+    },
+    "machine": "macmini",
+    "total_time_h": 3.254470694444444,
+    "total_time_s": 11716.0945
+  },
+  "Math/Math_67b": {
+    "category_time_h": {
+      "bug_analysis": 0.019873722222222223,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.019873722222222223,
+    "total_time_s": 71.5454
+  },
+  "Math/Math_68b": {
+    "category_time_h": {
+      "bug_analysis": 0.9525479166666667,
+      "detect real bugs": 0.4359976666666667,
+      "mutant_analysis": 3.1797222222222223,
+      "surviving_mutant_analysis": 2.7841932222222225
+    },
+    "machine": "macmini",
+    "total_time_h": 7.352461027777778,
+    "total_time_s": 26468.8597
+  },
+  "Math/Math_69b": {
+    "category_time_h": {
+      "bug_analysis": 0.034630277777777774,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.034630277777777774,
+    "total_time_s": 124.669
+  },
+  "Math/Math_6b": {
+    "category_time_h": {
+      "bug_analysis": 5.259242611111111,
+      "detect real bugs": 0.9169633333333334,
+      "mutant_analysis": 31.656388888888888,
+      "surviving_mutant_analysis": 7.9178376111111115
+    },
+    "machine": "macbook",
+    "total_time_h": 45.75043244444444,
+    "total_time_s": 164701.5568
+  },
+  "Math/Math_70b": {
+    "category_time_h": {
+      "bug_analysis": 0.01798638888888889,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.01798638888888889,
+    "total_time_s": 64.751
+  },
+  "Math/Math_71b": {
+    "category_time_h": {
+      "bug_analysis": 0.017813194444444444,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.017813194444444444,
+    "total_time_s": 64.1275
+  },
+  "Math/Math_72b": {
+    "category_time_h": {
+      "bug_analysis": 0.01756461111111111,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.01756461111111111,
+    "total_time_s": 63.2326
+  },
+  "Math/Math_73b": {
+    "category_time_h": {
+      "bug_analysis": 0.019161111111111108,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.019161111111111108,
+    "total_time_s": 68.97999999999999
+  },
+  "Math/Math_74b": {
+    "category_time_h": {
+      "bug_analysis": 4.206754444444445,
+      "detect real bugs": 0.47698836111111115,
+      "mutant_analysis": 15.05888888888889,
+      "surviving_mutant_analysis": 2.92104425
+    },
+    "machine": "macmini",
+    "total_time_h": 22.663675944444442,
+    "total_time_s": 81589.2334
+  },
+  "Math/Math_75b": {
+    "category_time_h": {
+      "bug_analysis": 0.017381194444444446,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.017381194444444446,
+    "total_time_s": 62.572300000000006
+  },
+  "Math/Math_76b": {
+    "category_time_h": {
+      "bug_analysis": 0.2502518055555556,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 1.2880555555555555,
+      "surviving_mutant_analysis": 0.015555555555555555
+    },
+    "machine": "macmini",
+    "total_time_h": 1.5538629166666666,
+    "total_time_s": 5593.9065
+  },
+  "Math/Math_77b": {
+    "category_time_h": {
+      "bug_analysis": 0.014060722222222223,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.014060722222222223,
+    "total_time_s": 50.6186
+  },
+  "Math/Math_78b": {
+    "category_time_h": {
+      "bug_analysis": 0.4078007777777778,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.4078007777777778,
+    "total_time_s": 1468.0828000000001
+  },
+  "Math/Math_79b": {
+    "category_time_h": {
+      "bug_analysis": 0.028147638888888885,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.028147638888888885,
+    "total_time_s": 101.33149999999999
+  },
+  "Math/Math_7b": {
+    "category_time_h": {
+      "bug_analysis": 1.2133875833333334,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 1.2133875833333334,
+    "total_time_s": 4368.1953
+  },
+  "Math/Math_80b": {
+    "category_time_h": {
+      "bug_analysis": 0.012275166666666667,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.012275166666666667,
+    "total_time_s": 44.1906
+  },
+  "Math/Math_81b": {
+    "category_time_h": {
+      "bug_analysis": 0.594287138888889,
+      "detect real bugs": 0.18979672222222221,
+      "mutant_analysis": 19.781388888888888,
+      "surviving_mutant_analysis": 1.0917373611111112
+    },
+    "machine": "linux",
+    "total_time_h": 21.65721011111111,
+    "total_time_s": 77965.9564
+  },
+  "Math/Math_82b": {
+    "category_time_h": {
+      "bug_analysis": 0.06295580555555555,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.06295580555555555,
+    "total_time_s": 226.6409
+  },
+  "Math/Math_83b": {
+    "category_time_h": {
+      "bug_analysis": 0.09700505555555555,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.09700505555555555,
+    "total_time_s": 349.21819999999997
+  },
+  "Math/Math_84b": {
+    "category_time_h": {
+      "bug_analysis": 0.7342787222222222,
+      "detect real bugs": 0.12905758333333334,
+      "mutant_analysis": 0.3436111111111111,
+      "surviving_mutant_analysis": 0.6032131944444444
+    },
+    "machine": "linux",
+    "total_time_h": 1.810160611111111,
+    "total_time_s": 6516.5782
+  },
+  "Math/Math_85b": {
+    "category_time_h": {
+      "bug_analysis": 0.07066344444444445,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.07066344444444445,
+    "total_time_s": 254.3884
+  },
+  "Math/Math_86b": {
+    "category_time_h": {
+      "bug_analysis": 0.04125452777777778,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.04125452777777778,
+    "total_time_s": 148.5163
+  },
+  "Math/Math_87b": {
+    "category_time_h": {
+      "bug_analysis": 0.088204,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.088204,
+    "total_time_s": 317.5344
+  },
+  "Math/Math_88b": {
+    "category_time_h": {
+      "bug_analysis": 0.08539880555555555,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.08539880555555555,
+    "total_time_s": 307.4357
+  },
+  "Math/Math_89b": {
+    "category_time_h": {
+      "bug_analysis": 0.015100055555555556,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.015100055555555556,
+    "total_time_s": 54.3602
+  },
+  "Math/Math_8b": {
+    "category_time_h": {
+      "bug_analysis": 0.02257316666666667,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.02257316666666667,
+    "total_time_s": 81.2634
+  },
+  "Math/Math_90b": {
+    "category_time_h": {
+      "bug_analysis": 0.015134777777777778,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.015134777777777778,
+    "total_time_s": 54.4852
+  },
+  "Math/Math_91b": {
+    "category_time_h": {
+      "bug_analysis": 0.014143888888888888,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.014143888888888888,
+    "total_time_s": 50.918
+  },
+  "Math/Math_92b": {
+    "category_time_h": {
+      "bug_analysis": 0.06776544444444445,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.06776544444444445,
+    "total_time_s": 243.9556
+  },
+  "Math/Math_93b": {
+    "category_time_h": {
+      "bug_analysis": 0.019554361111111113,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.019554361111111113,
+    "total_time_s": 70.3957
+  },
+  "Math/Math_94b": {
+    "category_time_h": {
+      "bug_analysis": 0.16284413888888888,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.16284413888888888,
+    "total_time_s": 586.2389
+  },
+  "Math/Math_95b": {
+    "category_time_h": {
+      "bug_analysis": 0.013298999999999998,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.013298999999999998,
+    "total_time_s": 47.8764
+  },
+  "Math/Math_96b": {
+    "category_time_h": {
+      "bug_analysis": 0.05892775,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.05892775,
+    "total_time_s": 212.1399
+  },
+  "Math/Math_97b": {
+    "category_time_h": {
+      "bug_analysis": 0.0819496388888889,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.0819496388888889,
+    "total_time_s": 295.0187
+  },
+  "Math/Math_98b": {
+    "category_time_h": {
+      "bug_analysis": 0.015076250000000001,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.015076250000000001,
+    "total_time_s": 54.2745
+  },
+  "Math/Math_99b": {
+    "category_time_h": {
+      "bug_analysis": 0.19820994444444442,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.19820994444444442,
+    "total_time_s": 713.5558
+  },
+  "Math/Math_9b": {
+    "category_time_h": {
+      "bug_analysis": 0.02260411111111111,
+      "detect real bugs": 0.0,
+      "mutant_analysis": 0.0,
+      "surviving_mutant_analysis": 0.0
+    },
+    "machine": "linux",
+    "total_time_h": 0.02260411111111111,
+    "total_time_s": 81.3748
+  }
+}

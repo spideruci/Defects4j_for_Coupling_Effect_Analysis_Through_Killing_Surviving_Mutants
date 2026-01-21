@@ -14,6 +14,8 @@ Which contains the necessary code to generate fault-revealing augmentations from
   - [Source Code](#source-code)
 - [Generated Assertions](#generated-assertions)
 
+- [Experimental Cost](#experimental-cost)
+
 
 # Artifact Description and PDF Documentation
 
@@ -137,5 +139,26 @@ This mutant-derived assertion is capable of detecting the corresponding real bug
 
 Specifically, all generated assertions follow the form org.helper.Assertions.verify(...).
 The corresponding test method names and test source files in which these assertions are inserted are recorded in the assertion specifications.
+
+
+# Experimental Cost
+
+We recorded the runtime of each stage of our experiment for every real bug.  
+The detailed timing results are reported in `data/time.json`.
+
+Due to huge computational cost and limited resources, all experiments were conducted across three machines:
+- **Mac mini (Apple M4)**
+- **MacBook Pro (2021, Apple M1 Pro)**
+- **Linux x86_64 system** with an Intel Core i7-950 CPU (4 cores / 8 threads, 3.07 GHz)
+
+For each real bug, we report the execution time of four stages:
+1. **Bug analysis (`bug_analysis`)**:  
+   Analyzing real bugs and generating assertions based on real bugs, including validating each generated assertion individually.
+2. **Mutation analysis (`mutation_analysis`)**:  
+   Running mutation analysis and identifying surviving mutants.
+3. **Surviving mutant analysis (`surviving_mutant_analysis`)**:  
+   Analyzing each surviving mutant and generating validated assertions to kill the mutant.
+4. **Real-bug detection (`detect real bugs`)**:  
+   Validating whether the generated assertions can detect real bugs.
 
 
