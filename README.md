@@ -16,6 +16,8 @@ Which contains the necessary code to generate fault-revealing augmentations from
 
 - [Experimental Cost](#experimental-cost)
 
+- [Analysis on Mutation Operators](#analysis-on-mutation-operators)
+
 
 # Artifact Description and PDF Documentation
 
@@ -57,7 +59,7 @@ To support our analysis, we introduce **nine new Defects4J commands**, several o
 For example, the command `defects4j patch [-b|-f]` switches the current program version between the buggy and fixed variants.  
 All nine commands, along with their intended workflows and usage examples, are described on pages 4–9 of the accompanying documentation ([doc.pdf](doc.pdf)).
 
-## How to Get Started with the Experiment
+## How to Get Started
 
 Our implementation supports experiments on **Mac mini (M4)**, **MacBook Pro (2021, Apple M1 Pro)**, and **Linux x86_64 systems** equipped with an **Intel Core i7-950 CPU** (4 cores / 8 threads, 3.07 GHz).  
 We therefore expect the implementation to run on most **macOS** and **Linux-based** machines.
@@ -162,3 +164,18 @@ For each real bug, we report the execution time of four stages:
    Validating whether the generated assertions can detect real bugs.
 
 
+# Analysis on Mutation Operators
+
+
+![Figure caption](operator.png)
+
+
+We also analyze how mutation operators contribute to real-bug detection. The figure summarizes, for each operator, the participation of its surviving mutants in the mutation-based improvement pipeline.
+
+Each stacked bar shows the relevant surviving mutants produced by an operator, partitioned into non-killable mutants, killable but non-detecting mutants, and killable mutants whose assertions can detect real bugs; percentages are normalized per operator.
+
+For example, the `LVR` operator produces 3,224 relevant surviving mutants, of which 22.6\% are killable but with no augmentations detecting real bugs and 16.8\% yield bug-detecting assertions, meaning roughly 40\% of killable `LVR` mutants can contribute to real-bug detection.
+
+Overall, mutation operators contribute unevenly to real-bug detection.
+Operators such as `LVR` (Local Variable Replacement) and `STD`(Statement Deletion) produce high proportions of killable surviving mutants (39.4\% and 41.7\%, respectively), and a substantial fraction of these are coupled to real bugs and yield real-bug-detecting assertions (42\% for `LVR` and 47\% for `STD`).
+In contrast, other operators exhibit lower killability or lower chances to produce coupled mutants.
