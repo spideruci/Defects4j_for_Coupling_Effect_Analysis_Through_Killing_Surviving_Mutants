@@ -81,20 +81,31 @@ Pages 3–4 provide a step-by-step example demonstrating how to run the experime
 
 ### Run with Docker
 
-A self-contained image is provided so the example can be run without installing the
-toolchain (Java 11, Subversion, Perl/CPAN, Python 3, jq) by hand. The image mirrors
-the CI environment and bakes in `init.sh` (project repositories, EvoSuite, Randoop,
-Gradle deps, build-analyzer); the Major mutation framework ships vendored in the repo.
+A self-contained image is provided so the Cli-2 example can be run without installing the
+toolchain (Java 11, Subversion, Perl/CPAN, Python 3, jq) by hand. The image bakes in `init.sh`
+(project repositories, EvoSuite, Randoop, Gradle deps, build-analyzer) and the vendored Major
+mutation framework, so it runs offline once obtained. It is built for `linux/amd64` (runs
+natively on x86-64; on Apple Silicon it runs automatically via Docker's emulation).
+
+**Option A — download the prebuilt image (no build).** The image is archived on Zenodo
+(DOI [10.5281/zenodo.21013233](https://doi.org/10.5281/zenodo.21013233)) as
+`coupling-effect-cli2.tar.gz` (~2.3 GB). Download that file from the Zenodo record, then:
 
 ```bash
-# Use the prebuilt image (fastest), or build locally with the line below.
-# Prebuilt: docker pull ghcr.io/spideruci/defects4j_for_coupling_effect_analysis_through_killing_surviving_mutants:latest
-# Build (downloads dependencies during the build; takes a while):
+docker load -i coupling-effect-cli2.tar.gz     # restores image: coupling-effect:cli-2
+docker run --rm coupling-effect:cli-2          # runs the Cli-2 example and validates outputs
+```
+
+**Option B — build it yourself** (downloads dependencies during the build; ~20–40 min):
+
+```bash
 docker build -t coupling-effect:cli-2 .
-
-# Run the assertion-generation pipeline for Cli-2 and validate the outputs
 docker run --rm coupling-effect:cli-2
+```
 
+**More usage:**
+
+```bash
 # Run any other curated bug (must have a coverages/<Project>_<Version> file)
 docker run --rm coupling-effect:cli-2 Lang 11b
 
@@ -102,10 +113,9 @@ docker run --rm coupling-effect:cli-2 Lang 11b
 docker run --rm -it coupling-effect:cli-2 bash
 ```
 
-The container prints a per-check summary (bug-revealing assertions, validated
-mutant-derived assertions, and mutant-derived assertions that detect the real bug)
-and exits non-zero if any check fails. A published image is built by the
-[`Docker image`](.github/workflows/docker.yml) workflow and pushed to GHCR on `master`.
+The container prints a per-check summary (bug-revealing assertions, validated mutant-derived
+assertions, and mutant-derived assertions that detect the real bug) and exits non-zero if any
+check fails.
 
 ## Continuous Integration
 
