@@ -9,7 +9,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 120
 
     steps:
       - name: Checkout repository
@@ -131,33 +131,58 @@ jobs:
           echo "::endgroup::"
 
       # ----------------------------------------------------------------------
-      # OPTIONAL — full coupling-effect analysis on a single program version.
-      # This mirrors the experiment in the paper (state extraction, mutation
-      # analysis, surviving-mutant analysis, real-bug detection) and validates
-      # the produced JSON outputs. It is heavy (~13+ min per version locally,
-      # longer in CI), so it is left commented out by default. Uncomment to
-      # turn it into a real end-to-end gate.
+      # Assertion-generation flow on the canonical Cli-2 example.
+      # Runs the full pipeline (state_utils/full_state_analysis.sh):
+      #   - real-bug side:  defects4j states -> generate_specification ->
+      #                     transform.jar -> update_oracle_helper -b -> verify
+      #                     => test_outcome.json
+      #   - mutant side:    mutation_analysis -> surviving mutants ->
+      #                     states_on_mutants -> generate_specification -m ->
+      #                     transform.jar -m -> update_oracle_helper -m -> verify
+      #                     => test_outcome_mutants.json, detect_real_bugs.json
+      # Then validates the generated assertion outputs.
+      # This is the heavy stage (~13+ min locally, longer in CI).
       # ----------------------------------------------------------------------
-      # - name: Full coupling-effect analysis (Cli-2) + output validation
-      #   shell: bash
-      #   run: |
-      #     set -euo pipefail
-      #     WORKDIR="$RUNNER_TEMP/cli_2_full"
-      #     defects4j checkout -p Cli -v 2b -w "$WORKDIR"
-      #     cd "$WORKDIR"
-      #
-      #     # Drives: defects4j patch/states/generate_specification,
-      #     # transform.jar, update_oracle_helper, and the verify_*.sh scripts.
-      #     "$GITHUB_WORKSPACE/state_utils/full_state_analysis.sh"
-      #
-      #     # Validate that at least one bug-revealing test was produced.
-      #     if [ ! -f test_outcome.json ]; then
-      #       echo "❌ test_outcome.json was not generated"
-      #       exit 1
-      #     fi
-      #     if jq -e '.[] | select(.outcome == "accept")' test_outcome.json >/dev/null 2>&1; then
-      #       echo "✅ Found at least one bug-revealing test."
-      #     else
-      #       echo "❌ No bug-revealing test was accepted."
-      #       exit 1
-      #     fi
+      - name: Assertion generation (Cli-2) + output validation
+        shell: bash
+        timeout-minutes: 90
+        run: |
+          set -uo pipefail
+          WORKDIR="$RUNNER_TEMP/cli_2_assert"
+          defects4j checkout -p Cli -v 2b -w "$WORKDIR"
+
+          # full_state_analysis.sh copies a subset of helpers itself but also
+          # invokes the *_repeat.sh variants, so pre-stage the whole toolset
+          # (scripts, transform.jar, python helpers) into the working dir.
+          cp "$GITHUB_WORKSPACE"/state_utils/folder_utils/* "$WORKDIR"/
+          cp "$GITHUB_WORKSPACE"/state_utils/full_state_analysis.sh "$WORKDIR"/
+          cd "$WORKDIR"
+          chmod +x ./*.sh
+
+          echo "::group::Run full assertion-generation pipeline (real bug + mutants)"
+          bash full_state_analysis.sh
+          echo "::endgroup::"
+
+          echo "::group::Validate generated assertion outputs"
+          fail=0
+          check_outcome () {
+            local file="$1" label="$2" desc="$3"
+            if [[ ! -f "$file" ]]; then
+              echo "❌ $desc: $file was not produced"; fail=1; return
+            fi
+            local n
+            n=$(jq --arg o "$label" '[.[] | select(.outcome == $o)] | length' "$file" 2>/dev/null || echo 0)
+            echo "• $desc → $n entr(y/ies) with outcome=\"$label\""
+            if [[ "${n:-0}" -lt 1 ]]; then
+              echo "❌ $desc: expected at least one \"$label\" outcome in $file"; fail=1
+            else
+              echo "✅ $desc"
+            fi
+          }
+
+          check_outcome test_outcome.json         accept  "Real-bug-derived assertions (bug-revealing)"
+          check_outcome test_outcome_mutants.json accept  "Mutant-derived assertions (validated)"
+          check_outcome detect_real_bugs.json     killing "Mutant-derived assertions detecting the real bug"
+          echo "::endgroup::"
+
+          exit $fail
