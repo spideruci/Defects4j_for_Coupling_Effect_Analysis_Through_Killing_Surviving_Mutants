@@ -6,6 +6,7 @@ Which contains the necessary code to generate fault-revealing augmentations from
 
 [![CI (Java11 + Maven + Defects4J)](https://github.com/spideruci/Defects4j_for_Coupling_Effect_Analysis_Through_Killing_Surviving_Mutants/actions/workflows/ci.yml/badge.svg)](https://github.com/spideruci/Defects4j_for_Coupling_Effect_Analysis_Through_Killing_Surviving_Mutants/actions/workflows/ci.yml)
 [![Docker image](https://github.com/spideruci/Defects4j_for_Coupling_Effect_Analysis_Through_Killing_Surviving_Mutants/actions/workflows/docker.yml/badge.svg)](https://github.com/spideruci/Defects4j_for_Coupling_Effect_Analysis_Through_Killing_Surviving_Mutants/actions/workflows/docker.yml)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXXX)
 
 The environment, smoke tests, and the full assertion-generation pipeline are continuously
 exercised on GitHub Actions, and a ready-to-run Docker image is published to GHCR — see
@@ -14,6 +15,7 @@ exercised on GitHub Actions, and a ready-to-run Docker image is published to GHC
 
 ## Table of Contents
 
+- [Artifact Evaluation (ISSTA 2026)](#artifact-evaluation-issta-2026)
 - [Artifact Description and PDF Documentation](#artifact-description-and-pdf-documentation)
 - [Table of Real Bugs Detectable Through Assertion Augmentation](#table-of-real-bugs-detectble-through-assertion-augmentation)
 - [Code](#code)
@@ -27,6 +29,59 @@ exercised on GitHub Actions, and a ready-to-run Docker image is published to GHC
 
 - [Analysis on Mutation Operators](#analysis-on-mutation-operators)
 
+
+# Artifact Evaluation (ISSTA 2026)
+
+**Badge applied for: _Artifacts Available_.**
+
+The artifact is permanently archived on Zenodo with a citable DOI:
+
+> **DOI:** [10.5281/zenodo.XXXXXXXX](https://doi.org/10.5281/zenodo.XXXXXXXX)
+> <!-- TODO(authors): replace XXXXXXXX with the real Zenodo DOI once this repo is archived. -->
+
+Supporting files for evaluation:
+
+- [`STATUS.md`](STATUS.md) — badge requested and justification
+- [`REQUIREMENTS.md`](REQUIREMENTS.md) — hardware/software requirements
+- [`LICENSE`](LICENSE) — MIT License
+
+### Getting Started (pull ~5 min; Cli-2 run ~13 min)
+
+The simplest way to exercise the artifact is the provided Docker image (no host setup) —
+pull the prebuilt image (fast) or build it locally:
+
+```bash
+# Option A (recommended) — pull the prebuilt image, skipping the multi-GB build
+docker pull ghcr.io/spideruci/defects4j_for_coupling_effect_analysis_through_killing_surviving_mutants:latest
+docker run --rm ghcr.io/spideruci/defects4j_for_coupling_effect_analysis_through_killing_surviving_mutants:latest
+
+# Option B — build locally instead (downloads project repos + tools; ~20–40 min)
+docker build -t coupling-effect:cli-2 .
+docker run --rm coupling-effect:cli-2
+```
+
+Either path runs the assertion-generation pipeline on **Cli-2** (~13 min on an M1 Pro,
+longer under amd64 emulation) and prints a per-check summary. For a native setup instead,
+see [How to Get Started](#how-to-get-started) and pages 2–4 of [`doc.pdf`](doc.pdf).
+
+### Step-by-step: reproduce one program version
+
+```bash
+# inside the container, or a native checkout with Defects4J on PATH
+defects4j get_project Cli 2b        # checks out Cli-2b + prerequisites
+cd Cli_2b
+bash full_state_analysis.sh         # real-bug + mutant assertion generation
+```
+
+Expected outputs in `Cli_2b/` (validated automatically by the entrypoint and in CI):
+
+- `test_outcome.json` — real-bug-derived, bug-revealing assertions (Cli-2: **12** `accept`)
+- `test_outcome_mutants.json` — validated mutant-derived assertions (Cli-2: **9** `accept`)
+- `detect_real_bugs.json` — mutant-derived assertions that detect the real bug (Cli-2: **9** `killing`)
+
+The generated assertions for every studied program version are also provided under
+[`data/`](data) (see [Generated Assertions](#generated-assertions)), and the pipeline is
+continuously exercised on GitHub Actions (see [Continuous Integration](#continuous-integration)).
 
 # Artifact Description and PDF Documentation
 
@@ -86,7 +141,9 @@ the CI environment and bakes in `init.sh` (project repositories, EvoSuite, Rando
 Gradle deps, build-analyzer); the Major mutation framework ships vendored in the repo.
 
 ```bash
-# Build (downloads dependencies during the build; takes a while)
+# Use the prebuilt image (fastest), or build locally with the line below.
+# Prebuilt: docker pull ghcr.io/spideruci/defects4j_for_coupling_effect_analysis_through_killing_surviving_mutants:latest
+# Build (downloads dependencies during the build; takes a while):
 docker build -t coupling-effect:cli-2 .
 
 # Run the assertion-generation pipeline for Cli-2 and validate the outputs
@@ -174,7 +231,7 @@ program-version directory.
 | Mutant Assertions | `mutant_oracle_specification/` | Assertion specifications derived from mutants |
 | Mutant Assertions | `oracles_mutants/` | Generated Java test files containing mutant-derived assertions |
 | Mutant Assertions | `test_outcome_mutants.json` | Validation results; entries marked as `accept` kill the corresponding mutants |
-| Mutant Assertions | `detect_real_bug.json` | Mutant-derived assertions that also detect real bugs (marked as `killing`) |
+| Mutant Assertions | `detect_real_bugs.json` | Mutant-derived assertions that also detect real bugs (marked as `killing`) |
 
 
 
@@ -198,7 +255,7 @@ Similarly, assertions derived from mutants are stored in the
 For mutant-derived assertions, file names indicate whether the assertion is able to detect the real bug.
 
 For example,
-`data/Cli/Cli_2b/validated_mutant_derived_assertions/5_assertion_detect_bugs.java`
+`data/Cli/Cli_2b/validated_mutant_derived_assertions/5_assertion_detect_bug.java`
 is an assertion generated from surviving mutants for **Cli-2b**.
 This mutant-derived assertion is capable of detecting the corresponding real bug.
 
