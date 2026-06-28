@@ -6,7 +6,7 @@ Which contains the necessary code to generate fault-revealing augmentations from
 
 [![CI (Java11 + Maven + Defects4J)](https://github.com/spideruci/Defects4j_for_Coupling_Effect_Analysis_Through_Killing_Surviving_Mutants/actions/workflows/ci.yml/badge.svg)](https://github.com/spideruci/Defects4j_for_Coupling_Effect_Analysis_Through_Killing_Surviving_Mutants/actions/workflows/ci.yml)
 [![Docker image](https://github.com/spideruci/Defects4j_for_Coupling_Effect_Analysis_Through_Killing_Surviving_Mutants/actions/workflows/docker.yml/badge.svg)](https://github.com/spideruci/Defects4j_for_Coupling_Effect_Analysis_Through_Killing_Surviving_Mutants/actions/workflows/docker.yml)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXXX)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21013233.svg)](https://doi.org/10.5281/zenodo.21013233)
 
 The environment, smoke tests, and the full assertion-generation pipeline are continuously
 exercised on GitHub Actions, and a ready-to-run Docker image is published to GHCR — see
