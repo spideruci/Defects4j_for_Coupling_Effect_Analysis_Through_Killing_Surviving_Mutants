@@ -376,7 +376,6 @@
                                 <version>1.9.0</version>
 
                 <!--                                <scope>system</scope>-->
-                <!--                                <systemPath>/Users/superhang/PIT_STATE_DEV/pitest/target/pitest-1.0.0-SNAPSHOT.jar</systemPath>-->
                 <dependencies>
 
                     <dependency>

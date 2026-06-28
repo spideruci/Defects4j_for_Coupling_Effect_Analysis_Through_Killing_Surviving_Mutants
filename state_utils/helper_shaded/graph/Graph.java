@@ -524,6 +524,9 @@ public class Graph {
             return true;
         if (s.toLowerCase().contains("lambda") || s.toLowerCase().contains("$$") || s.toLowerCase().contains("/0x"))
             return true;
+        // "superhang" is the username in absolute paths on Hang's personal
+        // machine (e.g. /Users/superhang/...); hard-coded on purpose to scrub
+        // those local paths out of observed state. Only relevant when run there.
         if (s.toLowerCase().contains("superhang"))
             return true;
 
