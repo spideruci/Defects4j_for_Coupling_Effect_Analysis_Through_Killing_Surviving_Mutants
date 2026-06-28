@@ -1,0 +1,163 @@
+name: CI (Java11 + Maven + Defects4J)
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Java 11
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "11"
+          cache: maven
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y git perl cpanminus build-essential jq unzip wget curl
+
+      # Defects4J pulls some project repositories over Subversion (>= 1.8).
+      - name: Install Subversion (svn)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y subversion
+          svn --version
+
+      - name: Verify svn version >= 1.8
+        run: |
+          VERSION=$(svn --version --quiet)
+          echo "Detected svn version: $VERSION"
+          REQUIRED=1.8
+          if [ "$(printf '%s\n' "$REQUIRED" "$VERSION" | sort -V | head -n1)" != "$REQUIRED" ]; then
+            echo "svn version must be >= $REQUIRED"
+            exit 1
+          fi
+
+      - name: Install Perl and CPAN dependencies (Defects4J framework)
+        shell: bash
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y perl cpanminus build-essential
+
+          # Core modules required by the Defects4J framework.
+          sudo cpanm --notest \
+            DBI \
+            DBD::CSV \
+            JSON \
+            JSON::PP \
+            JSON::Parse \
+            XML::Parser \
+            XML::Parser::PerlSAX \
+            List::Util \
+            File::Basename \
+            File::Path \
+            File::Copy \
+            Getopt::Long \
+            Time::HiRes \
+            String::Interpolate \
+            URI \
+            Proc::ProcessTable
+
+          perl -v
+
+      - name: Install Perl dependencies from cpanfile
+        run: |
+          cpanm --notest --installdeps .
+
+      - name: Set up Python 3
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # The analysis scripts in this repo (analyzeOracle.py and friends) rely
+      # only on the Python standard library, so no extra pip packages are needed.
+      - name: Verify Python
+        run: python --version
+
+      # Run init.sh (downloads project repos, Major, test-generation tools, etc.)
+      - name: Run init.sh
+        run: |
+          chmod +x ./init.sh
+          ./init.sh
+
+      - name: Add Defects4J to PATH
+        run: echo "$GITHUB_WORKSPACE/framework/bin" >> $GITHUB_PATH
+
+      - name: Verify Defects4J installation
+        run: which defects4j
+
+      # ----------------------------------------------------------------------
+      # Smoke test: exercise core Defects4J AND the custom commands this
+      # artifact adds (e.g. `defects4j patch -b|-f`) on the canonical Cli-2
+      # example, without paying for the full ~13 min mutation pipeline.
+      # ----------------------------------------------------------------------
+      - name: Defects4J + custom-command smoke test (Cli-2)
+        shell: bash
+        run: |
+          set -euo pipefail
+          WORKDIR="$RUNNER_TEMP/cli_2"
+          defects4j checkout -p Cli -v 2b -w "$WORKDIR"
+          cd "$WORKDIR"
+
+          echo "::group::Compile buggy version"
+          defects4j compile
+          echo "::endgroup::"
+
+          echo "::group::Run test suite"
+          defects4j test
+          echo "::endgroup::"
+
+          # Exercise the custom `patch` command added by this artifact:
+          # switch buggy -> fixed -> buggy and confirm each variant compiles.
+          echo "::group::Switch to fixed variant (defects4j patch -f)"
+          defects4j patch -f
+          defects4j compile
+          echo "::endgroup::"
+
+          echo "::group::Switch back to buggy variant (defects4j patch -b)"
+          defects4j patch -b
+          defects4j compile
+          echo "::endgroup::"
+
+      # ----------------------------------------------------------------------
+      # OPTIONAL — full coupling-effect analysis on a single program version.
+      # This mirrors the experiment in the paper (state extraction, mutation
+      # analysis, surviving-mutant analysis, real-bug detection) and validates
+      # the produced JSON outputs. It is heavy (~13+ min per version locally,
+      # longer in CI), so it is left commented out by default. Uncomment to
+      # turn it into a real end-to-end gate.
+      # ----------------------------------------------------------------------
+      # - name: Full coupling-effect analysis (Cli-2) + output validation
+      #   shell: bash
+      #   run: |
+      #     set -euo pipefail
+      #     WORKDIR="$RUNNER_TEMP/cli_2_full"
+      #     defects4j checkout -p Cli -v 2b -w "$WORKDIR"
+      #     cd "$WORKDIR"
+      #
+      #     # Drives: defects4j patch/states/generate_specification,
+      #     # transform.jar, update_oracle_helper, and the verify_*.sh scripts.
+      #     "$GITHUB_WORKSPACE/state_utils/full_state_analysis.sh"
+      #
+      #     # Validate that at least one bug-revealing test was produced.
+      #     if [ ! -f test_outcome.json ]; then
+      #       echo "❌ test_outcome.json was not generated"
+      #       exit 1
+      #     fi
+      #     if jq -e '.[] | select(.outcome == "accept")' test_outcome.json >/dev/null 2>&1; then
+      #       echo "✅ Found at least one bug-revealing test."
+      #     else
+      #       echo "❌ No bug-revealing test was accepted."
+      #       exit 1
+      #     fi
