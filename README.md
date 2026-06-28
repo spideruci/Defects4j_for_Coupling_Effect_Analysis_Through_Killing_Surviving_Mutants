@@ -4,6 +4,13 @@ This repository contains the artifact accompanying our ISSTA 2026 paper submissi
 Our artifact extends **Defects4J version 3.0.1**  https://github.com/rjust/defects4j/tree/v3.0.1
 Which contains the necessary code to generate fault-revealing augmentations from real bugs and surviving mutants.
 
+[![CI (Java11 + Maven + Defects4J)](https://github.com/spideruci/Defects4j_for_Coupling_Effect_Analysis_Through_Killing_Surviving_Mutants/actions/workflows/ci.yml/badge.svg)](https://github.com/spideruci/Defects4j_for_Coupling_Effect_Analysis_Through_Killing_Surviving_Mutants/actions/workflows/ci.yml)
+[![Docker image](https://github.com/spideruci/Defects4j_for_Coupling_Effect_Analysis_Through_Killing_Surviving_Mutants/actions/workflows/docker.yml/badge.svg)](https://github.com/spideruci/Defects4j_for_Coupling_Effect_Analysis_Through_Killing_Surviving_Mutants/actions/workflows/docker.yml)
+
+The environment, smoke tests, and the full assertion-generation pipeline are continuously
+exercised on GitHub Actions, and a ready-to-run Docker image is published to GHCR — see
+[Continuous Integration](#continuous-integration) and [Run with Docker](#run-with-docker).
+
 
 ## Table of Contents
 
@@ -12,6 +19,7 @@ Which contains the necessary code to generate fault-revealing augmentations from
 - [Code](#code)
   - [How to Get Started](#how-to-get-started)
     - [Run with Docker](#run-with-docker)
+  - [Continuous Integration](#continuous-integration)
   - [Source Code](#source-code)
 - [Generated Assertions](#generated-assertions)
 
@@ -95,6 +103,35 @@ The container prints a per-check summary (bug-revealing assertions, validated
 mutant-derived assertions, and mutant-derived assertions that detect the real bug)
 and exits non-zero if any check fails. A published image is built by the
 [`Docker image`](.github/workflows/docker.yml) workflow and pushed to GHCR on `master`.
+
+## Continuous Integration
+
+Two GitHub Actions workflows (under [`.github/workflows`](.github/workflows)) keep the
+artifact reproducible and exercise the pipeline on every push and pull request to `master`.
+
+### `CI (Java11 + Maven + Defects4J)` — [`ci.yml`](.github/workflows/ci.yml)
+
+Provisions the environment from scratch (Java 11, Subversion ≥ 1.8, Perl/CPAN modules,
+Python 3, `jq`), runs `init.sh`, puts `framework/bin` on `PATH`, and then:
+
+1. **Defects4J + custom-command smoke test** — checks out **Cli-2b**, compiles it, runs
+   the test suite, and exercises the custom `defects4j patch -f / -b` command to confirm
+   the buggy ⇄ fixed switching added by this artifact works.
+2. **Assertion-generation pipeline + output validation** — runs the documented
+   `defects4j get_project Cli 2b` → `full_state_analysis.sh` flow end-to-end and asserts
+   the generated outputs:
+   - `test_outcome.json` has ≥ 1 `accept` — a real-bug-derived, bug-revealing assertion;
+   - `test_outcome_mutants.json` has ≥ 1 `accept` — a validated mutant-derived assertion;
+   - `detect_real_bugs.json` has ≥ 1 `killing` — a mutant-derived assertion that detects the real bug.
+
+   For Cli-2 this currently yields **12** bug-revealing, **9** validated mutant-derived,
+   and **9** real-bug-detecting assertions.
+
+### `Docker image` — [`docker.yml`](.github/workflows/docker.yml)
+
+Builds the image described in [Run with Docker](#run-with-docker), runs a lightweight
+smoke test (`defects4j` is on `PATH` and the custom commands resolve), and on `master`
+publishes the image to the GitHub Container Registry (GHCR).
 
 ## Source Code
 The Defects4J customizations introduced in this work are implemented directly in this repository.  
