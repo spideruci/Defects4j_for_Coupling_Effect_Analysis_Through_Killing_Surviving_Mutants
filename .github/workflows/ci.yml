@@ -148,16 +148,14 @@ jobs:
         timeout-minutes: 90
         run: |
           set -uo pipefail
-          WORKDIR="$RUNNER_TEMP/cli_2_assert"
-          defects4j checkout -p Cli -v 2b -w "$WORKDIR"
+          cd "$RUNNER_TEMP"
 
-          # full_state_analysis.sh copies a subset of helpers itself but also
-          # invokes the *_repeat.sh variants, so pre-stage the whole toolset
-          # (scripts, transform.jar, python helpers) into the working dir.
-          cp "$GITHUB_WORKSPACE"/state_utils/folder_utils/* "$WORKDIR"/
-          cp "$GITHUB_WORKSPACE"/state_utils/full_state_analysis.sh "$WORKDIR"/
-          cd "$WORKDIR"
-          chmod +x ./*.sh
+          # `get_project` is the documented entry point: it checks out Cli_2b,
+          # stages `passing_covering_tests` (from coverages/Cli_2b) — a
+          # prerequisite of `defects4j states` — and copies every helper script
+          # plus full_state_analysis.sh into the Cli_2b working directory.
+          defects4j get_project Cli 2b
+          cd Cli_2b
 
           echo "::group::Run full assertion-generation pipeline (real bug + mutants)"
           bash full_state_analysis.sh
