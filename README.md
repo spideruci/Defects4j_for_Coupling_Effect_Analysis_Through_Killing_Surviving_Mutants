@@ -1,6 +1,6 @@
 # 📄 Artifact Documentation
 
-This repository contains the artifact accompanying our ISSTA 2026 paper submission.
+This repository contains the artifact accompanying our paper, **accepted at ISSTA 2026** 🎉
 Our artifact extends **Defects4J version 3.0.1**  https://github.com/rjust/defects4j/tree/v3.0.1
 Which contains the necessary code to generate fault-revealing augmentations from real bugs and surviving mutants.
 
