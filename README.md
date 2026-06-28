@@ -15,7 +15,6 @@ exercised on GitHub Actions, and a ready-to-run Docker image is published to GHC
 
 ## Table of Contents
 
-- [Artifact Evaluation (ISSTA 2026)](#artifact-evaluation-issta-2026)
 - [Artifact Description and PDF Documentation](#artifact-description-and-pdf-documentation)
 - [Table of Real Bugs Detectable Through Assertion Augmentation](#table-of-real-bugs-detectble-through-assertion-augmentation)
 - [Code](#code)
@@ -29,59 +28,6 @@ exercised on GitHub Actions, and a ready-to-run Docker image is published to GHC
 
 - [Analysis on Mutation Operators](#analysis-on-mutation-operators)
 
-
-# Artifact Evaluation (ISSTA 2026)
-
-**Badge applied for: _Artifacts Available_.**
-
-The artifact is permanently archived on Zenodo with a citable DOI:
-
-> **DOI:** [10.5281/zenodo.XXXXXXXX](https://doi.org/10.5281/zenodo.XXXXXXXX)
-> <!-- TODO(authors): replace XXXXXXXX with the real Zenodo DOI once this repo is archived. -->
-
-Supporting files for evaluation:
-
-- [`STATUS.md`](STATUS.md) — badge requested and justification
-- [`REQUIREMENTS.md`](REQUIREMENTS.md) — hardware/software requirements
-- [`LICENSE`](LICENSE) — MIT License
-
-### Getting Started (pull ~5 min; Cli-2 run ~13 min)
-
-The simplest way to exercise the artifact is the provided Docker image (no host setup) —
-pull the prebuilt image (fast) or build it locally:
-
-```bash
-# Option A (recommended) — pull the prebuilt image, skipping the multi-GB build
-docker pull ghcr.io/spideruci/defects4j_for_coupling_effect_analysis_through_killing_surviving_mutants:latest
-docker run --rm ghcr.io/spideruci/defects4j_for_coupling_effect_analysis_through_killing_surviving_mutants:latest
-
-# Option B — build locally instead (downloads project repos + tools; ~20–40 min)
-docker build -t coupling-effect:cli-2 .
-docker run --rm coupling-effect:cli-2
-```
-
-Either path runs the assertion-generation pipeline on **Cli-2** (~13 min on an M1 Pro,
-longer under amd64 emulation) and prints a per-check summary. For a native setup instead,
-see [How to Get Started](#how-to-get-started) and pages 2–4 of [`doc.pdf`](doc.pdf).
-
-### Step-by-step: reproduce one program version
-
-```bash
-# inside the container, or a native checkout with Defects4J on PATH
-defects4j get_project Cli 2b        # checks out Cli-2b + prerequisites
-cd Cli_2b
-bash full_state_analysis.sh         # real-bug + mutant assertion generation
-```
-
-Expected outputs in `Cli_2b/` (validated automatically by the entrypoint and in CI):
-
-- `test_outcome.json` — real-bug-derived, bug-revealing assertions (Cli-2: **12** `accept`)
-- `test_outcome_mutants.json` — validated mutant-derived assertions (Cli-2: **9** `accept`)
-- `detect_real_bugs.json` — mutant-derived assertions that detect the real bug (Cli-2: **9** `killing`)
-
-The generated assertions for every studied program version are also provided under
-[`data/`](data) (see [Generated Assertions](#generated-assertions)), and the pipeline is
-continuously exercised on GitHub Actions (see [Continuous Integration](#continuous-integration)).
 
 # Artifact Description and PDF Documentation
 
