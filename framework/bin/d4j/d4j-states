@@ -161,9 +161,6 @@ if ($pid eq "Closure") {
         <fileset dir="${d4j.home}/state_utils/external_jars">
             <include name="**/*.jar"/>
         </fileset>
-        <fileset dir="/Users/superhang/Downloads/defects4j-3.0.1/state_utils/external_jars">
-          <include name="**/*.jar"/>
-        </fileset>
     </classpath>
 XML
 

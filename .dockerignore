@@ -1,0 +1,30 @@
+# Keep the build context small. The image bakes in `init.sh`, which downloads
+# project_repos / EvoSuite / Randoop / Gradle deps at build time, so we don't
+# ship those, and the paper's pre-generated reference outputs (data/) are not
+# needed to *run* the example.
+#
+# DO NOT exclude major/ (the vendored Major mutation framework + bundled Ant),
+# coverages/ (required by `defects4j get_project`/`states`), or state_utils/
+# (the pipeline + helper scripts) — they are copied into the image and the
+# assertion-generation pipeline fails without them.
+
+.git
+.gitignore
+.github
+
+# Pre-generated reference assertions/specs from the paper (~800 MB). Not needed
+# to run the pipeline; mount it at runtime if you want to diff against it.
+data/
+
+# Populated by init.sh during the build (also git-ignored in the repo).
+project_repos/*
+!project_repos/get_repos.sh
+work/
+documentation/
+framework/test/*.log
+
+# Local / editor / OS cruft
+**/.DS_Store
+**/*.log
+scratchpad/
+*.tmp

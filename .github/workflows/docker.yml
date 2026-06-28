@@ -1,0 +1,66 @@
+name: Docker image
+
+on:
+  push:
+    branches: [ "master" ]
+    paths:
+      - "Dockerfile"
+      - ".dockerignore"
+      - "docker/**"
+      - "init.sh"
+      - "cpanfile"
+      - "project_repos/get_repos.sh"
+      - ".github/workflows/docker.yml"
+  pull_request:
+    branches: [ "master" ]
+    paths:
+      - "Dockerfile"
+      - ".dockerignore"
+      - "docker/**"
+      - "init.sh"
+      - "cpanfile"
+      - "project_repos/get_repos.sh"
+      - ".github/workflows/docker.yml"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Compute (lowercase) image name
+        run: echo "IMAGE=ghcr.io/$(echo '${{ github.repository }}' | tr '[:upper:]' '[:lower:]')" >> "$GITHUB_ENV"
+
+      - name: Build image
+        run: docker build -t "$IMAGE:ci" .
+
+      # Lightweight smoke test: the heavy end-to-end pipeline is exercised by the
+      # main CI workflow; here we just confirm the image is wired up correctly.
+      - name: Smoke test (Defects4J on PATH + custom commands)
+        run: |
+          docker run --rm "$IMAGE:ci" which defects4j
+          docker run --rm "$IMAGE:ci" defects4j info -p Cli | head -n 20
+
+      - name: Log in to GitHub Container Registry
+        if: github.event_name != 'pull_request'
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Tag and push
+        if: github.event_name != 'pull_request'
+        run: |
+          docker tag "$IMAGE:ci" "$IMAGE:latest"
+          docker tag "$IMAGE:ci" "$IMAGE:${GITHUB_SHA::12}"
+          docker push "$IMAGE:latest"
+          docker push "$IMAGE:${GITHUB_SHA::12}"
+          echo "Pushed $IMAGE:latest and $IMAGE:${GITHUB_SHA::12}"

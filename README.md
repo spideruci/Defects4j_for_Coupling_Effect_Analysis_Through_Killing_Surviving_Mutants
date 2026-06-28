@@ -11,6 +11,7 @@ Which contains the necessary code to generate fault-revealing augmentations from
 - [Table of Real Bugs Detectable Through Assertion Augmentation](#table-of-real-bugs-detectble-through-assertion-augmentation)
 - [Code](#code)
   - [How to Get Started](#how-to-get-started)
+    - [Run with Docker](#run-with-docker)
   - [Source Code](#source-code)
 - [Generated Assertions](#generated-assertions)
 
@@ -68,6 +69,32 @@ The first section of the accompanying documentation ([doc.pdf](doc.pdf)) describ
 In particular, pages 2–3 list the required dependencies and their versions for configuring Defects4J.
 
 Pages 3–4 provide a step-by-step example demonstrating how to run the experiment for **Cli-2**, which takes approximately **13 minutes** on a **MacBook Pro (2021, M1 Pro)**.
+
+### Run with Docker
+
+A self-contained image is provided so the example can be run without installing the
+toolchain (Java 11, Subversion, Perl/CPAN, Python 3, jq) by hand. The image mirrors
+the CI environment and bakes in `init.sh` (project repositories, EvoSuite, Randoop,
+Gradle deps, build-analyzer); the Major mutation framework ships vendored in the repo.
+
+```bash
+# Build (downloads dependencies during the build; takes a while)
+docker build -t coupling-effect:cli-2 .
+
+# Run the assertion-generation pipeline for Cli-2 and validate the outputs
+docker run --rm coupling-effect:cli-2
+
+# Run any other curated bug (must have a coverages/<Project>_<Version> file)
+docker run --rm coupling-effect:cli-2 Lang 11b
+
+# Drop into an interactive shell
+docker run --rm -it coupling-effect:cli-2 bash
+```
+
+The container prints a per-check summary (bug-revealing assertions, validated
+mutant-derived assertions, and mutant-derived assertions that detect the real bug)
+and exits non-zero if any check fails. A published image is built by the
+[`Docker image`](.github/workflows/docker.yml) workflow and pushed to GHCR on `master`.
 
 ## Source Code
 The Defects4J customizations introduced in this work are implemented directly in this repository.  
