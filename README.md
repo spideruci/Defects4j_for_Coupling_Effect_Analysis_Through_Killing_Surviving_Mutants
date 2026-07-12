@@ -101,7 +101,8 @@ docker build -t coupling-effect:cli-2 .
 docker run --rm coupling-effect:cli-2
 ```
 
-**More usage:**
+**More usage.** When a run finishes, the container prints these follow-up commands; you can also
+run them directly:
 
 ```bash
 # Run any other curated bug (must have a coverages/<Project>_<Version> file).

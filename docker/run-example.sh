@@ -70,8 +70,30 @@ check_outcome test_outcome_mutants.json accept  "Mutant-derived assertions (vali
 check_outcome detect_real_bugs.json     killing "Mutant-derived assertions detecting the real bug"
 
 if [[ "$fail" -ne 0 ]]; then
-  echo "❌ ${PROJECT}-${VERSION}: one or more validations failed"
-  exit 1
+  echo "❌ ${PROJECT}-${VERSION}: not all outputs were produced (see the per-check summary above)."
+  echo "   Note: some bugs generate real-bug assertions but no mutant-derived detection"
+  echo "   (0 killing) — killing surviving mutants does not always detect the real bug."
+else
+  echo "🎉 ${PROJECT}-${VERSION}: assertion generation completed and validated."
+  echo "   Outputs in: ${WORKDIR}/${DIR}"
 fi
-echo "🎉 ${PROJECT}-${VERSION}: assertion generation completed and validated."
-echo "   Outputs in: ${WORKDIR}/${DIR}"
+
+# ---------------------------------------------------------------------------
+# Point the reviewer at how to run more bugs with the SAME image, once the
+# first example has finished.
+# ---------------------------------------------------------------------------
+echo ""
+echo "=========================================================="
+echo "▶ Run another bug"
+echo "=========================================================="
+echo "This image runs the same pipeline for any curated Defects4J version"
+echo "(one that ships a coverages/<Project>_<Version> file; see the README table):"
+echo ""
+echo "    docker run --rm coupling-effect:cli-2 run-example.sh <Project> <Version>"
+echo ""
+echo "  examples:"
+echo "    docker run --rm coupling-effect:cli-2 run-example.sh Lang 6b"
+echo "    docker run --rm coupling-effect:cli-2 run-example.sh Cli 4b"
+echo "=========================================================="
+
+exit "$fail"
