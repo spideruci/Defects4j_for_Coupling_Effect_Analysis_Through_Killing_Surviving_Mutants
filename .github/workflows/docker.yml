@@ -47,26 +47,35 @@ jobs:
           docker run --rm "$IMAGE:ci" which defects4j
           docker run --rm "$IMAGE:ci" defects4j info -p Cli | head -n 20
 
-      # "More usage" regression guard for the reviewer-reported `exec: Lang: not found`.
-      # The documented `docker run IMG run-example.sh <Project> <Version>` form must pass its
-      # arguments TO run-example.sh (not exec them as a command). We probe with a bogus bug so
-      # this is fast and deterministic: run-example.sh must RECEIVE the args and fail cleanly at
-      # get_project — NOT the entrypoint trying to exec a program named after the argument.
-      # We intentionally do NOT assert per-bug mutant-kill counts here: mutation analysis is
-      # nondeterministic across environments (e.g., a "detectable" bug can yield 0 killings on a
-      # CI runner), so full result validation lives in the deterministic Cli-2 stage of ci.yml.
-      - name: More-usage check (parameterized command reaches run-example.sh)
+      # "More usage" check: run the DOCUMENTED command for a real second bug,
+      #   docker run IMG run-example.sh Lang 11b
+      # end-to-end on the built image. This both (a) guards the reviewer-reported
+      # `exec: Lang: not found` — the args must reach run-example.sh — and (b) exercises
+      # the coupling LIMIT: for Lang-11b, killing surviving mutants yields no real-bug-
+      # detecting assertion, so run-example.sh exits non-zero (0 `killing`). That is the
+      # EXPECTED scientific outcome, not a CI failure — so we pass when the pipeline RAN
+      # (its validation summary is printed) and do not gate on the kill count (mutation
+      # analysis is nondeterministic across environments). The positive 12/9/9 validation
+      # lives in the deterministic Cli-2 stage of ci.yml.
+      - name: More-usage check (run-example.sh Lang 11b — coupling-limit demo)
         run: |
           set +e
-          out="$(docker run --rm "$IMAGE:ci" run-example.sh __PROBE__ 0z 2>&1)"
-          echo "$out" | tail -n 8
-          if echo "$out" | grep -q "exec: __PROBE__: not found"; then
-            echo "❌ arguments were exec'd as a command — the reviewer's bug is present"; exit 1
+          out="$(docker run --rm "$IMAGE:ci" run-example.sh Lang 11b 2>&1)"
+          rc=$?
+          echo "$out" | grep -E "Preparing Lang-11b|Running assertion-generation|Real-bug-derived|Mutant-derived|entr\(y/ies\)|killing test found|No bug detecting|get_project Lang 11b failed" | tail -n 20
+          echo "---- run-example.sh exit code: $rc (non-zero is expected for a non-coupled bug) ----"
+          if echo "$out" | grep -q "get_project Lang 11b failed"; then
+            echo "❌ get_project Lang 11b failed (missing coverage?)"; exit 1
           fi
-          if echo "$out" | grep -q "get_project __PROBE__ 0z failed"; then
-            echo "✅ arguments correctly passed to run-example.sh (documented form works)"; exit 0
+          if ! echo "$out" | grep -q "Preparing Lang-11b"; then
+            echo "❌ 'Lang 11b' did not reach run-example.sh (regression: exec issue)"; exit 1
           fi
-          echo "❌ unexpected output from run-example.sh"; exit 1
+          if ! echo "$out" | grep -q "Validating generated assertion outputs"; then
+            echo "❌ pipeline did not run to the validation stage for Lang 11b"; exit 1
+          fi
+          echo "✅ 'docker run IMG run-example.sh Lang 11b' ran the full pipeline end-to-end."
+          echo "   0 real-bug-detecting mutant assertions is the expected coupling-limit result for Lang-11b."
+          exit 0
 
       - name: Log in to GitHub Container Registry
         if: github.event_name != 'pull_request'

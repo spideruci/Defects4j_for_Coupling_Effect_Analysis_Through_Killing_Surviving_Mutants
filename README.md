@@ -153,12 +153,15 @@ Python 3, `jq`), runs `init.sh`, puts `framework/bin` on `PATH`, and then:
 
 Builds the image described in [Run with Docker](#run-with-docker), runs a lightweight
 smoke test (`defects4j` is on `PATH` and the custom commands resolve), then a **more-usage
-check** that verifies the documented `docker run … run-example.sh <Project> <Version>` form
-correctly passes its arguments to the entrypoint script (guarding the reviewer-reported
-`exec: … not found`), and on `master` publishes the image to the GitHub Container Registry
-(GHCR). Full result validation (the `accept`/`accept`/`killing` checks) lives in the
-deterministic **Cli-2** stage of [`ci.yml`](.github/workflows/ci.yml); per-bug mutant-kill
-counts are not asserted in CI because mutation analysis varies across environments.
+check** that runs the documented command for a real second bug end-to-end on the built image —
+`docker run … run-example.sh Lang 11b`. This guards the reviewer-reported `exec: … not found`
+and exercises the **coupling limit**: for Lang-11b, killing surviving mutants yields **no**
+real-bug-detecting assertion (0 `killing`), so `run-example.sh` reports a negative result and
+exits non-zero — the *expected* scientific outcome, which the check treats as success (it
+verifies the pipeline ran, not a specific kill count, since mutation analysis varies across
+environments). The positive result validation (12 / 9 / 9) lives in the deterministic **Cli-2**
+stage of [`ci.yml`](.github/workflows/ci.yml). On `master`, the image is published to the GitHub
+Container Registry (GHCR).
 
 ## Source Code
 The Defects4J customizations introduced in this work are implemented directly in this repository.  
