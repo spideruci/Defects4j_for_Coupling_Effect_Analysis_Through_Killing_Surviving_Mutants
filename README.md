@@ -152,8 +152,11 @@ Python 3, `jq`), runs `init.sh`, puts `framework/bin` on `PATH`, and then:
 ### `Docker image` — [`docker.yml`](.github/workflows/docker.yml)
 
 Builds the image described in [Run with Docker](#run-with-docker), runs a lightweight
-smoke test (`defects4j` is on `PATH` and the custom commands resolve), and on `master`
-publishes the image to the GitHub Container Registry (GHCR).
+smoke test (`defects4j` is on `PATH` and the custom commands resolve), then a **more-usage
+check** that runs a second detectable bug through the documented
+`docker run … run-example.sh Cli 4b` form on the built image and validates its generated
+assertions (`accept`/`accept`/`killing`), and on `master` publishes the image to the GitHub
+Container Registry (GHCR).
 
 ## Source Code
 The Defects4J customizations introduced in this work are implemented directly in this repository.  

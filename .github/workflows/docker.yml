@@ -41,12 +41,22 @@ jobs:
       - name: Build image
         run: docker build -t "$IMAGE:ci" .
 
-      # Lightweight smoke test: the heavy end-to-end pipeline is exercised by the
-      # main CI workflow; here we just confirm the image is wired up correctly.
+      # Lightweight smoke test: confirm the image is wired up correctly.
       - name: Smoke test (Defects4J on PATH + custom commands)
         run: |
           docker run --rm "$IMAGE:ci" which defects4j
           docker run --rm "$IMAGE:ci" defects4j info -p Cli | head -n 20
+
+      # "More usage" regression check: run a DIFFERENT bug through the exact
+      # documented parameterized form — `docker run IMG run-example.sh <P> <V>` —
+      # and verify its results on the freshly built image. Cli-4b is a detectable
+      # bug (6 real-bug + 6 mutant-derived bug-detecting assertions), so
+      # run-example.sh's built-in validation must pass: it exits non-zero unless
+      # test_outcome.json/test_outcome_mutants.json each have >=1 `accept` and
+      # detect_real_bugs.json has >=1 `killing`. This guards the reviewer-reported
+      # case where `docker run IMG Lang 11b` (missing run-example.sh) failed.
+      - name: More-usage check (run a second bug via the documented command)
+        run: docker run --rm "$IMAGE:ci" run-example.sh Cli 4b
 
       - name: Log in to GitHub Container Registry
         if: github.event_name != 'pull_request'
