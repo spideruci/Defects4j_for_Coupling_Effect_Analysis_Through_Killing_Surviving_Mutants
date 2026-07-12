@@ -116,6 +116,16 @@ The container prints a per-check summary (bug-revealing assertions, validated mu
 assertions, and mutant-derived assertions that detect the real bug) and exits non-zero if any
 check fails.
 
+> **Note on scope and cost.** The Docker image demonstrates the pipeline on individual program
+> versions (e.g., Cli-2, Lang-11b); it does **not** re-run the entire study, and we did not
+> systematically re-execute all bugs inside the container — the full methodology and per-version
+> results are documented in [`doc.pdf`](doc.pdf). As reported in the paper, the experiment was
+> conducted on a **Mac mini (Apple M4)**, a **MacBook Pro (2021, Apple M1 Pro)**, and a
+> **Linux x86_64** machine (Intel Core i7-950, 4 cores / 8 threads, 3.07 GHz). It is inherently
+> expensive: as noted on **page 11** of the paper, the full experiment took nearly **two months**
+> to complete, owing to the intrinsic cost of mutation testing (repeated compilation, test
+> execution, and per-mutant analysis).
+
 ## Continuous Integration
 
 Two GitHub Actions workflows (under [`.github/workflows`](.github/workflows)) keep the
