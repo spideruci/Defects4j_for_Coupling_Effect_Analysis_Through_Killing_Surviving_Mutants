@@ -184,3 +184,43 @@ jobs:
           echo "::endgroup::"
 
           exit $fail
+
+      # ----------------------------------------------------------------------
+      # Lang-11b — the COUPLING-LIMIT case. Runs the same documented pipeline for
+      # a real second bug. Unlike Cli-2, killing Lang-11b's surviving mutants
+      # yields NO real-bug-detecting assertion, so full_state_analysis.sh exits
+      # non-zero (0 `killing`). That is the EXPECTED scientific outcome (Lang-11b
+      # is not among the 104 detectable bugs), not a failure — so this stage
+      # passes when the pipeline RAN (it produced the real-bug output) and only
+      # reports the counts; it does not gate on the mutant-kill count (which is
+      # nondeterministic across environments).
+      # ----------------------------------------------------------------------
+      - name: Assertion generation (Lang-11b) — coupling-limit case
+        shell: bash
+        timeout-minutes: 90
+        run: |
+          set -uo pipefail
+          cd "$RUNNER_TEMP"
+          defects4j get_project Lang 11b
+          cd Lang_11b
+
+          echo "::group::Run full assertion-generation pipeline for Lang-11b"
+          # A non-coupled bug exits non-zero ("No bug detecting tests ...") — expected.
+          bash full_state_analysis.sh || true
+          echo "::endgroup::"
+
+          echo "::group::Report Lang-11b outcome (coupling limit)"
+          if [[ ! -f test_outcome.json ]]; then
+            echo "❌ pipeline did not run (no test_outcome.json produced)"; exit 1
+          fi
+          acc=$(jq '[.[] | select(.outcome=="accept")] | length' test_outcome.json 2>/dev/null || echo 0)
+          if [[ -f detect_real_bugs.json ]]; then
+            kil=$(jq '[.[] | select(.outcome=="killing")] | length' detect_real_bugs.json 2>/dev/null || echo 0)
+          else
+            kil="0 (mutant side not reached — stopped at the real-bug gate)"
+          fi
+          echo "• Lang-11b real-bug-derived accepts : $acc"
+          echo "• Lang-11b mutant-derived killings  : $kil"
+          echo "✅ Lang-11b pipeline ran. No real-bug-detecting mutant assertion is the EXPECTED"
+          echo "   coupling-limit result — killing surviving mutants cannot detect this real bug."
+          echo "::endgroup::"

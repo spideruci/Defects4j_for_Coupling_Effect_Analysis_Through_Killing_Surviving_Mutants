@@ -148,6 +148,13 @@ Python 3, `jq`), runs `init.sh`, puts `framework/bin` on `PATH`, and then:
 
    For Cli-2 this currently yields **12** bug-revealing, **9** validated mutant-derived,
    and **9** real-bug-detecting assertions.
+3. **Coupling-limit case (Lang-11b)** — runs the same
+   `defects4j get_project Lang 11b` → `full_state_analysis.sh` flow for a real second bug.
+   Unlike Cli-2, **Lang-11b is not among the 104 detectable bugs**: killing its surviving
+   mutants yields **no** real-bug-detecting assertion (0 `killing`), so the pipeline exits
+   non-zero — the *expected* outcome. This stage therefore passes when the pipeline **ran**
+   (it reports the counts) and does not gate on the mutant-kill count. It demonstrates the
+   limit of the coupling effect and guards the `run-example.sh Lang 11b` usage in CI.
 
 ### `Docker image` — [`docker.yml`](.github/workflows/docker.yml)
 
