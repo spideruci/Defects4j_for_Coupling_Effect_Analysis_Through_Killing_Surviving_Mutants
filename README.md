@@ -106,7 +106,7 @@ docker run --rm coupling-effect:cli-2
 ```bash
 # Run any other curated bug (must have a coverages/<Project>_<Version> file).
 # Name the entrypoint script explicitly so the arguments are passed to it:
-docker run --rm coupling-effect:cli-2 run-example.sh Lang 11b
+docker run --rm coupling-effect:cli-2 run-example.sh Lang 6b
 
 # Drop into an interactive shell
 docker run --rm -it coupling-effect:cli-2 bash
@@ -117,7 +117,7 @@ assertions, and mutant-derived assertions that detect the real bug) and exits no
 check fails.
 
 > **Note on scope and cost.** The Docker image demonstrates the pipeline on individual program
-> versions (e.g., Cli-2, Lang-11b); it does **not** re-run the entire study, and we did not
+> versions (e.g., Cli-2, Lang-6b); it does **not** re-run the entire study, and we did not
 > systematically re-execute all bugs inside the container — the full methodology and per-version
 > results are documented in [`doc.pdf`](doc.pdf). As reported in the paper, the experiment was
 > conducted on a **Mac mini (Apple M4)**, a **MacBook Pro (2021, Apple M1 Pro)**, and a
@@ -148,23 +148,24 @@ Python 3, `jq`), runs `init.sh`, puts `framework/bin` on `PATH`, and then:
 
    For Cli-2 this currently yields **12** bug-revealing, **9** validated mutant-derived,
    and **9** real-bug-detecting assertions.
-3. **Coupling-limit case (Lang-11b)** — runs the same
-   `defects4j get_project Lang 11b` → `full_state_analysis.sh` flow for a real second bug.
-   Unlike Cli-2, **Lang-11b is not among the 104 detectable bugs**: killing its surviving
-   mutants yields **no** real-bug-detecting assertion (0 `killing`), so the pipeline exits
-   non-zero — the *expected* outcome. This stage therefore passes when the pipeline **ran**
-   (it reports the counts) and does not gate on the mutant-kill count. It demonstrates the
-   limit of the coupling effect and guards the `run-example.sh Lang 11b` usage in CI.
+3. **Second bug, full pipeline (Lang-6b)** — runs the same
+   `defects4j get_project Lang 6b` → `full_state_analysis.sh` flow for a real second bug,
+   exercising the mutant side (mutation analysis) as well. Lang-6b generates real-bug-revealing
+   assertions, but killing its surviving mutants yields **no** real-bug-detecting assertion
+   (0 `killing`), so the pipeline exits non-zero — an *expected* outcome (killing mutants does
+   not always detect the real bug). This stage therefore passes when the pipeline **ran** (it
+   reports the counts) and does not gate on the mutant-kill count (which varies by environment).
+   It also guards the `run-example.sh Lang 6b` usage in CI.
 
 ### `Docker image` — [`docker.yml`](.github/workflows/docker.yml)
 
 Builds the image described in [Run with Docker](#run-with-docker), runs a lightweight
 smoke test (`defects4j` is on `PATH` and the custom commands resolve), then a **more-usage
 check** that runs the documented command for a real second bug end-to-end on the built image —
-`docker run … run-example.sh Lang 11b`. This guards the reviewer-reported `exec: … not found`
-and exercises the **coupling limit**: for Lang-11b, killing surviving mutants yields **no**
-real-bug-detecting assertion (0 `killing`), so `run-example.sh` reports a negative result and
-exits non-zero — the *expected* scientific outcome, which the check treats as success (it
+`docker run … run-example.sh Lang 6b`. This guards the reviewer-reported `exec: … not found`
+and exercises the full pipeline (real-bug + mutant sides). Lang-6b generates real-bug assertions,
+but killing its surviving mutants yields **no** real-bug-detecting assertion (0 `killing`), so
+`run-example.sh` exits non-zero — an *expected* outcome, which the check treats as success (it
 verifies the pipeline ran, not a specific kill count, since mutation analysis varies across
 environments). The positive result validation (12 / 9 / 9) lives in the deterministic **Cli-2**
 stage of [`ci.yml`](.github/workflows/ci.yml). On `master`, the image is published to the GitHub
