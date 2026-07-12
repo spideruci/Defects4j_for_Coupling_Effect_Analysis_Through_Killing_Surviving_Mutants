@@ -82,10 +82,8 @@ Pages 3–4 provide a step-by-step example demonstrating how to run the experime
 ### Run with Docker
 
 A self-contained image is provided so the Cli-2 example can be run without installing the
-toolchain (Java 11, Subversion, Perl/CPAN, Python 3, jq) by hand. The image bakes in `init.sh`
-(project repositories, EvoSuite, Randoop, Gradle deps, build-analyzer) and the vendored Major
-mutation framework, so it runs offline once obtained. It is built for `linux/amd64` (runs
-natively on x86-64; on Apple Silicon it runs automatically via Docker's emulation).
+toolchain (Java 11, Subversion, Perl/CPAN, Python 3, jq) by hand. It is built for `linux/amd64`
+(runs natively on x86-64; on Apple Silicon it runs automatically via Docker's emulation).
 
 **Option A — download the prebuilt image (no build).** The image is archived on Zenodo
 (DOI [10.5281/zenodo.21013233](https://doi.org/10.5281/zenodo.21013233)) as
@@ -106,8 +104,9 @@ docker run --rm coupling-effect:cli-2
 **More usage:**
 
 ```bash
-# Run any other curated bug (must have a coverages/<Project>_<Version> file)
-docker run --rm coupling-effect:cli-2 Lang 11b
+# Run any other curated bug (must have a coverages/<Project>_<Version> file).
+# Name the entrypoint script explicitly so the arguments are passed to it:
+docker run --rm coupling-effect:cli-2 run-example.sh Lang 11b
 
 # Drop into an interactive shell
 docker run --rm -it coupling-effect:cli-2 bash
