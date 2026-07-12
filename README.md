@@ -6,7 +6,7 @@ Which contains the necessary code to generate fault-revealing augmentations from
 
 [![CI (Java11 + Maven + Defects4J)](https://github.com/spideruci/Defects4j_for_Coupling_Effect_Analysis_Through_Killing_Surviving_Mutants/actions/workflows/ci.yml/badge.svg)](https://github.com/spideruci/Defects4j_for_Coupling_Effect_Analysis_Through_Killing_Surviving_Mutants/actions/workflows/ci.yml)
 [![Docker image](https://github.com/spideruci/Defects4j_for_Coupling_Effect_Analysis_Through_Killing_Surviving_Mutants/actions/workflows/docker.yml/badge.svg)](https://github.com/spideruci/Defects4j_for_Coupling_Effect_Analysis_Through_Killing_Surviving_Mutants/actions/workflows/docker.yml)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21013233.svg)](https://doi.org/10.5281/zenodo.21013233)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21013232.svg)](https://doi.org/10.5281/zenodo.21013232)
 
 The environment, smoke tests, and the full assertion-generation pipeline are continuously
 exercised on GitHub Actions, and a ready-to-run Docker image is published to GHCR — see
@@ -86,7 +86,7 @@ toolchain (Java 11, Subversion, Perl/CPAN, Python 3, jq) by hand. It is built fo
 (runs natively on x86-64; on Apple Silicon it runs automatically via Docker's emulation).
 
 **Option A — download the prebuilt image (no build).** The image is archived on Zenodo
-(DOI [10.5281/zenodo.21013233](https://doi.org/10.5281/zenodo.21013233)) as
+(DOI [10.5281/zenodo.21013232](https://doi.org/10.5281/zenodo.21013232)) as
 `coupling-effect-cli2.tar.gz` (~2.3 GB). Download that file from the Zenodo record, then:
 
 ```bash
